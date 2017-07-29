@@ -1,0 +1,81 @@
+= Overview
+
+Conformance testing is used as the basis of product certification, and has the following goals:
+
+* _Tendering_: enable tendering authorities to state formal criteria for compliance in tenders
+* _Protection for solution developers_: enables bona fide vendors and other developers to prove the quality of their solutions compared to other offerings claiming conformance
+* _Protection for procurement_: provides a way of ensuring that purchased solutions can be contractually guaranteed to perform in certain ways
+
+Conformance to openEHR specifications is tested in terms of two types of capability of a tested solution:
+
+* *Functional*: functional capabilities of system in terms of ability to respond through defined interfaces;
+* *Content*: content capabilities of system, in terms of types of content supported in the system.
+
+Conformance claims are determined by testing a system against various openEHR published specifications. This specification defines the details of conformance in each level of each of the above dimensions, and is used with the Conformance Testing Guide to perform conformance testing.
+
+This specification does not cover claims to capacity, performance, availability, consistency  or other critical attributes of systems. It is however recommended that supply agreements for operational solutions include criteria for these factors, as relevant to the situation. As a guide, the following criteria should be considered:
+
+* *Capacity*: capacity of system in terms of:
+** _data volume_: 
+*** number of active EHRs supported for a given reported latency;
+*** number of archived EHRs supported;
+** _user load_:
+*** number of concurrent committers for a given reported latency;
+*** number of concurrent readers for a given reported latency;
+* *Performance*: tested performance of system in terms of reported transaction processing rates;
+* *Availability*: tested latency of system with respect to standard queries over time.
+
+It may be possible to develop a band-based rating sytem for capacity. Performance, availability, consistency and related characteristics may be assessed using a framework that takes account of the CAP and / or PACELC theorems.
+
+== Conformance Certificate
+
+An openEHR Conformance Certificate consists of a ratings in the Functional and Content dimensions, and a detailed report. The ratings are as follows:
+
+[cols="1,1,4", options="header"]
+|===
+|Category		|Levels			|Description
+
+.6+|*Functional*|MINIMAL       	|Minimal functionality: ability to store and retrieve identified EHRs.
+                |BASIC			|Basic functionality: storage, retrieval and querying.
+                |DEPLOYABLE     |Deployable: sufficient for general purpose EHR system deployable in an operational healthcare context.
+                |+STANDALONE	|Standalone: additional features enabling an openEHR system to operate in a standalone fashion.
+                |+ENTERPRISE	|Enterprise: additional features satisfying large healthcare provider requirements.
+                |+X-ENTERPRISE	|Cross-enterprise: additional features required for EHRs shared across single provider enterprises.
+
+.3+|*Content*   |BASIC			|RM basic data types, data structures, Entries, Compositions.
+                |ADVANCED		|RM advanced data types.
+                |+EXTRA  		|EHR Extract, Demographics.
+                |+PROCESS  		|Task Planning.
+
+|===
+
+An awarded certificate for a typical system will look as follows:
+
+------
+openEHR Conformance Certificate
+===============================
+
+Solution:       BestEHR release 2.4
+                details ...
+Vendor:         ACME EHR systems LLC, Maxperformancia
+Assessor:       openEHR Foundation
+Infrastructure: openEHR CNF-test WS 1.5.0 on AWS ...
+                System under test on AWS ...
+Date:           12 April 2017
+    
+Certified conformance
+=====================
+Functional: DEPLOYABLE +ENTERPRISE
+Content:    ADVANCED +EXTRA +PROCESS
+
+Detailed Report
+===============
+...
+--------
+
+------
+
+== Evaluation
+
+Conformance testing is performed by the interaction of the openEHR CNF-test web service with a system under test. A test configuration indicates which conformance claims are to be tested (e.g. functional=BASIC; content=ADVANCED+EXTRA), and appropriate sets of tests are executed. The result is a detailed test report, together with the highest conformance levels reached in the requested categories.
+

@@ -1,0 +1,2 @@
+= specifications-CNF
+openEHR Conformance specifications

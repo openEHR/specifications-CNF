@@ -1,0 +1,82 @@
+//
+// ============================================ Asciidoc HEADER =============================================
+//
+:doctype: book
+:source-highlighter: pygments
+//:pygments-style: murphy
+//:toc: macro
+:toc: left
+:toclevels: 4
+:pagenums:
+:sectnums!:
+// git rid of PDF 'Chapter' labs on level 1 headings
+:chapter-label:
+:copyright_year: 2017
+//
+// HTML-only attributes
+//
+:linkcss:
+:keywords: conformance
+:description: openEHR EHR System Conformance Definition
+:spec_status: DEVELOPMENT
+
+//
+// ============================================ Asciidoc PREAMBLE =============================================
+//
+
+image::http://www.openehr.org/releases/BASE/latest/resources/images/openehr_logo_large.png["openEHR logo",align="center"]
+
+= openEHR EHR System Conformance Definition
+
+include::{base_dir}/docs_common/boilerplate/short_front_block.adoc[]
+include::{base_dir}/docs_common/references/openehr_resources.adoc[]
+
+//
+// ============================================= Asciidoc BODY ===============================================
+//
+
+include::master00-amendment_record.adoc[leveloffset=+1]
+
+//
+// --------------------------------------------- Preface -----------------------------------------------
+//
+
+== Acknowledgements
+
+The work reported in this paper has been funded in by the following organisations:
+
+* Marand d.o.o. (Slovenia)
+* DIPS asa (Norway)
+* Cabolabs (Uruguay)
+* Ars Semantica (UK)
+
+=== Trademarks
+
+* 'openEHR' is a trademark of the openEHR Foundation
+
+
+//
+// --------------------------------------------- TOC -----------------------------------------------
+//
+//toc::[left]
+
+//
+// --------------------------------------------- CHAPTERS -----------------------------------------------
+//
+:sectanchors:
+:sectnums:
+include::master01-preface.adoc[leveloffset=+1]
+include::master02-overview.adoc[leveloffset=+1]
+include::master03-schedule.adoc[leveloffset=+1]
+include::master04-testsuites.adoc[leveloffset=+1]
+
+//
+// --------------------------------------------- REFERENCES -----------------------------------------------
+//
+
+
+// :sectnums!:
+// == References
+//include::{base_dir}/docs_common/references/publications.adoc[leveloffset=+1]
+// include::{base_dir}/docs_common/references/resources.adoc[leveloffset=+1]
+

@@ -1,0 +1,154 @@
+= Conformance Schedule
+
+== Overview
+
+The following table shows the schedule according to which functional conformance claims can be made for a solution.
+
+[cols="11*^", options="header"]
+|===
+|Conformance +
+ Level          |Core |EHR +
+                     service |TDD +
+                              API   |AQL +
+                                      support|Security & +
+                                                         Privacy  |REST +
+                                                                   APIs  |Demographic +
+                                                                          service |Integrated +
+                                                                                    Terminology +
+                                                                                    service|EHR Dump/ +
+                                                                                             Load   |EHR sync
+
+|MINIMAL       |&#10004;|&#10004;|        |        |        |        |        |        |        |        
+|BASIC         |&#10004;|&#10004;|&#10004;|&#10004;|        |        |        |        |        |        
+|DEPLOYABLE    |&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|        |        |        |        
+|+STANDALONE   |    ?   |    ?   |    ?   |    ?   |   ?    |   ?    |&#10004;|&#10004;|        |        
+|+ENTERPRISE   |    ?   |    ?   |    ?   |    ?   |   ?    |   ?    |   ?    |   ?    |&#10004;|
+|+X-ENTERPRISE |    ?   |    ?   |    ?   |    ?   |   ?    |   ?    |   ?    |   ?    |   ?    |&#10004;
+|===
+
+Each column corresponds to a system capability specified by one or more openEHR specifications. Each of these is tested by one or more tests, as described below.
+
+Each facility can be tested at various levels of content conformance, i.e. with data-sets corresponding to the BASIC / ADVANCED / etc bands defined above.
+
+== Core
+
+Core system features:
+
+[cols="1,3,3", options="header"]
+|===
+|Feature                    |Specification                                                              |Tested by
+
+|OPT loading                |                                                                           |
+|Versioning                 |{openehr_rm_common}#_change_control_package[Common IM Change Control Package] +
+                             {openehr_overview}#_versioning_2[openEHR Architecture Overview]            |
+|
+|===
+
+
+== EHR Service
+
+EHR Service API features:
+
+[cols="1,3,3", options="header"]
+|===
+|Feature                    |Specification                                                              |Tested by
+
+|Create EHR                 |{openehr_ehr_api}[EHR Service API]                                         |
+|Find EHR                   |                                                                           |
+|Get EHR Status             |                                                                           |
+|Commit Contribution        |                                                                           |
+|Find Compositions          |                                                                           |
+|Get Composition by id      |                                                                           |
+|Get Composition by time    |                                                                           |
+|Get Composition by version |                                                                           |
+|===
+
+== TDD API
+
+TDD API features:
+
+[cols="1,3,3", options="header"]
+|===
+|Feature                    |Specification                                                              |Tested by
+
+|Commit TDD                 |                                                                           |
+|===
+
+== AQL Support
+
+AQL features:
+
+[cols="1,3,3", options="header"]
+|===
+|Feature                    |Specification                                                              |Tested by
+
+|xxx                        |                                                                           |
+|===
+
+== Security and Privacy
+
+Security and Privacy features:
+
+[cols="1,3,3", options="header"]
+|===
+|Feature                    |Specification                                                              |Tested by
+
+|Commit TDD                 |                                                                           |
+|===
+
+== REST APIs
+
+REST API features:
+
+[cols="1,3,3", options="header"]
+|===
+|Feature                    |Specification                                                              |Tested by
+
+|xxx                        |                                                                           |
+|===
+
+== Demographic Service
+
+Demographic Service API features:
+
+[cols="1,3,3", options="header"]
+|===
+|Feature                    |Specification                                                              |Tested by
+
+|xxx                        |                                                                           |
+|===
+
+== Integrated Terminology Service
+
+Integrated Terminology features:
+
+[cols="1,3,3", options="header"]
+|===
+|Feature                    |Specification                                                              |Tested by
+
+|AQL query with terminology |                                                                           |
+|===
+
+== EHR Dump/Load
+
+EHR Dump/Load features:
+
+[cols="1,3,3", options="header"]
+|===
+|Feature                    |Specification                                                              |Tested by
+
+|xxx                        |                                                                           |
+|===
+
+== EHR Synchronisation
+
+EHR Synchronisation features:
+
+[cols="1,3,3", options="header"]
+|===
+|Feature                    |Specification                                                              |Tested by
+
+|xxx                        |                                                                           |
+|===
+
+
