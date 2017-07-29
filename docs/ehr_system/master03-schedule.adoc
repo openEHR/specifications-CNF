@@ -93,7 +93,9 @@ Security and Privacy features:
 |===
 |Feature                    |Specification                                                              |Tested by
 
-|Commit TDD                 |                                                                           |
+|Non-identified EHRs        |                                                                           |
+|Hashing                    |                                                                           |
+|Signing                    |                                                                           |
 |===
 
 == REST APIs
