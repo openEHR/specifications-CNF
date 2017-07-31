@@ -41,16 +41,17 @@
 <li><a href="#_conformance_schedule">3. Conformance Schedule</a>
 <ul class="sectlevel2">
 <li><a href="#_overview_2">3.1. Overview</a></li>
-<li><a href="#_core">3.2. Core</a></li>
-<li><a href="#_ehr_service">3.3. EHR Service</a></li>
-<li><a href="#_tdd_api">3.4. TDD API</a></li>
-<li><a href="#_aql_support">3.5. AQL Support</a></li>
-<li><a href="#_security_and_privacy">3.6. Security and Privacy</a></li>
-<li><a href="#_rest_apis">3.7. REST APIs</a></li>
-<li><a href="#_demographic_service">3.8. Demographic Service</a></li>
-<li><a href="#_integrated_terminology_service">3.9. Integrated Terminology Service</a></li>
-<li><a href="#_ehr_dump_load">3.10. EHR Dump/Load</a></li>
-<li><a href="#_ehr_synchronisation">3.11. EHR Synchronisation</a></li>
+<li><a href="#_alternative_profiles_approach">3.2. ALTERNATIVE PROFILES APPROACH</a></li>
+<li><a href="#_core">3.3. Core</a></li>
+<li><a href="#_ehr_service">3.4. EHR Service</a></li>
+<li><a href="#_tdd_api">3.5. TDD API</a></li>
+<li><a href="#_aql_support">3.6. AQL Support</a></li>
+<li><a href="#_security_and_privacy">3.7. Security and Privacy</a></li>
+<li><a href="#_rest_apis">3.8. REST APIs</a></li>
+<li><a href="#_demographic_service">3.9. Demographic Service</a></li>
+<li><a href="#_integrated_terminology_service">3.10. Integrated Terminology Service</a></li>
+<li><a href="#_ehr_dump_load">3.11. EHR Dump/Load</a></li>
+<li><a href="#_ehr_synchronisation">3.12. EHR Synchronisation</a></li>
 </ul>
 </li>
 <li><a href="#_test_suites">4. Test Suites</a>
@@ -356,10 +357,6 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><strong>Functional</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MINIMAL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimal functionality: ability to store and retrieve identified EHRs.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BASIC</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Basic functionality: storage, retrieval and querying.</p></td>
 </tr>
@@ -382,15 +379,19 @@
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><strong>Content</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BASIC</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RM basic data types, data structures, Entries, Compositions.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADVANCED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RM advanced data types.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RM advanced data types.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">+EXTRA</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EHR Extract, Demographics.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+PROCESS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Task Planning.</p></td>
 </tr>
 </tbody>
 </table>
@@ -479,19 +480,6 @@ Detailed Report
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">MINIMAL</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
-<td class="tableblock halign-center valign-top"></td>
-<td class="tableblock halign-center valign-top"></td>
-<td class="tableblock halign-center valign-top"></td>
-<td class="tableblock halign-center valign-top"></td>
-<td class="tableblock halign-center valign-top"></td>
-<td class="tableblock halign-center valign-top"></td>
-<td class="tableblock halign-center valign-top"></td>
-<td class="tableblock halign-center valign-top"></td>
-</tr>
-<tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">BASIC</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
@@ -566,7 +554,88 @@ Detailed Report
 </div>
 </div>
 <div class="sect2">
-<h3 id="_core"><a class="anchor" href="#_core"></a>3.2. Core</h3>
+<h3 id="_alternative_profiles_approach"><a class="anchor" href="#_alternative_profiles_approach"></a>3.2. ALTERNATIVE PROFILES APPROACH</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Feature</th>
+<th class="tableblock halign-center valign-top">BASIC</th>
+<th class="tableblock halign-center valign-top">DEPLOYABLE</th>
+<th class="tableblock halign-center valign-top">Extras<br>
+                                             (ent)</th>
+<th class="tableblock halign-center valign-top">Extras<br>
+                                                         (x-ent)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Core</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">EHR REST API</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">AQL</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Security &amp; Privacy</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">TDD API</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Demographic Service</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">EHR Dump/Load</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">EHR synchronisation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#10004;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_core"><a class="anchor" href="#_core"></a>3.3. Core</h3>
 <div class="paragraph">
 <p>Core system features:</p>
 </div>
@@ -599,7 +668,7 @@ Detailed Report
 </table>
 </div>
 <div class="sect2">
-<h3 id="_ehr_service"><a class="anchor" href="#_ehr_service"></a>3.3. EHR Service</h3>
+<h3 id="_ehr_service"><a class="anchor" href="#_ehr_service"></a>3.4. EHR Service</h3>
 <div class="paragraph">
 <p>EHR Service API features:</p>
 </div>
@@ -661,7 +730,7 @@ Detailed Report
 </table>
 </div>
 <div class="sect2">
-<h3 id="_tdd_api"><a class="anchor" href="#_tdd_api"></a>3.4. TDD API</h3>
+<h3 id="_tdd_api"><a class="anchor" href="#_tdd_api"></a>3.5. TDD API</h3>
 <div class="paragraph">
 <p>TDD API features:</p>
 </div>
@@ -688,7 +757,7 @@ Detailed Report
 </table>
 </div>
 <div class="sect2">
-<h3 id="_aql_support"><a class="anchor" href="#_aql_support"></a>3.5. AQL Support</h3>
+<h3 id="_aql_support"><a class="anchor" href="#_aql_support"></a>3.6. AQL Support</h3>
 <div class="paragraph">
 <p>AQL features:</p>
 </div>
@@ -715,7 +784,7 @@ Detailed Report
 </table>
 </div>
 <div class="sect2">
-<h3 id="_security_and_privacy"><a class="anchor" href="#_security_and_privacy"></a>3.6. Security and Privacy</h3>
+<h3 id="_security_and_privacy"><a class="anchor" href="#_security_and_privacy"></a>3.7. Security and Privacy</h3>
 <div class="paragraph">
 <p>Security and Privacy features:</p>
 </div>
@@ -752,7 +821,7 @@ Detailed Report
 </table>
 </div>
 <div class="sect2">
-<h3 id="_rest_apis"><a class="anchor" href="#_rest_apis"></a>3.7. REST APIs</h3>
+<h3 id="_rest_apis"><a class="anchor" href="#_rest_apis"></a>3.8. REST APIs</h3>
 <div class="paragraph">
 <p>REST API features:</p>
 </div>
@@ -779,7 +848,7 @@ Detailed Report
 </table>
 </div>
 <div class="sect2">
-<h3 id="_demographic_service"><a class="anchor" href="#_demographic_service"></a>3.8. Demographic Service</h3>
+<h3 id="_demographic_service"><a class="anchor" href="#_demographic_service"></a>3.9. Demographic Service</h3>
 <div class="paragraph">
 <p>Demographic Service API features:</p>
 </div>
@@ -806,7 +875,7 @@ Detailed Report
 </table>
 </div>
 <div class="sect2">
-<h3 id="_integrated_terminology_service"><a class="anchor" href="#_integrated_terminology_service"></a>3.9. Integrated Terminology Service</h3>
+<h3 id="_integrated_terminology_service"><a class="anchor" href="#_integrated_terminology_service"></a>3.10. Integrated Terminology Service</h3>
 <div class="paragraph">
 <p>Integrated Terminology features:</p>
 </div>
@@ -833,7 +902,7 @@ Detailed Report
 </table>
 </div>
 <div class="sect2">
-<h3 id="_ehr_dump_load"><a class="anchor" href="#_ehr_dump_load"></a>3.10. EHR Dump/Load</h3>
+<h3 id="_ehr_dump_load"><a class="anchor" href="#_ehr_dump_load"></a>3.11. EHR Dump/Load</h3>
 <div class="paragraph">
 <p>EHR Dump/Load features:</p>
 </div>
@@ -860,7 +929,7 @@ Detailed Report
 </table>
 </div>
 <div class="sect2">
-<h3 id="_ehr_synchronisation"><a class="anchor" href="#_ehr_synchronisation"></a>3.11. EHR Synchronisation</h3>
+<h3 id="_ehr_synchronisation"><a class="anchor" href="#_ehr_synchronisation"></a>3.12. EHR Synchronisation</h3>
 <div class="paragraph">
 <p>EHR Synchronisation features:</p>
 </div>

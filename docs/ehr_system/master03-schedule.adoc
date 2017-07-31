@@ -18,7 +18,6 @@ The following table shows the schedule according to which functional conformance
                                                                                     service|EHR Dump/ +
                                                                                              Load   |EHR sync
 
-|MINIMAL       |&#10004;|&#10004;|        |        |        |        |        |        |        |        
 |BASIC         |&#10004;|&#10004;|&#10004;|&#10004;|        |        |        |        |        |        
 |DEPLOYABLE    |&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|        |        |        |        
 |+STANDALONE   |    ?   |    ?   |    ?   |    ?   |   ?    |   ?    |&#10004;|&#10004;|        |        
@@ -29,6 +28,26 @@ The following table shows the schedule according to which functional conformance
 Each column corresponds to a system capability specified by one or more openEHR specifications. Each of these is tested by one or more tests, as described below.
 
 Each facility can be tested at various levels of content conformance, i.e. with data-sets corresponding to the BASIC / ADVANCED / etc bands defined above.
+
+== ALTERNATIVE PROFILES APPROACH
+
+[cols="5*^", options="header"]
+|===
+|Feature            |BASIC      |DEPLOYABLE |Extras +
+                                             (ent)      |Extras +
+                                                         (x-ent)
+
+|Core               |&#10004;   |&#10004;   |           |       
+|EHR REST API       |&#10004;   |&#10004;   |           |     
+|AQL                |&#10004;   |&#10004;   |           |      
+|Security & Privacy |    ?      |&#10004;   |           |
+|TDD API            |    ?      |    ?      |&#10004;   |
+|Demographic Service|    ?      |    ?      |&#10004;   |
+|EHR Dump/Load      |    ?      |    ?      |&#10004;   |
+|EHR synchronisation|    ?      |    ?      |           |&#10004;
+|===
+
+
 
 == Core
 

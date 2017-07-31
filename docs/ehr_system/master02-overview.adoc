@@ -35,8 +35,7 @@ An openEHR Conformance Certificate consists of a ratings in the Functional and C
 |===
 |Category		|Levels			|Description
 
-.6+|*Functional*|MINIMAL       	|Minimal functionality: ability to store and retrieve identified EHRs.
-                |BASIC			|Basic functionality: storage, retrieval and querying.
+.6+|*Functional*|BASIC			|Basic functionality: storage, retrieval and querying.
                 |DEPLOYABLE     |Deployable: sufficient for general purpose EHR system deployable in an operational healthcare context.
                 |+STANDALONE	|Standalone: additional features enabling an openEHR system to operate in a standalone fashion.
                 |+ENTERPRISE	|Enterprise: additional features satisfying large healthcare provider requirements.
