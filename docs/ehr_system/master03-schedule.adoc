@@ -31,20 +31,29 @@ Each facility can be tested at various levels of content conformance, i.e. with 
 
 == ALTERNATIVE PROFILES APPROACH
 
-[cols="5*^", options="header"]
+[cols="1,5*", options="header"]
 |===
 |Feature            |BASIC      |DEPLOYABLE |Extras +
                                              (ent)      |Extras +
-                                                         (x-ent)
+                                                         (x-ent)    |Conformance +
+                                                                     criteria
 
-|Core               |&#10004;   |&#10004;   |           |       
-|EHR REST API       |&#10004;   |&#10004;   |           |     
-|AQL                |&#10004;   |&#10004;   |           |      
-|Security & Privacy |    ?      |&#10004;   |           |
-|TDD API            |    ?      |    ?      |&#10004;   |
-|Demographic Service|    ?      |    ?      |&#10004;   |
-|EHR Dump/Load      |    ?      |    ?      |&#10004;   |
-|EHR synchronisation|    ?      |    ?      |           |&#10004;
+|Core               |&#10004;   |&#10004;   |           |           |
+|  - RM             |&#10004;   |&#10004;   |           |           |{openehr_rm_data_types}[Data Types IM] +
+                                                                     {openehr_rm_data_types}[Data Structures IM] +
+                                                                     {openehr_rm_common}[COmmon IM] +
+                                                                     etc (OR STATE XSD?)
+|  - Versioning     |&#10004;   |&#10004;   |           |           |{openehr_rm_common}#_change_control_package[Common IM Change Control Package] +
+                                                                     {openehr_overview}#_versioning_2[openEHR Architecture Overview]
+|  - OPT            |&#10004;   |&#10004;   |           |           |
+
+|EHR REST API       |&#10004;   |&#10004;   |           |           |{openehr_ehr_rest_api}[EHR REST API]
+|AQL                |&#10004;   |&#10004;   |           |           |{openehr_query_aql}[AQL specification]
+|Security & Privacy |    ?      |&#10004;   |           |           |
+|TDD API            |    ?      |    ?      |&#10004;   |           |Ref to TDS XSD?
+|Demographic Service|    ?      |    ?      |&#10004;   |           |{openehr_rm_demographic}[Demographic IM]
+|EHR Dump/Load      |    ?      |    ?      |&#10004;   |           |RM XSD
+|EHR synchronisation|    ?      |    ?      |           |&#10004;   |{openehr_rm_ehr_extract}[EHR Extract IM]
 |===
 
 
@@ -58,8 +67,7 @@ Core system features:
 |Feature                    |Specification                                                              |Tested by
 
 |OPT loading                |                                                                           |
-|Versioning                 |{openehr_rm_common}#_change_control_package[Common IM Change Control Package] +
-                             {openehr_overview}#_versioning_2[openEHR Architecture Overview]            |
+|Versioning                 |            |
 |
 |===
 
