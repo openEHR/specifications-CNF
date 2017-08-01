@@ -35,16 +35,12 @@ An openEHR Conformance Certificate consists of a ratings in the Functional and C
 |===
 |Category		|Levels			|Description
 
-.6+|*Functional*|BASIC			|Basic functionality: storage, retrieval and querying.
-                |DEPLOYABLE     |Deployable: sufficient for general purpose EHR system deployable in an operational healthcare context.
-                |+STANDALONE	|Standalone: additional features enabling an openEHR system to operate in a standalone fashion.
-                |+ENTERPRISE	|Enterprise: additional features satisfying large healthcare provider requirements.
-                |+X-ENTERPRISE	|Cross-enterprise: additional features required for EHRs shared across single provider enterprises.
+.3+|*Functional*|BASIC			|Core functionality required for operational deployment.
+                |COMPREHENSIVE  |More comprehensive capabilities useful in operational environments.
+                |EXTRAS     	|Extra features required in specific circumstances.
 
-.3+|*Content*   |BASIC			|RM basic data types, data structures, Entries, Compositions.
-                |ADVANCED		|RM advanced data types.
-                |+EXTRA  		|EHR Extract, Demographics.
-                |+PROCESS  		|Task Planning.
+.4+|*Semantics* |CORE			|RM core content types, versioning, OPT support.
+                |ADVANCED		|RM advanced content types.
 
 |===
 

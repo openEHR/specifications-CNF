@@ -4,59 +4,100 @@
 
 The following table shows the schedule according to which functional conformance claims can be made for a solution.
 
-[cols="11*^", options="header"]
+Each row corresponds to a system capability specified by one or more openEHR specifications and/or concrete published artefacts. Each of these capabilities is tested by one or more tests based on the artefacts, as described below.
+
+[cols="2,3,4,4,4", options="header"]
 |===
-|Conformance +
- Level          |Core |EHR +
-                     service |TDD +
-                              API   |AQL +
-                                      support|Security & +
-                                                         Privacy  |REST +
-                                                                   APIs  |Demographic +
-                                                                          service |Integrated +
-                                                                                    Terminology +
-                                                                                    service|EHR Dump/ +
-                                                                                             Load   |EHR sync
+|Feature +
+ group          |Feature        |Definiing specification(s)                         |Computable artefact(s)             |Test type
 
-|BASIC         |&#10004;|&#10004;|&#10004;|&#10004;|        |        |        |        |        |        
-|DEPLOYABLE    |&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|        |        |        |        
-|+STANDALONE   |    ?   |    ?   |    ?   |    ?   |   ?    |   ?    |&#10004;|&#10004;|        |        
-|+ENTERPRISE   |    ?   |    ?   |    ?   |    ?   |   ?    |   ?    |   ?    |   ?    |&#10004;|
-|+X-ENTERPRISE |    ?   |    ?   |    ?   |    ?   |   ?    |   ?    |   ?    |   ?    |   ?    |&#10004;
+.4+|*Core +
+ Semantics*     |RM Core        |{openehr_rm_data_types}[Data Types IM] +
+                                 {openehr_rm_data_types}[Data Structures IM] +
+                                 {openehr_rm_common}[Common IM] +
+                                 {openehr_rm_ehr}[EHR IM]                           |{openehr_its_rm_xsds}[RM XSDs]     |Commit/Retrieve +
+                                                                                                                         data regression
+                |Versioning     |{openehr_rm_common}#_change_control_package[Common IM Change - Control Package] +          
+                                 {openehr_overview}#_versioning_2[openEHR Architecture Overview] 
+                                                                                    |{openehr_its_rm_xsds}[RM XSDs - VERSIONED_OBJECT] 
+                                                                                                                        |Commit/Retrieve +
+                                                                                                                         data regression
+                |Instruction +
+                 State Machine  |{openehr_rm_ehr}#_the_standard_instruction_state_machine_ism[EHR IM - ISM]|n/a          |??
+                |OPT 1.4        |???                                                |{openehr_oet_parser}/src/main/xsd[OET XSDs] 
+                                                                                                                        |Import; +
+                                                                                                                          execute content +
+                                                                                                                          test
+
+.3+|*Advanced +
+ Semantics*     |RM Folders     |{openehr_rm_common}#_directory_package[Common IM - Directory Package] 
+                                                                                    |{openehr_its_rm_xsds}[RM XSDs - FOLDER] 
+                                                                                                                        |Commit/Retrieve +
+                                                                                                                         data regression
+                |RM advanced DTs|{openehr_rm_data_types}[Data Types IM - various]   |{openehr_its_rm_xsds}[RM XSDs - DV_INTERVAL<>]
+                                                                                                                        |Commit/Retrieve +
+                                                                                                                         data regression
+                |RM Demographics|{openehr_rm_demographic}[Demographic IM]           |{openehr_its_rm_xsds}[RM XSDs]     |Commit/Retrieve +
+                                                                                                                          data regression
+
+.2+|*APIs*      |EHR REST API   |{openehr_ehr_rest_api}[EHR REST API]               |???                                 |Exercise functions +
+                                                                                                                          & arguments
+                |TDD API        |???                                                |???                                 |Exercise functions +
+                                                                                                                          & arguments
+
+|*Querying*     |AQL            |{openehr_query_aql}[AQL specification]             |n/a                                  |Commit content; +
+                                                                                                                           execute queries +
+                                                                                                                           regression.
+
+.2+|*Security & +
+ Privacy*       |Signing        |{openehr_rm_common}#_digital_signature[Common IM - Digital Signature]|n/a                |Commit/Retrieve +
+                                                                                                                           data regression
+                |Anonymous EHRs |{openehr_overview}#_overview_4[EHR/Demographic separation]|n/a                           |Commit/query
+                
+.3+|*Options*   |EHR Extract    |{openehr_rm_ehr_extract}[EHR Extract IM]           |{openehr_its_rm_xsds}[RM XSDs - EHR_EXTRACT]
+                                                                                                                        |Commit/Retrieve +
+                                                                                                                         data regression
+                |GDL            |{openehr_cds_gdl}[GDL Specification]               |n/a                                 |???
+                |Task Planning  |{openehr_task_planning}[Task Planning]             |(in development)                    |various
 |===
 
-Each column corresponds to a system capability specified by one or more openEHR specifications. Each of these is tested by one or more tests, as described below.
 
-Each facility can be tested at various levels of content conformance, i.e. with data-sets corresponding to the BASIC / ADVANCED / etc bands defined above.
+== Profiles (KEEP?)
 
-== ALTERNATIVE PROFILES APPROACH
+The following table shows how the guideline conformance profiles may be defined with respect to the conformance criteria. These
 
-[cols="1,5*", options="header"]
+[cols="1,1,^1,^1,^1", options="header"]
 |===
-|Feature            |BASIC      |DEPLOYABLE |Extras +
-                                             (ent)      |Extras +
-                                                         (x-ent)    |Conformance +
-                                                                     criteria
+|Feature +
+ group          |Feature            |BASIC      |COMPREHENSIVE  |EXTRA
 
-|Core               |&#10004;   |&#10004;   |           |           |
-|  - RM             |&#10004;   |&#10004;   |           |           |{openehr_rm_data_types}[Data Types IM] +
-                                                                     {openehr_rm_data_types}[Data Structures IM] +
-                                                                     {openehr_rm_common}[COmmon IM] +
-                                                                     etc (OR STATE XSD?)
-|  - Versioning     |&#10004;   |&#10004;   |           |           |{openehr_rm_common}#_change_control_package[Common IM Change Control Package] +
-                                                                     {openehr_overview}#_versioning_2[openEHR Architecture Overview]
-|  - OPT            |&#10004;   |&#10004;   |           |           |
+.4+|*Core +
+ Semantics*     |RM Basic           |&#10004;   |&#10004;       |          
+                |Versioning        ^|&#10004;   |&#10004;       |          
+                |Instruction +
+                 State Machine     ^|&#10004;   |&#10004;       |          
+                |OPT 1.4           ^|&#10004;   |&#10004;       |
 
-|EHR REST API       |&#10004;   |&#10004;   |           |           |{openehr_ehr_rest_api}[EHR REST API]
-|AQL                |&#10004;   |&#10004;   |           |           |{openehr_query_aql}[AQL specification]
-|Security & Privacy |    ?      |&#10004;   |           |           |
-|TDD API            |    ?      |    ?      |&#10004;   |           |Ref to TDS XSD?
-|Demographic Service|    ?      |    ?      |&#10004;   |           |{openehr_rm_demographic}[Demographic IM]
-|EHR Dump/Load      |    ?      |    ?      |&#10004;   |           |RM XSD
-|EHR synchronisation|    ?      |    ?      |           |&#10004;   |{openehr_rm_ehr_extract}[EHR Extract IM]
+.3+|*Advanced +
+ Semantics*     |RM Folders         |           |               |+
+                |RM advanced DTs   ^|           |&#10004;       |
+                |RM Demographics   ^|           |               |+
+
+.2+|*APIs*      |EHR REST API       |&#10004;   |&#10004;       |
+                |TDD API           ^|           |               |+
+
+|*Querying*     |AQL                |           |&#10004;       |
+
+.2+|*Security & +
+ Privacy*       |Signing            |           |               |+
+                |Anonymous EHRs    ^|           |               |+
+                
+.3+|*Options*   |EHR Extract        |           |               |+
+                |GDL               ^|           |               |+
+                |Task Planning     ^|           |               |+
 |===
 
-
+== SECTIONS BELOW TO BE REWRITTEN
 
 == Core
 
