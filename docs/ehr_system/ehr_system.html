@@ -40,7 +40,12 @@
 </li>
 <li><a href="#_conformance_schedule">3. Conformance Schedule</a>
 <ul class="sectlevel2">
-<li><a href="#_overview_2">3.1. Overview</a></li>
+<li><a href="#_overview_2">3.1. Overview</a>
+<ul class="sectlevel3">
+<li><a href="#_alternative_1_rows_are_conformance_features">3.1.1. ALTERNATIVE 1 - ROWS are conformance features</a></li>
+<li><a href="#_alternative_2_grid_approach_cells_are_conformance_points">3.1.2. ALTERNATIVE 2 - grid approach - cells are conformance points</a></li>
+</ul>
+</li>
 <li><a href="#_profiles_keep">3.2. Profiles (KEEP?)</a></li>
 <li><a href="#_sections_below_to_be_rewritten">3.3. SECTIONS BELOW TO BE REWRITTEN</a></li>
 <li><a href="#_core">3.4. Core</a></li>
@@ -427,6 +432,8 @@ Detailed Report
 <div class="paragraph">
 <p>Each row corresponds to a system capability specified by one or more openEHR specifications and/or concrete published artefacts. Each of these capabilities is tested by one or more tests based on the artefacts, as described below.</p>
 </div>
+<div class="sect3">
+<h4 id="_alternative_1_rows_are_conformance_features"><a class="anchor" href="#_alternative_1_rows_are_conformance_features"></a>3.1.1. ALTERNATIVE 1 - ROWS are conformance features</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11.7647%;">
@@ -440,7 +447,7 @@ Detailed Report
 <th class="tableblock halign-left valign-top">Feature<br>
  group</th>
 <th class="tableblock halign-left valign-top">Feature</th>
-<th class="tableblock halign-left valign-top">Definiing specification(s)</th>
+<th class="tableblock halign-left valign-top">Defining specification(s)</th>
 <th class="tableblock halign-left valign-top">Computable artefact(s)</th>
 <th class="tableblock halign-left valign-top">Test type</th>
 </tr>
@@ -566,6 +573,194 @@ Detailed Report
 </tbody>
 </table>
 </div>
+<div class="sect3">
+<h4 id="_alternative_2_grid_approach_cells_are_conformance_points"><a class="anchor" href="#_alternative_2_grid_approach_cells_are_conformance_points"></a>3.1.2. ALTERNATIVE 2 - grid approach - cells are conformance points</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 13.3333%;">
+<col style="width: 13.3333%;">
+<col style="width: 13.3333%;">
+<col style="width: 13.3333%;">
+<col style="width: 13.3333%;">
+<col style="width: 13.3335%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feature</th>
+<th class="tableblock halign-center valign-top" colspan="6">Access Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="http://www2.openehr.org/releases/ITS/latest/ehr_restapi.html">EHR REST API</a><br></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">TDD API</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Other</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.openehr.org/releases/RM/latest/ehr_extract.html">EHR Extract</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.openehr.org/releases/QUERY/latest/AQL.html">AQL</a></p></th>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Commit/<br>
+                                        Create</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Retrieve</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Commit/<br>
+                                                                                Create</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Retrieve</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Export</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Retrieve</p></th>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<td class="tableblock halign-center valign-top" colspan="6"><p class="tableblock"><strong>Core Semantics</strong></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>RM Core</strong><br>
+ <a href="http://www.openehr.org/releases/RM/latest/data_types.html">Data Types IM</a><br>
+ <a href="http://www.openehr.org/releases/RM/latest/data_types.html">Data Structures IM</a><br>
+ <a href="http://www.openehr.org/releases/RM/latest/common.html">Common IM</a><br>
+ <a href="http://www.openehr.org/releases/RM/latest/ehr.html">EHR IM</a></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TDS XSD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AQL ResulSet</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Versioning</strong><br>
+ <a href="http://www.openehr.org/releases/RM/latest/common.html#_change_control_package">Common IM -<br>
+  Change Control Package</a><br>
+ <a href="http://www.openehr.org/releases/BASE/latest/architecture_overview.html#_versioning_2">Architecture Overview</a></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TDS XSD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AQL ResultSet</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Instruction<br>
+ State Machine</strong><br>
+ <a href="http://www.openehr.org/releases/RM/latest/ehr.html#_the_standard_instruction_state_machine_ism">EHR IM - ISM</a></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">??</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AQL ResultSet</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>OPT 1.4</strong><br>
+ <a href="https://github.com/openEHR/java-libs/tree/master/oet-parser/src/main/xsd">OET XSDs</a></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AQL query<br>
+                                                                                                                                  validity</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Archetype<br>
+ validation</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Success/fail</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Success/fail</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<td class="tableblock halign-center valign-top" colspan="6"><p class="tableblock"><strong>Additional Semantics</strong></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>RM Folders</strong><br>
+ <a href="http://www.openehr.org/releases/RM/latest/common.html#_directory_package">Common IM<br>
+ - Directory Package</a></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AQL ResultSet</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>RM advanced DTs</strong><br>
+ <a href="http://www.openehr.org/releases/RM/latest/data_types.html">Data Types IM<br>
+ - various</a></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TDS XSD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AQL ResultSet</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>RM Demographics</strong><br>
+ <a href="http://www.openehr.org/releases/RM/latest/demographic.html">Demographic IM</a></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TDS XSD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AQL ResultSet</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<td class="tableblock halign-center valign-top" colspan="6"><p class="tableblock"><strong>Security &amp; Privacy</strong></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Signing</strong><br>
+ <a href="http://www.openehr.org/releases/RM/latest/common.html#_digital_signature">Common IM<br>
+  - Digital Signature</a><br></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">??</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Anonymous EHRs</strong><br>
+ <a href="http://www.openehr.org/releases/BASE/latest/architecture_overview.html#_overview_4">EHR/Demographic<br>
+ separation</a></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AQL presence<br>
+                                                                                                                                  absence</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<td class="tableblock halign-center valign-top" colspan="6"><p class="tableblock"><strong>Options</strong></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="http://www.openehr.org/releases/CDS/{cds_release}/GDL.html">GDL</a></strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="http://www.openehr.org/releases/RM/latest/task_planning.html">Task Planning</a></strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AQL ResultSet</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_profiles_keep"><a class="anchor" href="#_profiles_keep"></a>3.2. Profiles (KEEP?)</h3>
 <div class="paragraph">
@@ -585,7 +780,7 @@ Detailed Report
  group</th>
 <th class="tableblock halign-left valign-top">Feature</th>
 <th class="tableblock halign-center valign-top">BASIC</th>
-<th class="tableblock halign-center valign-top">COMPREHENSIVE</th>
+<th class="tableblock halign-center valign-top">BASIC+</th>
 <th class="tableblock halign-center valign-top">EXTRA</th>
 </tr>
 </thead>

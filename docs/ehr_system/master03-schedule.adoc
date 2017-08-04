@@ -6,10 +6,12 @@ The following table shows the schedule according to which functional conformance
 
 Each row corresponds to a system capability specified by one or more openEHR specifications and/or concrete published artefacts. Each of these capabilities is tested by one or more tests based on the artefacts, as described below.
 
+=== ALTERNATIVE 1 - ROWS are conformance features
+
 [cols="2,3,4,4,4", options="header"]
 |===
 |Feature +
- group          |Feature        |Definiing specification(s)                         |Computable artefact(s)             |Test type
+ group          |Feature        |Defining specification(s)                         |Computable artefact(s)             |Test type
 
 .4+|*Core +
  Semantics*     |RM Core        |{openehr_rm_data_types}[Data Types IM] +
@@ -61,6 +63,82 @@ Each row corresponds to a system capability specified by one or more openEHR spe
                 |Task Planning  |{openehr_task_planning}[Task Planning]             |(in development)                    |various
 |===
 
+=== ALTERNATIVE 2 - grid approach - cells are conformance points
+
+[cols="3h,2,2,2,2,2,2", options="header"]
+|===
+|Feature                            6+^|Access Method
+h|                                 2+^h|{openehr_ehr_rest_api}[EHR REST API] +
+                                                                            h|TDD API        h|Other              h|{openehr_rm_ehr_extract}[EHR Extract]
+                                                                                                                                h|{openehr_query_aql}[AQL]
+h|                                    h|Commit/ +
+                                        Create             h|Retrieve         h|Commit/ +
+                                                                                Create       h|Retrieve           h|Export         h|Retrieve
+
+|                                   6+^|*Core Semantics*     
+ 
+|*RM Core* +
+ {openehr_rm_data_types}[Data Types IM] +
+ {openehr_rm_data_types}[Data Structures IM] +
+ {openehr_rm_common}[Common IM] +
+ {openehr_rm_ehr}[EHR IM]               |Canonical XML      |JSON           |TDS XSD        |Canonical XML      |Canonical XML   |AQL ResulSet
+ 
+
+|*Versioning* +
+ {openehr_rm_common}#_change_control_package[Common IM - +
+  Change Control Package] +
+ {openehr_overview}#_versioning_2[Architecture Overview] 
+                                        |Canonical XML      |JSON           |TDS XSD        |Canonical XML      |Canonical XML   |AQL ResultSet
+                                                                                                        
+|*Instruction +
+ State Machine* +
+ {openehr_rm_ehr}#_the_standard_instruction_state_machine_ism[EHR IM - ISM]
+                                        |Canonical XML      |JSON           |??             |Canonical XML      |Canonical XML   |AQL ResultSet
+ 
+|*OPT 1.4* +
+ {openehr_oet_parser}/src/main/xsd[OET XSDs]
+                                        |n/a                |n/a            |n/a            |n/a                |n/a             |AQL query +
+                                                                                                                                  validity
+
+|*Archetype +
+ validation*                             |Success/fail       |n/a            |Success/fail   |n/a                |n/a             |n/a
+
+
+|                                     6+^|*Additional Semantics*     
+ 
+|*RM Folders* +
+ {openehr_rm_common}#_directory_package[Common IM +
+ - Directory Package] 
+                                        |Canonical XML      |JSON           |n/a            |Canonical XML      |Canonical XML   |AQL ResultSet
+
+|*RM advanced DTs* +
+ {openehr_rm_data_types}[Data Types IM +
+ - various]
+                                        |Canonical XML      |JSON           |TDS XSD        |Canonical XML      |Canonical XML   |AQL ResultSet
+
+|*RM Demographics* +
+ {openehr_rm_demographic}[Demographic IM]
+                                        |Canonical XML      |JSON           |TDS XSD        |Canonical XML      |Canonical XML   |AQL ResultSet
+
+
+|                                   6+^|*Security & Privacy*       
+|*Signing* +
+ {openehr_rm_common}#_digital_signature[Common IM +
+  - Digital Signature] +
+                                        |Canonical XML      |JSON           |??             |Canonical XML      |Canonical XML   |???
+|*Anonymous EHRs* +
+ {openehr_overview}#_overview_4[EHR/Demographic +
+ separation]
+                                        |Canonical XML      |JSON           |n/a            |Canonical XML      |Canonical XML   |AQL presence +
+                                                                                                                                  absence
+                
+|                                   6+^|*Options*   
+|*{openehr_cds_gdl}[GDL]*                 |n/a                |???            |???            |???                |???             |???
+|*{openehr_task_planning}[Task Planning]* |Canonical XML      |JSON           |n/a            |Canonical XML      |Canonical XML   |AQL ResultSet
+
+|===
+
+
 
 == Profiles (KEEP?)
 
@@ -69,7 +147,7 @@ The following table shows how the guideline conformance profiles may be defined 
 [cols="1,1,^1,^1,^1", options="header"]
 |===
 |Feature +
- group          |Feature            |BASIC      |COMPREHENSIVE  |EXTRA
+ group          |Feature            |BASIC      |BASIC+         |EXTRA
 
 .4+|*Core +
  Semantics*     |RM Basic           |&#10004;   |&#10004;       |          
