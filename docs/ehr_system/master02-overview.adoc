@@ -36,7 +36,7 @@ An openEHR Conformance Certificate consists of a ratings in the Functional and C
 |Category		|Levels			|Description
 
 .3+|*Functional*|BASIC			|Core functionality required for operational deployment.
-                |COMPREHENSIVE  |More comprehensive capabilities useful in operational environments.
+                |BASIC+         |More comprehensive capabilities useful in operational environments.
                 |EXTRAS     	|Extra features required in specific circumstances.
 
 .4+|*Semantics* |CORE			|RM core content types, versioning, OPT support.

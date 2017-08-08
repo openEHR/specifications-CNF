@@ -68,11 +68,10 @@ Each row corresponds to a system capability specified by one or more openEHR spe
 [cols="3h,2,2,2,2,2,2", options="header"]
 |===
 |Feature                     6+^|Access Method
-h|                          2+^h|[EHR REST API]    h|TDD API        h|Other        h|[EHR Extract]     h|[AQL]
+h|                          2+^h|[EHR REST API]    h|TDD API       h|Other         h|EHR Extract       h|AQL
 h|                             h|Commit/ +
                                  Create            h|Retrieve      h|Commit/ +
                                                                      Create        h|Retrieve          h|Export         h|Retrieve
-
 |                            6+^|*Core Semantics*     
 |*RM Core*                      |Canonical XML      |JSON           |TDS XSD        |Canonical XML      |Canonical XML   |AQL ResulSet
 |*Versioning*                   |Canonical XML      |JSON           |TDS XSD        |Canonical XML      |Canonical XML   |AQL ResultSet                             
@@ -101,15 +100,13 @@ h|                             h|Commit/ +
 |===
 
 
-
 == Profiles (KEEP?)
 
 The following table shows how the guideline conformance profiles may be defined with respect to the conformance criteria. These
 
 [cols="1,1,^1,^1,^1", options="header"]
 |===
-|Feature +
- group          |Feature            |BASIC      |BASIC+         |EXTRA
+|Feature group  |Feature            |BASIC      |BASIC+         |EXTRA
 
 .4+|*Core +
  Semantics*     |RM Basic           |&#10004;   |&#10004;       |          
