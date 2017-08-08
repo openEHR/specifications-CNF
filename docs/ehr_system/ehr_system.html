@@ -48,13 +48,13 @@
 </li>
 <li><a href="#_profiles_keep">3.2. Profiles (KEEP?)</a></li>
 <li><a href="#_sections_below_to_be_rewritten">3.3. SECTIONS BELOW TO BE REWRITTEN</a></li>
-<li><a href="#_core">3.4. Core</a></li>
-<li><a href="#_ehr_service">3.5. EHR Service</a></li>
-<li><a href="#_tdd_api">3.6. TDD API</a></li>
-<li><a href="#_aql_support">3.7. AQL Support</a></li>
-<li><a href="#_security_and_privacy">3.8. Security and Privacy</a></li>
-<li><a href="#_rest_apis">3.9. REST APIs</a></li>
-<li><a href="#_demographic_service">3.10. Demographic Service</a></li>
+<li><a href="#_core_semantics">3.4. Core Semantics</a></li>
+<li><a href="#_additional_semantics">3.5. Additional Semantics</a></li>
+<li><a href="#_ehr_service">3.6. EHR Service</a></li>
+<li><a href="#_tdd_api">3.7. TDD API</a></li>
+<li><a href="#_aql_support">3.8. AQL Support</a></li>
+<li><a href="#_security_and_privacy">3.9. Security and Privacy</a></li>
+<li><a href="#_rest_apis">3.10. REST APIs</a></li>
 <li><a href="#_integrated_terminology_service">3.11. Integrated Terminology Service</a></li>
 <li><a href="#_ehr_dump_load">3.12. EHR Dump/Load</a></li>
 <li><a href="#_ehr_synchronisation">3.13. EHR Synchronisation</a></li>
@@ -594,19 +594,19 @@ Detailed Report
 <tbody>
 <tr>
 <th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="http://www2.openehr.org/releases/ITS/latest/ehr_restapi.html">EHR REST API</a><br></p></th>
+<th class="tableblock halign-center valign-top" colspan="2"><p class="tableblock">[EHR REST API]</p></th>
 <th class="tableblock halign-left valign-top"><p class="tableblock">TDD API</p></th>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Other</p></th>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.openehr.org/releases/RM/latest/ehr_extract.html">EHR Extract</a></p></th>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.openehr.org/releases/QUERY/latest/AQL.html">AQL</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">[EHR Extract]</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">[AQL]</p></th>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"></th>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Commit/<br>
-                                        Create</p></th>
+                                 Create</p></th>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Retrieve</p></th>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Commit/<br>
-                                                                                Create</p></th>
+                                                                     Create</p></th>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Retrieve</p></th>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Export</p></th>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Retrieve</p></th>
@@ -616,11 +616,7 @@ Detailed Report
 <td class="tableblock halign-center valign-top" colspan="6"><p class="tableblock"><strong>Core Semantics</strong></p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>RM Core</strong><br>
- <a href="http://www.openehr.org/releases/RM/latest/data_types.html">Data Types IM</a><br>
- <a href="http://www.openehr.org/releases/RM/latest/data_types.html">Data Structures IM</a><br>
- <a href="http://www.openehr.org/releases/RM/latest/common.html">Common IM</a><br>
- <a href="http://www.openehr.org/releases/RM/latest/ehr.html">EHR IM</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>RM Core</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TDS XSD</p></td>
@@ -629,10 +625,7 @@ Detailed Report
 <td class="tableblock halign-left valign-top"><p class="tableblock">AQL ResulSet</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Versioning</strong><br>
- <a href="http://www.openehr.org/releases/RM/latest/common.html#_change_control_package">Common IM -<br>
-  Change Control Package</a><br>
- <a href="http://www.openehr.org/releases/BASE/latest/architecture_overview.html#_versioning_2">Architecture Overview</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Versioning</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TDS XSD</p></td>
@@ -641,9 +634,7 @@ Detailed Report
 <td class="tableblock halign-left valign-top"><p class="tableblock">AQL ResultSet</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Instruction<br>
- State Machine</strong><br>
- <a href="http://www.openehr.org/releases/RM/latest/ehr.html#_the_standard_instruction_state_machine_ism">EHR IM - ISM</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Instruction State Machine</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">??</p></td>
@@ -652,19 +643,17 @@ Detailed Report
 <td class="tableblock halign-left valign-top"><p class="tableblock">AQL ResultSet</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>OPT 1.4</strong><br>
- <a href="https://github.com/openEHR/java-libs/tree/master/oet-parser/src/main/xsd">OET XSDs</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>OPT 1.4</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AQL query<br>
-                                                                                                                                  validity</p></td>
+                                                                                                                          validity</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Archetype<br>
- validation</strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Archetype validation</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Success/fail</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Success/fail</p></td>
@@ -677,9 +666,7 @@ Detailed Report
 <td class="tableblock halign-center valign-top" colspan="6"><p class="tableblock"><strong>Additional Semantics</strong></p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>RM Folders</strong><br>
- <a href="http://www.openehr.org/releases/RM/latest/common.html#_directory_package">Common IM<br>
- - Directory Package</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>RM Folders</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
@@ -688,9 +675,7 @@ Detailed Report
 <td class="tableblock halign-left valign-top"><p class="tableblock">AQL ResultSet</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>RM advanced DTs</strong><br>
- <a href="http://www.openehr.org/releases/RM/latest/data_types.html">Data Types IM<br>
- - various</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>RM advanced DTs</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TDS XSD</p></td>
@@ -699,8 +684,7 @@ Detailed Report
 <td class="tableblock halign-left valign-top"><p class="tableblock">AQL ResultSet</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>RM Demographics</strong><br>
- <a href="http://www.openehr.org/releases/RM/latest/demographic.html">Demographic IM</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>RM Demographics</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TDS XSD</p></td>
@@ -713,9 +697,7 @@ Detailed Report
 <td class="tableblock halign-center valign-top" colspan="6"><p class="tableblock"><strong>Security &amp; Privacy</strong></p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Signing</strong><br>
- <a href="http://www.openehr.org/releases/RM/latest/common.html#_digital_signature">Common IM<br>
-  - Digital Signature</a><br></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Signing</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">??</p></td>
@@ -724,9 +706,7 @@ Detailed Report
 <td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Anonymous EHRs</strong><br>
- <a href="http://www.openehr.org/releases/BASE/latest/architecture_overview.html#_overview_4">EHR/Demographic<br>
- separation</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Anonymous EHRs</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
@@ -740,7 +720,7 @@ Detailed Report
 <td class="tableblock halign-center valign-top" colspan="6"><p class="tableblock"><strong>Options</strong></p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="http://www.openehr.org/releases/CDS/{cds_release}/GDL.html">GDL</a></strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>GDL</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
@@ -749,7 +729,7 @@ Detailed Report
 <td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="http://www.openehr.org/releases/RM/latest/task_planning.html">Task Planning</a></strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Task Planning</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JSON</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
@@ -893,9 +873,9 @@ Detailed Report
 
 </div>
 <div class="sect2">
-<h3 id="_core"><a class="anchor" href="#_core"></a>3.4. Core</h3>
+<h3 id="_core_semantics"><a class="anchor" href="#_core_semantics"></a>3.4. Core Semantics</h3>
 <div class="paragraph">
-<p>Core system features:</p>
+<p>RM Core consists of most of the RM, apart from the elements documented below under 'RM additional'.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -912,20 +892,70 @@ Detailed Report
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPT loading</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RM Core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.openehr.org/releases/RM/latest/data_types.html">Data Types IM</a><br>
+                     <a href="http://www.openehr.org/releases/RM/latest/data_types.html">Data Structures IM</a><br>
+                     <a href="http://www.openehr.org/releases/RM/latest/common.html">Common IM</a><br>
+                     <a href="http://www.openehr.org/releases/RM/latest/ehr.html">EHR IM</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OPT loading</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/openEHR/java-libs/tree/master/oet-parser/src/main/xsd">OET XSDs</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Versioning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.openehr.org/releases/RM/latest/common.html#_change_control_package">Common IM -<br>
+                     Change Control Package</a><br>
+                     <a href="http://www.openehr.org/releases/BASE/latest/architecture_overview.html#_versioning_2">Architecture Overview</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instruction State<br>
+ Machine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.openehr.org/releases/RM/latest/ehr.html#_the_standard_instruction_state_machine_ism">EHR IM - ISM</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_ehr_service"><a class="anchor" href="#_ehr_service"></a>3.5. EHR Service</h3>
+<h3 id="_additional_semantics"><a class="anchor" href="#_additional_semantics"></a>3.5. Additional Semantics</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feature</th>
+<th class="tableblock halign-left valign-top">Specification</th>
+<th class="tableblock halign-left valign-top">Tested by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Folders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.openehr.org/releases/RM/latest/common.html#_directory_package">Common IM - Directory Package</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RM Advanced DTs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.openehr.org/releases/RM/latest/data_types.html">Data Types IM - various</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RM Demograpics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.openehr.org/releases/RM/latest/demographic.html">Demographic IM</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_ehr_service"><a class="anchor" href="#_ehr_service"></a>3.6. EHR Service</h3>
 <div class="paragraph">
 <p>EHR Service API features:</p>
 </div>
@@ -987,7 +1017,7 @@ Detailed Report
 </table>
 </div>
 <div class="sect2">
-<h3 id="_tdd_api"><a class="anchor" href="#_tdd_api"></a>3.6. TDD API</h3>
+<h3 id="_tdd_api"><a class="anchor" href="#_tdd_api"></a>3.7. TDD API</h3>
 <div class="paragraph">
 <p>TDD API features:</p>
 </div>
@@ -1014,7 +1044,7 @@ Detailed Report
 </table>
 </div>
 <div class="sect2">
-<h3 id="_aql_support"><a class="anchor" href="#_aql_support"></a>3.7. AQL Support</h3>
+<h3 id="_aql_support"><a class="anchor" href="#_aql_support"></a>3.8. AQL Support</h3>
 <div class="paragraph">
 <p>AQL features:</p>
 </div>
@@ -1033,15 +1063,15 @@ Detailed Report
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xxx</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AQL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.openehr.org/releases/QUERY/latest/AQL.html">AQL</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_security_and_privacy"><a class="anchor" href="#_security_and_privacy"></a>3.8. Security and Privacy</h3>
+<h3 id="_security_and_privacy"><a class="anchor" href="#_security_and_privacy"></a>3.9. Security and Privacy</h3>
 <div class="paragraph">
 <p>Security and Privacy features:</p>
 </div>
@@ -1061,26 +1091,21 @@ Detailed Report
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Non-identified EHRs</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hashing</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.openehr.org/releases/BASE/latest/architecture_overview.html#_overview_4">EHR/Demographic separation</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Signing</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.openehr.org/releases/RM/latest/common.html#_digital_signature">Common IM - Digital Signature</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_rest_apis"><a class="anchor" href="#_rest_apis"></a>3.9. REST APIs</h3>
+<h3 id="_rest_apis"><a class="anchor" href="#_rest_apis"></a>3.10. REST APIs</h3>
 <div class="paragraph">
-<p>REST API features:</p>
+<p>EHR REST API features:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1098,34 +1123,7 @@ Detailed Report
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xxx</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_demographic_service"><a class="anchor" href="#_demographic_service"></a>3.10. Demographic Service</h3>
-<div class="paragraph">
-<p>Demographic Service API features:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Feature</th>
-<th class="tableblock halign-left valign-top">Specification</th>
-<th class="tableblock halign-left valign-top">Tested by</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xxx</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www2.openehr.org/releases/ITS/latest/ehr_restapi.html">EHR REST API</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -1205,8 +1203,8 @@ Detailed Report
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xxx</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EHR Extract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.openehr.org/releases/RM/latest/ehr_extract.html">EHR Extract</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
