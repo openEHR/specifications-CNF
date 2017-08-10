@@ -6,12 +6,22 @@ Conformance testing is used as the basis of product certification, and has the f
 * _Protection for solution developers_: enables bona fide vendors and other developers to prove the quality of their solutions compared to other offerings claiming conformance
 * _Protection for procurement_: provides a way of ensuring that purchased solutions can be contractually guaranteed to perform in certain ways
 
-Conformance to openEHR specifications is tested in terms of two types of capability of a tested solution:
+== Scope
+
+This specification describes the _conformance points_ for platform (i.e. 'back-end') solutions whose semantics are specified by the openEHR Foundation. Such solutions typically include data services (i.e. persistence & querying) along with various options dependent on the orientation of the product and its maturity; these may include integration capabilities, domain services (e.g. guidelines, planning) and so on.
+
+A conformance point is understood as a _testable functional capability of a system that relates to a business-relevant capability_. For example, conformance points for an EHR persistence service (aka Clinical Data Repository, or CDR) may include 'create EHR', 'update EHR', 'versioning' etc.
+
+One or more methods of testing each conformance point is described in this specification. Conformance testing is based on comparing system behaviour and data to the relevant openEHR published specifications.
+
+Fine-grained system capabilities naturally aggregate in various ways to produce specific coarse-grained business-relevant profiles, such as for a 'minimally viable openEHR system' and so on. In order to provide the customer side with a means of determining what constitute sensible sets of requirements, the specification defines a set of _profiles_.
+
+Two types of conformance points are in scope for this specification, as follows:
 
 * *Functional*: functional capabilities of system in terms of ability to respond through defined interfaces;
 * *Content*: content capabilities of system, in terms of types of content supported in the system.
 
-Conformance claims are determined by testing a system against various openEHR published specifications. This specification defines the details of conformance in each level of each of the above dimensions, and is used with the Conformance Testing Guide to perform conformance testing.
+TODO: describe approach to testing.
 
 This specification does not cover claims to capacity, performance, availability, consistency  or other critical attributes of systems. It is however recommended that supply agreements for operational solutions include criteria for these factors, as relevant to the situation. As a guide, the following criteria should be considered:
 
@@ -27,7 +37,11 @@ This specification does not cover claims to capacity, performance, availability,
 
 It may be possible to develop a band-based rating sytem for capacity. Performance, availability, consistency and related characteristics may be assessed using a framework that takes account of the CAP and / or PACELC theorems.
 
+Specific applications are also outside the scope of this specification, however, it is assumed that in order for solutions to be testable, a minimal portal tool is provided to enable viewing or data and other testable events.
+
 == Conformance Certificate
+
+TODO: rewrite
 
 An openEHR Conformance Certificate consists of a ratings in the Functional and Content dimensions, and a detailed report. The ratings are as follows:
 
@@ -35,8 +49,8 @@ An openEHR Conformance Certificate consists of a ratings in the Functional and C
 |===
 |Category		|Levels			|Description
 
-.3+|*Functional*|BASIC			|Core functionality required for operational deployment.
-                |BASIC+         |More comprehensive capabilities useful in operational environments.
+.3+|*Functional*|CORE			|Core functionality required for operational deployment.
+                |BASIC          |More comprehensive capabilities useful in operational environments.
                 |EXTRAS     	|Extra features required in specific circumstances.
 
 .4+|*Semantics* |CORE			|RM core content types, versioning, OPT support.
@@ -60,8 +74,8 @@ Date:           12 April 2017
     
 Certified conformance
 =====================
-Functional: DEPLOYABLE +ENTERPRISE
-Content:    ADVANCED +EXTRA +PROCESS
+Functional: BASIC+, EXTRAS
+Semantics:  ADVANCED
 
 Detailed Report
 ===============
