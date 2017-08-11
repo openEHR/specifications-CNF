@@ -8,7 +8,7 @@ Conformance testing is used as the basis of product certification, and has the f
 
 == Scope
 
-This specification describes the _conformance points_ for platform (i.e. 'back-end') solutions whose semantics are specified by the openEHR Foundation. Such solutions typically include data services (i.e. persistence & querying) along with various options dependent on the orientation of the product and its maturity; these may include integration capabilities, domain services (e.g. guidelines, planning) and so on.
+This specification describes the _conformance points_ for _openEHR platform systems_ whose semantics are specified by the openEHR Foundation. Such systems typically include data services (i.e. persistence & querying) along with various options dependent on the orientation of the product and its maturity; these may include integration capabilities, domain services (e.g. guidelines, planning) and so on.
 
 A conformance point is understood as a _testable functional capability of a system that relates to a business-relevant capability_. For example, conformance points for an EHR persistence service (aka Clinical Data Repository, or CDR) may include 'create EHR', 'update EHR', 'versioning' etc.
 
@@ -16,14 +16,16 @@ One or more methods of testing each conformance point is described in this speci
 
 Fine-grained system capabilities naturally aggregate in various ways to produce specific coarse-grained business-relevant profiles, such as for a 'minimally viable openEHR system' and so on. In order to provide the customer side with a means of determining what constitute sensible sets of requirements, the specification defines a set of _profiles_.
 
-Two types of conformance points are in scope for this specification, as follows:
+The scope of this specification is limited to the following:
 
-* *Functional*: functional capabilities of system in terms of ability to respond through defined interfaces;
-* *Content*: content capabilities of system, in terms of types of content supported in the system.
+* (specific) functional capabilities of systems;
+* limited non-functional capabilities, including:
+** external data format - canonical XML, canonical JSON
+** Security and Privacy.
 
-TODO: describe approach to testing.
+The system being tested is accessed via various openEHR REST APIs which must be minimally implemented i.e. sufficiently for the test cases to be exercised.
 
-This specification does not cover claims to capacity, performance, availability, consistency  or other critical attributes of systems. It is however recommended that supply agreements for operational solutions include criteria for these factors, as relevant to the situation. As a guide, the following criteria should be considered:
+This specification does not cover claims to other non-functional characteristics such as capacity, performance, availability, or consistency of systems. It is however recommended that supply agreements for operational solutions include criteria for these factors, as relevant to the situation. As a guide, the following criteria should be considered:
 
 * *Capacity*: capacity of system in terms of:
 ** _data volume_: 
@@ -41,20 +43,21 @@ Specific applications are also outside the scope of this specification, however,
 
 == Conformance Certificate
 
-TODO: rewrite
+An openEHR Conformance Certificate consists of a rating in the Functional and Content dimensions, and a detailed report. The ratings are as follows:
 
-An openEHR Conformance Certificate consists of a ratings in the Functional and Content dimensions, and a detailed report. The ratings are as follows:
-
-[cols="1,1,4", options="header"]
+[cols="2,1,4", options="header"]
 |===
-|Category		|Levels			|Description
+|Characteristics            |Levels			|Description
 
-.3+|*Functional*|CORE			|Core functionality required for operational deployment.
-                |BASIC          |More comprehensive capabilities useful in operational environments.
-                |EXTRAS     	|Extra features required in specific circumstances.
+.3+|*Functional*            |CORE			|Core functionality required for operational deployment.
+                            |STANDARD       |More comprehensive capabilities useful in a 'standard' EHR operational environment.
+                            |Extras     	|Extra features required in specific circumstances.
 
-.4+|*Semantics* |CORE			|RM core content types, versioning, OPT support.
-                |ADVANCED		|RM advanced content types.
+.2+|*Security and privacy*  |xxx            |xxx
+                            |xxx            |xx
+                    
+.2+|*External data format*  |Canonical XML  |openEHR Canonical XML, defined by published XSDs
+                            |Canonical JSON |openEHR Canonical XML, defined by published transform of XML
 
 |===
 
@@ -74,17 +77,24 @@ Date:           12 April 2017
     
 Certified conformance
 =====================
-Functional: BASIC+, EXTRAS
-Semantics:  ADVANCED
+Functional:     CORE, Extras
+Sec & Priv:     xxx
+Ext Data Fmt:   XML, JSON
+
 
 Detailed Report
 ===============
-...
---------
+
++===================+===================+====================+==============+
+|Product Component  |Capability         |Conformance point   |Results       |
++===================+===================+====================+==============+
+|EHR persistence    |Versioning         |Contribution commit |PASS          |
++-------------------+-------------------+--------------------+--------------+
+|                   ....                                                    |
++-------------------+-------------------+--------------------+--------------+
+|etc                |etc                |etc                 |etc           |
++-------------------+-------------------+--------------------+--------------+
 
 ------
 
-== Evaluation
-
-Conformance testing is performed by the interaction of the openEHR CNF-test web service with a system under test. A test configuration indicates which conformance claims are to be tested (e.g. functional=BASIC; content=ADVANCED+EXTRA), and appropriate sets of tests are executed. The result is a detailed test report, together with the highest conformance levels reached in the requested categories.
 

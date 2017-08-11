@@ -17,7 +17,7 @@
 //
 :linkcss:
 :keywords: conformance
-:description: openEHR EHR System Conformance Definition
+:description: openEHR EHR Platform Conformance
 :spec_status: DEVELOPMENT
 
 //
@@ -26,7 +26,7 @@
 
 image::http://www.openehr.org/releases/BASE/latest/resources/images/openehr_logo_large.png["openEHR logo",align="center"]
 
-= openEHR EHR System Conformance Definition
+= openEHR EHR Platform Conformance
 
 include::{base_dir}/docs_common/boilerplate/short_front_block.adoc[]
 include::{base_dir}/docs_common/references/openehr_resources.adoc[]
@@ -67,8 +67,9 @@ The work reported in this paper has been funded in by the following organisation
 :sectnums:
 include::master01-preface.adoc[leveloffset=+1]
 include::master02-overview.adoc[leveloffset=+1]
-include::master03-schedule.adoc[leveloffset=+1]
-include::master04-testsuites.adoc[leveloffset=+1]
+include::master03-environment.adoc[leveloffset=+1]
+include::master04-schedule.adoc[leveloffset=+1]
+include::master05-testsuites.adoc[leveloffset=+1]
 
 //
 // --------------------------------------------- REFERENCES -----------------------------------------------
