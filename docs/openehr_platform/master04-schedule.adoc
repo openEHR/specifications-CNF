@@ -6,7 +6,7 @@ The following table shows the schedule according to which functional conformance
 
 === Understanding the conformance tables
 
-[cols="2,2,2,2,3", options="header"]
+[cols="2,2,2,2,2", options="header"]
 |===
 |Product Component
                 |Capability             |Conformance Point          |Access method             |Test script
@@ -30,11 +30,15 @@ The following table shows the schedule according to which functional conformance
 |Product Component
                 |Capability         |Conformance Point      |Access method             |Test script
 
-.14+|*EHR +
+.26+|*EHR +
     Persistence*
-                |*OPT 1.4*          |Load OPT 1.4 files     |REST API or +
-                                                             product-specific           |Load OPTs; list OPTs
-             .6+|*EHR data*  +
+             .3+|*OPT 1.4*          |Load templates         |MODELS API                 |API:upload opt14 template * N; +
+                                                                                         API:list opt14 templates
+                                    |Get template by id     |MODELS API                 |API:get opt14 template by id
+
+                                    |Get archetypes used    |MODELS API                 |API:
+
+            .10+|*EHR data*  +
                  +
                  (specs: +
                  {openehr_rm_ehr}[EHR IM] +
@@ -42,60 +46,104 @@ The following table shows the schedule according to which functional conformance
                  {openehr_rm_data_structures}[Data Structures IM] +
                  {openehr_rm_data_types}[Data Types IM] +
                  {openehr_rm_support}[Support IM])
-                                    |Create EHR             |EHR REST API               |API create call; +
-                                                                                         API retrieve by Id call
-                                    |EHR meta-data +
-                                     & Status               |EHR REST API or +
-                                                             generic viewer             |xxx
-                                    |Update EHR +
-                                     (CONTRIBUTIONs; +
-                                      data based on +
-                                      loaded OPTs)          |EHR REST API               |API commit call; +
-                                                                                         API retrieve call; +
+                                    |Create EHR             |EHR API                    |API:create ehr; +
+                                                                                         API:get ehr
+
+                                    |Get EHR status         |EHR_STATUS API             |API:get ehr_status
+
+                                    |Update EHR status      |EHR_STATUS API             |API:update ehr_status; +
+                                                                                         API:get ehr_status; +
                                                                                          regression diff
-                                    |Retrieve + 
-                                     COMPOSITIONs           |EHR REST API               |API commit call; +
-                                                                                         API retrieve call; +
-                                                                                         regression diff
-                                    |Create directory +
-                                     (FOLDERs)              |EHR REST API               |API directory create call; +
-                                                                                         API retrieve call; +
-                                                                                         regression diff
-                                    |Update directory +
-                                     (FOLDERs)              |EHR REST API               |API directory update call; +
-                                                                                         API retrieve call; +
+                                     
+                                    |Create COMPOSITIONs    |CONTRIBUTION API           |API:create contribution; +
+                                                                                         API:get contribution; +
                                                                                          regression diff
 
-                |*Versioning* +
+                                    |Update COMPOSITIONs    |CONTRIBUTION API           |API commit call; +
+                                                                                         API retrieve call; +
+                                                                                         regression diff
+                                    |Create + 
+                                     COMPOSITION            |COMPOSITION API            |API:create composition; +
+                                                                                         API:get composition; +
+                                                                                         regression diff
+                                    |Retrieve + 
+                                     COMPOSITION            |COMPOSITION API            |API:update composition; +
+                                                                                         API:get composition; +
+                                                                                         regression diff
+                                    |Update + 
+                                     COMPOSITION            |COMPOSITION API            |API:update composition; +
+                                                                                         API:get composition; +
+                                                                                         regression diff
+                                    |Create directory +
+                                     (FOLDERs)              |DIRECTORY API              |API:create directory; +
+                                                                                         API:get directory; +
+                                                                                         regression diff
+                                    |Update directory +
+                                     (FOLDERs)              |DIRECTORY API              |API:update directory; +
+                                                                                         API:get directory; +
+                                                                                         regression diff
+
+             .7+|*Versioning* +
                  +
                  (specs: +
                  {openehr_rm_common}#_change_control_package[Versioning])
-                                    |Contribution commit    |EHR REST API or +
-                                                             generic viewer             |xxx
+                                    |Get EHR_STATUS version |EHR_STATUS API             |API:get ehr_status version; +
+                                                                                         API:update ehr_status; +
+                                                                                         API:get ehr_status version (prev); +
+                                                                                         regression diff
+                                                                                         
+                                    |Get EHR_STATUS version +
+                                     at time                |EHR_STATUS API             |API:get versioned_ehr_status; +
+                                                                                         API:get ehr_status version at time; +
+                                                                                         regression diff
+
+                                    |Get EHR_STATUS version +
+                                     by id                  |EHR_STATUS API             |API:get versioned_ehr_status; +
+                                                                                         API:get ehr_status version by uid; +
+                                                                                         regression diff
+
+                                    |Get COMPOSITION version|COMPOSITION API            |API:get composition version; +
+                                                                                         API:update composition; +
+                                                                                         API:get composition version (prev); +
+                                                                                         regression diff
+
+                                    |Get COMPOSITION version +
+                                     at time                |COMPOSITION API            |API:get versioned_composition; +
+                                                                                         API:get composition version at time; +
+                                                                                         regression diff
+
+                                    |Get COMPOSITION version +
+                                     by id                  |COMPOSITION API            |API:get versioned_composition; +
+                                                                                         API:get composition version by uid; +
+                                                                                         regression diff
+
+                                    |List CONTRIBUTIONs     |EHR API                    |API:update xxx * N; +
+                                                                                         API:list contributions
 
              .3+|*Archetype +
-                 validation*         |Accept valid content   |EHR REST API               |xxx
-                                    |Reject invalid archetype |EHR REST API             |xxx
-                                    |Reject invalid content |EHR REST API               |xxx
+                 validation*        |Accept valid content   |EHR API                    |xxx
+                                    |Reject invalid archetype |EHR API                  |xxx
+                                    |Reject invalid content |EHR API                    |xxx
 
              .3+|*Logging* +
                  +
                  (specs: +
                  openEHR IHE ATNA Profile)
-                                    |Log creates            |EHR REST API, +
-                                                             System Log                 |API create call; +
+                                    |Log creates            |EHR API, +
+                                                             SYSLOG API / +
+                                                             sys log viewer             |API create call; +
                                                                                          check sys log
-                                    |Log updates            |EHR REST API, +
-                                                             System Log                 |API commit call; +
+                                    |Log updates            |EHR API, +
+                                                             SYSLOG API / +
+                                                             sys log viewer             |API commit call; +
                                                                                          check sys log
-                                    |Log reads              |EHR REST API, +
-                                                             System Log                 |API retrieve call; +
+                                    |Log reads              |EHR API, +
+                                                             SYSLOG API / +
+                                                             sys log viewer             |API retrieve call; +
                                                                                          check sys log
                                             
-.12+|*Demographic +
+.11+|*Demographic +
  Persistence*
-                |*OPT 1.4*            |Load OPTs              |REST API or +
-                                                             product-specific           |xxx
              .4+|*Demographic data*  +
                  +
                  (specs: +
@@ -104,38 +152,43 @@ The following table shows the schedule according to which functional conformance
                  {openehr_rm_data_structures}[Data Structures IM] +
                  {openehr_rm_data_types}[Data Types IM] +
                  {openehr_rm_support}[Support IM])
-                                    |Create Party           |Demographic REST API       |xxx
-                                    |Update PARTY           |Demographic REST API       |xxx
-                                    |Retrieve PARTY         |Demographic REST API       |xxx
+                                    |Create Party           |Demographic API            |xxx
+                                    |Update PARTY           |Demographic API            |xxx
+                                    |Retrieve PARTY         |Demographic API            |xxx
                                     |Create/Retrieve +
-                                     PARTY group            |Demographic REST API       |xxx
+                                     PARTY group            |Demographic API            |xxx
 
                 |*Versioning* +
                  +
                  (specs: +
                  {openehr_rm_common}#_change_control_package[Versioning])
-                                    |Contribution commit    |Demographic REST API or +
+                                    |Contribution commit    |Demographic API or +
                                                              generic viewer             |xxx
 
              .3+|*Archetype +
-                 validation*        |Accept valid content   |Demographic REST API       |API create call; +
+                 validation*        |Accept valid content   |Demographic API            |API create call; +
                                                                                          check sys log
-                                    |Reject invalid archetype |Demographic REST API     |API create call; +
+                                    |Reject invalid +
+                                    archetype               |Demographic API            |API create call; +
                                                                                          check sys log
-                                    |Reject invalid content |Demographic REST API       |API create call; +
+
+                                    |Reject invalid content |Demographic API            |API create call; +
                                                                                          check sys log
              .3+|*Logging*  +
                  +
                  (specs: +
                  openEHR IHE ATNA Profile)
-                                    |Log creates            |Demographic REST API, +
-                                                             System Log                 |API create call; +
+                                    |Log creates            |Demographic API, +
+                                                             SYSLOG API / +
+                                                             sys log viewer             |API create call; +
                                                                                          check sys log
-                                    |Log updates            |Demographic REST API, +
-                                                             System Log                 |API commit call; +
+                                    |Log updates            |Demographic API, +
+                                                             SYSLOG API / +
+                                                             sys log viewer             |API commit call; +
                                                                                          check sys log
-                                    |Log reads              |Demographic REST API, +
-                                                             System Log                 |API retrieve call; +
+                                    |Log reads              |Demographic API, +
+                                                             SYSLOG API / +
+                                                             sys log viewer             |API retrieve call; +
                                                                                          check sys log
 
 |===
@@ -162,18 +215,18 @@ TODO: In theory we could include Integration Entries ({openehr_rm_integration}[I
                  {openehr_rm_data_types}[Data Types IM] +
                  {openehr_rm_support}[Support IM])
                                         |Export openEHR Extract +
-                                         1 patient              |Extract REST API           |???
+                                         1 patient              |EHR_EXTRACT API           |???
                                         |Export openEHR Extract +
-                                         w/ versions            |Extract REST API           |???
+                                         w/ versions            |EHR_EXTRACT API           |???
                                         |Export openEHR Extract +
-                                         multiple patients      |Extract REST API           |???
+                                         multiple patients      |EHR_EXTRACT API           |???
                                         |Export generic Extract +
-                                         1 patient              |Extract REST API           |???
+                                         1 patient              |EHR_EXTRACT API           |???
                                         |Export whole +
-                                         patient record         |Extract REST API           |???
+                                         patient record         |EHR_EXTRACT API           |???
                  
                 |*Template Data +
-                 Schema (TDS)*          |TDD commit             |TDD REST API               |???
+                 Schema (TDS)*          |TDD commit             |TDD API                    |???
                  
 |===
 
@@ -190,35 +243,47 @@ TODO: In theory we could include Integration Entries ({openehr_rm_integration}[I
  +
  (specs: +
  {openehr_query_aql}[AQL specification])
-                |*AQL basic*        |Patient-centric        |AQL REST API           |Commit content; +
+                |*AQL basic*        |Patient-centric        |AQL API                |Commit content; +
                                                                                      execute queries +
                                                                                      regression.
-             .2+|*AQL advanced*     |Patient-centric        |AQL REST API           |Commit content; +
+                                                                                     
+             .2+|*AQL advanced*     |Patient-centric        |AQL API                |Commit content; +
                                                                                      execute queries +
                                                                                      regression.
-                                    |Population query       |AQL REST API           |Commit content; +
+                                                                                     
+                                    |Population query       |AQL API                |Commit content; +
                                                                                      execute queries +
                                                                                      regression.
              .2+|*AQL + + 
-                 terminology*       |Patient-centric        |AQL REST API           |Commit content; +
+                 terminology*       |Patient-centric        |AQL API                |Commit content; +
                                                                                      execute queries +
                                                                                      regression.
-                                    |Population query       |AQL REST API           |Commit content; +
+                                                                                     
+                                    |Population query       |AQL API                |Commit content; +
                                                                                      execute queries +
                                                                                      regression.
-.3+|*Data +
-    Management* |*Bulk EHR Dump*    |Dump all EHRs          |EHR REST API           |API commit calls; + 
+                                                                                     
+.6+|*CDR*       |*List transations* |List CONTRIBUTIONs +
+                                     since time             |CDR API                |API:
+             .2+|*transaction +
+                 statistics*        |Get CONTRIBUTION +
+                                     count since time       |CDR API                |API:
+
+                                    |Get COMPOSITIONs +
+                                     add/mod/del +
+                                     since time             |CDR API                |API:
+
+                |*Bulk EHR Export*  |Export all EHRs        |CDR API                |API commit calls; + 
                                                                                      API dump call; +
                                                                                      file test / diff
-                |*Bulk EHR Load*    |Load complete file     |EHR REST API, +
-                                                             generic viewer         |API load call; +
+                                                                                     
+                |*Bulk EHR Load*    |Load complete file     |CDR API                |API load call; +
                                                                                      API retrieve calls
                 |*Archive EHRs*     |Archive EHRs by +
-                                     identifier             |EHR REST API           |API archive call; +
+                                     identifier             |CDR API                |API archive call; +
                                                                                      review archive;
                                                                                      confirm status on +
                                                                                      archived EHRs
-                
 |===
 
 === APIs
@@ -226,15 +291,32 @@ TODO: In theory we could include Integration Entries ({openehr_rm_integration}[I
 [cols="2,2,2,2,2", options="header"]
 |===
 |Product Component
-                |Capability         |Conformance +
-                                     point                  |Access Method          |Test Script
+                |Capability             |Conformance +
+                                         point                  |Access Method          |Test Script
                 
-.3+|*REST APIs* |*EHR REST API*     |???                    |EHR REST API           |Exercise all functions +
-                                                                                     & arguments
-                |*AQL REST API*     |???                    |AQL REST API           |Exercise functions +
-                                                                                     & arguments
-                |*TDD REST API*     |???                    |TDD REST API           |Exercise functions +
-                                                                                     & arguments
+.10+|*APIs*     |*MODELS REST API*      |???                    |MODELS API             |xxx
+                |*EHR REST API*         |???                    |EHR API                |Exercise all functions +
+                                                                                         & arguments
+                |*EHR_STATUS +
+                 REST API*              |???                    |EHR_STATUS API         |Exercise all functions +
+                                                                                         & arguments
+                |*CONTRIBUTION +
+                 REST API*              |???                    |CONTRIBUTION API       |Exercise all functions +
+                                                                                         & arguments
+                |*COMPOSITION +
+                 REST API*              |???                    |COMPOSITION API        |Exercise all functions +
+                                                                                         & arguments
+                |*DIRECTORY +
+                 REST API*              |???                    |DIRECTORY API          |Exercise all functions +
+                                                                                         & arguments
+                |*QUERY REST API*       |???                    |QUERY API              |Exercise all functions +
+                                                                                         & arguments
+                |*CDS REST API*         |???                    |CDS API                |Exercise functions +
+                                                                                         & arguments
+                |*CDR REST API*         |???                    |CDR API                |Exercise functions +
+                                                                                         & arguments
+                |*TDD REST API*         |???                    |TDD API                |Exercise functions +
+                                                                                         & arguments
 |===
 
 === Non-Functional Characteristics
@@ -247,23 +329,23 @@ TODO: In theory we could include Integration Entries ({openehr_rm_integration}[I
 
 .3+|*Security & +
  Privacy*
-                |*Info Consent*  +
-                 +
-                 (specs: +
-                 ???)
-                                    |???                    |xxx REST API           |Commit/Retrieve +
-                                                                                     data regression
                 |*Signing*  +
                  +
                  (specs: +
                  {openehr_rm_common}#_digital_signature[Digital Signature])
-                                    |???                    |xxx REST API           |Commit/Retrieve +
+                                    |???                    |xxx API                |Commit/Retrieve +
                                                                                      data regression
                 |*Anonymous EHRs*  +
                  +
                  (specs: +
                  {openehr_overview}#_overview_4[EHR/Demographic separation])
-                                    |???                    |ExxxHR REST API        |Commit/query
+                                    |???                    |EHR API                |Commit/query
+                |*Info Consent*  +
+                 +
+                 (specs: +
+                 ???)
+                                    |???                    |xxx API                |Commit/Retrieve +
+                                                                                     data regression
 |===
 
 === Tools
@@ -271,52 +353,4 @@ TODO: In theory we could include Integration Entries ({openehr_rm_integration}[I
 Tools supplied with an openEHR EHR solution should include:
 
 * generic EHR viewer - a generic web portal for viewing EHR data in generic form.
-
-
-== Profiles
-
-The following table shows how the guideline conformance profiles may be defined with respect to the conformance criteria. These
-
-[cols="1,1,^1,^1,^1", options="header"]
-|===
-|Product Component
-                |Capability         |CORE       |STANDARD       |EXTRA
-
-.5+|*EHR +
- Persistence*   |EHR data           |&#10004;   |&#10004;       |          
-                |Versioning        ^|&#10004;   |&#10004;       |          
-                |Archetype +
-                 validation        ^|&#10004;   |&#10004;       |          
-                |OPT 1.4           ^|&#10004;   |&#10004;       |
-                |Logging           ^|           |&#10004;       |
-
-.5+|*Demographic +
- Persistence*   |Demographic data   |           |               |+         
-                |Versioning        ^|           |               |+          
-                |Archetype +
-                 validation        ^|           |               |+         
-                |OPT 1.4           ^|           |               |+
-                |Logging           ^|           |               |+
-
-.2+|*Messaging*
-                |EHR Extract        |           |               |+         
-                |TDS               ^|           |               |+          
-
-.3+|*Querying*  |AQL basic          |           |&#10004;       |
-                |AQL advanced      ^|           |               |+
-                |AQL + terminology ^|           |               |+
-
-.3+|*APIs*      |EHR REST API       |&#10004;   |&#10004;       |
-                |AQL REST API      ^|           |&#10004;       |
-                |TDD REST API      ^|           |               |+
-
-.2+|*Application +
- services*      |GDL               ^|           |               |+
-                |Task Planning     ^|           |               |+
-
-.2+|*Security & +
- Privacy*       |Signing            |           |               |+
-                |Anonymous EHRs    ^|           |               |+
-                
-|===
 

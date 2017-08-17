@@ -1,6 +1,6 @@
 = Evaluation Environment
 
-Conformance evaluation relies on some normative idea of systems that may be tested against a set of specifications. This section describes the assumptions that are made about systems that may be reasonably tested according to this specification.
+Conformance evaluation relies on some normative idea of systems that may be tested against a set of specifications on which they claim to be based. This section describes the assumptions that are made about systems that may be reasonably tested according to this conformance specification.
 
 == System Under Test (SUT)
 
@@ -13,7 +13,7 @@ The openEHR REST APIs handle data in two ways: canonical openEHR XML, based on p
 [.tbd]
 ISSUE: where defined, details?
 
-A further assumption about an openEHR platform is that there may be a IHE ATNA-based System Log service, and if it exists, it is accessible in the test environment via an appropriate interface.
+A further assumption about an openEHR platform is that it writes to an IHE ATNA-based System Log service, which may be external or part of the product, and if it exists, it is accessible in the test environment via an appropriate interface.
 
 Lastly it is assumed that there may be a _generic data viewer_ available, i.e. a web application that be used in a normal brower that enables the data and other state in the principal services to be viewed in a generic way.
 

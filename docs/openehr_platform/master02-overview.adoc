@@ -10,7 +10,7 @@ Conformance testing is used as the basis of product certification, and has the f
 
 This specification describes the _conformance points_ for _openEHR platform systems_ whose semantics are specified by the openEHR Foundation. Such systems typically include data services (i.e. persistence & querying) along with various options dependent on the orientation of the product and its maturity; these may include integration capabilities, domain services (e.g. guidelines, planning) and so on.
 
-A conformance point is understood as a _testable functional capability of a system that relates to a business-relevant capability_. For example, conformance points for an EHR persistence service (aka Clinical Data Repository, or CDR) may include 'create EHR', 'update EHR', 'versioning' etc.
+A conformance point is understood as a _testable capability of a system that relates to a business-relevant capability_. For example, conformance points for an EHR persistence service (aka Clinical Data Repository, or CDR) may include 'create EHR', 'update EHR', 'versioning' etc.
 
 One or more methods of testing each conformance point is described in this specification. Conformance testing is based on comparing system behaviour and data to the relevant openEHR published specifications.
 
@@ -20,7 +20,7 @@ The scope of this specification is limited to the following:
 
 * (specific) functional capabilities of systems;
 * limited non-functional capabilities, including:
-** external data format - canonical XML, canonical JSON
+** external data format used by exposed APIs;
 ** Security and Privacy.
 
 The system being tested is accessed via various openEHR REST APIs which must be minimally implemented i.e. sufficiently for the test cases to be exercised.
@@ -39,7 +39,7 @@ This specification does not cover claims to other non-functional characteristics
 
 It may be possible to develop a band-based rating sytem for capacity. Performance, availability, consistency and related characteristics may be assessed using a framework that takes account of the CAP and / or PACELC theorems.
 
-Specific applications are also outside the scope of this specification, however, it is assumed that in order for solutions to be testable, a minimal portal tool is provided to enable viewing or data and other testable events.
+Specific applications are also outside the scope of this specification, however, it is assumed that in order for solutions to be testable, a minimal generic viewing tool is provided to enable viewing or data and other testable events.
 
 == Conformance Certificate
 
@@ -85,15 +85,20 @@ Ext Data Fmt:   XML, JSON
 Detailed Report
 ===============
 
-+===================+===================+====================+==============+
-|Product Component  |Capability         |Conformance point   |Results       |
-+===================+===================+====================+==============+
-|EHR persistence    |Versioning         |Contribution commit |PASS          |
-+-------------------+-------------------+--------------------+--------------+
-|                   ....                                                    |
-+-------------------+-------------------+--------------------+--------------+
-|etc                |etc                |etc                 |etc           |
-+-------------------+-------------------+--------------------+--------------+
++================+===================+================+====================+==============+===========+
+|SUT Component   |Product Component  |Capability      |Conformance point   |Tests         |           |
++================+===================+================+====================+==============+===========+
+|ACME CDR        |EHR persistence    |Versioning      |Contribution commit |EHR-VER-01    |pass       |
+|                |                   |                |new                 |EHR-VER-02    |pass       |
+|                |                   |                |                    |EHR-VER-03    |FAIL       |
+|                |                   |                +--------------------+--------------+-----------+
+|                |                   |                |Contribution commit |EHR-VER-09    |pass       |
+|                |                   |                |changed             |EHR-VER-11    |pass       |
++----------------+-------------------+----------------+--------------------+--------------+-----------+
+|                                         ....                                            |           |
++----------------+-------------------+----------------+--------------------+--------------+-----------+
+|etc             |etc                |etc             |etc                 |etc           |           |
++----------------+-------------------+----------------+--------------------+--------------+-----------+
 
 ------
 

@@ -6,7 +6,12 @@
 
 4+^h|*R E L E A S E{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}1.?.?*
 
-|[[latest_issue]]0.6.1
+|[[latest_issue]]0.6.2
+|Updates to REST API refs from SEC calls 16/17 Aug 2017.
+|T Beale
+|[[latest_issue_date]]17 Aug 2017
+
+|0.6.1
 |Major rework from SEC call 9 Aug 2017.
 |C Chevalley, +
  H Frankel, +
@@ -14,7 +19,7 @@
  B Lah, +
  B Naess, +
  T Beale
-|[[latest_issue_date]]11 Aug 2017
+|11 Aug 2017
 
 |0.5.0
 |{openehr_jira}/SPECCNF-1[SPECCNF-1]: Initial Writing.

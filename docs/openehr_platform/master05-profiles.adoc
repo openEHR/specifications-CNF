@@ -1,0 +1,84 @@
+== Profiles
+
+=== Functional
+
+[cols="1,1,^1,^1,^1", options="header"]
+|===
+|Product Component
+                |Capability             |CORE       |STANDARD       |OPTIONS
+
+.5+|*EHR +
+ Persistence*   |OPT 1.4                |&#10004;   |&#10004;       |
+                |EHR data              ^|&#10004;   |&#10004;       |          
+                |Versioning            ^|&#10004;   |&#10004;       |          
+                |Archetype +
+                 validation            ^|&#10004;   |&#10004;       |          
+                |Logging               ^|           |&#10004;       |
+
+.4+|*Demographic +
+ Persistence*   |Demographic data       |           |               |&#10004;
+                |Versioning            ^|           |               |&#10004;
+                |Archetype +
+                 validation            ^|           |               |&#10004;
+                |Logging               ^|           |               |&#10004;
+
+.2+|*Messaging*
+                |EHR Extract            |           |               |&#10004;
+                |TDS                   ^|           |               |&#10004;
+
+.3+|*Querying*  |AQL basic              |           |&#10004;       |
+                |AQL advanced          ^|           |               |&#10004;
+                |AQL + terminology     ^|           |               |&#10004;
+
+.5+|*CDR*       |List transactions      |           |               |&#10004;
+                |Transaction +
+                 statistics            ^|           |               |&#10004;
+                |Bulk EHR export       ^|           |               |&#10004;
+                |Bulk EHR load         ^|           |               |&#10004;
+                |Archive EHRs          ^|           |               |&#10004;
+
+.10+|*APIs*     |MODELS REST API        |&#10004;   |&#10004;       |
+                |EHR REST API          ^|&#10004;   |&#10004;       |
+                |EHR_STATUS +
+                 REST API              ^|&#10004;   |&#10004;       |
+                |CONTRIBUTION +
+                 REST API              ^|&#10004;   |&#10004;       |
+                |COMPOSITION +
+                 REST API              ^|&#10004;   |&#10004;       |
+                |DIRECTORY +
+                 REST API              ^|           |&#10004;       |
+                |QUERY REST API        ^|           |&#10004;       |
+                |CDS REST API          ^|           |               |&#10004;
+                |CDR REST API          ^|           |               |&#10004;
+                |TDD REST API          ^|           |               |&#10004;
+
+.2+|*Application +
+ services*      |GDL                    |           |               |&#10004;
+                |Task Planning         ^|           |               |&#10004;
+                
+|===
+
+=== Non-Functional
+
+[cols="1,1,^1,^1,^1", options="header"]
+|===
+|Product Attribute
+                |Capability         |CORE       |STANDARD       |EXTRA
+
+.3+|*Security & +
+ Privacy*       |Signing            |           |&#10004;       |
+                |Anonymous EHRs    ^|&#10004;   |&#10004;       |
+                |Info Consent      ^|           |               |&#10004;
+                
+|===
+
+=== Other Non-Functional
+
+[cols="1,1", options="header"]
+|===
+|Product Attribute                  |Values
+
+|*External Data Format*             |XML, JSON
+                
+|===
+
