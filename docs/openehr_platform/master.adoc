@@ -66,11 +66,13 @@ The work reported in this paper has been funded in by the following organisation
 :sectanchors:
 :sectnums:
 include::master01-preface.adoc[leveloffset=+1]
-include::master02-overview.adoc[leveloffset=+1]
-include::master03-environment.adoc[leveloffset=+1]
-include::master04-schedule.adoc[leveloffset=+1]
-include::master05-profiles.adoc[leveloffset=+1]
-//include::master06-testsuites.adoc[leveloffset=+1]
+include::master02-glossary.adoc[leveloffset=+1]
+include::master03-overview.adoc[leveloffset=+1]
+include::master04-certificate.adoc[leveloffset=+1]
+include::master05-environment.adoc[leveloffset=+1]
+include::master06-schedule.adoc[leveloffset=+1]
+include::master07-profiles.adoc[leveloffset=+1]
+//include::master08-testsuites.adoc[leveloffset=+1]
 
 //
 // --------------------------------------------- REFERENCES -----------------------------------------------

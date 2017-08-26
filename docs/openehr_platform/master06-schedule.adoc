@@ -126,13 +126,17 @@ The following table shows the schedule according to which functional conformance
 
              .3+|*Archetype +
                  validation*        |Accept valid content   |EHR API                    |xxx
-                                    |Reject invalid archetype |EHR API                  |xxx
-                                    |Reject invalid content |EHR API                    |xxx
+                 
+                                    |Reject invalid archetype
+                                                            |EHR API                    |xxx
+                                     
+                                    |Reject invalid content
+                                                            |EHR API                    |xxx
 
              .3+|*Logging* +
                  +
                  (specs: +
-                 openEHR IHE ATNA Profile)
+                 XXXX)
                                     |Log creates            |EHR API, +
                                                              SYSLOG API / +
                                                              sys log viewer             |API create call; +
@@ -146,9 +150,9 @@ The following table shows the schedule according to which functional conformance
                                                              sys log viewer             |API retrieve call; +
                                                                                          check sys log
                                             
-.11+|*Demographic +
+.10+|*Demographic +
  Persistence*
-             .4+|*Demographic data*  +
+             .3+|*Demographic data*  +
                  +
                  (specs: +
                  {openehr_rm_demographic}[Demographic IM] +
@@ -156,18 +160,24 @@ The following table shows the schedule according to which functional conformance
                  {openehr_rm_data_structures}[Data Structures IM] +
                  {openehr_rm_data_types}[Data Types IM] +
                  {openehr_rm_support}[Support IM])
-                                    |Create Party           |Demographic API            |xxx
-                                    |Update PARTY           |Demographic API            |xxx
+                                    |Create Party           |Demographic API            |API:create party; +
+                                                                                         API:retrieve party; +
+                                                                                         regression diff
+                                                                                         
+                                    |Update PARTY           |Demographic API            |API:create party; +
+                                                                                         API:retrieve party; +
+                                                                                         API:update party; +
+                                                                                         API:retrieve party; +
+                                                                                         regression diff
+
                                     |Retrieve PARTY         |Demographic API            |xxx
-                                    |Create/Retrieve +
-                                     PARTY group            |Demographic API            |xxx
 
                 |*Versioning* +
                  +
                  (specs: +
                  {openehr_rm_common}#_change_control_package[Versioning])
-                                    |Contribution commit    |Demographic API or +
-                                                             generic viewer             |xxx
+                                    |Commit Party group +
+                                     change set             |Demographic API            |xxx
 
              .3+|*Archetype +
                  validation*        |Accept valid content   |Demographic API            |API create call; +
@@ -181,7 +191,7 @@ The following table shows the schedule according to which functional conformance
              .3+|*Logging*  +
                  +
                  (specs: +
-                 openEHR IHE ATNA Profile)
+                 XXXX)
                                     |Log creates            |Demographic API, +
                                                              SYSLOG API / +
                                                              sys log viewer             |API create call; +
@@ -221,12 +231,16 @@ TODO: In theory we could include Integration Entries ({openehr_rm_integration}[I
                  {openehr_rm_support}[Support IM])
                                         |Export openEHR Extract +
                                          1 patient              |EHR_EXTRACT API           |???
+                                         
                                         |Export openEHR Extract +
                                          w/ versions            |EHR_EXTRACT API           |???
+                                         
                                         |Export openEHR Extract +
                                          multiple patients      |EHR_EXTRACT API           |???
+                                         
                                         |Export generic Extract +
                                          1 patient              |EHR_EXTRACT API           |???
+                                         
                                         |Export whole +
                                          patient record         |EHR_EXTRACT API           |???
                  
@@ -288,7 +302,7 @@ TODO: In theory we could include Integration Entries ({openehr_rm_integration}[I
                                                                                      
 .8+|*ADMIN*     |*List transactions*|List CONTRIBUTIONs +
                                      since time             |ADMIN API              |API:
-             .2+|*transaction +
+             .2+|*Transaction +
                  statistics*        |Get CONTRIBUTION +
                                      count since time       |ADMIN API              |API:
 
@@ -296,7 +310,8 @@ TODO: In theory we could include Integration Entries ({openehr_rm_integration}[I
                                      add/mod/del +
                                      since time             |ADMIN API              |API:
 
-                |*Bulk EHR Export*  |Export all EHRs        |ADMIN API              |API:commit x N; + 
+                |*Bulk EHR Export*  |Export all EHRs        |ADMIN API              |EHR:create EHR x N; + ;
+                                                                                     EHR:commit composition x N; + 
                                                                                      API:export; +
                                                                                      file test / diff
                                                                                      
@@ -310,7 +325,8 @@ TODO: In theory we could include Integration Entries ({openehr_rm_integration}[I
                 |*Physical EHR +
 				 delete*     		|Delete EHR by +
                                      identifier             |ADMIN API              |API:delete_ehr
-                |*Physical Demographics +
+                |*Physical +
+                 Demographics +
 				 delete*     		|Delete PARTY by +
                                      identifier             |ADMIN API              |API:delete_party
 |===
@@ -321,22 +337,29 @@ TODO: In theory we could include Integration Entries ({openehr_rm_integration}[I
 |===
 |Product +
  Component
-                |Capability             |Conformance +
-                                         point                  |Access Method          |Test Script
+                |Capability        |Conformance +
+                                    point                   |Access Method          |Test Script
                 
-.7+|*APIs*      |*DEFINITIONS REST API* |???                    |DEFINITIONS API        |xxx
-                |*EHR REST API*         |???                    |EHR API                |Exercise all functions +
-                                                                                         & arguments
-                |*DEMOGRAPHIC REST API* |???                    |EHR API                |Exercise all functions +
-                                                                                         & arguments
-                |*QUERY REST API*       |???                    |QUERY API              |Exercise all functions +
-                                                                                         & arguments
-                |*CDS REST API*         |???                    |CDS API                |Exercise functions +
-                                                                                         & arguments
-                |*ADMIN REST API*       |???                    |ADMIN API              |Exercise functions +
-                                                                                         & arguments
-                |*TDD REST API*         |???                    |TDD API                |Exercise functions +
-                                                                                         & arguments
+.7+|*REST APIs* |*DEFINITIONS API* |???                     |DEFINITIONS API        |Exercise all functions +
+                                                                                     & arguments
+
+                |*EHR API*         |???                     |EHR API                |Exercise all functions +
+                                                                                     & arguments
+                                                                                     
+                |*DEMOGRAPHIC API* |???                     |DEMOGRAPHIC API        |Exercise all functions +
+                                                                                     & arguments
+                                                                                     
+                |*QUERY API*       |???                     |QUERY API              |Exercise all functions +
+                                                                                     & arguments
+                                                                                         
+                |*CDS API*         |???                     |CDS API                |Exercise functions +
+                                                                                     & arguments
+                                                                                         
+                |*ADMIN API*       |???                     |ADMIN API              |Exercise functions +
+                                                                                     & arguments
+                                                                                         
+                |*TDD API*         |???                     |TDD API                |Exercise functions +
+                                                                                     & arguments
 |===
 
 === Non-Functional Characteristics

@@ -1,0 +1,62 @@
+= Conformance Certificate
+
+An openEHR Conformance Certificate consists of a rating in the Functional and Content dimensions, and a detailed report. The ratings are as follows:
+
+[cols="2,1,4", options="header"]
+|===
+|Characteristics            |Levels			|Description
+
+.3+|*Functional*            |CORE			|Core functionality required for operational deployment.
+                            |STANDARD       |More comprehensive capabilities useful in a 'standard' EHR operational environment.
+                            |OPTIONS     	|Optional features required in specific circumstances.
+
+.2+|*Security and privacy*  |xxx            |xxx
+                            |xxx            |xx
+                    
+.2+|*External data format*  |Canonical XML  |openEHR Canonical XML, defined by published XSDs
+                            |Canonical JSON |openEHR Canonical XML, defined by published transform of XML
+
+|===
+
+An awarded certificate for a typical system will look as follows:
+
+------
+openEHR Conformance Certificate
+===============================
+
+Solution:       BestEHR release 2.4
+                details ...
+Vendor:         ACME EHR systems LLC, Maxperformancia
+Assessor:       openEHR Foundation
+Infrastructure: openEHR CNF-test WS 1.5.0 on AWS ...
+                System under test on AWS ...
+Date:           12 April 2017
+    
+Certified conformance
+=====================
+Functional:     CORE, Extras
+Sec & Priv:     xxx
+Ext Data Fmt:   XML, JSON
+
+
+Detailed Report
+===============
+
++================+===================+================+====================+==============+===========+
+|SUT Component   |Product Component  |Capability      |Conformance point   |Tests         |Result     |
++================+===================+================+====================+==============+===========+
+|ACME CDR        |EHR persistence    |Versioning      |Contribution commit |EHR-VER-01    |pass       |
+|                |                   |                |new                 |EHR-VER-02    |pass       |
+|                |                   |                |                    |EHR-VER-03    |FAIL       |
+|                |                   |                +--------------------+--------------+-----------+
+|                |                   |                |Contribution commit |EHR-VER-09    |pass       |
+|                |                   |                |changed             |EHR-VER-11    |pass       |
++----------------+-------------------+----------------+--------------------+--------------+-----------+
+|                                            . . . .                                                  |
++----------------+-------------------+----------------+--------------------+--------------+-----------+
+|etc             |etc                |etc             |etc                 |etc           |           |
++----------------+-------------------+----------------+--------------------+--------------+-----------+
+
+------
+
+
