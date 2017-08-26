@@ -26,30 +26,26 @@
                 |EHR Extract            |           |               |&#10004;
                 |TDS                   ^|           |               |&#10004;
 
-.3+|*Querying*  |AQL basic              |           |&#10004;       |
+.4+|*Querying*  |Stored queries         |           |&#10004;       |
+                |AQL basic			   ^|           |&#10004;		|
                 |AQL advanced          ^|           |               |&#10004;
                 |AQL + terminology     ^|           |               |&#10004;
 
-.5+|*CDR*       |List transactions      |           |               |&#10004;
+.7+|*Admin*     |List transactions      |           |               |&#10004;
                 |Transaction +
                  statistics            ^|           |               |&#10004;
                 |Bulk EHR export       ^|           |               |&#10004;
                 |Bulk EHR load         ^|           |               |&#10004;
                 |Archive EHRs          ^|           |               |&#10004;
+                |Delete EHRs           ^|           |               |&#10004;
+                |Delete Demographics   ^|           |               |&#10004;
 
-.10+|*APIs*     |MODELS REST API        |&#10004;   |&#10004;       |
+.7+|*APIs*      |DEFINITIONS REST API   |&#10004;   |&#10004;       |
                 |EHR REST API          ^|&#10004;   |&#10004;       |
-                |EHR_STATUS +
-                 REST API              ^|&#10004;   |&#10004;       |
-                |CONTRIBUTION +
-                 REST API              ^|&#10004;   |&#10004;       |
-                |COMPOSITION +
-                 REST API              ^|&#10004;   |&#10004;       |
-                |DIRECTORY +
-                 REST API              ^|           |&#10004;       |
+                |DEMOGRAPHIC REST API  ^|			|				|&#10004;
                 |QUERY REST API        ^|           |&#10004;       |
                 |CDS REST API          ^|           |               |&#10004;
-                |CDR REST API          ^|           |               |&#10004;
+                |ADMIN REST API        ^|           |               |&#10004;
                 |TDD REST API          ^|           |               |&#10004;
 
 .2+|*Application +

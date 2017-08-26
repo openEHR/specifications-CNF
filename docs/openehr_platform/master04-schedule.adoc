@@ -6,9 +6,10 @@ The following table shows the schedule according to which functional conformance
 
 === Understanding the conformance tables
 
-[cols="2,2,2,2,2", options="header"]
+[cols="2,3,3,3,3", options="header"]
 |===
-|Product Component
+|Product +
+ Component
                 |Capability             |Conformance Point          |Access method             |Test script
                 
 |Component offered +
@@ -25,20 +26,21 @@ The following table shows the schedule according to which functional conformance
 
 === Data Persistence Components
 
-[cols="2,2,2,2,2", options="header"]
+[cols="2,3,3,3,3", options="header"]
 |===
-|Product Component
+|Product +
+ Component
                 |Capability         |Conformance Point      |Access method             |Test script
 
 .26+|*EHR +
     Persistence*
-             .3+|*OPT 1.4*          |Load templates         |MODELS API                 |API:upload opt14 template * N; +
+             .3+|*OPT 1.4*          |Load templates         |DEFINITIONS API            |API:upload opt14 template * N; +
                                                                                          API:list opt14 templates
-                                    |Get template by id     |MODELS API                 |API:get opt14 template by id
+                                    |Get template by id     |DEFINITIONS API            |API:get opt14 template by id
 
-                                    |Get archetypes used    |MODELS API                 |API:
+                                    |Get archetypes used    |DEFINITIONS API            |API:
 
-            .10+|*EHR data*  +
+            .11+|*EHR data*  +
                  +
                  (specs: +
                  {openehr_rm_ehr}[EHR IM] +
@@ -49,72 +51,74 @@ The following table shows the schedule according to which functional conformance
                                     |Create EHR             |EHR API                    |API:create ehr; +
                                                                                          API:get ehr
 
-                                    |Get EHR status         |EHR_STATUS API             |API:get ehr_status
+                                    |Get EHR status         |EHR API             		|API:get ehr_status
 
-                                    |Update EHR status      |EHR_STATUS API             |API:update ehr_status; +
+                                    |Update EHR status      |EHR API             		|API:update ehr_status; +
                                                                                          API:get ehr_status; +
                                                                                          regression diff
                                      
-                                    |Create COMPOSITIONs    |CONTRIBUTION API           |API:create contribution; +
-                                                                                         API:get contribution; +
+                                    |Create COMPOSITION +
+                                     change set             |EHR API           			|API:create contribution; +
+                                                                                         COMP:get composition; +
                                                                                          regression diff
 
-                                    |Update COMPOSITIONs    |CONTRIBUTION API           |API commit call; +
-                                                                                         API retrieve call; +
+                                    |Update COMPOSITION +
+                                     change set             |EHR API           			|API:create contribution; +
+                                                                                         COMP:get composition; +
                                                                                          regression diff
                                     |Create + 
-                                     COMPOSITION            |COMPOSITION API            |API:create composition; +
+                                     COMPOSITION            |EHR API            		|API:create composition; +
                                                                                          API:get composition; +
                                                                                          regression diff
                                     |Retrieve + 
-                                     COMPOSITION            |COMPOSITION API            |API:update composition; +
+                                     COMPOSITION            |EHR API            		|API:update composition; +
                                                                                          API:get composition; +
                                                                                          regression diff
                                     |Update + 
-                                     COMPOSITION            |COMPOSITION API            |API:update composition; +
+                                     COMPOSITION            |EHR API            		|API:update composition; +
                                                                                          API:get composition; +
                                                                                          regression diff
+                                    |Delete + 
+                                     COMPOSITION            |EHR API            		|API:create composition; +
+                                                                                         API:delete composition; +
+                                                                                         API:get composition (fail)
                                     |Create directory +
-                                     (FOLDERs)              |DIRECTORY API              |API:create directory; +
+                                     (FOLDERs)              |EHR API              		|API:create directory; +
                                                                                          API:get directory; +
                                                                                          regression diff
                                     |Update directory +
-                                     (FOLDERs)              |DIRECTORY API              |API:update directory; +
+                                     (FOLDERs)              |EHR API              		|API:update directory; +
                                                                                          API:get directory; +
                                                                                          regression diff
 
-             .7+|*Versioning* +
+             .6+|*Versioning* +
                  +
                  (specs: +
                  {openehr_rm_common}#_change_control_package[Versioning])
-                                    |Get EHR_STATUS version |EHR_STATUS API             |API:get ehr_status version; +
+                                    |Get EHR_STATUS version |EHR API             		|API:get ehr_status version; +
                                                                                          API:update ehr_status; +
                                                                                          API:get ehr_status version (prev); +
                                                                                          regression diff
                                                                                          
                                     |Get EHR_STATUS version +
-                                     at time                |EHR_STATUS API             |API:get versioned_ehr_status; +
-                                                                                         API:get ehr_status version at time; +
-                                                                                         regression diff
-
-                                    |Get EHR_STATUS version +
-                                     by id                  |EHR_STATUS API             |API:get versioned_ehr_status; +
+                                     by id                  |EHR API             		|API:get versioned_ehr_status; +
                                                                                          API:get ehr_status version by uid; +
                                                                                          regression diff
 
-                                    |Get COMPOSITION version|COMPOSITION API            |API:get composition version; +
+                                    |Get EHR_STATUS version +
+                                     at time                |EHR API             		|API:get versioned_ehr_status; +
+                                                                                         API:get ehr_status version at time; +
+                                                                                         regression diff
+
+                                    |Get COMPOSITION version +
+                                     by id                  |EHR API            		|API:get composition version; +
                                                                                          API:update composition; +
                                                                                          API:get composition version (prev); +
                                                                                          regression diff
 
                                     |Get COMPOSITION version +
-                                     at time                |COMPOSITION API            |API:get versioned_composition; +
+                                     at time                |EHR API            		|API:get versioned_composition; +
                                                                                          API:get composition version at time; +
-                                                                                         regression diff
-
-                                    |Get COMPOSITION version +
-                                     by id                  |COMPOSITION API            |API:get versioned_composition; +
-                                                                                         API:get composition version by uid; +
                                                                                          regression diff
 
                                     |List CONTRIBUTIONs     |EHR API                    |API:update xxx * N; +
@@ -198,9 +202,10 @@ TODO: In theory we could include Integration Entries ({openehr_rm_integration}[I
 
 === Integration Components
 
-[cols="2,2,2,2,2", options="header"]
+[cols="2,3,3,3,3", options="header"]
 |===
-|Product Component
+|Product +
+ Component
                 |Capability             |Conformance Point      |Access method             |Test script
                 
 .6+|*Messaging* 
@@ -226,94 +231,109 @@ TODO: In theory we could include Integration Entries ({openehr_rm_integration}[I
                                          patient record         |EHR_EXTRACT API           |???
                  
                 |*Template Data +
-                 Schema (TDS)*          |TDD commit             |TDD API                    |???
+                 Schema (TDS)*          |TDD commit             |TDD API                   |???
                  
 |===
 
 
 === Other Components
 
-[cols="2,2,2,2,2", options="header"]
+[cols="2,3,3,3,3", options="header"]
 |===
-|Product Component
+|Product +
+ Component
                 |Capability         |Conformance +
                                      point                  |Access Method          |Test Script
 
-.5+|*Querying* +
+.7+|*Querying* +
  +
  (specs: +
  {openehr_query_aql}[AQL specification])
-                |*AQL basic*        |Patient-centric        |AQL API                |Commit content; +
-                                                                                     execute queries +
+             .2+|*Stored queries*   |Store query            |DEFINITIONS API        |API:create stored query; +
+                                                                                     API:get stored query; +
+                                                                                     API:list stored queries
+                                                                                     
+                					|Delete query           |DEFINITIONS API        |API:create stored query; +
+                                                                                     API:delete stored query; +
+                                                                                     API:get stored query; +
+                                                                                     API:list stored queries
+                                                                                     
+                |*AQL basic*        |Patient-centric        |QUERY API              |EHR:commit composition x N; +
+                                                                                     API:execute ad hoc query +
                                                                                      regression.
                                                                                      
-             .2+|*AQL advanced*     |Patient-centric        |AQL API                |Commit content; +
-                                                                                     execute queries +
+             .2+|*AQL advanced*     |Patient-centric        |QUERY API              |EHR:commit composition x N; +
+                                                                                     AQL:create stored query; +
+                                                                                     API:execute stored query; +
+                                                                                     API:execute ad hoc query; +
                                                                                      regression.
                                                                                      
-                                    |Population query       |AQL API                |Commit content; +
-                                                                                     execute queries +
+                                    |Population query       |QUERY API              |EHR:commit composition x N; +
+                                                                                     AQL:create stored query; +
+                                                                                     API:execute stored query; +
+                                                                                     API:execute ad hoc query; +
                                                                                      regression.
              .2+|*AQL + + 
-                 terminology*       |Patient-centric        |AQL API                |Commit content; +
-                                                                                     execute queries +
+                 terminology*       |Patient-centric        |QUERY API              |EHR:commit composition x N; +
+                                                                                     AQL:create stored query; +
+                                                                                     API:execute stored query; +
+                                                                                     API:execute ad hoc query; +
                                                                                      regression.
                                                                                      
-                                    |Population query       |AQL API                |Commit content; +
-                                                                                     execute queries +
+                                    |Population query       |QUERY API              |EHR:commit composition x N; +
+                                                                                     AQL:create stored query; +
+                                                                                     API:execute stored query; +
+                                                                                     API:execute ad hoc query; +
                                                                                      regression.
                                                                                      
-.6+|*CDR*       |*List transations* |List CONTRIBUTIONs +
-                                     since time             |CDR API                |API:
+.8+|*ADMIN*     |*List transactions*|List CONTRIBUTIONs +
+                                     since time             |ADMIN API              |API:
              .2+|*transaction +
                  statistics*        |Get CONTRIBUTION +
-                                     count since time       |CDR API                |API:
+                                     count since time       |ADMIN API              |API:
 
                                     |Get COMPOSITIONs +
                                      add/mod/del +
-                                     since time             |CDR API                |API:
+                                     since time             |ADMIN API              |API:
 
-                |*Bulk EHR Export*  |Export all EHRs        |CDR API                |API commit calls; + 
-                                                                                     API dump call; +
+                |*Bulk EHR Export*  |Export all EHRs        |ADMIN API              |API:commit x N; + 
+                                                                                     API:export; +
                                                                                      file test / diff
                                                                                      
-                |*Bulk EHR Load*    |Load complete file     |CDR API                |API load call; +
-                                                                                     API retrieve calls
+                |*Bulk EHR Load*    |Load complete file     |ADMIN API              |API:load; +
+                                                                                     API:retrieve x N
                 |*Archive EHRs*     |Archive EHRs by +
-                                     identifier             |CDR API                |API archive call; +
+                                     identifier             |ADMIN API              |API:archive; +
                                                                                      review archive;
                                                                                      confirm status on +
                                                                                      archived EHRs
+                |*Physical EHR +
+				 delete*     		|Delete EHR by +
+                                     identifier             |ADMIN API              |API:delete_ehr
+                |*Physical Demographics +
+				 delete*     		|Delete PARTY by +
+                                     identifier             |ADMIN API              |API:delete_party
 |===
 
 === APIs
 
-[cols="2,2,2,2,2", options="header"]
+[cols="2,3,3,3,3", options="header"]
 |===
-|Product Component
+|Product +
+ Component
                 |Capability             |Conformance +
                                          point                  |Access Method          |Test Script
                 
-.10+|*APIs*     |*MODELS REST API*      |???                    |MODELS API             |xxx
+.7+|*APIs*      |*DEFINITIONS REST API* |???                    |DEFINITIONS API        |xxx
                 |*EHR REST API*         |???                    |EHR API                |Exercise all functions +
                                                                                          & arguments
-                |*EHR_STATUS +
-                 REST API*              |???                    |EHR_STATUS API         |Exercise all functions +
-                                                                                         & arguments
-                |*CONTRIBUTION +
-                 REST API*              |???                    |CONTRIBUTION API       |Exercise all functions +
-                                                                                         & arguments
-                |*COMPOSITION +
-                 REST API*              |???                    |COMPOSITION API        |Exercise all functions +
-                                                                                         & arguments
-                |*DIRECTORY +
-                 REST API*              |???                    |DIRECTORY API          |Exercise all functions +
+                |*DEMOGRAPHIC REST API* |???                    |EHR API                |Exercise all functions +
                                                                                          & arguments
                 |*QUERY REST API*       |???                    |QUERY API              |Exercise all functions +
                                                                                          & arguments
                 |*CDS REST API*         |???                    |CDS API                |Exercise functions +
                                                                                          & arguments
-                |*CDR REST API*         |???                    |CDR API                |Exercise functions +
+                |*ADMIN REST API*       |???                    |ADMIN API              |Exercise functions +
                                                                                          & arguments
                 |*TDD REST API*         |???                    |TDD API                |Exercise functions +
                                                                                          & arguments
@@ -321,7 +341,7 @@ TODO: In theory we could include Integration Entries ({openehr_rm_integration}[I
 
 === Non-Functional Characteristics
 
-[cols="2,2,2,2,2", options="header"]
+[cols="2,3,3,3,3", options="header"]
 |===
 |Product Attribute
                 |Capability         |Conformance +

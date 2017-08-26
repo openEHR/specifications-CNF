@@ -70,7 +70,7 @@ include::master02-overview.adoc[leveloffset=+1]
 include::master03-environment.adoc[leveloffset=+1]
 include::master04-schedule.adoc[leveloffset=+1]
 include::master05-profiles.adoc[leveloffset=+1]
-include::master06-testsuites.adoc[leveloffset=+1]
+//include::master06-testsuites.adoc[leveloffset=+1]
 
 //
 // --------------------------------------------- REFERENCES -----------------------------------------------
