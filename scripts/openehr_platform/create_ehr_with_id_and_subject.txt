@@ -1,0 +1,17 @@
+UUID an_ehr_id = create_uuid();
+PARTY_REF subject_id = create_party_ref ("ehr", "PERSON", "1111");
+
+// ----------- PASS ------------
+assert(not I_EHR_SERVICE.has_ehr(an_ehr_id));
+I_EHR_SERVICE.create_ehr_with_id_and_subject(an_ehr_id, subject_id);
+assert(I_EHR_SERVICE.has_ehr(an_ehr_id));
+assert(I_EHR_SERVICE.has_ehr_for_subject(subject_id));
+
+EHR_SUMMARY ehr_summary = I_EHR_SERVICE.get_ehr(an_ehr_id);
+assert(ehr_summary.ehr_status.is_queryable);
+assert(ehr_summary.ehr_status.is_modifiable);
+
+// ----------- FAIL: dup EHR_id ------------
+I_EHR_SERVICE.create_ehr_with_id_and_subject(an_ehr_id, subject_id);
+assert(I_EHR_SERVICE.last_error());
+assert(I_EHR_SERVICE.last_error_call_status.code = EHR_CALL_SATUSES.ehr_create_fail_duplicate_id);
