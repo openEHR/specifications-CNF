@@ -1,0 +1,66 @@
+//
+// ============================================ Asciidoc HEADER =============================================
+//
+:doctype: book
+:pagenums:
+:numbered!:
+// git rid of PDF 'Chapter' labs on level 1 headings
+:chapter-label:
+//
+// HTML-only attributes
+//
+:linkcss:
+:keywords: conformance
+:description: openEHR Conformance Specifications
+:sectanchors:
+:cnf_release: latest
+:sm_release: latest
+:jira-roadmap: https://openehr.atlassian.net/projects/SPECCNF?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page
+:jira-hist-issues: https://openehr.atlassian.net/issues/?filter=10720
+
+image::http://www.openehr.org/releases/BASE/latest/resources/images/openehr_logo_large.png["openEHR logo",align="center"]
+
+= Conformance Specifications (CNF) - {cnf_release}
+
+// Use the following version for 'latest'
+ifeval::["{cnf_release}" == "latest"]
+:jira-issues: https://openehr.atlassian.net/projects/SPECCNF/issues/?filter=allopenissues
+[.title-para]
+{jira-roadmap}[Roadmap] | {jira-issues}[Current Issues] | {jira-hist-issues}[Change History]
+endif::[]
+
+// Use the following version for a release
+ifeval::["{cnf_release}" != "latest"]
+:jira-pr-release: https://openehr.atlassian.net/projects/SPECPR/versions/10060
+:jira-cr-release: https://openehr.atlassian.net/projects/SPECCNF/versions/10860
+[.title-para]
+{jira-pr-release}[Problems Fixed] | {jira-cr-release}[Changes Implemented] | {jira-roadmap}[Roadmap] | {jira-hist-issues}[Change History]
+endif::[]
+
+== Specifications
+
+[cols="2,5,2", options="header"]
+|===
+|Specification |Description |Wiki
+
+|http://www.openehr.org/releases/CNF/{cnf_release}/openehr_platform_conformance.html[openEHR EHR Platform Conformance]
+|Specification of formal conformance to the openEHR EHR Platform definition.
+|* https://openehr.atlassian.net/wiki/spaces/spec/pages/94181296/Conformance+Notes+-+SEC+meeting+Alkmaar+2017[Alkmaar 2017 notes] +
+ * https://openehr.atlassian.net/wiki/spaces/spec/pages/73367558/openEHR+Conformance[Original page].
+
+|===
+
+== Computable Expressions
+ 
+[cols="2,5", options="header"]
+|===
+|Resource |Description
+
+|REST APIs
+|See https://openehr.github.io/specifications-ITS[(REST APIs)]
+
+|Service Model (SM)
+|See http://www.openehr.org/releases/SM/latest/docs/index[SM Index page].
+
+|===
+

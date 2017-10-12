@@ -287,44 +287,44 @@ Specifications:
 * {openehr_rm_support}[Support IM]
 * {openehr_rm_common}#_change_control_package[Versioning])
 
-[cols="3,3,3", options="header"]
+[cols="1,2,3,2,1", options="header"]
 |===
-
-|Capability             |Conformance Point          |Test script
+|Capability             |Conformance Point          |Description          |Test script              |REST script
 
 .3+|*Demographic data*
-                        |Create Party           |DEM:create party; +
-                                                 DEM:retrieve party; +
-                                                 regression diff
+                        |Create Party               |                     |DEM:create party; +
+                                                                            DEM:retrieve party; +
+                                                                            regression diff         |
 
-                        |Update PARTY           |DEM:create party; +
-                                                 DEM:retrieve party; +
-                                                 DEM:update party; +
-                                                 DEM:retrieve party; +
-                                                 regression diff
+                        |Update PARTY               |                     |DEM:create party; +
+                                                                             DEM:retrieve party; +
+                                                                             DEM:update party; +
+                                                                             DEM:retrieve party; +
+                                                                             regression diff        |
 
-                        |Retrieve PARTY         |xxx
+                        |Retrieve PARTY         |xxx                       |                        |
 
     |*Versioning*       |Commit Party group +
-                         change set             |xxx
+                         change set             |xxx                        |                       |
 
  .3+|*Archetype +
-     validation*        |Accept valid content   |DEM:create_xxx; +
-                                                 check sys log
+     validation*        |Accept valid content   |                           |DEM:create_xxx; +
+                                                                             check sys log          |
                         |Reject invalid +
-                        archetype               |DEM:create_xxx; +
-                                                 check sys log
+                        archetype               |                           |DEM:create_xxx; +
+                                                                             check sys log          |
 
-                        |Reject invalid content |DEM:create_xxx; +
-                                                 check sys log
- .3+|*Logging*         |Log creates            |DEM:create_xxx; +
-                                                 check sys log
+                        |Reject invalid content |                           |DEM:create_xxx; +
+                                                                            check sys log           |
+                                                                            
+ .3+|*Logging*         |Log creates            |                            |DEM:create_xxx; +
+                                                                            check sys log           |
                                                 
-                        |Log updates            |DEM:commit_xxx; +
-                                                 check sys log
+                        |Log updates            |                           |DEM:commit_xxx; +
+                                                                            check sys log           |
                                                 
-                        |Log reads              |DEM:retrieve_xxx; +
-                                                 check sys log
+                        |Log reads              |                           |DEM:retrieve_xxx; +
+                                                                             check sys log          |
 
 |===
 
@@ -344,28 +344,28 @@ Specifications:
 * {openehr_rm_support}[Support IM]
 
 
-[cols="3,3,3", options="header"]
+[cols="1,2,3,2,1", options="header"]
 |===
-|Capability             |Conformance Point      |Test script
+|Capability             |Conformance Point          |Description          |Test script              |REST script
 
 .5+|*EHR Extract*
                         |Export openEHR Extract +
-                         1 patient              |EHRX:
+                         1 patient                  |                     |EHRX:                    |
 
                         |Export openEHR Extract +
-                         w/ versions            |EHRX:
+                         w/ versions                |                     |EHRX:                    |
 
                         |Export openEHR Extract +
-                         multiple patients      |EHRX:
+                         multiple patients          |                     |EHRX:                    |
 
                         |Export generic Extract +
-                         1 patient              |EHRX:
+                         1 patient                  |                     |EHRX:                    |
 
                         |Export whole +
-                         patient record         |EHRX:
+                         patient record             |                     |EHRX:                    |
 
 |*Template Data +
- Schema (TDS)*          |TDD commit             |TDD:
+ Schema (TDS)*          |TDD commit                 |                     |EHRX:                    |
                  
 |===
 
@@ -376,47 +376,46 @@ Specifications:
 
 * {openehr_query_aql}[AQL specification]
 
-[cols="3,3,3,3", options="header"]
+[cols="1,2,3,2,1", options="header"]
 |===
-|Capability         |Conformance +
-                                     point                  |Access Method          |Test Script
+|Capability             |Conformance Point      |Description          |Test script              |REST script
 
-.2+|*Stored queries*   |Store query            |DEFINITIONS API        |DEF:create stored query; +
-                                                                     DEF:get stored query; +
-                                                                     DEF:list stored queries
+.2+|*Stored queries*    |Store query             |DEFINITIONS API     |DEF:create stored query; +
+                                                                        DEF:get stored query; +
+                                                                        DEF:list stored queries |
 
-                    |Delete query           |DEFINITIONS API        |DEF:create stored query; +
+                        |Delete query           |DEFINITIONS API        |DEF:create stored query; +
                                                                      DEF:delete stored query; +
                                                                      DEF:get stored query; +
-                                                                     DEF:list stored queries
+                                                                     DEF:list stored queries |
 
-|*AQL basic*        |Patient-centric        |QUERY API              |EHR:commit composition x N; +
+|*AQL basic*            |Patient-centric        |QUERY API              |EHR:commit composition x N; +
                                                                      QRY:execute ad hoc query +
-                                                                     regression.
+                                                                     regression. |
 
 .2+|*AQL advanced*     |Patient-centric        |QUERY API              |EHR:commit composition x N; +
                                                                      AQL:create stored query; +
                                                                      QRY:execute stored query; +
                                                                      QRY:execute ad hoc query; +
-                                                                     regression.
+                                                                     regression. |
 
                     |Population query       |QUERY API              |EHR:commit composition x N; +
                                                                      AQL:create stored query; +
                                                                      QRY:execute stored query; +
                                                                      QRY:execute ad hoc query; +
-                                                                     regression.
+                                                                     regression. |
 .2+|*AQL + + 
  terminology*       |Patient-centric        |QUERY API              |EHR:commit composition x N; +
                                                                      AQL:create stored query; +
                                                                      QRY:execute stored query; +
                                                                      QRY:execute ad hoc query; +
-                                                                     regression.
+                                                                     regression. |
 
                     |Population query       |QUERY API              |EHR:commit composition x N; +
                                                                      AQL:create stored query; +
                                                                      QRY:execute stored query; +
                                                                      QRY:execute ad hoc query; +
-                                                                     regression.
+                                                                     regression. |
 
 |===
 
@@ -427,39 +426,40 @@ Specifications:
 
 * xxx
 
-[cols="3,3,3,3", options="header"]
+[cols="1,2,3,2,1", options="header"]
 |===
-|Capability             |Conformance Point      |Access method             |Test script
+|Capability             |Conformance Point      |Description          |Test script              |REST script
 
 |*List transactions*    |List CONTRIBUTIONs +
-                         since time             |ADMIN API              |ADM:
+                         since time             |ADMIN API              |ADM:                   |
 .2+|*Transaction +
-statistics*        |Get CONTRIBUTION +
-                 count since time       |ADMIN API              |ADM:
+statistics*             |Get CONTRIBUTION +
+                        count since time       |ADMIN API              |ADM:                   |
 
-                |Get COMPOSITIONs +
-                 add/mod/del +
-                 since time             |ADMIN API              |ADM:
+                        |Get COMPOSITIONs +
+                        add/mod/del +
+                        since time             |ADMIN API              |ADM:                   |
 
-|*Bulk EHR Export*  |Export all EHRs        |ADMIN API              |EHR:create EHR x N; + ;
-                                                                 EHR:commit composition x N; + 
-                                                                 ADM:export; +
-                                                                 file test / diff
+|*Bulk EHR Export*      |Export all EHRs        |ADMIN API              |EHR:create EHR x N; + ;
+                                                                        EHR:commit composition x N; + 
+                                                                        ADM:export; +
+                                                                        file test / diff        |
 
-|*Bulk EHR Load*    |Load complete file     |ADMIN API              |ADM:load; +
-                                                                 ADM:retrieve x N
-|*Archive EHRs*     |Archive EHRs by +
-                 identifier             |ADMIN API              |ADM:archive; +
-                                                                 review archive;
-                                                                 confirm status on +
-                                                                 archived EHRs
+|*Bulk EHR Load*        |Load complete file     |ADMIN API              |ADM:load; +
+                                                                        ADM:retrieve x N        |
+|*Archive EHRs*         |Archive EHRs by +
+                        identifier             |ADMIN API              |ADM:archive; +
+                                                                        review archive;
+                                                                        confirm status on +
+                                                                        archived EHRs         |
 |*Physical EHR +
-delete*     		|Delete EHR by +
-                 identifier             |ADMIN API              |ADM:delete_ehr
+ delete*     		|Delete EHR by +
+                    identifier                  |ADMIN API              |ADM:delete_ehr         |
+                    
 |*Physical +
 Demographics +
 delete*     		|Delete PARTY by +
-                 identifier             |ADMIN API              |ADM:delete_party
+                    identifier                  |ADMIN API              |ADM:delete_party       |
 |===
 
 === API Product Component
@@ -468,7 +468,7 @@ Specifications:
 
 * xxx
 
-[cols="3,3,3,3", options="header"]
+[cols="1,2,3,2,1", options="header"]
 |===
 |Product +
  Component

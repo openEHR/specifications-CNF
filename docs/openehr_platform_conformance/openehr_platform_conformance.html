@@ -170,11 +170,17 @@
 <th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>R E L E A S E&#160;&#160;&#160;&#160;&#160;1.?.?</strong></p></th>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.6.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.6.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updates to table structures.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>12 Oct 2017</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.6.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Updates to REST API at 25 Aug 2017. Added glossary. Improved SUT diagram.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
  S Iancu</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>26 Aug 2017</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">26 Aug 2017</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.6.1</p></td>
@@ -721,11 +727,11 @@ Detailed Report
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 12.5%;">
-<col style="width: 25%;">
-<col style="width: 37.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
+<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 11.1112%;">
 </colgroup>
 <thead>
 <tr>
@@ -1006,76 +1012,100 @@ Detailed Report
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 22.2222%;">
+<col style="width: 11.1112%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Capability</th>
 <th class="tableblock halign-left valign-top">Conformance Point</th>
+<th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Test script</th>
+<th class="tableblock halign-left valign-top">REST script</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><strong>Demographic data</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create Party</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DEM:create party;<br>
-                                                 DEM:retrieve party;<br>
-                                                 regression diff</p></td>
+                                                                            DEM:retrieve party;<br>
+                                                                            regression diff</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Update PARTY</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DEM:create party;<br>
-                                                 DEM:retrieve party;<br>
-                                                 DEM:update party;<br>
-                                                 DEM:retrieve party;<br>
-                                                 regression diff</p></td>
+                                                                             DEM:retrieve party;<br>
+                                                                             DEM:update party;<br>
+                                                                             DEM:retrieve party;<br>
+                                                                             regression diff</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve PARTY</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xxx</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Versioning</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Commit Party group<br>
                          change set</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xxx</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><strong>Archetype<br>
      validation</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Accept valid content</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DEM:create_xxx;<br>
-                                                 check sys log</p></td>
+                                                                             check sys log</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Reject invalid<br>
                         archetype</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DEM:create_xxx;<br>
-                                                 check sys log</p></td>
+                                                                             check sys log</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Reject invalid content</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DEM:create_xxx;<br>
-                                                 check sys log</p></td>
+                                                                            check sys log</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><strong>Logging</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Log creates</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DEM:create_xxx;<br>
-                                                 check sys log</p></td>
+                                                                            check sys log</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Log updates</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DEM:commit_xxx;<br>
-                                                 check sys log</p></td>
+                                                                            check sys log</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Log reads</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DEM:retrieve_xxx;<br>
-                                                 check sys log</p></td>
+                                                                             check sys log</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -1115,15 +1145,19 @@ Detailed Report
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 22.2222%;">
+<col style="width: 11.1112%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Capability</th>
 <th class="tableblock halign-left valign-top">Conformance Point</th>
+<th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Test script</th>
+<th class="tableblock halign-left valign-top">REST script</th>
 </tr>
 </thead>
 <tbody>
@@ -1131,33 +1165,45 @@ Detailed Report
 <td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><strong>EHR Extract</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Export openEHR Extract<br>
                          1 patient</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EHRX:</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Export openEHR Extract<br>
                          w/ versions</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EHRX:</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Export openEHR Extract<br>
                          multiple patients</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EHRX:</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Export generic Extract<br>
                          1 patient</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EHRX:</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Export whole<br>
                          patient record</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EHRX:</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Template Data<br>
  Schema (TDS)</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TDD commit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TDD:</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EHRX:</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -1170,24 +1216,25 @@ Detailed Report
 <div class="ulist">
 <ul>
 <li>
-<p>latest/AQL.html[AQL specification]</p>
+<p><a href="http://www.openehr.org/releases/QUERY/latest/AQL.html">AQL specification</a></p>
 </li>
 </ul>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 11.1112%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Capability</th>
-<th class="tableblock halign-left valign-top">Conformance<br>
-                                     point</th>
-<th class="tableblock halign-left valign-top">Access Method</th>
-<th class="tableblock halign-left valign-top">Test Script</th>
+<th class="tableblock halign-left valign-top">Conformance Point</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Test script</th>
+<th class="tableblock halign-left valign-top">REST script</th>
 </tr>
 </thead>
 <tbody>
@@ -1196,8 +1243,9 @@ Detailed Report
 <td class="tableblock halign-left valign-top"><p class="tableblock">Store query</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DEFINITIONS API</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DEF:create stored query;<br>
-                                                                     DEF:get stored query;<br>
-                                                                     DEF:list stored queries</p></td>
+                                                                        DEF:get stored query;<br>
+                                                                        DEF:list stored queries</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delete query</p></td>
@@ -1206,6 +1254,7 @@ Detailed Report
                                                                      DEF:delete stored query;<br>
                                                                      DEF:get stored query;<br>
                                                                      DEF:list stored queries</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>AQL basic</strong></p></td>
@@ -1214,6 +1263,7 @@ Detailed Report
 <td class="tableblock halign-left valign-top"><p class="tableblock">EHR:commit composition x N;<br>
                                                                      QRY:execute ad hoc query<br>
                                                                      regression.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><strong>AQL advanced</strong></p></td>
@@ -1224,6 +1274,7 @@ Detailed Report
                                                                      QRY:execute stored query;<br>
                                                                      QRY:execute ad hoc query;<br>
                                                                      regression.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Population query</p></td>
@@ -1233,6 +1284,7 @@ Detailed Report
                                                                      QRY:execute stored query;<br>
                                                                      QRY:execute ad hoc query;<br>
                                                                      regression.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><strong>AQL +<br>
@@ -1244,6 +1296,7 @@ Detailed Report
                                                                      QRY:execute stored query;<br>
                                                                      QRY:execute ad hoc query;<br>
                                                                      regression.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Population query</p></td>
@@ -1253,6 +1306,7 @@ Detailed Report
                                                                      QRY:execute stored query;<br>
                                                                      QRY:execute ad hoc query;<br>
                                                                      regression.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -1271,17 +1325,19 @@ Detailed Report
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 11.1112%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Capability</th>
 <th class="tableblock halign-left valign-top">Conformance Point</th>
-<th class="tableblock halign-left valign-top">Access method</th>
+<th class="tableblock halign-left valign-top">Description</th>
 <th class="tableblock halign-left valign-top">Test script</th>
+<th class="tableblock halign-left valign-top">REST script</th>
 </tr>
 </thead>
 <tbody>
@@ -1291,64 +1347,72 @@ Detailed Report
                          since time</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADMIN API</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADM:</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><strong>Transaction<br>
 statistics</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get CONTRIBUTION<br>
-                 count since time</p></td>
+                        count since time</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADMIN API</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADM:</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get COMPOSITIONs<br>
-                 add/mod/del<br>
-                 since time</p></td>
+                        add/mod/del<br>
+                        since time</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADMIN API</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADM:</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bulk EHR Export</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Export all EHRs</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADMIN API</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EHR:create EHR x N; + ;
-                                                                 EHR:commit composition x N;<br>
-                                                                 ADM:export;<br>
-                                                                 file test / diff</p></td>
+                                                                        EHR:commit composition x N;<br>
+                                                                        ADM:export;<br>
+                                                                        file test / diff</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bulk EHR Load</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Load complete file</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADMIN API</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADM:load;<br>
-                                                                 ADM:retrieve x N</p></td>
+                                                                        ADM:retrieve x N</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Archive EHRs</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Archive EHRs by<br>
-                 identifier</p></td>
+                        identifier</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADMIN API</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADM:archive;<br>
-                                                                 review archive;
-                                                                 confirm status on<br>
-                                                                 archived EHRs</p></td>
+                                                                        review archive;
+                                                                        confirm status on<br>
+                                                                        archived EHRs</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Physical EHR<br>
-delete</strong></p></td>
+ delete</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delete EHR by<br>
-                 identifier</p></td>
+                    identifier</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADMIN API</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADM:delete_ehr</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Physical<br>
 Demographics<br>
 delete</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delete PARTY by<br>
-                 identifier</p></td>
+                    identifier</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADMIN API</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADM:delete_party</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -1367,10 +1431,11 @@ delete</strong></p></td>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 11.1112%;">
 </colgroup>
 <thead>
 <tr>
@@ -1380,22 +1445,20 @@ delete</strong></p></td>
 <th class="tableblock halign-left valign-top">Conformance<br>
                                     point</th>
 <th class="tableblock halign-left valign-top">Access Method</th>
+<th class="tableblock halign-left valign-top">Test Script</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Test Script</p></td>
 <td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock"><strong>REST APIs</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DEFINITIONS API</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DEFINITIONS API</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions<br>
                                                                                      &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>EHR API</strong></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>EHR API</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EHR API</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions<br>
@@ -1405,20 +1468,18 @@ delete</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DEMOGRAPHIC API</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DEMOGRAPHIC API</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions<br>
                                                                                      &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>QUERY API</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>QUERY API</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">QUERY API</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions<br>
                                                                                      &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CDS API</strong></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CDS API</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CDS API</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise functions<br>

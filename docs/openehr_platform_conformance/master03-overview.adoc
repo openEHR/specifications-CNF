@@ -25,17 +25,7 @@ The scope of this specification is limited to the following:
 
 The system being tested is accessed via various openEHR REST APIs which must be minimally implemented i.e. sufficiently for the test cases to be exercised.
 
-This specification does not cover claims to other non-functional characteristics such as capacity, performance, availability, or consistency of systems. It is however recommended that supply agreements for operational solutions include criteria for these factors, as relevant to the situation. As a guide, the following criteria should be considered:
-
-* *Capacity*: capacity of system in terms of:
-** _data volume_: 
-*** number of active EHRs supported for a given reported latency;
-*** number of archived EHRs supported;
-** _user load_:
-*** number of concurrent committers for a given reported latency;
-*** number of concurrent readers for a given reported latency;
-* *Performance*: tested performance of system in terms of reported transaction processing rates;
-* *Availability*: tested latency of system with respect to standard queries over time.
+This specification does not cover claims to other non-functional characteristics such as capacity, performance, availability, or consistency of systems. It is however recommended that supply agreements for operational solutions include criteria for these factors, as relevant to the situation. 
 
 It may be possible to develop a band-based rating sytem for capacity. Performance, availability, consistency and related characteristics may be assessed using a framework that takes account of the CAP and / or PACELC theorems.
 

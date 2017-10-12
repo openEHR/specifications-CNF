@@ -6,11 +6,16 @@
 
 4+^h|*R E L E A S E{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}1.?.?*
 
-|[[latest_issue]]0.6.2
+|[[latest_issue]]0.6.3
+|Updates to table structures.
+|T Beale
+|[[latest_issue_date]]12 Oct 2017
+
+|0.6.2
 |Updates to REST API at 25 Aug 2017. Added glossary. Improved SUT diagram.
 |T Beale, +
  S Iancu
-|[[latest_issue_date]]26 Aug 2017
+|26 Aug 2017
 
 |0.6.1
 |Major rework from SEC call 9 Aug 2017.
