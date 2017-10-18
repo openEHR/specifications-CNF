@@ -4,7 +4,9 @@ The schedule above describes capabilities of openEHR platform products that can 
 
 A profile may be defined logically as a particular list of capabilities from the above schedule that may be combined to specify a particular kind of solution. For example, an openEHR Demographics product would treat most or all of the Demographic capabilities as mandatory, along with support for definitions, logging etc.
 
-This specification defines a set of 'default profiles' intended as a guide for determining the minimum capabilities to specify in order to obtain certain basic levels of functionality.
+This specification defines a set of default profiles intended as a guide for determining the minimum capabilities to specify in order to obtain certain basic levels of functionality.
+
+Producers of tender specifications and procuring organsations should create the Profile(s) they require. This should be done by adopting either the CORE or STANDARD base profiles and then adding in the set of options required.
 
 == Default Profiles
 
@@ -21,52 +23,59 @@ In order to obtain `CORE` or `STANDARD` conformance, all mentioned capabilities 
 [cols="1,1,^1,^1,^1", options="header"]
 |===
 |Product Component
-                |Capability             |CORE       |STANDARD       |OPTIONS
+                    |Capability             |CORE       |STANDARD       |OPTIONS
 
-.5+|*EHR +
- Persistence*   |OPT 1.4                |&#10004;   |&#10004;       |
-                |EHR data              ^|&#10004;   |&#10004;       |          
-                |Versioning            ^|&#10004;   |&#10004;       |          
-                |Archetype +
-                 validation            ^|&#10004;   |&#10004;       |          
-                |Logging               ^|           |&#10004;       |
+.5+|*Definitions*   |ADL 1.4 Archetype +
+                     provisioning           |&#10004;   |&#10004;       |
+                    |ADL 1.4 OPT +
+                     provisioning          ^|&#10004;   |&#10004;       |          
+                    |ADL 2 Archetype +
+                     provisioning          ^|           |               |&#10004;
+                    |ADL 2 OPT +
+                     provisioning          ^|           |               |&#10004;
+                    |Query +
+                     provisioning          ^|           |&#10004;       |
 
-.4+|*Demographic +
- Persistence*   |Demographic data       |           |               |?
-                |Versioning            ^|           |               |?
-                |Archetype +
-                 validation            ^|           |               |?
-                |Logging               ^|           |               |?
+.7+|*EHR +
+ Persistence*       |EHR Operations         |&#10004;   |&#10004;       |
+                    |EHR Status            ^|&#10004;   |&#10004;       |          
+                    |Composition +
+                     Operations            ^|&#10004;   |&#10004;       |          
+                    |Directory +
+                     Operations            ^|           |&#10004;       |          
+                    |Change sets           ^|&#10004;   |&#10004;       |
+                    |Versioning            ^|&#10004;   |&#10004;       |
+                    |Archetype +
+                     Validation            ^|&#10004;   |&#10004;       |
 
-.2+|*Messaging*
-                |EHR Extract            |           |               |?
-                |TDS                   ^|           |               |?
+.3+|*Demographic +
+ Persistence*       |Party Operations       |           |               |?
+                    |Party +
+                     Relationship +
+                     Operations            ^|           |               |?
+                    |Archetype +
+                     validation            ^|           |               |?
 
-.4+|*Querying*  |Stored queries         |           |&#10004;       |
-                |AQL basic			   ^|           |&#10004;		|
-                |AQL advanced          ^|           |               |?
-                |AQL + terminology     ^|           |               |?
+.3+|*Querying*      |AQL basic			   ^|           |&#10004;		|
+                    |AQL advanced          ^|           |               |?
+                    |AQL & terminology     ^|           |               |?
 
-.7+|*Admin*     |List transactions      |           |               |?
-                |Transaction +
-                 statistics            ^|           |               |?
-                |Bulk EHR export       ^|           |               |?
-                |Bulk EHR load         ^|           |               |?
-                |Archive EHRs          ^|           |               |?
-                |Delete EHRs           ^|           |               |?
-                |Delete Demographics   ^|           |               |?
+.6+|*Admin*         |Activity Report        |           |               |?
+                    |Physical Deletion     ^|           |               |?
+                    |EHR Dump/Load         ^|           |               |?
+                    |Bulk EHR load         ^|           |               |?
+                    |EHR Archive           ^|           |               |?
+                    |Demographic Archive   ^|           |               |?
 
-.7+|*APIs*      |DEFINITIONS REST API   |&#10004;   |&#10004;       |
-                |EHR REST API          ^|&#10004;   |&#10004;       |
-                |DEMOGRAPHIC REST API  ^|			|				|?
-                |QUERY REST API        ^|           |&#10004;       |
-                |CDS REST API          ^|           |               |?
-                |ADMIN REST API        ^|           |               |?
-                |TDD REST API          ^|           |               |?
+.2+|*Messaging*     |EHR Extract            |           |               |?
+                    |TDS                   ^|           |               |?
 
-.2+|*Application +
- services*      |GDL                    |           |               |?
-                |Task Planning         ^|           |               |?
+.7+|*REST APIs*     |DEFINITION API         |&#10004;   |&#10004;       |
+                    |EHR API               ^|&#10004;   |&#10004;       |
+                    |DEMOGRAPHIC API       ^|			|				|?
+                    |QUERY API             ^|           |&#10004;       |
+                    |ADMIN API             ^|           |               |?
+                    |MESSAGE API           ^|           |               |?
                 
 |===
 
@@ -80,7 +89,6 @@ In order to obtain `CORE` or `STANDARD` conformance, all mentioned capabilities 
 .3+|*Security & +
  Privacy*       |Signing            |           |&#10004;       |
                 |Anonymous EHRs    ^|&#10004;   |&#10004;       |
-                |Info Consent      ^|           |               |?
                 
 |===
 

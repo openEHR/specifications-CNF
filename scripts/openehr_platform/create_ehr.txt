@@ -1,6 +1,0 @@
-UUID an_ehr_id = I_EHR_SERVICE.create_ehr();
-
-// ----------- PASS ------------
-EHR_SUMMARY ehr_summary = I_EHR_SERVICE.get_ehr(an_ehr_id);
-assert(ehr_summary.ehr_status.is_queryable);
-assert(ehr_summary.ehr_status.is_modifiable);

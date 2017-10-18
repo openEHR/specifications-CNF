@@ -1,0 +1,16 @@
+//
+// Upload an ADL2 Artefact to the I_DEFINITION_ADL2 service
+//
+
+// Get handle to service and an authorisation token
+I_DEFINITION_ADL2 adl_svc;
+String auth_tok;
+
+// ----------- PASS ------------
+AUTHORED_ARCHETYPE arch = create_test_adl2_archetype ("test_adl2_archetype_1");
+assert (not adl_svc.has_archetype (auth_tok, arch.id));
+adl_svc.upload_archetype (auth_tok, arch);
+assert (adl_svc.has_archetype (auth_tok, arch.id));
+
+List<ARCHETYPE_HRID> all_arch_ids = adl_svc.list_all_archetypes (auth_tok, 1, 10);
+assert (all_arch_ids.has(arch.id));

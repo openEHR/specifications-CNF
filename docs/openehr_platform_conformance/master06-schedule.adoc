@@ -2,53 +2,139 @@
 
 == Overview
 
-The following table shows the schedule according to which functional conformance claims can be made for a _product component_, corresponding to a block of the same name on the above diagram. Each product component has one table.
+This section contains the schedule according to which conformance claims can be made for a a product. The conformance test schedule is divided into functional and non-functional parts, for which the structures are slightly different. 
 
-=== Understanding the conformance tables
+Functional conformance is on the basis of _product component_, i.e. 'EHR persistence', 'Querying' etc, each corresponding to a named block on the above SUT diagram. Each product component has one table. Formal conformance points, defined in terms of calls in the relevant component service interface, are listed in the second column of the table. The first column groups conformance points under 'capability', which is understood as a marketing term, and is _used as the basis for conformance profiles_ described in the next section. The remaining columns describe each conformance point, and provide a way of testing it. In many cases, one test script may be used to test multiple conformance points.
 
-[cols="1,1,3,2,2", options="header"]
+The following illustrates the conformance table structure for functional components.
+
+[cols="2,2,3,2,2", options="header"]
 |===
-|Capability             |Conformance Point          |Description                        |Test script            |REST script
+|Capability             |Conformance Point +
+                         (Service Model call)   |Description                            |Test case script      |REST script
                 
 |Claimed capability +
- of the component       |Testable characteristic +
-                         within this capability     |description of conformance point.  |Logical structure of + 
-                                                                                         Test Case              |REST API test script +
+ of the component.      |Testable characteristic +
+                         defined in terms of +
+                         abstract service model call.|Description of conformance point.  |Logical test case + 
+                                                                                         script (pseudo-code)   |REST API test script +
                                                                                                                  (postman)
 |===
 
+For the small number of system non-functional characteristics for which conformance is defined here, the table structure is the same. However, conformance points are not formally defined by the openEHR Service Model, but informally defined by this specification.
 
-== Conformance Test Tables
+== Functional Conformance
 
-=== Archetype / Template Definitions
+=== Definitions Component
 
 Specifications:
     
-* {openehr_am_adl14}[ADL 1.4]
-* {openehr_am_aom14}[AOM 1.4]
-* {openehr_am_adl2}[ADL 2]
-* {openehr_am_aom2}[AOM 2]
-* {openehr_am_id}[Archetype Identification]
+* Service Interfaces:
+** {openehr_sm_openehr_platform}#_ehr_package[EHR Service Model]
+** {openehr_ehr_rest_api}[EHR REST API]
+* Language / formalism Models:
+** {openehr_am_adl14}[ADL 1.4]
+** {openehr_am_aom14}[AOM 1.4]
+** {openehr_am_adl2}[ADL 2]
+** {openehr_am_aom2}[AOM 2]
+** {openehr_am_id}[Archetype Identification]
 
+:i_definition_adl14_link: {openehr_sm_openehr_platform}#_i_definition_adl14_interface
+:i_definition_adl2_link: {openehr_sm_openehr_platform}#_i_definition_adl2_interface
+:i_definition_query_link: {openehr_sm_openehr_platform}#_i_definition_query_interface
 
-[cols="1,1,3,2", options="header"]
+[cols="1,3,3,1,1", options="header"]
 |===
-|Capability             |Conformance Point          |Description                                        |Test script
+|Capability             |Conformance Point +
+                         (Service Model call)   |Description                            |Test case script      |REST script
 
 .3+|*ADL 1.4 Archetype +
-    provisioning*       |Upload archetype           |Upload an archetype to the server               .3+|DEF:upload archetype * N; +
-                                                                                                         DEF:list archetypes
-                        |Get archetype              |Get archetype by archetype_id                       DEF:get archetype by id
+    provisioning*       
+    
+    |{i_definition_adl14_link}[`I_DEFINITION_ADL14`, window="_blank"] +
+     `__.upload_archetype()__`
+    |Upload an ADL 1.4 archetype
+ .3+|link:{scripts_dir}/tc_def-adl14_prov.txt[tc_def-adl14_prov, window="_blank"]
+ .3+|link:{scripts_dir}/REST/postman/tc_def-adl14_prov.json[postman]
+ 
+    |{i_definition_adl14_link}[`I_DEFINITION_ADL14`, window="_blank"] +
+     `__.get_archetype()__`
+    |Get an ADL 1.4 archetype by archetype_id
 
-                        |List archetypes            |List all available archetypes on the system
+    |{i_definition_adl14_link}[`I_DEFINITION_ADL14`, window="_blank"] +
+     `__.list_all_archetypes()__`            
+    |List all available ADL 1.4 archetypes
 
-.3+|*OPT 1.4 Operational +
-    Template +
-    provisioning*       |Upload template            |Upload a template to the server                 .3+|DEF:upload template * N; +
-                                                                                                         DEF:list templates
-                        |Get template               |Get template by template_id                         DEF:get template by id
+.3+|*ADL 1.4 OPT +
+    provisioning*       
+    
+    |{i_definition_adl14_link}[`I_DEFINITION_ADL14`, window="_blank"] +
+     `__.upload_opt()__`            
+    |Upload an ADL 1.4-based OPT
+ .3+|link:{scripts_dir}/tc_def-opt14_prov.txt[tc_def-opt14_prov, window="_blank"]
+ .3+|link:{scripts_dir}/REST/postman/tc_def-opt14_prov.json[postman]
 
-                        |List templates             |List all available templates on the system
+    |{i_definition_adl14_link}[`I_DEFINITION_ADL14`, window="_blank"] +
+     `__.get_opt()__`               
+    |Get template by template_id
+
+    |{i_definition_adl14_link}[`I_DEFINITION_ADL14`, window="_blank"] +
+     `__.list_all_opts()__`
+    |List all available Operational Templates
+
+
+.3+|*ADL 2 Archetype +
+    provisioning*       
+    
+    |{i_definition_adl2_link}[`I_DEFINITION_ADL2`, window="_blank"] +
+     `__.upload_artefact()__`
+    |Upload an ADL 2 archetype
+ .6+|link:{scripts_dir}/tc_def-adl2_prov.txt[tc_def-adl2_prov, window="_blank"]
+ .6+|link:{scripts_dir}/REST/postman/tc_def-adl2_prov.json[postman]
+ 
+    |{i_definition_adl2_link}[`I_DEFINITION_ADL2`, window="_blank"] +
+     `.__get_artefact()__`
+    |Get an ADL 2 archetype by archetype_id
+
+    |{i_definition_adl2_link}[`I_DEFINITION_ADL2`, window="_blank"] +
+     `__.list_all_archetypes()__`
+    |List all available ADL 2 archetypes
+
+.3+|*ADL 2 OPT +
+    provisioning*       
+    
+    |{i_definition_adl2_link}[`I_DEFINITION_ADL2`, window="_blank"] +
+     `__.upload_artefact()__`
+    |Upload an OPT2 template.
+
+    |{i_definition_adl2_link}[`I_DEFINITION_ADL2`, window="_blank"] +
+     `__.get_artefact()__`               
+    |Get OPT2 template by template_id.
+
+    |{i_definition_adl2_link}[`I_DEFINITION_ADL2`, window="_blank"] +
+     `__.list_all_opts()__`
+    |List all available OPT2 templates.
+
+.4+|*Query +
+    provisioning*       
+    
+    |{i_definition_query_link}[`I_DEFINITION_QUERY`, window="_blank"] +
+     `__.register_query()__`
+    |Register a query under an optional name.
+ .4+|link:{scripts_dir}/tc_def-qry_prov.txt[tc_def-qry_prov, window="_blank"]
+ .4+|link:{scripts_dir}/REST/postman/tc_def-qry_prov.json[postman]
+ 
+    |{i_definition_query_link}[`I_DEFINITION_QUERY`, window="_blank"] +
+     `__.list_all_queries()__`
+    |List all registered queries.
+
+    |{i_definition_query_link}[`I_DEFINITION_QUERY`, window="_blank"] +
+     `__.list_all_matching_queries()__`
+    |List registered queries matching a pattern.
+
+    |{i_definition_query_link}[`I_DEFINITION_QUERY`, window="_blank"] +
+     `__.delete_query()__`
+    |Delete a query.
 
 |===
 
@@ -56,223 +142,215 @@ Specifications:
 
 Specifications:
     
-* {openehr_rm_ehr}[EHR IM]
-* {openehr_rm_common}[Common IM]
-* {openehr_rm_data_structures}[Data Structures IM]
-* {openehr_rm_data_types}[Data Types IM]
-* {openehr_rm_support}[Support IM]
-* {openehr_rm_common}#_change_control_package[Versioning]
+* Service Interfaces:
+** {openehr_sm_openehr_platform}#_ehr_package[EHR Service Model]
+** {openehr_ehr_rest_api}[EHR REST API]
+* Information Models:
+** {openehr_rm_ehr}[EHR IM]
+** {openehr_rm_common}[Common IM]
+** {openehr_rm_data_structures}[Data Structures IM]
+** {openehr_rm_data_types}[Data Types IM]
+** {openehr_rm_support}[Support IM]
+** {openehr_rm_common}#_change_control_package[Versioning]
 
-[cols="1,2,3,2,1", options="header"]
+:i_ehr_service_link: {openehr_sm_openehr_platform}#_i_ehr_service_interface
+:i_ehr_link: {openehr_sm_openehr_platform}#_i_ehr_interface
+:i_ehr_status_link: {openehr_sm_openehr_platform}#_i_ehr_status_interface
+:i_ehr_directory_link: {openehr_sm_openehr_platform}#_i_ehr_directory_interface
+:i_ehr_composition_link: {openehr_sm_openehr_platform}#_i_ehr_composition_interface
+:i_ehr_contribution_link: {openehr_sm_openehr_platform}#_i_ehr_contribution_interface
+
+[cols="1,3,3,1,1", options="header"]
 |===
-|Capability             |Conformance Point          |Description          |Test script      |REST script
+|Capability             |Conformance Point +
+                         (Service Model call)   |Description                            |Test case script      |REST script
 
-.6+|*EHR Repository*         
+.6+|*EHR Operations*         
 
-    |Create EHR
+    |{i_ehr_service_link}[`I_EHR_SERVICE`, window="_blank"] +
+     `__.create_ehr()__`
     |Create a new EHR; EHR id generated by system
-    |link:{scripts_dir}/create_ehr.txt[create_ehr, window="_blank"]
-    |link:{scripts_dir}/postman/create_ehr.json[postman script]
+    |link:{scripts_dir}/tc_ehr-create.txt[tc_ehr-create, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_ehr-create.json[postman]
 
-    |Create EHR with EHR id
+    |{i_ehr_service_link}[`I_EHR_SERVICE`, window="_blank"] +
+     `__.create_ehr_with_id()__`
     |Create new EHR with the specified EHR id
-    |link:{scripts_dir}/create_ehr_with_id.txt[create_ehr_with_id, window="_blank"]
-    |link:{scripts_dir}/postman/create_ehr_with_id.json[postman script]
+    |link:{scripts_dir}/tc_ehr-create_id.txt[tc_ehr-create_id, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_ehr-create_id.json[postman]
 
-    |Create EHR for subject
+    |{i_ehr_service_link}[`I_EHR_SERVICE`, window="_blank"] +
+     `__.create_ehr_for_subject()__`
     |Create new EHR with the specified subject id; EHR id generated by system
-    |link:{scripts_dir}/create_ehr_for_subject.txt[create_ehr_for_subject, window="_blank"]
-    |link:{scripts_dir}/postman/create_ehr_for_subject.json[postman script]
+    |link:{scripts_dir}/tc_ehr-create_sub.txt[tc_ehr-create_sub, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_ehr-create_sub.json[postman]
 
-    |Create EHR with EHR id and subject id
+    |{i_ehr_service_link}[`I_EHR_SERVICE`, window="_blank"] +
+     `__.create_ehr_for_subject_with_id()__`
     |Create new EHR with the specified EHR id and subject id.
-    |link:{scripts_dir}/create_ehr_with_id_and_subject.txt[create_ehr_with_id_and_subject, window="_blank"]
-    |link:{scripts_dir}/postman/create_ehr_for_subject.json[postman script]
+    |link:{scripts_dir}/tc_ehr-create_sub_id.txt[tc_ehr-create_sub_id, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_ehr-create_sub_id.json[postman]
 
-    |Get EHR
+    |{i_ehr_service_link}[`I_EHR_SERVICE`, window="_blank"] +
+     `__.get_ehr()__`
     |Get EHR with the specified EHR identifier.
     |
     |
 
-    |Get EHRs for subject
+    |{i_ehr_service_link}[`I_EHR_SERVICE`, window="_blank"] +
+     `__.get_ehrs_for_subject()__`
     |Get EHR(s) for specified subject.
-    |link:{scripts_dir}/get_ehrs_for_subject.txt[get_ehrs_for_subject, window="_blank"]
-    |
+    |link:{scripts_dir}/tc_ehr-get_sub.txt[tc_ehr-get_sub, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_ehr-get_sub.json[postman]
 
-.5+|*EHR Retrieve and Modify*         
+.4+|*EHR Status*         
 
-    |Get EHR active status
-    |Get `EHR_STATUS._is_modifiable_`
-    |
-    |
-
-    |Get EHR queryable status
-    |Get `EHR_STATUS._is_queryable_`
-    |
-    |
+    |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
+     `__.get_ehr_status()__`
+    |Get EHR modifiable and queryable status.
+ .4+|link:{scripts_dir}/tc_ehr-status.txt[tc_ehr-status, window="_blank"]
+ .4+|link:{scripts_dir}/REST/postman/tc_ehr-status.json[postman]
     
-    |Set EHR inactive
-    |Update `EHR_STATUS._is_modifiable_` to False
-    |
-    |
+    |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
+     `__.clear_ehr_modifiable()__`
+    |Set EHR to non-modifiable.
 
-    |Set EHR non-queryable
-    |Update `EHR_STATUS._is_queryable_` to False
-    |
-    |
+    |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
+     `__.clear_ehr_queryable()__`
+    |Set EHR to non-queryable.
 
-    |Set EHR status details
-    |Update `EHR_STATUS._other_details_`
-    |
-    |
+    |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
+     `__.update_other_details()__`
+    |Update other EHR status details.
 
-.5+|*Composition Retrieve and Modify*  
+.5+|*Composition Operations*  
 
-    |Create Composition
-    |Create new `COMPOSITION` with implicit Contribution
-    |link:{scripts_dir}/create_composition.txt[create_composition, window="_blank"]
-    |
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
+     `__.create_composition()__`
+    |Create a new Composition.
+ .5+|link:{scripts_dir}/tc_ehr-comp.txt[tc_ehr-comp, window="_blank"]
+ .5+|link:{scripts_dir}/REST/postman/tc_ehr-comp.json[postman]
 
-    |Get Composition by id
-    |Get `COMPOSITION` by id
-    |
-    |
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
+     `__.get_composition()__`
+    |Get Composition by id.
 
-    |Get Composition at time
-    |Get `COMPOSITION` at time
-    |
-    |
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
+     `__.get_composition_at_time()__`
+    |Get Composition at time.
 
-    |Update Composition
-    |Create a new version of a `COMPOSITION`
-    |
-    |
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
+     `__.update_composition()__`
+    |Create a new version of a Composition.
 
-    |Delete Composition
-    |Logically delete a `COMPOSITION`
-    |
-    |
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
+     `__.delete_composition()__`
+    |Logically delete a Composition.
                    
-.2+|*Directory Retrieve and Modify*
+.3+|*Directory Operations*
 
-    |Create directory
-    |
-    |
-    |
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`, window="_blank"] +
+     `__.create_directory()__`
+    |Create new directory in EHR.
+ .3+|link:{scripts_dir}/tc_ehr-dir.txt[tc_ehr-dir, window="_blank"]
+ .3+|link:{scripts_dir}/REST/postman/tc_ehr-dir.json[postman]
 
-    |Update directory
-    |
-    |
-    |
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`, window="_blank"] +
+     `__.update_directory()__`
+    |Update EHR directory.
+
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`, window="_blank"] +
+     `__.delete_directory()__`
+    |Delete EHR directory.
 
 .5+|*Change sets*
 
-    |Commit simple change set
-    |Commit `CONTRIBUTION` with `COMPOSITION` 
-    |
-    |
+ .3+|{i_ehr_contribution_link}[`I_EHR_CONTRIBUTION`, window="_blank"] +
+     `__.commit_contribution()__`
+    |Commit Contribution with one Composition.
+    |link:{scripts_dir}/tc_ehr-ctrb-smpl.txt[tc_ehr-ctrb_smpl, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_ehr-ctrb-smpl.json[postman]
 
-    |Commit mixed content change set
-    |Commit `CONTRIBUTION` with multiple `COMPOSITIONs` , `DIRECTORY`
-    |
-    |
+    |Commit Contribution with new Compositions, Directory.
+    |link:{scripts_dir}/tc_ehr-ctrb-cplx.txt[tc_ehr-ctrb_cplx, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_ehr-ctrb-cplx.json[postman]
 
-    |Commit mixed update change set
-    |Commit `CONTRIBUTION` with `COMPOSITION` add, updated, deleted
-    |
-    |
+    |Commit mixed update Contribution with new, changed, deleted items.
+    |link:{scripts_dir}/tc_ehr-ctrb-mix.txt[tc_ehr-ctrb_mix, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_ehr-ctrb-mix.json[postman]
 
-    |Get change set
-    |Get `CONTRIBUTION` by id
-    |
-    |
+    |{i_ehr_contribution_link}[`I_EHR_CONTRIBUTION`, window="_blank"] +
+     `__.get_contribution()__`
+    |Get Contribution.
+    |link:{scripts_dir}/tc_ehr-ctrb-get.txt[tc_ehr-ctrb_get, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_ehr-ctrb-get.json[postman]
 
-    |List Change Sets
+    |{i_ehr_contribution_link}[`I_EHR_CONTRIBUTION`, window="_blank"] +
+     `__.list_contributions()__`
     |List Contributions
-    |
-    |
+    |link:{scripts_dir}/tc_ehr-ctrb-list.txt[tc_ehr-ctrb_list, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_ehr-ctrb-list.json[postman]
 
 .9+|*Versioning*
 
+    |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
+     `__.get_versioned_ehr_status()__`
     |Get Versioned Ehr status
-    |
-    |
-    |
+ .9+|link:{scripts_dir}/tc_ehr-vers.txt[tc_ehr-vers, window="_blank"]
+ .9+|link:{scripts_dir}/REST/postman/tc_ehr-vers.json[postman]
 
-    |Get Ehr_status version by id
-    |                                                   
-    |
-    |
+    |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
+     `__.get_ehr_status_at_version()__`
+    |Get Ehr status at version
 
-    |Get Ehr_status version at time
-    |
-    |
-    |
+    |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
+     `__.get_ehr_status_at_time()__`
+    |Get Ehr status at time
 
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`, window="_blank"] +
+     `__.get_versioned_directory()__`
     |Get Versioned Directory
-    |
-    |
-    |
 
-    |Get Directory version by id
-    |                                                   
-    |
-    |
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`, window="_blank"] +
+     `__.get_directory_at_version()__`
+    |Get Directory at version
 
-    |Get Directory version at time
-    |
-    |
-    |
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`, window="_blank"] +
+     `__.get_directory_at_time()__`
+    |Get Directory at time
 
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
+     `__.get_versioned_composition()__`
     |Get Versioned Composition
-    |
-    |
-    |
 
-    |Get Composition version by id
-    |
-    |
-    |
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
+     `__.get_composition_at_version()__`
+    |Get Composition at version
 
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
+     `__.get_composition_at_time()__`
     |Get Composition version at time
-    |
-    |
-    |
 
- .3+|*Archetype +
-     validation*        
-     
-    |Accept valid content
-    |xxx
-    |
-    |
+.4+|*Archetype +
+    Validation*
 
-    |Reject invalid archetype
-    |xxx
-    |
-    |
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
+     `__.create_composition()__`
+    |Attempt to create new Composition; reject invalid archetype structure.
+ .4+|link:{scripts_dir}/tc_ehr-arch_val.txt[tc_ehr-arch_val, window="_blank"]
+ .4+|link:{scripts_dir}/REST/postman/tc_ehr-arch_val.json[postman]
 
-    |Reject invalid content
-    |xxx
-    |
-    |
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
+     `__.create_composition()__`
+    |Attempt to create new Composition; reject invalid archetype.
+                                                                            
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
+     `__.update_composition()__`
+    |Attempt to update Composition; reject invalid archetype structure.
 
- .3+|*Logging*
- 
-    |Log creates
-    |xxx
-    |
-    |
-
-    |Log updates
-    |xxx
-    |
-    |
-
-    |Log reads
-    |xxx
-    |
-    |
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
+     `__.update_composition()__`
+    |Attempt to update Composition; reject invalid archetype.
 
 |===
 
@@ -280,142 +358,153 @@ Specifications:
 
 Specifications:
 
-* {openehr_rm_demographic}[Demographic IM]
-* {openehr_rm_common}[Common IM]
-* {openehr_rm_data_structures}[Data Structures IM]
-* {openehr_rm_data_types}[Data Types IM]
-* {openehr_rm_support}[Support IM]
-* {openehr_rm_common}#_change_control_package[Versioning])
+* Service Interfaces:
+** {openehr_sm_openehr_platform}#_demographic_package[Demographic Service Model]
+* Information Models:
+** {openehr_rm_demographic}[Demographic IM]
+** {openehr_rm_common}[Common IM]
+** {openehr_rm_data_structures}[Data Structures IM]
+** {openehr_rm_data_types}[Data Types IM]
+** {openehr_rm_support}[Support IM]
+** {openehr_rm_common}#_change_control_package[Versioning])
 
-[cols="1,2,3,2,1", options="header"]
+:i_demographic_service_link: {openehr_sm_openehr_platform}#_i_demographic_service_interface
+:i_party_link: {openehr_sm_openehr_platform}#_i_party_interface
+:i_party_relationship_link: {openehr_sm_openehr_platform}#_i_party_relationship_interface
+
+[cols="1,3,3,1,1", options="header"]
 |===
-|Capability             |Conformance Point          |Description          |Test script              |REST script
+|Capability             |Conformance Point +
+                         (Service Model call)       |Description          |Test case script      |REST script
 
-.3+|*Demographic data*
-                        |Create Party               |                     |DEM:create party; +
-                                                                            DEM:retrieve party; +
-                                                                            regression diff         |
+.6+|*Party +
+    Operations*
 
-                        |Update PARTY               |                     |DEM:create party; +
-                                                                             DEM:retrieve party; +
-                                                                             DEM:update party; +
-                                                                             DEM:retrieve party; +
-                                                                             regression diff        |
+    |{i_demographic_service_link}[`I_DEMOGRAPHIC_SERVICE`, window="_blank"] +
+     `__.create_party()__`
+    |Create a new Party; Party id generated by system.
+ .6+|link:{scripts_dir}/tc_dem-party.txt[tc_dem-party, window="_blank"]
+ .6+|link:{scripts_dir}/REST/postman/tc_dem-party.json[postman]
 
-                        |Retrieve PARTY         |xxx                       |                        |
+    |{i_party_link}[`I_PARTY`, window="_blank"] +
+     `__.get_party()__`
+    |Retrieve a Party, current version.
 
-    |*Versioning*       |Commit Party group +
-                         change set             |xxx                        |                       |
+    |{i_party_link}[`I_PARTY`, window="_blank"] +
+     `__.get_party_at_time()__`
+    |Retrieve a Party, current version.
 
- .3+|*Archetype +
-     validation*        |Accept valid content   |                           |DEM:create_xxx; +
-                                                                             check sys log          |
-                        |Reject invalid +
-                        archetype               |                           |DEM:create_xxx; +
-                                                                             check sys log          |
+    |{i_party_link}[`I_PARTY`, window="_blank"] +
+     `__.get_party_at_version()__`
+    |Retrieve a Party, current version.
 
-                        |Reject invalid content |                           |DEM:create_xxx; +
-                                                                            check sys log           |
+    |{i_party_link}[`I_PARTY`, window="_blank"] +
+     `__.update_party()__`
+    |Update a Party.
+
+    |{i_party_link}[`I_PARTY`, window="_blank"] +
+     `__.delete_party()__`
+    |Delete a Party.
+
+.4+|*Party +
+    Relationship +
+    Operations*
+
+    |{i_demographic_service_link}[`I_DEMOGRAPHIC_SERVICE`, window="_blank"] +
+     `__.create_party_relationship()__`
+    |Create a new Party relationship; Relationship id generated by system.
+ .4+|link:{scripts_dir}/tc_dem-party_rel.txt[tc_dem-party_rel, window="_blank"]
+ .4+|link:{scripts_dir}/REST/postman/tc_dem-party_rel.json[postman]
+
+    |{i_party_relationship_link}[`I_PARTY_RELATIONSHIP`, window="_blank"] +
+     `__.get_party_relationship()__`
+    |Retrieve a Party relationship, current version.
+
+    |{i_party_relationship_link}[`I_PARTY_RELATIONSHIP`, window="_blank"] +
+     `__.update_party_relationship()__`
+    |Update a Party relationship.
+
+    |{i_party_relationship_link}[`I_PARTY_RELATIONSHIP`, window="_blank"] +
+     `__.delete_party_relationship()__`
+    |Delete a Party relationship.
+
+.4+|*Archetype +
+    Validation*
+
+    |{i_demographic_service_link}[`I_DEMOGRAPHIC_SERVICE`, window="_blank"] +
+     `__.create_party()__`
+    |Attempt to create new Party; reject invalid archetype structure.
+ .4+|link:{scripts_dir}/tc_dem-arch_val.txt[tc_dem-arch_val, window="_blank"]
+ .4+|link:{scripts_dir}/REST/postman/tc_dem-arch_val.json[postman]
+
+    |{i_demographic_service_link}[`I_DEMOGRAPHIC_SERVICE`, window="_blank"] +
+     `__.create_party()__`
+    |Attempt to create new Party; reject invalid archetype.
                                                                             
- .3+|*Logging*         |Log creates            |                            |DEM:create_xxx; +
-                                                                            check sys log           |
-                                                
-                        |Log updates            |                           |DEM:commit_xxx; +
-                                                                            check sys log           |
-                                                
-                        |Log reads              |                           |DEM:retrieve_xxx; +
-                                                                             check sys log          |
+    |{i_demographic_service_link}[`I_PARTY_SERVICE`, window="_blank"] +
+     `__.update_party()__`
+    |Attempt to update Party; reject invalid archetype structure.
 
+    |{i_demographic_service_link}[`I_PARTY_SERVICE`, window="_blank"] +
+     `__.update_party()__`
+    |Attempt to update Party; reject invalid archetype.
+                                                                            
 |===
 
-[.tbd]
-TODO: In theory we could include Integration Entries ({openehr_rm_integration}[Integration IM]), but I don't think anyone uses them. I suspect that spec should be retired.
 
-=== Messaging Component
+=== Querying Component
 
 Specifications:
 
-* {openehr_rm_ehr_extract}[EHR Extract IM]
-* {openehr_rm_ehr}[EHR IM]
-* {openehr_rm_demographic}[Demographic IM]
-* {openehr_rm_common}[Common IM]
-* {openehr_rm_data_structures}[Data Structures IM]
-* {openehr_rm_data_types}[Data Types IM]
-* {openehr_rm_support}[Support IM]
+* Service Interfaces:
+** {openehr_sm_openehr_platform}#_query_package[Query Service Model]
+** {openehr_query_rest_api}[Query REST API]
+* Language Specifications:
+** {openehr_query_aql}[AQL specification]
 
+:i_query_service_link: {openehr_sm_openehr_platform}#_i_query_service_interface
 
-[cols="1,2,3,2,1", options="header"]
+[cols="1,3,3,1,1", options="header"]
 |===
-|Capability             |Conformance Point          |Description          |Test script              |REST script
+|Capability             |Conformance Point +
+                         (Service Model call)       |Description          |Test case script      |REST script
 
-.5+|*EHR Extract*
-                        |Export openEHR Extract +
-                         1 patient                  |                     |EHRX:                    |
+.2+|*AQL Basic*
 
-                        |Export openEHR Extract +
-                         w/ versions                |                     |EHRX:                    |
+    |{i_query_service_link}[`I_QUERY_SERVICE`, window="_blank"] +
+     `__.execute_stored_query()__`
+    |Execute a simple stored patient query.
+    |link:{scripts_dir}/tc_aql-stor_basic.txt[tc_aql-stor_basic, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_aql-stor_basic.json[postman]
 
-                        |Export openEHR Extract +
-                         multiple patients          |                     |EHRX:                    |
+    |{i_query_service_link}[`I_QUERY_SERVICE`, window="_blank"] +
+     `__.execute_ad_hoc_query()__`
+    |Execute a simple ad hoc patient query.
+    |link:{scripts_dir}/tc_aql-adhoc_basic.txt[tc_aql-adhoc_basic, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_aql-adhoc_basic.json[postman]
 
-                        |Export generic Extract +
-                         1 patient                  |                     |EHRX:                    |
+.2+|*AQL Advanced*
 
-                        |Export whole +
-                         patient record             |                     |EHRX:                    |
+    |{i_query_service_link}[`I_QUERY_SERVICE`, window="_blank"] +
+     `__.execute_stored_query()__`
+    |Execute a complex stored patient query.
+    |link:{scripts_dir}/tc_aql-stor_cplx.txt[tc_aql-stor_cplx, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_aql-stor_cplx.json[postman]
 
-|*Template Data +
- Schema (TDS)*          |TDD commit                 |                     |EHRX:                    |
-                 
-|===
+    |{i_query_service_link}[`I_QUERY_SERVICE`, window="_blank"] +
+     `__.execute_stored_query()__`
+    |Execute a complex stored population query.
+    |link:{scripts_dir}/tc_aql-pop_cplx.txt[tc_aql-pop_cplx, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_aql-pop_cplx.json[postman]
 
+|*AQL & +
+ Terminology*
 
-=== Querying Product Component
-
-Specifications:
-
-* {openehr_query_aql}[AQL specification]
-
-[cols="1,2,3,2,1", options="header"]
-|===
-|Capability             |Conformance Point      |Description          |Test script              |REST script
-
-.2+|*Stored queries*    |Store query             |DEFINITIONS API     |DEF:create stored query; +
-                                                                        DEF:get stored query; +
-                                                                        DEF:list stored queries |
-
-                        |Delete query           |DEFINITIONS API        |DEF:create stored query; +
-                                                                     DEF:delete stored query; +
-                                                                     DEF:get stored query; +
-                                                                     DEF:list stored queries |
-
-|*AQL basic*            |Patient-centric        |QUERY API              |EHR:commit composition x N; +
-                                                                     QRY:execute ad hoc query +
-                                                                     regression. |
-
-.2+|*AQL advanced*     |Patient-centric        |QUERY API              |EHR:commit composition x N; +
-                                                                     AQL:create stored query; +
-                                                                     QRY:execute stored query; +
-                                                                     QRY:execute ad hoc query; +
-                                                                     regression. |
-
-                    |Population query       |QUERY API              |EHR:commit composition x N; +
-                                                                     AQL:create stored query; +
-                                                                     QRY:execute stored query; +
-                                                                     QRY:execute ad hoc query; +
-                                                                     regression. |
-.2+|*AQL + + 
- terminology*       |Patient-centric        |QUERY API              |EHR:commit composition x N; +
-                                                                     AQL:create stored query; +
-                                                                     QRY:execute stored query; +
-                                                                     QRY:execute ad hoc query; +
-                                                                     regression. |
-
-                    |Population query       |QUERY API              |EHR:commit composition x N; +
-                                                                     AQL:create stored query; +
-                                                                     QRY:execute stored query; +
-                                                                     QRY:execute ad hoc query; +
-                                                                     regression. |
+    |{i_query_service_link}[`I_QUERY_SERVICE`, window="_blank"] +
+     `__.execute_stored_query()__`
+    |Execute a stored query that interfaces with terminology service.
+    |link:{scripts_dir}/tc_aql-tc_aql-stor_term.txt[tc_aql-stor_term, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_aql-tc_aql-stor_term.json[postman]
 
 |===
 
@@ -424,105 +513,241 @@ Specifications:
 
 Specifications:
 
-* xxx
+* Service Interfaces:
+** {openehr_sm_openehr_platform}#_admin_package[Admin Service Model]
 
-[cols="1,2,3,2,1", options="header"]
+:i_admin_service_link: {openehr_sm_openehr_platform}#_i_admin_service_interface
+:i_admin_archive_link: {openehr_sm_openehr_platform}#_i_admin_archive_interface
+:i_admin_dump_load_link: {openehr_sm_openehr_platform}#_i_admin_dump_load_interface
+
+[cols="1,3,3,1,1", options="header"]
 |===
-|Capability             |Conformance Point      |Description          |Test script              |REST script
+|Capability             |Conformance Point +
+                         (Service Model call)       |Description          |Test case script      |REST script
 
-|*List transactions*    |List CONTRIBUTIONs +
-                         since time             |ADMIN API              |ADM:                   |
-.2+|*Transaction +
-statistics*             |Get CONTRIBUTION +
-                        count since time       |ADMIN API              |ADM:                   |
+.4+|*Activity Report*
 
-                        |Get COMPOSITIONs +
-                        add/mod/del +
-                        since time             |ADMIN API              |ADM:                   |
+    |{i_admin_service_link}[`I_ADMIN_SERVICE`, window="_blank"] +
+     `__.list_contributions()__`
+    |List Contributions in a time interval.
+ .4+|link:{scripts_dir}/tc_adm-actv_rpt.txt[tc_adm-actv_rpt, window="_blank"]
+ .4+|link:{scripts_dir}/REST/postman/tc_adm-actv_rpt.json[postman]
 
-|*Bulk EHR Export*      |Export all EHRs        |ADMIN API              |EHR:create EHR x N; + ;
-                                                                        EHR:commit composition x N; + 
-                                                                        ADM:export; +
-                                                                        file test / diff        |
+    |{i_admin_service_link}[`I_ADMIN_SERVICE`, window="_blank"] +
+     `__.contribution_count()__`
+    |Get number of Contributions in a time interval.
 
-|*Bulk EHR Load*        |Load complete file     |ADMIN API              |ADM:load; +
-                                                                        ADM:retrieve x N        |
-|*Archive EHRs*         |Archive EHRs by +
-                        identifier             |ADMIN API              |ADM:archive; +
-                                                                        review archive;
-                                                                        confirm status on +
-                                                                        archived EHRs         |
-|*Physical EHR +
- delete*     		|Delete EHR by +
-                    identifier                  |ADMIN API              |ADM:delete_ehr         |
-                    
-|*Physical +
-Demographics +
-delete*     		|Delete PARTY by +
-                    identifier                  |ADMIN API              |ADM:delete_party       |
+    |{i_admin_service_link}[`I_ADMIN_SERVICE`, window="_blank"] +
+     `__.versioned_composition_count()__`
+    |List Versioned Compositions in a time interval.
+
+    |{i_admin_service_link}[`I_ADMIN_SERVICE`, window="_blank"] +
+     `__.composition_version_count()__`
+    |Get number of Composition versions in a time interval.
+
+.2+|*Physical Deletion*
+
+    |{i_admin_service_link}[`I_ADMIN_SERVICE`, window="_blank"] +
+     `__.physical_ehr_delete()__`
+    |Physically delete an EHR.
+    |link:{scripts_dir}/tc_adm-ehr_del.txt[tc_adm-ehr_del, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_adm-ehr_del.json[postman]
+
+    |{i_admin_service_link}[`I_ADMIN_SERVICE`, window="_blank"] +
+     `__.physical_party_delete()__`
+    |Physically delete a Party.
+    |link:{scripts_dir}/tc_adm-party_del.txt[tc_adm-party_del, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_adm-party_del.json[postman]
+
+.2+|*EHR Dump/Load*
+
+    |{i_admin_dump_load_link}[`I_ADMIN_DUMP_LOAD`, window="_blank"] +
+     `__.export_ehrs()__`
+    |Export all EHRs from EHR service.
+ .2+|link:{scripts_dir}/tc_adm-dump_load.txt[tc_adm-dump_load, window="_blank"]
+ .2+|link:{scripts_dir}/REST/postman/tc_adm-dump_load.json[postman]
+
+    |{i_admin_dump_load_link}[`I_ADMIN_DUMP_LOAD`, window="_blank"] +
+     `__.load_ehrs()__`
+    |Populate the EHR service from a file archive.
+
+|*EHR Archive*
+
+    |{i_admin_archive_link}[`I_ADMIN_ARCHIVE`, window="_blank"] +
+     `__.archive_ehrs()__`
+    |Archive selected EHRs from EHR service.
+    |link:{scripts_dir}/tc_adm-arcv_ehrs.txt[tc_adm-arcv_ehrs, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_adm-arcv_ehrs.json[postman]
+
+|*Demographic Archive*
+
+    |{i_admin_archive_link}[`I_ADMIN_ARCHIVE`, window="_blank"] +
+     `__.archive_parties()__`
+    |Archive selected Parties and relationships from Demographic service.
+    |link:{scripts_dir}/tc_adm-arcv_party.txt[tc_adm-arcv_party, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_adm-arcv_party.json[postman]
+
 |===
 
-=== API Product Component
+
+=== Messaging Component
 
 Specifications:
 
-* xxx
+* Service Interfaces:
+** {openehr_sm_openehr_platform}#_message_package[Message Service Model]
+* Information Models:
+** {openehr_rm_ehr_extract}[EHR Extract IM]
+** {openehr_rm_ehr}[EHR IM]
+** {openehr_rm_demographic}[Demographic IM]
+** {openehr_rm_common}[Common IM]
+** {openehr_rm_data_structures}[Data Structures IM]
+** {openehr_rm_data_types}[Data Types IM]
+** {openehr_rm_support}[Support IM]
 
-[cols="1,2,3,2,1", options="header"]
+:i_message_service_link: {openehr_sm_openehr_platform}#_i_message_service_interface
+:i_ehr_extract_link: {openehr_sm_openehr_platform}#_i_ehr_extract_interface
+:i_tdd_link: {openehr_sm_openehr_platform}#_i_tdd_interface
+
+[cols="1,3,3,1,1", options="header"]
+|===
+|Capability             |Conformance Point +
+                         (Service Model call)       |Description          |Test case script      |REST script
+
+.4+|*EHR Extract*
+
+    |{i_ehr_extract_link}[`I_EHR_EXTRACT`, window="_blank"] +
+     `__.export_ehr()__`
+    |Export whole EHR for one subject.
+    |link:{scripts_dir}/tc_msg-extr_ehr.txt[tc_msg-extr_ehr, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_msg-extr_ehr.json[postman]
+
+    |{i_ehr_extract_link}[`I_EHR_EXTRACT`, window="_blank"] +
+     `__.export_ehr_extract()__`
+    |Export an extract for an EHR.
+    |link:{scripts_dir}/tc_msg-extr_extr.txt[tc_msg-extr_extr, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_msg-extr_extr.json[postman]
+
+    |{i_ehr_extract_link}[`I_EHR_EXTRACT`, window="_blank"] +
+     `__.export_ehrs()__`
+    |Export multiple whole EHRs in Extract form.
+    |link:{scripts_dir}/tc_msg-extr_ehrs.txt[tc_msg-extr_ehrs, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_msg-extr_ehrs.json[postman]
+
+    |{i_ehr_extract_link}[`I_EHR_EXTRACT`, window="_blank"] +
+     `__.export_ehr_extracts()__`
+    |Export extracts of multiple EHRs.
+    |link:{scripts_dir}/tc_msg-extr_extrs.txt[tc_msg-extr_extrs, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_msg-extr_extrs.json[postman]
+
+.2+|*TDD*
+
+    |{i_tdd_link}[`I_TDD`, window="_blank"] +
+     `__.import_tdd()__`
+    |Import a TDD for one EHR.
+    |link:{scripts_dir}/tc_msg-tdd_ehr.txt[tc_msg-tdd_ehr, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_msg-tdd_ehr.json[postman]
+
+    |{i_tdd_link}[`I_TDD`, window="_blank"] +
+     `__.import_tdds()__`
+    |Import a TDDs for multiple EHRs.
+    |link:{scripts_dir}/tc_msg-tdd_ehrs.txt[tc_msg-tdd_ehrs, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_msg-tdd_ehrs.json[postman]
+                 
+|===
+
+
+=== REST API Component
+
+Specifications:
+
+* Service Interfaces:
+** {openehr_sm_openehr_platform}[Service Model]
+** {openehr_rest_apis}[REST APIs]
+
+[cols="1,2,3,1,1", options="header"]
 |===
 |Product +
- Component
-                |Capability        |Conformance +
-                                    point                   |Access Method          |Test Script
+ Component      |Capability        |Description                             |Test case Script   |REST Script
                 
-.7+|*REST APIs* |*DEFINITIONS API* |???                     |DEFINITIONS API        |Exercise all functions +
-                                                                                     & arguments
+|*DEFINITION API*
+|{i_definition_adl14_link}[`I_DEFINITION_ADL14`, window="_blank"] +
+ {i_definition_adl2_link}[`I_DEFINITION_ADL2`, window="_blank"] +
+ {i_definition_query_link}[`I_DEFINITION_QUERY`, window="_blank"]
+|Exercise all functions & arguments      
+|link:{scripts_dir}/tc_api-def.txt[tc_api-def, window="_blank"]
+|link:{scripts_dir}/REST/postman/tc_api-def.json[postman]
 
-                |*EHR API*         |???                     |EHR API                |Exercise all functions +
-                                                                                     & arguments
-                                                                                     
-                |*DEMOGRAPHIC API* |???                     |DEMOGRAPHIC API        |Exercise all functions +
-                                                                                     & arguments
-                                                                                     
-                |*QUERY API*       |???                     |QUERY API              |Exercise all functions +
-                                                                                     & arguments
-                                                                                         
-                |*CDS API*         |???                     |CDS API                |Exercise functions +
-                                                                                     & arguments
-                                                                                         
-                |*ADMIN API*       |???                     |ADMIN API              |Exercise functions +
-                                                                                     & arguments
-                                                                                         
-                |*TDD API*         |???                     |TDD API                |Exercise functions +
-                                                                                     & arguments
+|*EHR API*
+|{i_ehr_service_link}[`I_EHR_SERVICE`, window="_blank"]
+|Exercise all functions & arguments
+|link:{scripts_dir}/tc_api-ehr.txt[tc_api-ehr, window="_blank"]
+|link:{scripts_dir}/REST/postman/tc_api-ehr.json[postman]
+
+|*DEMOGRAPHIC API*
+|{i_demographic_service_link}[`I_DEMOGRAPHIC_SERVICE`, window="_blank"]
+|Exercise all functions & arguments
+|link:{scripts_dir}/tc_api-dem.txt[tc_api-dem, window="_blank"]
+|link:{scripts_dir}/REST/postman/tc_api-dem.json[postman]
+
+|*QUERY API*
+|{i_query_service_link}[`I_QUERY_SERVICE`, window="_blank"]
+|Exercise all functions & arguments
+|link:{scripts_dir}/tc_api-qry.txt[tc_api-qry, window="_blank"]
+|link:{scripts_dir}/REST/postman/tc_api-qry.json[postman]
+
+|*ADMIN API*
+|{i_admin_service_link}[`I_ADMIN_SERVICE`, window="_blank"] +
+ {i_admin_dump_load_link}[`I_ADMIN_DUMP_LOAD`, window="_blank"] +
+ {i_admin_archive_link}[`I_ADMIN_ARCHIVE`, window="_blank"]
+|Exercise all functions & arguments
+|link:{scripts_dir}/tc_api-adm.txt[tc_api-adm, window="_blank"]
+|link:{scripts_dir}/REST/postman/tc_api-adm.json[postman]
+
+|*MESSAGE API*
+|{i_ehr_extract_link}[`I_EHR_EXTRACT`, window="_blank"] +
+ {i_tdd_link}[`I_TDD`, window="_blank"]
+|Exercise all functions & arguments
+|link:{scripts_dir}/tc_api-msg.txt[tc_api-msg, window="_blank"]
+|link:{scripts_dir}/REST/postman/tc_api-msg.json[postman]
+
 |===
 
-=== Non-Functional Characteristics
+== Non-Functional Conformance
+
+=== Security and Privacy
 
 Specifications:
+    
+* Service Interfaces:
+** {openehr_sm_openehr_platform}#_ehr_package[EHR Service Model]
+** {openehr_ehr_rest_api}[EHR REST API]
+** {openehr_demographic_rest_api}[DEMOGRAPHIC REST API]
+* Information Models:
+** {openehr_rm_common}#_digital_signature[Digital Signature]
+** {openehr_overview}#_overview_4[EHR/Demographic separation]
 
-* {openehr_rm_common}#_digital_signature[Digital Signature]
-* {openehr_overview}#_overview_4[EHR/Demographic separation]
-
-
-[cols="2,3,3,3,3", options="header"]
+[cols="1,3,3,1,1", options="header"]
 |===
-|Product Attribute
-                |Capability         |Conformance +
-                                     point                  |Access Method          |Test Script
+|Capability             |Conformance Point      |Description          |Test case script      |REST script
 
-.3+|*Security & +
- Privacy*
-                |*Signing*          |???                    |xxx API                |Commit/Retrieve +
-                                                                                     data regression
-                |*Anonymous EHRs*   |???                    |EHR API                |Commit/query
-                |*Info Consent*     |???                    |xxx API                |Commit/Retrieve +
-                                                                                     data regression
+|*Signing*
+
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
+     `__.create_composition()__`
+    |Create a new signed Composition.
+    |link:{scripts_dir}/tc_secpriv-sign.txt[tc_secpriv-sign, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_secpriv-sign.json[postman]
+
+|*Anonymous EHRs*
+
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
+     `__.create_composition()__` +
+     {i_demographic_service_link}[`I_DEMOGRAPHIC_SERVICE`, window="_blank"] +
+     `__.create_party()__`
+    |Create a new EHR, Demographic Party, and external link.
+    |link:{scripts_dir}/tc_secpriv-anon_ehr.txt[tc_secpriv-anon_ehr, window="_blank"]
+    |link:{scripts_dir}/REST/postman/tc_secpriv-anon_ehr.json[postman]
+
 |===
-
-=== Tools
-
-Tools supplied with an openEHR EHR solution should include:
-
-* generic EHR viewer - a generic web portal for viewing EHR data in generic form.
 

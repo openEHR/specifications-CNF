@@ -8,11 +8,11 @@ Conformance testing is used as the basis of product certification, and has the f
 
 == Scope
 
-This specification describes the _conformance points_ for _openEHR platform systems_ whose semantics are specified by the openEHR Foundation. Such systems typically include data services (i.e. persistence & querying) along with various options dependent on the orientation of the product and its maturity; these may include integration capabilities, domain services (e.g. guidelines, planning) and so on.
+This specification describes the _conformance points_ for _openEHR platform products_ whose semantics are based on openEHR Foundation specifications. Such systems typically include data services (i.e. persistence & querying) along with various options dependent on the orientation of the product and its maturity; these may include integration capabilities, domain services (e.g. guidelines, planning) and so on.
 
-A conformance point is understood as a _testable capability of a system that relates to a business-relevant capability_. For example, conformance points for an EHR persistence service (aka Clinical Data Repository, or CDR) may include 'create EHR', 'update EHR', 'versioning' etc.
+A conformance point is understood as a _testable capability of a system that relates to a business-relevant capability_. For example, conformance points for an EHR persistence service (aka Clinical Data Repository, or CDR) may include 'create EHR', 'update EHR', 'versioning' etc. Conformance points are based on {openehr_sm_openehr_platform}[openEHR Platform Service Model] calls.
 
-One or more methods of testing each conformance point is described in this specification. Conformance testing is based on comparing system behaviour and data to the relevant openEHR published specifications.
+One or more methods of testing each conformance point is described in this specification. Conformance testing is based on comparing system behaviour to the relevant openEHR published specifications.
 
 Fine-grained system capabilities naturally aggregate in various ways to produce specific coarse-grained business-relevant profiles, such as for a 'minimally viable openEHR system' and so on. In order to provide the customer side with a means of determining what constitute sensible sets of requirements, the specification defines a set of _profiles_.
 

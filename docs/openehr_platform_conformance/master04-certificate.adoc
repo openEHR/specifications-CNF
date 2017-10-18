@@ -10,8 +10,8 @@ An openEHR Conformance Certificate consists of a rating in the Functional and Co
                             |STANDARD       |More comprehensive capabilities useful in a 'standard' EHR operational environment.
                             |OPTIONS     	|Optional features required in specific circumstances.
 
-.2+|*Security and privacy*  |xxx            |xxx
-                            |xxx            |xx
+.2+|*Non-functional*        |BASIC-SEC      |Basic security features.
+                            |BASIC-PRIV     |Basic privacy features.
                     
 .2+|*External data format*  |Canonical XML  |openEHR Canonical XML, defined by published XSDs
                             |Canonical JSON |openEHR Canonical XML, defined by published transform of XML
@@ -39,24 +39,55 @@ Sec & Priv:     xxx
 Ext Data Fmt:   XML, JSON
 
 
-Detailed Report
-===============
+Detailed Test Report
+====================
 
-+================+===================+================+====================+==============+===========+
-|SUT Component   |Product Component  |Capability      |Conformance point   |Tests         |Result     |
-+================+===================+================+====================+==============+===========+
-|ACME CDR        |EHR persistence    |Versioning      |Contribution commit |EHR-VER-01    |pass       |
-|                |                   |                |new                 |EHR-VER-02    |pass       |
-|                |                   |                |                    |EHR-VER-03    |FAIL       |
-|                |                   |                +--------------------+--------------+-----------+
-|                |                   |                |Contribution commit |EHR-VER-09    |pass       |
-|                |                   |                |changed             |EHR-VER-11    |pass       |
-+----------------+-------------------+----------------+--------------------+--------------+-----------+
-|                                            . . . .                                                  |
-+----------------+-------------------+----------------+--------------------+--------------+-----------+
-|etc             |etc                |etc             |etc                 |etc           |           |
-+----------------+-------------------+----------------+--------------------+--------------+-----------+
++==============+=============+===============+=============================+==================+========+
+|SUT           |openEHR      |Capability     |Conformance point            |Test              |Result  |
+|Component     |Component    |(PROFILE)      |                             |Case              |        |
++==============+=============+===============+=============================+==================+========+
+|ACME CDR      |EHR          |EHR Operations |I_EHR_SERVICE.               |                  |        |
+|              |persistence  |               |create_ehr()                 |tc_ehr-create     |pass    |
+|              |             +---------------+-----------------------------+------------------+--------+
+|              |             |Versioning     |I_EHR_COMPOSITION.           |                  |        |
+|              |             |               |get_versioned_composition()  |tc_ehr-vers       |pass    |
+|              |             |               +-----------------------------+------------------+--------+
+|              |             |               |I_EHR_CONTRIBUTION.          |tc_ehr-ctrb_smpl  |pass    |
+|              |             |               |commit_contribution()        |tc_ehr-ctrb_cplx  |FAIL    |
++--------------+-------------+---------------+-----------------------------+------------------+--------+
+|                                          . . . .                                                     |
++--------------+-------------+---------------+-----------------------------+------------------+--------+
+|etc           |etc          |etc            |etc                          |etc               |        |
++==============+=============+===============+=============================+==================+========+
+
+
+PROFILE REPORT
+==============
+
++==============+================+====================================+===========+========+
+|SUT           |openEHR         |Capability                          |Required   |Result  |
+|Component     |Component       |                                    |in profile |
++==============+================+====================================+===========+========+
+|ACME K-base   |Definitions     |ADL 1.4 archetype provisioning      |   Y       |pass    |
+|              |                |ADL 1.4 OPT provisioning            |   Y       |pass    |
+|              |                |Query provisioning                  |   Y       |pass    |
++--------------+----------------+------------------------------------+-----------+--------+
+|ACME CDR      |EHR             |EHR Operations                      |   Y       |pass    |
+|              |persistence     |EHR Status                          |   Y       |pass    |
+|              |                |Composition Operations              |   Y       |pass    |
+|              |                |Directory Operations                |   Y       |pass    |
+|              |                |Change Sets                         |   Y       |pass    |
+|              |                |Versioning                          |   Y       |pass    |
++--------------+----------------+------------------------------------+-----------+--------+
+|ACME Konsole  |Admin           |Activity Report                     |   OPT     |FAIL    |
+|              |                |Physical Delete                     |   N       |pass    |
+|              |                |EHR Archive                         |   OPT     |pass    |
+|                           .   .   .   .   .                                             |
+|              |                |Signing                             |   OPT     |pass    |
++--------------+----------------+------------------------------------+-----------+--------+
+
 
 ------
+
 
 
