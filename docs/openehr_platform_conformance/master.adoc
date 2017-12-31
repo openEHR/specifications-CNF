@@ -26,7 +26,7 @@
 // ============================================ Asciidoc PREAMBLE =============================================
 //
 
-image::http://www.openehr.org/releases/BASE/latest/resources/images/openehr_logo_large.png["openEHR logo",align="center"]
+image::/releases/BASE/latest/resources/images/openehr_logo_large.png["openEHR logo",align="center"]
 
 = openEHR EHR Platform Conformance
 
@@ -69,7 +69,6 @@ include::master04-certificate.adoc[leveloffset=+1]
 include::master05-environment.adoc[leveloffset=+1]
 include::master06-schedule.adoc[leveloffset=+1]
 include::master07-profiles.adoc[leveloffset=+1]
-//include::master08-testsuites.adoc[leveloffset=+1]
 
 //
 // --------------------------------------------- REFERENCES -----------------------------------------------

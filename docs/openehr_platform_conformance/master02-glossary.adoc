@@ -8,7 +8,7 @@ The following terms and acronyms are used in this document.
 
 |API                    |Application Programmer Interface.
 |CDS                    |Clinical Decision Support.
-|REST                   |{https://en.wikipedia.org/wiki}/Representational_state_transfer[Representational state transfer], 
+|REST                   |{wikipedia}/Representational_state_transfer[Representational state transfer], 
                          a type of web service. REST-compliant Web services allow requesting systems to access and manipulate
                          textual representations of Web resources using a uniform and predefined set of stateless operations.
 |SUT                    |System under test.

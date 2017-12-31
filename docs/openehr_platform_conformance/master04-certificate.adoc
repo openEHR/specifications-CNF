@@ -2,7 +2,7 @@
 
 An openEHR Conformance Certificate consists of a rating in the Functional and Content dimensions, and a detailed report. The ratings are as follows:
 
-[cols="2,1,4", options="header"]
+[cols="1,1,3", options="header"]
 |===
 |Characteristics            |Levels			|Description
 
