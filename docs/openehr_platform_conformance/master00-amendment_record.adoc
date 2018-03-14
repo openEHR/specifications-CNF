@@ -6,10 +6,15 @@
 
 4+^h|*R E L E A S E{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}1.?.?*
 
-|[[latest_issue]]0.7.0
+|[[latest_issue]]0.7.1
+|Updates and new diagrams for SUT section.
+|T Beale
+|[[latest_issue_date]]15 Mar 2017
+
+|0.7.0
 |Major rework based on openEHR Patform SM.
 |openEHR SEC
-|[[latest_issue_date]]18 Oct 2017
+|18 Oct 2017
 
 |0.6.2
 |Updates to REST API at 25 Aug 2017. Added glossary. Improved SUT diagram.

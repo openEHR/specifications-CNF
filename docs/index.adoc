@@ -45,8 +45,8 @@ endif::[]
 
 |link:/releases/CNF/{cnf_release}/openehr_platform_conformance.html[openEHR EHR Platform Conformance]
 |Specification of formal conformance to the openEHR EHR Platform definition.
-|* https://openehr.atlassian.net/wiki/spaces/spec/pages/94181296/Conformance+Notes+-+SEC+meeting+Alkmaar+2017[Alkmaar 2017 notes] +
- * https://openehr.atlassian.net/wiki/spaces/spec/pages/73367558/openEHR+Conformance[Original page].
+a|* https://openehr.atlassian.net/wiki/spaces/spec/pages/94181296/Conformance+Notes+-+SEC+meeting+Alkmaar+2017[Alkmaar 2017 notes];
+* https://openehr.atlassian.net/wiki/spaces/spec/pages/73367558/openEHR+Conformance[Original page].
 
 |===
 

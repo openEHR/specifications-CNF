@@ -42,9 +42,8 @@
 <ul class="sectlevel2">
 <li><a href="#_system_under_test_sut">5.1. System Under Test (SUT)</a>
 <ul class="sectlevel3">
-<li><a href="#_normative_platform_service_model">5.1.1. Normative Platform Service Model</a></li>
-<li><a href="#_rest_apis">5.1.2. REST APIs</a></li>
-<li><a href="#_testing_tools">5.1.3. Testing Tools</a></li>
+<li><a href="#_general_description">5.1.1. General description</a></li>
+<li><a href="#_platform_abstract_service_model">5.1.2. Platform Abstract Service Model</a></li>
 </ul>
 </li>
 <li><a href="#_manual_testing">5.2. Manual Testing</a></li>
@@ -175,10 +174,16 @@
 <th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>R E L E A S E&#160;&#160;&#160;&#160;&#160;1.?.?</strong></p></th>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.7.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.7.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updates and new diagrams for SUT section.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>15 Mar 2017</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.7.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Major rework based on openEHR Patform SM.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">openEHR SEC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>18 Oct 2017</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18 Oct 2017</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.6.2</p></td>
@@ -523,101 +528,95 @@ PROFILE REPORT
 </div>
 <div class="sect2">
 <h3 id="_system_under_test_sut"><a class="anchor" href="#_system_under_test_sut"></a>5.1. System Under Test (SUT)</h3>
+<div class="sect3">
+<h4 id="_general_description"><a class="anchor" href="#_general_description"></a>5.1.1. General description</h4>
 <div class="paragraph">
-<p>It is assumed that any system provided to be tested for conformance under this specification has a <em>platform</em> architecture, i.e. consisting of one or more <em>product components</em> that are exposed via corresponding <em>services</em>, and that the component semantics are based on published openEHR specifications. Consequently, certain types of components are assumed and named in this specification, e.g. 'EHR Persistence', 'Demographic Persistence', 'Querying' and so on. These need not correspond to the product&#8217;s own names for these components.</p>
+<p>The totality of what is provided for conformance testing according to this specification is known as the <em>system under test</em>, or SUT. It is assumed that any such system has a <em>platform</em> architecture, consisting of one or more <em>product components</em> that are exposed via corresponding <em>native service APIs</em>, and that the component semantics and API are based on published openEHR specifications. At an implementation level, a native API is exposed via a software component interface e.g. a Java .jar, .Net assembly, Linux .so library etc.</p>
 </div>
 <div class="paragraph">
-<p>The service interface of any component can be understood at two levels: an abstract formal interface, and one or more implementation technology interfaces. The former is defined in terms of a formal service model, which is considered normative in openEHR, and is understood as expressing the <em>formal, transactional semantics</em> of each component.</p>
+<p>It is also assumed that native APIs are network-accessible via one or more communications protocols, each with an appropriate <em>protocol adapter</em>. Such protocols include the text-based, such as <a href="https://en.wikipedia.org/wiki/SOAP">SOAP/WSDL</a> and <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>, as well as the many binary protocols, including <a href="https://github.com/google/protobuf/wiki">Google Protocol Buffers</a>, <a href="https://thrift.apache.org/">Apache Thrift</a>, <a href="https://avro.apache.org/">Avro</a>, <a href="https://kafka.apache.org/">Kafka</a>, <a href="https://zeroc.com/products/ice#what-is-ice">ZeroC ICE</a>, and <a href="https://www.amqp.org/">Advanced Message Queueing Protocol (AMPQ)</a>. The general model is shown below.</p>
+</div>
+<div id="sut_model" class="imageblock text-center" style="text-align: center">
+<div class="content">
+<img src="diagrams/sut_model.svg" alt="sut model">
+</div>
+<div class="title">Figure 1. Component Model</div>
 </div>
 <div class="paragraph">
-<p>At an implementation technology level, the service model may be directly exposed as a software component interface e.g. a Java .jar, .Net assembly, Linux .so library etc. Such programming models will usually implement the transactional interfaces in a direct sense, and can thus be considered concrete implementations of the service model.</p>
+<p>In the above, there are two <em>test targets</em> for any given component in the SUT, i.e. two aspects of a component for which conformance is to be determined:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Semantic: the <em>formal, transactional semantics</em> of the component&#8217;s exposed functions and procedures when called;</p>
+</li>
+<li>
+<p>Interface(s): the concrete interfaces provided by the component.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>The transactional service model will also usually be available via one or more web protocol interfaces in the form of WSDL/SOAP and/or REST APIs. Any such interface is assumed to connect to the underlying transactional interface. A REST API is assumed to exist for the purposes of conformance testing. Accordingly, the formal expression of test cases that exercise underlying service calls is in the form of scripts based on the REST API.</p>
+<p>The former needs to be tested to determine if the component does what it is functionally intended to do, and is documented in terms of abstract interface definitions that include pre-conditions, post-conditions and exceptions. The latter is tested to determine that the concrete means of accessing the component provided by its developer do indeed provide that access correctly, and conform to accepted norms of the relevant kind of service interface (i.e. REST, AMPQ etc).</p>
 </div>
 <div class="paragraph">
-<p>Each of the concretely available implementation technology interfaces is also regarded as a product component, for which conformance testing may be conducted.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-this may be augmented in the future by an equivalent set of test cases for WSDL/SOAP and other API technologies.
-</td>
-</tr>
-</table>
+<p>To establish a common basis for naming and describing components of an openEHR Platform, the <a href="/releases/SM/latest/openehr_platform.html">openEHR Platform Abstract Service Model</a> may be used. This defines a standard set of openEHR component names along with definitions of the transactional semantics of each component, i.e. the 'semantic' test target referred to above. A product&#8217;s own component names need not correspond to the openEHR component names of course, but for the purupose of testing the logical mapping of the two should be provided by a developer.</p>
 </div>
 <div class="paragraph">
-<p>In addition, in order to enable testing to take place, various tools are recommended, including a system log viewer, a data viewer and a test application.</p>
+<p>Each of the concrete protocol interfaces is defined by its own specification, for example the <a href="https://github.com/openEHR/specifications-ITS/">openEHR REST API specification</a>, and may be regarded as a product component, for which conformance testing may be conducted. No assumption is made that any given product supports any particular protocol(s), although a minimal set of REST APIs on components such as the System Log is likely to be useful for testing purposes.</p>
 </div>
 <div class="paragraph">
-<p>The following figure illustrates the test environment, based on currently available specifications. As further specifications are published, the extent of coverage of testing will grow.</p>
+<p>The following figure illustrates a typical platform product, consisting of components and protocol interfaces as described above. Part or all of the platform (back-end) of such a product is provided for testing according to this specification.</p>
 </div>
 <div id="conformance_sut" class="imageblock text-center" style="text-align: center">
 <div class="content">
 <img src="diagrams/conformance_sut.svg" alt="conformance sut">
 </div>
-<div class="title">Figure 1. Conformance System Under Test</div>
+<div class="title">Figure 2. Conformance System Under Test</div>
 </div>
 <div class="paragraph">
-<p>In the above, elements with solid outlines are required, while elements with dashed outlines are those that may or may not be part of a given product. The generic portal is not considered part of the system under test, but an additional tool available to facilitate testing. Any actual system under test will normally consist of the mandatory parts plus one or more other components germane to the intended product function.</p>
+<p>As a consequence of the above, the conformance test schedule defined by this specification consists of tests for both native component semantics, and for whichever concrete protocol interfaces are provided. From a practical point of view, the testing is always conducted via the concrete interfaces i.e. REST, SOAP, protobuf etc) as appropriate to the particular product. For a product that implements the openEHR REST APIs, the SUT environment is of the following form:</p>
+</div>
+<div id="conformance_sut_rest" class="imageblock text-center" style="text-align: center">
+<div class="content">
+<img src="diagrams/conformance_sut_rest.svg" alt="conformance sut rest">
+</div>
+<div class="title">Figure 3. System Under Test - REST</div>
 </div>
 <div class="paragraph">
-<p>The following sections describe the elements of this environment in more detail.</p>
+<p>In the test environment, a <em>test application</em> with the appropriate protocol client(s) is used to exercise the SUT. A system log viewer and a data viewer may be provided as part of the product in order to facilitate human interaction with the system, but these are not obligatory.</p>
+</div>
+<div class="paragraph">
+<p>In the same fashion, the SUT for a product that exposes APIs using Google Protocol Buffers will look as follows.</p>
+</div>
+<div id="conformance_sut_sut_protobuf" class="imageblock text-center" style="text-align: center">
+<div class="content">
+<img src="diagrams/conformance_sut_protobuf.svg" alt="conformance sut protobuf">
+</div>
+<div class="title">Figure 4. System Under Test - Protocol Buffers</div>
+</div>
+<div class="paragraph">
+<p>Other combinations of components and protocols may of course occur in the SUT and testing applications.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_normative_platform_service_model"><a class="anchor" href="#_normative_platform_service_model"></a>5.1.1. Normative Platform Service Model</h4>
+<h4 id="_platform_abstract_service_model"><a class="anchor" href="#_platform_abstract_service_model"></a>5.1.2. Platform Abstract Service Model</h4>
 <div class="paragraph">
-<p>The formal transactional interface to a product&#8217;s openEHR components is specified by the <a href="/releases/SM/latest/openehr_platform.html">openEHR Platform Service Model</a>, which defines a set of services and for each component, as shown below.</p>
+<p>The formal transactional interface to a product&#8217;s openEHR components is specified by the <a href="/releases/SM/latest/openehr_platform.html">openEHR Platform Abstract Service Model</a>, which defines a set of services and for each component, as shown below.</p>
 </div>
-<div id="normative_openehr_platform" class="imageblock text-center" style="text-align: center">
+<div id="platform_abstract_sm" class="imageblock text-center" style="text-align: center">
 <div class="content">
-<img src="link:/releases/SM/latest/docs/UML/diagrams/SM-platform_model.svg" alt="SM platform model">
+<img src="/releases/SM/latest/docs/UML/diagrams/SM-platform_model.svg" alt="SM platform model">
 </div>
-<div class="title">Figure 2. Normative openEHR Platform</div>
+<div class="title">Figure 5. Platform Abstract Service Model</div>
 </div>
 <div class="paragraph">
-<p>The functions defined on these interfaces constitute the <em>formal conformance points</em> of this specification. For example, the conformance point for the logical 'create EHR' operation is defined by the functions <code><em>create_ehr()</em></code>, <code><em>create_ehr_with_id()</em></code>, <code><em>create_ehr_for_subject()</em></code>, <code><em>create_ehr_for_subject_with_id()</em></code> defined on the service interface <code>I_EHR_SERVICE</code> shown in the above diagram. Information conformance (i.e. conformance to the types stated in service call arguments and return values) is primarily defined by the openEHR specifications for the relevant components, i.e. RM (Reference Model) etc, however, a small number of service model-specific information structures are defined by the service specification.</p>
+<p>The functions defined on these interfaces constitute the <em>functional conformance points</em> of this specification. For example, the conformance point for the logical 'create EHR' operation is defined by the functions <code><em>create_ehr()</em></code>, <code><em>create_ehr_with_id()</em></code>, <code><em>create_ehr_for_subject()</em></code>, <code><em>create_ehr_for_subject_with_id()</em></code> defined on the service interface <code>I_EHR_SERVICE</code> shown in the above diagram. Information conformance (i.e. conformance to the types stated in service call arguments and return values) is primarily defined by the openEHR specifications for the relevant components, i.e. RM (Reference Model) etc, however, a small number of service model-specific information structures are defined by the service specification.</p>
 </div>
 <div class="paragraph">
 <p>Any given SUT is not assumed to implement all of these interfaces, or the underlying components. However, the components for which conformance is to be tested are assumed to be testable via the relevant interfaces above.</p>
 </div>
 <div class="paragraph">
 <p>Real products may of course provide alternative forms of some services, e.g. System Log, Administrative interface and so on.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_rest_apis"><a class="anchor" href="#_rest_apis"></a>5.1.2. REST APIs</h4>
-<div class="paragraph">
-<p>As a practical measure for the purposes of undertaking testing, this specification assumes that service interfaces to be tested are concretely accessible by the <a href="https://github.com/openEHR/specifications-ITS/">openEHR REST APIs</a>. For this reason, the openEHR REST APIs are assumed to be implemented by the system to an <em>extent sufficient for performing the tests</em>, i.e. not all calls in the full REST APIs are required for the conformance testing described here. Which calls are required is indicated in the Conformance Schedule below. In some cases, more than one alternative REST API call can be used to exercise the same underlying service call.</p>
-</div>
-<div class="paragraph">
-<p>The openEHR REST APIs handle data in two ways: canonical openEHR XML, based on the <a href="https://github.com/openEHR/specifications-ITS/tree/master/RM/XML-schema">published XML schemas (XSDs)</a>, and a JSON equivalent, which is defined as a standard transform of openEHR object structures. The providers of the SUT may opt for either format, and are only <em>required</em> to implement one.</p>
-</div>
-<div class="paragraph tbd">
-<p>ISSUE: where is the JSON defined, details?</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_testing_tools"><a class="anchor" href="#_testing_tools"></a>5.1.3. Testing Tools</h4>
-<div class="paragraph">
-<p>In order to conduct tests in reasonable way, some further informal assumptions are made about the SUT, as follows:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>it has a <em>system logger</em>, which may be external or part of the product, and if it exists, is accessible in the test environment via an appropriate interface or viewer tool;</p>
-</li>
-<li>
-<p>it may have a <em>generic data viewer</em> available, i.e. a web application that be used in a normal brower that enables the data and other state in the principal services to be viewed in a generic way.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Neither of these tools are assumed to conform to any particular specification.</p>
 </div>
 </div>
 </div>
@@ -644,7 +643,13 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
 <p>This section contains the schedule according to which conformance claims can be made for a a product. The conformance test schedule is divided into functional and non-functional parts, for which the structures are slightly different.</p>
 </div>
 <div class="paragraph">
-<p>Functional conformance is on the basis of <em>product component</em>, i.e. 'EHR persistence', 'Querying' etc, each corresponding to a named block on the above SUT diagram. Each product component has one table. Formal conformance points, defined in terms of calls in the relevant component service interface, are listed in the second column of the table. The first column groups conformance points under 'capability', which is understood as a marketing term, and is <em>used as the basis for conformance profiles</em> described in the next section. The remaining columns describe each conformance point, and provide a way of testing it. In many cases, one test script may be used to test multiple conformance points.</p>
+<p>Functional conformance is on the basis of <em>product component</em>, i.e. 'EHR persistence', 'Querying' etc, each corresponding to a named block on the above SUT diagram. Each product component has one table in this schedule. Formal conformance points, defined in terms of calls in the relevant component service interface, are listed in the second column of the table. The first column groups conformance points under 'capability', which is understood as a marketing term reflecting coarse-grained functionality, and is <em>used as the basis for conformance profiles</em> described in the next section.</p>
+</div>
+<div class="paragraph">
+<p>The remaining columns but one describe each 'semantic' conformance point, and define the logic of a conformance test case for it, expressed as Java-like pseudo-code. In many cases, one test script may be used to test multiple conformance points.</p>
+</div>
+<div class="paragraph">
+<p>The final column(s) provides the implementation of the test case for REST web services over HTTP. Each other protocol will result in a new column on the right.</p>
 </div>
 <div class="paragraph">
 <p>The following illustrates the conformance table structure for functional components.</p>
@@ -758,7 +763,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.upload_archetype()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Upload an ADL 1.4 archetype</p></td>
 <td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_def-adl14_prov.txt" target="_blank" rel="noopener">tc_def-adl14_prov</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_def-adl14_prov.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_def-adl14_prov.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_definition_adl14_interface" target="_blank" rel="noopener"><code>I_DEFINITION_ADL14</code></a><br>
@@ -777,7 +782,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.upload_opt()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Upload an ADL 1.4-based OPT</p></td>
 <td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_def-opt14_prov.txt" target="_blank" rel="noopener">tc_def-opt14_prov</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_def-opt14_prov.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_def-opt14_prov.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_definition_adl14_interface" target="_blank" rel="noopener"><code>I_DEFINITION_ADL14</code></a><br>
@@ -796,7 +801,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.upload_artefact()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Upload an ADL 2 archetype</p></td>
 <td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_def-adl2_prov.txt" target="_blank" rel="noopener">tc_def-adl2_prov</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_def-adl2_prov.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_def-adl2_prov.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_definition_adl2_interface" target="_blank" rel="noopener"><code>I_DEFINITION_ADL2</code></a><br>
@@ -832,7 +837,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.register_query()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Register a query under an optional name.</p></td>
 <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_def-qry_prov.txt" target="_blank" rel="noopener">tc_def-qry_prov</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_def-qry_prov.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_def-qry_prov.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_definition_query_interface" target="_blank" rel="noopener"><code>I_DEFINITION_QUERY</code></a><br>
@@ -924,28 +929,28 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.create_ehr()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create a new EHR; EHR id generated by system</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-create.txt" target="_blank" rel="noopener">tc_ehr-create</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-create.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-create.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_service_interface" target="_blank" rel="noopener"><code>I_EHR_SERVICE</code></a><br>
      <code><em>.create_ehr_with_id()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create new EHR with the specified EHR id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-create_id.txt" target="_blank" rel="noopener">tc_ehr-create_id</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-create_id.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-create_id.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_service_interface" target="_blank" rel="noopener"><code>I_EHR_SERVICE</code></a><br>
      <code><em>.create_ehr_for_subject()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create new EHR with the specified subject id; EHR id generated by system</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-create_sub.txt" target="_blank" rel="noopener">tc_ehr-create_sub</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-create_sub.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-create_sub.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_service_interface" target="_blank" rel="noopener"><code>I_EHR_SERVICE</code></a><br>
      <code><em>.create_ehr_for_subject_with_id()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create new EHR with the specified EHR id and subject id.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-create_sub_id.txt" target="_blank" rel="noopener">tc_ehr-create_sub_id</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-create_sub_id.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-create_sub_id.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_service_interface" target="_blank" rel="noopener"><code>I_EHR_SERVICE</code></a><br>
@@ -959,7 +964,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.get_ehrs_for_subject()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get EHR(s) for specified subject.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-get_sub.txt" target="_blank" rel="noopener">tc_ehr-get_sub</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-get_sub.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-get_sub.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><strong>EHR Status</strong></p></td>
@@ -967,7 +972,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.get_ehr_status()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get EHR modifiable and queryable status.</p></td>
 <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-status.txt" target="_blank" rel="noopener">tc_ehr-status</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-status.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-status.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_status_interface" target="_blank" rel="noopener"><code>I_EHR_STATUS</code></a><br>
@@ -990,7 +995,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.create_composition()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create a new Composition.</p></td>
 <td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-comp.txt" target="_blank" rel="noopener">tc_ehr-comp</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-comp.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-comp.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_composition_interface" target="_blank" rel="noopener"><code>I_EHR_COMPOSITION</code></a><br>
@@ -1018,7 +1023,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.create_directory()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create new directory in EHR.</p></td>
 <td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-dir.txt" target="_blank" rel="noopener">tc_ehr-dir</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-dir.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-dir.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY</code></a><br>
@@ -1036,31 +1041,31 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.commit_contribution()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Commit Contribution with one Composition.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb-smpl.txt" target="_blank" rel="noopener">tc_ehr-ctrb_smpl</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-smpl.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-smpl.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Commit Contribution with new Compositions, Directory.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb-cplx.txt" target="_blank" rel="noopener">tc_ehr-ctrb_cplx</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-cplx.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-cplx.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Commit mixed update Contribution with new, changed, deleted items.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb-mix.txt" target="_blank" rel="noopener">tc_ehr-ctrb_mix</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-mix.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-mix.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_contribution_interface" target="_blank" rel="noopener"><code>I_EHR_CONTRIBUTION</code></a><br>
      <code><em>.get_contribution()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get Contribution.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb-get.txt" target="_blank" rel="noopener">tc_ehr-ctrb_get</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-get.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-get.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_contribution_interface" target="_blank" rel="noopener"><code>I_EHR_CONTRIBUTION</code></a><br>
      <code><em>.list_contributions()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List Contributions</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb-list.txt" target="_blank" rel="noopener">tc_ehr-ctrb_list</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-list.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-list.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock"><strong>Versioning</strong></p></td>
@@ -1068,7 +1073,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.get_versioned_ehr_status()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get Versioned Ehr status</p></td>
 <td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-vers.txt" target="_blank" rel="noopener">tc_ehr-vers</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-vers.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-vers.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_status_interface" target="_blank" rel="noopener"><code>I_EHR_STATUS</code></a><br>
@@ -1117,7 +1122,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.create_composition()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attempt to create new Composition; reject invalid archetype structure.</p></td>
 <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-arch_val.txt" target="_blank" rel="noopener">tc_ehr-arch_val</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-arch_val.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-arch_val.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_composition_interface" target="_blank" rel="noopener"><code>I_EHR_COMPOSITION</code></a><br>
@@ -1207,7 +1212,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.create_party()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create a new Party; Party id generated by system.</p></td>
 <td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_dem-party.txt" target="_blank" rel="noopener">tc_dem-party</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_dem-party.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_dem-party.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_party_interface" target="_blank" rel="noopener"><code>I_PARTY</code></a><br>
@@ -1242,7 +1247,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.create_party_relationship()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create a new Party relationship; Relationship id generated by system.</p></td>
 <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_dem-party_rel.txt" target="_blank" rel="noopener">tc_dem-party_rel</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_dem-party_rel.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_dem-party_rel.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_party_relationship_interface" target="_blank" rel="noopener"><code>I_PARTY_RELATIONSHIP</code></a><br>
@@ -1266,7 +1271,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.create_party()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attempt to create new Party; reject invalid archetype structure.</p></td>
 <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_dem-arch_val.txt" target="_blank" rel="noopener">tc_dem-arch_val</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_dem-arch_val.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_dem-arch_val.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_demographic_service_interface" target="_blank" rel="noopener"><code>I_DEMOGRAPHIC_SERVICE</code></a><br>
@@ -1343,14 +1348,14 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.execute_stored_query()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Execute a simple stored patient query.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_aql-stor_basic.txt" target="_blank" rel="noopener">tc_aql-stor_basic</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_aql-stor_basic.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_aql-stor_basic.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_query_service_interface" target="_blank" rel="noopener"><code>I_QUERY_SERVICE</code></a><br>
      <code><em>.execute_ad_hoc_query()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Execute a simple ad hoc patient query.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_aql-adhoc_basic.txt" target="_blank" rel="noopener">tc_aql-adhoc_basic</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_aql-adhoc_basic.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_aql-adhoc_basic.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><strong>AQL Advanced</strong></p></td>
@@ -1358,14 +1363,14 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.execute_stored_query()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Execute a complex stored patient query.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_aql-stor_cplx.txt" target="_blank" rel="noopener">tc_aql-stor_cplx</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_aql-stor_cplx.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_aql-stor_cplx.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_query_service_interface" target="_blank" rel="noopener"><code>I_QUERY_SERVICE</code></a><br>
      <code><em>.execute_stored_query()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Execute a complex stored population query.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_aql-pop_cplx.txt" target="_blank" rel="noopener">tc_aql-pop_cplx</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_aql-pop_cplx.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_aql-pop_cplx.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>AQL &amp;<br>
@@ -1374,7 +1379,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.execute_stored_query()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Execute a stored query that interfaces with terminology service.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_aql-tc_aql-stor_term.txt" target="_blank" rel="noopener">tc_aql-stor_term</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_aql-tc_aql-stor_term.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_aql-tc_aql-stor_term.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1423,7 +1428,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.list_contributions()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List Contributions in a time interval.</p></td>
 <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_adm-actv_rpt.txt" target="_blank" rel="noopener">tc_adm-actv_rpt</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_adm-actv_rpt.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_adm-actv_rpt.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_admin_service_interface" target="_blank" rel="noopener"><code>I_ADMIN_SERVICE</code></a><br>
@@ -1446,14 +1451,14 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.physical_ehr_delete()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Physically delete an EHR.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_adm-ehr_del.txt" target="_blank" rel="noopener">tc_adm-ehr_del</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_adm-ehr_del.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_adm-ehr_del.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_admin_service_interface" target="_blank" rel="noopener"><code>I_ADMIN_SERVICE</code></a><br>
      <code><em>.physical_party_delete()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Physically delete a Party.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_adm-party_del.txt" target="_blank" rel="noopener">tc_adm-party_del</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_adm-party_del.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_adm-party_del.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><strong>EHR Dump/Load</strong></p></td>
@@ -1461,7 +1466,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.export_ehrs()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Export all EHRs from EHR service.</p></td>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_adm-dump_load.txt" target="_blank" rel="noopener">tc_adm-dump_load</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_adm-dump_load.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_adm-dump_load.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_admin_dump_load_interface" target="_blank" rel="noopener"><code>I_ADMIN_DUMP_LOAD</code></a><br>
@@ -1474,7 +1479,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.archive_ehrs()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Archive selected EHRs from EHR service.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_adm-arcv_ehrs.txt" target="_blank" rel="noopener">tc_adm-arcv_ehrs</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_adm-arcv_ehrs.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_adm-arcv_ehrs.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Demographic Archive</strong></p></td>
@@ -1482,7 +1487,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.archive_parties()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Archive selected Parties and relationships from Demographic service.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_adm-arcv_party.txt" target="_blank" rel="noopener">tc_adm-arcv_party</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_adm-arcv_party.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_adm-arcv_party.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1559,28 +1564,28 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.export_ehr()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Export whole EHR for one subject.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_msg-extr_ehr.txt" target="_blank" rel="noopener">tc_msg-extr_ehr</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_msg-extr_ehr.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_msg-extr_ehr.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_extract_interface" target="_blank" rel="noopener"><code>I_EHR_EXTRACT</code></a><br>
      <code><em>.export_ehr_extract()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Export an extract for an EHR.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_msg-extr_extr.txt" target="_blank" rel="noopener">tc_msg-extr_extr</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_msg-extr_extr.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_msg-extr_extr.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_extract_interface" target="_blank" rel="noopener"><code>I_EHR_EXTRACT</code></a><br>
      <code><em>.export_ehrs()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Export multiple whole EHRs in Extract form.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_msg-extr_ehrs.txt" target="_blank" rel="noopener">tc_msg-extr_ehrs</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_msg-extr_ehrs.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_msg-extr_ehrs.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_extract_interface" target="_blank" rel="noopener"><code>I_EHR_EXTRACT</code></a><br>
      <code><em>.export_ehr_extracts()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Export extracts of multiple EHRs.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_msg-extr_extrs.txt" target="_blank" rel="noopener">tc_msg-extr_extrs</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_msg-extr_extrs.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_msg-extr_extrs.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><strong>TDD</strong></p></td>
@@ -1588,14 +1593,14 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.import_tdd()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Import a TDD for one EHR.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_msg-tdd_ehr.txt" target="_blank" rel="noopener">tc_msg-tdd_ehr</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_msg-tdd_ehr.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_msg-tdd_ehr.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_tdd_interface" target="_blank" rel="noopener"><code>I_TDD</code></a><br>
      <code><em>.import_tdds()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Import a TDDs for multiple EHRs.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_msg-tdd_ehrs.txt" target="_blank" rel="noopener">tc_msg-tdd_ehrs</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_msg-tdd_ehrs.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_msg-tdd_ehrs.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1648,28 +1653,28 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
  <a href="/releases/SM/latest/openehr_platform.html#_i_definition_query_interface" target="_blank" rel="noopener"><code>I_DEFINITION_QUERY</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-def.txt" target="_blank" rel="noopener">tc_api-def</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-def.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-def.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>EHR API</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_service_interface" target="_blank" rel="noopener"><code>I_EHR_SERVICE</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-ehr.txt" target="_blank" rel="noopener">tc_api-ehr</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-ehr.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-ehr.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DEMOGRAPHIC API</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_demographic_service_interface" target="_blank" rel="noopener"><code>I_DEMOGRAPHIC_SERVICE</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-dem.txt" target="_blank" rel="noopener">tc_api-dem</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-dem.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-dem.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>QUERY API</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_query_service_interface" target="_blank" rel="noopener"><code>I_QUERY_SERVICE</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-qry.txt" target="_blank" rel="noopener">tc_api-qry</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-qry.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-qry.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ADMIN API</strong></p></td>
@@ -1678,7 +1683,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
  <a href="/releases/SM/latest/openehr_platform.html#_i_admin_archive_interface" target="_blank" rel="noopener"><code>I_ADMIN_ARCHIVE</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-adm.txt" target="_blank" rel="noopener">tc_api-adm</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-adm.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-adm.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MESSAGE API</strong></p></td>
@@ -1686,7 +1691,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
  <a href="/releases/SM/latest/openehr_platform.html#_i_tdd_interface" target="_blank" rel="noopener"><code>I_TDD</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-msg.txt" target="_blank" rel="noopener">tc_api-msg</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-msg.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-msg.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1756,7 +1761,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.create_composition()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create a new signed Composition.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_secpriv-sign.txt" target="_blank" rel="noopener">tc_secpriv-sign</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_secpriv-sign.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_secpriv-sign.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Anonymous EHRs</strong></p></td>
@@ -1766,7 +1771,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
      <code><em>.create_party()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create a new EHR, Demographic Party, and external link.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_secpriv-anon_ehr.txt" target="_blank" rel="noopener">tc_secpriv-anon_ehr</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_secpriv-anon_ehr.json">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_secpriv-anon_ehr.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2109,7 +2114,7 @@ this may be augmented in the future by an equivalent set of test cases for WSDL/
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-29 20:58:41 -03
+Last updated 2017-11-29 23:58:41 GMT
 </div>
 </div>
 </body>
