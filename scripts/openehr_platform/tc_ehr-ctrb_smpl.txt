@@ -1,6 +1,6 @@
 //
 //     Purpose: openEHR Platform Conformance Test Case
-//  Identifier: tc_ehr-ctrb_cplx
+//  Identifier: tc_ehr-ctrb_smpl
 // Description: Create Contribution containing a single new Composition.
 //   Interface: I_EHR_CONTRIBUTION
 //   Copyright: openEHR Foundation (c) 2017 <http://www.openEHR.org>
@@ -8,9 +8,8 @@
 //   Reference: <http://www.openehr.org/releases/CNF/latest/openehr_platform_conformance.html>
 //
 
-// Get handle to service and an authorisation token
+// Get handle to service
 I_EHR_CONTRIBUTION svc;
-String auth_tok;
 
 
 // ----------- PASS ------------

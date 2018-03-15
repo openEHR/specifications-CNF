@@ -1,6 +1,6 @@
 = Profiles
 
-The schedule above describes capabilities of openEHR platform products that can be tested against the published specifiations via the REST APIs. These capabilities are grouped into _profiles_ to provide a guide to what constitutes the required functionality for particular category of solution.
+The schedule above describes capabilities of openEHR platform products that can be tested against the published specifiations. These capabilities are grouped into _profiles_ to provide a guide to what constitutes the required functionality for particular category of solution.
 
 A profile may be defined logically as a particular list of capabilities from the above schedule that may be combined to specify a particular kind of solution. For example, an openEHR Demographics product would treat most or all of the Demographic capabilities as mandatory, along with support for definitions, logging etc.
 

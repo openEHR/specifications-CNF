@@ -47,7 +47,7 @@ Specifications:
 :i_definition_adl2_link: {openehr_sm_openehr_platform}#_i_definition_adl2_interface
 :i_definition_query_link: {openehr_sm_openehr_platform}#_i_definition_query_interface
 
-[cols="1,3,3,1,1", options="header"]
+[cols="1,2,3,2,1", options="header"]
 |===
 |Capability             |Conformance Point +
                          (Service Model call)   |Description                            |Test case script      |REST script
@@ -164,7 +164,7 @@ Specifications:
 :i_ehr_composition_link: {openehr_sm_openehr_platform}#_i_ehr_composition_interface
 :i_ehr_contribution_link: {openehr_sm_openehr_platform}#_i_ehr_contribution_interface
 
-[cols="1,3,3,1,1", options="header"]
+[cols="1,2,3,2,1", options="header"]
 |===
 |Capability             |Conformance Point +
                          (Service Model call)   |Description                            |Test case script      |REST script
@@ -272,27 +272,27 @@ Specifications:
  .3+|{i_ehr_contribution_link}[`I_EHR_CONTRIBUTION`, window="_blank"] +
      `__.commit_contribution()__`
     |Commit Contribution with one Composition.
-    |link:{scripts_dir}/tc_ehr-ctrb-smpl.txt[tc_ehr-ctrb_smpl, window="_blank"]
+    |link:{scripts_dir}/tc_ehr-ctrb_smpl.txt[tc_ehr-ctrb_smpl, window="_blank"]
     |link:{scripts_dir}/REST/postman/tc_ehr-ctrb-smpl.json[postman, window="_blank"]
 
     |Commit Contribution with new Compositions, Directory.
-    |link:{scripts_dir}/tc_ehr-ctrb-cplx.txt[tc_ehr-ctrb_cplx, window="_blank"]
+    |link:{scripts_dir}/tc_ehr-ctrb_cplx.txt[tc_ehr-ctrb_cplx, window="_blank"]
     |link:{scripts_dir}/REST/postman/tc_ehr-ctrb-cplx.json[postman, window="_blank"]
 
     |Commit mixed update Contribution with new, changed, deleted items.
-    |link:{scripts_dir}/tc_ehr-ctrb-mix.txt[tc_ehr-ctrb_mix, window="_blank"]
+    |link:{scripts_dir}/tc_ehr-ctrb_mix.txt[tc_ehr-ctrb_mix, window="_blank"]
     |link:{scripts_dir}/REST/postman/tc_ehr-ctrb-mix.json[postman, window="_blank"]
 
     |{i_ehr_contribution_link}[`I_EHR_CONTRIBUTION`, window="_blank"] +
      `__.get_contribution()__`
     |Get Contribution.
-    |link:{scripts_dir}/tc_ehr-ctrb-get.txt[tc_ehr-ctrb_get, window="_blank"]
+    |link:{scripts_dir}/tc_ehr-ctrb_get.txt[tc_ehr-ctrb_get, window="_blank"]
     |link:{scripts_dir}/REST/postman/tc_ehr-ctrb-get.json[postman, window="_blank"]
 
     |{i_ehr_contribution_link}[`I_EHR_CONTRIBUTION`, window="_blank"] +
      `__.list_contributions()__`
     |List Contributions
-    |link:{scripts_dir}/tc_ehr-ctrb-list.txt[tc_ehr-ctrb_list, window="_blank"]
+    |link:{scripts_dir}/tc_ehr-ctrb_list.txt[tc_ehr-ctrb_list, window="_blank"]
     |link:{scripts_dir}/REST/postman/tc_ehr-ctrb-list.json[postman, window="_blank"]
 
 .9+|*Versioning*
@@ -376,7 +376,7 @@ Specifications:
 :i_party_link: {openehr_sm_openehr_platform}#_i_party_interface
 :i_party_relationship_link: {openehr_sm_openehr_platform}#_i_party_relationship_interface
 
-[cols="1,3,3,1,1", options="header"]
+[cols="1,2,3,2,1", options="header"]
 |===
 |Capability             |Conformance Point +
                          (Service Model call)       |Description          |Test case script      |REST script
@@ -468,7 +468,7 @@ Specifications:
 
 :i_query_service_link: {openehr_sm_openehr_platform}#_i_query_service_interface
 
-[cols="1,3,3,1,1", options="header"]
+[cols="1,2,3,2,1", options="header"]
 |===
 |Capability             |Conformance Point +
                          (Service Model call)       |Description          |Test case script      |REST script
@@ -524,7 +524,7 @@ Specifications:
 :i_admin_archive_link: {openehr_sm_openehr_platform}#_i_admin_archive_interface
 :i_admin_dump_load_link: {openehr_sm_openehr_platform}#_i_admin_dump_load_interface
 
-[cols="1,3,3,1,1", options="header"]
+[cols="1,2,3,2,1", options="header"]
 |===
 |Capability             |Conformance Point +
                          (Service Model call)       |Description          |Test case script      |REST script
@@ -613,7 +613,7 @@ Specifications:
 :i_ehr_extract_link: {openehr_sm_openehr_platform}#_i_ehr_extract_interface
 :i_tdd_link: {openehr_sm_openehr_platform}#_i_tdd_interface
 
-[cols="1,3,3,1,1", options="header"]
+[cols="1,2,3,2,1", options="header"]
 |===
 |Capability             |Conformance Point +
                          (Service Model call)       |Description          |Test case script      |REST script
@@ -669,7 +669,7 @@ Specifications:
 ** {openehr_sm_openehr_platform}[Service Model]
 ** {openehr_rest_apis}[REST APIs]
 
-[cols="1,2,3,1,1", options="header"]
+[cols="1,2,3,2,1", options="header"]
 |===
 |Product +
  Component      |Capability        |Description                             |Test case Script   |REST Script
@@ -679,41 +679,41 @@ Specifications:
  {i_definition_adl2_link}[`I_DEFINITION_ADL2`, window="_blank"] +
  {i_definition_query_link}[`I_DEFINITION_QUERY`, window="_blank"]
 |Exercise all functions & arguments      
-|link:{scripts_dir}/tc_api-def.txt[tc_api-def, window="_blank"]
-|link:{scripts_dir}/REST/postman/tc_api-def.json[postman, window="_blank"]
+|link:{scripts_dir}/tc_api-rest_def.txt[tc_api-rest_def, window="_blank"]
+|link:{scripts_dir}/REST/postman/tc_api-rest_def.json[postman, window="_blank"]
 
 |*EHR API*
 |{i_ehr_service_link}[`I_EHR_SERVICE`, window="_blank"]
 |Exercise all functions & arguments
-|link:{scripts_dir}/tc_api-ehr.txt[tc_api-ehr, window="_blank"]
-|link:{scripts_dir}/REST/postman/tc_api-ehr.json[postman, window="_blank"]
+|link:{scripts_dir}/tc_api-rest_ehr.txt[tc_api-rest_ehr, window="_blank"]
+|link:{scripts_dir}/REST/postman/tc_api-rest_ehr.json[postman, window="_blank"]
 
 |*DEMOGRAPHIC API*
 |{i_demographic_service_link}[`I_DEMOGRAPHIC_SERVICE`, window="_blank"]
 |Exercise all functions & arguments
-|link:{scripts_dir}/tc_api-dem.txt[tc_api-dem, window="_blank"]
-|link:{scripts_dir}/REST/postman/tc_api-dem.json[postman, window="_blank"]
+|link:{scripts_dir}/tc_api-rest_dem.txt[tc_api-rest_dem, window="_blank"]
+|link:{scripts_dir}/REST/postman/tc_api-rest_dem.json[postman, window="_blank"]
 
 |*QUERY API*
 |{i_query_service_link}[`I_QUERY_SERVICE`, window="_blank"]
 |Exercise all functions & arguments
-|link:{scripts_dir}/tc_api-qry.txt[tc_api-qry, window="_blank"]
-|link:{scripts_dir}/REST/postman/tc_api-qry.json[postman, window="_blank"]
+|link:{scripts_dir}/tc_api-rest_qry.txt[tc_api-rest_qry, window="_blank"]
+|link:{scripts_dir}/REST/postman/tc_api-rest_qry.json[postman, window="_blank"]
 
 |*ADMIN API*
 |{i_admin_service_link}[`I_ADMIN_SERVICE`, window="_blank"] +
  {i_admin_dump_load_link}[`I_ADMIN_DUMP_LOAD`, window="_blank"] +
  {i_admin_archive_link}[`I_ADMIN_ARCHIVE`, window="_blank"]
 |Exercise all functions & arguments
-|link:{scripts_dir}/tc_api-adm.txt[tc_api-adm, window="_blank"]
-|link:{scripts_dir}/REST/postman/tc_api-adm.json[postman, window="_blank"]
+|link:{scripts_dir}/tc_api-rest_adm.txt[tc_api-rest_adm, window="_blank"]
+|link:{scripts_dir}/REST/postman/tc_api-rest_adm.json[postman, window="_blank"]
 
 |*MESSAGE API*
 |{i_ehr_extract_link}[`I_EHR_EXTRACT`, window="_blank"] +
  {i_tdd_link}[`I_TDD`, window="_blank"]
 |Exercise all functions & arguments
-|link:{scripts_dir}/tc_api-msg.txt[tc_api-msg, window="_blank"]
-|link:{scripts_dir}/REST/postman/tc_api-msg.json[postman, window="_blank"]
+|link:{scripts_dir}/tc_api-rest_msg.txt[tc_api-rest_msg, window="_blank"]
+|link:{scripts_dir}/REST/postman/tc_api-rest_msg.json[postman, window="_blank"]
 
 |===
 
@@ -731,7 +731,7 @@ Specifications:
 ** {openehr_rm_common}#_digital_signature[Digital Signature]
 ** {openehr_overview}#_overview_4[EHR/Demographic separation]
 
-[cols="1,3,3,1,1", options="header"]
+[cols="1,2,3,2,1", options="header"]
 |===
 |Capability             |Conformance Point      |Description          |Test case script      |REST script
 

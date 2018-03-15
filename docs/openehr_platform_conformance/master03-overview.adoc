@@ -8,9 +8,9 @@ Conformance testing is used as the basis of product certification, and has the f
 
 == Scope
 
-This specification describes the _conformance points_ for _openEHR platform products_ whose semantics are based on openEHR Foundation specifications. Such systems typically include data services (i.e. persistence & querying) along with various options dependent on the orientation of the product and its maturity; these may include integration capabilities, domain services (e.g. guidelines, planning) and so on.
+This specification describes the _conformance points_ for _openEHR platform products_ whose semantics are based on openEHR Foundation specifications. Such systems typically include data services (i.e. persistence & querying) along with various options dependent on the orientation of the product and its maturity; these may include integration capabilities, domain services (e.g. guidelines, planning) and so on. It does not cover applications or modelling tools.
 
-A conformance point is understood as a _testable capability of a system that relates to a business-relevant capability_. For example, conformance points for an EHR persistence service (aka Clinical Data Repository, or CDR) may include 'create EHR', 'update EHR', 'versioning' etc. Conformance points are based on {openehr_sm_openehr_platform}[openEHR Platform Service Model] calls.
+A conformance point is understood as a _testable capability of a system that relates to a business function_. For example, conformance points for an EHR persistence service (aka Clinical Data Repository, or CDR) may include 'create EHR', 'update EHR', 'versioning' etc. Conformance points are based on {openehr_sm_openehr_platform}[openEHR Platform Abstract Service Model] API calls.
 
 One or more methods of testing each conformance point is described in this specification. Conformance testing is based on comparing system behaviour to the relevant openEHR published specifications.
 
@@ -21,9 +21,9 @@ The scope of this specification is limited to the following:
 * (specific) functional capabilities of systems;
 * limited non-functional capabilities, including:
 ** external data format used by exposed APIs;
-** Security and Privacy.
+** security and privacy.
 
-The system being tested is accessed via various openEHR REST APIs which must be minimally implemented i.e. sufficiently for the test cases to be exercised.
+The system under test is accessed via one or more concrete protocol APIs, each of which is defined in the relevant openEHR Specification.
 
 This specification does not cover claims to other non-functional characteristics such as capacity, performance, availability, or consistency of systems. It is however recommended that supply agreements for operational solutions include criteria for these factors, as relevant to the situation. 
 

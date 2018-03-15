@@ -6,9 +6,9 @@ Conformance evaluation relies on a normative idea of systems that may be tested 
 
 === General description
 
-The totality of what is provided for conformance testing according to this specification is known as the _system under test_, or SUT. It is assumed that any such system has a _platform_ architecture, consisting of one or more _product components_ that are exposed via corresponding _native service APIs_, and that the component semantics and API are based on published openEHR specifications. At an implementation level, a native API is exposed via a software component interface e.g. a Java .jar, .Net assembly, Linux .so library etc.
+The totality of what is provided for conformance testing according to this specification is known as the _system under test_, or SUT. It is assumed that any such system has a _platform_ architecture, consisting of one or more _product components_ that are exposed via corresponding _native service APIs_, and that the component semantics and API are based on published openEHR specifications.
 
-It is also assumed that native APIs are network-accessible via one or more communications protocols, each with an appropriate _protocol adapter_. Such protocols include the text-based, such as {soap_protocol}[SOAP/WSDL] and {rest_ws}[REST], as well as the many binary protocols, including {google_protobuf}[Google Protocol Buffers], {apache_thrift}[Apache Thrift], {apache_avro}[Avro], {apache_kafka}[Kafka], {zeroc_ice}[ZeroC ICE], and {ampq}[Advanced Message Queueing Protocol (AMPQ)]. The general model is shown below.
+It is also assumed that native APIs are network-accessible via one or more communications protocols, each with an appropriate _protocol adapter_. Such protocols include the text-based, such as {soap_protocol}[SOAP/WSDL] and {rest_ws}[REST], as well as the many binary protocols, including {google_protobuf}[Google Protocol Buffers], {apache_thrift}[Apache Thrift], {apache_avro}[Avro], {apache_kafka}[Kafka], {zeroc_ice}[ZeroC ICE], and {ampq}[Advanced Message Queueing Protocol (AMPQ)]. (At an implementation level, the native API of each software component is of course visible e.g. a Java .jar, .Net assembly, Linux .so library etc, but conformance testing does not address such interfaces). The general model is shown below.
 
 [.text-center]
 .Component Model
@@ -21,7 +21,7 @@ In the above, there are two _test targets_ for any given component in the SUT, i
 
 The former needs to be tested to determine if the component does what it is functionally intended to do, and is documented in terms of abstract interface definitions that include pre-conditions, post-conditions and exceptions. The latter is tested to determine that the concrete means of accessing the component provided by its developer do indeed provide that access correctly, and conform to accepted norms of the relevant kind of service interface (i.e. REST, AMPQ etc).
 
-To establish a common basis for naming and describing components of an openEHR Platform, the {openehr_sm_openehr_platform}[openEHR Platform Abstract Service Model] may be used. This defines a standard set of openEHR component names along with definitions of the transactional semantics of each component, i.e. the 'semantic' test target referred to above. A product's own component names need not correspond to the openEHR component names of course, but for the purupose of testing the logical mapping of the two should be provided by a developer.
+To establish a common basis for naming and describing components of an openEHR Platform, the {openehr_sm_openehr_platform}[openEHR Platform Abstract Service Model] may be used. This defines a standard set of openEHR component names along with definitions of the transactional semantics of each component, i.e. the 'semantic' test target referred to above. A product's own component names need not correspond to the openEHR component names of course, but for the purpose of testing the logical mapping of the two should be provided by a developer.
 
 Each of the concrete protocol interfaces is defined by its own specification, for example the {openehr_rest_apis}[openEHR REST API specification], and may be regarded as a product component, for which conformance testing may be conducted. No assumption is made that any given product supports any particular protocol(s), although a minimal set of REST APIs on components such as the System Log is likely to be useful for testing purposes.
 
@@ -31,7 +31,7 @@ The following figure illustrates a typical platform product, consisting of compo
 .Conformance System Under Test
 image::diagrams/conformance_sut.svg[id=conformance_sut, align="center"]
 
-As a consequence of the above, the conformance test schedule defined by this specification consists of tests for both native component semantics, and for whichever concrete protocol interfaces are provided. From a practical point of view, the testing is always conducted via the concrete interfaces i.e. REST, SOAP, protobuf etc) as appropriate to the particular product. For a product that implements the openEHR REST APIs, the SUT environment is of the following form:
+As a consequence of the above, the conformance test schedule defined by this specification consists of tests for both native component semantics, and for whichever concrete protocol interfaces are provided. From a practical point of view, the testing is always conducted via the concrete interfaces (i.e. REST, SOAP, protobuf etc) as appropriate to the particular product. Thus, for a product that implements the openEHR REST APIs, the SUT environment is of the following form:
 
 [.text-center]
 .System Under Test - REST
@@ -39,7 +39,7 @@ image::diagrams/conformance_sut_rest.svg[id=conformance_sut_rest, align="center"
 
 In the test environment, a _test application_ with the appropriate protocol client(s) is used to exercise the SUT. A system log viewer and a data viewer may be provided as part of the product in order to facilitate human interaction with the system, but these are not obligatory.
 
-In the same fashion, the SUT for a product that exposes APIs using Google Protocol Buffers will look as follows.
+In the same fashion, the SUT for a product that exposes APIs using Google Protocol Buffers might look as follows.
 
 [.text-center]
 .System Under Test - Protocol Buffers

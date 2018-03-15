@@ -10,12 +10,11 @@
 
 // Get handle to service and an authorisation token
 I_EHR_DIRECTORY svc;
-String auth_tok;
 
 // ----------- PASS ------------
-UUID a_dir_ver_uid = svc.create_directory();
+UUID a_dir_ver_uid := svc.create_directory();
 
-UUID a_dir_ver_uid = svc.update_directory();
+UUID a_dir_ver_uid := svc.update_directory();
 
-UUID a_dir_ver_uid = svc.delete_directory();
+UUID a_dir_ver_uid := svc.delete_directory();
 

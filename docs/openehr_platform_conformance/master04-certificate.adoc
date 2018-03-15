@@ -42,23 +42,23 @@ Ext Data Fmt:   XML, JSON
 Detailed Test Report
 ====================
 
-+==============+=============+===============+=============================+==================+========+
-|SUT           |openEHR      |Capability     |Conformance point            |Test              |Result  |
-|Component     |Component    |(PROFILE)      |                             |Case              |        |
-+==============+=============+===============+=============================+==================+========+
-|ACME CDR      |EHR          |EHR Operations |I_EHR_SERVICE.               |                  |        |
-|              |persistence  |               |create_ehr()                 |tc_ehr-create     |pass    |
-|              |             +---------------+-----------------------------+------------------+--------+
-|              |             |Versioning     |I_EHR_COMPOSITION.           |                  |        |
-|              |             |               |get_versioned_composition()  |tc_ehr-vers       |pass    |
-|              |             |               +-----------------------------+------------------+--------+
-|              |             |               |I_EHR_CONTRIBUTION.          |tc_ehr-ctrb_smpl  |pass    |
-|              |             |               |commit_contribution()        |tc_ehr-ctrb_cplx  |FAIL    |
-+--------------+-------------+---------------+-----------------------------+------------------+--------+
-|                                          . . . .                                                     |
-+--------------+-------------+---------------+-----------------------------+------------------+--------+
-|etc           |etc          |etc            |etc                          |etc               |        |
-+==============+=============+===============+=============================+==================+========+
++==========+=============+===============+=============================+==================+=====+======+
+|SUT       |openEHR      |Capability     |Conformance point            |Test              |REST |proto-|
+|Component |Component    |(PROFILE)      |                             |Case              |     |buf   |
++==========+=============+===============+=============================+==================+=====+======+
+|ACME CDR  |EHR          |EHR Operations |I_EHR_SERVICE.               |                  |     |      |
+|          |persistence  |               |create_ehr()                 |tc_ehr-create     |pass |pass  |
+|          |             +---------------+-----------------------------+------------------+-----+------+
+|          |             |Versioning     |I_EHR_COMPOSITION.           |                  |     |      |
+|          |             |               |get_versioned_composition()  |tc_ehr-vers       |pass |pass  |
+|          |             |               +-----------------------------+------------------+-----+------+
+|          |             |               |I_EHR_CONTRIBUTION.          |tc_ehr-ctrb_smpl  |pass |pass  |
+|          |             |               |commit_contribution()        |tc_ehr-ctrb_cplx  |FAIL |FAIL  |
++----------+-------------+---------------+-----------------------------+------------------+-----+------+
+|                                      . . . .                                                         |
++----------+-------------+---------------+-----------------------------+------------------+-----+------+
+|etc       |etc          |etc            |etc                          |etc               |pass |n/a   |
++==========+=============+===============+=============================+==================+=====+======+
 
 
 PROFILE REPORT
@@ -66,7 +66,7 @@ PROFILE REPORT
 
 +==============+================+====================================+===========+========+
 |SUT           |openEHR         |Capability                          |Required   |Result  |
-|Component     |Component       |                                    |in profile |
+|Component     |Component       |                                    |in profile |        |
 +==============+================+====================================+===========+========+
 |ACME K-base   |Definitions     |ADL 1.4 archetype provisioning      |   Y       |pass    |
 |              |                |ADL 1.4 OPT provisioning            |   Y       |pass    |

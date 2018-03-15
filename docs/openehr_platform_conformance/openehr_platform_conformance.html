@@ -345,10 +345,10 @@
 <div class="sect2">
 <h3 id="_scope"><a class="anchor" href="#_scope"></a>3.1. Scope</h3>
 <div class="paragraph">
-<p>This specification describes the <em>conformance points</em> for <em>openEHR platform products</em> whose semantics are based on openEHR Foundation specifications. Such systems typically include data services (i.e. persistence &amp; querying) along with various options dependent on the orientation of the product and its maturity; these may include integration capabilities, domain services (e.g. guidelines, planning) and so on.</p>
+<p>This specification describes the <em>conformance points</em> for <em>openEHR platform products</em> whose semantics are based on openEHR Foundation specifications. Such systems typically include data services (i.e. persistence &amp; querying) along with various options dependent on the orientation of the product and its maturity; these may include integration capabilities, domain services (e.g. guidelines, planning) and so on. It does not cover applications or modelling tools.</p>
 </div>
 <div class="paragraph">
-<p>A conformance point is understood as a <em>testable capability of a system that relates to a business-relevant capability</em>. For example, conformance points for an EHR persistence service (aka Clinical Data Repository, or CDR) may include 'create EHR', 'update EHR', 'versioning' etc. Conformance points are based on <a href="/releases/SM/latest/openehr_platform.html">openEHR Platform Service Model</a> calls.</p>
+<p>A conformance point is understood as a <em>testable capability of a system that relates to a business function</em>. For example, conformance points for an EHR persistence service (aka Clinical Data Repository, or CDR) may include 'create EHR', 'update EHR', 'versioning' etc. Conformance points are based on <a href="/releases/SM/latest/openehr_platform.html">openEHR Platform Abstract Service Model</a> API calls.</p>
 </div>
 <div class="paragraph">
 <p>One or more methods of testing each conformance point is described in this specification. Conformance testing is based on comparing system behaviour to the relevant openEHR published specifications.</p>
@@ -372,7 +372,7 @@
 <p>external data format used by exposed APIs;</p>
 </li>
 <li>
-<p>Security and Privacy.</p>
+<p>security and privacy.</p>
 </li>
 </ul>
 </div>
@@ -380,7 +380,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>The system being tested is accessed via various openEHR REST APIs which must be minimally implemented i.e. sufficiently for the test cases to be exercised.</p>
+<p>The system under test is accessed via one or more concrete protocol APIs, each of which is defined in the relevant openEHR Specification.</p>
 </div>
 <div class="paragraph">
 <p>This specification does not cover claims to other non-functional characteristics such as capacity, performance, availability, or consistency of systems. It is however recommended that supply agreements for operational solutions include criteria for these factors, as relevant to the situation.</p>
@@ -473,23 +473,23 @@ Ext Data Fmt:   XML, JSON
 Detailed Test Report
 ====================
 
-+==============+=============+===============+=============================+==================+========+
-|SUT           |openEHR      |Capability     |Conformance point            |Test              |Result  |
-|Component     |Component    |(PROFILE)      |                             |Case              |        |
-+==============+=============+===============+=============================+==================+========+
-|ACME CDR      |EHR          |EHR Operations |I_EHR_SERVICE.               |                  |        |
-|              |persistence  |               |create_ehr()                 |tc_ehr-create     |pass    |
-|              |             +---------------+-----------------------------+------------------+--------+
-|              |             |Versioning     |I_EHR_COMPOSITION.           |                  |        |
-|              |             |               |get_versioned_composition()  |tc_ehr-vers       |pass    |
-|              |             |               +-----------------------------+------------------+--------+
-|              |             |               |I_EHR_CONTRIBUTION.          |tc_ehr-ctrb_smpl  |pass    |
-|              |             |               |commit_contribution()        |tc_ehr-ctrb_cplx  |FAIL    |
-+--------------+-------------+---------------+-----------------------------+------------------+--------+
-|                                          . . . .                                                     |
-+--------------+-------------+---------------+-----------------------------+------------------+--------+
-|etc           |etc          |etc            |etc                          |etc               |        |
-+==============+=============+===============+=============================+==================+========+
++==========+=============+===============+=============================+==================+=====+======+
+|SUT       |openEHR      |Capability     |Conformance point            |Test              |REST |proto-|
+|Component |Component    |(PROFILE)      |                             |Case              |     |buf   |
++==========+=============+===============+=============================+==================+=====+======+
+|ACME CDR  |EHR          |EHR Operations |I_EHR_SERVICE.               |                  |     |      |
+|          |persistence  |               |create_ehr()                 |tc_ehr-create     |pass |pass  |
+|          |             +---------------+-----------------------------+------------------+-----+------+
+|          |             |Versioning     |I_EHR_COMPOSITION.           |                  |     |      |
+|          |             |               |get_versioned_composition()  |tc_ehr-vers       |pass |pass  |
+|          |             |               +-----------------------------+------------------+-----+------+
+|          |             |               |I_EHR_CONTRIBUTION.          |tc_ehr-ctrb_smpl  |pass |pass  |
+|          |             |               |commit_contribution()        |tc_ehr-ctrb_cplx  |FAIL |FAIL  |
++----------+-------------+---------------+-----------------------------+------------------+-----+------+
+|                                      . . . .                                                         |
++----------+-------------+---------------+-----------------------------+------------------+-----+------+
+|etc       |etc          |etc            |etc                          |etc               |pass |n/a   |
++==========+=============+===============+=============================+==================+=====+======+
 
 
 PROFILE REPORT
@@ -497,7 +497,7 @@ PROFILE REPORT
 
 +==============+================+====================================+===========+========+
 |SUT           |openEHR         |Capability                          |Required   |Result  |
-|Component     |Component       |                                    |in profile |
+|Component     |Component       |                                    |in profile |        |
 +==============+================+====================================+===========+========+
 |ACME K-base   |Definitions     |ADL 1.4 archetype provisioning      |   Y       |pass    |
 |              |                |ADL 1.4 OPT provisioning            |   Y       |pass    |
@@ -531,10 +531,10 @@ PROFILE REPORT
 <div class="sect3">
 <h4 id="_general_description"><a class="anchor" href="#_general_description"></a>5.1.1. General description</h4>
 <div class="paragraph">
-<p>The totality of what is provided for conformance testing according to this specification is known as the <em>system under test</em>, or SUT. It is assumed that any such system has a <em>platform</em> architecture, consisting of one or more <em>product components</em> that are exposed via corresponding <em>native service APIs</em>, and that the component semantics and API are based on published openEHR specifications. At an implementation level, a native API is exposed via a software component interface e.g. a Java .jar, .Net assembly, Linux .so library etc.</p>
+<p>The totality of what is provided for conformance testing according to this specification is known as the <em>system under test</em>, or SUT. It is assumed that any such system has a <em>platform</em> architecture, consisting of one or more <em>product components</em> that are exposed via corresponding <em>native service APIs</em>, and that the component semantics and API are based on published openEHR specifications.</p>
 </div>
 <div class="paragraph">
-<p>It is also assumed that native APIs are network-accessible via one or more communications protocols, each with an appropriate <em>protocol adapter</em>. Such protocols include the text-based, such as <a href="https://en.wikipedia.org/wiki/SOAP">SOAP/WSDL</a> and <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>, as well as the many binary protocols, including <a href="https://github.com/google/protobuf/wiki">Google Protocol Buffers</a>, <a href="https://thrift.apache.org/">Apache Thrift</a>, <a href="https://avro.apache.org/">Avro</a>, <a href="https://kafka.apache.org/">Kafka</a>, <a href="https://zeroc.com/products/ice#what-is-ice">ZeroC ICE</a>, and <a href="https://www.amqp.org/">Advanced Message Queueing Protocol (AMPQ)</a>. The general model is shown below.</p>
+<p>It is also assumed that native APIs are network-accessible via one or more communications protocols, each with an appropriate <em>protocol adapter</em>. Such protocols include the text-based, such as <a href="https://en.wikipedia.org/wiki/SOAP">SOAP/WSDL</a> and <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>, as well as the many binary protocols, including <a href="https://github.com/google/protobuf/wiki">Google Protocol Buffers</a>, <a href="https://thrift.apache.org/">Apache Thrift</a>, <a href="https://avro.apache.org/">Avro</a>, <a href="https://kafka.apache.org/">Kafka</a>, <a href="https://zeroc.com/products/ice#what-is-ice">ZeroC ICE</a>, and <a href="https://www.amqp.org/">Advanced Message Queueing Protocol (AMPQ)</a>. (At an implementation level, the native API of each software component is of course visible e.g. a Java .jar, .Net assembly, Linux .so library etc, but conformance testing does not address such interfaces). The general model is shown below.</p>
 </div>
 <div id="sut_model" class="imageblock text-center" style="text-align: center">
 <div class="content">
@@ -559,7 +559,7 @@ PROFILE REPORT
 <p>The former needs to be tested to determine if the component does what it is functionally intended to do, and is documented in terms of abstract interface definitions that include pre-conditions, post-conditions and exceptions. The latter is tested to determine that the concrete means of accessing the component provided by its developer do indeed provide that access correctly, and conform to accepted norms of the relevant kind of service interface (i.e. REST, AMPQ etc).</p>
 </div>
 <div class="paragraph">
-<p>To establish a common basis for naming and describing components of an openEHR Platform, the <a href="/releases/SM/latest/openehr_platform.html">openEHR Platform Abstract Service Model</a> may be used. This defines a standard set of openEHR component names along with definitions of the transactional semantics of each component, i.e. the 'semantic' test target referred to above. A product&#8217;s own component names need not correspond to the openEHR component names of course, but for the purupose of testing the logical mapping of the two should be provided by a developer.</p>
+<p>To establish a common basis for naming and describing components of an openEHR Platform, the <a href="/releases/SM/latest/openehr_platform.html">openEHR Platform Abstract Service Model</a> may be used. This defines a standard set of openEHR component names along with definitions of the transactional semantics of each component, i.e. the 'semantic' test target referred to above. A product&#8217;s own component names need not correspond to the openEHR component names of course, but for the purpose of testing the logical mapping of the two should be provided by a developer.</p>
 </div>
 <div class="paragraph">
 <p>Each of the concrete protocol interfaces is defined by its own specification, for example the <a href="https://github.com/openEHR/specifications-ITS/docs">openEHR REST API specification</a>, and may be regarded as a product component, for which conformance testing may be conducted. No assumption is made that any given product supports any particular protocol(s), although a minimal set of REST APIs on components such as the System Log is likely to be useful for testing purposes.</p>
@@ -574,7 +574,7 @@ PROFILE REPORT
 <div class="title">Figure 2. Conformance System Under Test</div>
 </div>
 <div class="paragraph">
-<p>As a consequence of the above, the conformance test schedule defined by this specification consists of tests for both native component semantics, and for whichever concrete protocol interfaces are provided. From a practical point of view, the testing is always conducted via the concrete interfaces i.e. REST, SOAP, protobuf etc) as appropriate to the particular product. For a product that implements the openEHR REST APIs, the SUT environment is of the following form:</p>
+<p>As a consequence of the above, the conformance test schedule defined by this specification consists of tests for both native component semantics, and for whichever concrete protocol interfaces are provided. From a practical point of view, the testing is always conducted via the concrete interfaces (i.e. REST, SOAP, protobuf etc) as appropriate to the particular product. Thus, for a product that implements the openEHR REST APIs, the SUT environment is of the following form:</p>
 </div>
 <div id="conformance_sut_rest" class="imageblock text-center" style="text-align: center">
 <div class="content">
@@ -586,7 +586,7 @@ PROFILE REPORT
 <p>In the test environment, a <em>test application</em> with the appropriate protocol client(s) is used to exercise the SUT. A system log viewer and a data viewer may be provided as part of the product in order to facilitate human interaction with the system, but these are not obligatory.</p>
 </div>
 <div class="paragraph">
-<p>In the same fashion, the SUT for a product that exposes APIs using Google Protocol Buffers will look as follows.</p>
+<p>In the same fashion, the SUT for a product that exposes APIs using Google Protocol Buffers might look as follows.</p>
 </div>
 <div id="conformance_sut_sut_protobuf" class="imageblock text-center" style="text-align: center">
 <div class="content">
@@ -740,9 +740,9 @@ PROFILE REPORT
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 11.1112%;">
 </colgroup>
 <thead>
@@ -907,9 +907,9 @@ PROFILE REPORT
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 11.1112%;">
 </colgroup>
 <thead>
@@ -1040,31 +1040,31 @@ PROFILE REPORT
 <td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_contribution_interface" target="_blank" rel="noopener"><code>I_EHR_CONTRIBUTION</code></a><br>
      <code><em>.commit_contribution()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Commit Contribution with one Composition.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb-smpl.txt" target="_blank" rel="noopener">tc_ehr-ctrb_smpl</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb_smpl.txt" target="_blank" rel="noopener">tc_ehr-ctrb_smpl</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-smpl.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Commit Contribution with new Compositions, Directory.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb-cplx.txt" target="_blank" rel="noopener">tc_ehr-ctrb_cplx</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb_cplx.txt" target="_blank" rel="noopener">tc_ehr-ctrb_cplx</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-cplx.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Commit mixed update Contribution with new, changed, deleted items.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb-mix.txt" target="_blank" rel="noopener">tc_ehr-ctrb_mix</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb_mix.txt" target="_blank" rel="noopener">tc_ehr-ctrb_mix</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-mix.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_contribution_interface" target="_blank" rel="noopener"><code>I_EHR_CONTRIBUTION</code></a><br>
      <code><em>.get_contribution()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get Contribution.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb-get.txt" target="_blank" rel="noopener">tc_ehr-ctrb_get</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb_get.txt" target="_blank" rel="noopener">tc_ehr-ctrb_get</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-get.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_contribution_interface" target="_blank" rel="noopener"><code>I_EHR_CONTRIBUTION</code></a><br>
      <code><em>.list_contributions()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List Contributions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb-list.txt" target="_blank" rel="noopener">tc_ehr-ctrb_list</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb_list.txt" target="_blank" rel="noopener">tc_ehr-ctrb_list</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-list.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
@@ -1189,9 +1189,9 @@ PROFILE REPORT
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 11.1112%;">
 </colgroup>
 <thead>
@@ -1326,9 +1326,9 @@ PROFILE REPORT
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 11.1112%;">
 </colgroup>
 <thead>
@@ -1406,9 +1406,9 @@ PROFILE REPORT
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 11.1112%;">
 </colgroup>
 <thead>
@@ -1542,9 +1542,9 @@ PROFILE REPORT
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 11.1112%;">
 </colgroup>
 <thead>
@@ -1629,11 +1629,11 @@ PROFILE REPORT
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 12.5%;">
-<col style="width: 25%;">
-<col style="width: 37.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
+<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2222%;">
+<col style="width: 11.1112%;">
 </colgroup>
 <thead>
 <tr>
@@ -1652,29 +1652,29 @@ PROFILE REPORT
  <a href="/releases/SM/latest/openehr_platform.html#_i_definition_adl2_interface" target="_blank" rel="noopener"><code>I_DEFINITION_ADL2</code></a><br>
  <a href="/releases/SM/latest/openehr_platform.html#_i_definition_query_interface" target="_blank" rel="noopener"><code>I_DEFINITION_QUERY</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-def.txt" target="_blank" rel="noopener">tc_api-def</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-def.json" target="_blank" rel="noopener">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-rest_def.txt" target="_blank" rel="noopener">tc_api-rest_def</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-rest_def.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>EHR API</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_service_interface" target="_blank" rel="noopener"><code>I_EHR_SERVICE</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-ehr.txt" target="_blank" rel="noopener">tc_api-ehr</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-ehr.json" target="_blank" rel="noopener">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-rest_ehr.txt" target="_blank" rel="noopener">tc_api-rest_ehr</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-rest_ehr.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DEMOGRAPHIC API</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_demographic_service_interface" target="_blank" rel="noopener"><code>I_DEMOGRAPHIC_SERVICE</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-dem.txt" target="_blank" rel="noopener">tc_api-dem</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-dem.json" target="_blank" rel="noopener">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-rest_dem.txt" target="_blank" rel="noopener">tc_api-rest_dem</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-rest_dem.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>QUERY API</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_query_service_interface" target="_blank" rel="noopener"><code>I_QUERY_SERVICE</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-qry.txt" target="_blank" rel="noopener">tc_api-qry</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-qry.json" target="_blank" rel="noopener">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-rest_qry.txt" target="_blank" rel="noopener">tc_api-rest_qry</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-rest_qry.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ADMIN API</strong></p></td>
@@ -1682,16 +1682,16 @@ PROFILE REPORT
  <a href="/releases/SM/latest/openehr_platform.html#_i_admin_dump_load_interface" target="_blank" rel="noopener"><code>I_ADMIN_DUMP_LOAD</code></a><br>
  <a href="/releases/SM/latest/openehr_platform.html#_i_admin_archive_interface" target="_blank" rel="noopener"><code>I_ADMIN_ARCHIVE</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-adm.txt" target="_blank" rel="noopener">tc_api-adm</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-adm.json" target="_blank" rel="noopener">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-rest_adm.txt" target="_blank" rel="noopener">tc_api-rest_adm</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-rest_adm.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MESSAGE API</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_extract_interface" target="_blank" rel="noopener"><code>I_EHR_EXTRACT</code></a><br>
  <a href="/releases/SM/latest/openehr_platform.html#_i_tdd_interface" target="_blank" rel="noopener"><code>I_TDD</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-msg.txt" target="_blank" rel="noopener">tc_api-msg</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-msg.json" target="_blank" rel="noopener">postman</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_api-rest_msg.txt" target="_blank" rel="noopener">tc_api-rest_msg</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_api-rest_msg.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1740,9 +1740,9 @@ PROFILE REPORT
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
 <col style="width: 11.1112%;">
 </colgroup>
 <thead>
@@ -1783,7 +1783,7 @@ PROFILE REPORT
 <h2 id="_profiles"><a class="anchor" href="#_profiles"></a>7. Profiles</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The schedule above describes capabilities of openEHR platform products that can be tested against the published specifiations via the REST APIs. These capabilities are grouped into <em>profiles</em> to provide a guide to what constitutes the required functionality for particular category of solution.</p>
+<p>The schedule above describes capabilities of openEHR platform products that can be tested against the published specifiations. These capabilities are grouped into <em>profiles</em> to provide a guide to what constitutes the required functionality for particular category of solution.</p>
 </div>
 <div class="paragraph">
 <p>A profile may be defined logically as a particular list of capabilities from the above schedule that may be combined to specify a particular kind of solution. For example, an openEHR Demographics product would treat most or all of the Demographic capabilities as mandatory, along with support for definitions, logging etc.</p>

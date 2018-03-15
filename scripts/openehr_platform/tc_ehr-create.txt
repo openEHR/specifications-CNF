@@ -10,11 +10,10 @@
 
 // Get handle to service and an authorisation token
 I_EHR_SERVICE svc;
-String auth_tok;
 
-UUID an_ehr_id = svc.create_ehr();
+UUID an_ehr_id := svc.create_ehr();
 
 // ----------- PASS ------------
-EHR_SUMMARY ehr_summary = svc.get_ehr(an_ehr_id);
-assert(ehr_summary.ehr_status.is_queryable);
-assert(ehr_summary.ehr_status.is_modifiable);
+EHR_SUMMARY ehr_summary := svc.get_ehr(an_ehr_id);
+assert (ehr_summary.ehr_status.is_queryable);
+assert (ehr_summary.ehr_status.is_modifiable);

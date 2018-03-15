@@ -8,17 +8,16 @@
 //   Reference: <http://www.openehr.org/releases/CNF/latest/openehr_platform_conformance.html>
 //
 
-// Get handle to service and an authorisation token
+// Get handle to service
 I_DEFINITION_ADL14 svc;
-String auth_tok;
 
 // ----------- PASS ------------
-OPT opt = create_test_adl_14_opt ("test_opt_1");
-assert (not svc.has_opt (auth_tok, opt.id));
-svc.upload_opt (auth_tok, opt);
-assert (svc.has_opt (auth_tok, opt.id));
+OPT opt := create_test_adl_14_opt ("test_opt_1");
+assert (not svc.has_opt (opt.id));
+svc.upload_opt (opt);
+assert (svc.has_opt (opt.id));
 
-List<ARCHETYPE_ID> all_opt_ids = svc.list_all_opts (auth_tok, 1, 10);
+List<ARCHETYPE_ID> all_opt_ids := svc.list_all_opts (1, 10);
 assert (all_opt_ids.has(opt.id));
 
 // ----------- FAIL ------------

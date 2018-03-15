@@ -8,9 +8,8 @@
 //   Reference: <http://www.openehr.org/releases/CNF/latest/openehr_platform_conformance.html>
 //
 
-// Get handle to service and an authorisation token
+// Get handle to service
 I_DEFINITION_QUERY svc;
-String auth_tok;
 
 // ----------- PASS ------------
 

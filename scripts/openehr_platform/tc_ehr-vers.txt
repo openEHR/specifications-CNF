@@ -8,10 +8,9 @@
 //   Reference: <http://www.openehr.org/releases/CNF/latest/openehr_platform_conformance.html>
 //
 
-// Get handle to service and an authorisation token
+// Get handle to service
 I_EHR_STATUS sts_svc;
 I_EHR_DIRECTORY dir_svc;
 I_EHR_COMPOSITION comp_svc;
-String auth_tok;
 
 // ----------- PASS ------------
