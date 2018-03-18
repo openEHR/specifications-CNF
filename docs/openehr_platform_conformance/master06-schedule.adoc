@@ -34,7 +34,7 @@ For the small number of system non-functional characteristics for which conforma
 Specifications:
     
 * Service Interfaces:
-** {openehr_sm_openehr_platform}#_ehr_package[EHR Service Model]
+** {openehr_sm_openehr_platform}#_ehr_package[Abstract EHR Service Model]
 ** {openehr_ehr_rest_api}[EHR REST API]
 * Language / formalism Models:
 ** {openehr_am_adl14}[ADL 1.4]
@@ -69,7 +69,8 @@ Specifications:
      `__.list_all_archetypes()__`            
     |List all available ADL 1.4 archetypes
 
-.3+|*ADL 1.4 OPT +
+.3+|*ADL 1.4 +
+    OPT +
     provisioning*       
     
     |{i_definition_adl14_link}[`I_DEFINITION_ADL14`, window="_blank"] +
@@ -87,7 +88,8 @@ Specifications:
     |List all available Operational Templates
 
 
-.3+|*ADL 2 Archetype +
+.3+|*ADL2 +
+    Archetype +
     provisioning*       
     
     |{i_definition_adl2_link}[`I_DEFINITION_ADL2`, window="_blank"] +
@@ -104,7 +106,8 @@ Specifications:
      `__.list_all_archetypes()__`
     |List all available ADL 2 archetypes
 
-.3+|*ADL 2 OPT +
+.3+|*ADL2 +
+    OPT +
     provisioning*       
     
     |{i_definition_adl2_link}[`I_DEFINITION_ADL2`, window="_blank"] +
@@ -147,7 +150,7 @@ Specifications:
 Specifications:
     
 * Service Interfaces:
-** {openehr_sm_openehr_platform}#_ehr_package[EHR Service Model]
+** {openehr_sm_openehr_platform}#_ehr_package[Abstract EHR Service Model]
 ** {openehr_ehr_rest_api}[EHR REST API]
 * Information Models:
 ** {openehr_rm_ehr}[EHR IM]
@@ -207,14 +210,18 @@ Specifications:
     |link:{scripts_dir}/tc_ehr-get_sub.txt[tc_ehr-get_sub, window="_blank"]
     |link:{scripts_dir}/REST/postman/tc_ehr-get_sub.json[postman, window="_blank"]
 
-.4+|*EHR Status*         
+.7+|*EHR Status*         
 
     |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
      `__.get_ehr_status()__`
     |Get EHR modifiable and queryable status.
- .4+|link:{scripts_dir}/tc_ehr-status.txt[tc_ehr-status, window="_blank"]
- .4+|link:{scripts_dir}/REST/postman/tc_ehr-status.json[postman, window="_blank"]
-    
+ .7+|link:{scripts_dir}/tc_ehr-status.txt[tc_ehr-status, window="_blank"]
+ .7+|link:{scripts_dir}/REST/postman/tc_ehr-status.json[postman, window="_blank"]
+
+    |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
+     `__.get_ehr_status_at_time()__`
+    |Get Ehr status at specified time
+
     |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
      `__.clear_ehr_modifiable()__`
     |Set EHR to non-modifiable.
@@ -222,6 +229,14 @@ Specifications:
     |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
      `__.clear_ehr_queryable()__`
     |Set EHR to non-queryable.
+
+    |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
+     `__.set_ehr_modifiable()__`
+    |Set EHR to modifiable.
+
+    |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
+     `__.set_ehr_queryable()__`
+    |Set EHR to queryable.
 
     |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
      `__.update_other_details()__`
@@ -241,7 +256,7 @@ Specifications:
 
     |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
      `__.get_composition_at_time()__`
-    |Get Composition at time.
+    |Get Composition at specified time.
 
     |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
      `__.update_composition()__`
@@ -251,13 +266,21 @@ Specifications:
      `__.delete_composition()__`
     |Logically delete a Composition.
                    
-.3+|*Directory Operations*
+.5+|*Directory Operations*
 
     |{i_ehr_directory_link}[`I_EHR_DIRECTORY`, window="_blank"] +
      `__.create_directory()__`
     |Create new directory in EHR.
- .3+|link:{scripts_dir}/tc_ehr-dir.txt[tc_ehr-dir, window="_blank"]
- .3+|link:{scripts_dir}/REST/postman/tc_ehr-dir.json[postman, window="_blank"]
+ .5+|link:{scripts_dir}/tc_ehr-dir.txt[tc_ehr-dir, window="_blank"]
+ .5+|link:{scripts_dir}/REST/postman/tc_ehr-dir.json[postman, window="_blank"]
+
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`, window="_blank"] +
+     `__.get_directory()__`
+    |Get Directory, current version.
+
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`, window="_blank"] +
+     `__.get_directory_at_time()__`
+    |Get Directory at specified time.
 
     |{i_ehr_directory_link}[`I_EHR_DIRECTORY`, window="_blank"] +
      `__.update_directory()__`
@@ -290,26 +313,22 @@ Specifications:
     |link:{scripts_dir}/REST/postman/tc_ehr-ctrb-get.json[postman, window="_blank"]
 
     |{i_ehr_contribution_link}[`I_EHR_CONTRIBUTION`, window="_blank"] +
-     `__.list_contributions()__`
+     `__.list_all_contributions()__`
     |List Contributions
     |link:{scripts_dir}/tc_ehr-ctrb_list.txt[tc_ehr-ctrb_list, window="_blank"]
     |link:{scripts_dir}/REST/postman/tc_ehr-ctrb-list.json[postman, window="_blank"]
 
-.9+|*Versioning*
+.6+|*Versioning*
 
     |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
      `__.get_versioned_ehr_status()__`
     |Get Versioned Ehr status
- .9+|link:{scripts_dir}/tc_ehr-vers.txt[tc_ehr-vers, window="_blank"]
- .9+|link:{scripts_dir}/REST/postman/tc_ehr-vers.json[postman, window="_blank"]
+ .6+|link:{scripts_dir}/tc_ehr-vers.txt[tc_ehr-vers, window="_blank"]
+ .6+|link:{scripts_dir}/REST/postman/tc_ehr-vers.json[postman, window="_blank"]
 
     |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
      `__.get_ehr_status_at_version()__`
     |Get Ehr status at version
-
-    |{i_ehr_status_link}[`I_EHR_STATUS`, window="_blank"] +
-     `__.get_ehr_status_at_time()__`
-    |Get Ehr status at time
 
     |{i_ehr_directory_link}[`I_EHR_DIRECTORY`, window="_blank"] +
      `__.get_versioned_directory()__`
@@ -319,10 +338,6 @@ Specifications:
      `__.get_directory_at_version()__`
     |Get Directory at version
 
-    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`, window="_blank"] +
-     `__.get_directory_at_time()__`
-    |Get Directory at time
-
     |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
      `__.get_versioned_composition()__`
     |Get Versioned Composition
@@ -330,10 +345,6 @@ Specifications:
     |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
      `__.get_composition_at_version()__`
     |Get Composition at version
-
-    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`, window="_blank"] +
-     `__.get_composition_at_time()__`
-    |Get Composition version at time
 
 .4+|*Archetype +
     Validation*
@@ -363,14 +374,14 @@ Specifications:
 Specifications:
 
 * Service Interfaces:
-** {openehr_sm_openehr_platform}#_demographic_package[Demographic Service Model]
+** {openehr_sm_openehr_platform}#_demographic_package[Abstract Demographic Service Model]
 * Information Models:
 ** {openehr_rm_demographic}[Demographic IM]
 ** {openehr_rm_common}[Common IM]
 ** {openehr_rm_data_structures}[Data Structures IM]
 ** {openehr_rm_data_types}[Data Types IM]
 ** {openehr_rm_support}[Support IM]
-** {openehr_rm_common}#_change_control_package[Versioning])
+** {openehr_rm_common}#_change_control_package[Versioning]
 
 :i_demographic_service_link: {openehr_sm_openehr_platform}#_i_demographic_service_interface
 :i_party_link: {openehr_sm_openehr_platform}#_i_party_interface
@@ -381,14 +392,14 @@ Specifications:
 |Capability             |Conformance Point +
                          (Service Model call)       |Description          |Test case script      |REST script
 
-.6+|*Party +
+.5+|*Party +
     Operations*
 
     |{i_demographic_service_link}[`I_DEMOGRAPHIC_SERVICE`, window="_blank"] +
      `__.create_party()__`
     |Create a new Party; Party id generated by system.
- .6+|link:{scripts_dir}/tc_dem-party.txt[tc_dem-party, window="_blank"]
- .6+|link:{scripts_dir}/REST/postman/tc_dem-party.json[postman, window="_blank"]
+ .5+|link:{scripts_dir}/tc_dem-party.txt[tc_dem-party, window="_blank"]
+ .5+|link:{scripts_dir}/REST/postman/tc_dem-party.json[postman, window="_blank"]
 
     |{i_party_link}[`I_PARTY`, window="_blank"] +
      `__.get_party()__`
@@ -396,11 +407,7 @@ Specifications:
 
     |{i_party_link}[`I_PARTY`, window="_blank"] +
      `__.get_party_at_time()__`
-    |Retrieve a Party, current version.
-
-    |{i_party_link}[`I_PARTY`, window="_blank"] +
-     `__.get_party_at_version()__`
-    |Retrieve a Party, current version.
+    |Retrieve a Party, at a specified time.
 
     |{i_party_link}[`I_PARTY`, window="_blank"] +
      `__.update_party()__`
@@ -410,19 +417,23 @@ Specifications:
      `__.delete_party()__`
     |Delete a Party.
 
-.4+|*Party +
+.5+|*Party +
     Relationship +
     Operations*
 
     |{i_demographic_service_link}[`I_DEMOGRAPHIC_SERVICE`, window="_blank"] +
      `__.create_party_relationship()__`
     |Create a new Party relationship; Relationship id generated by system.
- .4+|link:{scripts_dir}/tc_dem-party_rel.txt[tc_dem-party_rel, window="_blank"]
- .4+|link:{scripts_dir}/REST/postman/tc_dem-party_rel.json[postman, window="_blank"]
+ .5+|link:{scripts_dir}/tc_dem-party_rel.txt[tc_dem-party_rel, window="_blank"]
+ .5+|link:{scripts_dir}/REST/postman/tc_dem-party_rel.json[postman, window="_blank"]
 
     |{i_party_relationship_link}[`I_PARTY_RELATIONSHIP`, window="_blank"] +
      `__.get_party_relationship()__`
     |Retrieve a Party relationship, current version.
+
+    |{i_party_relationship_link}[`I_PARTY_RELATIONSHIP`, window="_blank"] +
+     `__.get_party_relationship_at_time()__`
+    |Retrieve a Party relationship, at a specified time.
 
     |{i_party_relationship_link}[`I_PARTY_RELATIONSHIP`, window="_blank"] +
      `__.update_party_relationship()__`
@@ -432,25 +443,33 @@ Specifications:
      `__.delete_party_relationship()__`
     |Delete a Party relationship.
 
+.2+|*Versioning*
+
+    |{i_party_link}[`I_PARTY`, window="_blank"] +
+     `__.get_party_at_version()__`
+    |Retrieve a Party, current version.
+ .2+|link:{scripts_dir}/tc_dem-vers.txt[tc_dem-vers, window="_blank"]
+ .2+|link:{scripts_dir}/REST/postman/tc_dem-vers.json[postman, window="_blank"]
+
+    |{i_party_relationship_link}[`I_PARTY_RELATIONSHIP`, window="_blank"] +
+     `__.get_party_relationship_at_version()__`
+    |Retrieve a Party relationship, current version.
+
 .4+|*Archetype +
     Validation*
 
-    |{i_demographic_service_link}[`I_DEMOGRAPHIC_SERVICE`, window="_blank"] +
+ .2+|{i_demographic_service_link}[`I_DEMOGRAPHIC_SERVICE`, window="_blank"] +
      `__.create_party()__`
     |Attempt to create new Party; reject invalid archetype structure.
  .4+|link:{scripts_dir}/tc_dem-arch_val.txt[tc_dem-arch_val, window="_blank"]
  .4+|link:{scripts_dir}/REST/postman/tc_dem-arch_val.json[postman, window="_blank"]
 
-    |{i_demographic_service_link}[`I_DEMOGRAPHIC_SERVICE`, window="_blank"] +
-     `__.create_party()__`
     |Attempt to create new Party; reject invalid archetype.
                                                                             
-    |{i_demographic_service_link}[`I_PARTY_SERVICE`, window="_blank"] +
+ .2+|{i_demographic_service_link}[`I_PARTY_SERVICE`, window="_blank"] +
      `__.update_party()__`
     |Attempt to update Party; reject invalid archetype structure.
 
-    |{i_demographic_service_link}[`I_PARTY_SERVICE`, window="_blank"] +
-     `__.update_party()__`
     |Attempt to update Party; reject invalid archetype.
                                                                             
 |===
@@ -461,7 +480,7 @@ Specifications:
 Specifications:
 
 * Service Interfaces:
-** {openehr_sm_openehr_platform}#_query_package[Query Service Model]
+** {openehr_sm_openehr_platform}#_query_package[Abstract Query Service Model]
 ** {openehr_query_rest_api}[Query REST API]
 * Language Specifications:
 ** {openehr_query_aql}[AQL specification]
@@ -518,7 +537,7 @@ Specifications:
 Specifications:
 
 * Service Interfaces:
-** {openehr_sm_openehr_platform}#_admin_package[Admin Service Model]
+** {openehr_sm_openehr_platform}#_admin_package[Abstract Admin Service Model]
 
 :i_admin_service_link: {openehr_sm_openehr_platform}#_i_admin_service_interface
 :i_admin_archive_link: {openehr_sm_openehr_platform}#_i_admin_archive_interface
@@ -599,7 +618,7 @@ Specifications:
 Specifications:
 
 * Service Interfaces:
-** {openehr_sm_openehr_platform}#_message_package[Message Service Model]
+** {openehr_sm_openehr_platform}#_message_package[Abstract Message Service Model]
 * Information Models:
 ** {openehr_rm_ehr_extract}[EHR Extract IM]
 ** {openehr_rm_ehr}[EHR IM]
@@ -666,7 +685,7 @@ Specifications:
 Specifications:
 
 * Service Interfaces:
-** {openehr_sm_openehr_platform}[Service Model]
+** {openehr_sm_openehr_platform}[Abstract Service Model]
 ** {openehr_rest_apis}[REST APIs]
 
 [cols="1,2,3,2,1", options="header"]
@@ -724,7 +743,7 @@ Specifications:
 Specifications:
     
 * Service Interfaces:
-** {openehr_sm_openehr_platform}#_ehr_package[EHR Service Model]
+** {openehr_sm_openehr_platform}#_ehr_package[Abstract EHR Service Model]
 ** {openehr_ehr_rest_api}[EHR REST API]
 ** {openehr_demographic_rest_api}[DEMOGRAPHIC REST API]
 * Information Models:

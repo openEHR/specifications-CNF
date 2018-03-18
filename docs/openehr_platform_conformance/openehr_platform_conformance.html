@@ -175,9 +175,9 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.7.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Updates and new diagrams for SUT section.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updates and new diagrams for SUT section; Adjust some test sets.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>15 Mar 2017</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>17 Mar 2017</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.7.0</p></td>
@@ -705,7 +705,7 @@ PROFILE REPORT
 <div class="ulist">
 <ul>
 <li>
-<p><a href="/releases/SM/latest/openehr_platform.html#_ehr_package">EHR Service Model</a></p>
+<p><a href="/releases/SM/latest/openehr_platform.html#_ehr_package">Abstract EHR Service Model</a></p>
 </li>
 <li>
 <p><a href="https://github.com/openEHR/specifications-ITS/docs/ehr.html">EHR REST API</a></p>
@@ -776,7 +776,8 @@ PROFILE REPORT
 <td class="tableblock halign-left valign-top"><p class="tableblock">List all available ADL 1.4 archetypes</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><strong>ADL 1.4 OPT<br>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><strong>ADL 1.4<br>
+    OPT<br>
     provisioning</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_definition_adl14_interface" target="_blank" rel="noopener"><code>I_DEFINITION_ADL14</code></a><br>
      <code><em>.upload_opt()</em></code></p></td>
@@ -795,7 +796,8 @@ PROFILE REPORT
 <td class="tableblock halign-left valign-top"><p class="tableblock">List all available Operational Templates</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><strong>ADL 2 Archetype<br>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><strong>ADL2<br>
+    Archetype<br>
     provisioning</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_definition_adl2_interface" target="_blank" rel="noopener"><code>I_DEFINITION_ADL2</code></a><br>
      <code><em>.upload_artefact()</em></code></p></td>
@@ -814,7 +816,8 @@ PROFILE REPORT
 <td class="tableblock halign-left valign-top"><p class="tableblock">List all available ADL 2 archetypes</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><strong>ADL 2 OPT<br>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><strong>ADL2<br>
+    OPT<br>
     provisioning</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_definition_adl2_interface" target="_blank" rel="noopener"><code>I_DEFINITION_ADL2</code></a><br>
      <code><em>.upload_artefact()</em></code></p></td>
@@ -869,7 +872,7 @@ PROFILE REPORT
 <div class="ulist">
 <ul>
 <li>
-<p><a href="/releases/SM/latest/openehr_platform.html#_ehr_package">EHR Service Model</a></p>
+<p><a href="/releases/SM/latest/openehr_platform.html#_ehr_package">Abstract EHR Service Model</a></p>
 </li>
 <li>
 <p><a href="https://github.com/openEHR/specifications-ITS/docs/ehr.html">EHR REST API</a></p>
@@ -967,12 +970,17 @@ PROFILE REPORT
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-get_sub.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><strong>EHR Status</strong></p></td>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock"><strong>EHR Status</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_status_interface" target="_blank" rel="noopener"><code>I_EHR_STATUS</code></a><br>
      <code><em>.get_ehr_status()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get EHR modifiable and queryable status.</p></td>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-status.txt" target="_blank" rel="noopener">tc_ehr-status</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-status.json" target="_blank" rel="noopener">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-status.txt" target="_blank" rel="noopener">tc_ehr-status</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-status.json" target="_blank" rel="noopener">postman</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_status_interface" target="_blank" rel="noopener"><code>I_EHR_STATUS</code></a><br>
+     <code><em>.get_ehr_status_at_time()</em></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Get Ehr status at specified time</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_status_interface" target="_blank" rel="noopener"><code>I_EHR_STATUS</code></a><br>
@@ -983,6 +991,16 @@ PROFILE REPORT
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_status_interface" target="_blank" rel="noopener"><code>I_EHR_STATUS</code></a><br>
      <code><em>.clear_ehr_queryable()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Set EHR to non-queryable.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_status_interface" target="_blank" rel="noopener"><code>I_EHR_STATUS</code></a><br>
+     <code><em>.set_ehr_modifiable()</em></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set EHR to modifiable.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_status_interface" target="_blank" rel="noopener"><code>I_EHR_STATUS</code></a><br>
+     <code><em>.set_ehr_queryable()</em></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set EHR to queryable.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_status_interface" target="_blank" rel="noopener"><code>I_EHR_STATUS</code></a><br>
@@ -1005,7 +1023,7 @@ PROFILE REPORT
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_composition_interface" target="_blank" rel="noopener"><code>I_EHR_COMPOSITION</code></a><br>
      <code><em>.get_composition_at_time()</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get Composition at time.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Get Composition at specified time.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_composition_interface" target="_blank" rel="noopener"><code>I_EHR_COMPOSITION</code></a><br>
@@ -1018,12 +1036,22 @@ PROFILE REPORT
 <td class="tableblock halign-left valign-top"><p class="tableblock">Logically delete a Composition.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><strong>Directory Operations</strong></p></td>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><strong>Directory Operations</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY</code></a><br>
      <code><em>.create_directory()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create new directory in EHR.</p></td>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-dir.txt" target="_blank" rel="noopener">tc_ehr-dir</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-dir.json" target="_blank" rel="noopener">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-dir.txt" target="_blank" rel="noopener">tc_ehr-dir</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-dir.json" target="_blank" rel="noopener">postman</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY</code></a><br>
+     <code><em>.get_directory()</em></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Get Directory, current version.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY</code></a><br>
+     <code><em>.get_directory_at_time()</em></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Get Directory at specified time.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY</code></a><br>
@@ -1062,28 +1090,23 @@ PROFILE REPORT
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_contribution_interface" target="_blank" rel="noopener"><code>I_EHR_CONTRIBUTION</code></a><br>
-     <code><em>.list_contributions()</em></code></p></td>
+     <code><em>.list_all_contributions()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List Contributions</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-ctrb_list.txt" target="_blank" rel="noopener">tc_ehr-ctrb_list</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-ctrb-list.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock"><strong>Versioning</strong></p></td>
+<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><strong>Versioning</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_status_interface" target="_blank" rel="noopener"><code>I_EHR_STATUS</code></a><br>
      <code><em>.get_versioned_ehr_status()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get Versioned Ehr status</p></td>
-<td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-vers.txt" target="_blank" rel="noopener">tc_ehr-vers</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-vers.json" target="_blank" rel="noopener">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_ehr-vers.txt" target="_blank" rel="noopener">tc_ehr-vers</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_ehr-vers.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_status_interface" target="_blank" rel="noopener"><code>I_EHR_STATUS</code></a><br>
      <code><em>.get_ehr_status_at_version()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get Ehr status at version</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_status_interface" target="_blank" rel="noopener"><code>I_EHR_STATUS</code></a><br>
-     <code><em>.get_ehr_status_at_time()</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get Ehr status at time</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY</code></a><br>
@@ -1096,11 +1119,6 @@ PROFILE REPORT
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get Directory at version</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY</code></a><br>
-     <code><em>.get_directory_at_time()</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get Directory at time</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_composition_interface" target="_blank" rel="noopener"><code>I_EHR_COMPOSITION</code></a><br>
      <code><em>.get_versioned_composition()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get Versioned Composition</p></td>
@@ -1109,11 +1127,6 @@ PROFILE REPORT
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_composition_interface" target="_blank" rel="noopener"><code>I_EHR_COMPOSITION</code></a><br>
      <code><em>.get_composition_at_version()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get Composition at version</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_ehr_composition_interface" target="_blank" rel="noopener"><code>I_EHR_COMPOSITION</code></a><br>
-     <code><em>.get_composition_at_time()</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get Composition version at time</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><strong>Archetype<br>
@@ -1154,7 +1167,7 @@ PROFILE REPORT
 <div class="ulist">
 <ul>
 <li>
-<p><a href="/releases/SM/latest/openehr_platform.html#_demographic_package">Demographic Service Model</a></p>
+<p><a href="/releases/SM/latest/openehr_platform.html#_demographic_package">Abstract Demographic Service Model</a></p>
 </li>
 </ul>
 </div>
@@ -1179,7 +1192,7 @@ PROFILE REPORT
 <p><a href="/releases/RM/latest/support.html">Support IM</a></p>
 </li>
 <li>
-<p><a href="/releases/RM/latest/common.html#_change_control_package">Versioning</a>)</p>
+<p><a href="/releases/RM/latest/common.html#_change_control_package">Versioning</a></p>
 </li>
 </ul>
 </div>
@@ -1206,13 +1219,13 @@ PROFILE REPORT
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><strong>Party<br>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><strong>Party<br>
     Operations</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_demographic_service_interface" target="_blank" rel="noopener"><code>I_DEMOGRAPHIC_SERVICE</code></a><br>
      <code><em>.create_party()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create a new Party; Party id generated by system.</p></td>
-<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_dem-party.txt" target="_blank" rel="noopener">tc_dem-party</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_dem-party.json" target="_blank" rel="noopener">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_dem-party.txt" target="_blank" rel="noopener">tc_dem-party</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_dem-party.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_party_interface" target="_blank" rel="noopener"><code>I_PARTY</code></a><br>
@@ -1222,12 +1235,7 @@ PROFILE REPORT
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_party_interface" target="_blank" rel="noopener"><code>I_PARTY</code></a><br>
      <code><em>.get_party_at_time()</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve a Party, current version.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_party_interface" target="_blank" rel="noopener"><code>I_PARTY</code></a><br>
-     <code><em>.get_party_at_version()</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve a Party, current version.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve a Party, at a specified time.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_party_interface" target="_blank" rel="noopener"><code>I_PARTY</code></a><br>
@@ -1240,19 +1248,24 @@ PROFILE REPORT
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delete a Party.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><strong>Party<br>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><strong>Party<br>
     Relationship<br>
     Operations</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_demographic_service_interface" target="_blank" rel="noopener"><code>I_DEMOGRAPHIC_SERVICE</code></a><br>
      <code><em>.create_party_relationship()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create a new Party relationship; Relationship id generated by system.</p></td>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_dem-party_rel.txt" target="_blank" rel="noopener">tc_dem-party_rel</a></p></td>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_dem-party_rel.json" target="_blank" rel="noopener">postman</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_dem-party_rel.txt" target="_blank" rel="noopener">tc_dem-party_rel</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_dem-party_rel.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_party_relationship_interface" target="_blank" rel="noopener"><code>I_PARTY_RELATIONSHIP</code></a><br>
      <code><em>.get_party_relationship()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve a Party relationship, current version.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_party_relationship_interface" target="_blank" rel="noopener"><code>I_PARTY_RELATIONSHIP</code></a><br>
+     <code><em>.get_party_relationship_at_time()</em></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve a Party relationship, at a specified time.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_party_relationship_interface" target="_blank" rel="noopener"><code>I_PARTY_RELATIONSHIP</code></a><br>
@@ -1265,27 +1278,36 @@ PROFILE REPORT
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delete a Party relationship.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><strong>Versioning</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_party_interface" target="_blank" rel="noopener"><code>I_PARTY</code></a><br>
+     <code><em>.get_party_at_version()</em></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve a Party, current version.</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_dem-vers.txt" target="_blank" rel="noopener">tc_dem-vers</a></p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_dem-vers.json" target="_blank" rel="noopener">postman</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_party_relationship_interface" target="_blank" rel="noopener"><code>I_PARTY_RELATIONSHIP</code></a><br>
+     <code><em>.get_party_relationship_at_version()</em></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve a Party relationship, current version.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><strong>Archetype<br>
     Validation</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_demographic_service_interface" target="_blank" rel="noopener"><code>I_DEMOGRAPHIC_SERVICE</code></a><br>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_demographic_service_interface" target="_blank" rel="noopener"><code>I_DEMOGRAPHIC_SERVICE</code></a><br>
      <code><em>.create_party()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attempt to create new Party; reject invalid archetype structure.</p></td>
 <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/tc_dem-arch_val.txt" target="_blank" rel="noopener">tc_dem-arch_val</a></p></td>
 <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><a href="../../scripts/openehr_platform/REST/postman/tc_dem-arch_val.json" target="_blank" rel="noopener">postman</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_demographic_service_interface" target="_blank" rel="noopener"><code>I_DEMOGRAPHIC_SERVICE</code></a><br>
-     <code><em>.create_party()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attempt to create new Party; reject invalid archetype.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_demographic_service_interface" target="_blank" rel="noopener"><code>I_PARTY_SERVICE</code></a><br>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_demographic_service_interface" target="_blank" rel="noopener"><code>I_PARTY_SERVICE</code></a><br>
      <code><em>.update_party()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attempt to update Party; reject invalid archetype structure.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/releases/SM/latest/openehr_platform.html#_i_demographic_service_interface" target="_blank" rel="noopener"><code>I_PARTY_SERVICE</code></a><br>
-     <code><em>.update_party()</em></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attempt to update Party; reject invalid archetype.</p></td>
 </tr>
 </tbody>
@@ -1303,7 +1325,7 @@ PROFILE REPORT
 <div class="ulist">
 <ul>
 <li>
-<p><a href="/releases/SM/latest/openehr_platform.html#_query_package">Query Service Model</a></p>
+<p><a href="/releases/SM/latest/openehr_platform.html#_query_package">Abstract Query Service Model</a></p>
 </li>
 <li>
 <p><a href="https://github.com/openEHR/specifications-ITS/docs/query.html">Query REST API</a></p>
@@ -1396,7 +1418,7 @@ PROFILE REPORT
 <div class="ulist">
 <ul>
 <li>
-<p><a href="/releases/SM/latest/openehr_platform.html#_admin_package">Admin Service Model</a></p>
+<p><a href="/releases/SM/latest/openehr_platform.html#_admin_package">Abstract Admin Service Model</a></p>
 </li>
 </ul>
 </div>
@@ -1504,7 +1526,7 @@ PROFILE REPORT
 <div class="ulist">
 <ul>
 <li>
-<p><a href="/releases/SM/latest/openehr_platform.html#_message_package">Message Service Model</a></p>
+<p><a href="/releases/SM/latest/openehr_platform.html#_message_package">Abstract Message Service Model</a></p>
 </li>
 </ul>
 </div>
@@ -1617,7 +1639,7 @@ PROFILE REPORT
 <div class="ulist">
 <ul>
 <li>
-<p><a href="/releases/SM/latest/openehr_platform.html">Service Model</a></p>
+<p><a href="/releases/SM/latest/openehr_platform.html">Abstract Service Model</a></p>
 </li>
 <li>
 <p><a href="https://github.com/openEHR/specifications-ITS/docs">REST APIs</a></p>
@@ -1711,7 +1733,7 @@ PROFILE REPORT
 <div class="ulist">
 <ul>
 <li>
-<p><a href="/releases/SM/latest/openehr_platform.html#_ehr_package">EHR Service Model</a></p>
+<p><a href="/releases/SM/latest/openehr_platform.html#_ehr_package">Abstract EHR Service Model</a></p>
 </li>
 <li>
 <p><a href="https://github.com/openEHR/specifications-ITS/docs/ehr.html">EHR REST API</a></p>

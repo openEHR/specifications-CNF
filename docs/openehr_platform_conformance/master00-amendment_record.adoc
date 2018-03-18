@@ -7,9 +7,9 @@
 4+^h|*R E L E A S E{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}1.?.?*
 
 |[[latest_issue]]0.7.1
-|Updates and new diagrams for SUT section.
+|Updates and new diagrams for SUT section; Adjust some test sets.
 |T Beale
-|[[latest_issue_date]]15 Mar 2017
+|[[latest_issue_date]]17 Mar 2017
 
 |0.7.0
 |Major rework based on openEHR Patform SM.
