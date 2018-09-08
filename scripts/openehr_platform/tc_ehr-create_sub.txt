@@ -11,15 +11,15 @@
 // Get handle to service and an authorisation token
 I_EHR_SERVICE svc;
 
-PARTY_REF subject_id := svc.create_party_ref ("ehr", "PERSON", "1234");
+PARTY_REF subject_id = svc.create_party_ref ("ehr", "PERSON", "1234");
 
 // ----------- PASS ------------
 assert(not svc.has_ehr(subject_id));
-UUID an_ehr_id := svc.create_ehr (subject_id);
+UUID an_ehr_id = svc.create_ehr (subject_id);
 assert (not svc.last_error ());
 assert (svc.has_ehr (an_ehr_id));
 
-EHR_SUMMARY ehr_summary := svc.get_ehr (an_ehr_id);
+EHR_SUMMARY ehr_summary = svc.get_ehr (an_ehr_id);
 assert (ehr_summary.ehr_status.is_queryable);
 assert (ehr_summary.ehr_status.is_modifiable);
 

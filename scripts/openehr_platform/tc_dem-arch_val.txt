@@ -11,9 +11,9 @@
 // Get handle to service
 I_DEMOGRAPHICS_SERVICE dem_svc;
 
-UUID a_party_id := dem_svc.create_ehr ();
-PARTY_REF a_subject_id := new party_ref ("ehr", "PERSON", "5555");
-UPDATE_AUDIT an_audit := new update_audit ("openehr::249|creation|", "create_composition test", a_subject_id);
+UUID a_party_id = dem_svc.create_ehr ();
+PARTY_REF a_subject_id = new party_ref ("ehr", "PERSON", "5555");
+UPDATE_AUDIT an_audit = new update_audit ("openehr::249|creation|", "create_composition test", a_subject_id);
 
 // ----------- PASS ------------
 

@@ -12,12 +12,12 @@
 I_DEFINITION_ADL14 svc;
 
 // ----------- PASS ------------
-OPT opt := create_test_adl_14_opt ("test_opt_1");
+OPT opt = create_test_adl_14_opt ("test_opt_1");
 assert (not svc.has_opt (opt.id));
 svc.upload_opt (opt);
 assert (svc.has_opt (opt.id));
 
-List<ARCHETYPE_ID> all_opt_ids := svc.list_all_opts (1, 10);
+List<ARCHETYPE_ID> all_opt_ids = svc.list_all_opts (1, 10);
 assert (all_opt_ids.has(opt.id));
 
 // ----------- FAIL ------------

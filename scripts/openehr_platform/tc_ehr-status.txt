@@ -11,9 +11,9 @@
 // Get handle to service and an authorisation token
 I_EHR_SERVICE svc;
 
-PARTY_REF subject_id := create_party_ref ("ehr", "PERSON", "1234");
+PARTY_REF subject_id = create_party_ref ("ehr", "PERSON", "1234");
 
 // ----------- PASS ------------
 assert(svc.has_ehr(subject_id));
-EHR_SUMMARY ehr_summary := svc.get_ehr(an_ehr_id);
+EHR_SUMMARY ehr_summary = svc.get_ehr(an_ehr_id);
 

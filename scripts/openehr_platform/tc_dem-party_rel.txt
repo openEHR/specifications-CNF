@@ -11,9 +11,9 @@
 // Get handle to service
 I_DEMOGRAPHIC_SERVICE svc;
 
-UUID a_party_1_id := svc.get_new_uuid();
-UUID a_party_2_id := svc.get_new_uuid();
-UUID a_party_rel_id := svc.get_new_uuid();
+UUID a_party_1_id = svc.get_new_uuid();
+UUID a_party_2_id = svc.get_new_uuid();
+UUID a_party_rel_id = svc.get_new_uuid();
 
 svc.create_party (a_party_1_id);
 svc.create_party (a_party_2_id);
