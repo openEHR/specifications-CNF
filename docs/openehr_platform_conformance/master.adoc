@@ -22,16 +22,18 @@
 :scripts_dir: ../../scripts/openehr_platform
 :linkattrs:
 
+include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
+
 //
 // ============================================ Asciidoc PREAMBLE =============================================
 //
 
-image::/releases/BASE/latest/resources/images/openehr_logo_large.png["openEHR logo",align="center"]
+image::{openehr_logo}["openEHR logo",align="center"]
 
 = openEHR EHR Platform Conformance
 
-include::{base_dir}/docs_common/boilerplate/short_front_block.adoc[]
-include::{base_dir}/docs_common/references/reference_definitions.adoc[]
+include::{ref_dir}/docs/boilerplate/full_front_block.adoc[]
+include::{ref_dir}/docs/references/reference_definitions.adoc[]
 
 //
 // ============================================= Asciidoc BODY ===============================================
