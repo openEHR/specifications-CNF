@@ -53,7 +53,7 @@ The formal transactional interface to a product's openEHR components is specifie
 
 [.text-center]
 .Platform Abstract Service Model
-image::{openehr_sm_uml_diagrams}/SM-platform_model.svg[id=platform_abstract_sm, align="center"]
+image::{openehr_sm_uml_diagrams}/SM-platform_definition.svg[id=platform_definition, align="center"]
 
 The functions defined on these interfaces constitute the _functional conformance points_ of this specification. For example, the conformance point for the logical 'create EHR' operation is defined by the functions `_create_ehr()_`, `_create_ehr_with_id()_`, `_create_ehr_for_subject()_`, `_create_ehr_for_subject_with_id()_` defined on the service interface `I_EHR_SERVICE` shown in the above diagram. Information conformance (i.e. conformance to the types stated in service call arguments and return values) is primarily defined by the openEHR specifications for the relevant components, i.e. RM (Reference Model) etc, however, a small number of service model-specific information structures are defined by the service specification.
 

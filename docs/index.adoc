@@ -13,8 +13,6 @@
 :keywords: conformance
 :description: openEHR Conformance Specifications
 :sectanchors:
-:jira-roadmap: https://openehr.atlassian.net/projects/SPECCNF?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page
-:jira-hist-issues: https://openehr.atlassian.net/issues/?filter=10720
 
 include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
 
@@ -30,17 +28,16 @@ image::openehr_block_diagram.svg["openEHR components",align="center",width="60%"
 
 // Use the following version for 'latest'
 ifeval::["{cnf_release}" == "latest"]
-:jira-issues: https://openehr.atlassian.net/projects/SPECCNF/issues/?filter=allopenissues
 [.title-para]
-{jira-roadmap}[Roadmap] | {jira-issues}[Current Issues] | {jira-hist-issues}[Change History]
+{component_prs}[Open Issues^] | {component_roadmap}[Roadmap^] | {component_history}[Previous Releases^] 
 endif::[]
 
 // Use the following version for a release
 ifeval::["{cnf_release}" != "latest"]
-:jira-pr-release: https://openehr.atlassian.net/projects/SPECPR/versions/10060
-:jira-cr-release: https://openehr.atlassian.net/projects/SPECCNF/versions/10860
+:cnf_prs_fixed: {component_prs_fixed}{cnf_release}/issues
+:cnf_crs_done: {component_crs_done}{cnf_release}/changes
 [.title-para]
-{jira-pr-release}[Problems Fixed] | {jira-cr-release}[Changes Implemented] | {jira-roadmap}[Roadmap] | {jira-hist-issues}[Change History]
+{cnf_prs_fixed}[Issues Fixed^] | {cnf_crs_done}[Changes Implemented^] | {component_roadmap}[Roadmap^] | {component_history}[Change History^]
 endif::[]
 
 == Specifications
@@ -51,8 +48,8 @@ endif::[]
 
 |link:/releases/CNF/{cnf_release}/openehr_platform_conformance.html[openEHR EHR Platform Conformance]
 |Specification of formal conformance to the openEHR EHR Platform definition.
-a|* https://openehr.atlassian.net/wiki/spaces/spec/pages/94181296/Conformance+Notes+-+SEC+meeting+Alkmaar+2017[Alkmaar 2017 notes];
-* https://openehr.atlassian.net/wiki/spaces/spec/pages/73367558/openEHR+Conformance[Original page].
+a|* {openehr_wiki_root}/spaces/spec/pages/94181296/Conformance+Notes+-+SEC+meeting+Alkmaar+2017[Alkmaar 2017 notes];
+* {openehr_wiki_root}/spaces/spec/pages/73367558/openEHR+Conformance[Original page].
 
 |===
 
@@ -63,7 +60,7 @@ a|* https://openehr.atlassian.net/wiki/spaces/spec/pages/94181296/Conformance+No
 |Resource |Description
 
 |REST APIs
-|See https://openehr.github.io/specifications-ITS[(REST APIs)]
+|See link:/releases/ITS/latest/docs/index[(REST APIs)]
 
 |Service Model (SM)
 |See link:/releases/SM/latest/docs/index[SM Index page].
