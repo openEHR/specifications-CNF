@@ -10,7 +10,7 @@ Conformance testing is used as the basis of product certification, and has the f
 
 This specification describes the _conformance points_ for _openEHR platform products_ whose semantics are based on openEHR Foundation specifications. Such systems typically include data services (i.e. persistence & querying) along with various options dependent on the orientation of the product and its maturity; these may include integration capabilities, domain services (e.g. guidelines, planning) and so on. It does not cover applications or modelling tools.
 
-A conformance point is understood as a _testable capability of a system that relates to a business function_. For example, conformance points for an EHR persistence service (aka Clinical Data Repository, or CDR) may include 'create EHR', 'update EHR', 'versioning' etc. Conformance points are based on {openehr_sm_openehr_platform}[openEHR Platform Abstract Service Model] API calls.
+A conformance point is understood as a _testable capability of a system that relates to a business function_. For example, conformance points for an EHR persistence service (aka Clinical Data Repository, or CDR) may include 'create EHR', 'update EHR', 'versioning' etc. Conformance points are based on {openehr_sm_openehr_platform}[openEHR Platform Abstract Service Model^] API calls.
 
 One or more methods of testing each conformance point is described in this specification. Conformance testing is based on comparing system behaviour to the relevant openEHR published specifications.
 

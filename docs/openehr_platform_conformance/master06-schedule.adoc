@@ -34,14 +34,14 @@ For the small number of system non-functional characteristics for which conforma
 Specifications:
     
 * Service Interfaces:
-** {openehr_sm_openehr_platform}#_ehr_package[Abstract EHR Service Model]
-** {openehr_ehr_rest_api}[EHR REST API]
+** {openehr_sm_openehr_platform}#_ehr_package[Abstract EHR Service Model^]
+** {openehr_ehr_rest_api}[EHR REST API^]
 * Language / formalism Models:
-** {openehr_am_adl14}[ADL 1.4]
-** {openehr_am_aom14}[AOM 1.4]
-** {openehr_am_adl2}[ADL 2]
-** {openehr_am_aom2}[AOM 2]
-** {openehr_am_id}[Archetype Identification]
+** {openehr_am_adl14}[ADL 1.4^]
+** {openehr_am_aom14}[AOM 1.4^]
+** {openehr_am_adl2}[ADL 2^]
+** {openehr_am_aom2}[AOM 2^]
+** {openehr_am_id}[Archetype Identification^]
 
 :i_definition_adl14_link: {openehr_sm_openehr_platform}#_i_definition_adl14_interface
 :i_definition_adl2_link: {openehr_sm_openehr_platform}#_i_definition_adl2_interface
@@ -150,15 +150,15 @@ Specifications:
 Specifications:
     
 * Service Interfaces:
-** {openehr_sm_openehr_platform}#_ehr_package[Abstract EHR Service Model]
-** {openehr_ehr_rest_api}[EHR REST API]
+** {openehr_sm_openehr_platform}#_ehr_package[Abstract EHR Service Model^]
+** {openehr_ehr_rest_api}[EHR REST API^]
 * Information Models:
-** {openehr_rm_ehr}[EHR IM]
-** {openehr_rm_common}[Common IM]
-** {openehr_rm_data_structures}[Data Structures IM]
-** {openehr_rm_data_types}[Data Types IM]
-** {openehr_rm_support}[Support IM]
-** {openehr_rm_common}#_change_control_package[Versioning]
+** {openehr_rm_ehr}[EHR IM^]
+** {openehr_rm_common}[Common IM^]
+** {openehr_rm_data_structures}[Data Structures IM^]
+** {openehr_rm_data_types}[Data Types IM^]
+** {openehr_rm_support}[Support IM^]
+** {openehr_rm_common}#_change_control_package[Versioning^]
 
 :i_ehr_service_link: {openehr_sm_openehr_platform}#_i_ehr_service_interface
 :i_ehr_link: {openehr_sm_openehr_platform}#_i_ehr_interface
@@ -374,14 +374,14 @@ Specifications:
 Specifications:
 
 * Service Interfaces:
-** {openehr_sm_openehr_platform}#_demographic_package[Abstract Demographic Service Model]
+** {openehr_sm_openehr_platform}#_demographic_package[Abstract Demographic Service Model^]
 * Information Models:
-** {openehr_rm_demographic}[Demographic IM]
-** {openehr_rm_common}[Common IM]
-** {openehr_rm_data_structures}[Data Structures IM]
-** {openehr_rm_data_types}[Data Types IM]
-** {openehr_rm_support}[Support IM]
-** {openehr_rm_common}#_change_control_package[Versioning]
+** {openehr_rm_demographic}[Demographic IM^]
+** {openehr_rm_common}[Common IM^]
+** {openehr_rm_data_structures}[Data Structures IM^]
+** {openehr_rm_data_types}[Data Types IM^]
+** {openehr_rm_support}[Support IM^]
+** {openehr_rm_common}#_change_control_package[Versioning^]
 
 :i_demographic_service_link: {openehr_sm_openehr_platform}#_i_demographic_service_interface
 :i_party_link: {openehr_sm_openehr_platform}#_i_party_interface
@@ -480,10 +480,10 @@ Specifications:
 Specifications:
 
 * Service Interfaces:
-** {openehr_sm_openehr_platform}#_query_package[Abstract Query Service Model]
-** {openehr_query_rest_api}[Query REST API]
+** {openehr_sm_openehr_platform}#_query_package[Abstract Query Service Model^]
+** {openehr_query_rest_api}[Query REST API^]
 * Language Specifications:
-** {openehr_query_aql}[AQL specification]
+** {openehr_query_aql}[AQL specification^]
 
 :i_query_service_link: {openehr_sm_openehr_platform}#_i_query_service_interface
 
@@ -537,7 +537,7 @@ Specifications:
 Specifications:
 
 * Service Interfaces:
-** {openehr_sm_openehr_platform}#_admin_package[Abstract Admin Service Model]
+** {openehr_sm_openehr_platform}#_admin_package[Abstract Admin Service Model^]
 
 :i_admin_service_link: {openehr_sm_openehr_platform}#_i_admin_service_interface
 :i_admin_archive_link: {openehr_sm_openehr_platform}#_i_admin_archive_interface
@@ -618,15 +618,15 @@ Specifications:
 Specifications:
 
 * Service Interfaces:
-** {openehr_sm_openehr_platform}#_message_package[Abstract Message Service Model]
+** {openehr_sm_openehr_platform}#_message_package[Abstract Message Service Model^]
 * Information Models:
-** {openehr_rm_ehr_extract}[EHR Extract IM]
-** {openehr_rm_ehr}[EHR IM]
-** {openehr_rm_demographic}[Demographic IM]
-** {openehr_rm_common}[Common IM]
-** {openehr_rm_data_structures}[Data Structures IM]
-** {openehr_rm_data_types}[Data Types IM]
-** {openehr_rm_support}[Support IM]
+** {openehr_rm_ehr_extract}[EHR Extract IM^]
+** {openehr_rm_ehr}[EHR IM^]
+** {openehr_rm_demographic}[Demographic IM^]
+** {openehr_rm_common}[Common IM^]
+** {openehr_rm_data_structures}[Data Structures IM^]
+** {openehr_rm_data_types}[Data Types IM^]
+** {openehr_rm_support}[Support IM^]
 
 :i_message_service_link: {openehr_sm_openehr_platform}#_i_message_service_interface
 :i_ehr_extract_link: {openehr_sm_openehr_platform}#_i_ehr_extract_interface
@@ -685,8 +685,8 @@ Specifications:
 Specifications:
 
 * Service Interfaces:
-** {openehr_sm_openehr_platform}[Abstract Service Model]
-** {openehr_rest_apis}[REST APIs]
+** {openehr_sm_openehr_platform}[Abstract Service Model^]
+** {openehr_rest_apis}[REST APIs^]
 
 [cols="1,2,3,2,1", options="header"]
 |===
@@ -743,12 +743,12 @@ Specifications:
 Specifications:
     
 * Service Interfaces:
-** {openehr_sm_openehr_platform}#_ehr_package[Abstract EHR Service Model]
-** {openehr_ehr_rest_api}[EHR REST API]
-** {openehr_demographic_rest_api}[DEMOGRAPHIC REST API]
+** {openehr_sm_openehr_platform}#_ehr_package[Abstract EHR Service Model^]
+** {openehr_ehr_rest_api}[EHR REST API^]
+** {openehr_demographic_rest_api}[DEMOGRAPHIC REST API^]
 * Information Models:
-** {openehr_rm_common}#_digital_signature[Digital Signature]
-** {openehr_overview}#_overview_4[EHR/Demographic separation]
+** {openehr_rm_common}#_digital_signature[Digital Signature^]
+** {openehr_overview}#_overview_4[EHR/Demographic separation^]
 
 [cols="1,2,3,2,1", options="header"]
 |===

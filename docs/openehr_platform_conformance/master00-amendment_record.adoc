@@ -33,7 +33,7 @@
 |11 Aug 2017
 
 |0.5.0
-|{openehr_jira}/SPECCNF-1[SPECCNF-1]: Initial Writing.
+|{spec_tickets}/SPECCNF-1[SPECCNF-1^]: Initial Writing.
 |B Naess, +
  I McNicoll, +
  P Pazos, +

@@ -11,11 +11,11 @@ This document describes the openEHR EHR System Conformance Definition, which sta
 
 Useful references for reading this document include:
 
-* The {openehr_overview}[openEHR Architecture Overview].
+* The {openehr_overview}[openEHR Architecture Overview^].
 
 == Status
 
-This specification is in the {spec_status} state. The development version of this document can be found at {openehr_cnf_openehr_platform}[{openehr_cnf_openehr_platform}].
+This specification is in the {spec_status} state. The development version of this document can be found at {openehr_cnf_openehr_platform}[{openehr_cnf_openehr_platform}^].
 
 Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:
 [.tbd]
@@ -23,9 +23,9 @@ Known omissions or questions are indicated in the text with a 'to be determined'
 
 == Feedback
 
-Feedback may be provided on the {openehr_technical_list}[technical mailing list].
+Feedback may be provided on the {openehr_technical_list}[technical mailing list^].
 
-Issues may be raised on the {openehr_jira_prs_cnf}[specifications Problem Report tracker].
+Issues may be raised on the {component_prs}[specifications Problem Report tracker^].
 
-To see changes made due to previously reported issues, see the {openehr_jira_crs_cnf}[{component} component Change Request tracker].
+To see changes made due to previously reported issues, see the {component_history}[{component} component Change Request tracker^].
 
