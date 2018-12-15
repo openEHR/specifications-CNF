@@ -1,25 +1,21 @@
 //
 // ============================================ Asciidoc HEADER =============================================
 //
-:doctype: book
-:source-highlighter: pygments
-//:pygments-style: murphy
-//:toc: macro
-:toc: left
-:toclevels: 4
-:pagenums:
-:sectnums!:
-// git rid of PDF 'Chapter' labs on level 1 headings
-:chapter-label:
-:copyright_year: 2017
+include::{ref_dir}/docs/boilerplate/book_style_settings.adoc[]
+
+//
+// Document-specific attributes
+//
+:copyright_year: 2013
+:spec_status: DEVELOPMENT
+:scripts_dir: ../../scripts/openehr_platform
+
 //
 // HTML-only attributes
 //
 :linkcss:
 :keywords: conformance
 :description: openEHR EHR Platform Conformance
-:spec_status: DEVELOPMENT
-:scripts_dir: ../../scripts/openehr_platform
 :linkattrs:
 
 include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
