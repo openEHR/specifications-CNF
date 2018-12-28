@@ -4,7 +4,7 @@
 |===
 |Issue|Details|Raiser|Completed
 
-4+^h|*R E L E A S E{nbsp}{nbsp}{nbsp}{nbsp}{nbsp}1.?.?*
+4+^h|*CNF Release 1.0.?*
 
 |[[latest_issue]]0.7.1
 |Updates and new diagrams for SUT section; Adjust some test sets.
