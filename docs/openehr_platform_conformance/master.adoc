@@ -3,20 +3,11 @@
 //
 include::{ref_dir}/docs/boilerplate/book_style_settings.adoc[]
 
-//
-// Document-specific attributes
-//
 :copyright_year: 2013
 :spec_status: DEVELOPMENT
-:scripts_dir: ../../scripts/openehr_platform
-
-//
-// HTML-only attributes
-//
-:linkcss:
 :keywords: conformance
 :description: openEHR EHR Platform Conformance
-:linkattrs:
+:scripts_dir: ../../scripts/openehr_platform
 
 include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
 
@@ -58,7 +49,6 @@ This specification was developed and is maintained by the {openehr_sec}[openEHR 
 //
 // --------------------------------------------- CHAPTERS -----------------------------------------------
 //
-:sectanchors:
 :sectnums:
 include::master01-preface.adoc[leveloffset=+1]
 include::master02-glossary.adoc[leveloffset=+1]
