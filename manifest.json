@@ -1,0 +1,59 @@
+{
+    "id": "CNF",
+    "title": "Conformance Specifications",
+    "description": "openEHR Conformance Specifications",
+    "keywords": "conformance",
+    "specifications": [
+        {
+            "id": "openehr_platform_conformance",
+            "title": "openEHR EHR Platform Conformance",
+            "title_short": "Platform Conformance",
+            "description": "openEHR EHR Platform Conformance",
+            "summary": "Specification of formal conformance to the openEHR EHR Platform definition.",
+            "micro_summary": "System Under Test (SUT), Conformance Schedule, Profiles, Certification",
+            "copyright_year": "2013",
+            "spec_status": "DEVELOPMENT",
+            "keywords": "conformance",
+            "notes": [
+                {
+                    "link": "https://specifications.openehr.org/wiki/spaces/spec/pages/94181296/Conformance+Notes+-+SEC+meeting+Alkmaar+2017",
+                    "text": "SEC Meeting Alkmaar 2017 notes"
+                },
+                {
+                    "link": "https://specifications.openehr.org/wiki/spaces/spec/pages/73367558/openEHR+Conformance",
+                    "text": "Original page"
+                }
+            ]
+        }
+    ],
+    "expression": [
+        {
+            "id": "REST-API",
+            "dependency": {
+                "component": "ITS",
+                "release": "latest"
+            }
+        },
+        {
+            "id": "CNF-SM",
+            "type": "url",
+            "title": "Service Model (SM)",
+            "description": "Service Model (SM) specification",
+            "link": "releases/SM/latest"
+        }
+    ],
+    "jira": {
+        "open_issues": "11108",
+        "roadmap": "SPECCNF"
+    },
+    "releases": [
+        {
+            "id": "1.0.0",
+            "date": "",
+            "jira": {
+                "crs": "SPECCNF/versions/12524",
+                "prs": "SPECPR/versions/12525"
+            }
+        }
+    ]
+}
