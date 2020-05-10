@@ -26,7 +26,7 @@
             ]
         }
     ],
-    "expression": [
+    "expressions": [
         {
             "id": "REST-API",
             "dependency": {
