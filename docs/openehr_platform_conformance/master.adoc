@@ -7,7 +7,7 @@ include::{ref_dir}/docs/boilerplate/book_style_settings.adoc[]
 :spec_status: DEVELOPMENT
 :keywords: conformance
 :description: openEHR EHR Platform Conformance
-:scripts_dir: ../../scripts/openehr_platform
+:scripts_dir: ../scripts/openehr_platform
 
 include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
 
