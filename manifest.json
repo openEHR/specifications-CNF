@@ -28,9 +28,9 @@
     ],
     "expressions": [
         {
-            "id": "REST-API",
+            "id": "REST API src",
             "dependency": {
-                "component": "ITS",
+                "component": "ITS-REST",
                 "release": "latest"
             }
         },
