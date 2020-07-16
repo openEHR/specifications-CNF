@@ -2,12 +2,7 @@
 // ============================================ Asciidoc HEADER =============================================
 //
 include::{ref_dir}/docs/boilerplate/book_style_settings.adoc[]
-
-:copyright_year: 2013
-:spec_status: DEVELOPMENT
-:keywords: conformance
-:description: openEHR EHR Platform Conformance
-
+include::manifest_vars.adoc[]
 include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
 
 //
