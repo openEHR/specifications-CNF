@@ -39,7 +39,7 @@
             "type": "url",
             "title": "Service Model (SM)",
             "description": "Service Model (SM) specification",
-            "link": "releases/SM/latest"
+            "link": "/releases/SM/latest"
         }
     ],
     "jira": {
