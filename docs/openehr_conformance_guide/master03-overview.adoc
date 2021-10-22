@@ -1,0 +1,13 @@
+= Overview
+
+Conformance testing is used as the basis of product certification, and has the following goals:
+
+* _Tendering_: enable tendering authorities to state formal criteria for compliance in tenders
+* _Protection for solution developers_: enables bona fide vendors and other developers to prove the quality of their solutions compared to other offerings claiming conformance
+* _Protection for procurement_: provides a way of ensuring that purchased solutions can be contractually guaranteed to perform in certain ways
+
+The following use cases....
+
+[.text-center]
+.Use Cases
+image::{diagrams_uri}/conformance_framework-use_cases.svg[id=conformance_framework-use_cases, align="center"]

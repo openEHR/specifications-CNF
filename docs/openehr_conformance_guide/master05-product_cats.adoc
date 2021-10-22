@@ -1,0 +1,7 @@
+= Product Categories
+
+xxxx
+
+[.text-center]
+.Product categories
+image::{diagrams_uri}/conformance_framework-product_cats.svg[id=conformance_framework-product_cats, align="center"]

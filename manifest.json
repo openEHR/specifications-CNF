@@ -8,8 +8,8 @@
             "id": "openehr_platform_conformance",
             "title": "openEHR EHR Platform Conformance",
             "title_short": "Platform Conformance",
-            "description": "openEHR EHR Platform Conformance",
-            "summary": "Specification of formal conformance to the openEHR EHR Platform definition.",
+            "description": "openEHR Platform Conformance",
+            "summary": "Specification of formal conformance to the openEHR Platform definition.",
             "micro_summary": "System Under Test (SUT), Conformance Schedule, Profiles, Certification",
             "copyright_year": "2013",
             "spec_status": "DEVELOPMENT",
@@ -24,6 +24,16 @@
                     "text": "Original page"
                 }
             ]
+        },
+        {
+            "id": "openehr_conformance_guide",
+            "title": "openEHR EHR Conformance Guide",
+            "title_short": "Conformance Guide",
+            "description": "openEHR Conformance",
+            "summary": "Guide to conformance testing in openEHR.",
+            "copyright_year": "2021",
+            "spec_status": "DEVELOPMENT",
+            "keywords": "conformance"
         }
     ],
     "expressions": [

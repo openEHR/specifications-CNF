@@ -1,0 +1,7 @@
+= Artifacts
+
+xxxxxx
+
+[.text-center]
+.Conformance-related artifacts
+image::{diagrams_uri}/conformance_framework-artifacts.svg[id=conformance_framework-artifacts, align="center"]
