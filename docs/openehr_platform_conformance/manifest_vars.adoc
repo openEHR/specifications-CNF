@@ -2,4 +2,4 @@
 :copyright_year: 2013
 :spec_status: DEVELOPMENT
 :keywords: conformance
-:description: openEHR EHR Platform Conformance
+:description: openEHR Platform Conformance

@@ -2,9 +2,9 @@
 
 == Purpose
 
-This document describes the openEHR EHR System Conformance Definition, which states a test schedule and content of tests to be used to determine the conformance of EHR solutions to openEHR EHR specifications. The audience of this document includes:
+This document specifies the openEHR Platform Conformance definition, in terms of test schedule and product profiles, which may be used to determine the conformance of openEHR platform products to openEHR plaform-related specifications. The audience of this document includes:
 
-* Software development organisations developing EHR systems;
+* Software development organisations developing healthcare information systems;
 * Customer organisations.
 
 == Related Documents
@@ -15,7 +15,7 @@ Useful references for reading this document include:
 
 == Status
 
-This specification is in the {spec_status} state. The development version of this document can be found at {openehr_cnf_openehr_platform}[{openehr_cnf_openehr_platform}^].
+This specification is in the {spec_status} state. The development version of this document can be found at {openehr_cnf_latest_openehr_platform}[{openehr_cnf_latest_openehr_platform}^].
 
 Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:
 [.tbd]
@@ -23,7 +23,7 @@ Known omissions or questions are indicated in the text with a 'to be determined'
 
 == Feedback
 
-Feedback may be provided on the {openehr_technical_list}[technical mailing list^].
+Feedback may be provided on the {openehr_cnf_forum}[openEHR Conformance forum^].
 
 Issues may be raised on the {component_prs}[specifications Problem Report tracker^].
 
