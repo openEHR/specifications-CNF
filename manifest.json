@@ -5,13 +5,24 @@
     "keywords": "conformance",
     "specifications": [
         {
+            "id": "openehr_conformance_guide",
+            "title": "openEHR Conformance Guide",
+            "title_short": "Conformance Guide",
+            "description": "openEHR Conformance",
+            "summary": "Guide to conformance testing in openEHR.",
+            "micro_summary": "Guide to conformance testing in openEHR.",
+            "copyright_year": "2021",
+            "spec_status": "DEVELOPMENT",
+            "keywords": "conformance"
+        },
+        {
             "id": "openehr_platform_conformance",
-            "title": "openEHR EHR Platform Conformance",
+            "title": "openEHR Platform Conformance",
             "title_short": "Platform Conformance",
             "description": "openEHR Platform Conformance",
             "summary": "Specification of formal conformance to the openEHR Platform definition.",
             "micro_summary": "System Under Test (SUT), Conformance Schedule, Profiles, Certification",
-            "copyright_year": "2013",
+            "copyright_year": "2017",
             "spec_status": "DEVELOPMENT",
             "keywords": "conformance",
             "notes": [
@@ -25,12 +36,13 @@
                 }
             ]
         },
-        {
-            "id": "openehr_conformance_guide",
-            "title": "openEHR EHR Conformance Guide",
-            "title_short": "Conformance Guide",
-            "description": "openEHR Conformance",
-            "summary": "Guide to conformance testing in openEHR.",
+		{
+            "id": "openehr_platform_test",
+            "title": "openEHR Platform Test Specification",
+            "title_short": "Conformance test definitions for the openEHR platform",
+            "description": "Detailed specifications of openEHR platform tests",
+            "summary": "Detailed specifications of openEHR platform tests.",
+            "micro_summary": "Detailed specifications of openEHR platform tests.",
             "copyright_year": "2021",
             "spec_status": "DEVELOPMENT",
             "keywords": "conformance"
