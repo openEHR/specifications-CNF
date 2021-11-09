@@ -1,0 +1,416 @@
+== EHR Persistence Component
+
+=== Normative Reference
+
+Items in this validation suite conceptually use the following abstract interfaces from the {openehr_sm_openehr_platform}#_ehr_package[Abstract EHR Service Model^].
+
+* `I_EHR_SERVICE`
+* `I_EHR`
+* `I_EHR_STATUS`
+
+These are concretely realised in implementation technology specfic APIs, such as the {openehr_ehr_rest_api}[EHR REST API^].
+
+The data that flow through these interfaces are specified by the following information models:
+
+* {openehr_rm_ehr}[EHR IM^]
+* {openehr_rm_common}[Common IM^]
+* {openehr_rm_data_structures}[Data Structures IM^]
+* {openehr_rm_data_types}[Data Types IM^]
+* {openehr_rm_support}[Support IM^]
+* {openehr_rm_common}#_change_control_package[Versioning^]
+
+=== Test Environment
+
+The server under test should support:
+
+. at least the OPT 1.4 format, and optionally {openehr_am_latest_opt2}[OPT 2^].
+. at least the XML representation of COMPOSITIONs for committing data, which may be validated by the {openehr_its_rm_xsd}[openEHR XSDs^].
+
+=== Test Data Sets
+
+These are the data set classes:
+
+. VALID:
+.. not providing an `EHR_STATUS` (empty input, the server creates the default structures and data)
+.. providing a valid `EHR_STATUS`
+. INVALID:
+.. providing invalid `EHR_STATUS`
+
+Valid data sets when the `EHR_STATUS` is provided and internal strucrures are valid (data set class 1.a):
+
+[cols="1,2,2,2,2,2", options="header"]
+|===
+|No.  | is_queryable | is_modifiable | subject  | other_details | ehr_id      
+
+| 1   | true         | true          | provided | not provided  | not provided
+| 2   | true         | false         | provided | not provided  | not provided
+| 3   | false        | true          | provided | not provided  | not provided
+| 4   | false        | false         | provided | not provided  | not provided
+| 5   | true         | true          | provided | provided      | not provided
+| 6   | true         | false         | provided | provided      | not provided
+| 7   | false        | true          | provided | provided      | not provided
+| 8   | false        | false         | provided | provided      | not provided
+| 9   | true         | true          | provided | not provided  | provided    
+| 10  | true         | false         | provided | not provided  | provided    
+| 11  | false        | true          | provided | not provided  | provided    
+| 12  | false        | false         | provided | not provided  | provided    
+| 13  | true         | true          | provided | provided      | provided    
+| 14  | true         | false         | provided | provided      | provided    
+| 15  | false        | true          | provided | provided      | provided    
+| 16  | false        | false         | provided | provided      | provided    
+
+|===
+
+Any other data set is invalid, for instance providing `EHR_STATUS` with:
+
+. missing `_is_queryable_`, `_is_modifiable_`
+. empty `_is_queryable, `_is_modifiable_`
+. missing or empty `_subject_id_`
+. invalid `_subject_id_`
+. invalid `_other_details_`
+
+Notes:
+
+. When the `_ehr_id_` is not present, it is expected that it is assigned by the server.
+. The server should set the `EHR._system_id_` value to a known value (defined by the server's configuration).
+. The default values that should be assigned by the server for is_modifiable and is_queryable are 'true', and for the subject it defaults to an instance of `PARTY_SELF`.
+. There are no cases to check if the provided ehr_id is valid, since in the {openehr_sm_openehr_platform}[openEHR Platform Service Model^] the parameters are typed to `UUID`, any other format will be an invalid call.
+. The validity of an `EHR_STATUS` can be checked in its JSON form by validating against the {openehr_its_json}/latest/components/RM[JSON schemas^].
+
+=== Test Cases
+
+:i_ehr_service_link: {openehr_sm_openehr_platform}#_i_ehr_service_interface
+:i_ehr_link: {openehr_sm_openehr_platform}#_i_ehr_interface
+:i_ehr_status_link: {openehr_sm_openehr_platform}#_i_ehr_status_interface
+:i_ehr_directory_link: {openehr_sm_openehr_platform}#_i_ehr_directory_interface
+:i_ehr_composition_link: {openehr_sm_openehr_platform}#_i_ehr_composition_interface
+:i_ehr_contribution_link: {openehr_sm_openehr_platform}#_i_ehr_contribution_interface
+
+==== Conformance point: Has EHR
+
+*Platform service ref*: {i_ehr_service_link}[`I_EHR_SERVICE._has_ehr()_`^]
+
+[cols="1,1,3", options="header"]
+|===
+|Test case
+|Description
+|Definition
+    
+   |TC-EHR-has_ehr-main
+   |Main flow: +
+    Check has EHR with existing EHR id
+  a|[%collapsible]
+====
+include::tc01-ehr.adoc[tag=TC-EHR-has_ehr-main]
+====
+
+   |TC-EHR-has_ehr-alt1
+   |Alternative flow 1: +
+    Check has EHR with existing EHR by subject_id
+  a|[%collapsible]
+====
+include::tc01-ehr.adoc[tag=TC-EHR-has_ehr-alt1]
+====
+
+   |TC-EHR-has_ehr-alt2
+   |Alternative flow 2: +
+    Check has EHR with non existing EHR id
+  a|[%collapsible]
+====
+include::tc01-ehr.adoc[tag=TC-EHR-has_ehr-alt2]
+====
+
+   |TC-EHR-has_ehr-alt3
+   |Alternative flow 3: +
+    Check has EHR with non existing EHR by subject_id
+  a|[%collapsible]
+====
+include::tc01-ehr.adoc[tag=TC-EHR-has_ehr-alt3]
+====
+|===
+
+
+==== Conformance point: Create EHR
+
+*Platform service ref*: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr()_`^]
+
+[cols="1,1,3", options="header"]
+|===
+|Test case
+|Description
+|Definition
+    
+   |TC-EHR-create_ehr-main
+   |Main flow: +
+    Create new EHR
+  a|[%collapsible]
+====
+include::tc01-ehr.adoc[tag=TC-EHR-create_ehr-main]
+====
+
+   |TC-EHR-create_ehr-alt1
+   |Alternative flow 1: +
+    Attempt to create same EHR twice
+  a|[%collapsible]
+====
+include::tc01-ehr.adoc[tag=TC-EHR-create_ehr-alt1]
+====
+
+   |TC-EHR-create_ehr-alt2
+   |Alternative flow 2: +
+    Create two EHRs for the same patient
+  a|[%collapsible]
+====
+include::tc01-ehr.adoc[tag=TC-EHR-create_ehr-alt2]
+====
+|===
+
+
+==== Conformance point: Create new EHR with specified EHR id
+
+*Platform service ref*: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr_with_id()_`^] 
+
+==== Conformance point: Create new EHR with the specified subject id; EHR id generated by system
+
+*Platform service ref*: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr_for_subject()_`^]
+
+==== Conformance point: Create new EHR with the specified EHR id and subject id
+
+*Platform service ref*: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr_for_subject_with_id()_`^]
+
+==== Conformance point: Get EHR with the specified EHR identifier
+
+*Platform service ref*: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehr()_`^]
+
+==== Conformance point: Get EHR(s) for specified subject
+
+*Platform service ref*: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehrs_for_subject()_`^]
+
+==== Conformance point: Get Ehr status at specified time
+
+*Platform service ref*: {i_ehr_status_link}[`I_EHR_STATUS._get_ehr_status_at_time()_`^]
+
+==== Conformance point: Set EHR to non-modifiable.
+
+*Platform service ref*: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_modifiable()_`^]
+
+==== Conformance point: Set EHR to non-queryable.
+
+*Platform service ref*: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_queryable()_`^]
+
+==== Conformance point: Set EHR to modifiable.
+
+*Platform service ref*: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_modifiable()_`^]
+
+==== Conformance point: Set EHR to queryable.
+
+*Platform service ref*: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_queryable()_`^]
+
+==== Conformance point: Update other EHR status details.
+
+*Platform service ref*: {i_ehr_status_link}[`I_EHR_STATUS._update_other_details()_`^]
+
+
+=== Old Test Cases
+
+[cols="1,2,3,2,1", options="header"]
+|===
+|Capability             |Conformance Point +
+                         (Service Model call)   |Description                            |Test case script      |REST script
+
+.6+|*EHR Operations*         
+
+    |{i_ehr_service_link}[`I_EHR_SERVICE`^] +
+     `__.create_ehr()__`
+    |Create a new EHR; EHR id generated by system
+    |link:{openehr_cnf_scripts_dir}/tc_ehr-create.txt[tc_ehr-create^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-create.json[postman^]
+
+    |{i_ehr_service_link}[`I_EHR_SERVICE`^] +
+     `__.create_ehr_with_id()__`
+    |Create new EHR with the specified EHR id
+    |link:{openehr_cnf_scripts_dir}/tc_ehr-create_id.txt[tc_ehr-create_id^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-create_id.json[postman^]
+
+    |{i_ehr_service_link}[`I_EHR_SERVICE`^] +
+     `__.create_ehr_for_subject()__`
+    |Create new EHR with the specified subject id; EHR id generated by system
+    |link:{openehr_cnf_scripts_dir}/tc_ehr-create_sub.txt[tc_ehr-create_sub^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-create_sub.json[postman^]
+
+    |{i_ehr_service_link}[`I_EHR_SERVICE`^] +
+     `__.create_ehr_for_subject_with_id()__`
+    |Create new EHR with the specified EHR id and subject id.
+    |link:{openehr_cnf_scripts_dir}/tc_ehr-create_sub_id.txt[tc_ehr-create_sub_id^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-create_sub_id.json[postman^]
+
+    |{i_ehr_service_link}[`I_EHR_SERVICE`^] +
+     `__.get_ehr()__`
+    |Get EHR with the specified EHR identifier.
+    |
+    |
+
+    |{i_ehr_service_link}[`I_EHR_SERVICE`^] +
+     `__.get_ehrs_for_subject()__`
+    |Get EHR(s) for specified subject.
+    |link:{openehr_cnf_scripts_dir}/tc_ehr-get_sub.txt[tc_ehr-get_sub^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-get_sub.json[postman^]
+
+.7+|*EHR Status*         
+
+    |{i_ehr_status_link}[`I_EHR_STATUS`^] +
+     `__.get_ehr_status()__`
+    |Get EHR modifiable and queryable status.
+ .7+|link:{openehr_cnf_scripts_dir}/tc_ehr-status.txt[tc_ehr-status^]
+ .7+|link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-status.json[postman^]
+
+    |{i_ehr_status_link}[`I_EHR_STATUS`^] +
+     `__.get_ehr_status_at_time()__`
+    |Get Ehr status at specified time
+
+    |{i_ehr_status_link}[`I_EHR_STATUS`^] +
+     `__.clear_ehr_modifiable()__`
+    |Set EHR to non-modifiable.
+
+    |{i_ehr_status_link}[`I_EHR_STATUS`^] +
+     `__.clear_ehr_queryable()__`
+    |Set EHR to non-queryable.
+
+    |{i_ehr_status_link}[`I_EHR_STATUS`^] +
+     `__.set_ehr_modifiable()__`
+    |Set EHR to modifiable.
+
+    |{i_ehr_status_link}[`I_EHR_STATUS`^] +
+     `__.set_ehr_queryable()__`
+    |Set EHR to queryable.
+
+    |{i_ehr_status_link}[`I_EHR_STATUS`^] +
+     `__.update_other_details()__`
+    |Update other EHR status details.
+
+.5+|*Composition Operations*  
+
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`^] +
+     `__.create_composition()__`
+    |Create a new Composition.
+ .5+|link:{openehr_cnf_scripts_dir}/tc_ehr-comp.txt[tc_ehr-comp^]
+ .5+|link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-comp.json[postman^]
+
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`^] +
+     `__.get_composition()__`
+    |Get Composition by id.
+
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`^] +
+     `__.get_composition_at_time()__`
+    |Get Composition at specified time.
+
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`^] +
+     `__.update_composition()__`
+    |Create a new version of a Composition.
+
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`^] +
+     `__.delete_composition()__`
+    |Logically delete a Composition.
+                   
+.5+|*Directory Operations*
+
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`^] +
+     `__.create_directory()__`
+    |Create new directory in EHR.
+ .5+|link:{openehr_cnf_scripts_dir}/tc_ehr-dir.txt[tc_ehr-dir^]
+ .5+|link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-dir.json[postman^]
+
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`^] +
+     `__.get_directory()__`
+    |Get Directory, current version.
+
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`^] +
+     `__.get_directory_at_time()__`
+    |Get Directory at specified time.
+
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`^] +
+     `__.update_directory()__`
+    |Update EHR directory.
+
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`^] +
+     `__.delete_directory()__`
+    |Delete EHR directory.
+
+.5+|*Change sets*
+
+ .3+|{i_ehr_contribution_link}[`I_EHR_CONTRIBUTION`^] +
+     `__.commit_contribution()__`
+    |Commit Contribution with one Composition.
+    |link:{openehr_cnf_scripts_dir}/tc_ehr-ctrb_smpl.txt[tc_ehr-ctrb_smpl^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-ctrb-smpl.json[postman^]
+
+    |Commit Contribution with new Compositions, Directory.
+    |link:{openehr_cnf_scripts_dir}/tc_ehr-ctrb_cplx.txt[tc_ehr-ctrb_cplx^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-ctrb-cplx.json[postman^]
+
+    |Commit mixed update Contribution with new, changed, deleted items.
+    |link:{openehr_cnf_scripts_dir}/tc_ehr-ctrb_mix.txt[tc_ehr-ctrb_mix^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-ctrb-mix.json[postman^]
+
+    |{i_ehr_contribution_link}[`I_EHR_CONTRIBUTION`^] +
+     `__.get_contribution()__`
+    |Get Contribution.
+    |link:{openehr_cnf_scripts_dir}/tc_ehr-ctrb_get.txt[tc_ehr-ctrb_get^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-ctrb-get.json[postman^]
+
+    |{i_ehr_contribution_link}[`I_EHR_CONTRIBUTION`^] +
+     `__.list_all_contributions()__`
+    |List Contributions
+    |link:{openehr_cnf_scripts_dir}/tc_ehr-ctrb_list.txt[tc_ehr-ctrb_list^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-ctrb-list.json[postman^]
+
+.6+|*Versioning*
+
+    |{i_ehr_status_link}[`I_EHR_STATUS`^] +
+     `__.get_versioned_ehr_status()__`
+    |Get Versioned Ehr status
+ .6+|link:{openehr_cnf_scripts_dir}/tc_ehr-vers.txt[tc_ehr-vers^]
+ .6+|link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-vers.json[postman^]
+
+    |{i_ehr_status_link}[`I_EHR_STATUS`^] +
+     `__.get_ehr_status_at_version()__`
+    |Get Ehr status at version
+
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`^] +
+     `__.get_versioned_directory()__`
+    |Get Versioned Directory
+
+    |{i_ehr_directory_link}[`I_EHR_DIRECTORY`^] +
+     `__.get_directory_at_version()__`
+    |Get Directory at version
+
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`^] +
+     `__.get_versioned_composition()__`
+    |Get Versioned Composition
+
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`^] +
+     `__.get_composition_at_version()__`
+    |Get Composition at version
+
+.4+|*Archetype +
+    Validation*
+
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`^] +
+     `__.create_composition()__`
+    |Attempt to create new Composition; reject invalid archetype structure.
+ .4+|link:{openehr_cnf_scripts_dir}/tc_ehr-arch_val.txt[tc_ehr-arch_val^]
+ .4+|link:{openehr_cnf_scripts_dir}/REST/postman/tc_ehr-arch_val.json[postman^]
+
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`^] +
+     `__.create_composition()__`
+    |Attempt to create new Composition; reject invalid archetype.
+                                                                            
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`^] +
+     `__.update_composition()__`
+    |Attempt to update Composition; reject invalid archetype structure.
+
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`^] +
+     `__.update_composition()__`
+    |Attempt to update Composition; reject invalid archetype.
+
+|===

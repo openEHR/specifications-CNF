@@ -1,0 +1,38 @@
+= Non-Functional Conformance
+
+== Security and Privacy
+
+Specifications:
+    
+* Service Interfaces:
+** {openehr_sm_openehr_platform}#_ehr_package[Abstract EHR Service Model^]
+** {openehr_ehr_rest_api}[EHR REST API^]
+** {openehr_demographic_rest_api}[DEMOGRAPHIC REST API^]
+* Information Models:
+** {openehr_rm_common}#_digital_signature[Digital Signature^]
+** {openehr_overview}#_overview_4[EHR/Demographic separation^]
+
+[cols="1,2,3,2,1", options="header"]
+|===
+|Capability             |Conformance Point      |Description          |Test case script      |REST script
+
+|*Signing*
+
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`^] +
+     `__.create_composition()__`
+    |Create a new signed Composition.
+    |link:{openehr_cnf_scripts_dir}/tc_secpriv-sign.txt[tc_secpriv-sign^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_secpriv-sign.json[postman^]
+
+|*Anonymous EHRs*
+
+    |{i_ehr_composition_link}[`I_EHR_COMPOSITION`^] +
+     `__.create_composition()__` +
+     {i_demographic_service_link}[`I_DEMOGRAPHIC_SERVICE`^] +
+     `__.create_party()__`
+    |Create a new EHR, Demographic Party, and external link.
+    |link:{openehr_cnf_scripts_dir}/tc_secpriv-anon_ehr.txt[tc_secpriv-anon_ehr^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_secpriv-anon_ehr.json[postman^]
+
+|===
+

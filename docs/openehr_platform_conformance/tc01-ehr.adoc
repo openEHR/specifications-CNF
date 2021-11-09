@@ -1,0 +1,457 @@
+## B. EHR Service Test Cases
+
+### B.1. Create EHR
+
+*Data sets:*
+
+These are the data set classes:
+
+. VALID:
+.. not providing and EHR_STATUS (empty input, the server creates the default structures and data)
+.. providing a valid EHR_STATUS
+. INVALID:
+.. providing invalid EHR_STATUS
+
+
+*Valid data sets when the EHR_STATUS is provided and internal strucrures are valid (data set class 1.2):*
+
+| No. | is_queryable | is_modifiable | subject  | other_details | `ehr_id`       |
+| --- | ------------ | ------------- | -------- | ------------- | ------------ |
+| 1   | true         | true          | provided | not provided  | not provided |
+| 2   | true         | false         | provided | not provided  | not provided |
+| 3   | false        | true          | provided | not provided  | not provided |
+| 4   | false        | false         | provided | not provided  | not provided |
+| 5   | true         | true          | provided | provided      | not provided |
+| 6   | true         | false         | provided | provided      | not provided |
+| 7   | false        | true          | provided | provided      | not provided |
+| 8   | false        | false         | provided | provided      | not provided |
+| 9   | true         | true          | provided | not provided  | provided     |
+| 10  | true         | false         | provided | not provided  | provided     |
+| 11  | false        | true          | provided | not provided  | provided     |
+| 12  | false        | false         | provided | not provided  | provided     |
+| 13  | true         | true          | provided | provided      | provided     |
+| 14  | true         | false         | provided | provided      | provided     |
+| 15  | false        | true          | provided | provided      | provided     |
+| 16  | false        | false         | provided | provided      | provided     |
+
+
+*Any other data set should be treated as invalid, for instance providing EHR_STATUS with:*
+
+- missing is_queryable, is_modifiable
+- empty is_queryable, is_modifiable
+- missing or empty subject
+- invalid subject
+- invalid other_details
+
+
+*Notes*:
+
+. When the `ehr_id` is not present, it is expected that it is assigned by the server.
+. The server should set the EHR.system_id value to a known value (defined by the server's configuration).
+. The default values that should be assigned by the server for is_modifiable and is_queryable are "true", and for the subject it defaults to an instance of PARTY_SELF.
+. There are no cases to check if the provided `ehr_id` is valid, since in the [openEHR Service Model](https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_ehr_service_interface) the parameters is typed to UUID, any other format will be an invalid call.
+. The validity of an EHR_STATUS can be checked in it's JSON form by validating against the JSON schemas https://specifications.openehr.org/releases/ITS-JSON/latest/components/RM
+
+
+
+#### B.1.a. Main flow: Create new EHR
+
+// tag::TC-EHR-create_ehr-main[]
+
+*Preconditions:*
+
+The server should be empty (no EHRs, no commits, no OPTs).
+
+*Postconditions:*
+
+A new EHR will exist in the system and be consistent with the data sets used.
+
+*Flow:*
+
+. Invoke the create EHR service
+.. for each item in the VALID data set classes
+.. when the `ehr_id` is provided, should be unique for each invocation of the service
+. The server should answer with a positive response associated to the successful EHR creation
+
+// end::TC-EHR-create_ehr-main[]
+
+
+
+#### B.1.b. Alternative flow 1: Attempt to create same EHR twice
+
+// tag::TC-EHR-create_ehr-alt1[]
+
+*Preconditions:*
+
+The server should be empty (no EHRs, no commits, no OPTs).
+
+*Postconditions:*
+
+A new EHR will exist in the system, the first one created, and be consistent with the data sets used.
+
+*Flow:*
+
+. Invoke the create EHR service
+.. for each VALID data set not providing `ehr_id`
+.. for each VALID data set providing `ehr_id`
+. The server should answer with a positive response associated to the successful EHR creation
+. Invoke the create EHR service
+.. with the same `ehr_id` of the EHR created in 1.1. (should be read from the response)
+.. with the same `ehr_id` of the EHR created in 1.2. (should be read from the test data sets)
+. The server should answer with a negative response, related to the existence of an EHR with the provided `ehr_id`, because `ehr_id` values should be unique
+
+// end::TC-EHR-create_ehr-alt1[]
+
+
+#### B.1.c. Alternative flow 2: Create two EHRs for the same patient
+
+// tag::TC-EHR-create_ehr-alt2[]
+
+*Preconditions:*
+
+The server should be empty (no EHRs, no commits, no OPTs).
+
+*Postconditions:*
+
+A new EHR will exist in the system.
+
+*Flow:*
+
+. Invoke the create EHR service
+.. for each VALID data set with a provided subject and not providing `ehr_id`
+. The server should answer with a positive response associated to the successful EHR creation
+. Invoke the create EHR service
+.. with the same data set used in 1.1
+. The server should answer with a negative response, related with the EHR already existing for the provided subject
+
+// end::TC-EHR-create_ehr-alt2[]
+
+
+### B.2. Has EHR
+
+#### B.2.a. Main flow: Check has EHR with existing EHR
+
+// tag::TC-EHR-has_ehr-main[]
+
+*Preconditions:*
+
+An EHR should exist in the system with a known `ehr_id`.
+
+*Postconditions:*
+
+None.
+
+*Flow:*
+
+. Invoke has EHR service with the known `ehr_id`
+. The result should be positive, related to "the EHR with `ehr_id` exists"
+
+// end::TC-EHR-has_ehr-main[]
+
+
+#### B.2.b. Alternative flow 1: Check has EHR with existing EHR by `subject_id`
+
+// tag::TC-EHR-has_ehr-alt1[]
+
+*Preconditions:*
+
+An EHR should exist in the system with a known `subject_id`.
+
+*Postconditions:*
+
+None.
+
+*Flow:*
+
+. Invoke has EHR service with the known `subject_id`
+. The result should be positive, realted to "the EHR with `subject_id` exists"
+
+NOTE: '`subject_id`' refers to the `PARTY_REF` class instance containing the identifier of a patient represented by `PARTY_SELF` in the openEHR Reference Model.
+
+// end::TC-EHR-has_ehr-alt1[]
+
+
+#### B.2.c. Alternative flow 2: Check has EHR with non existing EHR
+
+// tag::TC-EHR-has_ehr-alt2[]
+
+*Preconditions:*
+
+The server should be empty (no EHRs, no commits, no OPTs).
+
+*Postconditions:*
+
+None.
+
+*Flow:*
+
+. Invoke has EHR service with a random `ehr_id`.
+. The result should be negative, related to "the EHR with `ehr_id` does not exist"
+
+// end::TC-EHR-has_ehr-alt2[]
+
+
+#### B.2.d. Alternative flow 3: Check has EHR with non existing EHR by `subject_id`
+
+// tag::TC-EHR-has_ehr-alt3[]
+
+*Preconditions:*
+
+The server should be empty (no EHRs, no commits, no OPTs).
+
+*Postconditions:*
+
+None.
+
+*Flow:*
+
+. Invoke has EHR service with a random `subject_id`
+. The result should be negative, related to "the EHR for `subject_id` does not exist"
+
+// end::TC-EHR-has_ehr-alt3[]
+
+
+### B.3. Get EHR
+
+#### B.3.a. Main flow: Get existing EHR
+
+*Preconditions:*
+
+An EHR should exist in the system with a known `ehr_id`.
+
+*Postconditions:*
+
+None.
+
+*Flow:*
+
+. Invoke get EHR service with the known `ehr_id`
+. The result should be positive and retrieve the EHR
+
+
+#### B.3.b. Alternative flow 1: Get existing EHR by `subject_id`
+
+*Preconditions:*
+
+An EHR should exist in the system with a known `subject_id`.
+
+*Postconditions:*
+
+None.
+
+*Flow:*
+
+. Invoke get EHR service with the known `subject_id`
+. The result should be positive and retrieve the EHR
+
+
+#### B.3.c. Alternative flow 2: Get non existing EHR
+
+*Preconditions:*
+
+The server should be empty (no EHRs, no commits, no OPTs).
+
+*Postconditions:*
+
+None.
+
+*Flow:*
+
+. Invoke get EHR service by a random `ehr_id`
+. The result should be negative, related to "EHR with `ehr_id` doesn't exist"
+
+
+#### B.3.d. Alternative flow 3: Get non existing EHR by `subject_id`
+
+*Preconditions:*
+
+The server should be empty (no EHRs, no commits, no OPTs).
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke get EHR service by a random `subject_id`
+. The result should be negative, relato to "EHR for `subject_id` doesn't exist"
+
+
+## C. EHR_STATUS Test Cases
+
+### C.1. Get EHR_STATUS
+
+#### C.1.a. Main flow: Get status of an existing EHR
+
+*Preconditions:*
+
+An EHR with known `ehr_id` should exist.
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke the get EHR_STATUS service by the existing `ehr_id`
+. The result should be positive and retrieve a correspondent EHR_STATUS.
+.. The EHR_STATUS internal information should match the rules in which the EHR was created (see test flow Create EHR)
+.. Those rules should be verified: a. has or not a `subject_id`, b. has correct value for is_modifiable, c. has correct value for is_queryable.
+
+
+#### C.1.b. Alternative flow 1: Get status of a non existing EHR
+
+*Preconditions:*
+
+The server should be empty (no EHRs, no commits, no OPTs).
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke the get EHR_STATUS service by a random `ehr_id`
+. The result should be negative and the result should include an error related to "EHR with `ehr_id` doesn't exist".
+
+
+
+### C.2. Set EHR Queryable
+
+#### C.2.a. Main flow: Set EHR queryable of an existing EHR
+
+*Preconditions:*
+
+An EHR with known `ehr_id` should exist.
+
+*Postconditions:*
+
+EHR_STATUS.is_queryable, for the EHR with known `ehr_id`, should be true
+
+*Flow:*
+
+. For the existing EHR, invoke the set EHR queryable service
+. The result should be positive and the corresponding EHR_STATUS.is_queryable should be true
+
+
+#### C.2.b. Alternative flow 1: Set EHR queryable of non existing EHR
+
+*Preconditions:*
+
+The server should be empty (no EHRs, no commits, no OPTs).
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke the set EHR queryable service by a random `ehr_id`
+. The result should be negative and the result should include an error related to "EHR with `ehr_id` doesn't exist".
+
+
+
+### C.3. Set EHR Modifiable
+
+#### C.3.a. Main flow: Set EHR modifiable of an existing EHR
+
+*Preconditions:*
+
+An EHR with known `ehr_id` should exist.
+
+*Postconditions:*
+
+EHR_STATUS.is_modifiable, for the EHR with known `ehr_id`, should be true
+
+*Flow:*
+
+. For the existing EHR, invoke the set EHR modifiable service
+. The result should be positive and the corresponding EHR_STATUS.is_modifiable should be true
+
+
+#### C.3.b. Alternative flow 1: Set EHR modifiable of non existing EHR
+
+*Preconditions:*
+
+The server should be empty (no EHRs, no commits, no OPTs).
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke the set EHR modifiable service by a random `ehr_id`
+. The result should be negative and the result should include an error related to "EHR with `ehr_id` doesn't exist".
+
+
+
+### C.4. Clear EHR Queryable
+
+#### C.4.a. Main flow: Clear EHR queryable of an existing EHR
+
+*Preconditions:*
+
+An EHR with known `ehr_id` should exist.
+
+*Postconditions:*
+
+EHR_STATUS.is_queryable, for the EHR with known `ehr_id`, should be false.
+
+*Flow:*
+
+. For the existing EHR, invoke the clear EHR queryable service
+. The result should be positive and the corresponding EHR_STATUS.is_queryable should be false
+
+
+#### C.4.b. Alternative flow 1: Clear EHR queryable of non existing EHR
+
+*Preconditions:*
+
+The server should be empty (no EHRs, no commits, no OPTs).
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke the clear EHR queryable service by a random `ehr_id`
+. The result should be negative and the result should include an error related to "EHR with `ehr_id` doesn't exist".
+
+
+
+### C.5. Clear EHR Modifiable
+
+#### C.5.a. Main flow: Clear EHR modifiable of an existing EHR
+
+*Preconditions:*
+
+An EHR with known `ehr_id` should exist.
+
+*Postconditions:*
+
+EHR_STATUS.is_modifiable, for the EHR with known `ehr_id`, should be false
+
+*Flow:*
+
+. For the existing EHR, invoke the clear EHR modifiable service
+. The result should be positive and the corresponding EHR_STATUS.is_modifiable should be false
+
+
+#### C.5.b. Alternative flow 1: Clear EHR modifiable of non existing EHR
+
+*Preconditions:*
+
+The server should be empty (no EHRs, no commits, no OPTs).
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke the clear EHR modifiable service by a random `ehr_id`
+. The result should be negative and the result should include an error related to "EHR with `ehr_id` doesn't exist".
+
+

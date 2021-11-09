@@ -1,0 +1,56 @@
+== Querying Component
+
+Specifications:
+
+* Service Interfaces:
+** {openehr_sm_openehr_platform}#_query_package[Abstract Query Service Model^]
+** {openehr_query_rest_api}[Query REST API^]
+* Language Specifications:
+** {openehr_query_aql}[AQL specification^]
+
+:i_query_service_link: {openehr_sm_openehr_platform}#_i_query_service_interface
+
+[cols="1,2,3,2,1", options="header"]
+|===
+|Capability             |Conformance Point +
+                         (Service Model call)       |Description          |Test case script      |REST script
+
+.2+|*AQL Basic*
+
+    |{i_query_service_link}[`I_QUERY_SERVICE`^] +
+     `__.execute_stored_query()__`
+    |Execute a simple stored patient query.
+    |link:{openehr_cnf_scripts_dir}/tc_aql-stor_basic.txt[tc_aql-stor_basic^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_aql-stor_basic.json[postman^]
+
+    |{i_query_service_link}[`I_QUERY_SERVICE`^] +
+     `__.execute_ad_hoc_query()__`
+    |Execute a simple ad hoc patient query.
+    |link:{openehr_cnf_scripts_dir}/tc_aql-adhoc_basic.txt[tc_aql-adhoc_basic^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_aql-adhoc_basic.json[postman^]
+
+.2+|*AQL Advanced*
+
+    |{i_query_service_link}[`I_QUERY_SERVICE`^] +
+     `__.execute_stored_query()__`
+    |Execute a complex stored patient query.
+    |link:{openehr_cnf_scripts_dir}/tc_aql-stor_cplx.txt[tc_aql-stor_cplx^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_aql-stor_cplx.json[postman^]
+
+    |{i_query_service_link}[`I_QUERY_SERVICE`^] +
+     `__.execute_stored_query()__`
+    |Execute a complex stored population query.
+    |link:{openehr_cnf_scripts_dir}/tc_aql-pop_cplx.txt[tc_aql-pop_cplx^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_aql-pop_cplx.json[postman^]
+
+|*AQL & +
+ Terminology*
+
+    |{i_query_service_link}[`I_QUERY_SERVICE`^] +
+     `__.execute_stored_query()__`
+    |Execute a stored query that interfaces with terminology service.
+    |link:{openehr_cnf_scripts_dir}/tc_aql-tc_aql-stor_term.txt[tc_aql-stor_term^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_aql-tc_aql-stor_term.json[postman^]
+
+|===
+

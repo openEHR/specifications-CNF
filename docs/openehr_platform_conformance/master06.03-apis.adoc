@@ -1,0 +1,58 @@
+== Application Programmer Interfaces (APIs)
+
+=== REST API Component
+
+Specifications:
+
+* Service Interfaces:
+** {openehr_sm_openehr_platform}[Abstract Service Model^]
+** {openehr_rest_apis}[REST APIs^]
+
+[cols="1,2,3,2,1", options="header"]
+|===
+|Product +
+ Component      |Capability        |Description                             |Test case Script   |REST Script
+                
+|*DEFINITION API*
+|{i_definition_adl14_link}[`I_DEFINITION_ADL14`^] +
+ {i_definition_adl2_link}[`I_DEFINITION_ADL2`^] +
+ {i_definition_query_link}[`I_DEFINITION_QUERY`^]
+|Exercise all functions & arguments      
+|link:{openehr_cnf_scripts_dir}/tc_api-rest_def.txt[tc_api-rest_def^]
+|link:{openehr_cnf_scripts_dir}/REST/postman/tc_api-rest_def.json[postman^]
+
+|*EHR API*
+|{i_ehr_service_link}[`I_EHR_SERVICE`^]
+|Exercise all functions & arguments
+|link:{openehr_cnf_scripts_dir}/tc_api-rest_ehr.txt[tc_api-rest_ehr^]
+|link:{openehr_cnf_scripts_dir}/REST/postman/tc_api-rest_ehr.json[postman^]
+
+|*DEMOGRAPHIC API*
+|{i_demographic_service_link}[`I_DEMOGRAPHIC_SERVICE`^]
+|Exercise all functions & arguments
+|link:{openehr_cnf_scripts_dir}/tc_api-rest_dem.txt[tc_api-rest_dem^]
+|link:{openehr_cnf_scripts_dir}/REST/postman/tc_api-rest_dem.json[postman^]
+
+|*QUERY API*
+|{i_query_service_link}[`I_QUERY_SERVICE`^]
+|Exercise all functions & arguments
+|link:{openehr_cnf_scripts_dir}/tc_api-rest_qry.txt[tc_api-rest_qry^]
+|link:{openehr_cnf_scripts_dir}/REST/postman/tc_api-rest_qry.json[postman^]
+
+|*ADMIN API*
+|{i_admin_service_link}[`I_ADMIN_SERVICE`^] +
+ {i_admin_dump_load_link}[`I_ADMIN_DUMP_LOAD`^] +
+ {i_admin_archive_link}[`I_ADMIN_ARCHIVE`^]
+|Exercise all functions & arguments
+|link:{openehr_cnf_scripts_dir}/tc_api-rest_adm.txt[tc_api-rest_adm^]
+|link:{openehr_cnf_scripts_dir}/REST/postman/tc_api-rest_adm.json[postman^]
+
+|*MESSAGE API*
+|{i_ehr_extract_link}[`I_EHR_EXTRACT`^] +
+ {i_tdd_link}[`I_TDD`^]
+|Exercise all functions & arguments
+|link:{openehr_cnf_scripts_dir}/tc_api-rest_msg.txt[tc_api-rest_msg^]
+|link:{openehr_cnf_scripts_dir}/REST/postman/tc_api-rest_msg.json[postman^]
+
+|===
+

@@ -49,7 +49,21 @@ include::master02-glossary.adoc[leveloffset=+1]
 include::master03-overview.adoc[leveloffset=+1]
 include::master04-certificate.adoc[leveloffset=+1]
 include::master05-environment.adoc[leveloffset=+1]
+
 include::master06-schedule.adoc[leveloffset=+1]
+
+include::master06.01-functional.adoc[leveloffset=+1]
+include::master06.01.01-definitions.adoc[leveloffset=+1]
+include::master06.01.02-ehr.adoc[leveloffset=+1]
+include::master06.01.03-demographic.adoc[leveloffset=+1]
+include::master06.01.04-querying.adoc[leveloffset=+1]
+include::master06.01.05-admin.adoc[leveloffset=+1]
+include::master06.01.06-messaging.adoc[leveloffset=+1]
+
+include::master06.02-non_functional.adoc[leveloffset=+1]
+
+include::master06.03-apis.adoc[leveloffset=+1]
+
 include::master07-profiles.adoc[leveloffset=+1]
 
 //

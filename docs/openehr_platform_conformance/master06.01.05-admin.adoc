@@ -1,0 +1,80 @@
+== Admin Product Component
+
+Specifications:
+
+* Service Interfaces:
+** {openehr_sm_openehr_platform}#_admin_package[Abstract Admin Service Model^]
+
+:i_admin_service_link: {openehr_sm_openehr_platform}#_i_admin_service_interface
+:i_admin_archive_link: {openehr_sm_openehr_platform}#_i_admin_archive_interface
+:i_admin_dump_load_link: {openehr_sm_openehr_platform}#_i_admin_dump_load_interface
+
+[cols="1,2,3,2,1", options="header"]
+|===
+|Capability             |Conformance Point +
+                         (Service Model call)       |Description          |Test case script      |REST script
+
+.4+|*Activity Report*
+
+    |{i_admin_service_link}[`I_ADMIN_SERVICE`^] +
+     `__.list_contributions()__`
+    |List Contributions in a time interval.
+ .4+|link:{openehr_cnf_scripts_dir}/tc_adm-actv_rpt.txt[tc_adm-actv_rpt^]
+ .4+|link:{openehr_cnf_scripts_dir}/REST/postman/tc_adm-actv_rpt.json[postman^]
+
+    |{i_admin_service_link}[`I_ADMIN_SERVICE`^] +
+     `__.contribution_count()__`
+    |Get number of Contributions in a time interval.
+
+    |{i_admin_service_link}[`I_ADMIN_SERVICE`^] +
+     `__.versioned_composition_count()__`
+    |List Versioned Compositions in a time interval.
+
+    |{i_admin_service_link}[`I_ADMIN_SERVICE`^] +
+     `__.composition_version_count()__`
+    |Get number of Composition versions in a time interval.
+
+.2+|*Physical Deletion*
+
+    |{i_admin_service_link}[`I_ADMIN_SERVICE`^] +
+     `__.physical_ehr_delete()__`
+    |Physically delete an EHR.
+    |link:{openehr_cnf_scripts_dir}/tc_adm-ehr_del.txt[tc_adm-ehr_del^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_adm-ehr_del.json[postman^]
+
+    |{i_admin_service_link}[`I_ADMIN_SERVICE`^] +
+     `__.physical_party_delete()__`
+    |Physically delete a Party.
+    |link:{openehr_cnf_scripts_dir}/tc_adm-party_del.txt[tc_adm-party_del^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_adm-party_del.json[postman^]
+
+.2+|*EHR Dump/Load*
+
+    |{i_admin_dump_load_link}[`I_ADMIN_DUMP_LOAD`^] +
+     `__.export_ehrs()__`
+    |Export all EHRs from EHR service.
+ .2+|link:{openehr_cnf_scripts_dir}/tc_adm-dump_load.txt[tc_adm-dump_load^]
+ .2+|link:{openehr_cnf_scripts_dir}/REST/postman/tc_adm-dump_load.json[postman^]
+
+    |{i_admin_dump_load_link}[`I_ADMIN_DUMP_LOAD`^] +
+     `__.load_ehrs()__`
+    |Populate the EHR service from a file archive.
+
+|*EHR Archive*
+
+    |{i_admin_archive_link}[`I_ADMIN_ARCHIVE`^] +
+     `__.archive_ehrs()__`
+    |Archive selected EHRs from EHR service.
+    |link:{openehr_cnf_scripts_dir}/tc_adm-arcv_ehrs.txt[tc_adm-arcv_ehrs^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_adm-arcv_ehrs.json[postman^]
+
+|*Demographic Archive*
+
+    |{i_admin_archive_link}[`I_ADMIN_ARCHIVE`^] +
+     `__.archive_parties()__`
+    |Archive selected Parties and relationships from Demographic service.
+    |link:{openehr_cnf_scripts_dir}/tc_adm-arcv_party.txt[tc_adm-arcv_party^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_adm-arcv_party.json[postman^]
+
+|===
+

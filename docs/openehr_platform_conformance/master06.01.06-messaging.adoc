@@ -1,0 +1,66 @@
+== Messaging Component
+
+Specifications:
+
+* Service Interfaces:
+** {openehr_sm_openehr_platform}#_message_package[Abstract Message Service Model^]
+* Information Models:
+** {openehr_rm_ehr_extract}[EHR Extract IM^]
+** {openehr_rm_ehr}[EHR IM^]
+** {openehr_rm_demographic}[Demographic IM^]
+** {openehr_rm_common}[Common IM^]
+** {openehr_rm_data_structures}[Data Structures IM^]
+** {openehr_rm_data_types}[Data Types IM^]
+** {openehr_rm_support}[Support IM^]
+
+:i_message_service_link: {openehr_sm_openehr_platform}#_i_message_service_interface
+:i_ehr_extract_link: {openehr_sm_openehr_platform}#_i_ehr_extract_interface
+:i_tdd_link: {openehr_sm_openehr_platform}#_i_tdd_interface
+
+[cols="1,2,3,2,1", options="header"]
+|===
+|Capability             |Conformance Point +
+                         (Service Model call)       |Description          |Test case script      |REST script
+
+.4+|*EHR Extract*
+
+    |{i_ehr_extract_link}[`I_EHR_EXTRACT`^] +
+     `__.export_ehr()__`
+    |Export whole EHR for one subject.
+    |link:{openehr_cnf_scripts_dir}/tc_msg-extr_ehr.txt[tc_msg-extr_ehr^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_msg-extr_ehr.json[postman^]
+
+    |{i_ehr_extract_link}[`I_EHR_EXTRACT`^] +
+     `__.export_ehr_extract()__`
+    |Export an extract for an EHR.
+    |link:{openehr_cnf_scripts_dir}/tc_msg-extr_extr.txt[tc_msg-extr_extr^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_msg-extr_extr.json[postman^]
+
+    |{i_ehr_extract_link}[`I_EHR_EXTRACT`^] +
+     `__.export_ehrs()__`
+    |Export multiple whole EHRs in Extract form.
+    |link:{openehr_cnf_scripts_dir}/tc_msg-extr_ehrs.txt[tc_msg-extr_ehrs^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_msg-extr_ehrs.json[postman^]
+
+    |{i_ehr_extract_link}[`I_EHR_EXTRACT`^] +
+     `__.export_ehr_extracts()__`
+    |Export extracts of multiple EHRs.
+    |link:{openehr_cnf_scripts_dir}/tc_msg-extr_extrs.txt[tc_msg-extr_extrs^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_msg-extr_extrs.json[postman^]
+
+.2+|*TDD*
+
+    |{i_tdd_link}[`I_TDD`^] +
+     `__.import_tdd()__`
+    |Import a TDD for one EHR.
+    |link:{openehr_cnf_scripts_dir}/tc_msg-tdd_ehr.txt[tc_msg-tdd_ehr^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_msg-tdd_ehr.json[postman^]
+
+    |{i_tdd_link}[`I_TDD`^] +
+     `__.import_tdds()__`
+    |Import a TDDs for multiple EHRs.
+    |link:{openehr_cnf_scripts_dir}/tc_msg-tdd_ehrs.txt[tc_msg-tdd_ehrs^]
+    |link:{openehr_cnf_scripts_dir}/REST/postman/tc_msg-tdd_ehrs.json[postman^]
+                 
+|===
+
