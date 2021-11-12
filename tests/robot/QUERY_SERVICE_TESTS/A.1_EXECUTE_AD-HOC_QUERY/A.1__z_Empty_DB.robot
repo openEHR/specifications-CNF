@@ -75,12 +75,6 @@ A-107 Execute Ad-Hoc Query - Get EHR(s)
     A/108_get_ehrs_orderby_time-created.json
 
 
-A-109 Execute Ad-Hoc Query - Get EHR(s)
-    [Template]          execute ad-hoc query and check result (empty DB)
-    [Tags]              AQL_timewindow    future
-    A/109_get_ehrs_within_timewindow.json
-
-
 A-200 Execute Ad-Hoc Query - Get EHR(s)
     [Template]          execute ad-hoc query and check result (empty DB)
     [Tags]
@@ -140,12 +134,6 @@ B-100 Execute Ad-Hoc Query - Get Composition(s)
     B/100_get_compositions_from_all_ehrs.json
     B/101_get_compositions_top_5.json
     B/102_get_compositions_orderby_name.json
-
-
-B-103 Execute Ad-Hoc Query - Get Composition(s)
-    [Template]          execute ad-hoc query and check result (empty DB)
-    [Tags]              future
-    B/103_get_compositions_within_timewindow.json
 
 
 B-200 Execute Ad-Hoc Query - Get Composition(s)
@@ -223,13 +211,6 @@ C-102 Execute Ad-Hoc Query - Get Entries (ordered by: name)
     [Template]          execute ad-hoc query and check result (empty DB)
     [Tags]              AQL_entry    future
     C/102_get_entries_empty_db.json
-
-
-C-103 Execute Ad-Hoc Query - Get Entries (filtered: timewindow)
-    [Template]          execute ad-hoc query and check result (empty DB)
-    [Tags]              AQL_entry    future
-    C/103_get_entries_empty_db.json
-    [Teardown]          TRACE GITHUB ISSUE  101  bug  reladed
 
 
 C-200 Execute Ad-Hoc Query - Get Entrie(s)

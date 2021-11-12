@@ -9,7 +9,6 @@ folders:
       - A.1__c_EHR_does_not_exist.robot
       - A.1__d_Data_exists_ORDERBY_path_ascending.robot
       - A.1__e_Data_exists_ORDERBY_path_descending.robot
-      - A.1__f_Data_exists_TIMEWINDOW.robot
       - A.1__g_Data_exists_rows-to-fetch.robot
       - A.1__h_Data_exists_TOP_match_rows-to-fetch.robot
       - A.1__i_Data_exists_rows-to-fetch_and_row-offset.robot

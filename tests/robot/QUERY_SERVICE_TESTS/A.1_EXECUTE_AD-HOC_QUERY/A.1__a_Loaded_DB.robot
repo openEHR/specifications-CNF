@@ -100,12 +100,6 @@ A-108 Execute Ad-Hoc Query - Get EHRs (ordered by: time-created)
     [Teardown]          TRACE GITHUB ISSUE  118  not-ready_test-issue
 
 
-A-109 Execute Ad-Hoc Query - Get EHRs (filtered: timewindow)
-    [Template]          execute ad-hoc query and check result (loaded DB)
-    [Tags]              AQL_timewindow    future
-
-    A/109_get_ehrs_within_timewindow.json       A/109.tmp.json
-
 A-200 Execute Ad-Hoc Query - Get EHR By ID
     [Template]          execute ad-hoc query and check result (loaded DB)
     [Tags]
@@ -171,13 +165,6 @@ B-102 Execute Ad-Hoc Query - Get Compositions (ordered by: name)
     [Tags]              TODO
     B/102_get_compositions_orderby_name.json    B/102.tmp.json
     ## comment: check SMOKE test suite
-
-
-B-103 Execute Ad-Hoc Query - Get Compositions (filtered: timewindow)
-    [Template]          execute ad-hoc query and check result (loaded DB)
-    [Tags]              AQL_timewindow    future
-    B/103_get_compositions_within_timewindow.json    B/103.tmp.json
-
 
 B-104 Get Compositions (filtered: top 5, ordered by: start_time ASC)
     [Template]          execute ad-hoc query and check result (loaded DB)
@@ -486,14 +473,6 @@ C-102 Execute Ad-Hoc Query - Get Entries (ordered by: name)
     [Teardown]          TRACE GITHUB ISSUE  101  bug  blocked by
 
 
-C-103 Execute Ad-Hoc Query - Get Entries (filtered: timewindow)
-    [Documentation]     get_entries_within_timewindow
-    [Template]          execute ad-hoc query and check result (loaded DB)
-    [Tags]              AQL_entry    AQL_timewindow    future
-    C/103_query.tmp.json    C/103.tmp.json
-    [Teardown]          TRACE GITHUB ISSUE  101  bug  reladed
-
-
 C-200 Execute Ad-Hoc Query - Get Entries from EHR
     [Template]          execute ad-hoc query and check result (loaded DB)
     [Tags]              AQL_entry    future
@@ -584,7 +563,6 @@ Query For Not-Existing Composition Name
 #     A/106_get_ehrs.json
 #     A/107_get_ehrs_top_5.json
 #     A/108_get_ehrs_orderby_time-created.json
-#     A/109_get_ehrs_within_timewindow.json
 #     A/200_get_ehr_by_id.json
 #     A/201_get_ehr_by_id.json
 #     A/202_get_ehr_by_id.json
@@ -606,7 +584,6 @@ Query For Not-Existing Composition Name
 #     B/100_get_compositions_from_all_ehrs.json
 #     B/101_get_compositions_top_5.json
 #     B/102_get_compositions_orderby_name.json
-#     B/103_get_compositions_within_timewindow.json
 #     B/200_get_compositions_from_ehr_by_id.json
 #     B/300_get_compositions_with_archetype_from_all_ehrs.json
 #     B/400_get_compositions_contains_section_with_archetype_from_all_ehrs.json
@@ -630,7 +607,6 @@ Query For Not-Existing Composition Name
 #     C/100_get_entries_from_ehr_with_uid_contains_compositions_from_all_ehrs.json
 #     C/101_get_entries_top_5.json
 #     C/102_get_entries_orderby_name.json
-#     C/103_get_entries_within_timewindow.json
 #     C/200_get_entries_from_ehr_with_uid_contains_compositions_with_archetype_from_all_ehrs.json
 #     C/300_get_entries_with_type_from_ehr_with_uid_contains_compositions_with_archetype_from_all_ehrs.json
 #     C/301_get_entries_with_type_from_ehr_with_uid_contains_compositions_with_archetype_from_all_ehrs.json

@@ -65,7 +65,7 @@ AQL LOADED DB SMOKE TEST - Queries
     # execute ad-hoc query and check result (loaded DB)  A/106_get_ehrs.json    A/106.tmp.json
     # execute ad-hoc query and check result (loaded DB)  A/107_get_ehrs_top_5.json    A/107.tmp.json
     # execute ad-hoc query and check result (loaded DB)  A/108_get_ehrs_orderby_time-created.json    A/108.tmp.json
-    # execute ad-hoc query and check result (loaded DB)  A/109_get_ehrs_within_timewindow.json       A/109.tmp.json
+
     # execute ad-hoc query and check result (loaded DB)  A/200_query.tmp.json    A/200.tmp.json
     # execute ad-hoc query and check result (loaded DB)  A/201_query.tmp.json    A/201.tmp.json
     # execute ad-hoc query and check result (loaded DB)  A/202_query.tmp.json    A/202.tmp.json
@@ -86,7 +86,7 @@ AQL LOADED DB SMOKE TEST - Queries
     # execute ad-hoc query and check result (loaded DB)  B/100_get_compositions_from_all_ehrs.json    B/100.tmp.json
     # execute ad-hoc query and check result (loaded DB)  B/101_get_compositions_top_5.json    B/101.tmp.json
     # execute ad-hoc query and check result (loaded DB)  B/102_get_compositions_orderby_name.json    B/102.tmp.json
-    # execute ad-hoc query and check result (loaded DB)  B/103_get_compositions_within_timewindow.json    B/103.tmp.json
+
     # execute ad-hoc query and check result (loaded DB)  B/200_get_compositions_from_ehr_by_id.json    B/200.tmp.json
     # execute ad-hoc query and check result (loaded DB)  B/300_get_compositions_with_archetype_from_all_ehrs.json    B/300.tmp.json
     # execute ad-hoc query and check result (loaded DB)  B/400_get_compositions_contains_section_with_archetype_from_all_ehrs.json    B/400.tmp.json
@@ -413,7 +413,7 @@ Preconditions (PART 2) - Generate Test-Data and Expected-Results (MINIMAL SET)
     # # execute ad-hoc query and check result (loaded DB)  A/106_get_ehrs.json    A/106.tmp.json
     # # execute ad-hoc query and check result (loaded DB)  A/107_get_ehrs_top_5.json    A/107.tmp.json
     # # execute ad-hoc query and check result (loaded DB)  A/108_get_ehrs_orderby_time-created.json    A/108.tmp.json
-    # # execute ad-hoc query and check result (loaded DB)  A/109_get_ehrs_within_timewindow.json       A/109.tmp.json
+
     # # execute ad-hoc query and check result (loaded DB)  A/200_query.tmp.json    A/200.tmp.json
     # # execute ad-hoc query and check result (loaded DB)  A/201_query.tmp.json    A/201.tmp.json
     # # execute ad-hoc query and check result (loaded DB)  A/202_query.tmp.json    A/202.tmp.json
@@ -434,7 +434,7 @@ Preconditions (PART 2) - Generate Test-Data and Expected-Results (MINIMAL SET)
     # # execute ad-hoc query and check result (loaded DB)  B/100_get_compositions_from_all_ehrs.json    B/100.tmp.json
     # # execute ad-hoc query and check result (loaded DB)  B/101_get_compositions_top_5.json    B/101.tmp.json
     # # execute ad-hoc query and check result (loaded DB)  B/102_get_compositions_orderby_name.json    B/102.tmp.json
-    # # execute ad-hoc query and check result (loaded DB)  B/103_get_compositions_within_timewindow.json    B/103.tmp.json
+
     # # execute ad-hoc query and check result (loaded DB)  B/200_get_compositions_from_ehr_by_id.json    B/200.tmp.json
     # # execute ad-hoc query and check result (loaded DB)  B/300_get_compositions_with_archetype_from_all_ehrs.json    B/300.tmp.json
     # # execute ad-hoc query and check result (loaded DB)  B/400_get_compositions_contains_section_with_archetype_from_all_ehrs.json    B/400.tmp.json
