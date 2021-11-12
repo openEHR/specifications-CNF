@@ -437,7 +437,6 @@ Preconditions (PART 1) - Load Blueprints of Queries and Expected-Results
                         ...            A/106_get_ehrs.json
                         ...            A/107_get_ehrs_top_5.json
                         ...            A/108_get_ehrs_orderby_time-created.json
-                        ...            A/109_get_ehrs_within_timewindow.json
                         ...            A/300_get_ehrs_by_contains_any_composition.json
                         ...            A/400_get_ehrs_by_contains_composition_with_archetype.json
                         ...            A/401_get_ehrs_by_contains_composition_with_archetype.json
@@ -453,7 +452,6 @@ Preconditions (PART 1) - Load Blueprints of Queries and Expected-Results
                         ...            B/100_get_compositions_from_all_ehrs.json
                         ...            B/101_get_compositions_top_5.json
                         ...            B/102_get_compositions_orderby_name.json
-                        ...            B/103_get_compositions_within_timewindow.json
                         ...            B/300_get_compositions_with_archetype_from_all_ehrs.json
                         ...            B/400_get_compositions_contains_section_with_archetype_from_all_ehrs.json
                         ...            B/500_get_compositions_by_contains_entry_of_type_from_all_ehrs.json
@@ -508,7 +506,6 @@ Preconditions (PART 1) - Load Blueprints of Queries and Expected-Results
                         ...            C/100_get_entries_from_ehr_with_uid_contains_compositions_from_all_ehrs.json
                         ...            C/101_get_entries_top_5.json
                         ...            C/102_get_entries_orderby_name.json
-                        ...            C/103_get_entries_within_timewindow.json
                         ...            C/200_get_entries_from_ehr_with_uid_contains_compositions_with_archetype_from_all_ehrs.json
                         ...            D/400_select_data_values_from_all_compositions_in_ehr.json
                         ...            D/401_select_data_values_from_all_compositions_in_ehr.json
@@ -784,13 +781,12 @@ Commit Compo
     B/700 701 702    B/702
     
     # B/800     # comment: future feature
-    # B/801     # NOTE: for details check --> https://github.com/ehrbase/project_management/issues/109#issuecomment-605975468
-                # TODO: @WLAD reactive when becomes available
+    # B/801     # NOTE: need clarification on AQL predicates see https://discourse.openehr.org/t/aql-question-about-predicates/398
     B/802
     B/803
 
     # # FUTURE FEATURE
-    # # TODO: @WLAD reactive when becomes available
+    # # TODO: related to the support of inheritance resolution in AQL, see point 1 https://discourse.openehr.org/t/aql-spec-review-for-stabilization-formalization-and-cleanup/131/2
     # C/100
     # C/101
     # C/102
@@ -837,11 +833,6 @@ Commit Compo
     # ${B/101}=           Load JSON From File    ${QUERY RESULTS LOADED DB}/B/101.tmp.json
     # ${B/101}=           Add Object To Json     ${B/101}    $.rows    ${response.body}
     #                     Output    ${B/101}     ${QUERY RESULTS LOADED DB}/B/101.tmp.json
-
-    # # NOT READY - "TIMEWINDOW" not implemented (GITHUB #106)
-    # ${B/103}=           Load JSON From File    ${QUERY RESULTS LOADED DB}/B/103.tmp.json
-    # ${B/103}=           Add Object To Json     ${B/103}    $.rows    ${response.body}
-    #                     Output    ${B/103}     ${QUERY RESULTS LOADED DB}/B/103.tmp.json
 
         # # FAILS because requiered compos fail to commit (instruction compositions)
         # ${B/602}=           Load JSON From File    ${QUERY RESULTS LOADED DB}/B/602.tmp.json
@@ -1356,18 +1347,6 @@ C/102
                         Update Value To Json   ${expected}    $.meta._executed_aql    SELECT entry FROM EHR e [ehr_id/value='${ehr_id}'] CONTAINS COMPOSITION c CONTAINS ENTRY entry ORDER BY entry/name/value ASC
                         Add Object To Json     ${expected}    $.rows    ${response.body.content}
                         Output    ${expected}     ${QUERY RESULTS LOADED DB}/C/102.tmp.json
-
-C/103
-    Return From Keyword If    not (${compo_index}==1)    NOTHING TO DO HERE!
-    ${query}=           Load JSON From File    ${VALID QUERY DATA SETS}/C/103_query.tmp.json
-                        Update Value To Json   ${query}    $.q    SELECT entry FROM EHR e [ehr_id/value='${ehr_id}'] CONTAINS COMPOSITION c CONTAINS ENTRY entry TIMEWINDOW PT12H/2019-10-24
-                        Output    ${query}    ${VALID QUERY DATA SETS}/C/103_query.tmp.json
-
-    ${expected}=        Load JSON From File    ${QUERY RESULTS LOADED DB}/C/103.tmp.json
-                        Update Value To Json   ${expected}    $.q    SELECT entry FROM EHR e [ehr_id/value='${ehr_id}'] CONTAINS COMPOSITION c CONTAINS ENTRY entry TIMEWINDOW PT12H/2019-10-24
-                        Update Value To Json   ${expected}    $.meta._executed_aql    SELECT entry FROM EHR e [ehr_id/value='${ehr_id}'] CONTAINS COMPOSITION c CONTAINS ENTRY entry TIMEWINDOW PT12H/2019-10-24
-                        Add Object To Json     ${expected}    $.rows    ${response.body.content}
-                        Output    ${expected}     ${QUERY RESULTS LOADED DB}/C/103.tmp.json
 
 C/200
     Return From Keyword If    not (${compo_index}==1)    NOTHING TO DO HERE!
