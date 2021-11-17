@@ -18,43 +18,27 @@ version covering OPT 1.4 related services.
 *** link:#considerations[Considerations]
 ** link:#c-opt-142-test-cases[C. OPT 1.4/2 Test cases]
 *** link:#c1-validate-opt[C.1. Validate OPT]
-**** link:#c1a-main-flow-validate-valid-opts[C.1.a. Main flow: validate
-valid OPTs]
-**** link:#c1b-alternative-flow-1-validate-invalid-opts[C.1.b.
-Alternative flow 1: validate invalid OPTs]
+**** link:#c1a-main-flow-validate-valid-opts[C.1.a. Main flow: validate valid OPTs]
+**** link:#c1b-alternative-flow-1-validate-invalid-opts[C.1.b. Alternative flow 1: validate invalid OPTs]
 *** link:#c2-upload-opt[C.2. Upload OPT]
-**** link:#c2a-main-flow-upload-valid-opts[C.2.a. Main flow: upload
-valid OPTs]
-**** link:#c2b-alternative-flow-1-upload-invalid-opts[C.2.b. Alternative
-flow 1: upload invalid OPTs]
-**** link:#c2c-alternative-flow-2-upload-valid-opt-twice-with-conflict[C.2.c.
-Alternative flow 2: upload valid OPT twice with conflict]
-**** link:#c2d-alternative-flow-3-upload-valid-opt-twice-with-no-conflict[C.2.d.
-Alternative flow 3: upload valid OPT twice with no conflict]
+**** link:#c2a-main-flow-upload-valid-opts[C.2.a. Main flow: upload valid OPTs]
+**** link:#c2b-alternative-flow-1-upload-invalid-opts[C.2.b. Alternative flow 1: upload invalid OPTs]
+**** link:#c2c-alternative-flow-2-upload-valid-opt-twice-with-conflict[C.2.c. Alternative flow 2: upload valid OPT twice with conflict]
+**** link:#c2d-alternative-flow-3-upload-valid-opt-twice-with-no-conflict[C.2.d. Alternative flow 3: upload valid OPT twice with no conflict]
 *** link:#c3-retrieve-opt[C.3. Retrieve OPT]
-**** link:#c3a-main-flow-retrieve-a-single-opt[C.3.a. Main flow:
-retrieve a single OPT]
-**** link:#c3b-alternative-flow-1-empty-server-opt-retrieve-fail-test[C.3.b.
-Alternative flow 1: empty server OPT retrieve fail test]
-**** link:#c3c-alternative-flow-3-retrieve-last-version-of-versioned-opt[C.3.c.
-Alternative flow 3: retrieve last version of versioned OPT]
-**** link:#c3d-alternative-flow-4-retrieve-a-specific-version-not-last-of-versioned-opt[C.3.d.
-Alternative flow 4: retrieve a specific version (not last) of versioned
+**** link:#c3a-main-flow-retrieve-a-single-opt[C.3.a. Main flow: retrieve a single OPT]
+**** link:#c3b-alternative-flow-1-empty-server-opt-retrieve-fail-test[C.3.b. Alternative flow 1: empty server OPT retrieve fail test]
+**** link:#c3c-alternative-flow-3-retrieve-last-version-of-versioned-opt[C.3.c. Alternative flow 3: retrieve last version of versioned OPT]
+**** link:#c3d-alternative-flow-4-retrieve-a-specific-version-not-last-of-versioned-opt[C.3.d. Alternative flow 4: retrieve a specific version (not last) of versioned
 OPT]
 *** link:#c4-retrieve-opts[C.4. Retrieve OPTs]
-**** link:#c4a-main-flow-retrieve-all-loaded-opts[C.4.a. Main flow:
-retrieve all loaded OPTs]
-**** link:#c4b-alternative-flow-1-retrieve-all-loaded-opts-when-none-is-loaded[C.4.b.
-Alternative flow 1: retrieve all loaded OPTs when none is loaded]
+**** link:#c4a-main-flow-retrieve-all-loaded-opts[C.4.a. Main flow: retrieve all loaded OPTs]
+**** link:#c4b-alternative-flow-1-retrieve-all-loaded-opts-when-none-is-loaded[C.4.b. Alternative flow 1: retrieve all loaded OPTs when none is loaded]
 *** link:#c5-delete-opt[C.5. Delete OPT]
-**** link:#c5a-main-flow-delete-existing-opts[C.5.a. Main flow: delete
-existing OPTs]
-**** link:#c5b-alternative-flow-1-delete-last-version-of-a-versioned-opt[C.5.b.
-Alternative flow 1: delete last version of a versioned OPT]
-**** link:#c5c-alternative-flow-2-delete-non-latest-version-of-a-versioned-opt[C.5.c.
-Alternative flow 2: delete non latest version of a versioned OPT]
-**** link:#c5d-alternative-flow-3-delete-a-non-existing-opt-fail-test[C.5.d.
-Alternative flow 3: delete a non existing OPT, fail test]
+**** link:#c5a-main-flow-delete-existing-opts[C.5.a. Main flow: delete existing OPTs]
+**** link:#c5b-alternative-flow-1-delete-last-version-of-a-versioned-opt[C.5.b. Alternative flow 1: delete last version of a versioned OPT]
+**** link:#c5c-alternative-flow-2-delete-non-latest-version-of-a-versioned-opt[C.5.c. Alternative flow 2: delete non latest version of a versioned OPT]
+**** link:#c5d-alternative-flow-3-delete-a-non-existing-opt-fail-test[C.5.d. Alternative flow 3: delete a non existing OPT, fail test]
 ** link:#d-adl-142-test-cases[D. ADL 1.4/2 Test Cases]
 ** link:#e-terminology-test-cases[E. Terminology Test cases]
 

@@ -28,83 +28,45 @@ Suite]
 ** link:#a-general-requirements[A. General Requirements]
 ** link:#b-composition-test-cases[B. COMPOSITION Test cases]
 *** link:#b1-has-composition[B.1. Has COMPOSITION]
-**** link:#b1a-main-flow-has-existing-composition[B.1.a. Main flow: has
-existing COMPOSITION]
-**** link:#b1b-alternative-flow-1-has-composition-composition-doesnt-exist[B.1.b.
-Alternative flow 1: has COMPOSITION, COMPOSITION doesn’t exist]
-**** link:#b1c-alternative-flow-2-has-composition-on-non-existent-ehr[B.1.c.
-Alternative flow 2: has COMPOSITION on non-existent EHR]
+**** link:#b1a-main-flow-has-existing-composition[B.1.a. Main flow: has existing COMPOSITION]
+**** link:#b1b-alternative-flow-1-has-composition-composition-doesnt-exist[B.1.b. Alternative flow 1: has COMPOSITION, COMPOSITION doesn’t exist]
+**** link:#b1c-alternative-flow-2-has-composition-on-non-existent-ehr[B.1.c. Alternative flow 2: has COMPOSITION on non-existent EHR]
 *** link:#b2-get-composition-latest[B.2. Get COMPOSITION latest]
-**** link:#b2a-main-flow-get-existing-composition-latest[B.2.a. Main
-flow: get existing COMPOSITION latest]
-**** link:#b2b-alternative-flow-1-get-composition-latest-composition-doesnt-exist[B.2.b.
-Alternative flow 1: get COMPOSITION latest, COMPOSITION doesn’t exist]
-**** link:#b2c-alternative-flow-2-get-composition-latest-on-non-existent-ehr[B.2.c.
-Alternative flow 2: get COMPOSITION latest on non-existent EHR]
+**** link:#b2a-main-flow-get-existing-composition-latest[B.2.a. Main flow: get existing COMPOSITION latest]
+**** link:#b2b-alternative-flow-1-get-composition-latest-composition-doesnt-exist[B.2.b. Alternative flow 1: get COMPOSITION latest, COMPOSITION doesn’t exist]
+**** link:#b2c-alternative-flow-2-get-composition-latest-on-non-existent-ehr[B.2.c. Alternative flow 2: get COMPOSITION latest on non-existent EHR]
 *** link:#b3-get-composition-at-time[B.3. Get COMPOSITION at time]
-**** link:#b3a-main-flow-get-existing-composition-at-time[B.3.a. Main
-flow: get existing COMPOSITION at time]
-**** link:#b3b-alternative-flow-1-get-existing-composition-at-time-without-a-given-time[B.3.b.
-Alternative flow 1: get existing COMPOSITION at time, without a given
-time]
-**** link:#b3c-alternative-flow-2-get-composition-at-time-composition-doesnt-exist[B.3.c.
-Alternative flow 2: get COMPOSITION at time, COMPOSITION doesn’t exist]
-**** link:#b3d-alternative-flow-3-get-composition-at-time-on-non-existent-ehr[B.3.d.
-Alternative flow 3: get COMPOSITION at time on non-existent EHR]
-**** link:#b3e-alternative-flow-4-get-existing-composition-at-time-cover-different-times[B.3.e.
-Alternative flow 4: get existing COMPOSITION at time, cover different
-times]
+**** link:#b3a-main-flow-get-existing-composition-at-time[B.3.a. Main flow: get existing COMPOSITION at time]
+**** link:#b3b-alternative-flow-1-get-existing-composition-at-time-without-a-given-time[B.3.b. Alternative flow 1: get existing COMPOSITION at time, without a given time]
+**** link:#b3c-alternative-flow-2-get-composition-at-time-composition-doesnt-exist[B.3.c. Alternative flow 2: get COMPOSITION at time, COMPOSITION doesn’t exist]
+**** link:#b3d-alternative-flow-3-get-composition-at-time-on-non-existent-ehr[B.3.d. Alternative flow 3: get COMPOSITION at time on non-existent EHR]
+**** link:#b3e-alternative-flow-4-get-existing-composition-at-time-cover-different-times[B.3.e. Alternative flow 4: get existing COMPOSITION at time, cover different times]
 *** link:#b4-get-composition-at-version[B.4. Get COMPOSITION at version]
-**** link:#b4a-main-flow-get-existing-composition-at-version[B.4.a. Main
-flow: get existing COMPOSITION at version]
-**** link:#b4b-alternative-flow-1-get-composition-at-version-versioncomposition-doesnt-exist[B.4.b.
-Alternative flow 1: get COMPOSITION at version, VERSION doesn’t exist]
-**** link:#b4c-alternative-flow-2-get-composition-at-version-ehr-doesnt-exist[B.4.c.
-Alternative flow 2: get COMPOSITION at version, EHR doesn’t exist]
-**** link:#b4d-alternative-flow-3-get-composition-at-version-cover-different-versions[B.4.d.
-Alternative flow 3: get COMPOSITION at version, cover different
-versions]
+**** link:#b4a-main-flow-get-existing-composition-at-version[B.4.a. Main flow: get existing COMPOSITION at version]
+**** link:#b4b-alternative-flow-1-get-composition-at-version-versioncomposition-doesnt-exist[B.4.b. Alternative flow 1: get COMPOSITION at version, VERSION doesn’t exist]
+**** link:#b4c-alternative-flow-2-get-composition-at-version-ehr-doesnt-exist[B.4.c. Alternative flow 2: get COMPOSITION at version, EHR doesn’t exist]
+**** link:#b4d-alternative-flow-3-get-composition-at-version-cover-different-versions[B.4.d. Alternative flow 3: get COMPOSITION at version, cover different versions]
 *** link:#b5-get-versioned-composition[B.5. Get VERSIONED COMPOSITION]
-**** link:#b5a-main-flow-get-existing-versioned-composition[B.5.a. Main
-flow: get existing VERSIONED COMPOSITION]
-**** link:#b5b-alternative-flow-1-get-non-existent-versioned-composition[B.5.b.
-Alternative flow 1: get non-existent VERSIONED COMPOSITION]
-**** link:#b5c-alternative-flow-2-get-versioned-composition-ehr-doesnt-exist[B.5.c.
-Alternative flow 2: get VERSIONED COMPOSITION, EHR doesn’t exist]
+**** link:#b5a-main-flow-get-existing-versioned-composition[B.5.a. Main flow: get existing VERSIONED COMPOSITION]
+**** link:#b5b-alternative-flow-1-get-non-existent-versioned-composition[B.5.b. Alternative flow 1: get non-existent VERSIONED COMPOSITION]
+**** link:#b5c-alternative-flow-2-get-versioned-composition-ehr-doesnt-exist[B.5.c. Alternative flow 2: get VERSIONED COMPOSITION, EHR doesn’t exist]
 *** link:#b6-create-composition[B.6. Create COMPOSITION]
-**** link:#b6a-main-flow-create-new-event-composition[B.6.a. Main flow:
-Create new event COMPOSITION]
-**** link:#b6b-alternative-flow-1-create-new-persistent-composition[B.6.b.
-Alternative flow 1: Create new persistent COMPOSITION]
-**** link:#b6c-alternative-flow-2-create-persistent-composition-for-the-same-opt-twice[B.6.c.
-Alternative flow 2: Create persistent COMPOSITION for the same OPT
-twice]
-**** link:#b6d-alternative-flow-3-create-new-invalid-event-composition[B.6.d.
-Alternative flow 3: Create new invalid event COMPOSITION]
-**** link:#b6e-alternative-flow-4-create-new-invalid-persistent-composition[B.6.e.
-Alternative flow 4: Create new invalid persistent COMPOSITION]
-**** link:#b6f-alternative-flow-5-create-new-event-composition-referenced-opt-doesnt-exist[B.6.f.
-Alternative flow 5: Create new event COMPOSITION, referenced OPT doesn’t
-exist]
-**** link:#b6g-alternative-flow-6-create-new-event-composition-ehr-doesnt-exist[B.6.g.
-Alternative flow 6: Create new event COMPOSITION, EHR doesn’t exist]
+**** link:#b6a-main-flow-create-new-event-composition[B.6.a. Main flow: Create new event COMPOSITION]
+**** link:#b6b-alternative-flow-1-create-new-persistent-composition[B.6.b. Alternative flow 1: Create new persistent COMPOSITION]
+**** link:#b6c-alternative-flow-2-create-persistent-composition-for-the-same-opt-twice[B.6.c. Alternative flow 2: Create persistent COMPOSITION for the same OPT twice]
+**** link:#b6d-alternative-flow-3-create-new-invalid-event-composition[B.6.d. Alternative flow 3: Create new invalid event COMPOSITION]
+**** link:#b6e-alternative-flow-4-create-new-invalid-persistent-composition[B.6.e. Alternative flow 4: Create new invalid persistent COMPOSITION]
+**** link:#b6f-alternative-flow-5-create-new-event-composition-referenced-opt-doesnt-exist[B.6.f. Alternative flow 5: Create new event COMPOSITION, referenced OPT doesn’t exist]
+**** link:#b6g-alternative-flow-6-create-new-event-composition-ehr-doesnt-exist[B.6.g. Alternative flow 6: Create new event COMPOSITION, EHR doesn’t exist]
 *** link:#b7-update-composition[B.7. Update COMPOSITION]
-**** link:#b7a-main-flow-update-an-existing-event-composition[B.7.a.
-Main flow: update an existing event COMPOSITION]
-**** link:#b7b-alternative-flow-1-update-an-existing-persistent-composition[B.7.b.
-Alternative flow 1: update an existing persistent COMPOSITION]
-**** link:#b7c-alternative-flow-2-update-a-non-existent-composition[B.7.c.
-Alternative flow 2: update a non-existent COMPOSITION]
-**** link:#b7d-alternative-flow-3-update-an-existing-composition-referencing-a-different-template[B.7.d.
-Alternative flow 3: update an existing COMPOSITION, referencing a
-different template]
+**** link:#b7a-main-flow-update-an-existing-event-composition[B.7.a. Main flow: update an existing event COMPOSITION]
+**** link:#b7b-alternative-flow-1-update-an-existing-persistent-composition[B.7.b. Alternative flow 1: update an existing persistent COMPOSITION]
+**** link:#b7c-alternative-flow-2-update-a-non-existent-composition[B.7.c. Alternative flow 2: update a non-existent COMPOSITION]
+**** link:#b7d-alternative-flow-3-update-an-existing-composition-referencing-a-different-template[B.7.d. Alternative flow 3: update an existing COMPOSITION, referencing a different template]
 *** link:#b8-delete-composition[B.8. Delete COMPOSITION]
-**** link:#b8a-main-flow-delete-event-composition[B.8.a. Main flow:
-delete event COMPOSITION]
-**** link:#b8b-alternative-flow-1-delete-persistent-composition[B.8.b.
-Alternative flow 1: delete persistent COMPOSITION]
-**** link:#b8c-alternative-flow-2-delete-non-existent-composition[B.8.c.
-Alternative flow 2: delete non-existent COMPOSITION]
+**** link:#b8a-main-flow-delete-event-composition[B.8.a. Main flow: delete event COMPOSITION]
+**** link:#b8b-alternative-flow-1-delete-persistent-composition[B.8.b. Alternative flow 1: delete persistent COMPOSITION]
+**** link:#b8c-alternative-flow-2-delete-non-existent-composition[B.8.c. Alternative flow 2: delete non-existent COMPOSITION]
 
 == EHR/COMPOSITION Validation Suite
 

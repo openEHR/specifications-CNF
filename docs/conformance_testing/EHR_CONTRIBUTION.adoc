@@ -13,114 +13,52 @@ grammar, fixed descriptions, added extra notes.
 * link:#ehrcontribution-validation-suite[EHR/CONTRIBUTION Validation
 Suite]
 ** link:#a-general-requirements[A. General Requirements]
-** link:#b-contribution-test-case-data-sets[B. CONTRIBUTION Test Case
-Data Sets]
-*** link:#b1-general-commit-contribution-data-sets[B.1. General Commit
-CONTRIBUTION Data Sets]
-*** link:#b2-composition-commit-contribution-data-sets[B.2. COMPOSITION
-Commit CONTRIBUTION Data Sets]
-**** link:#b21-considerations-for-the-test-data-sets[B.2.1.
-Considerations for the test data sets]
-**** link:#b22-combinations-for-data-sets[B.2.2. Combinations for data
-sets]
-*** link:#b3-ehr_status-commit-contribution-test-data-sets[B.3.
-EHR_STATUS Commit CONTRIBUTION Test Data Sets]
-**** link:#b31-combinations-for-data-sets[B.3.1. Combinations for data
-sets]
-*** link:#b4-folder-commit-contribution-test-data-sets[B.4. FOLDER
-Commit CONTRIBUTION Test Data Sets]
-**** link:#b41-combinations-for-data-sets[B.4.1. Combinations for data
-sets]
-** link:#c-commit-contribution-of-compositions-flows[C. Commit
-CONTRIBUTION of COMPOSITIONs Flows]
-*** link:#c1-main-flow-successfully-commit-contribution-of-versioncomposition[C.1.
-Main flow: successfully commit CONTRIBUTION of `+VERSION<COMPOSITION>+`]
-*** link:#c2-alternative-flow-1-commit-contribution-with-errors-in-versioncomposition[C.2.
-Alternative flow 1: commit CONTRIBUTION with errors in
-`+VERSION<COMPOSITION>+`]
-*** link:#c3-alternative-flow-2-commit-invalid-contribution-no-versions-provided[C.3.
-Alternative flow 2: commit invalid CONTRIBUTION (no VERSIONs provided)]
-*** link:#c4-alternative-flow-3-commit-contribution-with-a-mix-of-valid-and-invalid-versioncomposition[C.4.
-Alternative flow 3: commit CONTRIBUTION with a mix of valid and invalid
-`+VERSION<COMPOSITION>+`]
-*** link:#c5-alternative-flow-4-commit-contributions-versioning-event-compositions[C.5.
-Alternative flow 4: commit CONTRIBUTIONS versioning event COMPOSITIONs]
-*** link:#c6-alternative-flow-5-commit-contributions-versioning-persistent-composition[C.6.
-Alternative flow 5: commit CONTRIBUTIONS versioning persistent
-COMPOSITION]
-*** link:#c7-alternative-flow-6-commit-contributions-deleting-a-composition[C.7.
-Alternative flow 6: commit CONTRIBUTIONS deleting a COMPOSITION]
-*** link:#c8-alternative-flow-7-commit-contributions-for-versioning-the-second-commit-contains-errors[C.8.
-Alternative flow 7: commit CONTRIBUTIONS for versioning, the second
-commit contains errors]
-*** link:#c9-alternative-flow-8-commit-contributions-for-versioning-a-persistent-composition-the-second-commit-has-change-type-creation[C.9.
-Alternative flow 8: commit CONTRIBUTIONS for versioning a persistent
-COMPOSITION, the second commit has change type creation]
-*** link:#c10-alternative-flow-9-commit-contribution-with-composition-referencing-a-non-existing-opt[C.10.
-Alternative flow 9. commit CONTRIBUTION with COMPOSITION referencing a
-non existing OPT]
-** link:#d-commit-contributions-of-ehr_status-flows[D. Commit
-CONTRIBUTIONS of EHR_STATUS Flows]
-*** link:#d1-main-flow-successfully-commit-contribution-of-versionehr_status[D.1.
-Main flow: successfully commit CONTRIBUTION of `+VERSION<EHR_STATUS>+`]
-*** link:#d2-alternative-flow-1-successfully-commit-contribution-of-versionehr_status-full-ehr_status[D.2.
-Alternative flow 1: successfully commit CONTRIBUTION of
-`+VERSION<EHR_STATUS>+`, full EHR_STATUS]
-*** link:#d3-alternative-flow-2-fail-commit-contribution-of-versionehr_status-wrong-change_type[D.3.
-Alternative flow 2: fail commit CONTRIBUTION of `+VERSION<EHR_STATUS>+`,
-wrong change_type]
-*** link:#d4-alternative-flow-3-fail-commit-contribution-of-versionehr_status-invalid-ehr_status[D.4.
-Alternative flow 3: fail commit CONTRIBUTION of `+VERSION<EHR_STATUS>+`,
-invalid EHR_STATUS]
-** link:#e-commit-contributions-of-folder-flows[E. Commit CONTRIBUTIONS
-of FOLDER Flows]
-*** link:#e1-alternative-flow-12-successfully-commit-contribution-of-versionfolder[E.1.
-Alternative flow 12: successfully commit CONTRIBUTION of
-`+VERSION<FOLDER>+`]
-*** link:#e2-alternative-flow-13-fail-commit-contribution-of-versionfolder-folder-exists[E.2.
-Alternative flow 13: fail commit CONTRIBUTION of `+VERSION<FOLDER>+`
-FOLDER exists]
-*** link:#e3-alternative-flow-14-fail-commit-contribution-of-versionfolder-update[E.3.
-Alternative flow 14: fail commit CONTRIBUTION of `+VERSION<FOLDER>+`
-update]
-*** link:#e4-alternative-flow-15-successful-commit-contribution-of-versionfolder-update[E.4.
-Alternative flow 15: successful commit CONTRIBUTION of
-`+VERSION<FOLDER>+` update]
+** link:#b-contribution-test-case-data-sets[B. CONTRIBUTION Test Case Data Sets]
+*** link:#b1-general-commit-contribution-data-sets[B.1. General Commit CONTRIBUTION Data Sets]
+*** link:#b2-composition-commit-contribution-data-sets[B.2. COMPOSITION Commit CONTRIBUTION Data Sets]
+**** link:#b21-considerations-for-the-test-data-sets[B.2.1. Considerations for the test data sets]
+**** link:#b22-combinations-for-data-sets[B.2.2. Combinations for data sets]
+*** link:#b3-ehr_status-commit-contribution-test-data-sets[B.3. EHR_STATUS Commit CONTRIBUTION Test Data Sets]
+**** link:#b31-combinations-for-data-sets[B.3.1. Combinations for data sets]
+*** link:#b4-folder-commit-contribution-test-data-sets[B.4. FOLDER Commit CONTRIBUTION Test Data Sets]
+**** link:#b41-combinations-for-data-sets[B.4.1. Combinations for data sets]
+** link:#c-commit-contribution-of-compositions-flows[C. Commit CONTRIBUTION of COMPOSITIONs Flows]
+*** link:#c1-main-flow-successfully-commit-contribution-of-versioncomposition[C.1. Main flow: successfully commit CONTRIBUTION of `+VERSION<COMPOSITION>+`]
+*** link:#c2-alternative-flow-1-commit-contribution-with-errors-in-versioncomposition[C.2. Alternative flow 1: commit CONTRIBUTION with errors in `+VERSION<COMPOSITION>+`]
+*** link:#c3-alternative-flow-2-commit-invalid-contribution-no-versions-provided[C.3. Alternative flow 2: commit invalid CONTRIBUTION (no VERSIONs provided)]
+*** link:#c4-alternative-flow-3-commit-contribution-with-a-mix-of-valid-and-invalid-versioncomposition[C.4. Alternative flow 3: commit CONTRIBUTION with a mix of valid and invalid `+VERSION<COMPOSITION>+`]
+*** link:#c5-alternative-flow-4-commit-contributions-versioning-event-compositions[C.5. Alternative flow 4: commit CONTRIBUTIONS versioning event COMPOSITIONs]
+*** link:#c6-alternative-flow-5-commit-contributions-versioning-persistent-composition[C.6. Alternative flow 5: commit CONTRIBUTIONS versioning persistent COMPOSITION]
+*** link:#c7-alternative-flow-6-commit-contributions-deleting-a-composition[C.7. Alternative flow 6: commit CONTRIBUTIONS deleting a COMPOSITION]
+*** link:#c8-alternative-flow-7-commit-contributions-for-versioning-the-second-commit-contains-errors[C.8. Alternative flow 7: commit CONTRIBUTIONS for versioning, the second commit contains errors]
+*** link:#c9-alternative-flow-8-commit-contributions-for-versioning-a-persistent-composition-the-second-commit-has-change-type-creation[C.9. Alternative flow 8: commit CONTRIBUTIONS for versioning a persistent COMPOSITION, the second commit has change type creation]
+*** link:#c10-alternative-flow-9-commit-contribution-with-composition-referencing-a-non-existing-opt[C.10. Alternative flow 9. commit CONTRIBUTION with COMPOSITION referencing a non existing OPT]
+** link:#d-commit-contributions-of-ehr_status-flows[D. Commit CONTRIBUTIONS of EHR_STATUS Flows]
+*** link:#d1-main-flow-successfully-commit-contribution-of-versionehr_status[D.1. Main flow: successfully commit CONTRIBUTION of `+VERSION<EHR_STATUS>+`]
+*** link:#d2-alternative-flow-1-successfully-commit-contribution-of-versionehr_status-full-ehr_status[D.2. Alternative flow 1: successfully commit CONTRIBUTION of `+VERSION<EHR_STATUS>+`, full EHR_STATUS]
+*** link:#d3-alternative-flow-2-fail-commit-contribution-of-versionehr_status-wrong-change_type[D.3. Alternative flow 2: fail commit CONTRIBUTION of `+VERSION<EHR_STATUS>+`, wrong change_type]
+*** link:#d4-alternative-flow-3-fail-commit-contribution-of-versionehr_status-invalid-ehr_status[D.4. Alternative flow 3: fail commit CONTRIBUTION of `+VERSION<EHR_STATUS>+`, invalid EHR_STATUS]
+** link:#e-commit-contributions-of-folder-flows[E. Commit CONTRIBUTIONS of FOLDER Flows]
+*** link:#e1-alternative-flow-12-successfully-commit-contribution-of-versionfolder[E.1. Alternative flow 12: successfully commit CONTRIBUTION of `+VERSION<FOLDER>+`]
+*** link:#e2-alternative-flow-13-fail-commit-contribution-of-versionfolder-folder-exists[E.2. Alternative flow 13: fail commit CONTRIBUTION of `+VERSION<FOLDER>+` FOLDER exists]
+*** link:#e3-alternative-flow-14-fail-commit-contribution-of-versionfolder-update[E.3. Alternative flow 14: fail commit CONTRIBUTION of `+VERSION<FOLDER>+` update]
+*** link:#e4-alternative-flow-15-successful-commit-contribution-of-versionfolder-update[E.4. Alternative flow 15: successful commit CONTRIBUTION of `+VERSION<FOLDER>+` update]
 ** link:#f-list-contributions[F. List CONTRIBUTIONs]
-*** link:#f1-main-flow-list-contributions-of-existing-ehr-with-a-just-committed-contribution-composition[F.1.
-Main flow: list CONTRIBUTIONS of existing EHR with a just committed
-CONTRIBUTION (COMPOSITION)]
-*** link:#f2-alternative-flow-1-list-contributions-of-existing-ehr-with-no-contributions-any[F.2.
-Alternative flow 1: list CONTRIBUTIONS of existing EHR with no
-CONTRIBUTIONS (ANY)]
-*** link:#f3-alternative-flow-2-lis-contributions-of-non-existing-ehr-any[F.3.
-Alternative flow 2: lis CONTRIBUTIONS of non existing EHR (ANY)]
-*** link:#f4-alternative-flow-3-list-contributions-of-existing-ehr-with-a-just-committed-contribution-ehr_status[F.4.
-Alternative flow 3: list CONTRIBUTIONS of existing EHR with a just
-committed CONTRIBUTION (EHR_STATUS)]
-*** link:#f5-alternative-flow-4-list-contributions-of-existing-ehr-with-a-just-committed-contribution-folder[F.5.
-Alternative flow 4: list CONTRIBUTIONS of existing EHR with a just
-committed CONTRIBUTION (FOLDER)]
+*** link:#f1-main-flow-list-contributions-of-existing-ehr-with-a-just-committed-contribution-composition[F.1. Main flow: list CONTRIBUTIONS of existing EHR with a just committed CONTRIBUTION (COMPOSITION)]
+*** link:#f2-alternative-flow-1-list-contributions-of-existing-ehr-with-no-contributions-any[F.2. Alternative flow 1: list CONTRIBUTIONS of existing EHR with no CONTRIBUTIONS (ANY)]
+*** link:#f3-alternative-flow-2-lis-contributions-of-non-existing-ehr-any[F.3. Alternative flow 2: lis CONTRIBUTIONS of non existing EHR (ANY)]
+*** link:#f4-alternative-flow-3-list-contributions-of-existing-ehr-with-a-just-committed-contribution-ehr_status[F.4. Alternative flow 3: list CONTRIBUTIONS of existing EHR with a just committed CONTRIBUTION (EHR_STATUS)]
+*** link:#f5-alternative-flow-4-list-contributions-of-existing-ehr-with-a-just-committed-contribution-folder[F.5. Alternative flow 4: list CONTRIBUTIONS of existing EHR with a just committed CONTRIBUTION (FOLDER)]
 ** link:#g-has-contribution[G. Has CONTRIBUTION]
-*** link:#g1-main-flow-has-contribution-with-existing-contribution[G.1.
-Main flow: has CONTRIBUTION with existing CONTRIBUTION]
-*** link:#g2-alternative-flow-1-has-contribution-on-empty-ehr[G.2.
-Alternative flow 1: has CONTRIBUTION on empty EHR]
-*** link:#g3-alternative-flow-2-has-contribution-ehr-doesnt-exist[G.3.
-Alternative flow 2: has CONTRIBUTION, EHR doesn’t exist]
-*** link:#g4-alternative-flow-3-has-contribution-ehr-with-contributions-but-contribution-doesnt-exist[G.4.
-Alternative flow 3: has CONTRIBUTION, EHR with CONTRIBUTIONS, but
-CONTRIBUTION doesn’t exist]
+*** link:#g1-main-flow-has-contribution-with-existing-contribution[G.1. Main flow: has CONTRIBUTION with existing CONTRIBUTION]
+*** link:#g2-alternative-flow-1-has-contribution-on-empty-ehr[G.2. Alternative flow 1: has CONTRIBUTION on empty EHR]
+*** link:#g3-alternative-flow-2-has-contribution-ehr-doesnt-exist[G.3. Alternative flow 2: has CONTRIBUTION, EHR doesn’t exist]
+*** link:#g4-alternative-flow-3-has-contribution-ehr-with-contributions-but-contribution-doesnt-exist[G.4. Alternative flow 3: has CONTRIBUTION, EHR with CONTRIBUTIONS, but CONTRIBUTION doesn’t exist]
 ** link:#h-get-contribution[H. Get CONTRIBUTION]
-*** link:#h1-main-flow-get-contribution-with-existing-contribution[H.1.
-Main flow: get CONTRIBUTION with existing CONTRIBUTION]
-*** link:#h2-alternative-flow-1-get-contribution-on-empty-ehr[H.2.
-Alternative flow 1: get CONTRIBUTION on empty EHR]
-*** link:#h3-alternative-flow-2-get-contribution-ehr-doesnt-exist[H.3.
-Alternative flow 2: get CONTRIBUTION, EHR doesn’t exist]
-*** link:#h4-alternative-flow-3-get-contribution-ehr-with-contributions-but-contribution-doesnt-exist[H.4.
-Alternative flow 3: get CONTRIBUTION, EHR with CONTRIBUTIONS, but
-CONTRIBUTION doesn’t exist]
+*** link:#h1-main-flow-get-contribution-with-existing-contribution[H.1. Main flow: get CONTRIBUTION with existing CONTRIBUTION]
+*** link:#h2-alternative-flow-1-get-contribution-on-empty-ehr[H.2. Alternative flow 1: get CONTRIBUTION on empty EHR]
+*** link:#h3-alternative-flow-2-get-contribution-ehr-doesnt-exist[H.3. Alternative flow 2: get CONTRIBUTION, EHR doesn’t exist]
+*** link:#h4-alternative-flow-3-get-contribution-ehr-with-contributions-but-contribution-doesnt-exist[H.4. Alternative flow 3: get CONTRIBUTION, EHR with CONTRIBUTIONS, but CONTRIBUTION doesn’t exist]
 
 == EHR/CONTRIBUTION Validation Suite
 
@@ -153,12 +91,9 @@ corresponding schemas (XML or JSON) to validate data syntactically
 ==== B.1. General Commit CONTRIBUTION Data Sets
 
 [arabic]
-. CONTRIBUTIONS with single valid `+VERSION<COMPOSITION>+` (minimal, one
-for each entry type)
-. CONTRIBUTIONS with multiple valid `+VERSION<COMPOSITION>+` (reuse the
-minimal ^)
-. CONTRIBUTION with single valid `+VERSION<COMPOSITION>+` with maximal
-data sets
+. CONTRIBUTIONS with single valid `+VERSION<COMPOSITION>+` (minimal, one for each entry type)
+. CONTRIBUTIONS with multiple valid `+VERSION<COMPOSITION>+` (reuse the minimal ^)
+. CONTRIBUTION with single valid `+VERSION<COMPOSITION>+` with maximal data sets
 . Empty CONTRIBUTION (no VERSIONS)
 . CONTRIBUTIONS with invalid `+VERSION<COMPOSITION>+`
 [arabic]

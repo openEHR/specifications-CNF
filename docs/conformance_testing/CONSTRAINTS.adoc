@@ -6,10 +6,8 @@
 * link:#1-introduction[1. Introduction]
 ** link:#glossary[Glossary]
 ** link:#implementation-notes[Implementation notes]
-* link:#2-top-level-locatable-class-composition[2. Top-level LOCATABLE
-class: COMPOSITION]
-** link:#reference-uml-for-composition-latest-rm[Reference UML for
-COMPOSITION (latest RM)]
+* link:#2-top-level-locatable-class-composition[2. Top-level LOCATABLE class: COMPOSITION]
+** link:#reference-uml-for-composition-latest-rm[Reference UML for COMPOSITION (latest RM)]
 ** link:#21-composition-content-cardinality-0-no-constraint-over-context[2.1. COMPOSITION content cardinality 0..*, no constraint over context]
 ** link:#22-composition-content-cardinality-1-no-constraint-over-context[2.2. COMPOSITION content cardinality 1..*, no constraint over context]
 ** link:#23-composition-content-cardinality-3-no-constraint-over-context[2.3. COMPOSITION content cardinality 3..*, no constraint over context]
@@ -71,13 +69,10 @@ are defined by:
 [arabic]
 . A top-level LOCATABLE class: COMPOSITION, EHR_STATUS, FOLDER, PARTY.
 . Constraint sets on top-level attributes for each class.
-. Internal LOCATABLE class: SECTION, ENTRY, HISTORY, ITEM_STRUCRTURE,
-ITEM, DATA_VALUE.
-. Constraint sets on internal structures and attributes (at any level in
-the RM hierarchy in the internal LOCATABLE class).
+. Internal LOCATABLE class: SECTION, ENTRY, HISTORY, ITEM_STRUCTURE, ITEM, DATA_VALUE.
+. Constraint sets on internal structures and attributes (at any level in the RM hierarchy in the internal LOCATABLE class).
 
-When checking a "`multiple attribute`" cardinality, this is a good set
-of combinations to test it:
+When checking a "`multiple attribute`" cardinality, this is a good set of combinations to test it:
 
 * 0..*
 * 1..*
@@ -89,13 +84,11 @@ of combinations to test it:
 === Glossary
 
 * Archetypable class: any class that extends LOCATABLE.
-* Archetypable field: generic fields on archetypable classes that can be
-constrained in archetypes.
+* Archetypable field: generic fields on archetypable classes that can be constrained in archetypes.
 * SUT: System Under Test
 * RM: openEHR Reference Model
 * AOM: Archetype Object Model (model of constraints)
-* TOM: Template Object Model (model of constraints from the template 1.4
-point of view)
+* TOM: Template Object Model (model of constraints from the template 1.4 point of view)
 
 === Implementation notes
 

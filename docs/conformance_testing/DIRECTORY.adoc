@@ -22,98 +22,54 @@ corrections and fixes before publication
 ** link:#a-general-requirements[A. General Requirements]
 ** link:#b-directory-test-data-sets[B. DIRECTORY Test Data Sets]
 ** link:#c-has-directory-flows[C. Has DIRECTORY Flows]
-*** link:#c1-main-flow-has-directory-on-empty-existing-ehr[C.1. Main
-flow: has directory on empty existing EHR]
-*** link:#c2-alternative-flow-1-has-directory-on-existing-ehr-with-directory[C.2.
-Alternative flow 1: has directory on existing EHR with directory]
-*** link:#c3-alternative-flow-2-has-directory-on-non-existent-ehr[C.3.
-Alternative flow 2: has directory on non-existent EHR]
+*** link:#c1-main-flow-has-directory-on-empty-existing-ehr[C.1. Main flow: has directory on empty existing EHR]
+*** link:#c2-alternative-flow-1-has-directory-on-existing-ehr-with-directory[C.2. Alternative flow 1: has directory on existing EHR with directory]
+*** link:#c3-alternative-flow-2-has-directory-on-non-existent-ehr[C.3. Alternative flow 2: has directory on non-existent EHR]
 ** link:#d-has-path-flows[D. Has PATH Flows]
-*** link:#d1-main-flow-has-path-on-empty-ehr[D.1. Main flow: has path on
-empty EHR]
-*** link:#d2-alternative-flow-1-has-path-on-ehr-with-just-root-directory[D.2.
-Alternative flow 1: has path on EHR with just root directory]
-*** link:#d3-alternative-flow-2-has-path-on-ehr-with-given-folder-structure[D.3.
-Alternative flow 2: has path on EHR with given folder structure]
-*** link:#d4-alternative-flow-3-has-path-on-non-existent-ehr[D.4.
-Alternative flow 3: has path on non-existent EHR]
+*** link:#d1-main-flow-has-path-on-empty-ehr[D.1. Main flow: has path on empty EHR]
+*** link:#d2-alternative-flow-1-has-path-on-ehr-with-just-root-directory[D.2. Alternative flow 1: has path on EHR with just root directory]
+*** link:#d3-alternative-flow-2-has-path-on-ehr-with-given-folder-structure[D.3. Alternative flow 2: has path on EHR with given folder structure]
+*** link:#d4-alternative-flow-3-has-path-on-non-existent-ehr[D.4. Alternative flow 3: has path on non-existent EHR]
 ** link:#e-create-directory-flows[E. Create DIRECTORY Flows]
-*** link:#e1-main-flow-create-directory-on-empty-ehr[E.1. Main flow:
-create directory on empty EHR]
-*** link:#e2-alternative-flow-1-create-directory-on-ehr-with-directory[E.2.
-Alternative flow 1: create directory on EHR with directory]
-*** link:#e3-alternative-flow-2-create-directory-on-non-existent-ehr[E.3.
-Alternative flow 2: create directory on non-existent EHR]
+*** link:#e1-main-flow-create-directory-on-empty-ehr[E.1. Main flow: create directory on empty EHR]
+*** link:#e2-alternative-flow-1-create-directory-on-ehr-with-directory[E.2. Alternative flow 1: create directory on EHR with directory]
+*** link:#e3-alternative-flow-2-create-directory-on-non-existent-ehr[E.3. Alternative flow 2: create directory on non-existent EHR]
 ** link:#f-get-directory[F. Get DIRECTORY]
-*** link:#f1-main-flow-get-directory-on-empty-ehr[F.1. Main flow: get
-directory on empty EHR]
-*** link:#f2-alternative-flow-1-get-directory-on-ehr-with-just-a-root-directory[F.2.
-Alternative flow 1: get directory on EHR with just a root directory]
-*** link:#f3-alternative-flow-2-get-directory-on-ehr-with-complex-directory-structure-and-items[F.3.
-Alternative flow 2: get directory on EHR with complex directory
-structure and items]
-*** link:#f4-alternative-flow-3-get-directory-on-non-existent-ehr[F.4.
-Alternative flow 3: get directory on non-existent EHR]
+*** link:#f1-main-flow-get-directory-on-empty-ehr[F.1. Main flow: get directory on empty EHR]
+*** link:#f2-alternative-flow-1-get-directory-on-ehr-with-just-a-root-directory[F.2. Alternative flow 1: get directory on EHR with just a root directory]
+*** link:#f3-alternative-flow-2-get-directory-on-ehr-with-complex-directory-structure-and-items[F.3. Alternative flow 2: get directory on EHR with complex directory structure and items]
+*** link:#f4-alternative-flow-3-get-directory-on-non-existent-ehr[F.4. Alternative flow 3: get directory on non-existent EHR]
 ** link:#g-get-directory-at-time-flows[G. Get DIRECTORY at time Flows]
-*** link:#g1-main-flow-get-directory-at-time-on-empty-ehr[G.1. Main
-flow: get directory at time on empty EHR]
-*** link:#g2-alternative-flow-1-get-directory-at-time-on-empty-ehr-with-empty-time[G.2.
-Alternative flow 1: get directory at time on empty EHR with empty time]
-*** link:#g3-alternative-flow-2-get-directory-at-time-on-ehr-with-directory[G.3.
-Alternative flow 2: get directory at time on EHR with directory]
-*** link:#g4-alternative-flow-3-get-directory-at-time-on-ehr-with-directory-with-empty-time[G.4.
-Alternative flow 3: get directory at time on EHR with directory with
-empty time]
-*** link:#g5-alternative-flow-4-get-directory-at-time-on-ehr-with-directory-with-multiple-versions-in-multiple-times[G.5.
-Alternative flow 4: get directory at time on EHR with directory with
-multiple versions in multiple times]
-*** link:#g6-alternative-flow-5-get-directory-at-time-on-ehr-with-directory-with-multiple-versions-with-empty-time[G.6.
-Alternative flow 5: get directory at time on EHR with directory with
-multiple versions with empty time]
-*** link:#g7-alternative-flow-7-get-directory-at-time-on-non-existent-ehr[G.7.
-Alternative flow 7: get directory at time on non existent EHR]
+*** link:#g1-main-flow-get-directory-at-time-on-empty-ehr[G.1. Main flow: get directory at time on empty EHR]
+*** link:#g2-alternative-flow-1-get-directory-at-time-on-empty-ehr-with-empty-time[G.2. Alternative flow 1: get directory at time on empty EHR with empty time]
+*** link:#g3-alternative-flow-2-get-directory-at-time-on-ehr-with-directory[G.3. Alternative flow 2: get directory at time on EHR with directory]
+*** link:#g4-alternative-flow-3-get-directory-at-time-on-ehr-with-directory-with-empty-time[G.4. Alternative flow 3: get directory at time on EHR with directory with empty time]
+*** link:#g5-alternative-flow-4-get-directory-at-time-on-ehr-with-directory-with-multiple-versions-in-multiple-times[G.5. Alternative flow 4: get directory at time on EHR with directory with multiple versions in multiple times]
+*** link:#g6-alternative-flow-5-get-directory-at-time-on-ehr-with-directory-with-multiple-versions-with-empty-time[G.6. Alternative flow 5: get directory at time on EHR with directory with multiple versions with empty time]
+*** link:#g7-alternative-flow-7-get-directory-at-time-on-non-existent-ehr[G.7. Alternative flow 7: get directory at time on non existent EHR]
 ** link:#h-update-directory[H. Update DIRECTORY]
-*** link:#h1-main-flow-update-directory-from-ehr-with-directory[H.1.
-Main flow: update directory from EHR with directory]
-*** link:#h2-alternative-flow-1-update-directory-on-empty-ehr[H.2.
-Alternative flow 1: update directory on empty EHR]
-*** link:#h3-alternative-flow-2-update-directory-on-non-existing-ehr[H.3.
-Alternative flow 2: update directory on non-existing EHR]
+*** link:#h1-main-flow-update-directory-from-ehr-with-directory[H.1. Main flow: update directory from EHR with directory]
+*** link:#h2-alternative-flow-1-update-directory-on-empty-ehr[H.2. Alternative flow 1: update directory on empty EHR]
+*** link:#h3-alternative-flow-2-update-directory-on-non-existing-ehr[H.3. Alternative flow 2: update directory on non-existing EHR]
 ** link:#i-delete-directory[I. Delete DIRECTORY]
-*** link:#i1-main-flow-delete-directory-on-empty-ehr[I.1. Main flow:
-delete directory on empty EHR]
-*** link:#i2-alternative-flow-1-delete-directory-from-ehr-with-directory[I.2.
-Alternative flow 1: delete directory from EHR with directory]
-*** link:#i3-alternative-flow-2-delete-directory-from-non-existent-ehr[I.3.
-Alternative flow 2: delete directory from non-existent EHR]
+*** link:#i1-main-flow-delete-directory-on-empty-ehr[I.1. Main flow: delete directory on empty EHR]
+*** link:#i2-alternative-flow-1-delete-directory-from-ehr-with-directory[I.2. Alternative flow 1: delete directory from EHR with directory]
+*** link:#i3-alternative-flow-2-delete-directory-from-non-existent-ehr[I.3. Alternative flow 2: delete directory from non-existent EHR]
 ** link:#j-has-directory-version[J. Has DIRECTORY version]
-*** link:#j1-main-flow-has-directory-from-empty-ehr[J.1. Main flow: has
-directory from empty EHR]
-*** link:#j2-alternative-flow-1-has-directory-on-ehr-that-has-two-versions-of-directory[J.2.
-Alternative flow 1: has directory on EHR that has two versions of
-directory]
-*** link:#j3-alternative-flow-2-has-directory-on-non-existent-ehr[J.3.
-Alternative flow 2: has directory on non-existent EHR]
+*** link:#j1-main-flow-has-directory-from-empty-ehr[J.1. Main flow: has directory from empty EHR]
+*** link:#j2-alternative-flow-1-has-directory-on-ehr-that-has-two-versions-of-directory[J.2. Alternative flow 1: has directory on EHR that has two versions of directory]
+*** link:#j3-alternative-flow-2-has-directory-on-non-existent-ehr[J.3. Alternative flow 2: has directory on non-existent EHR]
 ** link:#k-get-directory-at-version[K. Get DIRECTORY at version]
-*** link:#k1-main-flow-get-directory-at-version-from-empty-ehr[K.1. Main
-flow: get directory at version from empty EHR]
-*** link:#k2-alternative-flow-1-get-directory-at-version-from-ehr-that-has-two-versions-of-directory[K.2.
-Alternative flow 1: get DIRECTORY at version from EHR that has two
-versions of directory]
-*** link:#k3-alternative-flow-2-get-directory-at-version-from-non-existent-ehr[K.3.
-Alternative flow 2: get DIRECTORY at version from non existent EHR]
+*** link:#k1-main-flow-get-directory-at-version-from-empty-ehr[K.1. Main flow: get directory at version from empty EHR]
+*** link:#k2-alternative-flow-1-get-directory-at-version-from-ehr-that-has-two-versions-of-directory[K.2. Alternative flow 1: get DIRECTORY at version from EHR that has two versions of directory]
+*** link:#k3-alternative-flow-2-get-directory-at-version-from-non-existent-ehr[K.3. Alternative flow 2: get DIRECTORY at version from non existent EHR]
 ** link:#l-get-versioned-directory[L. Get versioned DIRECTORY]
-*** link:#l1-main-flow-get-versioned-directory-from-ehr-with-no-directory[L.1.
-Main flow: get versioned directory from EHR with no directory]
-*** link:#l2-alternative-flow-1-get-versioned-directory-from-existent-ehr-that-has-two-versions-of-directory[L.2.
-Alternative flow 1: get versioned directory from existent EHR that has
-two versions of directory]
-*** link:#l3-alternative-flow-2-get-versioned-directory-from-non-existent-ehr[L.3.
-Alternative flow 2: get versioned directory from non existent EHR]
+*** link:#l1-main-flow-get-versioned-directory-from-ehr-with-no-directory[L.1. Main flow: get versioned directory from EHR with no directory]
+*** link:#l2-alternative-flow-1-get-versioned-directory-from-existent-ehr-that-has-two-versions-of-directory[L.2. Alternative flow 1: get versioned directory from existent EHR that has two versions of directory]
+*** link:#l3-alternative-flow-2-get-versioned-directory-from-non-existent-ehr[L.3. Alternative flow 2: get versioned directory from non existent EHR]
 ** link:#annex-proposal-for-folder-api[Annex: proposal for FOLDER API]
 *** link:#background[Background]
-*** link:#operations-for-the-service-model[Operations for the Service
-Model]
+*** link:#operations-for-the-service-model[Operations for the Service Model]
 
 == DIRECTORY Validation Suite
 
