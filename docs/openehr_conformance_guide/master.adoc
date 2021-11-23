@@ -30,6 +30,10 @@ include::master00-amendment_record.adoc[leveloffset=+1]
 
 This specification was developed and is maintained by the {openehr_sec}[openEHR Specifications Editorial Committee (SEC)^].
 
+=== Principal Authors
+
+* Pablo Pazos Gutierrez <pablo.pazos@cabolabs.com>
+
 === Trademarks
 
 * 'openEHR' is a trademark of openEHR Foundation

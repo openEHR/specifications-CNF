@@ -1,6 +1,6 @@
-== Application Programmer Interfaces (APIs)
+= Application Programmer Interfaces (APIs)
 
-=== REST API Component
+== REST API Component
 
 Specifications:
 

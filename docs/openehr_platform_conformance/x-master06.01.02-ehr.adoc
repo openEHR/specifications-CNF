@@ -1,4 +1,4 @@
-== EHR Persistence Component
+== EHR Persistence Component Validation Suite
 
 === Normative Reference
 
@@ -96,36 +96,36 @@ Notes:
 |Description
 |Definition
     
-   |TC-EHR-has_ehr-main
+   |EHR.has_ehr-main
    |Main flow: +
     Check has EHR with existing EHR id
   a|[%collapsible]
 ====
-include::tc01-ehr.adoc[tag=TC-EHR-has_ehr-main]
+include::tc01-ehr.adoc[tag=EHR.has_ehr-main]
 ====
 
-   |TC-EHR-has_ehr-alt1
+   |EHR.has_ehr-has_existing_subject_id
    |Alternative flow 1: +
     Check has EHR with existing EHR by subject_id
   a|[%collapsible]
 ====
-include::tc01-ehr.adoc[tag=TC-EHR-has_ehr-alt1]
+include::tc01-ehr.adoc[tag=EHR.has_ehr-has_existing_subject_id]
 ====
 
-   |TC-EHR-has_ehr-alt2
+   |EHR.has_ehr-non_existing_ehr_id
    |Alternative flow 2: +
     Check has EHR with non existing EHR id
   a|[%collapsible]
 ====
-include::tc01-ehr.adoc[tag=TC-EHR-has_ehr-alt2]
+include::tc01-ehr.adoc[tag=EHR.has_ehr-non_existing_ehr_id]
 ====
 
-   |TC-EHR-has_ehr-alt3
+   |EHR.has_ehr-non_existing_subject_id
    |Alternative flow 3: +
     Check has EHR with non existing EHR by subject_id
   a|[%collapsible]
 ====
-include::tc01-ehr.adoc[tag=TC-EHR-has_ehr-alt3]
+include::tc01-ehr.adoc[tag=EHR.has_ehr-non_existing_subject_id]
 ====
 |===
 
@@ -140,28 +140,28 @@ include::tc01-ehr.adoc[tag=TC-EHR-has_ehr-alt3]
 |Description
 |Definition
     
-   |TC-EHR-create_ehr-main
+   |EHR.create_ehr-main
    |Main flow: +
     Create new EHR
   a|[%collapsible]
 ====
-include::tc01-ehr.adoc[tag=TC-EHR-create_ehr-main]
+include::tc01-ehr.adoc[tag=EHR.create_ehr-main]
 ====
 
-   |TC-EHR-create_ehr-alt1
+   |EHR.create_ehr-same_ehr_twice
    |Alternative flow 1: +
     Attempt to create same EHR twice
   a|[%collapsible]
 ====
-include::tc01-ehr.adoc[tag=TC-EHR-create_ehr-alt1]
+include::tc01-ehr.adoc[tag=EHR.create_ehr-same_ehr_twice]
 ====
 
-   |TC-EHR-create_ehr-alt2
+   |EHR.create_ehr-two-ehrs-same-patient
    |Alternative flow 2: +
     Create two EHRs for the same patient
   a|[%collapsible]
 ====
-include::tc01-ehr.adoc[tag=TC-EHR-create_ehr-alt2]
+include::tc01-ehr.adoc[tag=EHR.create_ehr-two_ehrs_same_patient]
 ====
 |===
 

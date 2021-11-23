@@ -1,4 +1,4 @@
-== Demographic Persistence Component
+= Functional Conformance: Demographic Component
 
 Specifications:
 

@@ -1,4 +1,4 @@
-== Messaging Component
+= Functional Conformance: Messaging Component
 
 Specifications:
 

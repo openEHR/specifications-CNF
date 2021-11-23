@@ -1,4 +1,4 @@
-== Querying Component
+= Functional Conformance: Querying Component
 
 Specifications:
 
