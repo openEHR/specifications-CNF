@@ -1,3 +1,4 @@
+[[_func_conf_ehr_component]]
 = Functional Conformance: EHR Component
 
 // some useful variables
@@ -5,12 +6,10 @@
 :i_ehr_link: {openehr_sm_openehr_platform}#_i_ehr_interface
 :i_ehr_status_link: {openehr_sm_openehr_platform}#_i_ehr_status_interface
 :i_ehr_directory_link: {openehr_sm_openehr_platform}#_i_ehr_directory_interface
-:i_ehr_composition_link: {openehr_sm_openehr_platform}#_i_ehr_composition_interface
-:i_ehr_contribution_link: {openehr_sm_openehr_platform}#_i_ehr_contribution_interface
 
 == Normative Reference
 
-Items in this validation suite conceptually use the following abstract interfaces from the {openehr_sm_openehr_platform}#_ehr_package[Abstract EHR Service Model^].
+Items in this validation suite conceptually use the following abstract interfaces from the {openehr_sm_openehr_platform}#_ehr_package[Abstract Platform Service Model, EHR component^].
 
 * `I_EHR_SERVICE`
 * `I_EHR`
@@ -22,10 +21,7 @@ The data that flow through these interfaces are defined by the following informa
 
 * {openehr_rm_ehr}[EHR IM^]
 * {openehr_rm_common}[Common IM^]
-* {openehr_rm_data_structures}[Data Structures IM^]
-* {openehr_rm_data_types}[Data Types IM^]
 * {openehr_rm_support}[Support IM^]
-* {openehr_rm_common}#_change_control_package[Versioning^]
 
 == Test Environment
 
@@ -93,7 +89,7 @@ Notes:
 
 ==== TC EHR.has_ehr-existing_ehr_id
 
-// EhrBase ref: B.2.a.
+// EhrBase ref: EHR/B.2.a.
 
 [cols="1h,4a"]
 |===
@@ -106,7 +102,7 @@ Notes:
 
 ==== TC EHR.has_ehr-existing_subject_id
 
-// EhrBase ref: B.2.b.
+// EhrBase ref: EHR/B.2.b.
 
 [cols="1h,4a"]
 |===
@@ -121,7 +117,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR.has_ehr-non_existing_ehr_id
 
-// EhrBase ref: B.2.c.
+// EhrBase ref: EHR/B.2.c.
 
 [cols="1h,4a"]
 |===
@@ -134,7 +130,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR.has_ehr-non_existing_subject_id
 
-// EhrBase ref: B.2.d.
+// EhrBase ref: EHR/B.2.d.
 
 [cols="1h,4a"]
 |===
@@ -151,7 +147,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR.create_ehr-main
 
-// EhrBase ref:  B.1.a.
+// EhrBase ref: EHR/ B.1.a.
 
 [cols="1h,4a"]
 |===
@@ -166,7 +162,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR.create_ehr-same_ehr_twice
 
-// EhrBase ref:  B.1.b.
+// EhrBase ref: EHR/ B.1.b.
 
 [cols="1h,4a"]
 |===
@@ -185,7 +181,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR.create_ehr-two_ehrs_same_patient
 
-// EhrBase ref:  B.1.c.
+// EhrBase ref: EHR/ B.1.c.
 
 [cols="1h,4a"]
 |===
@@ -206,7 +202,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR.get_ehr-existing_ehr_by_ehr_id
 
-// EhrBase ref: B.3.a.
+// EhrBase ref: EHR/B.3.a.
 
 [cols="1h,4a"]
 |===
@@ -219,7 +215,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR.get_ehr-existing_ehr_by_subject_id
 
-// EhrBase ref: B.3.b.
+// EhrBase ref: EHR/B.3.b.
 
 [cols="1h,4a"]
 |===
@@ -232,7 +228,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR.get_ehr-get_ehr_by_invalid_ehr_id
 
-// EhrBase ref: B.3.c.
+// EhrBase ref: EHR/B.3.c.
 
 [cols="1h,4a"]
 |===
@@ -245,7 +241,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR.get_ehr-get_ehr_by_invalid_subject_id
 
-// EhrBase ref: B.3.d.
+// EhrBase ref: EHR/B.3.d.
 
 [cols="1h,4a"]
 |===
@@ -264,7 +260,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR_STATUS.get_ehr_status-get_by_ehr_id
 
-// EhrBase ref: C.1.a.
+// EhrBase ref: EHR/C.1.a.
 
 [cols="1h,4a"]
 |===
@@ -279,7 +275,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR_STATUS.get_ehr_status-get_by_invalid_ehr_id
 
-// EhrBase ref: C.1.b.
+// EhrBase ref: EHR/C.1.b.
 
 [cols="1h,4a"]
 |===
@@ -296,7 +292,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR_STATUS.set_ehr_queryable-existing_ehr
 
-// EhrBase ref: C.2.a.
+// EhrBase ref: EHR/C.2.a.
 
 [cols="1h,4a"]
 |===
@@ -309,7 +305,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR_STATUS.set_ehr_queryable-non_existing_ehr
 
-// EhrBase ref: C.2.b.
+// EhrBase ref: EHR/C.2.b.
 
 [cols="1h,4a"]
 |===
@@ -327,7 +323,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR_STATUS.set_ehr_modifiable-existing_ehr
 
-// EhrBase ref: C.3.a.
+// EhrBase ref: EHR/C.3.a.
 
 [cols="1h,4a"]
 |===
@@ -340,7 +336,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR_STATUS.set_ehr_modifiable-non_existing_ehr
 
-// EhrBase ref: C.3.b.
+// EhrBase ref: EHR/C.3.b.
 
 [cols="1h,4a"]
 |===
@@ -357,7 +353,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR_STATUS.clear_ehr_queryable-existing_ehr
 
-// EhrBase ref: C.4.a.
+// EhrBase ref: EHR/C.4.a.
 
 [cols="1h,4a"]
 |===
@@ -370,7 +366,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR_STATUS.clear_ehr_queryable-non_existing_ehr
 
-// EhrBase ref: C.4.b.
+// EhrBase ref: EHR/C.4.b.
 
 [cols="1h,4a"]
 |===
@@ -387,7 +383,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR_STATUS.clear_ehr_modifiable-existing_ehr
 
-// EhrBase ref: C.5.a.
+// EhrBase ref: EHR/C.5.a.
 
 [cols="1h,4a"]
 |===
@@ -400,7 +396,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 ==== TC EHR_STATUS.clear_ehr_modifiable-non_existing_ehr
 
-// EhrBase ref: C.5.b.
+// EhrBase ref: EHR/C.5.b.
 
 [cols="1h,4a"]
 |===
@@ -408,6 +404,6 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 |Pre-conditions   | The server should be empty (no EHRs, no commits, no OPTs).
 |Post-conditions  | None
 |Flow             | . Invoke the clear EHR modifiable service by a random `ehr_id`
-                    master06.01.02-ehr. The result should be negative and the result should include an error e.g. `"EHR with <ehr_id> doesn’t exist"`.
+                    . The result should be negative and the result should include an error e.g. `"EHR with <ehr_id> doesn’t exist"`.
 |===
 

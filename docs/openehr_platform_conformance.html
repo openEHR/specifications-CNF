@@ -56,7 +56,7 @@
 <li><a href="#_overview_2">6.1. Overview</a></li>
 </ul>
 </li>
-<li><a href="#_functional_conformance_definitions_component">7. Functional Conformance: Definitions Component</a>
+<li><a href="#_func_conf_def_component">7. Functional Conformance: Definitions Component</a>
 <ul class="sectlevel2">
 <li><a href="#_normative_reference">7.1. Normative Reference</a></li>
 <li><a href="#_test_environment">7.2. Test Environment</a></li>
@@ -107,7 +107,7 @@
 </li>
 </ul>
 </li>
-<li><a href="#_functional_conformance_ehr_component">8. Functional Conformance: EHR Component</a>
+<li><a href="#_func_conf_ehr_component">8. Functional Conformance: EHR Component</a>
 <ul class="sectlevel2">
 <li><a href="#_normative_reference_2">8.1. Normative Reference</a></li>
 <li><a href="#_test_environment_2">8.2. Test Environment</a></li>
@@ -175,27 +175,183 @@
 </li>
 </ul>
 </li>
-<li><a href="#_functional_conformance_demographic_component">9. Functional Conformance: Demographic Component</a></li>
-<li><a href="#_functional_conformance_querying_component">10. Functional Conformance: Querying Component</a></li>
-<li><a href="#_functional_conformance_admin_product_component">11. Functional Conformance: Admin Product Component</a></li>
-<li><a href="#_functional_conformance_messaging_component">12. Functional Conformance: Messaging Component</a></li>
-<li><a href="#_non_functional_conformance">13. Non-Functional Conformance</a>
+<li><a href="#_functional_conformance_ehr_composition_component">9. Functional Conformance: EHR / COMPOSITION Component</a>
 <ul class="sectlevel2">
-<li><a href="#_security_and_privacy">13.1. Security and Privacy</a></li>
-</ul>
-</li>
-<li><a href="#_application_programmer_interfaces_apis">14. Application Programmer Interfaces (APIs)</a>
-<ul class="sectlevel2">
-<li><a href="#_rest_api_component">14.1. REST API Component</a></li>
-</ul>
-</li>
-<li><a href="#_profiles">15. Profiles</a>
-<ul class="sectlevel2">
-<li><a href="#_default_profiles">15.1. Default Profiles</a>
+<li><a href="#_normative_reference_3">9.1. Normative Reference</a></li>
+<li><a href="#_dependencies">9.2. Dependencies</a></li>
+<li><a href="#_test_environment_3">9.3. Test Environment</a></li>
+<li><a href="#_test_cases_2">9.4. Test Cases</a>
 <ul class="sectlevel3">
-<li><a href="#_functional">15.1.1. Functional</a></li>
-<li><a href="#_non_functional">15.1.2. Non-Functional</a></li>
-<li><a href="#_other_non_functional">15.1.3. Other Non-Functional</a></li>
+<li><a href="#_conformance_point_i_ehr_composition_has_composition">9.4.1. Conformance point: I_EHR_COMPOSITION.has_composition()</a>
+<ul class="sectlevel4">
+<li><a href="#_tc_ehr_composition_has_composition">9.4.1.1. TC EHR_COMPOSITION.has_composition</a></li>
+<li><a href="#_tc_ehr_composition_has_composition_bad_composition">9.4.1.2. TC EHR_COMPOSITION.has_composition_bad_composition</a></li>
+<li><a href="#_tc_ehr_composition_has_composition_bad_ehr">9.4.1.3. TC EHR_COMPOSITION.has_composition_bad_ehr</a></li>
+</ul>
+</li>
+<li><a href="#_get_composition_latest">9.4.2. Get COMPOSITION latest</a>
+<ul class="sectlevel4">
+<li><a href="#_tc_ehr_composition_get_composition_latest">9.4.2.1. TC EHR_COMPOSITION.get_composition_latest</a></li>
+<li><a href="#_tc_ehr_composition_get_composition_latest_bad_composition">9.4.2.2. TC EHR_COMPOSITION.get_composition_latest_bad_composition</a></li>
+<li><a href="#_tc_ehr_composition_get_composition_latest_bad_ehr">9.4.2.3. TC EHR_COMPOSITION.get_composition_latest_bad_ehr</a></li>
+</ul>
+</li>
+<li><a href="#_get_composition_at_time">9.4.3. Get COMPOSITION at time</a>
+<ul class="sectlevel4">
+<li><a href="#_tc_ehr_composition_get_composition_at_time">9.4.3.1. TC EHR_COMPOSITION.get_composition_at_time</a></li>
+<li><a href="#_tc_ehr_composition_get_composition_at_time_no_time_arg">9.4.3.2. TC EHR_COMPOSITION.get_composition_at_time_no_time_arg</a></li>
+<li><a href="#_tc_ehr_composition_get_composition_at_time_bad_composition">9.4.3.3. TC EHR_COMPOSITION.get_composition_at_time_bad_composition</a></li>
+<li><a href="#_tc_ehr_composition_get_composition_at_time_bad_ehr">9.4.3.4. TC EHR_COMPOSITION.get_composition_at_time_bad_ehr</a></li>
+<li><a href="#_tc_ehr_composition_get_composition_at_times">9.4.3.5. TC EHR_COMPOSITION.get_composition_at_times</a></li>
+</ul>
+</li>
+<li><a href="#_get_composition_at_version">9.4.4. Get COMPOSITION at version</a>
+<ul class="sectlevel4">
+<li><a href="#_tc_ehr_composition_get_composition_version">9.4.4.1. TC EHR_COMPOSITION.get_composition_version</a></li>
+<li><a href="#_tc_ehr_composition_get_composition_version_bad_version">9.4.4.2. TC EHR_COMPOSITION.get_composition_version_bad_version</a></li>
+<li><a href="#_tc_ehr_composition_get_composition_version_bad_ehr">9.4.4.3. TC EHR_COMPOSITION.get_composition_version_bad_ehr</a></li>
+<li><a href="#_tc_ehr_composition_get_composition_versions">9.4.4.4. TC EHR_COMPOSITION.get_composition_versions</a></li>
+</ul>
+</li>
+<li><a href="#_get_versioned_composition">9.4.5. Get VERSIONED COMPOSITION</a>
+<ul class="sectlevel4">
+<li><a href="#_tc_ehr_composition_get_versioned_composition">9.4.5.1. TC EHR_COMPOSITION.get_versioned_composition</a></li>
+<li><a href="#_tc_ehr_composition_get_non_existent_versioned_composition">9.4.5.2. TC EHR_COMPOSITION.get_non_existent_versioned_composition</a></li>
+<li><a href="#_tc_ehr_composition_get_versioned_composition_bad_ehr">9.4.5.3. TC EHR_COMPOSITION.get_versioned_composition_bad_ehr</a></li>
+</ul>
+</li>
+<li><a href="#_create_composition">9.4.6. Create COMPOSITION</a>
+<ul class="sectlevel4">
+<li><a href="#_tc_ehr_composition_create_event_composition">9.4.6.1. TC EHR_COMPOSITION.create_event_composition</a></li>
+<li><a href="#_tc_ehr_composition_create_persistent_composition">9.4.6.2. TC EHR_COMPOSITION.create_persistent_composition</a></li>
+<li><a href="#_tc_ehr_composition_create_persistent_composition_same_opt_twice">9.4.6.3. TC EHR_COMPOSITION.create_persistent_composition_same_opt_twice</a></li>
+<li><a href="#_tc_ehr_composition_create_invalid_event_composition">9.4.6.4. TC EHR_COMPOSITION.create_invalid_event_composition</a></li>
+<li><a href="#_tc_ehr_composition_create_invalid_persistent_composition">9.4.6.5. TC EHR_COMPOSITION.create_invalid_persistent_composition</a></li>
+<li><a href="#_tc_ehr_composition_create_event_composition_bad_opt">9.4.6.6. TC EHR_COMPOSITION.create_event_composition_bad_opt</a></li>
+<li><a href="#_tc_ehr_composition_create_event_composition_bad_ehr">9.4.6.7. TC EHR_COMPOSITION.create_event_composition_bad_ehr</a></li>
+</ul>
+</li>
+<li><a href="#_update_composition">9.4.7. Update COMPOSITION</a>
+<ul class="sectlevel4">
+<li><a href="#_tc_ehr_composition_update_event_composition">9.4.7.1. TC EHR_COMPOSITION.update_event_composition</a></li>
+<li><a href="#_tc_ehr_composition_update_persistent_composition">9.4.7.2. TC EHR_COMPOSITION.update_persistent_composition</a></li>
+<li><a href="#_tc_ehr_composition_update_non_existent_composition">9.4.7.3. TC EHR_COMPOSITION.update_non_existent_composition</a></li>
+<li><a href="#_tc_ehr_composition_update_composition_wrong_template">9.4.7.4. TC EHR_COMPOSITION.update_composition_wrong_template</a></li>
+</ul>
+</li>
+<li><a href="#_delete_composition">9.4.8. Delete COMPOSITION</a>
+<ul class="sectlevel4">
+<li><a href="#_tc_ehr_composition_delete_event_composition">9.4.8.1. TC EHR_COMPOSITION.delete_event_composition</a></li>
+<li><a href="#_tc_ehr_composition_delete_persistent_composition">9.4.8.2. TC EHR_COMPOSITION.delete_persistent_composition</a></li>
+<li><a href="#_tc_ehr_composition_delete_non_existent_composition">9.4.8.3. TC EHR_COMPOSITION.delete_non_existent_composition</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_functional_conformance_ehr_contribution_component">10. Functional Conformance: EHR / CONTRIBUTION Component</a>
+<ul class="sectlevel2">
+<li><a href="#_a_general_requirements">10.1. A. General Requirements</a></li>
+<li><a href="#_b_contribution_test_case_data_sets">10.2. B. CONTRIBUTION Test Case Data Sets</a>
+<ul class="sectlevel3">
+<li><a href="#_b_1_general_commit_contribution_data_sets">10.2.1. B.1. General Commit CONTRIBUTION Data Sets</a></li>
+<li><a href="#_b_2_composition_commit_contribution_data_sets">10.2.2. B.2. COMPOSITION Commit CONTRIBUTION Data Sets</a>
+<ul class="sectlevel4">
+<li><a href="#_b_2_1_considerations_for_the_test_data_sets">10.2.2.1. B.2.1. Considerations for the test data sets</a></li>
+<li><a href="#_b_2_2_combinations_for_data_sets">10.2.2.2. B.2.2. Combinations for data sets</a></li>
+</ul>
+</li>
+<li><a href="#_b_3_ehr_status_commit_contribution_test_data_sets">10.2.3. B.3. EHR_STATUS Commit CONTRIBUTION Test Data Sets</a>
+<ul class="sectlevel4">
+<li><a href="#_b_3_1_combinations_for_data_sets">10.2.3.1. B.3.1. Combinations for data sets</a></li>
+</ul>
+</li>
+<li><a href="#_b_4_folder_commit_contribution_test_data_sets">10.2.4. B.4. FOLDER Commit CONTRIBUTION Test Data Sets</a>
+<ul class="sectlevel4">
+<li><a href="#_b_4_1_combinations_for_data_sets">10.2.4.1. B.4.1. Combinations for data sets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_c_commit_contribution_of_compositions_flows">10.3. C. Commit CONTRIBUTION of COMPOSITIONs Flows</a>
+<ul class="sectlevel3">
+<li><a href="#_c_1_main_flow_successfully_commit_contribution_of_versioncomposition">10.3.1. C.1. Main flow: successfully commit CONTRIBUTION of <code>VERSION&lt;COMPOSITION&gt;</code></a></li>
+<li><a href="#_c_2_alternative_flow_1_commit_contribution_with_errors_in_versioncomposition">10.3.2. C.2. Alternative flow 1: commit CONTRIBUTION with errors in <code>VERSION&lt;COMPOSITION&gt;</code></a></li>
+<li><a href="#_c_3_alternative_flow_2_commit_invalid_contribution_no_versions_provided">10.3.3. C.3. Alternative flow 2: commit invalid CONTRIBUTION (no VERSIONs provided)</a></li>
+<li><a href="#_c_4_alternative_flow_3_commit_contribution_with_a_mix_of_valid_and_invalid_versioncomposition">10.3.4. C.4. Alternative flow 3: commit CONTRIBUTION with a mix of valid and invalid <code>VERSION&lt;COMPOSITION&gt;</code></a></li>
+<li><a href="#_c_5_alternative_flow_4_commit_contributions_versioning_event_compositions">10.3.5. C.5. Alternative flow 4: commit CONTRIBUTIONS versioning event COMPOSITIONs</a></li>
+<li><a href="#_c_6_alternative_flow_5_commit_contributions_versioning_persistent_composition">10.3.6. C.6. Alternative flow 5: commit CONTRIBUTIONS versioning persistent COMPOSITION</a></li>
+<li><a href="#_c_7_alternative_flow_6_commit_contributions_deleting_a_composition">10.3.7. C.7. Alternative flow 6: commit CONTRIBUTIONS deleting a COMPOSITION</a></li>
+<li><a href="#_c_8_alternative_flow_7_commit_contributions_for_versioning_the_second_commit_contains_errors">10.3.8. C.8. Alternative flow 7: commit CONTRIBUTIONS for versioning, the second commit contains errors</a></li>
+<li><a href="#_c_9_alternative_flow_8_commit_contributions_for_versioning_a_persistent_composition_the_second_commit_has_change_type_creation">10.3.9. C.9. Alternative flow 8: commit CONTRIBUTIONS for versioning a persistent COMPOSITION, the second commit has change type creation</a></li>
+<li><a href="#_c_10_alternative_flow_9_commit_contribution_with_composition_referencing_a_non_existing_opt">10.3.10. C.10. Alternative flow 9. commit CONTRIBUTION with COMPOSITION referencing a non existing OPT</a></li>
+</ul>
+</li>
+<li><a href="#_d_commit_contributions_of_ehr_status_flows">10.4. D. Commit CONTRIBUTIONS of EHR_STATUS Flows</a>
+<ul class="sectlevel3">
+<li><a href="#_d_1_main_flow_successfully_commit_contribution_of_versionehr_status">10.4.1. D.1. Main flow: successfully commit CONTRIBUTION of <code>VERSION&lt;EHR_STATUS&gt;</code></a></li>
+<li><a href="#_d_2_alternative_flow_1_successfully_commit_contribution_of_versionehr_status_full_ehr_status">10.4.2. D.2. Alternative flow 1: successfully commit CONTRIBUTION of <code>VERSION&lt;EHR_STATUS&gt;</code>, full EHR_STATUS</a></li>
+<li><a href="#_d_3_alternative_flow_2_fail_commit_contribution_of_versionehr_status_wrong_change_type">10.4.3. D.3. Alternative flow 2: fail commit CONTRIBUTION of <code>VERSION&lt;EHR_STATUS&gt;</code>, wrong change_type</a></li>
+<li><a href="#_d_4_alternative_flow_3_fail_commit_contribution_of_versionehr_status_invalid_ehr_status">10.4.4. D.4. Alternative flow 3: fail commit CONTRIBUTION of <code>VERSION&lt;EHR_STATUS&gt;</code>, invalid EHR_STATUS</a></li>
+</ul>
+</li>
+<li><a href="#_e_commit_contributions_of_folder_flows">10.5. E. Commit CONTRIBUTIONS of FOLDER Flows</a>
+<ul class="sectlevel3">
+<li><a href="#_e_1_alternative_flow_12_successfully_commit_contribution_of_versionfolder">10.5.1. E.1. Alternative flow 12: successfully commit CONTRIBUTION of <code>VERSION&lt;FOLDER&gt;</code></a></li>
+<li><a href="#_e_2_alternative_flow_13_fail_commit_contribution_of_versionfolder_folder_exists">10.5.2. E.2. Alternative flow 13: fail commit CONTRIBUTION of <code>VERSION&lt;FOLDER&gt;</code> FOLDER exists</a></li>
+<li><a href="#_e_3_alternative_flow_14_fail_commit_contribution_of_versionfolder_update">10.5.3. E.3. Alternative flow 14: fail commit CONTRIBUTION of <code>VERSION&lt;FOLDER&gt;</code> update</a></li>
+<li><a href="#_e_4_alternative_flow_15_successful_commit_contribution_of_versionfolder_update">10.5.4. E.4. Alternative flow 15: successful commit CONTRIBUTION of <code>VERSION&lt;FOLDER&gt;</code> update</a></li>
+</ul>
+</li>
+<li><a href="#_f_list_contributions">10.6. F. List CONTRIBUTIONs</a>
+<ul class="sectlevel3">
+<li><a href="#_f_1_main_flow_list_contributions_of_existing_ehr_with_a_just_committed_contribution_composition">10.6.1. F.1. Main flow: list CONTRIBUTIONS of existing EHR with a just committed CONTRIBUTION (COMPOSITION)</a></li>
+<li><a href="#_f_2_alternative_flow_1_list_contributions_of_existing_ehr_with_no_contributions_any">10.6.2. F.2. Alternative flow 1: list CONTRIBUTIONS of existing EHR with no CONTRIBUTIONS (ANY)</a></li>
+<li><a href="#_f_3_alternative_flow_2_lis_contributions_of_non_existing_ehr_any">10.6.3. F.3. Alternative flow 2: lis CONTRIBUTIONS of non existing EHR (ANY)</a></li>
+<li><a href="#_f_4_alternative_flow_3_list_contributions_of_existing_ehr_with_a_just_committed_contribution_ehr_status">10.6.4. F.4. Alternative flow 3: list CONTRIBUTIONS of existing EHR with a just committed CONTRIBUTION (EHR_STATUS)</a></li>
+<li><a href="#_f_5_alternative_flow_4_list_contributions_of_existing_ehr_with_a_just_committed_contribution_folder">10.6.5. F.5. Alternative flow 4: list CONTRIBUTIONS of existing EHR with a just committed CONTRIBUTION (FOLDER)</a></li>
+</ul>
+</li>
+<li><a href="#_g_has_contribution">10.7. G. Has CONTRIBUTION</a>
+<ul class="sectlevel3">
+<li><a href="#_g_1_main_flow_has_contribution_with_existing_contribution">10.7.1. G.1. Main flow: has CONTRIBUTION with existing CONTRIBUTION</a></li>
+<li><a href="#_g_2_alternative_flow_1_has_contribution_on_empty_ehr">10.7.2. G.2. Alternative flow 1: has CONTRIBUTION on empty EHR</a></li>
+<li><a href="#_g_3_alternative_flow_2_has_contribution_ehr_doesnt_exist">10.7.3. G.3. Alternative flow 2: has CONTRIBUTION, EHR doesn’t exist</a></li>
+<li><a href="#_g_4_alternative_flow_3_has_contribution_ehr_with_contributions_but_contribution_doesnt_exist">10.7.4. G.4. Alternative flow 3: has CONTRIBUTION, EHR with CONTRIBUTIONS, but CONTRIBUTION doesn’t exist</a></li>
+<li><a href="#_h_get_contribution">10.7.5. H. Get CONTRIBUTION</a>
+<ul class="sectlevel4">
+<li><a href="#_h_1_main_flow_get_contribution_with_existing_contribution">10.7.5.1. H.1. Main flow: get CONTRIBUTION with existing CONTRIBUTION</a></li>
+<li><a href="#_h_2_alternative_flow_1_get_contribution_on_empty_ehr">10.7.5.2. H.2. Alternative flow 1: get CONTRIBUTION on empty EHR</a></li>
+<li><a href="#_h_3_alternative_flow_2_get_contribution_ehr_doesnt_exist">10.7.5.3. H.3. Alternative flow 2: get CONTRIBUTION, EHR doesn’t exist</a></li>
+<li><a href="#_h_4_alternative_flow_3_get_contribution_ehr_with_contributions_but_contribution_doesnt_exist">10.7.5.4. H.4. Alternative flow 3: get CONTRIBUTION, EHR with CONTRIBUTIONS, but CONTRIBUTION doesn’t exist</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_functional_conformance_demographic_component">11. Functional Conformance: Demographic Component</a></li>
+<li><a href="#_functional_conformance_querying_component">12. Functional Conformance: Querying Component</a></li>
+<li><a href="#_functional_conformance_admin_product_component">13. Functional Conformance: Admin Product Component</a></li>
+<li><a href="#_functional_conformance_messaging_component">14. Functional Conformance: Messaging Component</a></li>
+<li><a href="#_non_functional_conformance">15. Non-Functional Conformance</a>
+<ul class="sectlevel2">
+<li><a href="#_security_and_privacy">15.1. Security and Privacy</a></li>
+</ul>
+</li>
+<li><a href="#_application_programmer_interfaces_apis">16. Application Programmer Interfaces (APIs)</a>
+<ul class="sectlevel2">
+<li><a href="#_rest_api_component">16.1. REST API Component</a></li>
+</ul>
+</li>
+<li><a href="#_profiles">17. Profiles</a>
+<ul class="sectlevel2">
+<li><a href="#_default_profiles">17.1. Default Profiles</a>
+<ul class="sectlevel3">
+<li><a href="#_functional">17.1.1. Functional</a></li>
+<li><a href="#_non_functional">17.1.2. Non-Functional</a></li>
+<li><a href="#_other_non_functional">17.1.3. Other Non-Functional</a></li>
 </ul>
 </li>
 </ul>
@@ -847,7 +1003,7 @@ PROFILE REPORT
 </div>
 </div>
 <div class="sect1">
-<h2 id="_functional_conformance_definitions_component"><a class="anchor" href="#_functional_conformance_definitions_component"></a>7. Functional Conformance: Definitions Component</h2>
+<h2 id="_func_conf_def_component"><a class="anchor" href="#_func_conf_def_component"></a>7. Functional Conformance: Definitions Component</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_normative_reference"><a class="anchor" href="#_normative_reference"></a>7.1. Normative Reference</h3>
@@ -1982,12 +2138,12 @@ for step 1, include only versioned OPT.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_functional_conformance_ehr_component"><a class="anchor" href="#_functional_conformance_ehr_component"></a>8. Functional Conformance: EHR Component</h2>
+<h2 id="_func_conf_ehr_component"><a class="anchor" href="#_func_conf_ehr_component"></a>8. Functional Conformance: EHR Component</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_normative_reference_2"><a class="anchor" href="#_normative_reference_2"></a>8.1. Normative Reference</h3>
 <div class="paragraph">
-<p>Items in this validation suite conceptually use the following abstract interfaces from the <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_ehr_package" target="_blank" rel="noopener">Abstract EHR Service Model</a>.</p>
+<p>Items in this validation suite conceptually use the following abstract interfaces from the <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_ehr_package" target="_blank" rel="noopener">Abstract Platform Service Model, EHR component</a>.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2017,16 +2173,7 @@ for step 1, include only versioned OPT.
 <p><a href="https://specifications.openehr.org/releases/RM/latest/common.html" target="_blank" rel="noopener">Common IM</a></p>
 </li>
 <li>
-<p><a href="https://specifications.openehr.org/releases/RM/latest/data_structures.html" target="_blank" rel="noopener">Data Structures IM</a></p>
-</li>
-<li>
-<p><a href="https://specifications.openehr.org/releases/RM/latest/data_types.html" target="_blank" rel="noopener">Data Types IM</a></p>
-</li>
-<li>
 <p><a href="https://specifications.openehr.org/releases/RM/latest/support.html" target="_blank" rel="noopener">Support IM</a></p>
-</li>
-<li>
-<p><a href="https://specifications.openehr.org/releases/RM/latest/common.html#_change_control_package" target="_blank" rel="noopener">Versioning</a></p>
 </li>
 </ul>
 </div>
@@ -3278,8 +3425,10 @@ for step 1, include only versioned OPT.
 <td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Invoke the clear EHR modifiable service by a random <code>ehr_id</code>
-master06.01.02-ehr. The result should be negative and the result should include an error e.g. <code>"EHR with &lt;ehr_id&gt; doesn’t exist"</code>.</p>
+<p>Invoke the clear EHR modifiable service by a random <code>ehr_id</code></p>
+</li>
+<li>
+<p>The result should be negative and the result should include an error e.g. <code>"EHR with &lt;ehr_id&gt; doesn’t exist"</code>.</p>
 </li>
 </ol>
 </div></div></td>
@@ -3292,7 +3441,4299 @@ master06.01.02-ehr. The result should be negative and the result should include 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_functional_conformance_demographic_component"><a class="anchor" href="#_functional_conformance_demographic_component"></a>9. Functional Conformance: Demographic Component</h2>
+<h2 id="_functional_conformance_ehr_composition_component"><a class="anchor" href="#_functional_conformance_ehr_composition_component"></a>9. Functional Conformance: EHR / COMPOSITION Component</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_normative_reference_3"><a class="anchor" href="#_normative_reference_3"></a>9.1. Normative Reference</h3>
+<div class="paragraph">
+<p>Items in this validation suite conceptually use the following abstract interfaces from the <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_ehr_package" target="_blank" rel="noopener">Abstract Platform Service Model, EHR/COMPOSITION component</a>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>I_EHR_COMPOSITION</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These are concretely realised in implementation technology specfic APIs, such as the <a href="https://specifications.openehr.org/releases/ITS-REST/latest/ehr.html" target="_blank" rel="noopener">EHR REST API</a>.</p>
+</div>
+<div class="paragraph">
+<p>The data that flow through these interfaces are defined by the following information model specifications:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://specifications.openehr.org/releases/RM/latest/ehr.html" target="_blank" rel="noopener">EHR IM</a></p>
+</li>
+<li>
+<p><a href="https://specifications.openehr.org/releases/RM/latest/common.html" target="_blank" rel="noopener">Common IM</a></p>
+</li>
+<li>
+<p><a href="https://specifications.openehr.org/releases/RM/latest/data_structures.html" target="_blank" rel="noopener">Data Structures IM</a></p>
+</li>
+<li>
+<p><a href="https://specifications.openehr.org/releases/RM/latest/data_types.html" target="_blank" rel="noopener">Data Types IM</a></p>
+</li>
+<li>
+<p><a href="https://specifications.openehr.org/releases/RM/latest/support.html" target="_blank" rel="noopener">Support IM</a></p>
+</li>
+<li>
+<p><a href="https://specifications.openehr.org/releases/RM/latest/common.html#_change_control_package" target="_blank" rel="noopener">Versioning</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dependencies"><a class="anchor" href="#_dependencies"></a>9.2. Dependencies</h3>
+<div class="paragraph">
+<p>This test suite depends on other test suites:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_func_conf_def_component">Functional Conformance: Definitions Component</a>, providing OPTs;</p>
+</li>
+<li>
+<p><a href="#_func_conf_ehr_component">Functional Conformance: EHR Component</a>, providing EHRs.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_test_environment_3"><a class="anchor" href="#_test_environment_3"></a>9.3. Test Environment</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The server under test should support at least OPTs, 1.4 or 2, but OPT 1.4 if more frequent since modeling tools supporting this were around for a long time. Could also support ADL, 1.4 or 2.</p>
+</li>
+<li>
+<p>The server should support at least one of the XML or JSON representations of COMPOSITIONs for committing data, and integrate the corresponding schemas (XML or JSON) to validate data syntactically (before validating against an OPT).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_test_cases_2"><a class="anchor" href="#_test_cases_2"></a>9.4. Test Cases</h3>
+<div class="sect3">
+<h4 id="_conformance_point_i_ehr_composition_has_composition"><a class="anchor" href="#_conformance_point_i_ehr_composition_has_composition"></a>9.4.1. Conformance point: I_EHR_COMPOSITION.has_composition()</h4>
+<div class="paragraph">
+<p><strong>Platform service ref</strong>: <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_ehr_composition_interface" target="_blank" rel="noopener"><code>I_EHR_COMPOSITION.<em>has_composition()</em></code></a></p>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_has_composition"><a class="anchor" href="#_tc_ehr_composition_has_composition"></a>9.4.1.1. TC EHR_COMPOSITION.has_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Has existing <code>COMPOSITION</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known <code>ehr_id</code> exists</p>
+</li>
+<li>
+<p>The EHR has a <code>CONTRIBUTION</code></p>
+</li>
+<li>
+<p>The <code>CONTRIBUTION</code> contains a <code>VERSION</code> with known uid.</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the has <code>COMPOSITION</code> service for the <code>ehr_id</code> and <code>VERSION.uid</code></p>
+</li>
+<li>
+<p>The result must be TRUE</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_has_composition_bad_composition"><a class="anchor" href="#_tc_ehr_composition_has_composition_bad_composition"></a>9.4.1.2. TC EHR_COMPOSITION.has_composition_bad_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Has <code>COMPOSITION</code>, <code>COMPOSITION</code> doesn’t exist</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known <code>ehr_id</code> exists</p>
+</li>
+<li>
+<p>The EHR has no <code>CONTRIBUTIONs</code></p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the has <code>COMPOSITION</code> service for <code>ehr_id</code>, and a random <code>VERSION.uid</code></p>
+</li>
+<li>
+<p>The result must be FALSE</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_has_composition_bad_ehr"><a class="anchor" href="#_tc_ehr_composition_has_composition_bad_ehr"></a>9.4.1.3. TC EHR_COMPOSITION.has_composition_bad_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Has <code>COMPOSITION</code> on non-existent EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>There are no EHRs on the server</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the has <code>COMPOSITION</code> service with a random <code>ehr_id</code></p>
+</li>
+<li>
+<p>The service should return an error related to the non existence of the EHR</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_get_composition_latest"><a class="anchor" href="#_get_composition_latest"></a>9.4.2. Get COMPOSITION latest</h4>
+<div class="paragraph">
+<p><strong>Implementation consideration:</strong></p>
+</div>
+<div class="paragraph">
+<p>When a <code>COMPOSITION</code> is retrieved from a service, it will comply with a specific format. There could be a variant for each test to retrieve the <code>COMPOSITION</code> in any of the supported openEHR formats, and the  syntactic validation of those retrieved formats should be done by using the corresponding schemas (XML, JSON, etc). That would be the minimal validation for conformance testing. Though it would be ideal to have semantic validation of the retrieved <code>COMPOSITIONs</code> to ensure conformance, which is achieved by validating against the corresponding OPT in the testing layer.</p>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_composition_latest"><a class="anchor" href="#_tc_ehr_composition_get_composition_latest"></a>9.4.2.1. TC EHR_COMPOSITION.get_composition_latest</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get existing <code>COMPOSITION</code> latest</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known <code>ehr_id</code> exists</p>
+</li>
+<li>
+<p>The EHR has a <code>VERSIONED_COMPOSITION</code> with known uid</p>
+</li>
+<li>
+<p>The <code>VERSIONED_COMPOSITION</code> has two <code>VERSIONs</code></p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>COMPOSITION</code> latest service for the <code>ehr_id</code> and <code>VERSIONED_COMPOSITION</code> uid</p>
+</li>
+<li>
+<p>The result must return the <code>COMPOSITION</code> contents, and should be the latest version</p>
+</li>
+<li>
+<p>The retrieved format should contain all the exact same data as the format used when committing the <code>COMPOSITION</code> (content check)</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_composition_latest_bad_composition"><a class="anchor" href="#_tc_ehr_composition_get_composition_latest_bad_composition"></a>9.4.2.2. TC EHR_COMPOSITION.get_composition_latest_bad_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get <code>COMPOSITION</code> latest, <code>COMPOSITION</code> doesn’t exist</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known <code>ehr_id</code> exists and has no <code>CONTRIBUTIONs</code></p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>COMPOSITION</code> latest service for ehr_uid, and a random <code>VERSIONED_COMPOSITION</code> uid</p>
+</li>
+<li>
+<p>The result must be empty, with an error &#8220;the COMPOSITION uid doesn’t exist in the EHR ehr_uid&#8221;</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_composition_latest_bad_ehr"><a class="anchor" href="#_tc_ehr_composition_get_composition_latest_bad_ehr"></a>9.4.2.3. TC EHR_COMPOSITION.get_composition_latest_bad_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get <code>COMPOSITION</code> latest on non-existent EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>There are no EHRs on the server</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>COMPOSITION</code> latest service with a random ehr_id, and a random <code>VERSIONED_COMPOSITION</code> uid</p>
+</li>
+<li>
+<p>The service should return an error related to the non existence of the EHR</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_get_composition_at_time"><a class="anchor" href="#_get_composition_at_time"></a>9.4.3. Get COMPOSITION at time</h4>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_composition_at_time"><a class="anchor" href="#_tc_ehr_composition_get_composition_at_time"></a>9.4.3.1. TC EHR_COMPOSITION.get_composition_at_time</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get existing <code>COMPOSITION</code> at time</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known <code>ehr_id</code> exists</p>
+</li>
+<li>
+<p>The EHR has one or more <code>VERSIONED_COMPOSITIONs</code> with known uids</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>COMPOSITION</code> at time service for the ehr_id, <code>VERSIONED_COMPOSITION.uid</code> and current time</p>
+</li>
+<li>
+<p>The result must return the <code>COMPOSITION</code> contents of the existing <code>COMPOSITION</code> at given time</p>
+</li>
+<li>
+<p>The retrieved format should contain all the exact same data as the format used when committing the <code>COMPOSITION</code> (content check)</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+When requesting a <code>COMPOSITION</code> at time using the current time, the last version of the matching composition, if it exists, should be retrieved.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_composition_at_time_no_time_arg"><a class="anchor" href="#_tc_ehr_composition_get_composition_at_time_no_time_arg"></a>9.4.3.2. TC EHR_COMPOSITION.get_composition_at_time_no_time_arg</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get existing <code>COMPOSITION</code> at time, without a given time</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known <code>ehr_id</code> exists</p>
+</li>
+<li>
+<p>The EHR has one or more <code>VERSIONED_COMPOSITIONs</code> with known uids</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>COMPOSITION</code> at time service for the <code>ehr_id</code>, <code>VERSIONED_COMPOSITION</code> uid and no time</p>
+</li>
+<li>
+<p>The result must return the <code>COMPOSITION</code> contents of the existing <code>COMPOSITION</code>, and should be the latest <code>VERSION</code> of the <code>COMPOSITION</code></p>
+</li>
+<li>
+<p>The retrieved format should contain all the exact same data as the format used when committing the <code>COMPOSITION</code> (content check)</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Test this using <code>COMPOSITIONs</code> with one version and multiple versions, to be sure the retrieved one is the latest;<br>
+      The previous tests for &#8220;get COMPOSITION latest&#8221; could be used to compare results.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_composition_at_time_bad_composition"><a class="anchor" href="#_tc_ehr_composition_get_composition_at_time_bad_composition"></a>9.4.3.3. TC EHR_COMPOSITION.get_composition_at_time_bad_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get <code>COMPOSITION</code> at time, <code>COMPOSITION</code> doesn’t exist</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known <code>ehr_id</code> exists and has no <code>CONTRIBUTIONs</code></p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>COMPOSITION</code> at time service for <code>ehr_uid</code>, and a random <code>VERSIONED_COMPOSITION.uid</code> and current time</p>
+</li>
+<li>
+<p>The result must be empty, with an error related to &#8220;the COMPOSITION uid doesn’t exist in the EHR ehr_uid&#8221;</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_composition_at_time_bad_ehr"><a class="anchor" href="#_tc_ehr_composition_get_composition_at_time_bad_ehr"></a>9.4.3.4. TC EHR_COMPOSITION.get_composition_at_time_bad_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get <code>COMPOSITION</code> at time on non-existent EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>There are no EHRs on the server</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>COMPOSITION</code> at time service with a random ehr_id, random <code>VERSIONED_OBJECT.uid</code> and current time</p>
+</li>
+<li>
+<p>The service should return an error indicating non-existence of the EHR</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_composition_at_times"><a class="anchor" href="#_tc_ehr_composition_get_composition_at_times"></a>9.4.3.5. TC EHR_COMPOSITION.get_composition_at_times</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get existing <code>COMPOSITION</code> at time, cover different times</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known <code>ehr_id</code> exists</p>
+</li>
+<li>
+<p>The EHR should have one <code>VERSIONED_COMPOSITION</code> with a know uid</p>
+</li>
+<li>
+<p>The <code>VERSIONED_COMPOSITION</code> should have two VERSIONs (the EHR has two <code>CONTRIBUTIONs</code> for the same <code>COMPOSITION</code>)</p>
+</li>
+<li>
+<p><code>CONTRIBUTIONs</code> were done at times t0 and t1 with t0 &lt; t1</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>COMPOSITION</code> at time service for the ehr_id, <code>VERSIONED_COMPOSITION</code> uid and a time &lt; t0</p>
+</li>
+<li>
+<p>The result must be negative and return an error related to the <code>COMPOSITION</code> not existing at that time</p>
+</li>
+<li>
+<p>Invoke the get <code>COMPOSITION</code> at time service for the ehr_id, <code>VERSIONED_COMPOSITION</code> uid and a time &gt; t0 and &lt; t1</p>
+</li>
+<li>
+<p>The result must return the <code>COMPOSITION</code> contents of the <code>COMPOSITION</code> committed in t0</p>
+</li>
+<li>
+<p>The retrieved format should contain all the exact same data as the format used when committing the <code>COMPOSITION</code> (content check)</p>
+</li>
+<li>
+<p>Invoke the get <code>COMPOSITION</code> at time service for the ehr_id, <code>VERSIONED_COMPOSITION</code> uid and a time &gt; t1</p>
+</li>
+<li>
+<p>The result must return the <code>COMPOSITION</code> contents of the <code>COMPOSITION</code> committed in t1</p>
+</li>
+<li>
+<p>The retrieved format should contain all the exact same data as the format used when committing the <code>COMPOSITION</code> (content check)</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_get_composition_at_version"><a class="anchor" href="#_get_composition_at_version"></a>9.4.4. Get COMPOSITION at version</h4>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_composition_version"><a class="anchor" href="#_tc_ehr_composition_get_composition_version"></a>9.4.4.1. TC EHR_COMPOSITION.get_composition_version</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get existing <code>COMPOSITION</code> at version</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known <code>ehr_id</code> exists</p>
+</li>
+<li>
+<p>The EHR has one <code>VERSION</code> with known version id</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>COMPOSITION</code> at version service for the ehr_id, <code>VERSION</code> version id</p>
+</li>
+<li>
+<p>The result must return the <code>COMPOSITION</code> contents of the existing <code>VERSION</code></p>
+</li>
+<li>
+<p>The retrieved format should contain all the exact same data as the format used when committing the <code>COMPOSITION</code> (content check)</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_composition_version_bad_version"><a class="anchor" href="#_tc_ehr_composition_get_composition_version_bad_version"></a>9.4.4.2. TC EHR_COMPOSITION.get_composition_version_bad_version</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get <code>COMPOSITION</code> at version, <code>VERSION</code> doesn’t exist</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known <code>ehr_id</code> exists and doesn’t have any commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>COMPOSITION</code> at version service for the <code>ehr_id</code>, and a random version id</p>
+</li>
+<li>
+<p>The result must be negative and return an error related to the non-existent <code>COMPOSITION</code> with the version id</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_composition_version_bad_ehr"><a class="anchor" href="#_tc_ehr_composition_get_composition_version_bad_ehr"></a>9.4.4.3. TC EHR_COMPOSITION.get_composition_version_bad_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get <code>COMPOSITION</code> at version, EHR doesn’t exist</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The system doesn’t have any EHRs</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>COMPOSITION</code> at version service a random <code>ehr_id</code> and random version id</p>
+</li>
+<li>
+<p>The result must be negative and return an error related to the non-existent EHR.</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_composition_versions"><a class="anchor" href="#_tc_ehr_composition_get_composition_versions"></a>9.4.4.4. TC EHR_COMPOSITION.get_composition_versions</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get <code>COMPOSITION</code> at version, cover different versions</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known <code>ehr_id</code> exists</p>
+</li>
+<li>
+<p>The EHR should have one <code>VERSIONED_COMPOSITION</code> with a known uid</p>
+</li>
+<li>
+<p>The <code>VERSIONED_COMPOSITION</code> should have two <code>VERSIONs</code> (the EHR has two <code>CONTRIBUTIONs</code> for the same <code>COMPOSITION</code>)</p>
+</li>
+<li>
+<p>Both <code>VERSIONs</code> have ids: v1 and v2</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>COMPOSITION</code> at version service, for the <code>ehr_id</code> and <code>VERSION</code> version id v1</p>
+</li>
+<li>
+<p>The result must be positive and retrieve the <code>COMPOSITION</code>, that should match the <code>COMPOSITION</code> created with version id v1. (content check).</p>
+</li>
+<li>
+<p>Invoke the get <code>COMPOSITION</code> at version service, for the <code>ehr_id</code> and <code>VERSION</code> version id v2</p>
+</li>
+<li>
+<p>The result must be positive and retrieve the <code>COMPOSITION</code>, that should match the <code>COMPOSITION</code> created with version id v2 (content check).</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_get_versioned_composition"><a class="anchor" href="#_get_versioned_composition"></a>9.4.5. Get VERSIONED COMPOSITION</h4>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_versioned_composition"><a class="anchor" href="#_tc_ehr_composition_get_versioned_composition"></a>9.4.5.1. TC EHR_COMPOSITION.get_versioned_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get existing <code>VERSIONED_COMPOSITION</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known <code>ehr_id</code> exists</p>
+</li>
+<li>
+<p>The EHR has one <code>VERSIONED_COMPOSITION</code> with known uid</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>VERSIONED_COMPOSITION</code> service for the <code>ehr_id</code> and <code>VERSIONED_COMPOSITION</code> uid</p>
+</li>
+<li>
+<p>The result must return a valid <code>VERSIONED_COMPOSITION</code> object, referencing the <code>VERSION</code> it contains</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Notes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To consider different cases, try with <code>VERSIONED_COMPOSITION</code> that contain just one <code>VERSION</code> or many <code>VERSIONs</code></p>
+</li>
+<li>
+<p>For that, the valid test cases for Create <code>COMPOSITION</code> could be used to comply with the preconditions of this test flow</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_non_existent_versioned_composition"><a class="anchor" href="#_tc_ehr_composition_get_non_existent_versioned_composition"></a>9.4.5.2. TC EHR_COMPOSITION.get_non_existent_versioned_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get non-existent <code>VERSIONED_COMPOSITION</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known <code>ehr_id</code> exists</p>
+</li>
+<li>
+<p>The EHR doesn’t have any commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>VERSIONED_COMPOSITION</code> service for the <code>ehr_id</code> and a random <code>VERSIONED_COMPOSITION</code> uid</p>
+</li>
+<li>
+<p>The result must be negative and return an error related to the non-existence of the <code>VERSIONED_COMPOSITION</code></p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_get_versioned_composition_bad_ehr"><a class="anchor" href="#_tc_ehr_composition_get_versioned_composition_bad_ehr"></a>9.4.5.3. TC EHR_COMPOSITION.get_versioned_composition_bad_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Get <code>VERSIONED_COMPOSITION</code>, EHR doesn’t exist</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The system doesn’t have any EHRs</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the get <code>VERSIONED_COMPOSITION</code> service for a random <code>ehr_id</code> and a random <code>VERSIONED_COMPOSITION</code> uid</p>
+</li>
+<li>
+<p>The result must be negative and return an error related to the non-existence of the EHR</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_create_composition"><a class="anchor" href="#_create_composition"></a>9.4.6. Create COMPOSITION</h4>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_create_event_composition"><a class="anchor" href="#_tc_ehr_composition_create_event_composition"></a>9.4.6.1. TC EHR_COMPOSITION.create_event_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create new event <code>COMPOSITION</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPT, associated with the event <code>COMPOSITION</code> that will be created, should exist on the server</p>
+</li>
+<li>
+<p>An EHR with known <code>ehr_id</code> should exist</p>
+</li>
+<li>
+<p>The EHR should have no commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A new event <code>COMPOSITION</code> exists in the EHR.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the create <code>COMPOSITION</code> service with a valid event <code>COMPOSITION</code>, compliant with the existing OPT, and with the known <code>ehr_id</code></p>
+</li>
+<li>
+<p>The result should be positive, return information about the new <code>COMPOSITION</code> added to the EHR, and the version number should be 1</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_create_persistent_composition"><a class="anchor" href="#_tc_ehr_composition_create_persistent_composition"></a>9.4.6.2. TC EHR_COMPOSITION.create_persistent_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create new persistent <code>COMPOSITION</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPT, associated with the persistent <code>COMPOSITION</code> that will be created, should exist on the server</p>
+</li>
+<li>
+<p>An EHR with known <code>ehr_id</code> should exist</p>
+</li>
+<li>
+<p>The EHR should have no commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A new persistent <code>COMPOSITION</code> exists in the EHR.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the create <code>COMPOSITION</code> service with a valid persistent <code>COMPOSITION</code>, compliant with the existing OPT, and the known <code>ehr_id</code></p>
+</li>
+<li>
+<p>The result should be positive, and return information about the new <code>COMPOSITION</code> added to the EHR, and the version number should be 1</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_create_persistent_composition_same_opt_twice"><a class="anchor" href="#_tc_ehr_composition_create_persistent_composition_same_opt_twice"></a>9.4.6.3. TC EHR_COMPOSITION.create_persistent_composition_same_opt_twice</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create persistent <code>COMPOSITION</code> for the same OPT twice</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPT, associated with the persistent <code>COMPOSITION</code> that will be created, should exist on the server</p>
+</li>
+<li>
+<p>An EHR with known <code>ehr_id</code> should exist</p>
+</li>
+<li>
+<p>The EHR should have no commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A new persistent <code>COMPOSITION</code> exists in the EHR.</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the create <code>COMPOSITION</code> service with a valid persistent <code>COMPOSITION</code>, compliant with the existing OPT, and with the known <code>ehr_id</code></p>
+</li>
+<li>
+<p>The result should be positive, and return information about the new <code>COMPOSITION</code> added to the EHR, and the version number should be 1</p>
+</li>
+<li>
+<p>Invoke the create <code>COMPOSITION</code> service with a valid persistent <code>COMPOSITION</code> and the same <code>ehr_id</code> as in 1., the <code>COMPOSITION</code> should comply with the same persistent OPT as the <code>COMPOSITION</code> in 1</p>
+</li>
+<li>
+<p>The result should be negative, returning an error related to trying to create a persistent <code>COMPOSITION</code> for the same persistent OPT that already has a first version</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Notes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Current criteria is: only one &#8216;create&#8217; operation is allowed for persistent <code>COMPOSITIONs</code>, the next operations over an existing persistent <code>COMPOSITION</code> should be &#8216;modifications&#8217;.</p>
+</li>
+<li>
+<p>This is under debate in the openEHR SEC since some implementations permit 'persistent' <code>COMPOSIITONS</code> to have more than one instance in the same EHR and some others not. This is due to the lack of information in the openEHR specifications. There is also a discussion to define other types of categories for <code>COMPOSITIONs</code> to allow different behaviors.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Ref:  <a href="https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51/3" class="bare">https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51/3</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_create_invalid_event_composition"><a class="anchor" href="#_tc_ehr_composition_create_invalid_event_composition"></a>9.4.6.4. TC EHR_COMPOSITION.create_invalid_event_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create new invalid event <code>COMPOSITION</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPT, associated with the event <code>COMPOSITION</code> that will be created, should exist on the server</p>
+</li>
+<li>
+<p>An EHR with known <code>ehr_id</code> should exist</p>
+</li>
+<li>
+<p>The EHR should have no commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the create <code>COMPOSITION</code> service with an invalid event <code>COMPOSITION</code> and the known <code>ehr_id</code></p>
+</li>
+<li>
+<p>The result should be negative, and return information about the errors in the provided <code>COMPOSITION</code></p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_create_invalid_persistent_composition"><a class="anchor" href="#_tc_ehr_composition_create_invalid_persistent_composition"></a>9.4.6.5. TC EHR_COMPOSITION.create_invalid_persistent_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create new invalid persistent <code>COMPOSITION</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPT, associated with the persistent <code>COMPOSITION</code> that will be created, should exist on the server</p>
+</li>
+<li>
+<p>An EHR with known <code>ehr_id</code> should exist</p>
+</li>
+<li>
+<p>The EHR should have no commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the create <code>COMPOSITION</code> service with an invalid persistent <code>COMPOSITION</code> and the known <code>ehr_id</code></p>
+</li>
+<li>
+<p>The result should be negative, and return information about the errors in the provided <code>COMPOSITION</code></p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_create_event_composition_bad_opt"><a class="anchor" href="#_tc_ehr_composition_create_event_composition_bad_opt"></a>9.4.6.6. TC EHR_COMPOSITION.create_event_composition_bad_opt</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create new event <code>COMPOSITION</code>, referenced OPT doesn’t exist</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPT, referenced by the <code>COMPOSITION</code> to commit, doesn’t exist on the server</p>
+</li>
+<li>
+<p>An EHR with known <code>ehr_id</code> should exist</p>
+</li>
+<li>
+<p>The EHR should have no commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the create <code>COMPOSITION</code> service with a valid event <code>COMPOSITION</code> and the known <code>ehr_id</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The <code>COMPOSITION</code> should reference an OPT that doesn’t exist on the server</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be negative, and return information about the non-existent OPT</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_create_event_composition_bad_ehr"><a class="anchor" href="#_tc_ehr_composition_create_event_composition_bad_ehr"></a>9.4.6.7. TC EHR_COMPOSITION.create_event_composition_bad_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create new event <code>COMPOSITION</code>, EHR doesn’t exist</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPT, referenced by the <code>COMPOSITION</code> to commit, exists on the server</p>
+</li>
+<li>
+<p>The server doesn’t have any EHRs</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the create <code>COMPOSITION</code> service with a valid event <code>COMPOSITION</code> and a random <code>ehr_id</code></p>
+</li>
+<li>
+<p>The result should be negative, and return information about the non-existent EHR</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_update_composition"><a class="anchor" href="#_update_composition"></a>9.4.7. Update COMPOSITION</h4>
+<div class="paragraph">
+<p>The update <code>COMPOSITION</code> service needs a the <code>VERSION.preceding_version_uid</code> attribute to be set, so the server knows which existing <code>VERSION</code> of the <code>COMPOSITION</code> will be associated with the newly committed <code>COMPOSITION</code>. The Service Model spec is not clear about where that attribute is defined. By taking into account the Reference Model, the <code>COMPOSITION</code> doesn’t contain that value but the <code>VERSION</code> does. For the <code>COMPOSITION</code> update service the preceding_version_uid should be a parameter or the definition in the SM should mention this.</p>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_update_event_composition"><a class="anchor" href="#_tc_ehr_composition_update_event_composition"></a>9.4.7.1. TC EHR_COMPOSITION.update_event_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Update an existing event <code>COMPOSITION</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPT referenced by the <code>COMPOSITIONs</code> to commit exists on the server</p>
+</li>
+<li>
+<p>An EHR with known <code>ehr_id</code> should exist</p>
+</li>
+<li>
+<p>The EHR should have no commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A new <code>VERSIONED_OBJECT</code> exists on the server</p>
+</li>
+<li>
+<p>The <code>VERSIONED_OBJECT</code> has two <code>VERSIONs</code> of <code>COMPOSITION</code></p>
+</li>
+<li>
+<p>One <code>VERSION.commit_audit.change_type</code> is <code>CREATE</code>, the other one is <code>MODIFY</code></p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the create <code>COMPOSITION</code> service with a valid event <code>COMPOSITION</code> and the existing <code>ehr_id</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The <code>COMPOSITION</code> reference the existing OPT</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive and a new <code>COMPOSITION</code> should exist in the EHR</p>
+</li>
+<li>
+<p>Invoke the update <code>COMPOSITION</code> service with a valid event <code>COMPOSITION</code> to the existing <code>ehr_id</code> and <code>preceding_version_uid</code> should be the version uid from the <code>COMPOSITION</code> created in 1</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>This <code>COMPOSITION</code> has the same OPT as the <code>COMPOSITION</code> created in 1</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive and a new version of the existing <code>COMPOSITION</code> should exist in the EHR</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_update_persistent_composition"><a class="anchor" href="#_tc_ehr_composition_update_persistent_composition"></a>9.4.7.2. TC EHR_COMPOSITION.update_persistent_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Update an existing persistent <code>COMPOSITION</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPT referenced by the <code>COMPOSITIONs</code> to commit exists on the server</p>
+</li>
+<li>
+<p>An EHR with known <code>ehr_id</code> should exist</p>
+</li>
+<li>
+<p>The EHR should have no commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The server should contain one <code>VERSIONED_OBJECT</code></p>
+</li>
+<li>
+<p>The <code>VERSIONED_OBJECT</code> should have two <code>VERSIONs</code> of <code>COMPOSITION</code></p>
+</li>
+<li>
+<p>The <code>COMPOSITIONs</code> should comply with the existing OPT</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the create <code>COMPOSITION</code> service with a valid persistent <code>COMPOSITION</code> and the existing <code>ehr_id</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The OPT referenced by this <code>COMPOSITION</code> exists on the server</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive and a new <code>COMPOSITION</code> should exist in the EHR</p>
+</li>
+<li>
+<p>Invoke the update <code>COMPOSITION</code> service with a valid persistent <code>COMPOSITION</code>, to the existing <code>ehr_id</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>that has the same template as the <code>COMPOSITION</code> created in 1.,</p>
+</li>
+<li>
+<p>preceding_version_uid should be the <code>VERSION.uid</code> from the <code>COMPOSITION</code> created in 1</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive and a new version of the existing <code>COMPOSITION</code> should exist in the EHR</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_update_non_existent_composition"><a class="anchor" href="#_tc_ehr_composition_update_non_existent_composition"></a>9.4.7.3. TC EHR_COMPOSITION.update_non_existent_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Update a non-existing <code>COMPOSITION</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPT referenced by the COMPOSITIONs to commit exists on the server</p>
+</li>
+<li>
+<p>An EHR with known <code>ehr_id</code> should exist</p>
+</li>
+<li>
+<p>The EHR should have no commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the update <code>COMPOSITION</code> service with a valid event <code>COMPOSITION</code>, the existing <code>ehr_id</code> and preceding_version_uid should be a random value</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The <code>COMPOSITION</code> should comply with the existing OPT</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be negative and return an error related to the inexistence of the <code>preceding_version_id</code></p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_update_composition_wrong_template"><a class="anchor" href="#_tc_ehr_composition_update_composition_wrong_template"></a>9.4.7.4. TC EHR_COMPOSITION.update_composition_wrong_template</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Update an existing <code>COMPOSITION</code>, referencing a different template</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPTs, referenced by the <code>COMPOSITIONs</code> to commit, exist on the server</p>
+</li>
+<li>
+<p>An EHR with known <code>ehr_id</code> should exist</p>
+</li>
+<li>
+<p>The EHR should have no commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The server has a new <code>VERSIONED_OBJECT</code></p>
+</li>
+<li>
+<p>The <code>VERSIONED_OBJECT</code> has one version of a <code>COMPOSITION</code></p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the create <code>COMPOSITION</code> service with a valid event <code>COMPOSITION</code> and the existing <code>ehr_id</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The OPT referenced by this <code>COMPOSITION</code> exists on the server</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive and a new <code>COMPOSITION</code> should exist in the EHR</p>
+</li>
+<li>
+<p>Invoke the update <code>COMPOSITION</code> service with a valid event <code>COMPOSITION</code>, to the existing <code>ehr_id</code> and preceding_version_uid should be the version uid from the <code>COMPOSITION</code> created in 1</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The <code>COMPOSITION</code> references a different template than the one referenced by the <code>COMPOSITION</code> created in 1.</p>
+</li>
+<li>
+<p>The OPT referenced by this <code>COMPOSITION</code> exists on the server</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be negative and return an error related to the <code>template_id</code> mismatch</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_delete_composition"><a class="anchor" href="#_delete_composition"></a>9.4.8. Delete COMPOSITION</h4>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_delete_event_composition"><a class="anchor" href="#_tc_ehr_composition_delete_event_composition"></a>9.4.8.1. TC EHR_COMPOSITION.delete_event_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Delete event <code>COMPOSITION</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPT referenced by the <code>COMPOSITIONs</code> to commit exists on the server</p>
+</li>
+<li>
+<p>An EHR with known <code>ehr_id</code> should exist</p>
+</li>
+<li>
+<p>The EHR should have no commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The server has one <code>VERSIONED_OBJECT</code></p>
+</li>
+<li>
+<p>The <code>VERSIONED_OBJECT</code> contains two versions of <code>COMPOSITION</code></p>
+</li>
+<li>
+<p>The second <code>VERSION.lifecycle_state</code> value is the code `openehr::523</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">deleted</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>`</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the create <code>COMPOSITION</code> service with a valid event <code>COMPOSITION</code> and the existing <code>ehr_id</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The <code>COMPOSITION</code> complies with the existing OPT</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive and a new <code>COMPOSITION</code> should exist in the EHR</p>
+</li>
+<li>
+<p>Invoke the delete <code>COMPOSITION</code> service with the existing <code>ehr_id</code> and preceding_version_uid should be the version id of the <code>COMPOSITION</code> created in 1</p>
+</li>
+<li>
+<p>The result should be positive, and the <code>COMPOSITION</code> should be deleted</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Notes:</p>
+</div>
+<div class="paragraph">
+<p>The common implementation of the <code>delete</code> operation is two create a new <code>VERSION</code> of the <code>COMPOSITION</code> that has <code>VERSION.commit_audit.change_type = openehr::523|deleted|</code>, and <code>VERSION.lifecycle_state = openehr::523|deleted|</code>. So the <code>delete</code> operation is not a physical delete but a logical delete. Some implementations might add the option of a physical deleted. This test case considers the <code>postcondition</code> to be a logical delete, which behaves like an <code>update</code> operation in which a new <code>VERSION</code> of an existing <code>COMPOSITION</code> is created.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_delete_persistent_composition"><a class="anchor" href="#_tc_ehr_composition_delete_persistent_composition"></a>9.4.8.2. TC EHR_COMPOSITION.delete_persistent_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Delete persistent <code>COMPOSITION</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPT referenced by the <code>COMPOSITIONs</code> to commit exists on the server</p>
+</li>
+<li>
+<p>An EHR with known <code>ehr_id</code> should exist</p>
+</li>
+<li>
+<p>The EHR should have no commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The server has one <code>VERSIONED_OBJECT</code></p>
+</li>
+<li>
+<p>The <code>VERSIONED_OBJECT</code> contains two versions of <code>COMPOSITION</code></p>
+</li>
+<li>
+<p>The second <code>VERSION.lifecycle_state</code> value is the code `openehr::523</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">deleted</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>`</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the create <code>COMPOSITION</code> service with a valid persistent <code>COMPOSITION</code> and the existing <code>ehr_id</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The <code>COMPOSITION</code> complies with the existing OPT</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive and a new <code>COMPOSITION</code> should exist in the EHR</p>
+</li>
+<li>
+<p>Invoke the delete <code>COMPOSITION</code> service with the existing <code>ehr_id</code> and <code>preceding_version_uid</code> should be the version id of the <code>COMPOSITION</code> created in 1</p>
+</li>
+<li>
+<p>The result should be positive, and the <code>COMPOSITION</code> should be deleted</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_tc_ehr_composition_delete_non_existent_composition"><a class="anchor" href="#_tc_ehr_composition_delete_non_existent_composition"></a>9.4.8.3. TC EHR_COMPOSITION.delete_non_existent_composition</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Delete persistent <code>COMPOSITION</code></p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPT referenced by the <code>COMPOSITIONs</code> to commit exists on the server</p>
+</li>
+<li>
+<p>An EHR with known <code>ehr_id</code> should exist</p>
+</li>
+<li>
+<p>The EHR should have no commits</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke the delete <code>COMPOSITION</code> service with the existing <code>ehr_id</code> and a random preceding_version_uid</p>
+</li>
+<li>
+<p>The result should be negative and return an error related to the non-existent <code>COMPOSITION</code></p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_functional_conformance_ehr_contribution_component"><a class="anchor" href="#_functional_conformance_ehr_contribution_component"></a>10. Functional Conformance: EHR / CONTRIBUTION Component</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Items under this validation suite conceptually use these abstract interfaces:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_ehr_contribution_interface">I_EHR_CONTRIBUTION</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Reference:
+<a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_openehr_platform_model" class="bare">https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_openehr_platform_model</a></p>
+</div>
+<div class="paragraph">
+<p>This test suite depends on other test suites:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>KNOWLEDGE (we need OPTs)</p>
+</li>
+<li>
+<p>EHR (we need EHRs)</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_a_general_requirements"><a class="anchor" href="#_a_general_requirements"></a>10.1. A. General Requirements</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The server under test should support at least OPTs, 1.4 or 2, but OPT 1.4 if more frequent since modeling tools supporting this were around for a long time. Could also support ADL, 1.4 or 2.</p>
+</li>
+<li>
+<p>The server should support at least one of the XML or JSON representations of CONTRIBUTIONs for committing data, and integrate the corresponding schemas (XML or JSON) to validate data syntactically (before validating against an OPT).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_b_contribution_test_case_data_sets"><a class="anchor" href="#_b_contribution_test_case_data_sets"></a>10.2. B. CONTRIBUTION Test Case Data Sets</h3>
+<div class="sect3">
+<h4 id="_b_1_general_commit_contribution_data_sets"><a class="anchor" href="#_b_1_general_commit_contribution_data_sets"></a>10.2.1. B.1. General Commit CONTRIBUTION Data Sets</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>CONTRIBUTIONS with single valid <code>VERSION&lt;COMPOSITION&gt;</code> (minimal, one for each entry type)</p>
+</li>
+<li>
+<p>CONTRIBUTIONS with multiple valid <code>VERSION&lt;COMPOSITION&gt;</code> (reuse the minimal ^)</p>
+</li>
+<li>
+<p>CONTRIBUTION with single valid <code>VERSION&lt;COMPOSITION&gt;</code> with maximal data sets</p>
+</li>
+<li>
+<p>Empty CONTRIBUTION (no VERSIONS)</p>
+</li>
+<li>
+<p>CONTRIBUTIONS with invalid <code>VERSION&lt;COMPOSITION&gt;</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Invalid data</p>
+</li>
+<li>
+<p>Wrong change type</p>
+</li>
+<li>
+<p>Wrong lifecycle</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>CONTRIBUTIONS with multiple <code>VERSION&lt;COMPOSITION&gt;</code>, with mixed valid and invalid ones</p>
+</li>
+</ol>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Note: these cases do not consider which type is contained in the VERSIONs, it could be COMPOSITION, FOLDER, EHR_STATUS, etc.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_b_2_composition_commit_contribution_data_sets"><a class="anchor" href="#_b_2_composition_commit_contribution_data_sets"></a>10.2.2. B.2. COMPOSITION Commit CONTRIBUTION Data Sets</h4>
+<div class="paragraph">
+<p>Since there are many combinations of data that could be used for testing the Commit CONTRIBUTION service, we decided to create three main kinds of CONTRIBUTIONs that should be tested:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Valid</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>minimal COMPOSITIONs with one type of ENTRY (one ENTRY each, all ENTRIES covered)</p>
+</li>
+<li>
+<p>maximal COMPOSITION (all data types, all ENTRY types, and SECTIONs)</p>
+</li>
+<li>
+<p>a persistent COMPOSITION (e.g. problem list, medication list, immunization list, …)</p>
+</li>
+<li>
+<p>time series COMPOSITION (observation with many events, e.g. CPR compressions intervals)</p>
+</li>
+<li>
+<p>COMPOSITION with alternative types (e.g. lab result DV_COUNT, DV_QUANTITY and DV_CODED_TEXT)</p>
+</li>
+<li>
+<p>COMPOSITION with DV_CODED_TEXT instance on nodes declared as DV_TEXT in the OPT</p>
+</li>
+<li>
+<p>COMPOSITION with empty ELEMENT.value and not empty ELEMENT.null_flavour</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Invalid</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Invalid COMPOSITIONs (e.g. mandatory items not present, wrong types, extra items not declared in OPT, invalid values)</p>
+</li>
+<li>
+<p>Referenced OPT not loaded (this has to do more with the state of the system than to invalid data)</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Change type combinations (these are the minimal required,
+<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L26-L34">all supported change types can be found here</a>)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>VERSION.commit_audit.change_type = creation</p>
+</li>
+<li>
+<p>VERSION.commit_audit.change_type = modification</p>
+</li>
+<li>
+<p>VERSION.commit_audit.change_type = delete</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Note: there could be many combinations of flows to use the different Change Types mentioned above. The minimal required by this specification it that the server is capable of this flow: 1. creation 2. modification (one or many times) 3. deleted</p>
+</div>
+</blockquote>
+</div>
+<div class="sect4">
+<h5 id="_b_2_1_considerations_for_the_test_data_sets"><a class="anchor" href="#_b_2_1_considerations_for_the_test_data_sets"></a>10.2.2.1. B.2.1. Considerations for the test data sets</h5>
+<div class="paragraph">
+<p><strong>change_type</strong></p>
+</div>
+<div class="paragraph">
+<p>Each VERSION in a CONTRIBUTION has an AUDIT_DETAILS which contains a change_type attribute. The value on that attribute determines the internal behavior for processing each VERSION, and each VERSION in the
+same CONTRIBUTION could have a different change_type. The most used change types are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>creation</strong>: the VERSION represents the first version of a COMPOSITION.</p>
+</li>
+<li>
+<p><strong>amendment</strong>: the VERSION represents a new version of an existing COMPOSITION, with the purpose of adding data.</p>
+</li>
+<li>
+<p><strong>modification</strong>: the VERSION represents a new version of an existing COMPOSITION, with the purpose of changing data, maybe to fix an error.</p>
+</li>
+<li>
+<p><strong>deleted</strong>:the VERSION represents a new version of an existing COMPOSITION, with the purpose of deleting it.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Internally, amendment and modification might be processed in the exact same way, because the difference is semantic not functional.</p>
+</div>
+<div class="paragraph">
+<p>Here is a full list:
+<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L26" class="bare">https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L26</a></p>
+</div>
+<div class="paragraph">
+<p><strong>lifecycle_state</strong></p>
+</div>
+<div class="paragraph">
+<p>Each VERSION in a CONTRIBUTION contains an lifecycle_state attribute, which value gives semantics about the contents of the VERSION. The values could be:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>incomplete</strong>: the COMPOSITION was committed incomplete and should be completed (reviewed, validated, amended) later.</p>
+</li>
+<li>
+<p><strong>complete</strong>: the COMPOSITION was complete at the moment it was committed.</p>
+</li>
+<li>
+<p><strong>deleted</strong>: the COMPOSITION was committed for deletion.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>These codes are defined here:
+<a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L170" class="bare">https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L170</a></p>
+</div>
+<div class="paragraph">
+<p><span class="image">lifecycle state machine</span></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_b_2_2_combinations_for_data_sets"><a class="anchor" href="#_b_2_2_combinations_for_data_sets"></a>10.2.2.2. B.2.2. Combinations for data sets</h5>
+<div class="paragraph">
+<p>These combinations can be tested by doing a single commit. The same combinations with flows of multiple commits could lead to different results.</p>
+</div>
+<div class="paragraph">
+<p><strong>One commit (no previous commits were done), single version cases:</strong></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Note: All change types but creation should fail on the first commit, since other change types need a previous commit. Last one could fail because the first commit can’t be change_type deleted or because the
+lifecycle_state complete can’t be with change_type deleted.</p>
+</div>
+</blockquote>
+</div>
+<table id="one_commit" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 17%;">
+<col style="width: 20%;">
+<col style="width: 25%;">
+<col style="width: 27%;">
+<col style="width: 11%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">change_type</th>
+<th class="tableblock halign-center valign-top">lifecycle_state*</th>
+<th class="tableblock halign-center valign-top">composition category</th>
+<th class="tableblock halign-center valign-top">composition validity**</th>
+<th class="tableblock halign-center valign-top">expected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">accepted</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">amendment</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">modification</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">deleted</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">persistent</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">accepted</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">amendment</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">persistent</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">modification</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">persistent</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">deleted</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">persistent</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">deleted</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">amendment</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">deleted</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">modification</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">deleted</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">deleted</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">deleted</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+</tr>
+</tbody>
+</table>
+<div class="quoteblock">
+<blockquote>
+<div class="ulist">
+<ul>
+<li>
+<p>Note: the incomplete cases should be equal to the complete, because the flag is just adding semantics about the content, not setting how the content should be processed.</p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="ulist">
+<ul>
+<li>
+<p>Note: the invalid cases will make the accepted cases on the previous table to be rejected because the content in the COMPOSITION is not
+valid.</p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><strong>One commit (no previous commits were done), multiple versions cases:</strong></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Note: the tables below represent one VERSIONs in the committed CONTRIBUTION.</p>
+</div>
+</blockquote>
+</div>
+<div class="olist upperalpha">
+<ol class="upperalpha">
+<li>
+<p>Creating two valid, complete and event COMPOSITIONS in one commit should be accepted.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">change_type+</th>
+<th class="tableblock halign-center valign-top">lifecycle_state++</th>
+<th class="tableblock halign-center valign-top">composition category</th>
+<th class="tableblock halign-center valign-top">composition validity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This CONTRIBUTION should be <span class="accepted">ACCEPTED</span>.</p>
+</div>
+<div class="olist upperalpha">
+<ol class="upperalpha">
+<li>
+<p>Creating two valid, complete and persistent COMPOSITIONS in one commit should be accepted.</p>
+</li>
+</ol>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Note: depending on the server implementation, some servers might not accept the second COMPOSITION if both COMPOSITIONs reference the same persistent OPT. So this test case considers both COMPOSITIONs reference different persistent OPTs.</p>
+</div>
+</blockquote>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">change_type+</th>
+<th class="tableblock halign-center valign-top">lifecycle_state++</th>
+<th class="tableblock halign-center valign-top">composition category</th>
+<th class="tableblock halign-center valign-top">composition validity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">persistent</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">persistent</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This CONTRIBUTION should be <span class="accepted">ACCEPTED</span>.</p>
+</div>
+<div class="olist upperalpha">
+<ol class="upperalpha">
+<li>
+<p>Creating two valid, complete and mixed category COMPOSITIONS in one commit should be accepted.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">change_type+</th>
+<th class="tableblock halign-center valign-top">lifecycle_state++</th>
+<th class="tableblock halign-center valign-top">composition category</th>
+<th class="tableblock halign-center valign-top">composition validity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">persistent</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This CONTRIBUTION should be <span class="accepted">ACCEPTED</span>.</p>
+</div>
+<div class="olist upperalpha">
+<ol class="upperalpha">
+<li>
+<p>If any COMPOSITION is invalid in a CONTRIBUTION, the whole commit should fail. It doesn’t matter if it is complete or incomplete, event or persistent (just showing some of the combinations below).</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">change_type+</th>
+<th class="tableblock halign-center valign-top">lifecycle_state++</th>
+<th class="tableblock halign-center valign-top">composition category</th>
+<th class="tableblock halign-center valign-top">composition validity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">invalid</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">change_type+</th>
+<th class="tableblock halign-center valign-top">lifecycle_state++</th>
+<th class="tableblock halign-center valign-top">composition category</th>
+<th class="tableblock halign-center valign-top">composition validity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">persistent</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">persistent</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">invalid</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">change_type+</th>
+<th class="tableblock halign-center valign-top">lifecycle_state++</th>
+<th class="tableblock halign-center valign-top">composition category</th>
+<th class="tableblock halign-center valign-top">composition validity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">persistent</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">invalid</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">change_type+</th>
+<th class="tableblock halign-center valign-top">lifecycle_state++</th>
+<th class="tableblock halign-center valign-top">composition category</th>
+<th class="tableblock halign-center valign-top">composition validity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">event</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">invalid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">persistent</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>These CONTRIBUTIONs should be <mark>REJECTED</mark>.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>+ Note: for other change types than creation, the first commit will be rejected, so not included in the table those cases but should be tested.</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>++ Note: the incomplete cases should be equal to the complete, because the flag is just adding semantics about the content, not setting how the content should be processed.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_b_3_ehr_status_commit_contribution_test_data_sets"><a class="anchor" href="#_b_3_ehr_status_commit_contribution_test_data_sets"></a>10.2.3. B.3. EHR_STATUS Commit CONTRIBUTION Test Data Sets</h4>
+<div class="sect4">
+<h5 id="_b_3_1_combinations_for_data_sets"><a class="anchor" href="#_b_3_1_combinations_for_data_sets"></a>10.2.3.1. B.3.1. Combinations for data sets</h5>
+<div class="paragraph">
+<p>The following <span class="accepted">ACCEPTED</span> and <span class="rejected">REJECTED</span> apply under any of these scenarios:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The server has an EHR with the default EHR_STATUS (the EHR was created without providing an EHR_STATUS).</p>
+</li>
+<li>
+<p>The server has an EHR created by providing an EHR_STATUS.</p>
+</li>
+<li>
+<p>The server has an EHR with modifications already done to it’s EHR_STATUS (consecutive modifications).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Reject Cases:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>CONTRIBUTIONS with VERSION, where VERSION.commit_audit.change_type IN [<code>creation</code>, <code>deleted</code>] should be <span class="rejected">REJECTED</span>, because the default EHR_STATUS was already created in the EHR, and the EHR_STATUS can’t be deleted once created.</p>
+</li>
+<li>
+<p>CONTRIBUTIONS with VERSION, where VERSION.lifecycle_state = <code>incomplete</code> should be <mark>REJECTED</mark>, because the <code>incomplete</code> state doesn’t apply to EHR_STATUS. Though there is an open issue related to this:
+<a href="https://openehr.atlassian.net/browse/SPECPR-368" class="bare">https://openehr.atlassian.net/browse/SPECPR-368</a></p>
+</li>
+<li>
+<p>Any other case with an <code>invalid</code> EHR_STATUS in VERSION should also be <span class="rejected">REJECTED</span>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Accepted Cases:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>CONTRIBUTIONS with VERSION where VERSION.commit_audit.change_type IN [<code>modification</code>, <code>amendment</code>] and <code>valid</code> EHR_STATUS, should be <span class="accepted">ACCEPTED</span>. This inscludes the following combinations for EHR_STATUS:</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">is_modifiable</th>
+<th class="tableblock halign-center valign-top">is_queryable</th>
+<th class="tableblock halign-center valign-top">subject.external_ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">HIER_OBJECT_ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">GENERIC_ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">NULL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">HIER_OBJECT_ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">GENERIC_ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">NULL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">HIER_OBJECT_ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">GENERIC_ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">NULL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">HIER_OBJECT_ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">GENERIC_ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">NULL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">HIER_OBJECT_ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">GENERIC_ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">NULL</p></td>
+</tr>
+</tbody>
+</table>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Note: Since EHR_STATUS is LOCATABLE, is should have an archetype_id assigned. It is recommended to test the combination described above, combined with different values for EHR_STATUS.archetype_id</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_b_4_folder_commit_contribution_test_data_sets"><a class="anchor" href="#_b_4_folder_commit_contribution_test_data_sets"></a>10.2.4. B.4. FOLDER Commit CONTRIBUTION Test Data Sets</h4>
+<div class="paragraph">
+<p>All the datasets are specified at the EHR.directory level, since that is the current level of operation of the openEHR REST API for FOLDERs to create, update or delete.</p>
+</div>
+<div class="sect4">
+<h5 id="_b_4_1_combinations_for_data_sets"><a class="anchor" href="#_b_4_1_combinations_for_data_sets"></a>10.2.4.1. B.4.1. Combinations for data sets</h5>
+<div class="paragraph">
+<p><code>Valid</code> payload should include these cases:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>minimal directory</p>
+</li>
+<li>
+<p>directory with items</p>
+</li>
+<li>
+<p>directry with subfolders</p>
+</li>
+<li>
+<p>directory with items and subfolders</p>
+</li>
+<li>
+<p>directory with items and subfolders with items</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Sample structure of FOLDERs with items:</p>
+</div>
+<div class="paragraph">
+<p><span class="image">Folders with items</span></p>
+</div>
+<div class="paragraph">
+<p>Table of data combinations:</p>
+</div>
+<table id="folder_commit" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">change_type</th>
+<th class="tableblock halign-center valign-top">lifecycle_state</th>
+<th class="tableblock halign-center valign-top">payload</th>
+<th class="tableblock halign-center valign-top">expected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">creation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete / incomplete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">accepted</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">amendment / modification</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">complete / incomplete</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">accepted</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">deleted</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">deleted</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">valid</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">accepted</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Any <code>invalid</code> payload should be <span class="rejected">REJECTED</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_c_commit_contribution_of_compositions_flows"><a class="anchor" href="#_c_commit_contribution_of_compositions_flows"></a>10.3. C. Commit CONTRIBUTION of COMPOSITIONs Flows</h3>
+<div class="sect3">
+<h4 id="_c_1_main_flow_successfully_commit_contribution_of_versioncomposition"><a class="anchor" href="#_c_1_main_flow_successfully_commit_contribution_of_versioncomposition"></a>10.3.1. C.1. Main flow: successfully commit CONTRIBUTION of <code>VERSION&lt;COMPOSITION&gt;</code></h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>OPTs for each valid cases hould be loaded on the server</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The EHR with ehr_id should have a new CONTRIBUTION</p>
+</li>
+<li>
+<p>The ID(s) of the created VERSION(s) are correct</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>the version ID matches the change_type executed (creation = 1, modification/amendment = 2, 3, …)</p>
+</li>
+<li>
+<p>ID(s) can be used to retrieve a <code>VERSION&lt;COMPOSITION&gt;</code>)</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with the existing ehr_id and valid data sets</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The COMPOSITIONS reference existing OPTs on the server</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive and retrieve the id of the CONTRIBUTION just created</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_2_alternative_flow_1_commit_contribution_with_errors_in_versioncomposition"><a class="anchor" href="#_c_2_alternative_flow_1_commit_contribution_with_errors_in_versioncomposition"></a>10.3.2. C.2. Alternative flow 1: commit CONTRIBUTION with errors in <code>VERSION&lt;COMPOSITION&gt;</code></h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>OPTs for each valid cases hould be loaded on the server</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and the invalid <code>VERSION&lt;COMPOSITION&gt;</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The COMPOSITIONS reference existing OPTs on the server</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be negative and retrieve some info about the errors found on the data committed</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_3_alternative_flow_2_commit_invalid_contribution_no_versions_provided"><a class="anchor" href="#_c_3_alternative_flow_2_commit_invalid_contribution_no_versions_provided"></a>10.3.3. C.3. Alternative flow 2: commit invalid CONTRIBUTION (no VERSIONs provided)</h4>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Note: since there are no VERSIONs in the CONTRIBUTION, this case is not
+specific to COMPOSITION.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and no data in the CONTRIBUTION</p>
+</li>
+<li>
+<p>The result should be negative and retrieve an error related to the empty list of <code>VERSION&lt;COMPOSITION&gt;</code> in the CONTRIBUTION</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_4_alternative_flow_3_commit_contribution_with_a_mix_of_valid_and_invalid_versioncomposition"><a class="anchor" href="#_c_4_alternative_flow_3_commit_contribution_with_a_mix_of_valid_and_invalid_versioncomposition"></a>10.3.4. C.4. Alternative flow 3: commit CONTRIBUTION with a mix of valid and invalid <code>VERSION&lt;COMPOSITION&gt;</code></h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>OPTs for each valid cases hould be loaded on the server</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and multiple <code>VERSION&lt;COMPOSITION&gt;</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Some VERSIONs are valid, some aree invalid</p>
+</li>
+<li>
+<p>The COMPOSITIONS reference existing OPTs on the server</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be negative and retrieve an error related invalid <code>VERSION&lt;COMPOSITION&gt;</code></p>
+</li>
+</ol>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Note: the whole commit should behave like a transaction and fail, no CONTRIBUTIONS or VERSIONS should be created on the server.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_5_alternative_flow_4_commit_contributions_versioning_event_compositions"><a class="anchor" href="#_c_5_alternative_flow_4_commit_contributions_versioning_event_compositions"></a>10.3.5. C.5. Alternative flow 4: commit CONTRIBUTIONS versioning event COMPOSITIONs</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>OPTs for each valid cases hould be loaded on the server</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>There should be two VERSIONS of the same COMPOSITION in the EHR with ehr_id</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and a valid <code>VERSION&lt;COMPOSITION&gt;</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The COMPOSITION has category = event</p>
+</li>
+<li>
+<p>The COMPOSITION reference existing an OPT on the server</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive, returning the created CONTRIBUTION with the ID of the created <code>VERSION&lt;COMPOSITION&gt;</code></p>
+</li>
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and a valid <code>VERSION&lt;COMPOSITION&gt;</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The COMPOSITION should have the same template_id as the one used in 1.</p>
+</li>
+<li>
+<p>The VERSION change_type = modification and preceding_version_uid = version id returned in 2.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive and the returned version id should reflect it’s a new version of an existing COMPOSITION created in 1. (has the same OBJECT_VERSION_ID with version number = 2)</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_6_alternative_flow_5_commit_contributions_versioning_persistent_composition"><a class="anchor" href="#_c_6_alternative_flow_5_commit_contributions_versioning_persistent_composition"></a>10.3.6. C.6. Alternative flow 5: commit CONTRIBUTIONS versioning persistent COMPOSITION</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>OPTs for each valid cases hould be loaded on the server</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>There will be two VERSIONS of the same COMPOSITION in the EHR with ehr_id.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and a valid <code>VERSION&lt;COMPOSITION&gt;</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The COMPOSITION has category = persistent</p>
+</li>
+<li>
+<p>The COMPOSITION references an existing OPT on the server</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive, returning the version id for the created VERSION</p>
+</li>
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and a valid <code>VERSION&lt;COMPOSITION&gt;</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The COMPOSITION should have the same template_id as the one used in 1.</p>
+</li>
+<li>
+<p>The VERSION change_type = modification</p>
+</li>
+<li>
+<p>The VERSION preceding_version_uid = version id returned in 2.,</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive and the returned version id should reflect it is a new version of an existing COMPOSITION created in 1. (has the same OBJECT_VERSION_ID with version number = 2)</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_7_alternative_flow_6_commit_contributions_deleting_a_composition"><a class="anchor" href="#_c_7_alternative_flow_6_commit_contributions_deleting_a_composition"></a>10.3.7. C.7. Alternative flow 6: commit CONTRIBUTIONS deleting a COMPOSITION</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>OPTs for each valid cases hould be loaded on the server</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Two VERSIONS of the same COMPOSITION should exist in the EHR with ehr_id</p>
+</li>
+<li>
+<p>The VERSIONED_OBJECT should be logically deleted</p>
+</li>
+</ol>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Note: the effect of a VERSIONED_OBJECT being deleted might vary in different implementations. This needs further specification at the <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html">openEHR Service Model</a></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and a valid <code>VERSION&lt;COMPOSITION&gt;</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The COMPOSITION references an existing OPT on the server</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive, returning the version id for the created VERSION</p>
+</li>
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and a valid <code>VERSION&lt;COMPOSITION&gt;</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The COMPOSITION should reference the same template_id as the one used in 1.</p>
+</li>
+<li>
+<p>The VERSION has change_type = deleted</p>
+</li>
+<li>
+<p>The VERSION preceding_version_uid = version id returned in 2.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive and the returned version id should reflect it is a new version of an existing COMPOSITION created in 1. (has the same OBJECT_VERSION_ID with version number = 2, which should be
+deleted)</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_8_alternative_flow_7_commit_contributions_for_versioning_the_second_commit_contains_errors"><a class="anchor" href="#_c_8_alternative_flow_7_commit_contributions_for_versioning_the_second_commit_contains_errors"></a>10.3.8. C.8. Alternative flow 7: commit CONTRIBUTIONS for versioning, the second commit contains errors</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>OPTs for each valid cases hould be loaded on the server</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>There will be just one VERSION in the EHR with ehr_id</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and a valid <code>VERSION&lt;COMPOSITION&gt;</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The COMPOSITION references an existing OPT on the server</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive, returning the version id for the created VERSION</p>
+</li>
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and a valid <code>VERSION&lt;COMPOSITION&gt;</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The COMPOSITION references the same template_id as the one used in 1.</p>
+</li>
+<li>
+<p>The VERSION has change_type = modification</p>
+</li>
+<li>
+<p>The VERSION has preceding_version_uid = version id returned in 2.</p>
+</li>
+<li>
+<p>The COMPOSITION is one of the invalid data sets</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be negative, and retrieve some info about the errors found on the data committed</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_9_alternative_flow_8_commit_contributions_for_versioning_a_persistent_composition_the_second_commit_has_change_type_creation"><a class="anchor" href="#_c_9_alternative_flow_8_commit_contributions_for_versioning_a_persistent_composition_the_second_commit_has_change_type_creation"></a>10.3.9. C.9. Alternative flow 8: commit CONTRIBUTIONS for versioning a persistent COMPOSITION, the second commit has change type creation</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>OPTs for each valid cases hould be loaded on the server</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>There will be just one VERSION in the EHR with ehr_id</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and a valid <code>VERSION&lt;COMPOSITION&gt;</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The COMPOSITION references an existing OPT on the server</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive, returning the version id for the created VERSION</p>
+</li>
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and a valid <code>VERSION&lt;COMPOSITION&gt;</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The COMPOSITION refernces the same template_id as the one used in 1.</p>
+</li>
+<li>
+<p>The VERSION has change_type = creation</p>
+</li>
+<li>
+<p>The VERSION has preceding_version_uid = version id returned in 2.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be negative, and retrieve some info about the wrong change type (see notes)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Notes:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Current criteria is: only one &#8216;create&#8217; operation is allowed for persistent COMPOSITIONs, the next operations over an existing persistent COMPOSITION should be &#8216;modifications&#8217;.</p>
+</li>
+<li>
+<p>This is under debate in the openEHR SEC since some implementations permit &#8216;persistent COMPOSIITONS&#8217; to have more than one instance in the same EHR and some others not. This is due to the lack of information in the openEHR specifications. There is also a discussion to define other types of categories for COMPOSITIONs to allow different behaviors. Ref: <a href="https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51/3" class="bare">https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51/3</a></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_10_alternative_flow_9_commit_contribution_with_composition_referencing_a_non_existing_opt"><a class="anchor" href="#_c_10_alternative_flow_9_commit_contribution_with_composition_referencing_a_non_existing_opt"></a>10.3.10. C.10. Alternative flow 9. commit CONTRIBUTION with COMPOSITION referencing a non existing OPT</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>There are no OPTs loaded on the server</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and a valid <code>VERSION&lt;COMPOSITION&gt;</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The COMPOSITION references a random OPT template_id</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be negative and retrieve an error related to the missing OPT</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_d_commit_contributions_of_ehr_status_flows"><a class="anchor" href="#_d_commit_contributions_of_ehr_status_flows"></a>10.4. D. Commit CONTRIBUTIONS of EHR_STATUS Flows</h3>
+<div class="sect3">
+<h4 id="_d_1_main_flow_successfully_commit_contribution_of_versionehr_status"><a class="anchor" href="#_d_1_main_flow_successfully_commit_contribution_of_versionehr_status"></a>10.4.1. D.1. Main flow: successfully commit CONTRIBUTION of <code>VERSION&lt;EHR_STATUS&gt;</code></h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>The EHR contains a default EHR_STATUS</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The EHR should have a new CONTRIBUTION</p>
+</li>
+<li>
+<p>The EHR should have a new VERSION for the EHR_STATUS</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and the valid data sets (see section B.3.)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>For EHR_STATUS CONTRIBUTIONs, the change_type is always <code>modification</code> or <code>amendment</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive and retrieve the id of the CONTRIBUTION just created</p>
+</li>
+<li>
+<p>Verify expected CONTRIBUTION uids and CONTRIBUTION count for the EHR with ehr_id</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_d_2_alternative_flow_1_successfully_commit_contribution_of_versionehr_status_full_ehr_status"><a class="anchor" href="#_d_2_alternative_flow_1_successfully_commit_contribution_of_versionehr_status_full_ehr_status"></a>10.4.2. D.2. Alternative flow 1: successfully commit CONTRIBUTION of <code>VERSION&lt;EHR_STATUS&gt;</code>, full EHR_STATUS</h4>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Note: this case is the same as D.1. but the precondition 2. is different.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>The EHR contains a full EHR_STATUS (all the optional information is set, for instance subject.external_ref)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The EHR should have a new CONTRIBUTION</p>
+</li>
+<li>
+<p>The EHR should have a new VERSION for the EHR_STATUS</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and the valid data sets (see section B.3.)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Use change_type = <code>modification</code> or <code>amendment</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be positive and retrieve the id of the CONTRIBUTION just created</p>
+</li>
+<li>
+<p>Verify expected CONTRIBUTION uids and CONTRIBUTION count for the EHR with ehr_id</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_d_3_alternative_flow_2_fail_commit_contribution_of_versionehr_status_wrong_change_type"><a class="anchor" href="#_d_3_alternative_flow_2_fail_commit_contribution_of_versionehr_status_wrong_change_type"></a>10.4.3. D.3. Alternative flow 2: fail commit CONTRIBUTION of <code>VERSION&lt;EHR_STATUS&gt;</code>, wrong change_type</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>The EHR has the default EHR_STATUS</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and the valid data sets (see section B.3.)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Use change_type = <code>create</code> and <code>delete</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be negative and retrieve an error related to the EHR_STATUS already existing for the EHR</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_d_4_alternative_flow_3_fail_commit_contribution_of_versionehr_status_invalid_ehr_status"><a class="anchor" href="#_d_4_alternative_flow_3_fail_commit_contribution_of_versionehr_status_invalid_ehr_status"></a>10.4.4. D.4. Alternative flow 3: fail commit CONTRIBUTION of <code>VERSION&lt;EHR_STATUS&gt;</code>, invalid EHR_STATUS</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>The EHR has the default EHR_STATUS</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and the invalid data sets (see section B.3.)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Use change_type = <code>modification</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be negative and retrieve an error related to the invalid EHR_STATUS</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_e_commit_contributions_of_folder_flows"><a class="anchor" href="#_e_commit_contributions_of_folder_flows"></a>10.5. E. Commit CONTRIBUTIONS of FOLDER Flows</h3>
+<div class="sect3">
+<h4 id="_e_1_alternative_flow_12_successfully_commit_contribution_of_versionfolder"><a class="anchor" href="#_e_1_alternative_flow_12_successfully_commit_contribution_of_versionfolder"></a>10.5.1. E.1. Alternative flow 12: successfully commit CONTRIBUTION of <code>VERSION&lt;FOLDER&gt;</code></h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>The EHR doesn’t have a directory (root FOLDER)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The EHR with should have a new CONTRIBUTION and a root FOLDER.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and the valid data sets (see B.4.) and change_type = <code>creation</code></p>
+</li>
+<li>
+<p>The result should be positive and retrieve the id of the CONTRIBUTION just created</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_e_2_alternative_flow_13_fail_commit_contribution_of_versionfolder_folder_exists"><a class="anchor" href="#_e_2_alternative_flow_13_fail_commit_contribution_of_versionfolder_folder_exists"></a>10.5.2. E.2. Alternative flow 13: fail commit CONTRIBUTION of <code>VERSION&lt;FOLDER&gt;</code> FOLDER exists</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>The EHR has a directory (root FOLDER)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and the valid data sets (see B.4.) and change_type = <code>creation</code></p>
+</li>
+<li>
+<p>The result should be negative, and retrieve an error related to the wrong change_type because the root FOLDER already exists</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_e_3_alternative_flow_14_fail_commit_contribution_of_versionfolder_update"><a class="anchor" href="#_e_3_alternative_flow_14_fail_commit_contribution_of_versionfolder_update"></a>10.5.3. E.3. Alternative flow 14: fail commit CONTRIBUTION of <code>VERSION&lt;FOLDER&gt;</code> update</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>The EHR doesn’t have a directory (root FOLDER)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and the valid data sets</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Use change_type = <code>modification</code></p>
+</li>
+<li>
+<p>Use a random <code>preceding_version_uid</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The result should be negative since, and retrieve an error related to the wrong change_type, because it’s trying to modify something that doesn’t exist</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_e_4_alternative_flow_15_successful_commit_contribution_of_versionfolder_update"><a class="anchor" href="#_e_4_alternative_flow_15_successful_commit_contribution_of_versionfolder_update"></a>10.5.4. E.4. Alternative flow 15: successful commit CONTRIBUTION of <code>VERSION&lt;FOLDER&gt;</code> update</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>The EHR has a directory (root FOLDER)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The EHR should have a new CONTRIBUTION and a new VERSION for the root FOLDER</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke commit CONTRIBUTION service with an existing ehr_id and the valid data sets with change_type = <code>modification</code> or <code>amendment</code></p>
+</li>
+<li>
+<p>The result should be positive and retrieve the id of the CONTRIBUTION just created</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_f_list_contributions"><a class="anchor" href="#_f_list_contributions"></a>10.6. F. List CONTRIBUTIONs</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Note: CONTRIBUTIONs can contain COMPOSITION, EHR_STATUS or FOLDER, even a mix of those. Each flow below applies to a specific type, except when &#8216;ANY&#8217; is mentioned, in which case the flow applies to any of those three types.</p>
+</div>
+</blockquote>
+</div>
+<div class="sect3">
+<h4 id="_f_1_main_flow_list_contributions_of_existing_ehr_with_a_just_committed_contribution_composition"><a class="anchor" href="#_f_1_main_flow_list_contributions_of_existing_ehr_with_a_just_committed_contribution_composition"></a>10.6.1. F.1. Main flow: list CONTRIBUTIONS of existing EHR with a just committed CONTRIBUTION (COMPOSITION)</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>The EHR as a CONTRIBUTION with known uid</p>
+</li>
+<li>
+<p>The CONTRIBUTION contains a <code>VERSION&lt;COMPOSITION&gt;</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke list CONTRIBUTIONS service with the existing ehr_id</p>
+</li>
+<li>
+<p>The result should be positive and retrieve a list of CONTRIBUTIONs with one item</p>
+</li>
+<li>
+<p>The CONTRIBUTION should contain a <code>VERSION&lt;COMPOSITION&gt;</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_f_2_alternative_flow_1_list_contributions_of_existing_ehr_with_no_contributions_any"><a class="anchor" href="#_f_2_alternative_flow_1_list_contributions_of_existing_ehr_with_no_contributions_any"></a>10.6.2. F.2. Alternative flow 1: list CONTRIBUTIONS of existing EHR with no CONTRIBUTIONS (ANY)</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id should exist</p>
+</li>
+<li>
+<p>The EHR has no CONTRIBUTIONs</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke get CONTRIBUTIONS service by the existing ehr_id</p>
+</li>
+<li>
+<p>The result should be positive and retrieve an empty list</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_f_3_alternative_flow_2_lis_contributions_of_non_existing_ehr_any"><a class="anchor" href="#_f_3_alternative_flow_2_lis_contributions_of_non_existing_ehr_any"></a>10.6.3. F.3. Alternative flow 2: lis CONTRIBUTIONS of non existing EHR (ANY)</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>There are no EHRs on the server</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke list CONTRIBUTIONS service with a random ehr_id</p>
+</li>
+<li>
+<p>The result should be negative and retrieve an error related to &#8220;EHR with ehr_id doesn’t exist&#8221;</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_f_4_alternative_flow_3_list_contributions_of_existing_ehr_with_a_just_committed_contribution_ehr_status"><a class="anchor" href="#_f_4_alternative_flow_3_list_contributions_of_existing_ehr_with_a_just_committed_contribution_ehr_status"></a>10.6.4. F.4. Alternative flow 3: list CONTRIBUTIONS of existing EHR with a just committed CONTRIBUTION (EHR_STATUS)</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>The EHR has a CONTRIBUTION with known uid</p>
+</li>
+<li>
+<p>The CONTRIBUTION contains a <code>VERSION&lt;EHR_STATUS&gt;</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke list CONTRIBUTIONS service by the existing ehr_id</p>
+</li>
+<li>
+<p>The result should be positive and retrieve a list of CONTRIBUTIONS with one item</p>
+</li>
+<li>
+<p>The CONTRIBUTION should contain an EHR_STATUS</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_f_5_alternative_flow_4_list_contributions_of_existing_ehr_with_a_just_committed_contribution_folder"><a class="anchor" href="#_f_5_alternative_flow_4_list_contributions_of_existing_ehr_with_a_just_committed_contribution_folder"></a>10.6.5. F.5. Alternative flow 4: list CONTRIBUTIONS of existing EHR with a just committed CONTRIBUTION (FOLDER)</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR with known ehr_id exists</p>
+</li>
+<li>
+<p>The EHR has a CONTRIBUTION with known uid</p>
+</li>
+<li>
+<p>The CONTRIBUTION contains a <code>VERSION&lt;FOLDER&gt;</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke get CONTRIBUTIONS service by the existing ehr_id</p>
+</li>
+<li>
+<p>The result should be positive and retrieve a list of CONTRIBUTIONS with one item</p>
+</li>
+<li>
+<p>The CONTRIBUTION should contain a FOLDER</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_g_has_contribution"><a class="anchor" href="#_g_has_contribution"></a>10.7. G. Has CONTRIBUTION</h3>
+<div class="sect3">
+<h4 id="_g_1_main_flow_has_contribution_with_existing_contribution"><a class="anchor" href="#_g_1_main_flow_has_contribution_with_existing_contribution"></a>10.7.1. G.1. Main flow: has CONTRIBUTION with existing CONTRIBUTION</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR should exist in the system with a known ehr_id</p>
+</li>
+<li>
+<p>The EHR has a CONTRIBUTION with known uid</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke has CONTRIBUTION service with the known ehr_id and CONTRIBUTION uid</p>
+</li>
+<li>
+<p>The result should be <code>true</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_g_2_alternative_flow_1_has_contribution_on_empty_ehr"><a class="anchor" href="#_g_2_alternative_flow_1_has_contribution_on_empty_ehr"></a>10.7.2. G.2. Alternative flow 1: has CONTRIBUTION on empty EHR</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR should exists in the system with a known ehr_id</p>
+</li>
+<li>
+<p>The EHR doesn’t have any CONTRIBUTIONS</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke has CONTRIBUTION service with the known ehr_id and a random CONTRIBUTION uid</p>
+</li>
+<li>
+<p>The result should be <code>false</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_g_3_alternative_flow_2_has_contribution_ehr_doesnt_exist"><a class="anchor" href="#_g_3_alternative_flow_2_has_contribution_ehr_doesnt_exist"></a>10.7.3. G.3. Alternative flow 2: has CONTRIBUTION, EHR doesn’t exist</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>There are no EHRs on the server</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke has CONTRIBUTION service with a random ehr_id and a random CONTRIBUTION uid</p>
+</li>
+<li>
+<p>The result should be negative, and retrieve an error related to &#8220;the EHR with ehd_id doesn’t exist&#8221;</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_g_4_alternative_flow_3_has_contribution_ehr_with_contributions_but_contribution_doesnt_exist"><a class="anchor" href="#_g_4_alternative_flow_3_has_contribution_ehr_with_contributions_but_contribution_doesnt_exist"></a>10.7.4. G.4. Alternative flow 3: has CONTRIBUTION, EHR with CONTRIBUTIONS, but CONTRIBUTION doesn’t exist</h4>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR should exist on the server with a known ehr_id</p>
+</li>
+<li>
+<p>The EHR has CONTRIBUTIONs</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke has CONTRIBUTION service with the known ehr_id and a random, not existing CONTRIBUTION uid</p>
+</li>
+<li>
+<p>The result should be <code>false</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_h_get_contribution"><a class="anchor" href="#_h_get_contribution"></a>10.7.5. H. Get CONTRIBUTION</h4>
+<div class="sect4">
+<h5 id="_h_1_main_flow_get_contribution_with_existing_contribution"><a class="anchor" href="#_h_1_main_flow_get_contribution_with_existing_contribution"></a>10.7.5.1. H.1. Main flow: get CONTRIBUTION with existing CONTRIBUTION</h5>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR should exist in the system with a known ehr_id</p>
+</li>
+<li>
+<p>The EHR has a CONTRIBUTION with known uid</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke has CONTRIBUTION service with the known ehr_id and CONTRIBUTION uid</p>
+</li>
+<li>
+<p>The result should be the existing CONTRIBUTION</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_h_2_alternative_flow_1_get_contribution_on_empty_ehr"><a class="anchor" href="#_h_2_alternative_flow_1_get_contribution_on_empty_ehr"></a>10.7.5.2. H.2. Alternative flow 1: get CONTRIBUTION on empty EHR</h5>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR should exists in the system with a known ehr_id</p>
+</li>
+<li>
+<p>The EHR doesn’t have any CONTRIBUTIONS</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke has CONTRIBUTION service with the known ehr_id and a random CONTRIBUTION uid</p>
+</li>
+<li>
+<p>The result should be negative and retrieve an error related to the non-existing CONTRIBUTION</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_h_3_alternative_flow_2_get_contribution_ehr_doesnt_exist"><a class="anchor" href="#_h_3_alternative_flow_2_get_contribution_ehr_doesnt_exist"></a>10.7.5.3. H.3. Alternative flow 2: get CONTRIBUTION, EHR doesn’t exist</h5>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>There are no EHRs on the server</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke has CONTRIBUTION service with a random ehr_id and a random CONTRIBUTION uid</p>
+</li>
+<li>
+<p>The result should be negative, and retrieve an error related to &#8220;the EHR with ehd_id doesn’t exist&#8221;</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_h_4_alternative_flow_3_get_contribution_ehr_with_contributions_but_contribution_doesnt_exist"><a class="anchor" href="#_h_4_alternative_flow_3_get_contribution_ehr_with_contributions_but_contribution_doesnt_exist"></a>10.7.5.4. H.4. Alternative flow 3: get CONTRIBUTION, EHR with CONTRIBUTIONS, but CONTRIBUTION doesn’t exist</h5>
+<div class="paragraph">
+<p><strong>Preconditions:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An EHR should exist on the server with a known ehr_id</p>
+</li>
+<li>
+<p>The EHR has CONTRIBUTIONs</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Postconditions:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+<div class="paragraph">
+<p><strong>Flow:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Invoke has CONTRIBUTION service with the known ehr_id and a random, non-existing CONTRIBUTION uid</p>
+</li>
+<li>
+<p>The result should be negative and retrieve an error related to the non-existing CONTRIBUTION</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_functional_conformance_demographic_component"><a class="anchor" href="#_functional_conformance_demographic_component"></a>11. Functional Conformance: Demographic Component</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Specifications:</p>
@@ -3452,7 +7893,7 @@ master06.01.02-ehr. The result should be negative and the result should include 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_functional_conformance_querying_component"><a class="anchor" href="#_functional_conformance_querying_component"></a>10. Functional Conformance: Querying Component</h2>
+<h2 id="_functional_conformance_querying_component"><a class="anchor" href="#_functional_conformance_querying_component"></a>12. Functional Conformance: Querying Component</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Specifications:</p>
@@ -3547,7 +7988,7 @@ master06.01.02-ehr. The result should be negative and the result should include 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_functional_conformance_admin_product_component"><a class="anchor" href="#_functional_conformance_admin_product_component"></a>11. Functional Conformance: Admin Product Component</h2>
+<h2 id="_functional_conformance_admin_product_component"><a class="anchor" href="#_functional_conformance_admin_product_component"></a>13. Functional Conformance: Admin Product Component</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Specifications:</p>
@@ -3657,7 +8098,7 @@ master06.01.02-ehr. The result should be negative and the result should include 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_functional_conformance_messaging_component"><a class="anchor" href="#_functional_conformance_messaging_component"></a>12. Functional Conformance: Messaging Component</h2>
+<h2 id="_functional_conformance_messaging_component"><a class="anchor" href="#_functional_conformance_messaging_component"></a>14. Functional Conformance: Messaging Component</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Specifications:</p>
@@ -3772,10 +8213,10 @@ master06.01.02-ehr. The result should be negative and the result should include 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_non_functional_conformance"><a class="anchor" href="#_non_functional_conformance"></a>13. Non-Functional Conformance</h2>
+<h2 id="_non_functional_conformance"><a class="anchor" href="#_non_functional_conformance"></a>15. Non-Functional Conformance</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_security_and_privacy"><a class="anchor" href="#_security_and_privacy"></a>13.1. Security and Privacy</h3>
+<h3 id="_security_and_privacy"><a class="anchor" href="#_security_and_privacy"></a>15.1. Security and Privacy</h3>
 <div class="paragraph">
 <p>Specifications:</p>
 </div>
@@ -3854,10 +8295,10 @@ master06.01.02-ehr. The result should be negative and the result should include 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_application_programmer_interfaces_apis"><a class="anchor" href="#_application_programmer_interfaces_apis"></a>14. Application Programmer Interfaces (APIs)</h2>
+<h2 id="_application_programmer_interfaces_apis"><a class="anchor" href="#_application_programmer_interfaces_apis"></a>16. Application Programmer Interfaces (APIs)</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_rest_api_component"><a class="anchor" href="#_rest_api_component"></a>14.1. REST API Component</h3>
+<h3 id="_rest_api_component"><a class="anchor" href="#_rest_api_component"></a>16.1. REST API Component</h3>
 <div class="paragraph">
 <p>Specifications:</p>
 </div>
@@ -3950,7 +8391,7 @@ master06.01.02-ehr. The result should be negative and the result should include 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_profiles"><a class="anchor" href="#_profiles"></a>15. Profiles</h2>
+<h2 id="_profiles"><a class="anchor" href="#_profiles"></a>17. Profiles</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The schedule above describes capabilities of openEHR platform products that can be tested against the published specifiations. These capabilities are grouped into <em>profiles</em> to provide a guide to what constitutes the required functionality for particular category of solution.</p>
@@ -3965,7 +8406,7 @@ master06.01.02-ehr. The result should be negative and the result should include 
 <p>Producers of tender specifications and procuring organsations should create the Profile(s) they require. This should be done by adopting either the CORE or STANDARD base profiles and then adding in the set of options required.</p>
 </div>
 <div class="sect2">
-<h3 id="_default_profiles"><a class="anchor" href="#_default_profiles"></a>15.1. Default Profiles</h3>
+<h3 id="_default_profiles"><a class="anchor" href="#_default_profiles"></a>17.1. Default Profiles</h3>
 <div class="paragraph">
 <p>The profiles used below are as follows:</p>
 </div>
@@ -3986,7 +8427,7 @@ master06.01.02-ehr. The result should be negative and the result should include 
 <p>In order to obtain <code>CORE</code> or <code>STANDARD</code> conformance, all mentioned capabilities must be met in testing. The <code>OPTIONS</code> profile is a catch-all pseudo-profile that covers all testable capabilities not included in <code>CORE</code> or <code>STANDARD</code>; <code>OPTIONS</code> is obtained if any optional capability is passed in testing.</p>
 </div>
 <div class="sect3">
-<h4 id="_functional"><a class="anchor" href="#_functional"></a>15.1.1. Functional</h4>
+<h4 id="_functional"><a class="anchor" href="#_functional"></a>17.1.1. Functional</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4221,7 +8662,7 @@ master06.01.02-ehr. The result should be negative and the result should include 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_non_functional"><a class="anchor" href="#_non_functional"></a>15.1.2. Non-Functional</h4>
+<h4 id="_non_functional"><a class="anchor" href="#_non_functional"></a>17.1.2. Non-Functional</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4258,7 +8699,7 @@ master06.01.02-ehr. The result should be negative and the result should include 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_other_non_functional"><a class="anchor" href="#_other_non_functional"></a>15.1.3. Other Non-Functional</h4>
+<h4 id="_other_non_functional"><a class="anchor" href="#_other_non_functional"></a>17.1.3. Other Non-Functional</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -4284,7 +8725,7 @@ master06.01.02-ehr. The result should be negative and the result should include 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-11-23 15:01:00 UTC
+Last updated 2021-11-24 23:23:06 UTC
 </div>
 </div>
 </body>

@@ -1,3 +1,4 @@
+[[_func_conf_def_component]]
 = Functional Conformance: Definitions Component
 
 // some useful variables

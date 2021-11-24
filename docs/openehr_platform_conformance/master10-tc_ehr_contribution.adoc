@@ -1,0 +1,901 @@
+= Functional Conformance: EHR / CONTRIBUTION Component
+
+// some useful variables
+:i_ehr_service_link: {openehr_sm_openehr_platform}#_i_ehr_service_interface
+:i_ehr_link: {openehr_sm_openehr_platform}#_i_ehr_interface
+:i_ehr_status_link: {openehr_sm_openehr_platform}#_i_ehr_status_interface
+:i_ehr_directory_link: {openehr_sm_openehr_platform}#_i_ehr_directory_interface
+:i_ehr_contribution_link: {openehr_sm_openehr_platform}#_i_ehr_contribution_interface
+
+Items under this validation suite conceptually use these abstract interfaces:
+
+* https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_ehr_contribution_interface[I_EHR_CONTRIBUTION]
+
+Reference:
+https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_openehr_platform_model
+
+This test suite depends on other test suites:
+
+* KNOWLEDGE (we need OPTs)
+* EHR (we need EHRs)
+
+== A. General Requirements
+
+. The server under test should support at least OPTs, 1.4 or 2, but OPT 1.4 if more frequent since modeling tools supporting this were around for a long time. Could also support ADL, 1.4 or 2.
+. The server should support at least one of the XML or JSON representations of CONTRIBUTIONs for committing data, and integrate the corresponding schemas (XML or JSON) to validate data syntactically (before validating against an OPT).
+
+== B. CONTRIBUTION Test Case Data Sets
+
+=== B.1. General Commit CONTRIBUTION Data Sets
+
+. CONTRIBUTIONS with single valid `+VERSION<COMPOSITION>+` (minimal, one for each entry type)
+. CONTRIBUTIONS with multiple valid `+VERSION<COMPOSITION>+` (reuse the minimal ^)
+. CONTRIBUTION with single valid `+VERSION<COMPOSITION>+` with maximal data sets
+. Empty CONTRIBUTION (no VERSIONS)
+. CONTRIBUTIONS with invalid `+VERSION<COMPOSITION>+`
+.. Invalid data
+.. Wrong change type
+.. Wrong lifecycle
+. CONTRIBUTIONS with multiple `+VERSION<COMPOSITION>+`, with mixed valid and invalid ones
+
+____
+Note: these cases do not consider which type is contained in the VERSIONs, it could be COMPOSITION, FOLDER, EHR_STATUS, etc.
+____
+
+=== B.2. COMPOSITION Commit CONTRIBUTION Data Sets
+
+Since there are many combinations of data that could be used for testing the Commit CONTRIBUTION service, we decided to create three main kinds of CONTRIBUTIONs that should be tested:
+
+. Valid
+.. minimal COMPOSITIONs with one type of ENTRY (one ENTRY each, all ENTRIES covered) 
+.. maximal COMPOSITION (all data types, all ENTRY types, and SECTIONs)
+.. a persistent COMPOSITION (e.g. problem list, medication list, immunization list, …)
+.. time series COMPOSITION (observation with many events, e.g. CPR compressions intervals)
+.. COMPOSITION with alternative types (e.g. lab result DV_COUNT, DV_QUANTITY and DV_CODED_TEXT)
+.. COMPOSITION with DV_CODED_TEXT instance on nodes declared as DV_TEXT in the OPT
+.. COMPOSITION with empty ELEMENT.value and not empty ELEMENT.null_flavour
+. Invalid
+.. Invalid COMPOSITIONs (e.g. mandatory items not present, wrong types, extra items not declared in OPT, invalid values)
+.. Referenced OPT not loaded (this has to do more with the state of the system than to invalid data)
+. Change type combinations (these are the minimal required,
+https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L26-L34[all supported change types can be found here])
+.. VERSION.commit_audit.change_type = creation
+.. VERSION.commit_audit.change_type = modification
+.. VERSION.commit_audit.change_type = delete
+
+____
+Note: there could be many combinations of flows to use the different Change Types mentioned above. The minimal required by this specification it that the server is capable of this flow: 1. creation 2. modification (one or many times) 3. deleted
+____
+
+==== B.2.1. Considerations for the test data sets
+
+*change_type*
+
+Each VERSION in a CONTRIBUTION has an AUDIT_DETAILS which contains a change_type attribute. The value on that attribute determines the internal behavior for processing each VERSION, and each VERSION in the
+same CONTRIBUTION could have a different change_type. The most used change types are:
+
+. *creation*: the VERSION represents the first version of a COMPOSITION.
+. *amendment*: the VERSION represents a new version of an existing COMPOSITION, with the purpose of adding data.
+. *modification*: the VERSION represents a new version of an existing COMPOSITION, with the purpose of changing data, maybe to fix an error.
+. *deleted*:the VERSION represents a new version of an existing COMPOSITION, with the purpose of deleting it.
+
+Internally, amendment and modification might be processed in the exact same way, because the difference is semantic not functional.
+
+Here is a full list:
+https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L26
+
+*lifecycle_state*
+
+Each VERSION in a CONTRIBUTION contains an lifecycle_state attribute, which value gives semantics about the contents of the VERSION. The values could be:
+
+. *incomplete*: the COMPOSITION was committed incomplete and should be completed (reviewed, validated, amended) later.
+. *complete*: the COMPOSITION was complete at the moment it was committed.
+. *deleted*: the COMPOSITION was committed for deletion.
+
+These codes are defined here:
+https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L170
+
+[.image]#lifecycle state machine#
+
+==== B.2.2. Combinations for data sets
+
+These combinations can be tested by doing a single commit. The same combinations with flows of multiple commits could lead to different results.
+
+*One commit (no previous commits were done), single version cases:*
+
+____
+Note: All change types but creation should fail on the first commit, since other change types need a previous commit. Last one could fail because the first commit can’t be change_type deleted or because the
+lifecycle_state complete can’t be with change_type deleted.
+____
+
+[[one_commit]]
+[width="100%",cols="^17%,^20%,^25%,^27%,^11%",options="header",]
+|===
+|change_type |lifecycle_state* |composition category |composition validity** |expected
+|creation |complete |event |valid |accepted
+
+|amendment |complete |event |valid |rejected
+
+|modification |complete |event |valid |rejected
+
+|deleted |complete |event |valid |rejected
+
+|creation |complete |persistent |valid |accepted
+
+|amendment |complete |persistent |valid |rejected
+
+|modification |complete |persistent |valid |rejected
+
+|deleted |complete |persistent |valid |rejected
+
+|creation |deleted |event |valid |rejected
+
+|amendment |deleted |event |valid |rejected
+
+|modification |deleted |event |valid |rejected
+
+|deleted |deleted |event |valid |rejected
+|===
+
+____
+* Note: the incomplete cases should be equal to the complete, because the flag is just adding semantics about the content, not setting how the content should be processed.
+____
+
+____
+** Note: the invalid cases will make the accepted cases on the previous table to be rejected because the content in the COMPOSITION is not
+valid.
+____
+
+*One commit (no previous commits were done), multiple versions cases:*
+
+____
+Note: the tables below represent one VERSIONs in the committed CONTRIBUTION.
+____
+
+A. Creating two valid, complete and event COMPOSITIONS in one commit should be accepted.
+
+[cols="^,^,^,^",options="header",]
+|===
+|change_type+ |lifecycle_state++ |composition category |composition validity
+|creation |complete |event |valid
+
+|creation |complete |event |valid
+|===
+
+This CONTRIBUTION should be [.accepted]#ACCEPTED#.
+
+B. Creating two valid, complete and persistent COMPOSITIONS in one commit should be accepted.
+
+____
+Note: depending on the server implementation, some servers might not accept the second COMPOSITION if both COMPOSITIONs reference the same persistent OPT. So this test case considers both COMPOSITIONs reference different persistent OPTs.
+____
+
+[cols="^,^,^,^",options="header",]
+|===
+|change_type+ |lifecycle_state++ |composition category |composition validity
+|creation |complete |persistent |valid
+
+|creation |complete |persistent |valid
+|===
+
+This CONTRIBUTION should be [.accepted]#ACCEPTED#.
+
+C. Creating two valid, complete and mixed category COMPOSITIONS in one commit should be accepted.
+
+[cols="^,^,^,^",options="header",]
+|===
+|change_type+ |lifecycle_state++ |composition category |composition validity
+|creation |complete |event |valid
+
+|creation |complete |persistent |valid
+|===
+
+This CONTRIBUTION should be [.accepted]#ACCEPTED#.
+
+D. If any COMPOSITION is invalid in a CONTRIBUTION, the whole commit should fail. It doesn’t matter if it is complete or incomplete, event or persistent (just showing some of the combinations below).
+
+[cols="^,^,^,^",options="header",]
+|===
+|change_type+ |lifecycle_state++ |composition category |composition validity
+|creation |complete |event |valid
+
+|creation |complete |event |invalid
+|===
+
+[cols="^,^,^,^",options="header",]
+|===
+|change_type+ |lifecycle_state++ |composition category |composition validity
+|creation |complete |persistent |valid
+
+|creation |complete |persistent |invalid
+|===
+
+[cols="^,^,^,^",options="header",]
+|===
+|change_type+ |lifecycle_state++ |composition category |composition validity
+|creation |complete |event |valid
+
+|creation |complete |persistent |invalid
+|===
+
+[cols="^,^,^,^",options="header",]
+|===
+|change_type+ |lifecycle_state++ |composition category |composition validity
+|creation |complete |event |invalid
+
+|creation |complete |persistent |valid
+|===
+
+These CONTRIBUTIONs should be #REJECTED#.
+
+____
++ Note: for other change types than creation, the first commit will be rejected, so not included in the table those cases but should be tested.
+____
+
+____
+++ Note: the incomplete cases should be equal to the complete, because the flag is just adding semantics about the content, not setting how the content should be processed.
+____
+
+=== B.3. EHR_STATUS Commit CONTRIBUTION Test Data Sets
+
+==== B.3.1. Combinations for data sets
+
+The following [.accepted]#ACCEPTED# and [.rejected]#REJECTED# apply under any of these scenarios:
+
+. The server has an EHR with the default EHR_STATUS (the EHR was created without providing an EHR_STATUS).
+. The server has an EHR created by providing an EHR_STATUS.
+. The server has an EHR with modifications already done to it’s EHR_STATUS (consecutive modifications).
+
+*Reject Cases:*
+
+. CONTRIBUTIONS with VERSION, where VERSION.commit_audit.change_type IN [`+creation+`, `+deleted+`] should be [.rejected]#REJECTED#, because the default EHR_STATUS was already created in the EHR, and the EHR_STATUS can’t be deleted once created.
+. CONTRIBUTIONS with VERSION, where VERSION.lifecycle_state = `+incomplete+` should be #REJECTED#, because the `+incomplete+` state doesn’t apply to EHR_STATUS. Though there is an open issue related to this:
+https://openehr.atlassian.net/browse/SPECPR-368
+. Any other case with an `+invalid+` EHR_STATUS in VERSION should also be [.rejected]#REJECTED#.
+
+*Accepted Cases:*
+
+. CONTRIBUTIONS with VERSION where VERSION.commit_audit.change_type IN [`+modification+`, `+amendment+`] and `+valid+` EHR_STATUS, should be [.accepted]#ACCEPTED#. This inscludes the following combinations for EHR_STATUS:
+
+[cols="^,^,^",options="header",]
+|===
+|is_modifiable |is_queryable |subject.external_ref
+|true |true |HIER_OBJECT_ID
+|true |true |GENERIC_ID
+|true |true |NULL
+|true |false |HIER_OBJECT_ID
+|true |false |GENERIC_ID
+|true |false |NULL
+|false |true |HIER_OBJECT_ID
+|false |true |GENERIC_ID
+|false |true |NULL
+|false |true |HIER_OBJECT_ID
+|false |true |GENERIC_ID
+|false |true |NULL
+|false |false |HIER_OBJECT_ID
+|false |false |GENERIC_ID
+|false |false |NULL
+|===
+
+____
+Note: Since EHR_STATUS is LOCATABLE, is should have an archetype_id assigned. It is recommended to test the combination described above, combined with different values for EHR_STATUS.archetype_id
+____
+
+=== B.4. FOLDER Commit CONTRIBUTION Test Data Sets
+
+All the datasets are specified at the EHR.directory level, since that is the current level of operation of the openEHR REST API for FOLDERs to create, update or delete.
+
+==== B.4.1. Combinations for data sets
+
+`+Valid+` payload should include these cases:
+
+. minimal directory
+. directory with items
+. directry with subfolders
+. directory with items and subfolders
+. directory with items and subfolders with items
+
+Sample structure of FOLDERs with items:
+
+[.image]#Folders with items#
+
+Table of data combinations:
+
+[[folder_commit]]
+[cols="^,^,^,^",options="header",]
+|===
+|change_type |lifecycle_state |payload |expected
+|creation |complete / incomplete |valid |accepted
+|amendment / modification |complete / incomplete |valid |accepted
+|deleted |deleted |valid |accepted
+|===
+
+Any `+invalid+` payload should be [.rejected]#REJECTED#.
+
+== C. Commit CONTRIBUTION of COMPOSITIONs Flows
+
+=== C.1. Main flow: successfully commit CONTRIBUTION of `+VERSION<COMPOSITION>+`
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. OPTs for each valid cases hould be loaded on the server
+
+*Postconditions:*
+
+. The EHR with ehr_id should have a new CONTRIBUTION
+. The ID(s) of the created VERSION(s) are correct
+.. the version ID matches the change_type executed (creation = 1, modification/amendment = 2, 3, …)
+.. ID(s) can be used to retrieve a `+VERSION<COMPOSITION>+`)
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with the existing ehr_id and valid data sets
+.. The COMPOSITIONS reference existing OPTs on the server
+. The result should be positive and retrieve the id of the CONTRIBUTION just created
+
+=== C.2. Alternative flow 1: commit CONTRIBUTION with errors in `+VERSION<COMPOSITION>+`
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. OPTs for each valid cases hould be loaded on the server
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and the invalid `+VERSION<COMPOSITION>+`
+.. The COMPOSITIONS reference existing OPTs on the server
+. The result should be negative and retrieve some info about the errors found on the data committed
+
+=== C.3. Alternative flow 2: commit invalid CONTRIBUTION (no VERSIONs provided)
+
+____
+Note: since there are no VERSIONs in the CONTRIBUTION, this case is not
+specific to COMPOSITION.
+____
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and no data in the CONTRIBUTION
+. The result should be negative and retrieve an error related to the empty list of `+VERSION<COMPOSITION>+` in the CONTRIBUTION
+
+=== C.4. Alternative flow 3: commit CONTRIBUTION with a mix of valid and invalid `+VERSION<COMPOSITION>+`
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. OPTs for each valid cases hould be loaded on the server
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and multiple `+VERSION<COMPOSITION>+`
+.. Some VERSIONs are valid, some aree invalid
+.. The COMPOSITIONS reference existing OPTs on the server
+. The result should be negative and retrieve an error related invalid `+VERSION<COMPOSITION>+`
+
+____
+Note: the whole commit should behave like a transaction and fail, no CONTRIBUTIONS or VERSIONS should be created on the server.
+____
+
+=== C.5. Alternative flow 4: commit CONTRIBUTIONS versioning event COMPOSITIONs
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. OPTs for each valid cases hould be loaded on the server
+
+*Postconditions:*
+
+. There should be two VERSIONS of the same COMPOSITION in the EHR with ehr_id
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and a valid `+VERSION<COMPOSITION>+`
+.. The COMPOSITION has category = event
+.. The COMPOSITION reference existing an OPT on the server
+. The result should be positive, returning the created CONTRIBUTION with the ID of the created `+VERSION<COMPOSITION>+`
+. Invoke commit CONTRIBUTION service with an existing ehr_id and a valid `+VERSION<COMPOSITION>+`
+.. The COMPOSITION should have the same template_id as the one used in 1.
+.. The VERSION change_type = modification and preceding_version_uid = version id returned in 2.
+. The result should be positive and the returned version id should reflect it’s a new version of an existing COMPOSITION created in 1. (has the same OBJECT_VERSION_ID with version number = 2)
+
+=== C.6. Alternative flow 5: commit CONTRIBUTIONS versioning persistent COMPOSITION
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. OPTs for each valid cases hould be loaded on the server
+
+*Postconditions:*
+
+. There will be two VERSIONS of the same COMPOSITION in the EHR with ehr_id.
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and a valid `+VERSION<COMPOSITION>+`
+.. The COMPOSITION has category = persistent
+.. The COMPOSITION references an existing OPT on the server
+. The result should be positive, returning the version id for the created VERSION
+. Invoke commit CONTRIBUTION service with an existing ehr_id and a valid `+VERSION<COMPOSITION>+` 
+.. The COMPOSITION should have the same template_id as the one used in 1.
+.. The VERSION change_type = modification
+.. The VERSION preceding_version_uid = version id returned in 2.,
+. The result should be positive and the returned version id should reflect it is a new version of an existing COMPOSITION created in 1. (has the same OBJECT_VERSION_ID with version number = 2)
+
+=== C.7. Alternative flow 6: commit CONTRIBUTIONS deleting a COMPOSITION
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. OPTs for each valid cases hould be loaded on the server
+
+*Postconditions:*
+
+. Two VERSIONS of the same COMPOSITION should exist in the EHR with ehr_id
+. The VERSIONED_OBJECT should be logically deleted
+
+____
+Note: the effect of a VERSIONED_OBJECT being deleted might vary in different implementations. This needs further specification at the https://specifications.openehr.org/releases/SM/latest/openehr_platform.html[openEHR Service Model]
+____
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and a valid `+VERSION<COMPOSITION>+`
+.. The COMPOSITION references an existing OPT on the server
+. The result should be positive, returning the version id for the created VERSION
+. Invoke commit CONTRIBUTION service with an existing ehr_id and a valid `+VERSION<COMPOSITION>+`
+.. The COMPOSITION should reference the same template_id as the one used in 1.
+.. The VERSION has change_type = deleted
+.. The VERSION preceding_version_uid = version id returned in 2.
+. The result should be positive and the returned version id should reflect it is a new version of an existing COMPOSITION created in 1. (has the same OBJECT_VERSION_ID with version number = 2, which should be
+deleted)
+
+=== C.8. Alternative flow 7: commit CONTRIBUTIONS for versioning, the second commit contains errors
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. OPTs for each valid cases hould be loaded on the server
+
+*Postconditions:*
+
+. There will be just one VERSION in the EHR with ehr_id
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and a valid `+VERSION<COMPOSITION>+`
+.. The COMPOSITION references an existing OPT on the server
+. The result should be positive, returning the version id for the created VERSION
+. Invoke commit CONTRIBUTION service with an existing ehr_id and a valid `+VERSION<COMPOSITION>+`
+.. The COMPOSITION references the same template_id as the one used in 1.
+.. The VERSION has change_type = modification
+.. The VERSION has preceding_version_uid = version id returned in 2.
+.. The COMPOSITION is one of the invalid data sets
+. The result should be negative, and retrieve some info about the errors found on the data committed
+
+=== C.9. Alternative flow 8: commit CONTRIBUTIONS for versioning a persistent COMPOSITION, the second commit has change type creation
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. OPTs for each valid cases hould be loaded on the server
+
+*Postconditions:*
+
+. There will be just one VERSION in the EHR with ehr_id
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and a valid `+VERSION<COMPOSITION>+`
+.. The COMPOSITION references an existing OPT on the server
+. The result should be positive, returning the version id for the created VERSION
+. Invoke commit CONTRIBUTION service with an existing ehr_id and a valid `+VERSION<COMPOSITION>+`
+.. The COMPOSITION refernces the same template_id as the one used in 1.
+.. The VERSION has change_type = creation
+.. The VERSION has preceding_version_uid = version id returned in 2.
+. The result should be negative, and retrieve some info about the wrong change type (see notes)
+
+*Notes:*
+
+. Current criteria is: only one '`create`' operation is allowed for persistent COMPOSITIONs, the next operations over an existing persistent COMPOSITION should be '`modifications`'.
+. This is under debate in the openEHR SEC since some implementations permit '`persistent COMPOSIITONS`' to have more than one instance in the same EHR and some others not. This is due to the lack of information in the openEHR specifications. There is also a discussion to define other types of categories for COMPOSITIONs to allow different behaviors. Ref: https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51/3
+
+=== C.10. Alternative flow 9. commit CONTRIBUTION with COMPOSITION referencing a non existing OPT
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. There are no OPTs loaded on the server
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and a valid `+VERSION<COMPOSITION>+`
+.. The COMPOSITION references a random OPT template_id
+. The result should be negative and retrieve an error related to the missing OPT
+
+== D. Commit CONTRIBUTIONS of EHR_STATUS Flows
+
+=== D.1. Main flow: successfully commit CONTRIBUTION of `+VERSION<EHR_STATUS>+`
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. The EHR contains a default EHR_STATUS
+
+*Postconditions:*
+
+. The EHR should have a new CONTRIBUTION
+. The EHR should have a new VERSION for the EHR_STATUS
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and the valid data sets (see section B.3.)
+.. For EHR_STATUS CONTRIBUTIONs, the change_type is always `+modification+` or `+amendment+`
+. The result should be positive and retrieve the id of the CONTRIBUTION just created
+. Verify expected CONTRIBUTION uids and CONTRIBUTION count for the EHR with ehr_id
+
+=== D.2. Alternative flow 1: successfully commit CONTRIBUTION of `+VERSION<EHR_STATUS>+`, full EHR_STATUS
+
+____
+Note: this case is the same as D.1. but the precondition 2. is different.
+____
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. The EHR contains a full EHR_STATUS (all the optional information is set, for instance subject.external_ref)
+
+*Postconditions:*
+
+. The EHR should have a new CONTRIBUTION
+. The EHR should have a new VERSION for the EHR_STATUS
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and the valid data sets (see section B.3.)
+.. Use change_type = `+modification+` or `+amendment+`
+. The result should be positive and retrieve the id of the CONTRIBUTION just created
+. Verify expected CONTRIBUTION uids and CONTRIBUTION count for the EHR with ehr_id
+
+=== D.3. Alternative flow 2: fail commit CONTRIBUTION of `+VERSION<EHR_STATUS>+`, wrong change_type
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. The EHR has the default EHR_STATUS
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and the valid data sets (see section B.3.)
+.. Use change_type = `+create+` and `+delete+`
+. The result should be negative and retrieve an error related to the EHR_STATUS already existing for the EHR
+
+=== D.4. Alternative flow 3: fail commit CONTRIBUTION of `+VERSION<EHR_STATUS>+`, invalid EHR_STATUS
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. The EHR has the default EHR_STATUS
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and the invalid data sets (see section B.3.)
+.. Use change_type = `+modification+`
+. The result should be negative and retrieve an error related to the invalid EHR_STATUS
+
+== E. Commit CONTRIBUTIONS of FOLDER Flows
+
+=== E.1. Alternative flow 12: successfully commit CONTRIBUTION of `+VERSION<FOLDER>+`
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. The EHR doesn’t have a directory (root FOLDER)
+
+*Postconditions:*
+
+. The EHR with should have a new CONTRIBUTION and a root FOLDER.
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and the valid data sets (see B.4.) and change_type = `+creation+`
+. The result should be positive and retrieve the id of the CONTRIBUTION just created
+
+=== E.2. Alternative flow 13: fail commit CONTRIBUTION of `+VERSION<FOLDER>+` FOLDER exists
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. The EHR has a directory (root FOLDER)
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and the valid data sets (see B.4.) and change_type = `+creation+`
+. The result should be negative, and retrieve an error related to the wrong change_type because the root FOLDER already exists
+
+=== E.3. Alternative flow 14: fail commit CONTRIBUTION of `+VERSION<FOLDER>+` update
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. The EHR doesn’t have a directory (root FOLDER)
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and the valid data sets
+.. Use change_type = `+modification+`
+.. Use a random `+preceding_version_uid+`
+. The result should be negative since, and retrieve an error related to the wrong change_type, because it’s trying to modify something that doesn’t exist
+
+=== E.4. Alternative flow 15: successful commit CONTRIBUTION of `+VERSION<FOLDER>+` update
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. The EHR has a directory (root FOLDER)
+
+*Postconditions:*
+
+. The EHR should have a new CONTRIBUTION and a new VERSION for the root FOLDER
+
+*Flow:*
+
+. Invoke commit CONTRIBUTION service with an existing ehr_id and the valid data sets with change_type = `+modification+` or `+amendment+`
+. The result should be positive and retrieve the id of the CONTRIBUTION just created
+
+== F. List CONTRIBUTIONs
+
+____
+Note: CONTRIBUTIONs can contain COMPOSITION, EHR_STATUS or FOLDER, even a mix of those. Each flow below applies to a specific type, except when '`ANY`' is mentioned, in which case the flow applies to any of those three types.
+____
+
+=== F.1. Main flow: list CONTRIBUTIONS of existing EHR with a just committed CONTRIBUTION (COMPOSITION)
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. The EHR as a CONTRIBUTION with known uid
+. The CONTRIBUTION contains a `+VERSION<COMPOSITION>+`
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke list CONTRIBUTIONS service with the existing ehr_id
+. The result should be positive and retrieve a list of CONTRIBUTIONs with one item
+. The CONTRIBUTION should contain a `+VERSION<COMPOSITION>+`
+
+=== F.2. Alternative flow 1: list CONTRIBUTIONS of existing EHR with no CONTRIBUTIONS (ANY)
+
+*Preconditions:*
+
+. An EHR with known ehr_id should exist
+. The EHR has no CONTRIBUTIONs
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke get CONTRIBUTIONS service by the existing ehr_id
+. The result should be positive and retrieve an empty list
+
+=== F.3. Alternative flow 2: lis CONTRIBUTIONS of non existing EHR (ANY)
+
+*Preconditions:*
+
+. There are no EHRs on the server
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke list CONTRIBUTIONS service with a random ehr_id
+. The result should be negative and retrieve an error related to "`EHR with ehr_id doesn’t exist`"
+
+=== F.4. Alternative flow 3: list CONTRIBUTIONS of existing EHR with a just committed CONTRIBUTION (EHR_STATUS)
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. The EHR has a CONTRIBUTION with known uid
+. The CONTRIBUTION contains a `+VERSION<EHR_STATUS>+`
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke list CONTRIBUTIONS service by the existing ehr_id
+. The result should be positive and retrieve a list of CONTRIBUTIONS with one item
+. The CONTRIBUTION should contain an EHR_STATUS
+
+=== F.5. Alternative flow 4: list CONTRIBUTIONS of existing EHR with a just committed CONTRIBUTION (FOLDER)
+
+*Preconditions:*
+
+. An EHR with known ehr_id exists
+. The EHR has a CONTRIBUTION with known uid
+. The CONTRIBUTION contains a `+VERSION<FOLDER>+`
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke get CONTRIBUTIONS service by the existing ehr_id
+. The result should be positive and retrieve a list of CONTRIBUTIONS with one item
+. The CONTRIBUTION should contain a FOLDER
+
+== G. Has CONTRIBUTION
+
+=== G.1. Main flow: has CONTRIBUTION with existing CONTRIBUTION
+
+*Preconditions:*
+
+. An EHR should exist in the system with a known ehr_id
+. The EHR has a CONTRIBUTION with known uid
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke has CONTRIBUTION service with the known ehr_id and CONTRIBUTION uid
+. The result should be `+true+`
+
+=== G.2. Alternative flow 1: has CONTRIBUTION on empty EHR
+
+*Preconditions:*
+
+. An EHR should exists in the system with a known ehr_id
+. The EHR doesn’t have any CONTRIBUTIONS
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke has CONTRIBUTION service with the known ehr_id and a random CONTRIBUTION uid
+. The result should be `+false+`
+
+=== G.3. Alternative flow 2: has CONTRIBUTION, EHR doesn’t exist
+
+*Preconditions:*
+
+. There are no EHRs on the server
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke has CONTRIBUTION service with a random ehr_id and a random CONTRIBUTION uid
+. The result should be negative, and retrieve an error related to "`the EHR with ehd_id doesn’t exist`"
+
+=== G.4. Alternative flow 3: has CONTRIBUTION, EHR with CONTRIBUTIONS, but CONTRIBUTION doesn’t exist
+
+*Preconditions:*
+
+. An EHR should exist on the server with a known ehr_id
+. The EHR has CONTRIBUTIONs
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke has CONTRIBUTION service with the known ehr_id and a random, not existing CONTRIBUTION uid
+. The result should be `+false+`
+
+=== H. Get CONTRIBUTION
+
+==== H.1. Main flow: get CONTRIBUTION with existing CONTRIBUTION
+
+*Preconditions:*
+
+. An EHR should exist in the system with a known ehr_id
+. The EHR has a CONTRIBUTION with known uid
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke has CONTRIBUTION service with the known ehr_id and CONTRIBUTION uid
+. The result should be the existing CONTRIBUTION
+
+==== H.2. Alternative flow 1: get CONTRIBUTION on empty EHR
+
+*Preconditions:*
+
+. An EHR should exists in the system with a known ehr_id
+. The EHR doesn’t have any CONTRIBUTIONS
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke has CONTRIBUTION service with the known ehr_id and a random CONTRIBUTION uid
+. The result should be negative and retrieve an error related to the non-existing CONTRIBUTION
+
+==== H.3. Alternative flow 2: get CONTRIBUTION, EHR doesn’t exist
+
+*Preconditions:*
+
+. There are no EHRs on the server
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke has CONTRIBUTION service with a random ehr_id and a random CONTRIBUTION uid
+. The result should be negative, and retrieve an error related to "`the EHR with ehd_id doesn’t exist`"
+
+==== H.4. Alternative flow 3: get CONTRIBUTION, EHR with CONTRIBUTIONS, but CONTRIBUTION doesn’t exist
+
+*Preconditions:*
+
+. An EHR should exist on the server with a known ehr_id
+. The EHR has CONTRIBUTIONs
+
+*Postconditions:*
+
+None
+
+*Flow:*
+
+. Invoke has CONTRIBUTION service with the known ehr_id and a random, non-existing CONTRIBUTION uid
+. The result should be negative and retrieve an error related to the non-existing CONTRIBUTION
