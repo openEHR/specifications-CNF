@@ -4,8 +4,10 @@
 // some useful variables
 :i_ehr_service_link: {openehr_sm_openehr_platform}#_i_ehr_service_interface
 :i_ehr_link: {openehr_sm_openehr_platform}#_i_ehr_interface
+:i_ehr_composition_link: {openehr_sm_openehr_platform}#_i_ehr_composition_interface
 :i_ehr_status_link: {openehr_sm_openehr_platform}#_i_ehr_status_interface
 :i_ehr_directory_link: {openehr_sm_openehr_platform}#_i_ehr_directory_interface
+:i_ehr_contribution_link: {openehr_sm_openehr_platform}#_i_ehr_contribution_interface
 
 == Normative Reference
 
@@ -85,7 +87,7 @@ Notes:
 
 === Conformance point: I_EHR_SERVICE.has_ehr()
 
-*Platform service ref*: {i_ehr_service_link}[`I_EHR_SERVICE._has_ehr()_`^]
+Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._has_ehr()_`^]
 
 ==== TC EHR.has_ehr-existing_ehr_id
 
@@ -134,7 +136,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 [cols="1h,4a"]
 |===
-|Description    | Check has EHR with non existing EHR by subject_id
+|Description    | Check has EHR with non existing EHR by `subject_id`
 |Pre-conditions | The server should be empty (no EHRs, no commits, no OPTs).
 |Post-conditions| None
 |Flow           | . Invoke has EHR service with a random `subject_id`
@@ -143,7 +145,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 === Conformance point: I_EHR_SERVICE.create_ehr()
 
-*Platform service ref*: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr()_`^]
+Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr()_`^]
 
 ==== TC EHR.create_ehr-main
 
@@ -156,7 +158,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 |Post-conditions  | A new EHR will exist in the system and be consistent with the data sets used.
 |Flow             | . Invoke the create EHR service
                     .. for each item in the VALID data set classes
-                    .. when the `ehr_id`is provided, should be unique for each invocation of the service
+                    .. when the `ehr_id` is provided, should be unique for each invocation of the service
                     . The server should answer with a positive response associated to the successful EHR creation
 |===
 
@@ -174,8 +176,8 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
                     .. for each VALID data set providing ehr_id
                     . The server should answer with a positive response associated to the successful EHR creation
                     . Invoke the create EHR service
-                    .. with the same `ehr_id`of the EHR created in 1.1. (should be read from the response)
-                    .. with the same `ehr_id`of the EHR created in 1.2. (should be read from the test data sets)
+                    .. with the same `ehr_id` of the EHR created in 1.1. (should be read from the response)
+                    .. with the same `ehr_id` of the EHR created in 1.2. (should be read from the test data sets)
                     . The server should answer with a negative response, related to the existence of an EHR with the provided `ehr_id`, because `ehr_id` values should be unique
 |===
 
@@ -198,7 +200,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 === Conformance point: I_EHR_SERVICE.get_ehr()
 
-*Platform service ref*: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehr()_`^]
+Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehr()_`^]
 
 ==== TC EHR.get_ehr-existing_ehr_by_ehr_id
 
@@ -256,7 +258,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 === Conformance Point: I_EHR_STATUS.get_ehr_status()
 
-*Platform service ref*: {i_ehr_status_link}[`I_EHR_STATUS._get_ehr_status()_`^]
+Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._get_ehr_status()_`^]
 
 ==== TC EHR_STATUS.get_ehr_status-get_by_ehr_id
 
@@ -288,7 +290,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 === Conformance Point: I_EHR_STATUS.set_ehr_queryable()
 
-*Platform service ref*: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_queryable()_`^]
+Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_queryable()_`^]
 
 ==== TC EHR_STATUS.set_ehr_queryable-existing_ehr
 
@@ -319,7 +321,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 === Conformance Point: I_EHR_STATUS.set_ehr_modifiable()
 
-*Platform service ref*: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_modifiable()_`^]
+Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_modifiable()_`^]
 
 ==== TC EHR_STATUS.set_ehr_modifiable-existing_ehr
 
@@ -349,7 +351,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 === Conformance Point: I_EHR_STATUS.clear_ehr_queryable()
 
-*Platform service ref*: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_queryable()_`^]
+Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_queryable()_`^]
 
 ==== TC EHR_STATUS.clear_ehr_queryable-existing_ehr
 
@@ -379,7 +381,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 
 === Conformance Point: I_EHR_STATUS.clear_ehr_modifiable()
 
-*Platform service ref*: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_modifiable()_`^]
+Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_modifiable()_`^]
 
 ==== TC EHR_STATUS.clear_ehr_modifiable-existing_ehr
 

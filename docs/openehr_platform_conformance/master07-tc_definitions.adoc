@@ -42,7 +42,7 @@ data, can the OPT be deleted physically? Logical delete might work as the deacti
 
 === Conformance Point: I_DEFINITION_ADL14.validate_opt()
 
-*Platform service ref*: {i_definition_adl14_link}[`I_DEFINITION_ADL14._validate_opt()_`^]
+Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._validate_opt()_`^]
 
 ==== Test Data Sets
 
@@ -81,33 +81,36 @@ NOTE: some servers might not have a way to just validate the OPT, and validation
                   . The result should be negative related to the "`OPT is invalid`", would be useful if the server also returns where the problems are in the OPT
 |===
 
-*Implementation note:* when a step says "`for each X, invoke service Y`", means that the test should run completely for each X, that is, the preconditions and postconditions apply to the run for X. So if we have:
+*Implementation note:* when a step says "`for each X, invoke service Y`", means that the test should run completely for each X, that is, the pre-conditions and post-conditions apply to the run for X. So if we have:
 
-Test set: a, b, c Test case: 
-* pre 
-* post 
+Test set: a, b, c 
+
+Test case:
+
+* ensure pre-conditions 
+* verify post-conditions 
 * flow 
   1. for each X in data set, run service Y
-  2. verify condition
+  2. verify result
 
 The run should be:
 
-* pre
+* ensure pre-conditions
 * invoke Y(a)
-* verify condition
-* post
-* pre
+* verify result
+* verify post-conditions
+* ensure pre-conditions
 * invoke Y(b)
-* verify condition
-* post
-* pre
+* verify result
+* verify post-conditions
+* ensure pre-conditions
 * invoke Y(c)
-* verify condition
-* post
+* verify result
+* verify post-conditions
 
 === Conformance Point: I_DEFINITION_ADL14.upload_opt()
 
-*Platform service ref*: {i_definition_adl14_link}[`I_DEFINITION_ADL14._upload_opt()_`^]
+Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._upload_opt()_`^]
 
 ==== Data set
 
@@ -196,7 +199,7 @@ NOTE: the server should be able to retrieve the templates by `template_id` and v
 
 === Conformance Point: I_DEFINITION_ADL14.get_opt()
 
-*Platform service ref*: {i_definition_adl14_link}[`I_DEFINITION_ADL14._get_opt()_`^]
+Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._get_opt()_`^]
 
 NOTE: the flows of this test case will include flows from the Upload OPT test case, in order to have something to retrieve.
 
@@ -266,7 +269,7 @@ NOTE: to be sure the last version was returned, a small modification to the OPT 
 
 === Conformance Point: I_DEFINITION_ADL14.get_opts()
 
-*Platform service ref*: {i_definition_adl14_link}[`I_DEFINITION_ADL14._get_opts()_`^]
+Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._get_opts()_`^]
 
 ==== Data sets
 
@@ -302,7 +305,7 @@ NOTE: to be sure the last version was returned, a small modification to the OPT 
 
 === Conformance Point: I_DEFINITION_ADL14.delete_opt()
 
-*Platform service ref*: {i_definition_adl14_link}[`I_DEFINITION_ADL14._delete_opt()_`^]
+Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._delete_opt()_`^]
 
 NOTE: the OPT delete can only happen if there is no associated data with the OPT, or if there exists a newer revision (minor version of the same OPT) in the server under test. For all these tests, there is not data committed to the server, so the delete can happen.
 
