@@ -382,7 +382,7 @@ NOTE: the whole commit should behave like a transaction and fail, no `CONTRIBUTI
                     . OPTs for each valid case are loaded on the server
 |Post-conditions  | . Two `VERSIONs` of the same `COMPOSITION` should exist in the EHR with ehr_id
                     . The `VERSIONED_OBJECT` should be logically deleted
-                    NOTE: the effect of a `VERSIONED_OBJECT` being deleted might vary in different implementations. This needs further specification at the {openehr_sm_openehr_platform}[openEHR Service Model^]
+NOTE: the effect of a `VERSIONED_OBJECT` being deleted might vary in different implementations. This needs further specification at the {openehr_sm_openehr_platform}[openEHR Service Model^]
 |Flow             | . Invoke commit `CONTRIBUTION` service with an existing `ehr_id` and a valid `VERSION<COMPOSITION>`
                     .. The `COMPOSITION` references an existing OPT on the server
                     . The result should be positive, returning the version id for the created `VERSION`

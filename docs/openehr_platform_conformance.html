@@ -353,76 +353,69 @@
 <ul class="sectlevel4">
 <li><a href="#_tc_i_ehr_directory_has_path_empty_ehr">11.5.2.1. TC I_EHR_DIRECTORY.has_path-empty_ehr</a></li>
 <li><a href="#_tc_i_ehr_directory_has_path_ehr_root_directory">11.5.2.2. TC I_EHR_DIRECTORY.has_path-ehr_root_directory</a></li>
-<li><a href="#_d_3_alternative_flow_2_has_path_on_ehr_with_given_folder_structure">11.5.2.3. D.3. Alternative flow 2: has path on EHR with given folder structure</a></li>
-<li><a href="#_tc_i_ehr_directory_has_path_empty_ehr_2">11.5.2.4. TC I_EHR_DIRECTORY.has_path-empty_ehr</a></li>
-<li><a href="#_d_4_alternative_flow_3_has_path_on_non_existent_ehr">11.5.2.5. D.4. Alternative flow 3: has path on non-existent EHR</a></li>
+<li><a href="#_tc_i_ehr_directory_has_path_folder_structure">11.5.2.3. TC I_EHR_DIRECTORY.has_path-folder_structure</a></li>
+<li><a href="#_tc_i_ehr_directory_has_path_bad_ehr">11.5.2.4. TC I_EHR_DIRECTORY.has_path-bad_ehr</a></li>
 </ul>
 </li>
-<li><a href="#_e_create_directory_flows">11.5.3. E. Create DIRECTORY Flows</a>
+<li><a href="#_conformance_point_i_ehr_directory_create_directory">11.5.3. Conformance point: I_EHR_DIRECTORY.create_directory()</a>
 <ul class="sectlevel4">
-<li><a href="#_e_1_main_flow_create_directory_on_empty_ehr">11.5.3.1. E.1. Main flow: create directory on empty EHR</a></li>
-<li><a href="#_e_2_alternative_flow_1_create_directory_on_ehr_with_directory">11.5.3.2. E.2. Alternative flow 1: create directory on EHR with directory</a></li>
-<li><a href="#_e_3_alternative_flow_2_create_directory_on_non_existent_ehr">11.5.3.3. E.3. Alternative flow 2: create directory on non-existent EHR</a></li>
+<li><a href="#_tc_i_ehr_directory_create_directory_empty_ehr">11.5.3.1. TC I_EHR_DIRECTORY.create_directory-empty_ehr</a></li>
+<li><a href="#_tc_i_ehr_directory_create_directory_ehr_with_directory">11.5.3.2. TC I_EHR_DIRECTORY.create_directory-ehr_with_directory</a></li>
+<li><a href="#_tc_i_ehr_directory_create_directory_bad_ehr">11.5.3.3. TC I_EHR_DIRECTORY.create_directory-bad_ehr</a></li>
 </ul>
 </li>
-<li><a href="#_f_get_directory">11.5.4. F. Get DIRECTORY</a>
+<li><a href="#_conformance_point_i_ehr_directory_get_directory">11.5.4. Conformance point: I_EHR_DIRECTORY.get_directory()</a>
 <ul class="sectlevel4">
-<li><a href="#_f_1_main_flow_get_directory_on_empty_ehr">11.5.4.1. F.1. Main flow: get directory on empty EHR</a></li>
-<li><a href="#_f_2_alternative_flow_1_get_directory_on_ehr_with_just_a_root_directory">11.5.4.2. F.2. Alternative flow 1: get directory on EHR with just a root directory</a></li>
-<li><a href="#_f_3_alternative_flow_2_get_directory_on_ehr_with_complex_directory_structure_and_items">11.5.4.3. F.3. Alternative flow 2: get directory on EHR with complex directory structure and items</a></li>
-<li><a href="#_f_4_alternative_flow_3_get_directory_on_non_existent_ehr">11.5.4.4. F.4. Alternative flow 3: get directory on non-existent EHR</a></li>
+<li><a href="#_tc_i_ehr_directory_get_directory_empty_ehr">11.5.4.1. TC I_EHR_DIRECTORY.get_directory-empty_ehr</a></li>
+<li><a href="#_tc_i_ehr_directory_get_directory_ehr_root_directory">11.5.4.2. TC I_EHR_DIRECTORY.get_directory-ehr_root_directory</a></li>
+<li><a href="#_tc_i_ehr_directory_get_directory_directory_with_structure">11.5.4.3. TC I_EHR_DIRECTORY.get_directory-directory_with_structure</a></li>
+<li><a href="#_tc_i_ehr_directory_get_directory_directory_with_structure_2">11.5.4.4. TC I_EHR_DIRECTORY.get_directory-directory_with_structure</a></li>
 </ul>
 </li>
-<li><a href="#_g_get_directory_at_time_flows">11.5.5. G. Get DIRECTORY at time Flows</a>
+<li><a href="#_conformance_point_i_ehr_directory_get_directory_at_time">11.5.5. Conformance point: I_EHR_DIRECTORY.get_directory_at_time()</a>
 <ul class="sectlevel4">
-<li><a href="#_g_1_main_flow_get_directory_at_time_on_empty_ehr">11.5.5.1. G.1. Main flow: get directory at time on empty EHR</a></li>
-<li><a href="#_g_2_alternative_flow_1_get_directory_at_time_on_empty_ehr_with_empty_time">11.5.5.2. G.2. Alternative flow 1: get directory at time on empty EHR with empty time</a></li>
-<li><a href="#_g_3_alternative_flow_2_get_directory_at_time_on_ehr_with_directory">11.5.5.3. G.3. Alternative flow 2: get directory at time on EHR with directory</a></li>
-<li><a href="#_g_4_alternative_flow_3_get_directory_at_time_on_ehr_with_directory_with_empty_time">11.5.5.4. G.4. Alternative flow 3: get directory at time on EHR with directory with empty time</a></li>
-<li><a href="#_g_5_alternative_flow_4_get_directory_at_time_on_ehr_with_directory_with_multiple_versions_in_multiple_times">11.5.5.5. G.5. Alternative flow 4: get directory at time on EHR with directory with multiple versions in multiple times</a></li>
-<li><a href="#_g_6_alternative_flow_5_get_directory_at_time_on_ehr_with_directory_with_multiple_versions_with_empty_time">11.5.5.6. G.6. Alternative flow 5: get directory at time on EHR with directory with multiple versions with empty time</a></li>
-<li><a href="#_g_7_alternative_flow_7_get_directory_at_time_on_non_existent_ehr">11.5.5.7. G.7. Alternative flow 7: get directory at time on non existent EHR</a></li>
+<li><a href="#_tc_i_ehr_directory_get_directory_at_time_empty_ehr">11.5.5.1. TC I_EHR_DIRECTORY.get_directory_at_time-empty_ehr</a></li>
+<li><a href="#_tc_i_ehr_directory_get_directory_at_time_empty_ehr_empty_time">11.5.5.2. TC I_EHR_DIRECTORY.get_directory_at_time-empty_ehr_empty_time</a></li>
+<li><a href="#_tc_i_ehr_directory_get_directory_at_time_ehr_with_directory">11.5.5.3. TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory</a></li>
+<li><a href="#_tc_i_ehr_directory_get_directory_at_time_ehr_with_directory_empty_time">11.5.5.4. TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_empty_time</a></li>
+<li><a href="#_tc_i_ehr_directory_get_directory_at_time_ehr_with_directory_versions">11.5.5.5. TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_versions</a></li>
+<li><a href="#_tc_i_ehr_directory_get_directory_at_time_ehr_with_directory_versions_empty_time">11.5.5.6. TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_versions_empty_time</a></li>
+<li><a href="#_tc_i_ehr_directory_get_directory_at_time_bad_ehr">11.5.5.7. TC I_EHR_DIRECTORY.get_directory_at_time-bad_ehr</a></li>
 </ul>
 </li>
-<li><a href="#_h_update_directory">11.5.6. H. Update DIRECTORY</a>
+<li><a href="#_conformance_point_i_ehr_directory_update_directory">11.5.6. Conformance point: I_EHR_DIRECTORY.update_directory()</a>
 <ul class="sectlevel4">
-<li><a href="#_h_1_main_flow_update_directory_from_ehr_with_directory">11.5.6.1. H.1. Main flow: update directory from EHR with directory</a></li>
-<li><a href="#_h_2_alternative_flow_1_update_directory_on_empty_ehr">11.5.6.2. H.2. Alternative flow 1: update directory on empty EHR</a></li>
-<li><a href="#_h_3_alternative_flow_2_update_directory_on_non_existing_ehr">11.5.6.3. H.3. Alternative flow 2: update directory on non-existing EHR</a></li>
+<li><a href="#_tc_i_ehr_directory_update_directory_ehr_with_directory">11.5.6.1. TC I_EHR_DIRECTORY.update_directory-ehr_with_directory</a></li>
+<li><a href="#_tc_i_ehr_directory_update_directory_empty_ehr">11.5.6.2. TC I_EHR_DIRECTORY.update_directory-empty_ehr</a></li>
+<li><a href="#_tc_i_ehr_directory_update_directory_bad_ehr">11.5.6.3. TC I_EHR_DIRECTORY.update_directory-bad_ehr</a></li>
 </ul>
 </li>
-<li><a href="#_i_delete_directory">11.5.7. I. Delete DIRECTORY</a>
+<li><a href="#_conformance_point_i_ehr_directory_delete_directory">11.5.7. Conformance point: I_EHR_DIRECTORY.delete_directory()</a>
 <ul class="sectlevel4">
-<li><a href="#_i_1_main_flow_delete_directory_on_empty_ehr">11.5.7.1. I.1. Main flow: delete directory on empty EHR</a></li>
-<li><a href="#_i_2_alternative_flow_1_delete_directory_from_ehr_with_directory">11.5.7.2. I.2. Alternative flow 1: delete directory from EHR with directory</a></li>
-<li><a href="#_i_3_alternative_flow_2_delete_directory_from_non_existent_ehr">11.5.7.3. I.3. Alternative flow 2: delete directory from non-existent EHR</a></li>
+<li><a href="#_tc_i_ehr_directory_delete_directory_empty_ehr">11.5.7.1. TC I_EHR_DIRECTORY.delete_directory-empty_ehr</a></li>
+<li><a href="#_tc_i_ehr_directory_delete_directory_ehr_with_directory">11.5.7.2. TC I_EHR_DIRECTORY.delete_directory-ehr_with_directory</a></li>
+<li><a href="#_tc_i_ehr_directory_delete_directory_bad_ehr">11.5.7.3. TC I_EHR_DIRECTORY.delete_directory-bad_ehr</a></li>
 </ul>
 </li>
-<li><a href="#_j_has_directory_version">11.5.8. J. Has DIRECTORY version</a>
+<li><a href="#_conformance_point_i_ehr_directory_has_directory_version">11.5.8. Conformance point: I_EHR_DIRECTORY.has_directory_version()</a>
 <ul class="sectlevel4">
-<li><a href="#_j_1_main_flow_has_directory_from_empty_ehr">11.5.8.1. J.1. Main flow: has directory from empty EHR</a></li>
-<li><a href="#_j_2_alternative_flow_1_has_directory_on_ehr_that_has_two_versions_of_directory">11.5.8.2. J.2. Alternative flow 1: has directory on EHR that has two versions of directory</a></li>
-<li><a href="#_j_3_alternative_flow_2_has_directory_on_non_existent_ehr">11.5.8.3. J.3. Alternative flow 2: has directory on non-existent EHR</a></li>
+<li><a href="#_tc_i_ehr_directory_has_directory_version_empty_ehr">11.5.8.1. TC I_EHR_DIRECTORY.has_directory_version-empty_ehr</a></li>
+<li><a href="#_tc_i_ehr_directory_has_directory_version_directory_with_two_versions">11.5.8.2. TC I_EHR_DIRECTORY.has_directory_version-directory_with_two_versions</a></li>
+<li><a href="#_tc_i_ehr_directory_has_directory_version_bad_ehr">11.5.8.3. TC I_EHR_DIRECTORY.has_directory_version-bad_ehr</a></li>
 </ul>
 </li>
-<li><a href="#_k_get_directory_at_version">11.5.9. K. Get DIRECTORY at version</a>
+<li><a href="#_conformance_point_i_ehr_directory_get_directory_at_version">11.5.9. Conformance point: I_EHR_DIRECTORY.get_directory_at_version()</a>
 <ul class="sectlevel4">
-<li><a href="#_k_1_main_flow_get_directory_at_version_from_empty_ehr">11.5.9.1. K.1. Main flow: get directory at version from empty EHR</a></li>
-<li><a href="#_k_2_alternative_flow_1_get_directory_at_version_from_ehr_that_has_two_versions_of_directory">11.5.9.2. K.2. Alternative flow 1: get DIRECTORY at version from EHR that has two versions of directory</a></li>
-<li><a href="#_k_3_alternative_flow_2_get_directory_at_version_from_non_existent_ehr">11.5.9.3. K.3. Alternative flow 2: get DIRECTORY at version from non existent EHR</a></li>
+<li><a href="#_tc_i_ehr_directory_get_directory_at_version_empty_ehr">11.5.9.1. TC I_EHR_DIRECTORY.get_directory_at_version-empty_ehr</a></li>
+<li><a href="#_tc_i_ehr_directory_get_directory_at_version_directory_with_two_versions">11.5.9.2. TC I_EHR_DIRECTORY.get_directory_at_version-directory_with_two_versions</a></li>
+<li><a href="#_tc_i_ehr_directory_get_directory_at_version_bad_ehr">11.5.9.3. TC I_EHR_DIRECTORY.get_directory_at_version-bad_ehr</a></li>
 </ul>
 </li>
-<li><a href="#_l_get_versioned_directory">11.5.10. L. Get versioned DIRECTORY</a>
+<li><a href="#_conformance_point_i_ehr_directory_get_versioned_directory">11.5.10. Conformance point: I_EHR_DIRECTORY.get_versioned_directory()</a>
 <ul class="sectlevel4">
-<li><a href="#_l_1_main_flow_get_versioned_directory_from_ehr_with_no_directory">11.5.10.1. L.1. Main flow: get versioned directory from EHR with no directory</a></li>
-<li><a href="#_l_2_alternative_flow_1_get_versioned_directory_from_existent_ehr_that_has_two_versions_of_directory">11.5.10.2. L.2. Alternative flow 1: get versioned directory from existent EHR that has two versions of directory</a></li>
-<li><a href="#_l_3_alternative_flow_2_get_versioned_directory_from_non_existent_ehr">11.5.10.3. L.3. Alternative flow 2: get versioned directory from non existent EHR</a></li>
-</ul>
-</li>
-<li><a href="#_annex_proposal_for_folder_api">11.5.11. Annex: proposal for FOLDER API</a>
-<ul class="sectlevel4">
-<li><a href="#_background">11.5.11.1. Background</a></li>
-<li><a href="#_operations_for_the_service_model">11.5.11.2. Operations for the Service Model</a></li>
+<li><a href="#_tc_i_ehr_directory_get_versioned_directory_empty_ehr">11.5.10.1. TC I_EHR_DIRECTORY.get_versioned_directory-empty_ehr</a></li>
+<li><a href="#_tc_i_ehr_directory_get_versioned_directory_directory_with_two_versions">11.5.10.2. TC I_EHR_DIRECTORY.get_versioned_directory-directory_with_two_versions</a></li>
+<li><a href="#_tc_i_ehr_directory_get_versioned_directory_bad_ehr">11.5.10.3. TC I_EHR_DIRECTORY.get_versioned_directory-bad_ehr</a></li>
 </ul>
 </li>
 </ul>
@@ -8747,11 +8740,7 @@ the image is just for reference, the items in the FOLDER are instances of VERSIO
 </table>
 </div>
 <div class="sect4">
-<h5 id="_d_3_alternative_flow_2_has_path_on_ehr_with_given_folder_structure"><a class="anchor" href="#_d_3_alternative_flow_2_has_path_on_ehr_with_given_folder_structure"></a>11.5.2.3. D.3. Alternative flow 2: has path on EHR with given folder structure</h5>
-
-</div>
-<div class="sect4">
-<h5 id="_tc_i_ehr_directory_has_path_empty_ehr_2"><a class="anchor" href="#_tc_i_ehr_directory_has_path_empty_ehr_2"></a>11.5.2.4. TC I_EHR_DIRECTORY.has_path-empty_ehr</h5>
+<h5 id="_tc_i_ehr_directory_has_path_folder_structure"><a class="anchor" href="#_tc_i_ehr_directory_has_path_folder_structure"></a>11.5.2.3. TC I_EHR_DIRECTORY.has_path-folder_structure</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8910,72 +8899,100 @@ the table mixes cases that exist with cases of paths which part exists and parts
 </table>
 </div>
 <div class="sect4">
-<h5 id="_d_4_alternative_flow_3_has_path_on_non_existent_ehr"><a class="anchor" href="#_d_4_alternative_flow_3_has_path_on_non_existent_ehr"></a>11.5.2.5. D.4. Alternative flow 3: has path on non-existent EHR</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_has_path_bad_ehr"><a class="anchor" href="#_tc_i_ehr_directory_has_path_bad_ehr"></a>11.5.2.4. TC I_EHR_DIRECTORY.has_path-bad_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test has_path on non-existent EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>The server is empty</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the has path service for a random <code>ehr_id</code> and path</p>
 </li>
 <li>
-<p>The service should return an error, indicating that the EHR that doesn’t exist</p>
+<p>The service should return an error, indicating that the EHR doesn’t exist</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_e_create_directory_flows"><a class="anchor" href="#_e_create_directory_flows"></a>11.5.3. E. Create DIRECTORY Flows</h4>
-<div class="sect4">
-<h5 id="_e_1_main_flow_create_directory_on_empty_ehr"><a class="anchor" href="#_e_1_main_flow_create_directory_on_empty_ehr"></a>11.5.3.1. E.1. Main flow: create directory on empty EHR</h5>
+<h4 id="_conformance_point_i_ehr_directory_create_directory"><a class="anchor" href="#_conformance_point_i_ehr_directory_create_directory"></a>11.5.3. Conformance point: I_EHR_DIRECTORY.create_directory()</h4>
 <div class="paragraph">
-<p><strong>Preconditions:</strong></p>
+<p>Platform service ref: <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY.<em>create_directory()</em></code></a></p>
 </div>
-<div class="olist arabic">
+<div class="sect4">
+<h5 id="_tc_i_ehr_directory_create_directory_empty_ehr"><a class="anchor" href="#_tc_i_ehr_directory_create_directory_empty_ehr"></a>11.5.3.1. TC I_EHR_DIRECTORY.create_directory-empty_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test create_directory on empty EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with <code>ehr_id</code> exists</p>
 </li>
 <li>
-<p>The EHR doesn’t have directory</p>
+<p>The EHR doesn’t have a directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>The EHR <code>ehr_id</code> should have a directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Invoke the create directory service with the existing <code>ehr_id</code> and a valid FOLDER structure</p>
+<p>Invoke the create directory service with the existing <code>ehr_id</code> and a valid <code>FOLDER</code> structure</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -8985,39 +9002,53 @@ the table mixes cases that exist with cases of paths which part exists and parts
 </div>
 </li>
 <li>
-<p>The service should return a positive result related with the directory just created for the EHR</p>
+<p>The service should return a positive result indicating the directory created for the EHR</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_e_2_alternative_flow_1_create_directory_on_ehr_with_directory"><a class="anchor" href="#_e_2_alternative_flow_1_create_directory_on_ehr_with_directory"></a>11.5.3.2. E.2. Alternative flow 1: create directory on EHR with directory</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_create_directory_ehr_with_directory"><a class="anchor" href="#_tc_i_ehr_directory_create_directory_ehr_with_directory"></a>11.5.3.2. TC I_EHR_DIRECTORY.create_directory-ehr_with_directory</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test create_directory on EHR with directory</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>An EHR with ehd_id exists</p>
+<p>An EHR with <code>ehr_id</code> exists</p>
 </li>
 <li>
 <p>The EHR has a directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Invoke the create directory service with the existing <code>ehr_id</code> and a valid FOLDER structure</p>
+<p>Invoke the create directory service with the existing <code>ehr_id</code> and a valid <code>FOLDER</code> structure</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -9027,33 +9058,47 @@ the table mixes cases that exist with cases of paths which part exists and parts
 </div>
 </li>
 <li>
-<p>The service should return an error, indicating that the EHR directory already existing</p>
+<p>The service should return an error, indicating that the EHR directory already exists</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_e_3_alternative_flow_2_create_directory_on_non_existent_ehr"><a class="anchor" href="#_e_3_alternative_flow_2_create_directory_on_non_existent_ehr"></a>11.5.3.3. E.3. Alternative flow 2: create directory on non-existent EHR</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_create_directory_bad_ehr"><a class="anchor" href="#_tc_i_ehr_directory_create_directory_bad_ehr"></a>11.5.3.3. TC I_EHR_DIRECTORY.create_directory-bad_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test create_directory on non-existent EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>The server should be empty</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the create directory service for a random <code>ehr_id</code></p>
@@ -9062,17 +9107,34 @@ the table mixes cases that exist with cases of paths which part exists and parts
 <p>The service should return an error, indicating that the EHR that doesn’t exist</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_f_get_directory"><a class="anchor" href="#_f_get_directory"></a>11.5.4. F. Get DIRECTORY</h4>
-<div class="sect4">
-<h5 id="_f_1_main_flow_get_directory_on_empty_ehr"><a class="anchor" href="#_f_1_main_flow_get_directory_on_empty_ehr"></a>11.5.4.1. F.1. Main flow: get directory on empty EHR</h5>
+<h4 id="_conformance_point_i_ehr_directory_get_directory"><a class="anchor" href="#_conformance_point_i_ehr_directory_get_directory"></a>11.5.4. Conformance point: I_EHR_DIRECTORY.get_directory()</h4>
 <div class="paragraph">
-<p><strong>Preconditions:</strong></p>
+<p>Platform service ref: <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY.<em>get_directory()</em></code></a></p>
 </div>
-<div class="olist arabic">
+<div class="sect4">
+<h5 id="_tc_i_ehr_directory_get_directory_empty_ehr"><a class="anchor" href="#_tc_i_ehr_directory_get_directory_empty_ehr"></a>11.5.4.1. TC I_EHR_DIRECTORY.get_directory-empty_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_directory on empty EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with <code>ehr_id</code> exists</p>
@@ -9081,17 +9143,17 @@ the table mixes cases that exist with cases of paths which part exists and parts
 <p>The EHR doesn’t have a directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory service for the <code>ehr_id</code></p>
@@ -9108,105 +9170,146 @@ the table mixes cases that exist with cases of paths which part exists and parts
 <div class="title">Note</div>
 </td>
 <td class="content">
-considering a REST API implementation, the result
-could be an error status instead of an empty structure.
+in a REST API implementation, the result could be an error status instead of an empty structure.
 </td>
 </tr>
 </table>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_f_2_alternative_flow_1_get_directory_on_ehr_with_just_a_root_directory"><a class="anchor" href="#_f_2_alternative_flow_1_get_directory_on_ehr_with_just_a_root_directory"></a>11.5.4.2. F.2. Alternative flow 1: get directory on EHR with just a root directory</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_get_directory_ehr_root_directory"><a class="anchor" href="#_tc_i_ehr_directory_get_directory_ehr_root_directory"></a>11.5.4.2. TC I_EHR_DIRECTORY.get_directory-ehr_root_directory</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_directory on EHR with a root directory</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with <code>ehr_id</code> exists</p>
 </li>
 <li>
-<p>The EHR has a directory which is empty</p>
+<p>The EHR has a single empty <code>FOLDER</code> in its directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory service for the <code>ehr_id</code></p>
 </li>
 <li>
-<p>The service should return the structure of the <code>EHR.directory</code>: an empty FOLDER</p>
+<p>The service should return the structure of the <code>EHR.directory</code>: an empty <code>FOLDER</code></p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_f_3_alternative_flow_2_get_directory_on_ehr_with_complex_directory_structure_and_items"><a class="anchor" href="#_f_3_alternative_flow_2_get_directory_on_ehr_with_complex_directory_structure_and_items"></a>11.5.4.3. F.3. Alternative flow 2: get directory on EHR with complex directory structure and items</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_get_directory_directory_with_structure"><a class="anchor" href="#_tc_i_ehr_directory_get_directory_directory_with_structure"></a>11.5.4.3. TC I_EHR_DIRECTORY.get_directory-directory_with_structure</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_directory on EHR with a directory containing sub-structure</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with <code>ehr_id</code> exists</p>
 </li>
 <li>
-<p>The EHR has a directory with a complex structure (use the data sets from the previous tests and the reference directory structure)</p>
+<p>The EHR has a directory with a sub-structure (use the data sets from the previous tests and the reference directory structure)</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory service for the <code>ehr_id</code></p>
 </li>
 <li>
-<p>The service should return the full structure of the complex directory for the EHR</p>
+<p>The service should return the full structure of the EHR directory</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_f_4_alternative_flow_3_get_directory_on_non_existent_ehr"><a class="anchor" href="#_f_4_alternative_flow_3_get_directory_on_non_existent_ehr"></a>11.5.4.4. F.4. Alternative flow 3: get directory on non-existent EHR</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_get_directory_directory_with_structure_2"><a class="anchor" href="#_tc_i_ehr_directory_get_directory_directory_with_structure_2"></a>11.5.4.4. TC I_EHR_DIRECTORY.get_directory-directory_with_structure</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_directory on non-existent EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>The server is empty</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory service for a random <code>ehr_id</code></p>
@@ -9215,17 +9318,34 @@ could be an error status instead of an empty structure.
 <p>The service should return an error related with the non-existent EHR</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_g_get_directory_at_time_flows"><a class="anchor" href="#_g_get_directory_at_time_flows"></a>11.5.5. G. Get DIRECTORY at time Flows</h4>
-<div class="sect4">
-<h5 id="_g_1_main_flow_get_directory_at_time_on_empty_ehr"><a class="anchor" href="#_g_1_main_flow_get_directory_at_time_on_empty_ehr"></a>11.5.5.1. G.1. Main flow: get directory at time on empty EHR</h5>
+<h4 id="_conformance_point_i_ehr_directory_get_directory_at_time"><a class="anchor" href="#_conformance_point_i_ehr_directory_get_directory_at_time"></a>11.5.5. Conformance point: I_EHR_DIRECTORY.get_directory_at_time()</h4>
 <div class="paragraph">
-<p><strong>Preconditions:</strong></p>
+<p>Platform service ref: <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY.<em>get_directory_at_time()</em></code></a></p>
 </div>
-<div class="olist arabic">
+<div class="sect4">
+<h5 id="_tc_i_ehr_directory_get_directory_at_time_empty_ehr"><a class="anchor" href="#_tc_i_ehr_directory_get_directory_at_time_empty_ehr"></a>11.5.5.1. TC I_EHR_DIRECTORY.get_directory_at_time-empty_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_directory_at_time on empty EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with <code>ehr_id</code> exists</p>
@@ -9234,17 +9354,17 @@ could be an error status instead of an empty structure.
 <p>The EHR doesn’t have a directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory at time service for the <code>ehr_id</code> and current time</p>
@@ -9265,14 +9385,28 @@ considering a REST API implementation, the result could be an error status inste
 </td>
 </tr>
 </table>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_g_2_alternative_flow_1_get_directory_at_time_on_empty_ehr_with_empty_time"><a class="anchor" href="#_g_2_alternative_flow_1_get_directory_at_time_on_empty_ehr_with_empty_time"></a>11.5.5.2. G.2. Alternative flow 1: get directory at time on empty EHR with empty time</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_get_directory_at_time_empty_ehr_empty_time"><a class="anchor" href="#_tc_i_ehr_directory_get_directory_at_time_empty_ehr_empty_time"></a>11.5.5.2. TC I_EHR_DIRECTORY.get_directory_at_time-empty_ehr_empty_time</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_directory_at_time on empty EHR with empty time</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with <code>ehr_id</code> exists</p>
@@ -9281,17 +9415,17 @@ considering a REST API implementation, the result could be an error status inste
 <p>The EHR doesn’t have a directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory at time service for the <code>ehr_id</code> and empty time</p>
@@ -9312,14 +9446,28 @@ considering a REST API implementation, the result could be an error status inste
 </td>
 </tr>
 </table>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_g_3_alternative_flow_2_get_directory_at_time_on_ehr_with_directory"><a class="anchor" href="#_g_3_alternative_flow_2_get_directory_at_time_on_ehr_with_directory"></a>11.5.5.3. G.3. Alternative flow 2: get directory at time on EHR with directory</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_get_directory_at_time_ehr_with_directory"><a class="anchor" href="#_tc_i_ehr_directory_get_directory_at_time_ehr_with_directory"></a>11.5.5.3. TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_directory_at_time on empty EHR with directory</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with <code>ehr_id</code> exists</p>
@@ -9328,17 +9476,17 @@ considering a REST API implementation, the result could be an error status inste
 <p>The EHR has a directory with one version (use any of the valid datasets from the previous tests)</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory at time service for the <code>ehr_id</code> and current time</p>
@@ -9347,14 +9495,28 @@ considering a REST API implementation, the result could be an error status inste
 <p>The service should return the current directory</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_g_4_alternative_flow_3_get_directory_at_time_on_ehr_with_directory_with_empty_time"><a class="anchor" href="#_g_4_alternative_flow_3_get_directory_at_time_on_ehr_with_directory_with_empty_time"></a>11.5.5.4. G.4. Alternative flow 3: get directory at time on EHR with directory with empty time</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_get_directory_at_time_ehr_with_directory_empty_time"><a class="anchor" href="#_tc_i_ehr_directory_get_directory_at_time_ehr_with_directory_empty_time"></a>11.5.5.4. TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_empty_time</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_directory_at_time on EHR with directory with empty time</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with <code>ehr_id</code> exists</p>
@@ -9363,17 +9525,17 @@ considering a REST API implementation, the result could be an error status inste
 <p>The EHR has a directory with one version (use any of the valid datasets from the previous tests)</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory at time service for the <code>ehr_id</code> and empty time</p>
@@ -9382,14 +9544,28 @@ considering a REST API implementation, the result could be an error status inste
 <p>The service should return the current directory</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_g_5_alternative_flow_4_get_directory_at_time_on_ehr_with_directory_with_multiple_versions_in_multiple_times"><a class="anchor" href="#_g_5_alternative_flow_4_get_directory_at_time_on_ehr_with_directory_with_multiple_versions_in_multiple_times"></a>11.5.5.5. G.5. Alternative flow 4: get directory at time on EHR with directory with multiple versions in multiple times</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_get_directory_at_time_ehr_with_directory_versions"><a class="anchor" href="#_tc_i_ehr_directory_get_directory_at_time_ehr_with_directory_versions"></a>11.5.5.5. TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_versions</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_directory_at_time on EHR with directory containing multiple versions</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with <code>ehr_id</code> exists</p>
@@ -9398,17 +9574,17 @@ considering a REST API implementation, the result could be an error status inste
 <p>The EHR has a directory with two versions (use any of the valid datasets from the previous tests, add small changes to differentiate the versions)</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory at time service for the <code>ehr_id</code> and a time before <code>EHR.time_created</code></p>
@@ -9429,14 +9605,28 @@ considering a REST API implementation, the result could be an error status inste
 <p>The service should return the second version of <code>EHR.directory</code></p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_g_6_alternative_flow_5_get_directory_at_time_on_ehr_with_directory_with_multiple_versions_with_empty_time"><a class="anchor" href="#_g_6_alternative_flow_5_get_directory_at_time_on_ehr_with_directory_with_multiple_versions_with_empty_time"></a>11.5.5.6. G.6. Alternative flow 5: get directory at time on EHR with directory with multiple versions with empty time</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_get_directory_at_time_ehr_with_directory_versions_empty_time"><a class="anchor" href="#_tc_i_ehr_directory_get_directory_at_time_ehr_with_directory_versions_empty_time"></a>11.5.5.6. TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_versions_empty_time</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_directory_at_time on EHR with directory containing multiple versions with empty time</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with <code>ehr_id</code> exists</p>
@@ -9445,17 +9635,17 @@ considering a REST API implementation, the result could be an error status inste
 <p>The EHR has a directory with two versions (use any of the valid datasets from the previous tests, add small changes to differentiate the versions)</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory at time service for the <code>ehr_id</code> and empty time</p>
@@ -9464,59 +9654,80 @@ considering a REST API implementation, the result could be an error status inste
 <p>The service should return the current latest directory</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_g_7_alternative_flow_7_get_directory_at_time_on_non_existent_ehr"><a class="anchor" href="#_g_7_alternative_flow_7_get_directory_at_time_on_non_existent_ehr"></a>11.5.5.7. G.7. Alternative flow 7: get directory at time on non existent EHR</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_get_directory_at_time_bad_ehr"><a class="anchor" href="#_tc_i_ehr_directory_get_directory_at_time_bad_ehr"></a>11.5.5.7. TC I_EHR_DIRECTORY.get_directory_at_time-bad_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_directory_at_time on EHR with directory containing multiple versions with empty time</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>The server is empty</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory at time service for a random <code>ehr_id</code> and current time</p>
 </li>
 <li>
-<p>The service should return an error about the non existent EHR</p>
+<p>The service should return an error indicating non-existent EHR</p>
 </li>
 </ol>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 5%;">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">WIP</p></td>
+</div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_h_update_directory"><a class="anchor" href="#_h_update_directory"></a>11.5.6. H. Update DIRECTORY</h4>
-<div class="sect4">
-<h5 id="_h_1_main_flow_update_directory_from_ehr_with_directory"><a class="anchor" href="#_h_1_main_flow_update_directory_from_ehr_with_directory"></a>11.5.6.1. H.1. Main flow: update directory from EHR with directory</h5>
+<h4 id="_conformance_point_i_ehr_directory_update_directory"><a class="anchor" href="#_conformance_point_i_ehr_directory_update_directory"></a>11.5.6. Conformance point: I_EHR_DIRECTORY.update_directory()</h4>
 <div class="paragraph">
-<p><strong>Preconditions:</strong></p>
+<p>Platform service ref: <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY.<em>update_directory()</em></code></a></p>
 </div>
-<div class="olist arabic">
+<div class="sect4">
+<h5 id="_tc_i_ehr_directory_update_directory_ehr_with_directory"><a class="anchor" href="#_tc_i_ehr_directory_update_directory_ehr_with_directory"></a>11.5.6.1. TC I_EHR_DIRECTORY.update_directory-ehr_with_directory</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test update_directory on EHR with directory</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with <code>ehr_id</code> exists on the server</p>
@@ -9525,21 +9736,21 @@ considering a REST API implementation, the result could be an error status inste
 <p>The EHR has a directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>The EHR with <code>ehr_id</code> has an updated directory structure</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the update directory service for the <code>ehr_id</code></p>
@@ -9555,14 +9766,28 @@ considering a REST API implementation, the result could be an error status inste
 <p>The service should return a positive result related with the updated directory</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_h_2_alternative_flow_1_update_directory_on_empty_ehr"><a class="anchor" href="#_h_2_alternative_flow_1_update_directory_on_empty_ehr"></a>11.5.6.2. H.2. Alternative flow 1: update directory on empty EHR</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_update_directory_empty_ehr"><a class="anchor" href="#_tc_i_ehr_directory_update_directory_empty_ehr"></a>11.5.6.2. TC I_EHR_DIRECTORY.update_directory-empty_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test update_directory on empty EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with <code>ehr_id</code> exists on the server</p>
@@ -9571,17 +9796,17 @@ considering a REST API implementation, the result could be an error status inste
 <p>The EHR doesn’t have a directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the update directory service for the <code>ehr_id</code></p>
@@ -9597,30 +9822,44 @@ considering a REST API implementation, the result could be an error status inste
 <p>The service should return an error indicating that the non existent directory to update</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_h_3_alternative_flow_2_update_directory_on_non_existing_ehr"><a class="anchor" href="#_h_3_alternative_flow_2_update_directory_on_non_existing_ehr"></a>11.5.6.3. H.3. Alternative flow 2: update directory on non-existing EHR</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_update_directory_bad_ehr"><a class="anchor" href="#_tc_i_ehr_directory_update_directory_bad_ehr"></a>11.5.6.3. TC I_EHR_DIRECTORY.update_directory-bad_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test update_directory on non-existent EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The server is empty, doesn’t have any EHRs</p>
+<p>The server is empty</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the update directory service for random <code>ehr_id</code></p>
@@ -9636,17 +9875,34 @@ considering a REST API implementation, the result could be an error status inste
 <p>The service should return an error indicating that the non existent <code>ehr_id</code></p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_i_delete_directory"><a class="anchor" href="#_i_delete_directory"></a>11.5.7. I. Delete DIRECTORY</h4>
-<div class="sect4">
-<h5 id="_i_1_main_flow_delete_directory_on_empty_ehr"><a class="anchor" href="#_i_1_main_flow_delete_directory_on_empty_ehr"></a>11.5.7.1. I.1. Main flow: delete directory on empty EHR</h5>
+<h4 id="_conformance_point_i_ehr_directory_delete_directory"><a class="anchor" href="#_conformance_point_i_ehr_directory_delete_directory"></a>11.5.7. Conformance point: I_EHR_DIRECTORY.delete_directory()</h4>
 <div class="paragraph">
-<p><strong>Preconditions:</strong></p>
+<p>Platform service ref: <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY.<em>delete_directory()</em></code></a></p>
 </div>
-<div class="olist arabic">
+<div class="sect4">
+<h5 id="_tc_i_ehr_directory_delete_directory_empty_ehr"><a class="anchor" href="#_tc_i_ehr_directory_delete_directory_empty_ehr"></a>11.5.7.1. TC I_EHR_DIRECTORY.delete_directory-empty_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test delete_directory on empty EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with <code>ehr_id</code> exists on the server</p>
@@ -9655,33 +9911,47 @@ considering a REST API implementation, the result could be an error status inste
 <p>The EHR doesn’t have a directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the delete directory service for the <code>ehr_id</code></p>
 </li>
 <li>
-<p>The service should return an error indicating that the non existent directory</p>
+<p>The service should return an error indicating the non existent directory</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_i_2_alternative_flow_1_delete_directory_from_ehr_with_directory"><a class="anchor" href="#_i_2_alternative_flow_1_delete_directory_from_ehr_with_directory"></a>11.5.7.2. I.2. Alternative flow 1: delete directory from EHR with directory</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_delete_directory_ehr_with_directory"><a class="anchor" href="#_tc_i_ehr_directory_delete_directory_ehr_with_directory"></a>11.5.7.2. TC I_EHR_DIRECTORY.delete_directory-ehr_with_directory</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test delete_directory on EHR with directory</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with <code>ehr_id</code> exists on the server</p>
@@ -9690,11 +9960,11 @@ considering a REST API implementation, the result could be an error status inste
 <p>The EHR has a directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>The EHR <code>ehr_id</code> doesn’t have directory</p>
@@ -9712,11 +9982,11 @@ the directory exists as a new deleted version (that is <code>VERSION.lifecycle_s
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the delete directory service for the <code>ehr_id</code></p>
@@ -9725,30 +9995,44 @@ the directory exists as a new deleted version (that is <code>VERSION.lifecycle_s
 <p>The service should return a positive result related with the deleted directory</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_i_3_alternative_flow_2_delete_directory_from_non_existent_ehr"><a class="anchor" href="#_i_3_alternative_flow_2_delete_directory_from_non_existent_ehr"></a>11.5.7.3. I.3. Alternative flow 2: delete directory from non-existent EHR</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_delete_directory_bad_ehr"><a class="anchor" href="#_tc_i_ehr_directory_delete_directory_bad_ehr"></a>11.5.7.3. TC I_EHR_DIRECTORY.delete_directory-bad_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test delete_directory on non-existent EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The server is empty, there are no EHRs</p>
+<p>The server is empty</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory service for a random <code>ehr_id</code></p>
@@ -9757,17 +10041,34 @@ the directory exists as a new deleted version (that is <code>VERSION.lifecycle_s
 <p>The service should return an error indicating that the non existent EHR</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_j_has_directory_version"><a class="anchor" href="#_j_has_directory_version"></a>11.5.8. J. Has DIRECTORY version</h4>
-<div class="sect4">
-<h5 id="_j_1_main_flow_has_directory_from_empty_ehr"><a class="anchor" href="#_j_1_main_flow_has_directory_from_empty_ehr"></a>11.5.8.1. J.1. Main flow: has directory from empty EHR</h5>
+<h4 id="_conformance_point_i_ehr_directory_has_directory_version"><a class="anchor" href="#_conformance_point_i_ehr_directory_has_directory_version"></a>11.5.8. Conformance point: I_EHR_DIRECTORY.has_directory_version()</h4>
 <div class="paragraph">
-<p><strong>Preconditions:</strong></p>
+<p>Platform service ref: <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY.<em>has_directory_version()</em></code></a></p>
 </div>
-<div class="olist arabic">
+<div class="sect4">
+<h5 id="_tc_i_ehr_directory_has_directory_version_empty_ehr"><a class="anchor" href="#_tc_i_ehr_directory_has_directory_version_empty_ehr"></a>11.5.8.1. TC I_EHR_DIRECTORY.has_directory_version-empty_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test has_directory_version on empty EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with known <code>ehr_id</code> exists on the server</p>
@@ -9776,17 +10077,17 @@ the directory exists as a new deleted version (that is <code>VERSION.lifecycle_s
 <p>The EHR doesn’t have a directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the has directory service for the <code>ehr_id</code> and a random version uid</p>
@@ -9795,14 +10096,28 @@ the directory exists as a new deleted version (that is <code>VERSION.lifecycle_s
 <p>The service should return false</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_j_2_alternative_flow_1_has_directory_on_ehr_that_has_two_versions_of_directory"><a class="anchor" href="#_j_2_alternative_flow_1_has_directory_on_ehr_that_has_two_versions_of_directory"></a>11.5.8.2. J.2. Alternative flow 1: has directory on EHR that has two versions of directory</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_has_directory_version_directory_with_two_versions"><a class="anchor" href="#_tc_i_ehr_directory_has_directory_version_directory_with_two_versions"></a>11.5.8.2. TC I_EHR_DIRECTORY.has_directory_version-directory_with_two_versions</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test has_directory_version on EHR that has two versions of directory</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with known <code>ehr_id</code> exists on the server</p>
@@ -9811,17 +10126,17 @@ the directory exists as a new deleted version (that is <code>VERSION.lifecycle_s
 <p>The EHR has two directory versions</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the has directory service for the <code>ehr_id</code> and the <code>version_uid</code> of the first version of directory</p>
@@ -9836,49 +10151,80 @@ the directory exists as a new deleted version (that is <code>VERSION.lifecycle_s
 <p>The service should return true</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_j_3_alternative_flow_2_has_directory_on_non_existent_ehr"><a class="anchor" href="#_j_3_alternative_flow_2_has_directory_on_non_existent_ehr"></a>11.5.8.3. J.3. Alternative flow 2: has directory on non-existent EHR</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_has_directory_version_bad_ehr"><a class="anchor" href="#_tc_i_ehr_directory_has_directory_version_bad_ehr"></a>11.5.8.3. TC I_EHR_DIRECTORY.has_directory_version-bad_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test has_directory_version on non-existent EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>The server doesn’t have EHRs</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the has directory service for a random <code>ehr_id</code> and version uid</p>
 </li>
 <li>
-<p>The service should return an error related with the non existence of the EHR</p>
+<p>The service should return an error related with the non-existence of the EHR</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_k_get_directory_at_version"><a class="anchor" href="#_k_get_directory_at_version"></a>11.5.9. K. Get DIRECTORY at version</h4>
-<div class="sect4">
-<h5 id="_k_1_main_flow_get_directory_at_version_from_empty_ehr"><a class="anchor" href="#_k_1_main_flow_get_directory_at_version_from_empty_ehr"></a>11.5.9.1. K.1. Main flow: get directory at version from empty EHR</h5>
+<h4 id="_conformance_point_i_ehr_directory_get_directory_at_version"><a class="anchor" href="#_conformance_point_i_ehr_directory_get_directory_at_version"></a>11.5.9. Conformance point: I_EHR_DIRECTORY.get_directory_at_version()</h4>
 <div class="paragraph">
-<p><strong>Preconditions:</strong></p>
+<p>Platform service ref: <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY.<em>get_directory_at_version()</em></code></a></p>
 </div>
-<div class="olist arabic">
+<div class="sect4">
+<h5 id="_tc_i_ehr_directory_get_directory_at_version_empty_ehr"><a class="anchor" href="#_tc_i_ehr_directory_get_directory_at_version_empty_ehr"></a>11.5.9.1. TC I_EHR_DIRECTORY.get_directory_at_version-empty_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_directory_at_version on empty EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with known <code>ehr_id</code> exists on the server</p>
@@ -9887,33 +10233,47 @@ the directory exists as a new deleted version (that is <code>VERSION.lifecycle_s
 <p>The EHR doesn’t have a directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory at version service for the <code>ehr_id</code> and a random version uid</p>
 </li>
 <li>
-<p>The service should return an error indicating that the non existence of the EHR directory version</p>
+<p>The service should return an error indicating that the non-existence of the EHR directory version</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_k_2_alternative_flow_1_get_directory_at_version_from_ehr_that_has_two_versions_of_directory"><a class="anchor" href="#_k_2_alternative_flow_1_get_directory_at_version_from_ehr_that_has_two_versions_of_directory"></a>11.5.9.2. K.2. Alternative flow 1: get DIRECTORY at version from EHR that has two versions of directory</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_get_directory_at_version_directory_with_two_versions"><a class="anchor" href="#_tc_i_ehr_directory_get_directory_at_version_directory_with_two_versions"></a>11.5.9.2. TC I_EHR_DIRECTORY.get_directory_at_version-directory_with_two_versions</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_directory_at_version on EHR that has two versions of directory</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with known <code>ehr_id</code> exists on the server</p>
@@ -9922,17 +10282,17 @@ the directory exists as a new deleted version (that is <code>VERSION.lifecycle_s
 <p>The EHR has two versions of directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory at version service for the <code>ehr_id</code> and the <code>version_uid</code> of the first version of directory</p>
@@ -9947,30 +10307,44 @@ the directory exists as a new deleted version (that is <code>VERSION.lifecycle_s
 <p>The service should return the second version of the directory</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_k_3_alternative_flow_2_get_directory_at_version_from_non_existent_ehr"><a class="anchor" href="#_k_3_alternative_flow_2_get_directory_at_version_from_non_existent_ehr"></a>11.5.9.3. K.3. Alternative flow 2: get DIRECTORY at version from non existent EHR</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_get_directory_at_version_bad_ehr"><a class="anchor" href="#_tc_i_ehr_directory_get_directory_at_version_bad_ehr"></a>11.5.9.3. TC I_EHR_DIRECTORY.get_directory_at_version-bad_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_directory_at_version on non-existent EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>The server doesn’t have EHRs</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory at version service for a random <code>ehr_id</code> and version uid</p>
@@ -9979,33 +10353,50 @@ the directory exists as a new deleted version (that is <code>VERSION.lifecycle_s
 <p>The service should return an error related with the non existence of the EHR</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_l_get_versioned_directory"><a class="anchor" href="#_l_get_versioned_directory"></a>11.5.10. L. Get versioned DIRECTORY</h4>
-<div class="sect4">
-<h5 id="_l_1_main_flow_get_versioned_directory_from_ehr_with_no_directory"><a class="anchor" href="#_l_1_main_flow_get_versioned_directory_from_ehr_with_no_directory"></a>11.5.10.1. L.1. Main flow: get versioned directory from EHR with no directory</h5>
+<h4 id="_conformance_point_i_ehr_directory_get_versioned_directory"><a class="anchor" href="#_conformance_point_i_ehr_directory_get_versioned_directory"></a>11.5.10. Conformance point: I_EHR_DIRECTORY.get_versioned_directory()</h4>
 <div class="paragraph">
-<p><strong>Preconditions:</strong></p>
+<p>Platform service ref: <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_ehr_directory_interface" target="_blank" rel="noopener"><code>I_EHR_DIRECTORY.<em>get_versioned_directory()</em></code></a></p>
 </div>
-<div class="olist arabic">
+<div class="sect4">
+<h5 id="_tc_i_ehr_directory_get_versioned_directory_empty_ehr"><a class="anchor" href="#_tc_i_ehr_directory_get_versioned_directory_empty_ehr"></a>11.5.10.1. TC I_EHR_DIRECTORY.get_versioned_directory-empty_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_versioned_directory on non-existent EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with known <code>ehr_id</code> exists on the server</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get versioned directory service for the <code>ehr_id</code></p>
@@ -10026,14 +10417,28 @@ depending on the implementation, a valid result could also be returning an empty
 </td>
 </tr>
 </table>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_l_2_alternative_flow_1_get_versioned_directory_from_existent_ehr_that_has_two_versions_of_directory"><a class="anchor" href="#_l_2_alternative_flow_1_get_versioned_directory_from_existent_ehr_that_has_two_versions_of_directory"></a>11.5.10.2. L.2. Alternative flow 1: get versioned directory from existent EHR that has two versions of directory</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_get_versioned_directory_directory_with_two_versions"><a class="anchor" href="#_tc_i_ehr_directory_get_versioned_directory_directory_with_two_versions"></a>11.5.10.2. TC I_EHR_DIRECTORY.get_versioned_directory-directory_with_two_versions</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_versioned_directory on EHR that has two versions of directory</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>An EHR with known <code>ehr_id</code> exists on the server</p>
@@ -10042,17 +10447,17 @@ depending on the implementation, a valid result could also be returning an empty
 <p>The EHR has two versions of directory</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get versioned directory service for the <code>ehr_id</code></p>
@@ -10061,30 +10466,44 @@ depending on the implementation, a valid result could also be returning an empty
 <p>The service should return the versioned folder and should reference the two exsinting versions</p>
 </li>
 </ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_l_3_alternative_flow_2_get_versioned_directory_from_non_existent_ehr"><a class="anchor" href="#_l_3_alternative_flow_2_get_versioned_directory_from_non_existent_ehr"></a>11.5.10.3. L.3. Alternative flow 2: get versioned directory from non existent EHR</h5>
-<div class="paragraph">
-<p><strong>Preconditions:</strong></p>
-</div>
-<div class="olist arabic">
+<h5 id="_tc_i_ehr_directory_get_versioned_directory_bad_ehr"><a class="anchor" href="#_tc_i_ehr_directory_get_versioned_directory_bad_ehr"></a>11.5.10.3. TC I_EHR_DIRECTORY.get_versioned_directory-bad_ehr</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test get_versioned_directory on non-existent EHR</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Pre-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>The server doesn’t have any EHRs</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong>Postconditions:</strong></p>
-</div>
-<div class="paragraph">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post-conditions</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>None</p>
-</div>
-<div class="paragraph">
-<p><strong>Flow:</strong></p>
-</div>
-<div class="olist arabic">
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Flow</p></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Invoke the get directory service for a random <code>ehr_id</code></p>
@@ -10093,175 +10512,10 @@ depending on the implementation, a valid result could also be returning an empty
 <p>The service should return an error related with the non existence of the EHR</p>
 </li>
 </ol>
-</div>
-<hr>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_annex_proposal_for_folder_api"><a class="anchor" href="#_annex_proposal_for_folder_api"></a>11.5.11. Annex: proposal for FOLDER API</h4>
-<div class="paragraph">
-<p>REF:
-<a href="https://wiki.vitagroup.ag/display/ETHERCIS/FOLDER+related+decisions+-+internal+implementation%2C+API+and+conformance" class="bare">https://wiki.vitagroup.ag/display/ETHERCIS/FOLDER+related+decisions+-+internal+implementation%2C+API+and+conformance</a></p>
-</div>
-<div class="paragraph">
-<p>openEHR ticket:
-<a href="https://openehr.atlassian.net/browse/SPECPR-338?jql=status%20in%20(Analysis%2C%20Implementation%2C%20%22In%20Progress%22%2C%20%22In%20Review%22%2C%20Open%2C%20%22To%20Do%22)%20AND%20text%20~%20%22folder%22" class="bare">https://openehr.atlassian.net/browse/SPECPR-338?jql=status%20in%20(Analysis%2C%20Implementation%2C%20%22In%20Progress%22%2C%20%22In%20Review%22%2C%20Open%2C%20%22To%20Do%22)%20AND%20text%20~%20%22folder%22</a></p>
-</div>
-<div class="sect4">
-<h5 id="_background"><a class="anchor" href="#_background"></a>11.5.11.1. Background</h5>
-<div class="paragraph">
-<p>Current service model related for <code>EHR.directory</code> might lead to some complexities and issues for internal implementation and for the REST API. The goal is to discuss those issues and decide upon our internal implementation rules for FOLDER in general, and particularly for <code>EHR.directory.</code></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_operations_for_the_service_model"><a class="anchor" href="#_operations_for_the_service_model"></a>11.5.11.2. Operations for the Service Model</h5>
-<div class="paragraph">
-<p><strong>Current operations are:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>has_directory(ehr_id): Boolean</code></p>
-</li>
-<li>
-<p><code>has_path(ehr_id, path): Boolean</code> // path from the root <code>EHR.directory</code>, also the idea of this path is that is defined by archetypes (this is another issue mentioned below)</p>
-</li>
-<li>
-<p><code>create_directory(ehr_id, folder)</code> //root directory</p>
-</li>
-<li>
-<p><code>get_directory(ehr_id): FOLDER</code> // this might need to be VERSION</p>
-</li>
-<li>
-<p><code>get_directory_at_time(ehr_id, time): FOLDER</code> // this might also be VERSION</p>
-</li>
-<li>
-<p><code>update_directory(ehr_id, folder)</code> // folder is the full <code>EHR.directory</code> modified</p>
-</li>
-<li>
-<p><code>delete_directory(ehr_id)</code></p>
-</li>
-<li>
-<p><code>has_directory_version(ehr_id, version_uid): Boolean</code></p>
-</li>
-<li>
-<p><code>get _directory_at_version(ehr_id, version_uid): FOLDER</code> // this might also be VERSION</p>
-</li>
-<li>
-<p><code>get_versioned_directory(ehr_id): VERSIONED_FOLDER</code></p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Issues:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>To update, the client has to get the full <code>EHR.directory</code> structure, do changes on the client side (that means the management happens on the client), then the update needs to commit the whole structure with the modifications, this adds a lot of complexity on the client side and might not be the most natural way of managing an <code>EHR.directory.</code> (Luis: agree. FOLDERS in my view should be self standing structures and the system should allow for updating only one of them (e.g. change its items or details) as long as the edition of the FOLDER does not introduce inconsistencies in other FOLDERs.)</p>
-</li>
-<li>
-<p>The has_path operation uses a path that should be defined by an archetype (mentioned by Thomas on the SEC Slack), my interpretation was those where instance paths considering the <code>EHR.directory</code> tree structure, which makes sense since it is impractical to have the whole <code>EHR.directory</code> structure defined by archetypes, and even some of those FOLDERs will be created in an ad-hoc way (IMO most will be created this way and using a generic archetype for definition, this is also the approach of Code24 which has been using folders for 6 years). Also paths are name-based, which makes them language dependent and creates the need for a constraint to have sibling FOLDERs with unique names. (Luis: the uid inherited from LOCATABLE (now optional 0..1) should be mandatory in our implementation for implementation reasons (1..1). At the moment is is the Primary Key in the Database, thus it is mandatory and unique).</p>
-</li>
-<li>
-<p>Also related to paths, the current spec shows name-based paths to reference internal FOLDERs, but to reference to items in a FOLDER, the path uses numeric indexes, which seems inconsistent. One possibility is to use the item name on the path, the issue that creates is the items are really <code>VERSIONED_OBJECT</code>, which doesn’t have a name, but the <code>VERSIONED_OBJECT.latest_version()</code> which is VERSION has a name if T is
-LOCATABLE, so <code>FOLDER.item[i].latest_version().data.name</code> could be used in the path, but again, that creates another couple of issues: a. the name is not really form the item but from the contained data, and b. since the data could be updated, the name could change, changing the path. So the name-based path IMO is not really useful for any use case.</p>
-</li>
-<li>
-<p>That last part makes me think of the name-based paths for FOLDERs, since <code>FOLDER.name</code> could also change, since FOLDERs could be created, renamed, deleted, etc. so the paths that were valid at one point could
-be invalid later. And one idea of these paths was to use them also for AQL, but IMO is almost impossible to get something very detailed from AQL using paths for FOLDERs, since I think most FOLDERs will be created ad-hoc and might not have a full structure defined by archetypes, only the basic structure, and maybe the new <code>FOLDER.details</code> structure, which could be archetyped but also could be used in an ad-hoc way.</p>
-</li>
-<li>
-<p>Not issues from the operations but from the model: a. a FOLDER could have more than one parent, b. a FOLDER could have an ancestor as subfolder. These break the tree structure and openEHR needs to add some
-invariants to prevent this on the model.</p>
-</li>
-<li>
-<p>We should clearly commit to implement FOLDERs directory as trees in the computational sense. The aim of this is to guarantee some performance issues (approx. O(lgn) when rearranged optimally) and avoid
-possible cycles that may derive from graph-like directories. This is in contradiction with some implementations that allow to virtually define graphs using the LINK class.</p>
-</li>
-<li>
-<p>The operation <code>'has_directory(ehr_id): Boolean'</code> makes sense in EHRs, however for phenotyping in clinical research it may be actually the opposite. For example, a clinical study on back pain surgery may have a folder containing many EHRs rather than the other way around.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Proposals for operations:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>has_directory(ehr_id): Boolean</code> // MAINTAIN</p>
-</li>
-<li>
-<p><code>has_folder(ehr_id, folder_uid): Boolean</code> // NEW, uses uid not path</p>
-</li>
-<li>
-<p><code>has_path(ehr_id, path): Boolean</code> // MAINTAIN - 1. spec needs to explicitly state <code>'path'</code> is an archetype path, not an instance path, 2. add an example with archetype paths to show how this operation will work, I think looks good on paper but it can be difficult to implement</p>
-</li>
-<li>
-<p><code>create_directory(ehr_id, folder)</code> // MAINTAIN - discuss about the EHR and support self-standing FOLDERs without belonging to an EHR.</p>
-</li>
-<li>
-<p><code>get_directory(ehr_id): FOLDER</code> // MAINTAIN</p>
-</li>
-<li>
-<p><code>get_directory_at_time(ehr_id, time): FOLDER</code> // MAINTAIN</p>
-</li>
-<li>
-<p><code>get_folder(ehr_id, folder_uid): FOLDER</code> // NEW, like cd + ls commands (this is optional since the information will be included in the result of get_directory). This will return the latest version of the directory provided that folder is not versioned.</p>
-</li>
-<li>
-<p><code>create_folder(ehr_id, parent_folder_uid, new_folder)</code> // NEW, like mkdir command, if no <code>parent_folder_uid</code> is provided, the new_folder will be created under the <code>EHR.directory</code></p>
-</li>
-<li>
-<p><code>update_folder(ehr_id, updated_folder)</code> // NEW, allows to modify an individual FOLDER and what it contains, including name, details, folders and items. The updated_folder contains it’s uid so there is no need for an extra parameter. If subfolders are deleted in the updated folder, they are deleted in the directory as well in EHRbase.</p>
-</li>
-<li>
-<p><code>remove_folder(ehr_id, folder_uid)</code> // NEW, like rmdir -r (removes also subfolders and items)</p>
-</li>
-<li>
-<p><code>add_item(ehr_id, folder_uid, versioned_object_uid)</code> // NEW, like the touch command, adds the item to the <code>FOLDER.items</code> via OBJECT_REF (TODO: verify OBJECT_REF needs namespace and type values but I think those
-could be set to default values set on the server config so we might not need to add extra parameters for those)</p>
-</li>
-<li>
-<p><code>remove_item(ehr_id, folder_uid, versioned_object_uid)</code> // NEW, like the rm command, removes the versioned object reference from the FOLDER.items</p>
-</li>
-<li>
-<p><code>delete_directory(ehr_id)</code> // MAINTAIN, but is contained in remove_folder when it is invoked with the <code>EHR.directory.uid</code> as <code>folder_uid</code> value</p>
-</li>
-<li>
-<p><code>has_directory_version(ehr_id, version_uid): Boolean</code> // MAINTAIN</p>
-</li>
-<li>
-<p><code>get _directory_at_version(ehr_id, version_uid): FOLDER</code> // MAINTAIN</p>
-</li>
-<li>
-<p><code>get_versioned_directory(ehr_id): VERSIONED_FOLDER</code> // MAINTAIN</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Notes:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Referencing FOLDERs by uid requires that the <code>FOLDER.uid</code> is set for all FOLDERs by the server. In the RM the uid is optional, so this could be an implementation constraint but still <code>'spec valid'</code>.</p>
-</li>
-<li>
-<p>The added operations seem to be a more natural way of managing with FOLDERs and their items like a user could do on a Linux Terminal and avoids the extra complexity of managing the whole <code>EHR.directory</code> on the client side for creating new FOLDERs and adding new references to items, also for deleting stuff, instead of having one big operation, we could map one action from a user to one operation on the Service Model. Still the create_folder() operation could receive a full FOLDER structure with subfolders and references to items, or just the basic data like name and details, and then it could be modified using the other operations, or the same create_folder() to add subfolders to it. That also adds more flexibility for client-side implementation.</p>
-</li>
-<li>
-<p>About versioning, from the spec, the only versionable FOLDER is the <code>EHR.directory</code>, no internal FOLDERs could be versioned. Considering the new operations, each creation, update and removal of FOLDERs and items, would generate a new version of the containing <code>EHR.directory</code>, so this is an implementation consideration. Either way this should be done with the current operations in the SM spec, this is just to note that individual FOLDERs shouldn’t be versioned (Code24 is versioning individual FOLDERs and they might propose a change request to make that valid in the spec, but won’t be any time soon).</p>
-</li>
-<li>
-<p>Using the parent_folder_id to create new FOLDERs prevent the generation of non-tree structures, since a. FOLDER.uid should always be assigned by the server and 2. only children to a given parent could be created.</p>
-</li>
-<li>
-<p>TODO: we still need to discuss AQL requirements for FOLDERs and what will be needed to support those (from archetype modeling to internal implementation).</p>
-</li>
-</ol>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
