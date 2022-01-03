@@ -2,4 +2,4 @@
 :copyright_year: 2021
 :spec_status: DEVELOPMENT
 :keywords: conformance
-:description: openEHR Conformance
+:description: openEHR Conformance Guide

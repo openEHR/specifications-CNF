@@ -1,4 +1,14 @@
-= Test Items
+= Test Framework
+
+== Product Categories
+
+xxxxxx
+
+[.text-center]
+.Product categories
+image::{diagrams_uri}/conformance_framework-product_cats.svg[id=conformance_framework-product_cats, align="center"]
+
+== Test Framework Specification
 
 What could be tested are the operations per interface of the SM. In the Conformance Specification there should be a criteria that tests at least one success case, one case for each possible error, and if there are border cases, one test for each border case. This is abstract, is what to test but doesn't specify how to test. In the Testing Technical Framework it is specified how to test and which specific data sets to use.
 
@@ -11,3 +21,9 @@ Each product category should offer a subset of the interfaces specified in the S
 [.text-center]
 .Test items associated with products
 image::{diagrams_uri}/conformance_framework-test_items_per_cat.svg[id=conformance_framework-test_items_per_cat, align="center"]
+
+== Test Framework Implementation for a Technology
+
+xxx
+
+

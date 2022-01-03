@@ -2,9 +2,9 @@
 
 == Purpose
 
-This document describes the openEHR EHR System Conformance Definition, which states a test schedule and content of tests to be used to determine the conformance of EHR solutions to openEHR EHR specifications. The audience of this document includes:
+This guide describes the openEHR Conformance Teting artefacts and methodology. The audience of this document includes:
 
-* Software development organisations developing EHR systems;
+* Software development organisations developing HIT systems;
 * Customer organisations.
 
 == Related Documents

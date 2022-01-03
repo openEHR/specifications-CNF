@@ -32,6 +32,7 @@ This specification was developed and is maintained by the {openehr_sec}[openEHR 
 
 === Principal Authors
 
+* Thomas Beale, Ars Semantica, UK; openEHR International Board
 * Pablo Pazos Gutierrez <pablo.pazos@cabolabs.com>
 
 === Trademarks
@@ -51,9 +52,7 @@ This specification was developed and is maintained by the {openehr_sec}[openEHR 
 include::master01-preface.adoc[leveloffset=+1]
 include::master02-glossary.adoc[leveloffset=+1]
 include::master03-overview.adoc[leveloffset=+1]
-include::master04-artifacts.adoc[leveloffset=+1]
-include::master05-product_cats.adoc[leveloffset=+1]
-include::master06-test_items.adoc[leveloffset=+1]
+include::master04-test_framework.adoc[leveloffset=+1]
 
 //
 // --------------------------------------------- REFERENCES -----------------------------------------------

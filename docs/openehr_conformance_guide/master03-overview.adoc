@@ -1,13 +1,32 @@
 = Overview
 
-Conformance testing is used as the basis of product certification, and has the following goals:
+== Goals
+
+Conformance testing is used as the basis of product and system certification, and has the following goals:
 
 * _Tendering_: enable tendering authorities to state formal criteria for compliance in tenders
 * _Protection for solution developers_: enables bona fide vendors and other developers to prove the quality of their solutions compared to other offerings claiming conformance
 * _Protection for procurement_: provides a way of ensuring that purchased solutions can be contractually guaranteed to perform in certain ways
 
-The following use cases....
+These needs imply four kinds of stakeholder:
+
+* Platform Specifier(s) - openEHR International and others (e.g. SNOMED International) publish open specifications used by solution builders as well as conformance criteria and testing framework for assessment purposes;
+* Customer organisations procuring solutions based on the platform specifications;
+* Solution Builders (including product vendors, in-house, etc) whose solutions are claimed to be based on the specifications;
+* Conformance Assessment Agency - independent assessors of conformance of concrete systems or products to the conformance criteria published by the platform specifier(s).
 
 [.text-center]
-.Use Cases
+.Stakeholders and Use Cases
 image::{diagrams_uri}/conformance_framework-use_cases.svg[id=conformance_framework-use_cases, align="center"]
+
+The confidence of procuring organisations in the overall platform solutions market relies on the availablility of formal conformance criteria, as well as guides and materials for concretely performing conformance assessment. Assessment may be performed in-house on both procurement and vendor side, but in a more mature market will also be performed independently by dedicated assessment organisation(s).
+
+== Artefacts
+
+The purpose of the openEHR Conformance Specifications is to provide a framework and methodology for performing conformance testing of openEHR-based systems and products to the intended specifications.
+
+The following diagram illustrates the openEHR Conformance Specifications and their relationship with the primary (technology-independent) and ITS (technology-specific) specifications.
+
+[.text-center]
+.Conformance-related specifications
+image::{diagrams_uri}/conformance_framework-artefacts.svg[id=conformance_framework-artefacts, align="center"]
