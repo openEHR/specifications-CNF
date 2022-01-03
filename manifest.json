@@ -5,7 +5,7 @@
     "keywords": "conformance",
     "specifications": [
         {
-            "id": "openehr_conformance_guide",
+            "id": "guide",
             "title": "openEHR Conformance Guide",
             "title_short": "Conformance Guide",
             "description": "openEHR Conformance Guide",
@@ -16,7 +16,7 @@
             "keywords": "conformance"
         },
         {
-            "id": "openehr_platform_conformance",
+            "id": "platform_test_schedule",
             "title": "openEHR Platform Conformance Test Schedule",
             "title_short": "Platform Conformance Test Schedule",
             "description": "openEHR Platform Conformance Test Schedule",
@@ -37,7 +37,7 @@
             ]
         },
         {
-            "id": "openehr_conformance_certificate",
+            "id": "certificate",
             "title": "openEHR Conformance Certificate",
             "title_short": "Conformance Certificate",
             "description": "openEHR Conformance Certificate",
