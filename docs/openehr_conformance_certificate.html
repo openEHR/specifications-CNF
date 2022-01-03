@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<meta name="description" content="openEHR Conformance Certificate">
+<meta name="keywords" content="conformance, certificate">
+<title>openEHR Conformance Certificate</title>
+<link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel0">
+<li><a href="#_openehr_conformance_certificate">openEHR Conformance Certificate</a>
+<ul class="sectlevel1">
+<li><a href="#_amendment_record">Amendment Record</a></li>
+<li><a href="#_acknowledgements">Acknowledgements</a>
+<ul class="sectlevel2">
+<li><a href="#_principal_authors">Principal Authors</a></li>
+<li><a href="#_trademarks">Trademarks</a></li>
+</ul>
+</li>
+<li><a href="#_preface">1. Preface</a>
+<ul class="sectlevel2">
+<li><a href="#_purpose">1.1. Purpose</a></li>
+<li><a href="#_related_documents">1.2. Related Documents</a></li>
+<li><a href="#_status">1.3. Status</a></li>
+<li><a href="#_feedback">1.4. Feedback</a></li>
+</ul>
+</li>
+<li><a href="#_overview">2. Overview</a></li>
+<li><a href="#_conformance_certificate">Conformance Certificate</a>
+<ul class="sectlevel2">
+<li><a href="#_system_under_test_sut">System Under Test (SUT)</a></li>
+<li><a href="#_scope_of_test">Scope of Test</a></li>
+<li><a href="#_detailed_test_report">Detailed Test Report</a></li>
+<li><a href="#_profile_report">Profile Report</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock text-center">
+<div class="content">
+<img src="https://specifications.openehr.org/images/openEHR_logo_RGB.svg" alt="openEHR logo">
+</div>
+</div>
+</div>
+</div>
+<h1 id="_openehr_conformance_certificate" class="sect0"><a class="anchor" href="#_openehr_conformance_certificate"></a>openEHR Conformance Certificate</h1>
+<div class="openblock partintro">
+<div class="content">
+<table class="tableblock frame-all grid-all fit-content spread">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top" colspan="2"><strong>Issuer</strong>: <a href="https://www.openehr.org/programs/specification" target="_blank" rel="noopener">openEHR Specification Program</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Release</strong>: CNF latest</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong>: DEVELOPMENT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Revision</strong>: <a href="#latest_issue">[latest_issue]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong>: <a href="#latest_issue_date">[latest_issue_date]</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: conformance, certificate</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock text-center">
+<div class="content">
+<object type="image/svg+xml" data="openehr_block_diagram.svg" width="60%"><span class="alt">openEHR components</span></object>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top" colspan="2">&#169; 2021 - 2021 The openEHR Foundation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><a href="https://www.openehr.org" target="_blank" rel="noopener">The openEHR Foundation</a> is an independent, non-profit foundation, facilitating the sharing of health records by consumers and clinicians via open specifications, clinical models and open platform implementations.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Licence</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="https://specifications.openehr.org/images/cc-by-nd-88x31.png" alt="image"></span> Creative Commons Attribution-NoDerivs 3.0 Unported. <a href="https://creativecommons.org/licenses/by-nd/3.0/" class="bare">https://creativecommons.org/licenses/by-nd/3.0/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Support</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issues: <a href="https://specifications.openehr.org/components/CNF/open_issues" target="_blank" rel="noopener">Problem Reports</a><br>
+ Web: <a href="https://specifications.openehr.org" target="_blank" rel="noopener">specifications.openEHR.org</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_amendment_record"><a class="anchor" href="#_amendment_record"></a>Amendment Record</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 9.0909%;">
+<col style="width: 54.5454%;">
+<col style="width: 18.1818%;">
+<col style="width: 18.1819%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Issue</th>
+<th class="tableblock halign-left valign-top">Details</th>
+<th class="tableblock halign-left valign-top">Raiser</th>
+<th class="tableblock halign-left valign-top">Completed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>CNF Release 1.0.?</strong></p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.8.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rewrite main schedule based on EhrBase (Github commit <a href="https://github.com/ehrbase/ehrbase/commit/674e8b2506a77bf1adc365eb73e718e2126f2c8e" target="_blank" rel="noopener">674e8b2</a>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P Pazos;<br>
+ W Wagner;<br>
+ T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>23 Nov 2021</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.7.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updates and new diagrams for SUT section; Adjust some test sets.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17 Mar 2017</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.7.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Major rework based on openEHR Patform SM.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">openEHR SEC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18 Oct 2017</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.6.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updates to REST API at 25 Aug 2017. Added glossary. Improved SUT diagram.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
+ S Iancu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">26 Aug 2017</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.6.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Major rework from SEC call 9 Aug 2017.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C Chevalley,<br>
+ H Frankel,<br>
+ S Iancu,<br>
+ B Lah,<br>
+ B Naess,<br>
+ T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11 Aug 2017</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.5.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/tickets/SPECCNF-1" target="_blank" rel="noopener">SPECCNF-1</a>: Initial Writing.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">B Naess,<br>
+ I McNicoll,<br>
+ P Pazos,<br>
+ T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01 Jun 2017</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_acknowledgements"><a class="anchor" href="#_acknowledgements"></a>Acknowledgements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This specification was developed and is maintained by the <a href="https://www.openehr.org/programs/specification/editorialcommittee" target="_blank" rel="noopener">openEHR Specifications Editorial Committee (SEC)</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_principal_authors"><a class="anchor" href="#_principal_authors"></a>Principal Authors</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Thomas Beale, Ars Semantica, UK; openEHR International Board</p>
+</li>
+<li>
+<p>Pablo Pazos Gutierrez &lt;<a href="mailto:pablo.pazos@cabolabs.com">pablo.pazos@cabolabs.com</a>&gt;</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_trademarks"><a class="anchor" href="#_trademarks"></a>Trademarks</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>'openEHR' is a trademark of the openEHR Foundation</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_preface"><a class="anchor" href="#_preface"></a>1. Preface</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_purpose"><a class="anchor" href="#_purpose"></a>1.1. Purpose</h3>
+<div class="paragraph">
+<p>This document defines a template for openEHR Conformance Certificate, a document that is generated as the result of executing a conformance test schedule against a running system or application. This may be a product, or a particular system, e.g. the specific environment of a healthcare provider. The audience of this document includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Software development organisations developing healthcare information systems;</p>
+</li>
+<li>
+<p>Customer (i.e. procuring) organisations.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_related_documents"><a class="anchor" href="#_related_documents"></a>1.2. Related Documents</h3>
+<div class="paragraph">
+<p>Useful references for reading this document include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="https://specifications.openehr.org/releases/CNF/latest/openehr_conformance_guide.html" target="_blank" rel="noopener">openEHR Conformance Guide</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_status"><a class="anchor" href="#_status"></a>1.3. Status</h3>
+<div class="paragraph">
+<p>This specification is in the DEVELOPMENT state. The development version of this document can be found at <a href="https://specifications.openehr.org/releases/CNF/latest/openehr_conformance_certificate.html" target="_blank" rel="noopener">https://specifications.openehr.org/releases/CNF/latest/openehr_conformance_certificate.html</a>.</p>
+</div>
+<div class="paragraph">
+<p>Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:</p>
+</div>
+<div class="paragraph tbd">
+<p><strong>TBD</strong>: (example To Be Determined paragraph)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_feedback"><a class="anchor" href="#_feedback"></a>1.4. Feedback</h3>
+<div class="paragraph">
+<p>Feedback may be provided on the <a href="https://discourse.openehr.org/c/implem/conformance" target="_blank" rel="noopener">openEHR Conformance forum</a>.</p>
+</div>
+<div class="paragraph">
+<p>Issues may be raised on the <a href="https://specifications.openehr.org/components/CNF/open_issues" target="_blank" rel="noopener">specifications Problem Report tracker</a>.</p>
+</div>
+<div class="paragraph">
+<p>To see changes made due to previously reported issues, see the <a href="https://specifications.openehr.org/components/CNF/history" target="_blank" rel="noopener">CNF component Change Request tracker</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>2. Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An openEHR Conformance Certificate consists of a rating in the Functional and Content dimensions, and a detailed report. The ratings are as follows:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Characteristics</th>
+<th class="tableblock halign-left valign-top">Levels</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><strong>Functional</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CORE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core functionality required for operational deployment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STANDARD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">More comprehensive capabilities useful in a 'standard' EHR operational environment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OPTIONS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional features required in specific circumstances.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><strong>Non-functional</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BASIC-SEC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Basic security features.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BASIC-PRIV</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Basic privacy features.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><strong>External data format</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">openEHR Canonical XML, defined by published XSDs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical JSON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">openEHR Canonical XML, defined by published transform of XML</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>A generated certificate for a typical system will look as shown in the following section.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conformance_certificate"><a class="anchor" href="#_conformance_certificate"></a>Conformance Certificate</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_system_under_test_sut"><a class="anchor" href="#_system_under_test_sut"></a>System Under Test (SUT)</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Solution</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BestEHR release 2.4<br>
+                  details &#8230;&#8203;</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Vendor</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ACME EHR systems LLC, Maxperformancia</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Assessor</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">openEHR Foundation</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Infrastructure</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">openEHR CNF-test WS 1.5.0 on AWS &#8230;&#8203;<br>
+                  System under test on AWS &#8230;&#8203;</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Date</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12 April 2017</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_scope_of_test"><a class="anchor" href="#_scope_of_test"></a>Scope of Test</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Functional</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CORE, Extras</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Sec &amp; Priv</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xxx</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Ext Data Fmt</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XML, JSON</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_detailed_test_report"><a class="anchor" href="#_detailed_test_report"></a>Detailed Test Report</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">SUT Component</th>
+<th class="tableblock halign-left valign-top">openEHR Component</th>
+<th class="tableblock halign-left valign-top">Capability (profile)</th>
+<th class="tableblock halign-left valign-top">Conformance point</th>
+<th class="tableblock halign-left valign-top">Test Case</th>
+<th class="tableblock halign-left valign-top">REST</th>
+<th class="tableblock halign-left valign-top">protobuf</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">CDR</p></td>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">EHR persistence</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EHR Operations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I_EHR_SERVICE.create_ehr()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EHR.<br>
+                                                                                                 create_ehr-main</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Versioning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I_EHR_COMPOSITION.<br>
+                                                                 get_versioned_composition()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EHR_COMPOSITION.<br>
+                                                                                                 get_versioned_composition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">I_EHR_CONTRIBUTION.<br>
+                                                                 commit_contribution()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I_EHR_CONTRIBUTION.<br>
+                                                                                                 commit_contribution-<br>
+                                                                                                 valid_composition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FAIL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I_EHR_CONTRIBUTION.<br>
+                                                                                                 commit_contribution-<br>
+                                                                                                 valid_invalid_compositions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FAIL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FAIL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="7"><p class="tableblock">&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">etc</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_profile_report"><a class="anchor" href="#_profile_report"></a>Profile Report</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6669%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">SUT<br>
+ Component</th>
+<th class="tableblock halign-left valign-top">openEHR<br>
+                     Component</th>
+<th class="tableblock halign-left valign-top">Capability</th>
+<th class="tableblock halign-left valign-top">Required<br>
+                                                                        in profile</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">K-base</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Definitions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ADL 1.4 archetype provisioning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ADL 1.4 OPT provisioning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query provisioning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock">CDR</p></td>
+<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock">EHR persistence</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EHR Operations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EHR Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Composition Operations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Directory Operations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Change Sets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Versioning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Konsole</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activity Report</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OPT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FAIL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Physical Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EHR Archive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OPT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">etc</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2021-12-30 17:23:40 UTC
+</div>
+</div>
+</body>
+</html>
