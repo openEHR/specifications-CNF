@@ -21,12 +21,3 @@ image::{diagrams_uri}/conformance_framework-use_cases.svg[id=conformance_framewo
 
 The confidence of procuring organisations in the overall platform solutions market relies on the availablility of formal conformance criteria, as well as guides and materials for concretely performing conformance assessment. Assessment may be performed in-house on both procurement and vendor side, but in a more mature market will also be performed independently by dedicated assessment organisation(s).
 
-== Artefacts
-
-The purpose of the openEHR Conformance Specifications is to provide a framework and methodology for performing conformance testing of openEHR-based systems and products to the intended specifications.
-
-The following diagram illustrates the openEHR Conformance Specifications and their relationship with the primary (technology-independent) and ITS (technology-specific) specifications.
-
-[.text-center]
-.Conformance-related specifications
-image::{diagrams_uri}/conformance_framework-artefacts.svg[id=conformance_framework-artefacts, align="center"]

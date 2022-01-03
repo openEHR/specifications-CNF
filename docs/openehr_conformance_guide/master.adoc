@@ -53,6 +53,7 @@ include::master01-preface.adoc[leveloffset=+1]
 include::master02-glossary.adoc[leveloffset=+1]
 include::master03-overview.adoc[leveloffset=+1]
 include::master04-test_framework.adoc[leveloffset=+1]
+include::master05-environment.adoc[leveloffset=+1]
 
 //
 // --------------------------------------------- REFERENCES -----------------------------------------------

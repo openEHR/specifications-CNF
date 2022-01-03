@@ -1,16 +1,52 @@
-= Test Framework
+= Conformance Framework
+
+== Artefacts
+
+The purpose of the openEHR Conformance Specifications is to provide a framework and methodology for performing conformance testing of openEHR-based systems and products to the intended specifications.
+
+The following diagram illustrates the openEHR Conformance Specifications and their relationship with the primary (technology-independent) and ITS (technology-specific) specifications.
+
+[.text-center]
+.Conformance-related specifications
+image::{diagrams_uri}/conformance_framework-artefacts.svg[id=conformance_framework-artefacts, align="center"]
 
 == Product Categories
 
-xxxxxx
+There are assumed to be three categories of testable artefact for the purposes of Conformance testing:
 
-[.text-center]
-.Product categories
-image::{diagrams_uri}/conformance_framework-product_cats.svg[id=conformance_framework-product_cats, align="center"]
+* *API-exposing (Platform) Components* - components exposing a service API, including:
+** information-related platform components, such as Clinical Data Repository, Demographic repository;
+** reference data / knowledge-related components, e.g. Terminology Service, clinical model repository;
+** other services, e.g. Clinical Decision Support;
+* *API-using Components (Platform clients)* - components using a service API, including any application, tool or system that accesses APIs of a particular platform component;
+* *Tools* - standalone applications usually designed to perform a specific task, e.g. building of a certain type of models.
 
-== Test Framework Specification
+Conformance for these categories is assessed as follows.
 
-What could be tested are the operations per interface of the SM. In the Conformance Specification there should be a criteria that tests at least one success case, one case for each possible error, and if there are border cases, one test for each border case. This is abstract, is what to test but doesn't specify how to test. In the Testing Technical Framework it is specified how to test and which specific data sets to use.
+[cols="1,3,3", options="header"]
+|===
+
+|Category
+|What is being assessed
+|How assessed
+
+|*Platform Component*
+|Conformance of the _implemented APIs_ to the published APIs, in a concrete API technology
+|Simulated API calling test cases
+
+|*Platform client*
+|Conformance of the capability of the client to correctly connect and call into an API
+|Simulated service testing; functional testing against reference platform implementation
+
+|*Tool*
+|Conformance of artefacts created / modified by the tool to the artefact specifications
+|Functional round-trip testing.
+
+|===
+
+== Platform Test Framework
+
+What can be tested are the operations per interface of the SM. In the Conformance Specification there should be a criteria that tests at least one success case, one case for each possible error, and if there are border cases, one test for each border case. This is abstract, is what to test but doesn't specify how to test. In the Testing Technical Framework it is specified how to test and which specific data sets to use.
 
 [.text-center]
 .Test items

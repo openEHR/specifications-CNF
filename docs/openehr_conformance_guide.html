@@ -36,14 +36,26 @@
 <li><a href="#_overview">3. Overview</a>
 <ul class="sectlevel2">
 <li><a href="#_goals">3.1. Goals</a></li>
-<li><a href="#_artefacts">3.2. Artefacts</a></li>
 </ul>
 </li>
-<li><a href="#_test_framework">4. Test Framework</a>
+<li><a href="#_conformance_framework">4. Conformance Framework</a>
 <ul class="sectlevel2">
-<li><a href="#_product_categories">4.1. Product Categories</a></li>
-<li><a href="#_test_framework_specification">4.2. Test Framework Specification</a></li>
-<li><a href="#_test_framework_implementation_for_a_technology">4.3. Test Framework Implementation for a Technology</a></li>
+<li><a href="#_artefacts">4.1. Artefacts</a></li>
+<li><a href="#_product_categories">4.2. Product Categories</a></li>
+<li><a href="#_platform_test_framework">4.3. Platform Test Framework</a></li>
+<li><a href="#_test_framework_implementation_for_a_technology">4.4. Test Framework Implementation for a Technology</a></li>
+</ul>
+</li>
+<li><a href="#_evaluation_environment">5. Evaluation Environment</a>
+<ul class="sectlevel2">
+<li><a href="#_system_under_test_sut">5.1. System Under Test (SUT)</a>
+<ul class="sectlevel3">
+<li><a href="#_general_description">5.1.1. General description</a></li>
+<li><a href="#_platform_abstract_service_model">5.1.2. Platform Abstract Service Model</a></li>
+</ul>
+</li>
+<li><a href="#_manual_testing">5.2. Manual Testing</a></li>
+<li><a href="#_automated_testing">5.3. Automated Testing</a></li>
 </ul>
 </li>
 </ul>
@@ -331,8 +343,13 @@
 <p>The confidence of procuring organisations in the overall platform solutions market relies on the availablility of formal conformance criteria, as well as guides and materials for concretely performing conformance assessment. Assessment may be performed in-house on both procurement and vendor side, but in a more mature market will also be performed independently by dedicated assessment organisation(s).</p>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conformance_framework"><a class="anchor" href="#_conformance_framework"></a>4. Conformance Framework</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_artefacts"><a class="anchor" href="#_artefacts"></a>3.2. Artefacts</h3>
+<h3 id="_artefacts"><a class="anchor" href="#_artefacts"></a>4.1. Artefacts</h3>
 <div class="paragraph">
 <p>The purpose of the openEHR Conformance Specifications is to provide a framework and methodology for performing conformance testing of openEHR-based systems and products to the intended specifications.</p>
 </div>
@@ -346,33 +363,82 @@
 <div class="title">Figure 2. Conformance-related specifications</div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_test_framework"><a class="anchor" href="#_test_framework"></a>4. Test Framework</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_product_categories"><a class="anchor" href="#_product_categories"></a>4.1. Product Categories</h3>
+<h3 id="_product_categories"><a class="anchor" href="#_product_categories"></a>4.2. Product Categories</h3>
 <div class="paragraph">
-<p>xxxxxx</p>
+<p>There are assumed to be three categories of testable artefact for the purposes of Conformance testing:</p>
 </div>
-<div id="conformance_framework-product_cats" class="imageblock text-center text-center">
-<div class="content">
-<img src="openehr_conformance_guide/diagrams/conformance_framework-product_cats.svg" alt="conformance framework product cats">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>API-exposing (Platform) Components</strong> - components exposing a service API, including:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>information-related platform components, such as Clinical Data Repository, Demographic repository;</p>
+</li>
+<li>
+<p>reference data / knowledge-related components, e.g. Terminology Service, clinical model repository;</p>
+</li>
+<li>
+<p>other services, e.g. Clinical Decision Support;</p>
+</li>
+</ul>
 </div>
-<div class="title">Figure 3. Product categories</div>
+</li>
+<li>
+<p><strong>API-using Components (Platform clients)</strong> - components using a service API, including any application, tool or system that accesses APIs of a particular platform component;</p>
+</li>
+<li>
+<p><strong>Tools</strong> - standalone applications usually designed to perform a specific task, e.g. building of a certain type of models.</p>
+</li>
+</ul>
 </div>
+<div class="paragraph">
+<p>Conformance for these categories is assessed as follows.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top">What is being assessed</th>
+<th class="tableblock halign-left valign-top">How assessed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Platform Component</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance of the <em>implemented APIs</em> to the published APIs, in a concrete API technology</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simulated API calling test cases</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Platform client</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance of the capability of the client to correctly connect and call into an API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simulated service testing; functional testing against reference platform implementation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tool</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance of artefacts created / modified by the tool to the artefact specifications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Functional round-trip testing.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
-<h3 id="_test_framework_specification"><a class="anchor" href="#_test_framework_specification"></a>4.2. Test Framework Specification</h3>
+<h3 id="_platform_test_framework"><a class="anchor" href="#_platform_test_framework"></a>4.3. Platform Test Framework</h3>
 <div class="paragraph">
-<p>What could be tested are the operations per interface of the SM. In the Conformance Specification there should be a criteria that tests at least one success case, one case for each possible error, and if there are border cases, one test for each border case. This is abstract, is what to test but doesn&#8217;t specify how to test. In the Testing Technical Framework it is specified how to test and which specific data sets to use.</p>
+<p>What can be tested are the operations per interface of the SM. In the Conformance Specification there should be a criteria that tests at least one success case, one case for each possible error, and if there are border cases, one test for each border case. This is abstract, is what to test but doesn&#8217;t specify how to test. In the Testing Technical Framework it is specified how to test and which specific data sets to use.</p>
 </div>
 <div id="conformance_framework-test_items" class="imageblock text-center text-center">
 <div class="content">
 <img src="openehr_conformance_guide/diagrams/conformance_framework-test_items.svg" alt="conformance framework test items">
 </div>
-<div class="title">Figure 4. Test items</div>
+<div class="title">Figure 3. Test items</div>
 </div>
 <div class="paragraph">
 <p>Each product category should offer a subset of the interfaces specified in the SM. Then those 'contracts' are used to verify conformance on each category. Each product category is associated with one or more 'components' of the SM which means they provide the interfaces defined by those components.</p>
@@ -381,13 +447,127 @@
 <div class="content">
 <img src="openehr_conformance_guide/diagrams/conformance_framework-test_items_per_cat.svg" alt="conformance framework test items per cat">
 </div>
-<div class="title">Figure 5. Test items associated with products</div>
+<div class="title">Figure 4. Test items associated with products</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_test_framework_implementation_for_a_technology"><a class="anchor" href="#_test_framework_implementation_for_a_technology"></a>4.3. Test Framework Implementation for a Technology</h3>
+<h3 id="_test_framework_implementation_for_a_technology"><a class="anchor" href="#_test_framework_implementation_for_a_technology"></a>4.4. Test Framework Implementation for a Technology</h3>
 <div class="paragraph">
 <p>xxx</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_evaluation_environment"><a class="anchor" href="#_evaluation_environment"></a>5. Evaluation Environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Conformance evaluation relies on a normative idea of systems that may be tested against a set of specifications on which they claim to be based. This section describes the assumptions that are made about systems that may be tested according to this conformance specification.</p>
+</div>
+<div class="sect2">
+<h3 id="_system_under_test_sut"><a class="anchor" href="#_system_under_test_sut"></a>5.1. System Under Test (SUT)</h3>
+<div class="sect3">
+<h4 id="_general_description"><a class="anchor" href="#_general_description"></a>5.1.1. General description</h4>
+<div class="paragraph">
+<p>The totality of what is provided for conformance testing according to this specification is known as the <em>system under test</em>, or SUT. It is assumed that any such system has a <em>platform</em> architecture, consisting of one or more <em>product components</em> that are exposed via corresponding <em>native service APIs</em>, and that the component semantics and API are based on published openEHR specifications.</p>
+</div>
+<div class="paragraph">
+<p>It is also assumed that native APIs are network-accessible via one or more communications protocols, each with an appropriate <em>protocol adapter</em>. Such protocols include the text-based, such as <a href="https://en.wikipedia.org/wiki/SOAP" target="_blank" rel="noopener">SOAP/WSDL</a> and <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" rel="noopener">REST</a>, as well as the many binary protocols, including <a href="https://github.com/google/protobuf/wiki" target="_blank" rel="noopener">Google Protocol Buffers</a>, <a href="https://thrift.apache.org" target="_blank" rel="noopener">Apache Thrift</a>, <a href="https://avro.apache.org" target="_blank" rel="noopener">Avro</a>, <a href="https://kafka.apache.org" target="_blank" rel="noopener">Kafka</a>, <a href="https://zeroc.com/products/ice#what-is-ice" target="_blank" rel="noopener">ZeroC ICE</a>, and <a href="https://www.amqp.org/" target="_blank" rel="noopener">Advanced Message Queueing Protocol (AMPQ)</a>. (At an implementation level, the native API of each software component is of course visible e.g. a Java .jar, .Net assembly, Linux .so library etc, but conformance testing does not address such interfaces). The general model is shown below.</p>
+</div>
+<div id="sut_model" class="imageblock text-center text-center">
+<div class="content">
+<img src="openehr_conformance_guide/diagrams/sut_model.svg" alt="sut model">
+</div>
+<div class="title">Figure 5. Component Model</div>
+</div>
+<div class="paragraph">
+<p>In the above, there are two <em>test targets</em> for any given component in the SUT, i.e. two aspects of a component for which conformance is to be determined:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Semantic: the <em>formal, transactional semantics</em> of the component&#8217;s exposed functions and procedures when called;</p>
+</li>
+<li>
+<p>Interface(s): the concrete interfaces provided by the component.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The former needs to be tested to determine if the component does what it is functionally intended to do, and is documented in terms of abstract interface definitions that include pre-conditions, post-conditions and exceptions. The latter is tested to determine that the concrete means of accessing the component provided by its developer do indeed provide that access correctly, and conform to accepted norms of the relevant kind of service interface (i.e. REST, AMPQ etc).</p>
+</div>
+<div class="paragraph">
+<p>To establish a common basis for naming and describing components of an openEHR Platform, the <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html" target="_blank" rel="noopener">openEHR Platform Abstract Service Model</a> may be used. This defines a standard set of openEHR component names along with definitions of the transactional semantics of each component, i.e. the 'semantic' test target referred to above. A product&#8217;s own component names need not correspond to the openEHR component names of course, but for the purpose of testing the logical mapping of the two should be provided by a developer.</p>
+</div>
+<div class="paragraph">
+<p>Each of the concrete protocol interfaces is defined by its own specification, for example the <a href="https://github.com/openEHR/specifications-ITS-REST" target="_blank" rel="noopener">openEHR REST API specification</a>, and may be regarded as a product component, for which conformance testing may be conducted. No assumption is made that any given product supports any particular protocol(s), although a minimal set of REST APIs on components such as the System Log is likely to be useful for testing purposes.</p>
+</div>
+<div class="paragraph">
+<p>The following figure illustrates a typical platform product, consisting of components and protocol interfaces as described above. Part or all of the platform (back-end) of such a product is provided for testing according to this specification.</p>
+</div>
+<div id="conformance_sut" class="imageblock text-center text-center">
+<div class="content">
+<img src="openehr_conformance_guide/diagrams/conformance_sut.svg" alt="conformance sut">
+</div>
+<div class="title">Figure 6. Conformance System Under Test</div>
+</div>
+<div class="paragraph">
+<p>As a consequence of the above, the conformance test schedule defined by this specification consists of tests for both native component semantics, and for whichever concrete protocol interfaces are provided. From a practical point of view, the testing is always conducted via the concrete interfaces (i.e. REST, SOAP, protobuf etc) as appropriate to the particular product. Thus, for a product that implements the openEHR REST APIs, the SUT environment is of the following form:</p>
+</div>
+<div id="conformance_sut_rest" class="imageblock text-center text-center">
+<div class="content">
+<img src="openehr_conformance_guide/diagrams/conformance_sut_rest.svg" alt="conformance sut rest">
+</div>
+<div class="title">Figure 7. System Under Test - REST</div>
+</div>
+<div class="paragraph">
+<p>In the test environment, a <em>test application</em> with the appropriate protocol client(s) is used to exercise the SUT. A system log viewer and a data viewer may be provided as part of the product in order to facilitate human interaction with the system, but these are not obligatory.</p>
+</div>
+<div class="paragraph">
+<p>In the same fashion, the SUT for a product that exposes APIs using Google Protocol Buffers might look as follows.</p>
+</div>
+<div id="conformance_sut_sut_protobuf" class="imageblock text-center text-center">
+<div class="content">
+<img src="openehr_conformance_guide/diagrams/conformance_sut_protobuf.svg" alt="conformance sut protobuf">
+</div>
+<div class="title">Figure 8. System Under Test - Protocol Buffers</div>
+</div>
+<div class="paragraph">
+<p>Other combinations of components and protocols may of course occur in the SUT and testing applications.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_platform_abstract_service_model"><a class="anchor" href="#_platform_abstract_service_model"></a>5.1.2. Platform Abstract Service Model</h4>
+<div class="paragraph">
+<p>The formal transactional interface to a product&#8217;s openEHR components is specified by the <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html" target="_blank" rel="noopener">openEHR Platform Abstract Service Model</a>, which defines a set of services and for each component, as shown below.</p>
+</div>
+<div id="platform_definition" class="imageblock text-center text-center">
+<div class="content">
+<img src="https://specifications.openehr.org/releases/SM/latest/UML/diagrams/SM-platform_definition.svg" alt="SM platform definition">
+</div>
+<div class="title">Figure 9. Platform Abstract Service Model</div>
+</div>
+<div class="paragraph">
+<p>The functions defined on these interfaces constitute the <em>functional conformance points</em> of this specification. For example, the conformance point for the logical 'create EHR' operation is defined by the functions <code><em>create_ehr()</em></code>, <code><em>create_ehr_with_id()</em></code>, <code><em>create_ehr_for_subject()</em></code>, <code><em>create_ehr_for_subject_with_id()</em></code> defined on the service interface <code>I_EHR_SERVICE</code> shown in the above diagram. Information conformance (i.e. conformance to the types stated in service call arguments and return values) is primarily defined by the openEHR specifications for the relevant components, i.e. RM (Reference Model) etc, however, a small number of service model-specific information structures are defined by the service specification.</p>
+</div>
+<div class="paragraph">
+<p>Any given SUT is not assumed to implement all of these interfaces, or the underlying components. However, the components for which conformance is to be tested are assumed to be testable via the relevant interfaces above.</p>
+</div>
+<div class="paragraph">
+<p>Real products may of course provide alternative forms of some services, e.g. System Log, Administrative interface and so on.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_manual_testing"><a class="anchor" href="#_manual_testing"></a>5.2. Manual Testing</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automated_testing"><a class="anchor" href="#_automated_testing"></a>5.3. Automated Testing</h3>
+<div class="paragraph">
+<p>Automated conformance testing is performed by the interaction of the openEHR CNF-test web service with a system under test. A test configuration indicates which conformance claims are to be tested (e.g. <code>functional=CORE; content=STANDARD+OPTIONS</code>), and appropriate sets of tests are executed. The result is a detailed test report, together with the highest conformance levels reached in the requested categories.</p>
 </div>
 </div>
 </div>
@@ -395,7 +575,7 @@
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-03 16:23:20 UTC
+Last updated 2022-01-03 20:02:57 UTC
 </div>
 </div>
 </body>
