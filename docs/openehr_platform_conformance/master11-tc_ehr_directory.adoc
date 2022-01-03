@@ -33,7 +33,7 @@ This test suite depends on other test suites:
 
 == Test Data Sets
 
-For the creation and modification of the `EHR.directory` structure it is important to explore the hierarchical nature of the FOLDER structures and consider the edge cases for `EHR.directory`.
+For the creation and modification of the `EHR.directory` structure it is important to explore the hierarchical nature of the `FOLDER` structures and consider the edge cases for `EHR.directory`.
 
 === Tests of EHR.directory
 
@@ -45,10 +45,12 @@ For the creation and modification of the `EHR.directory` structure it is importa
 
 === Tests of Reference FOLDER structure
 
-[.image]##
+NOTE: the following image is provided for reference. The items in the `FOLDER` are references to `VERSIONED_OBJECTs` that may contain `COMPOSITION`, `EHR_STATUS` and `FOLDER`. This documentation focuses on testing `COMPOSITION` as content in the `FOLDERs`. Related discussion:
+https://discourse.openehr.org/t/whats-allowed-in-folder-items/1539[here^].
 
-NOTE: the image is just for reference, the items in the FOLDER are instances of VERSIONED_OBJECT, and by the current spec that could contain COMPOSITION, EHR_STATUS and FOLDER. This documentation focuses on testing COMPOSITION as content in the FOLDERs. You can find a related question
-https://discourse.openehr.org/t/whats-allowed-in-folder-items/1539[here].
+[.text-center]
+.Folder structures in the EHR
+image::{openehr_rm_ehr_diagrams}/high_level_ehr_structure.svg[id=high_level_ehr_structure, align="center"]
 
 == Test Cases
 

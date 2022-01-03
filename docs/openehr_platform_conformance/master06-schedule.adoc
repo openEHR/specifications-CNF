@@ -2,7 +2,7 @@
 
 == Overview
 
-This section contains the schedule according to which conformance claims can be made for a a product. The conformance test schedule is divided into functional and non-functional parts, for which the structures are slightly different. 
+This section contains the schedule according to which conformance claims can be made for a product. The conformance test schedule is divided into functional and non-functional parts, for which the structures are slightly different. 
 
 Functional conformance is on the basis of _product component_, i.e. 'EHR persistence', 'Querying' etc, each corresponding to a named block on the above SUT diagram. Each product component has one table in this schedule. Formal conformance points, defined in terms of calls in the relevant component service interface, are listed in the second column of the table. The first column groups conformance points under 'capability', which is understood as a marketing term reflecting coarse-grained functionality, and is _used as the basis for conformance profiles_ described in the next section. 
 

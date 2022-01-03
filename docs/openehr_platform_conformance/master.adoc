@@ -32,6 +32,7 @@ This specification was developed and is maintained by the {openehr_sec}[openEHR 
 
 === Principal Authors
 
+* Thomas Beale, Ars Semantica, UK; openEHR International Board
 * Pablo Pazos Gutierrez <pablo.pazos@cabolabs.com>
 * Wladislaw Wagner <wladislaw.wagner@vitagroup.ag>
 
@@ -52,7 +53,6 @@ This specification was developed and is maintained by the {openehr_sec}[openEHR 
 include::master01-preface.adoc[leveloffset=+1]
 include::master02-glossary.adoc[leveloffset=+1]
 include::master03-overview.adoc[leveloffset=+1]
-include::master04-certificate.adoc[leveloffset=+1]
 include::master05-environment.adoc[leveloffset=+1]
 
 include::master06-schedule.adoc[leveloffset=+1]

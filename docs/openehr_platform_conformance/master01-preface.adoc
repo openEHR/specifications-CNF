@@ -2,16 +2,17 @@
 
 == Purpose
 
-This document specifies the openEHR Platform Conformance definition, in terms of test schedule and product profiles, which may be used to determine the conformance of openEHR platform products to openEHR plaform-related specifications. The audience of this document includes:
+This document specifies the openEHR Platform Conformance test schedule, which may be used to determine the conformance of openEHR platform products to openEHR plaform-related specifications. The audience of this document includes:
 
 * Software development organisations developing healthcare information systems;
-* Customer organisations.
+* Customer (i.e. procuring) organisations.
 
 == Related Documents
 
 Useful references for reading this document include:
 
-* The {openehr_overview}[openEHR Architecture Overview^].
+* The {openehr_overview}[openEHR Architecture Overview^];
+* The {openehr_cnf_guide}[openEHR Conformance Guide^]
 
 == Status
 

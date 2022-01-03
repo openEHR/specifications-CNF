@@ -83,6 +83,8 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._has_compositi
 
 When a `COMPOSITION` is retrieved from a service, it will comply with a specific format. There could be a variant for each test to retrieve the `COMPOSITION` in any of the supported openEHR formats, and the  syntactic validation of those retrieved formats should be done by using the corresponding schemas (XML, JSON, etc). That would be the minimal validation for conformance testing. Though it would be ideal to have semantic validation of the retrieved `COMPOSITIONs` to ensure conformance, which is achieved by validating against the corresponding OPT in the testing layer.
 
+Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_composition_latest()_`^]
+
 ==== TC EHR_COMPOSITION.get_composition_latest
 
 // EhrBase ref: COMPOSITION/B.2.a.
@@ -126,6 +128,8 @@ When a `COMPOSITION` is retrieved from a service, it will comply with a specific
 |===
 
 === Get COMPOSITION at time
+
+Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_composition_at_time()_`^]
 
 ====  TC EHR_COMPOSITION.get_composition_at_time
 
@@ -213,6 +217,8 @@ NOTE: Test this using `COMPOSITIONs` with one version and multiple versions, to 
 
 === Get COMPOSITION at version
 
+Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_composition_version()_`^]
+
 ==== TC EHR_COMPOSITION.get_composition_version
 
 // EhrBase ref: COMPOSITION/B.4.a.
@@ -274,6 +280,8 @@ NOTE: Test this using `COMPOSITIONs` with one version and multiple versions, to 
 
 === Get VERSIONED COMPOSITION
 
+Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_versioned_composition()_`^]
+
 ==== TC EHR_COMPOSITION.get_versioned_composition
 
 // EhrBase ref: COMPOSITION/B.5.a.
@@ -321,6 +329,8 @@ Notes:
 |===
 
 === Create COMPOSITION
+
+Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._create_composition()_`^]
 
 ==== TC EHR_COMPOSITION.create_event_composition
 
@@ -440,6 +450,8 @@ Ref:  https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51
 
 The update `COMPOSITION` service needs the `VERSION.preceding_version_uid` attribute to be set, so the server knows which existing `VERSION` of the `COMPOSITION` will be associated with the newly committed `COMPOSITION`. The Service Model spec is not clear about where that attribute is defined. By taking into account the Reference Model, the `COMPOSITION` doesn’t contain that value but the `VERSION` does. For the `COMPOSITION` update service the `preceding_version_uid` should be a parameter or the definition in the SM should mention this.
 
+Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._update_composition()_`^]
+
 ==== TC EHR_COMPOSITION.update_event_composition
 
 // EhrBase ref: COMPOSITION/B.7.a.
@@ -521,6 +533,8 @@ The update `COMPOSITION` service needs the `VERSION.preceding_version_uid` attri
 |===
 
 === Delete COMPOSITION
+
+Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._delete_composition()_`^]
 
 ==== TC EHR_COMPOSITION.delete_event_composition
 
