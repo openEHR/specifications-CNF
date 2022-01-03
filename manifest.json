@@ -8,7 +8,7 @@
             "id": "openehr_conformance_guide",
             "title": "openEHR Conformance Guide",
             "title_short": "Conformance Guide",
-            "description": "openEHR Conformance",
+            "description": "openEHR Conformance Guide",
             "summary": "Guide to conformance testing in openEHR.",
             "micro_summary": "Guide to conformance testing in openEHR.",
             "copyright_year": "2021",
@@ -35,6 +35,17 @@
                     "text": "Original page"
                 }
             ]
+        },
+        {
+            "id": "openehr_conformance_certificate",
+            "title": "openEHR Conformance Certificate",
+            "title_short": "Conformance Certificate",
+            "description": "openEHR Conformance Certificate",
+            "summary": "openEHR Conformance Certificate.",
+            "micro_summary": "openEHR Conformance Certificate.",
+            "copyright_year": "2021",
+            "spec_status": "DEVELOPMENT",
+            "keywords": "conformance, certificate"
         }
     ],
     "expressions": [
