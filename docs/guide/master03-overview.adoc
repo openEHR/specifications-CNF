@@ -92,22 +92,6 @@ The following figure illustrates a notional openEHR platform product, consisting
 .Platform implementation with multiple API protocols
 image::{diagrams_uri}/conformance_sut.svg[id=conformance_sut, align="center"]
 
-For a product that implements the openEHR REST APIs, the SUT environment is of the following form:
-
-[.text-center]
-.System Under Test - REST
-image::{diagrams_uri}/conformance_sut_rest.svg[id=conformance_sut_rest, align="center"]
-
-In the test environment, a _test application_ with the appropriate protocol client(s) is used to exercise the SUT. A system log viewer and a data viewer may be provided as part of the product in order to facilitate human interaction with the system, but these are not obligatory.
-
-In the same fashion, the SUT for a product that exposes APIs using Google Protocol Buffers might look as follows.
-
-[.text-center]
-.System Under Test - Protocol Buffers
-image::{diagrams_uri}/conformance_sut_protobuf.svg[id=conformance_sut_sut_protobuf, align="center"]
-
-Other combinations of components and protocols may of course occur in the SUT and testing applications.
-
 === Platform Clients
 
 TBD

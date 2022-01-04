@@ -55,11 +55,12 @@
 </li>
 <li><a href="#_conformance_assessment">5. Conformance Assessment</a>
 <ul class="sectlevel2">
-<li><a href="#_test_environment_set_up">5.1. Test Environment Set-up</a>
+<li><a href="#_test_environment">5.1. Test Environment</a></li>
+<li><a href="#_tooling">5.2. Tooling</a>
 <ul class="sectlevel3">
-<li><a href="#_test_execution_report">5.1.1. Test Execution Report</a></li>
-<li><a href="#_conformance_statement">5.1.2. Conformance Statement</a></li>
-<li><a href="#_conformance_certification">5.1.3. Conformance Certification</a></li>
+<li><a href="#_test_execution_report">5.2.1. Test Execution Report</a></li>
+<li><a href="#_conformance_statement">5.2.2. Conformance Statement</a></li>
+<li><a href="#_conformance_certification">5.2.3. Conformance Certification</a></li>
 </ul>
 </li>
 </ul>
@@ -474,30 +475,6 @@
 </div>
 <div class="title">Figure 3. Platform implementation with multiple API protocols</div>
 </div>
-<div class="paragraph">
-<p>For a product that implements the openEHR REST APIs, the SUT environment is of the following form:</p>
-</div>
-<div id="conformance_sut_rest" class="imageblock text-center text-center">
-<div class="content">
-<img src="guide/diagrams/conformance_sut_rest.svg" alt="conformance sut rest">
-</div>
-<div class="title">Figure 4. System Under Test - REST</div>
-</div>
-<div class="paragraph">
-<p>In the test environment, a <em>test application</em> with the appropriate protocol client(s) is used to exercise the SUT. A system log viewer and a data viewer may be provided as part of the product in order to facilitate human interaction with the system, but these are not obligatory.</p>
-</div>
-<div class="paragraph">
-<p>In the same fashion, the SUT for a product that exposes APIs using Google Protocol Buffers might look as follows.</p>
-</div>
-<div id="conformance_sut_sut_protobuf" class="imageblock text-center text-center">
-<div class="content">
-<img src="guide/diagrams/conformance_sut_protobuf.svg" alt="conformance sut protobuf">
-</div>
-<div class="title">Figure 5. System Under Test - Protocol Buffers</div>
-</div>
-<div class="paragraph">
-<p>Other combinations of components and protocols may of course occur in the SUT and testing applications.</p>
-</div>
 </div>
 <div class="sect3">
 <h4 id="_platform_clients"><a class="anchor" href="#_platform_clients"></a>3.3.3. Platform Clients</h4>
@@ -538,7 +515,7 @@
 <div class="content">
 <img src="guide/diagrams/conformance_framework-artefacts.svg" alt="conformance framework artefacts">
 </div>
-<div class="title">Figure 6. Conformance-related specifications</div>
+<div class="title">Figure 4. Conformance-related specifications</div>
 </div>
 <div class="paragraph">
 <p>The Conformance specifications are shown in the top box, and consist of the following:</p>
@@ -615,7 +592,7 @@
 <div class="content">
 <img src="guide/diagrams/conformance_framework-chain.svg" alt="conformance framework chain">
 </div>
-<div class="title">Figure 7. Test items</div>
+<div class="title">Figure 5. Test items</div>
 </div>
 <div class="paragraph">
 <p>The numeric order indicates the following logical progression:</p>
@@ -665,24 +642,36 @@
 <h2 id="_conformance_assessment"><a class="anchor" href="#_conformance_assessment"></a>5. Conformance Assessment</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_test_environment_set_up"><a class="anchor" href="#_test_environment_set_up"></a>5.1. Test Environment Set-up</h3>
+<h3 id="_test_environment"><a class="anchor" href="#_test_environment"></a>5.1. Test Environment</h3>
+<div class="paragraph">
+<p>An operational test environment requires at a minimum a <em>test application</em> with the appropriate protocol client(s) in order to exercise the SUT. A system log viewer and a data viewer may be provided as part of the product in order to facilitate human interaction with the system, but these are not obligatory. A typical the conformance test environment is of the following form:</p>
+</div>
+<div id="conformance_sut_rest" class="imageblock text-center text-center">
+<div class="content">
+<img src="guide/diagrams/conformance_sut_rest.svg" alt="conformance sut rest">
+</div>
+<div class="title">Figure 6. System Under Test - REST</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tooling"><a class="anchor" href="#_tooling"></a>5.2. Tooling</h3>
 <div class="paragraph">
 <p>TBD</p>
 </div>
 <div class="sect3">
-<h4 id="_test_execution_report"><a class="anchor" href="#_test_execution_report"></a>5.1.1. Test Execution Report</h4>
+<h4 id="_test_execution_report"><a class="anchor" href="#_test_execution_report"></a>5.2.1. Test Execution Report</h4>
 <div class="paragraph">
 <p>TBD</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_conformance_statement"><a class="anchor" href="#_conformance_statement"></a>5.1.2. Conformance Statement</h4>
+<h4 id="_conformance_statement"><a class="anchor" href="#_conformance_statement"></a>5.2.2. Conformance Statement</h4>
 <div class="paragraph">
 <p>TBD</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_conformance_certification"><a class="anchor" href="#_conformance_certification"></a>5.1.3. Conformance Certification</h4>
+<h4 id="_conformance_certification"><a class="anchor" href="#_conformance_certification"></a>5.2.3. Conformance Certification</h4>
 <div class="paragraph">
 <p>TBD</p>
 </div>
