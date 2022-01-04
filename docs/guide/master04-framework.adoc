@@ -21,14 +21,14 @@ The Conformance specifications are shown in the top box, and consist of the foll
 ** RFI / RFP / RFQ Guides - guides on creating 'Request for X' documents based on conformance criteria, for contracting purposes (future).
 * Conformance specifications for a specific platform (technology-independent):
 ** Platform X Conformance Test Framework - a technology-independent test framework for a specific platform;
-** Platform X Conformance Test Schedule - test cases including test run logic based on platform Service Model.
+** {openehr_cnf_platform_test_schedule}[Platform X Conformance Test Schedule^] - test cases including test run logic based on platform Service Model.
 * Test execution artefacts for a specific platform (technology-dependent):
 ** Executable test case runners (automated test framework scripts) for implemention of Platform X in technology Y (e.g. REST + JSON);
 ** Other artefacts for establishing an executable testing environment.
 * Result-related artefacts:
 ** Test Execution Report - system xxx / REST APIs - The results of a test run of a Test Schedule on some SUT - specific API + data rep'n
 ** Conformance Statement - system xxx / REST APIs - Statement of conformance of a product or system to specifications
-** Conformance Certificate - system xxx - Certified statement of conformance issued by some recognised testing  authority based on test execution.
+** {openehr_cnf_certificate}[Conformance Certificate^] - system xxx - Certified statement of conformance issued by some recognised testing  authority based on test execution.
 
 The orange (dashed) arrows indicate generation of results from test execution activities.
 

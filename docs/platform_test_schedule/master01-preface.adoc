@@ -16,7 +16,7 @@ Useful references for reading this document include:
 
 == Status
 
-This specification is in the {spec_status} state. The development version of this document can be found at {openehr_cnf_latest_openehr_platform}[{openehr_cnf_latest_openehr_platform}^].
+This specification is in the {spec_status} state. The development version of this document can be found at {openehr_cnf_latest_platform_test_schedule}[{openehr_cnf_latest_platform_test_schedule}^].
 
 Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:
 [.tbd]
