@@ -54,8 +54,6 @@ include::master01-preface.adoc[leveloffset=+1]
 include::master02-glossary.adoc[leveloffset=+1]
 include::master03-overview.adoc[leveloffset=+1]
 
-include::master06-schedule.adoc[leveloffset=+1]
-
 include::master07-tc_definitions.adoc[leveloffset=+1]
 include::master08-tc_ehr.adoc[leveloffset=+1]
 include::master09-tc_ehr_composition.adoc[leveloffset=+1]
@@ -66,11 +64,11 @@ include::master13-tc_querying.adoc[leveloffset=+1]
 include::master14-tc_admin.adoc[leveloffset=+1]
 include::master15-tc_messaging.adoc[leveloffset=+1]
 
+include::master16-tc_content.adoc[leveloffset=+1]
+
 include::master20-tc_non_functional.adoc[leveloffset=+1]
 
 include::master25-apis.adoc[leveloffset=+1]
-
-include::master30-profiles.adoc[leveloffset=+1]
 
 //
 // --------------------------------------------- REFERENCES -----------------------------------------------

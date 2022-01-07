@@ -1,4 +1,4 @@
-= Functional Conformance: Admin Product Component
+= Functional Conformance: Admin Component
 
 // Some useful links: 
 :i_admin_service_link: {openehr_sm_openehr_platform}#_i_admin_service_interface

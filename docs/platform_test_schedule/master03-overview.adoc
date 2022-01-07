@@ -1,32 +1,59 @@
 = Overview
 
-Conformance testing is used as the basis of product certification, and has the following goals:
-
-* _Tendering_: enable tendering authorities to state formal criteria for compliance in tenders
-* _Protection for solution developers_: enables bona fide vendors and other developers to prove the quality of their solutions compared to other offerings claiming conformance
-* _Protection for procurement_: provides a way of ensuring that purchased solutions can be contractually guaranteed to perform in certain ways
-
 == Scope
 
-This specification describes the _conformance points_ for _openEHR platform products_ whose semantics are based on openEHR Foundation specifications. Such systems typically include data services (i.e. persistence & querying) along with various options dependent on the orientation of the product and its maturity; these may include integration capabilities, domain services (e.g. guidelines, planning) and so on. It does not cover applications or modelling tools.
+As described in the {openehr_cnf_guide}#_product_scope[openEHR Conformance Guide^], the following aspects of a System Under Test (SUT) are tested to determine conformance to published specifications:
 
-A conformance point is understood as a _testable capability of a system that relates to a business function_. For example, conformance points for an EHR persistence service (aka Clinical Data Repository, or CDR) may include 'create EHR', 'update EHR', 'versioning' etc. Conformance points are based on {openehr_sm_openehr_platform}[openEHR Platform Abstract Service Model^] API calls.
+[cols="1,2,2", options="header"]
+|===
 
-One or more methods of testing each conformance point is described in this specification. Conformance testing is based on comparing system behaviour to the relevant openEHR published specifications.
+|Test aspect
+|How assessed
+|Methodology
 
-Fine-grained system capabilities naturally aggregate in various ways to produce specific coarse-grained business-relevant profiles, such as for a 'minimally viable openEHR system' and so on. In order to provide the customer side with a means of determining what constitute sensible sets of requirements, the specification defines a set of _profiles_.
+|*Functional conformance*
+|Conformance of the _implemented APIs_ to the published APIs, in a concrete API technology
+|Regression of test client running API call-in test cases against reference results
 
-The scope of this specification is limited to the following:
+|*Semantic conformance*
+|Conformance of platform's _content validation_ of data against semantic models (archetypes etc)
+|Regression of test client committing variable data sets against reference validity
 
-* (specific) functional capabilities of systems;
-* limited non-functional capabilities, including:
-** external data format used by exposed APIs;
-** security and privacy.
+|*Critical attributes*
+|Conformance of specific platform _non-functional_ properties to specification
+|Various
 
-The system under test is accessed via one or more concrete protocol APIs, each of which is defined in the relevant openEHR Specification.
+|===
 
-This specification does not cover claims to other non-functional characteristics such as capacity, performance, availability, or consistency of systems. It is however recommended that supply agreements for operational solutions include criteria for these factors, as relevant to the situation. 
+The main part of this specification is divided into sections according to the three test aspects shown above. Specific methods related to each aspect are described in the sub-sections below.
+
+This specification does not cover claims to non-functional characteristics such as capacity, performance, availability, or consistency of systems. It is however recommended that supply agreements for operational solutions include criteria for these factors, as relevant to the situation. 
 
 It may be possible to develop a band-based rating sytem for capacity. Performance, availability, consistency and related characteristics may be assessed using a framework that takes account of the CAP and / or PACELC theorems.
 
-Specific applications are also outside the scope of this specification, however, it is assumed that in order for solutions to be testable, a minimal generic viewing tool is provided to enable viewing or data and other testable events.
+Specific applications are also outside the scope of this specification, however, it is assumed that in order for solutions to be testable, a minimal generic viewing tool is provided to enable viewing of data and other testable events.
+
+== Functional conformance
+
+Functional conformance is assessed by running tests on the SUT API, and determining deviations from known reference responses. As described in  link:{openehr_cnf_guide}#_from_specifications_to_runnable_tests[Section 4.2 of the openEHR Conformance Guide^], the test cases defined here are based on the {openehr_sm_openehr_platform}[openEHR Platform Abstract Service Model^] API calls, which are termed 'conformance points'. A conformance point is understood as a __testable capability of a system that relates to a business function__. For example, conformance points for an EHR service include `create_EHR`, `update_EHR`, and so on. For any given conformance point, there may be multiple tests, each of which is individually identified.
+
+Each test case is documented in the following form.
+
+=== TC <Identifier, e.g. TC EHR_COMPOSITION.has_composition_bad_composition>
+
+[cols="1h,4a"]
+|===
+|Description    | <test case description>
+|Pre-conditions | <conditions required of the SUT prior to test case execution>
+|Post-conditions| <conditions true of the SUT subsequent to test case execution>
+|Flow           | <steps required to execute the test>
+|===
+
+== Semantic conformance
+
+TBD
+
+== Critical attributes
+
+TBD
+

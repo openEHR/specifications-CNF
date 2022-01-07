@@ -1,0 +1,861 @@
+= Content Test Cases
+
+== Overview
+
+The test cases defined here are for creating archetypes expressing specific constraints over the openEHR RM. Then different data instances should be generated in order to test the constraints. It’s recommended to have at least one success case, one failure case and all border cases covered. That is, for each archetype constraint specified, at least three data instances should be created.
+
+Since there are many combinations of constraints possible in the AOM/TOM, we will try to separate them into different classes and focus on each constraint set class independently from the other sets. The sets are defined by:
+
+. A top-level LOCATABLE class: COMPOSITION, EHR_STATUS, FOLDER, PARTY.
+. Constraint sets on top-level attributes for each class.
+. Internal LOCATABLE class: SECTION, ENTRY, HISTORY, ITEM_STRUCTURE, ITEM, DATA_VALUE.
+. Constraint sets on internal structures and attributes (at any level in the RM hierarchy in the internal LOCATABLE class).
+
+When checking a "`multiple attribute`" cardinality, this is a good set of combinations to test it:
+
+* 0..*
+* 1..*
+* 3..*
+* 0..1
+* 1..1
+* 3..5
+
+In this section, the following terms are used:
+
+* Archetypable class: any class that extends LOCATABLE.
+* Archetypable field: generic fields on archetypable classes that can be constrained in archetypes.
+
+=== Implementation notes
+
+The constraint combinations described in the cases below could be implemented in different archetypes, or in a generic archetype then defining the specific constraints at the template level. Which option to use might depend on the modeling tools used to create archetypes and templates.
+
+We would suggest to automate the archetype/template test cases generation instead of creating each constraint combination manualy.
+
+When there is no constraint defined for an attribute, it means anything is allowed on that attribute. It is recommended to include data not defined by the archetype, but valid in the RM, when generating the data instances.
+
+== Top-level LOCATABLE class: COMPOSITION
+
+These cases are defined to verify the constraints defined over archetypable attributes of the top-level class COMPOSITION.
+
+The constraints combinations described below could be tested in two ways:
+
+. Isolation: by not constraining the COMPOSITION.content at all, or adding an open/'`any allowed`' constraint \{*} at the COMPOSITION.content in the archetype/template. This mean anything, even nothing, is accepted at the COMPOSITION.content at runtime.
+. Combination: with constraints set for COMPOSITION.content, for any CONTENT_ITEM (SECTION or ENTRY). Below there is a specification of the constraint combinations for each class accepted at COMPOSITION.content
+
+NOTE: we suggest to test with both strategies.
+
+=== Reference UML for COMPOSITION (latest RM)
+
+image:20554934204941f2a11b55aed7998ec9/8eef3587ba6165567c0ee12e4d64f5c724c4faa9.svg[image]
+
+=== COMPOSITION content cardinality 0..*, no constraint over context
+
+COMPOSITION data sets:
+
+. COMPOSITION with no entries (border case, success)
+. COMPOSITION with one entry (success)
+. COMPOSITION with 3 entries (success)
+
+Combine those cases with:
+
+. COMPOSITION with no context
+. COMPOSITION with context but no other_context
+. COMPOSITION with context and other_context
+
+All the context structures should be valid.
+
+[cols="1,2,^1,2",options="header",]
+|===
+|content 		|context 						|expected |constraints violated
+
+|no entries 	|no context 					|accepted |
+|one entry	 	|no context 					|accepted |
+|three entries 	|no context 					|accepted |
+|no entries 	|context without other_context 	|accepted |
+|one entry 		|context without other_context 	|accepted |
+|three entries 	|context without other_context 	|accepted |
+|no entries 	|context with other_context 	|accepted |
+|one entry 		|context with other_context 	|accepted |
+|three entries 	|context with other_context 	|accepted |
+|===
+
+=== COMPOSITION content cardinality 1..*, no constraint over context
+
+COMPOSITION data sets:
+
+. COMPOSITION with no entries (border case, fail)
+. COMPOSITION with one entry (border case, success)
+. COMPOSITION with 3 entries (success)
+
+Combine those cases with:
+
+. COMPOSITION with no context
+. COMPOSITION with context but no other_context
+. COMPOSITION with context and other_context
+
+All the context structures should be valid.
+
+[cols="1,2,^1,2",options="header",]
+|===
+|content |context |expected |constraints violated
+
+|no entries |no context |rejected |COMPOSITION.content: cardinality.lower
+|one entry |no context |accepted | 
+|three entries |no context |accepted | 
+|no entries |context without other_context |rejected |COMPOSITION.content: cardinality.lower
+|one entry |context without other_context |accepted |
+|three entries |context without other_context |accepted |
+|no entries |context with other_context |rejected |COMPOSITION.content: cardinality.lower
+|one entry |context with other_context |accepted |
+|three entries |context with other_context |accepted |
+|===
+
+=== COMPOSITION content cardinality 3..*, no constraint over context
+
+COMPOSITION data sets:
+
+. COMPOSITION with no entries (border case, fail)
+. COMPOSITION with one entry (fail)
+. COMPOSITION with 3 entries (border case, success)
+
+Combine those cases with:
+
+. COMPOSITION with no context
+. COMPOSITION with context but no other_context
+. COMPOSITION with context and other_context
+
+All the context structures should be valid.
+
+[cols="1,2,^1,2",options="header",]
+|===
+|content 		|context 						|expected |constraints violated
+
+|no entries 	|no context 					|rejected |COMPOSITION.content: cardinality.lower
+|one entry 		|no context 					|rejected |COMPOSITION.content: cardinality.lower
+|three entries 	|no context 					|accepted |
+|no entries 	|context without other_context 	|rejected |COMPOSITION.content: cardinality.lower
+|one entry 		|context without other_context 	|rejected |COMPOSITION.content: cardinality.lower
+|three entries 	|context without other_context 	|accepted |
+|no entries 	|context with other_context 	|rejected |COMPOSITION.content: cardinality.lower
+|one entry 		|context with other_context 	|rejected |COMPOSITION.content: cardinality.lower
+|three entries 	|context with other_context 	|accepted |
+|===
+
+=== COMPOSITION content cardinality 0..1, no constraint over context
+
+COMPOSITION data sets:
+
+. COMPOSITION with no entries (border case, success)
+. COMPOSITION with one entry (border case, success)
+. COMPOSITION with 3 entries (fail)
+
+Combine those cases with:
+
+. COMPOSITION with no context
+. COMPOSITION with context but no other_context
+. COMPOSITION with context and other_context
+
+All the context structures should be valid.
+
+[cols="1,2,^1,2",options="header",]
+|===
+|content |context |expected |constraints violated
+|no entries |no context |accepted |
+
+|one entry |no context |accepted |
+
+|three entries |no context |rejected |COMPOSITION.content:
+cardinality.upper
+
+|no entries |context without other_context |accepted |
+
+|one entry |context without other_context |accepted |
+
+|three entries |context without other_context |rejected
+|COMPOSITION.content: cardinality.upper
+
+|no entries |context with other_context |accepted |
+
+|one entry |context with other_context |accepted |
+
+|three entries |context with other_context |rejected
+|COMPOSITION.content: cardinality.upper
+|===
+
+=== COMPOSITION content cardinality 1..1, no constraint over context
+
+COMPOSITION data sets:
+
+. COMPOSITION with no entries (border case, fail)
+. COMPOSITION with one entry (border case, success)
+. COMPOSITION with 3 entries (fail)
+
+Combine those cases with:
+
+. COMPOSITION with no context
+. COMPOSITION with context but no other_context
+. COMPOSITION with context and other_context
+
+All the context structures should be valid.
+
+[cols="1,2,^1,2",options="header",]
+|===
+|content |context |expected |constraints violated
+
+|no entries |no context |rejected |COMPOSITION.content: cardinality.lower 
+|one entry |no context |accepted | 
+|three entries |no context |rejected |COMPOSITION.content: cardinality.upper
+|no entries |context without other_context |rejected |COMPOSITION.content: cardinality.lower
+|one entry |context without other_context |accepted |
+|three entries |context without other_context |rejected |COMPOSITION.content: cardinality.upper
+|no entries |context with other_context |rejected |COMPOSITION.content: cardinality.lower
+|one entry |context with other_context |accepted | 
+|three entries |context with other_context |rejected |COMPOSITION.content: cardinality.upper
+|===
+
+=== COMPOSITION content cardinality 3..5, no constraint over context
+
+COMPOSITION data sets:
+
+. COMPOSITION with no entries (fail)
+. COMPOSITION with one entry (fail)
+. COMPOSITION with 3 entries (border case, success)
+
+Combine those cases with:
+
+. COMPOSITION with no context
+. COMPOSITION with context but no other_context
+. COMPOSITION with context and other_context
+
+All the context structures should be valid.
+
+[cols="1,2,^1,2",options="header",]
+|===
+|content |context |expected |constraints violated
+
+|no entries |no context |rejected |COMPOSITION.content: cardinality.lower
+|one entry |no context |rejected |COMPOSITION.content: cardinality.lower
+|three entries |no context |accepted |
+|no entries |context without other_context |rejected |COMPOSITION.content: cardinality.lower
+|one entry |context without other_context |rejected |COMPOSITION.content: cardinality.lower
+|three entries |context without other_context |accepted |
+|no entries |context with other_context |rejected |COMPOSITION.content: cardinality.lower
+|one entry |context with other_context |rejected |COMPOSITION.content: cardinality.lower
+|three entries |context with other_context |accepted |
+|===
+
+=== COMPOSITION content cardinality 0..*, context occurrences 1..1
+
+COMPOSITION data sets:
+
+. COMPOSITION with no entries (border case, success)
+. COMPOSITION with one entry (success)
+. COMPOSITION with 3 entries (success)
+
+Combine those cases with:
+
+. COMPOSITION with no context
+. COMPOSITION with context but no other_context
+. COMPOSITION with context and other_context
+
+All the context structures should be valid.
+
+[cols="1,2,^1,2",options="header",]
+|===
+|content |context |expected |constraints violated
+|no entries |no context |rejected |COMPOSITION.context occurrences.lower
+|one entry |no context |rejected |COMPOSITION.context occurrences.lower
+|three entries |no context |rejected |COMPOSITION.context occurrences.lower
+|no entries |context without other_context |accepted | 
+|one entry |context without other_context |accepted | 
+|three entries |context without other_context |accepted | 
+|no entries |context with other_context |accepted | 
+|one entry |context with other_context |accepted | 
+|three entries |context with other_context |accepted |
+|===
+
+=== COMPOSITION content cardinality 1..*, context occurrences 1..1
+
+COMPOSITION data sets:
+
+. COMPOSITION with no entries (border case, fail)
+. COMPOSITION with one entry (border case, success)
+. COMPOSITION with 3 entries (success)
+
+Combine those cases with:
+
+. COMPOSITION with no context
+. COMPOSITION with context but no other_context
+. COMPOSITION with context and other_context
+
+All the context structures should be valid.
+
+[cols="1,2,^1,2",options="header",]
+|===
+|content |context |expected |constraints violated
+
+|no entries |no context |rejected |COMPOSITION.content: cardinality.lower, COMPOSITION.context occurrences.lower
+|one entry |no context |rejected |COMPOSITION.context occurrences.lower
+|three entries |no context |rejected |COMPOSITION.context occurrences.lower
+|no entries |context without other_context |rejected |COMPOSITION.content: cardinality.lower
+|one entry |context without other_context |accepted |
+|three entries |context without other_context |accepted |
+|no entries |context with other_context |rejected |COMPOSITION.content: cardinality.lower
+|one entry |context with other_context |accepted |
+|three entries |context with other_context |accepted |
+|===
+
+=== 2.9. COMPOSITION content cardinality 3..*, context occurrences 1..1
+
+COMPOSITION data sets:
+
+. COMPOSITION with no entries (border case, fail)
+. COMPOSITION with one entry (fail)
+. COMPOSITION with 3 entries (border case, success)
+
+Combine those cases with:
+
+. COMPOSITION with no context
+. COMPOSITION with context but no other_context
+. COMPOSITION with context and other_context
+
+All the context structures should be valid.
+
+[cols="1,2,^1,3",options="header",]
+|===
+|content        |context                        |expected |constraints violated
+
+|no entries     |no context                     |rejected |COMPOSITION.content: cardinality.lower, COMPOSITION.context occurrences.lower
+|one entry      |no context                     |rejected |COMPOSITION.content: cardinality.lower, COMPOSITION.context occurrences.lower 
+|three entries  |no context                     |rejected |COMPOSITION.context occurrences.lower
+|no entries     |context without other_context  |rejected |COMPOSITION.content: cardinality.lower
+|one entry      |context without other_context  |rejected |COMPOSITION.content: cardinality.lower
+|three entries  |context without other_context  |accepted |
+|no entries     |context with other_context     |rejected |COMPOSITION.content: cardinality.lower
+|one entry      |context with other_context     |rejected |COMPOSITION.content: cardinality.lower
+
+|three entries |context with other_context |accepted |
+|===
+
+=== COMPOSITION content cardinality 0..1, context occurrences 1..1
+
+COMPOSITION data sets:
+
+. COMPOSITION with no entries (border case, success)
+. COMPOSITION with one entry (border case, success)
+. COMPOSITION with 3 entries (fail)
+
+Combine those cases with:
+
+. COMPOSITION with no context
+. COMPOSITION with context but no other_context
+. COMPOSITION with context and other_context
+
+All the context structures should be valid.
+
+[cols="1,2,^1,3",options="header",]
+|===
+|content        |context                        |expected |constraints violated
+
+|no entries     |no context                     |rejected |COMPOSITION.context occurrences.lower 
+|one entry      |no context                     |rejected |COMPOSITION.context occurrences.lower 
+|three entries  |no context                     |rejected |COMPOSITION.content: cardinality.upper, COMPOSITION.context occurrences.lower 
+|no entries     |context without other_context  |accepted | 
+|one entry      |context without other_context  |accepted | 
+|three entries  |context without other_context  |rejected |COMPOSITION.content: cardinality.upper
+|no entries     |context with other_context     |accepted | 
+|one entry      |context with other_context     |accepted | 
+|three entries  |context with other_context     |rejected |COMPOSITION.content: cardinality.upper
+|===
+
+=== COMPOSITION content cardinality 1..1, context occurrences 1..1
+
+COMPOSITION data sets:
+
+. COMPOSITION with no entries (border case, fail)
+. COMPOSITION with one entry (border case, success)
+. COMPOSITION with 3 entries (fail)
+
+Combine those cases with:
+
+. COMPOSITION with no context
+. COMPOSITION with context but no other_context
+. COMPOSITION with context and other_context
+
+All the context structures should be valid.
+
+[cols="1,2,^1,3",options="header",]
+|===
+|content |context |expected |constraints violated
+
+|no entries |no context |rejected |COMPOSITION.content: cardinality.lower, COMPOSITION.context occurrences.lower
+|one entry |no context |rejected |COMPOSITION.context occurrences.lower 
+|three entries |no context |rejected |COMPOSITION.content: cardinality.upper, COMPOSITION.context occurrences.lower
+|no entries |context without other_context |rejected |COMPOSITION.content: cardinality.lower
+|one entry |context without other_context |accepted |
+|three entries |context without other_context |rejected |COMPOSITION.content: cardinality.upper
+|no entries |context with other_context |rejected |COMPOSITION.content: cardinality.lower
+|one entry |context with other_context |accepted |
+|three entries |context with other_context |rejected |COMPOSITION.content: cardinality.upper
+|===
+
+=== COMPOSITION content cardinality 3..5, context occurrences 1..1
+
+COMPOSITION data sets:
+
+. COMPOSITION with no entries (fail)
+. COMPOSITION with one entry (fail)
+. COMPOSITION with 3 entries (border case, success)
+
+Combine those cases with:
+
+. COMPOSITION with no context
+. COMPOSITION with context but no other_context
+. COMPOSITION with context and other_context
+
+All the context structures should be valid.
+
+[cols="1,2,^1,3",options="header",]
+|===
+|content |context |expected |constraints violated
+
+|no entries |no context |rejected |COMPOSITION.content: cardinality.lower, COMPOSITION.context occurrences.lower
+|one entry |no context |rejected |COMPOSITION.content: cardinality.lower, COMPOSITION.context occurrences.lower
+|three entries |no context |rejected |COMPOSITION.context occurrences.lower
+|no entries |context without other_context |rejected |COMPOSITION.content: cardinality.lower
+|one entry |context without other_context |rejected |COMPOSITION.content: cardinality.lower
+|three entries |context without other_context |accepted | 
+|no entries |context with other_context |rejected |COMPOSITION.content: cardinality.lower
+|one entry |context with other_context |rejected |COMPOSITION.content: cardinality.lower
+|three entries |context with other_context |accepted |
+|===
+
+== Internal LOCATABLE class: OBSERVATION
+
+In this section there are specifications of constraint combinations for OBSERVATION.
+
+Each data set in this section could be combined with the test data sets for COMPOSITION.content defined in section 2.
+
+OBSERVATION data sets:
+
+. OBSERVATION with no state and no protocol
+. OBSERVATION with no state and protocol
+. OBSERVATION with state and no protocol
+. OBSERVATION with state and protocol
+
+NOTE: since data is mandatory by the RM we can’t have a case for an AOM constraint with "`no OBSERVATION.data`". Though any OBSERVATION committed to the SUT without data will return a validation error comming from the RM/Schema, and this should be tested.
+
+The constraints combinations described below could be tested in two ways:
+
+. Isolation: by not constraining OBSERVATION.data, OBSERVATION.state and OBSERVATION.protocol, or using the open/'`any allowed`' constraint \{*} for those attributes.
+. Combination: with constraints defined at the HISTORY level (for data and state) and ITEM_STRUCTURE (for protocol).
+
+NOTE: we suggest to test with both strategies.
+
+=== OBSERVATION state existence = 0..1, protocol existence = 0..1
+
+[cols="1,1,1,^1,4",options="header",]
+|===
+|data |state |protocol |expected |constraints violated
+
+|absent |absent |absent |rejected |OBSERVATION.data existence.lower (RM/schema constraint)
+|absent |absent |present |rejected |OBSERVATION.data existence.lower (RM/schema constraint)
+|absent |present |absent |rejected |OBSERVATION.data existence.lower (RM/schema constraint)
+|absent |present |present |rejected |OBSERVATION.data existence.lower (RM/schema constraint)
+|present |absent |absent |accepted |
+|present |absent |present |accepted |
+|present |present |absent |accepted |
+|present |present |present |accepted |
+|===
+
+=== OBSERVATION state existence = 0..1, protocol existence = 1..1
+
+[cols="1,1,1,^1,4",options="header",]
+|===
+|data |state |protocol |expected |constraints violated
+
+|absent |absent |absent |rejected |OBSERVATION.data existence.lower (RM/schema constraint), OBSERVATION.protocol existence.lower
+|absent |absent |present |rejected |OBSERVATION.data existence.lower (RM/schema constraint)
+|absent |present |absent |rejected |OBSERVATION.data existence.lower (RM/schema constraint), OBSERVATION.protocol existence.lower
+|absent |present |present |rejected |OBSERVATION.data existence.lower (RM/schema constraint)
+|present |absent |absent |rejected |OBSERVATION.protocol existence.lower
+|present |absent |present |accepted |
+|present |present |absent |rejected |OBSERVATION.protocol existence.lower
+|present |present |present |accepted |
+|===
+
+=== OBSERVATION state existence = 1..1, protocol existence = 0..1
+
+[cols="1,1,1,^1,4",options="header",]
+|===
+|data |state |protocol |expected |constraints violated
+
+|absent |absent |absent |rejected |OBSERVATION.data existence.lower (RM/schema constraint), OBSERVATION.state existence.lower
+|absent |absent |present |rejected |OBSERVATION.data existence.lower (RM/schema constraint), OBSERVATION.state existence.lower
+|absent |present |absent |rejected |OBSERVATION.data existence.lower (RM/schema constraint)
+|absent |present |present |rejected |OBSERVATION.data existence.lower (RM/schema constraint)
+|present |absent |absent |rejected |OBSERVATION.state existence.lower
+|present |absent |present |rejected |OBSERVATION.state existence.lower
+|present |present |absent |accepted |
+|present |present |present |accepted |
+|===
+
+=== OBSERVATION state existence = 1..1, protocol existence = 1..1
+
+[cols="1,1,1,^1,4",options="header",]
+|===
+|data |state |protocol |expected |constraints violated
+
+|absent |absent |absent |rejected |OBSERVATION.data existence.lower (RM/schema constraint), OBSERVATION.protocol existence.lower, OBSERVATION.state existence.lower
+|absent |absent |present |rejected |OBSERVATION.data existence.lower (RM/schema constraint), OBSERVATION.state existence.lower
+|absent |present |absent |rejected |OBSERVATION.data existence.lower (RM/schema constraint), OBSERVATION.protocol existence.lower
+|absent |present |present |rejected |OBSERVATION.data existence.lower (RM/schema constraint)
+|present |absent |absent |rejected |OBSERVATION.protocol existence.lower, OBSERVATION.state existence.lower
+|present |absent |present |rejected |OBSERVATION.state existence.lower 
+|present |present |absent |rejected |OBSERVATION.protocol existence.lower
+|present |present |present |accepted |
+|===
+
+== Internal LOCATABLE class: HISTORY
+
+In this section there are specifications of constraint combinations for HISTORY.
+
+Each data set in this section could be combined with the test data sets for HISTORY defined in section 3.
+
+HISTORY data sets:
+
+. HISTORY with no events and no summary
+. HISTORY with events and no summary
+. HISTORY with no events and summary
+. HISTORY with events and summary
+
+The constraints combinations described below could be tested in two ways:
+
+. Isolation: by not constraining HISTORY.events and HISTORY.summary, or using the open/'any allowed' constraint \{*} for those attributes.
+. Combination: with constraints defined at the EVENT level (for events) and ITEM_STRUCTURE (for summary).
+
+NOTE: we suggest to test with both strategies.
+
+=== Reference UML for HISTORY and ITEM_STRUCTURE (latest RM)
+
+image:20554934204941f2a11b55aed7998ec9/eb8b8aa1a98c77526b0fc2ea53e23f12fb39bfad.svg[image]
+
+=== HISTORY events cardinality 0..*, summary existence 0..1
+
+[cols="1,1,^1,3",options="header",]
+|===
+|events |summary |expected |constraints violated
+
+|no events |absent |accepted |
+|one event |absent |accepted |
+|three events |absent |accepted |
+|no event |present |accepted |
+|one event |present |accepted |
+|three events |present |accepted |
+|===
+
+=== HISTORY events cardinality 1..*, summary existence 0..1
+
+[cols="1,1,^1,3",options="header",]
+|===
+|events |summary |expected |constraints violated
+
+|no events |absent |rejected |HISTORY.events cardinality.lower
+|one event |absent |accepted |
+|three events |absent |accepted |
+|no event |present |rejected |HISTORY.events cardinality.lower
+|one event |present |accepted |
+|three events |present |accepted |
+|===
+
+=== HISTORY events cardinality 3..*, summary existence 0..1
+
+[cols="1,1,^1,3",options="header",]
+|===
+|events |summary |expected |constraints violated
+
+|no events |absent |rejected |HISTORY.events cardinality.lower
+|one event |absent |rejected |HISTORY.events cardinality.lower
+|three events |absent |accepted |
+|no event |present |rejected |HISTORY.events cardinality.lower
+|one event |present |rejected |HISTORY.events cardinality.lower
+|three events |present |accepted |
+|===
+
+=== HISTORY events cardinality 0..1, summary existence 0..1
+
+[cols="1,1,^1,3",options="header",]
+|===
+|events |summary |expected |constraints violated
+
+|no events |absent |accepted |
+|one event |absent |accepted |
+|three events |absent |rejected |HISTORY.events cardinality.upper
+|no event |present |accepted |
+|one event |present |accepted |
+|three events |present |rejected |HISTORY.events cardinality.upper
+|===
+
+=== HISTORY events cardinality 1..1, summary existence 0..1
+
+[cols="1,1,^1,3",options="header",]
+|===
+|events |summary |expected |constraints violated
+
+|no events |absent |rejected |HISTORY.events cardinality.lower
+|one event |absent |accepted |
+|three events |absent |rejected |HISTORY.events cardinality.upper
+|no event |present |rejected |HISTORY.events cardinality.lower
+|one event |present |accepted |
+|three events |present |rejected |HISTORY.events cardinality.upper
+|===
+
+=== HISTORY events cardinality 3..5, summary existence 0..1
+
+[cols="1,1,^1,3",options="header",]
+|===
+|events         |summary    |expected |constraints violated
+
+|no events      |absent     |rejected |HISTORY.events cardinality.lower
+|one event      |absent     |rejected |HISTORY.events cardinality.lower
+|three events   |absent     |accepted |
+|no event       |present    |rejected |HISTORY.events cardinality.lower
+|one event      |present    |rejected |HISTORY.events cardinality.lower
+|three events   |present    |accepted |
+|===
+
+=== HISTORY events cardinality 0..*, summary existence 1..1
+
+[cols="1,1,^1,3",options="header",]
+|===
+|events         |summary    |expected |constraints violated
+
+|no events      |absent     |rejected |HISTORY.summary existence.lower
+|one event      |absent     |rejected |HISTORY.summary existence.lower
+|three events   |absent     |rejected |HISTORY.summary existence.lower
+|no event       |present    |accepted |
+|one event      |present    |accepted |
+|three events   |present    |accepted |
+|===
+
+=== HISTORY events cardinality 1..*, summary existence 1..1
+
+[cols="1,1,^1,3",options="header",]
+|===
+|events         |summary    |expected |constraints violated
+
+|no events      |absent     |rejected |HISTORY.events cardinality.lower, HISTORY.summary existence.lower
+|one event      |absent     |rejected |HISTORY.summary existence.lower
+|three events   |absent     |rejected |HISTORY.summary existence.lower
+|no event       |present    |rejected |HISTORY.events cardinality.lower
+|one event      |present    |accepted |
+|three events   |present    |accepted |
+|===
+
+=== HISTORY events cardinality 3..*, summary existence 1..1
+
+[cols="1,1,^1,3",options="header",]
+|===
+|events         |summary    |expected |constraints violated
+
+|no events      |absent     |rejected |HISTORY.events cardinality.lower, HISTORY.summary existence.lower
+|one event      |absent     |rejected |HISTORY.events cardinality.lower, HISTORY.summary existence.lower
+|three events   |absent     |rejected |HISTORY.summary existence.lower
+|no event       |present    |rejected |HISTORY.events cardinality.lower
+|one event      |present    |rejected |HISTORY.events cardinality.lower
+|three events   |present    |accepted |
+|===
+
+=== HISTORY events cardinality 0..1, summary existence 1..1
+
+[cols="1,1,^1,3",options="header",]
+|===
+|events         |summary    |expected |constraints violated
+
+|no events      |absent     |rejected |HISTORY.summary existence.lower
+|one event      |absent     |rejected |HISTORY.summary existence.lower
+|three events   |absent     |rejected |HISTORY.events cardinality.upper, HISTORY.summary existence.lower
+|no event       |present    |accepted |
+|one event      |present    |accepted |
+|three events   |present    |rejected |HISTORY.events cardinality.upper
+|===
+
+=== HISTORY events cardinality 1..1, summary existence 1..1
+
+[cols="1,1,^1,3",options="header",]
+|===
+|events         |summary    |expected |constraints violated
+
+|no events      |absent     |rejected |HISTORY.events cardinality.lower, HISTORY.summary existence.lower
+|one event      |absent     |rejected |HISTORY.summary existence.lower
+|three events   |absent     |rejected |HISTORY.events cardinality.upper, HISTORY.summary existence.lower
+|no event       |present    |rejected |HISTORY.events cardinality.lower
+|one event      |present    |accepted |
+|three events   |present    |rejected |HISTORY.events cardinality.upper
+|===
+
+=== HISTORY events cardinality 3..5, summary existence 1..1
+
+[cols="1,1,^1,3",options="header",]
+|===
+|events         |summary    |expected |constraints violated
+
+|no events      |absent     |rejected |HISTORY.events cardinality.lower, HISTORY.summary existence.lower
+|one event      |absent     |rejected |HISTORY.events cardinality.lower, HISTORY.summary existence.lower
+|three events   |absent     |rejected |HISTORY.summary existence.lower
+|no event       |present    |rejected |HISTORY.events cardinality.lower
+|one event      |present    |rejected |HISTORY.events cardinality.lower
+|three events   |present    |accepted |
+|===
+
+== EVENT data sets and test cases
+
+EVENT data sets:
+
+. EVENT with no state
+. EVENT with state
+
+NOTE: since data is mandatory by the RM we can’t have a case for an AOM constraint with "`no EVENT.data`". Though any EVENT committed to the SUT without data will return a validation error comming from the RM/Schema, and this should be tested.
+
+EVENT type combinations:
+
+. EVENT is POINT_EVENT
+. EVENT is INTERVAL_EVENT
+
+NOTE: testing both EVENT subclasses shouldn’t affect the result of testing combinations with the rest of the constraints defined for EVENT or on container classes. It will affect only the type checking test if the wrong type of EVENT is provided. So instead of combining the expected results with the rest of the constraints, we will define separate test cases.
+
+The constraints combinations described below could be tested in two ways:
+
+. Isolation: by not constraining EVENT.data and EVENT.state, or using the open/'`any allowed`' constraint \{*} for those attributes.
+. Combination: with constraints defined at the ITEM_STRUCTURE level (for data and state).
+
+NOTE: we suggest to test with both strategies.
+
+=== EVENT state existence 0..1
+
+[cols="1,1,^1,3",options="header",]
+|===
+|data       |state      |expected |constraints violated
+
+|absent     |absent     |rejected |EVENT.data existence.lower (RM/schema constraint)
+|absent     |present    |rejected |EVENT.data existence.lower (RM/schema constraint)
+|present    |absent     |accepted |
+|present    |present    |accepted |
+|===
+
+=== EVENT state existence 1..1
+
+[cols="1,1,^1,3",options="header",]
+|===
+|data       |state      |expected |constraints violated
+
+|absent     |absent     |rejected |EVENT.data existence.lower (RM/schema constraint), EVENT.state existence.lower
+|absent     |present    |rejected |EVENT.data existence.lower (RM/schema constraint)
+|present    |absent     |rejected |EVENT.state existence.lower
+|present    |present    |accepted |
+|===
+
+=== EVENT is (any) EVENT subtype
+
+The title of this case is correct, it means, in the AOM/TOM the constraint for the EVENT type is using the abstract class EVENT, so it allows any EVENT subclass at this position at runtime.
+
+[cols="1,^1,3",options="header",]
+|===
+|event          |expected |constraints violated
+
+|POINT_EVENT    |accepted |
+|INTERVAL_EVENT |accepted |
+|===
+
+=== EVENT is POINT_EVENT
+
+[cols="1,^1,3",options="header",]
+|===
+|event          |expected |constraints violated
+
+|POINT_EVENT    |accepted |
+|INTERVAL_EVENT |rejected |Class not allowed
+|===
+
+=== EVENT is INTERVAL_EVENT
+
+[cols="1,^1,3",options="header",]
+|===
+|event          |expected |constraints violated
+
+|POINT_EVENT    |rejected |Class not allowed
+|INTERVAL_EVENT |accepted |
+|===
+
+== ITEM_STRUCTURE data sets and test cases
+
+ITEM_STRUCTURE type combinations:
+
+. ITEM_STRUCTURE is ITEM_TREE
+. ITEM_STRUCTURE is ITEM_LIST
+. ITEM_STRUCTURE is ITEM_TABLE
+. ITEM_STRUCTURE is ITEM_SINGLE
+
+NOTE: testing with any of the ITEM_STRUCTURE subclasses shouldn’t affect the result of testing combinations with the rest of the constraints defined on container classes. It will affect only the type checking test if the wrong type of ITEM_STRUCTURE is provided. So instead of combining the expected results with the rest of the constraints, we will define separate test cases.
+
+=== ITEM_STRUCTURE is ITEM_STRUCTURE
+
+The title of this case is correct, it means, in the AOM/TOM the constraint for the ITEM_STRUCTURE type is using the abstract class ITEM_STRUCTURE, so it allows any ITEM_STRUCTURE subclass at this position at runtime.
+
+[cols="1,^1,3",options="header",]
+|===
+|event          |expected |constraints violated
+
+|ITEM_TREE      |accepted |
+|ITEM_LIST      |accepted |
+|ITEM_TABLE     |accepted |
+|ITEM_SINGLE    |accepted |
+|===
+
+=== ITEM_STRUCTURE is ITEM_TREE
+
+[cols="1,^1,3",options="header",]
+|===
+|event          |expected |constraints violated
+
+|ITEM_TREE      |accepted |
+|ITEM_LIST      |rejected |Class not allowed
+|ITEM_TABLE     |rejected |Class not allowed
+|ITEM_SINGLE    |rejected |Class not allowed
+|===
+
+=== ITEM_STRUCTURE is ITEM_LIST
+
+[cols="1,^1,3",options="header",]
+|===
+|event          |expected |constraints violated
+
+|ITEM_TREE      |rejected |Class not allowed
+|ITEM_LIST      |accepted |
+|ITEM_TABLE     |rejected |Class not allowed
+|ITEM_SINGLE    |rejected |Class not allowed
+|===
+
+=== ITEM_STRUCTURE is ITEM_TABLE
+
+[cols="1,^1,3",options="header",]
+|===
+|event          |expected |constraints violated
+
+|ITEM_TREE      |rejected |Class not allowed
+|ITEM_LIST      |rejected |Class not allowed
+|ITEM_TABLE     |accepted |
+|ITEM_SINGLE    |rejected |Class not allowed
+|===
+
+=== ITEM_STRUCTURE is ITEM_SINGLE
+
+[cols="1,^1,3",options="header",]
+|===
+|event          |expected   |constraints violated
+
+|ITEM_TREE      |rejected   |Class not allowed
+|ITEM_LIST      |rejected   |Class not allowed
+|ITEM_TABLE     |rejected   |Class not allowed
+|ITEM_SINGLE    |accepted   |
+|===
