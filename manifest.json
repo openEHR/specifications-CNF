@@ -13,7 +13,7 @@
             "micro_summary": "Guide to conformance testing in openEHR.",
             "copyright_year": "2021",
             "spec_status": "DEVELOPMENT",
-            "keywords": "conformance"
+            "keywords": "conformance, guide"
         },
         {
             "id": "platform_test_schedule",
@@ -24,7 +24,7 @@
             "micro_summary": "System Under Test (SUT), Test, Conformance Schedule, Profiles, Certification",
             "copyright_year": "2017",
             "spec_status": "DEVELOPMENT",
-            "keywords": "conformance",
+            "keywords": "conformance, test",
             "notes": [
                 {
                     "link": "https://specifications.openehr.org/wiki/spaces/spec/pages/94181296/Conformance+Notes+-+SEC+meeting+Alkmaar+2017",
@@ -35,6 +35,17 @@
                     "text": "Original page"
                 }
             ]
+        },
+        {
+            "id": "profiles",
+            "title": "openEHR Platform Profiles",
+            "title_short": "Platform Profiles",
+            "description": "openEHR Platform Profiles",
+            "summary": "Profiles of platform components corresponding to common industry product offerings.",
+            "micro_summary": "Platform component profiles.",
+            "copyright_year": "2022",
+            "spec_status": "DEVELOPMENT",
+            "keywords": "conformance, profile, product"
         },
         {
             "id": "certificate",
