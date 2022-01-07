@@ -21,7 +21,7 @@ The Conformance specifications are shown in the top box, and consist of the foll
 ** RFI / RFP / RFQ Guides - guides on creating 'Request for X' documents based on conformance criteria, for contracting purposes (future).
 * Conformance specifications for a specific platform (technology-independent):
 ** Platform X Conformance Test Framework - a technology-independent test framework for a specific platform;
-** {openehr_cnf_platform_test_schedule}[Platform X Conformance Test Schedule^] - test cases including test run logic based on platform Service Model.
+** {openehr_cnf_platform_test_schedule}[Platform Conformance Test Schedule^] - test cases including test run logic based on platform Service Model.
 * Test execution artefacts for a specific platform (technology-dependent):
 ** Executable test case runners (automated test framework scripts) for implemention of Platform X in technology Y (e.g. REST + JSON);
 ** Other artefacts for establishing an executable testing environment.

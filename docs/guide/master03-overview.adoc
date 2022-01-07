@@ -36,22 +36,34 @@ There are assumed to be three categories of testable artefact for the purposes o
 
 Conformance for these categories is assessed as follows.
 
-[cols="1,3,3", options="header"]
+[cols="1,3,3,3", options="header"]
 |===
 
 |Category
 |What is being assessed
 |How assessed
+|Methodology
 
-|*Platform Component*
+.3+|*Platform Component*
+|Functional conformance
 |Conformance of the _implemented APIs_ to the published APIs, in a concrete API technology
-|Simulated API calling test cases; variable data sets
+|Regression of test client running API call-in test cases against reference results
+
+|Semantic conformance
+|Conformance of platform's _content validation_ of data against semantic models (archetypes etc)
+|Regression of test client committing variable data sets against reference validity
+
+|Critical attributes
+|Conformance of specific platform _non-functional_ properties to specification
+|Various
 
 |*Platform client*
+|API compatibility
 |Conformance of the client's ability to make calls into a published API, in a concrete API technology
 |Simulated service testing; functional testing against reference platform implementation
 
 |*Tool*
+|Artefact representation
 |Conformance of artefacts created / modified by the tool to the artefact specifications
 |Functional round-trip testing.
 
@@ -59,9 +71,9 @@ Conformance for these categories is assessed as follows.
 
 This guide primarily addresses the first category (platform implementations), but can be adapted to conformance assessment of platform clients (i.e. applications). The third category is not currently addressed by this guide.
 
-=== What can be Tested?
+=== What can be Concretely Tested?
 
-Although conformance criteria and tests can be specified in abstract ways, only concrete _systems_ or _applications_ can be tested, and the concrete conformance assessable is between such deployed artefacts and the technology-specific specifications on which they are based. Abstract semantics, including of call logic and data types, are only testable because they are expressed within the relevant technology-specific specifications, e.g. the REST API for the openEHR EHR service.
+Although conformance criteria and tests can be specified in abstract ways, only real _systems_ and _applications_ can be tested, and the concrete conformance assessable is between such deployed artefacts and the technology-specific specifications on which they are based. Abstract semantics, including of call logic and data types, are only testable because they are expressed within the relevant technology-specific specifications, e.g. the REST API for the openEHR EHR service.
 
 A specific deployed system to be tested is known as the _system under test (SUT)_.
 

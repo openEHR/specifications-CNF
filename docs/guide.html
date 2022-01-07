@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
 <meta name="description" content="openEHR Conformance Guide">
-<meta name="keywords" content="conformance">
+<meta name="keywords" content="conformance, guide">
 <title>openEHR Conformance Guide</title>
 <link rel="stylesheet" href="https://specifications.openehr.org/styles/openehr.css">
 </head>
@@ -39,7 +39,7 @@
 <li><a href="#_stakeholders">3.2. Stakeholders</a></li>
 <li><a href="#_product_scope">3.3. Product Scope</a>
 <ul class="sectlevel3">
-<li><a href="#_what_can_be_tested">3.3.1. What can be Tested?</a></li>
+<li><a href="#_what_can_be_concretely_tested">3.3.1. What can be Concretely Tested?</a></li>
 <li><a href="#_platform_implementations">3.3.2. Platform Implementations</a></li>
 <li><a href="#_platform_clients">3.3.3. Platform Clients</a></li>
 </ul>
@@ -103,7 +103,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong>: <a href="#latest_issue_date">[latest_issue_date]</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: conformance</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Keywords</strong>: conformance, guide</p></td>
 </tr>
 </tbody>
 </table>
@@ -389,30 +389,45 @@
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Category</th>
 <th class="tableblock halign-left valign-top">What is being assessed</th>
 <th class="tableblock halign-left valign-top">How assessed</th>
+<th class="tableblock halign-left valign-top">Methodology</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Platform Component</strong></p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><strong>Platform Component</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Functional conformance</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance of the <em>implemented APIs</em> to the published APIs, in a concrete API technology</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Simulated API calling test cases; variable data sets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Regression of test client running API call-in test cases against reference results</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Semantic conformance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance of platform&#8217;s <em>content validation</em> of data against semantic models (archetypes etc)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Regression of test client committing variable data sets against reference validity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Critical attributes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance of specific platform <em>non-functional</em> properties to specification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Various</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Platform client</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API compatibility</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance of the client&#8217;s ability to make calls into a published API, in a concrete API technology</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Simulated service testing; functional testing against reference platform implementation</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tool</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Artefact representation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance of artefacts created / modified by the tool to the artefact specifications</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Functional round-trip testing.</p></td>
 </tr>
@@ -422,9 +437,9 @@
 <p>This guide primarily addresses the first category (platform implementations), but can be adapted to conformance assessment of platform clients (i.e. applications). The third category is not currently addressed by this guide.</p>
 </div>
 <div class="sect3">
-<h4 id="_what_can_be_tested"><a class="anchor" href="#_what_can_be_tested"></a>3.3.1. What can be Tested?</h4>
+<h4 id="_what_can_be_concretely_tested"><a class="anchor" href="#_what_can_be_concretely_tested"></a>3.3.1. What can be Concretely Tested?</h4>
 <div class="paragraph">
-<p>Although conformance criteria and tests can be specified in abstract ways, only concrete <em>systems</em> or <em>applications</em> can be tested, and the concrete conformance assessable is between such deployed artefacts and the technology-specific specifications on which they are based. Abstract semantics, including of call logic and data types, are only testable because they are expressed within the relevant technology-specific specifications, e.g. the REST API for the openEHR EHR service.</p>
+<p>Although conformance criteria and tests can be specified in abstract ways, only real <em>systems</em> and <em>applications</em> can be tested, and the concrete conformance assessable is between such deployed artefacts and the technology-specific specifications on which they are based. Abstract semantics, including of call logic and data types, are only testable because they are expressed within the relevant technology-specific specifications, e.g. the REST API for the openEHR EHR service.</p>
 </div>
 <div class="paragraph">
 <p>A specific deployed system to be tested is known as the <em>system under test (SUT)</em>.</p>
@@ -543,7 +558,7 @@
 <p>Platform X Conformance Test Framework - a technology-independent test framework for a specific platform;</p>
 </li>
 <li>
-<p><a href="https://specifications.openehr.org/releases/CNF/latest/platform_test_schedule.html" target="_blank" rel="noopener">Platform X Conformance Test Schedule</a> - test cases including test run logic based on platform Service Model.</p>
+<p><a href="https://specifications.openehr.org/releases/CNF/latest/platform_test_schedule.html" target="_blank" rel="noopener">Platform Conformance Test Schedule</a> - test cases including test run logic based on platform Service Model.</p>
 </li>
 </ul>
 </div>
