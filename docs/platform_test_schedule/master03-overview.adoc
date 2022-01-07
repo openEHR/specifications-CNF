@@ -49,6 +49,10 @@ Each test case is documented in the following form.
 |Flow           | <steps required to execute the test>
 |===
 
+In most automated test frameworks, pre-conditions, setup, actions, post-conditions, and cleanup steps can be directly implemented.
+
+NOTE: The supported RM version(s) by the server under test should be stated beforehand, because this will determine some variations on the data sets used for testing. The minimum required version is 1.0.2.
+
 == Semantic conformance
 
 TBD
