@@ -41,7 +41,7 @@
 <li><a href="#_tc_identifier_e_g_tc_ehr_composition_has_composition_bad_composition">3.2.1. TC &lt;Identifier, e.g. TC EHR_COMPOSITION.has_composition_bad_composition&gt;</a></li>
 </ul>
 </li>
-<li><a href="#_semantic_conformance">3.3. Semantic conformance</a></li>
+<li><a href="#_content_conformance">3.3. Content conformance</a></li>
 <li><a href="#_critical_attributes">3.4. Critical attributes</a></li>
 </ul>
 </li>
@@ -651,7 +651,7 @@
 </li>
 </ul>
 </li>
-<li><a href="#_content_test_cases">13. Content Test Cases</a>
+<li><a href="#_content_conformance_2">13. Content Conformance</a>
 <ul class="sectlevel2">
 <li><a href="#_overview_2">13.1. Overview</a>
 <ul class="sectlevel3">
@@ -660,67 +660,65 @@
 </li>
 <li><a href="#_top_level_locatable_class_composition">13.2. Top-level LOCATABLE class: COMPOSITION</a>
 <ul class="sectlevel3">
-<li><a href="#_reference_uml_for_composition_latest_rm">13.2.1. Reference UML for COMPOSITION (latest RM)</a></li>
-<li><a href="#_composition_content_cardinality_0_no_constraint_over_context">13.2.2. COMPOSITION content cardinality 0..*, no constraint over context</a></li>
-<li><a href="#_composition_content_cardinality_1_no_constraint_over_context">13.2.3. COMPOSITION content cardinality 1..*, no constraint over context</a></li>
-<li><a href="#_composition_content_cardinality_3_no_constraint_over_context">13.2.4. COMPOSITION content cardinality 3..*, no constraint over context</a></li>
-<li><a href="#_composition_content_cardinality_0_1_no_constraint_over_context">13.2.5. COMPOSITION content cardinality 0..1, no constraint over context</a></li>
-<li><a href="#_composition_content_cardinality_1_1_no_constraint_over_context">13.2.6. COMPOSITION content cardinality 1..1, no constraint over context</a></li>
-<li><a href="#_composition_content_cardinality_3_5_no_constraint_over_context">13.2.7. COMPOSITION content cardinality 3..5, no constraint over context</a></li>
-<li><a href="#_composition_content_cardinality_0_context_occurrences_1_1">13.2.8. COMPOSITION content cardinality 0..*, context occurrences 1..1</a></li>
-<li><a href="#_composition_content_cardinality_1_context_occurrences_1_1">13.2.9. COMPOSITION content cardinality 1..*, context occurrences 1..1</a></li>
-<li><a href="#_2_9_composition_content_cardinality_3_context_occurrences_1_1">13.2.10. 2.9. COMPOSITION content cardinality 3..*, context occurrences 1..1</a></li>
-<li><a href="#_composition_content_cardinality_0_1_context_occurrences_1_1">13.2.11. COMPOSITION content cardinality 0..1, context occurrences 1..1</a></li>
-<li><a href="#_composition_content_cardinality_1_1_context_occurrences_1_1">13.2.12. COMPOSITION content cardinality 1..1, context occurrences 1..1</a></li>
-<li><a href="#_composition_content_cardinality_3_5_context_occurrences_1_1">13.2.13. COMPOSITION content cardinality 3..5, context occurrences 1..1</a></li>
+<li><a href="#_tc_cont_comp_content_card_any_context_any">13.2.1. TC CONT-COMP-content_card_any-context_any</a></li>
+<li><a href="#_tc_cont_comp_content_card_1plus_context_any">13.2.2. TC CONT-COMP-content_card_1plus-context_any</a></li>
+<li><a href="#_tc_cont_comp_content_card_3plus_context_any">13.2.3. TC CONT-COMP-content_card_3plus-context_any</a></li>
+<li><a href="#_tc_cont_comp_content_card_opt_context_any">13.2.4. TC CONT-COMP-content_card_opt-context_any</a></li>
+<li><a href="#_tc_cont_comp_content_card_mand_context_any">13.2.5. TC CONT-COMP-content_card_mand-context_any</a></li>
+<li><a href="#_tc_cont_comp_content_card_3to5_context_any">13.2.6. TC CONT-COMP-content_card_3to5-context_any</a></li>
+<li><a href="#_tc_cont_comp_content_card_any_context_mand">13.2.7. TC CONT-COMP-content_card_any-context_mand</a></li>
+<li><a href="#_tc_cont_comp_content_card_1plus_context_mand">13.2.8. TC CONT-COMP-content_card_1plus-context_mand</a></li>
+<li><a href="#_tc_cont_comp_content_card_3plus_context_mand">13.2.9. TC CONT-COMP-content_card_3plus-context_mand</a></li>
+<li><a href="#_tc_cont_comp_content_card_opt_context_mand">13.2.10. TC CONT-COMP-content_card_opt-context_mand</a></li>
+<li><a href="#_tc_cont_comp_content_card_mand_context_mand">13.2.11. TC CONT-COMP-content_card_mand-context_mand</a></li>
+<li><a href="#_tc_cont_comp_content_card_3to5_context_mand">13.2.12. TC CONT-COMP-content_card_3to5-context_mand</a></li>
 </ul>
 </li>
 <li><a href="#_internal_locatable_class_observation">13.3. Internal LOCATABLE class: OBSERVATION</a>
 <ul class="sectlevel3">
-<li><a href="#_observation_state_existence_0_1_protocol_existence_0_1">13.3.1. OBSERVATION state existence = 0..1, protocol existence = 0..1</a></li>
-<li><a href="#_observation_state_existence_0_1_protocol_existence_1_1">13.3.2. OBSERVATION state existence = 0..1, protocol existence = 1..1</a></li>
-<li><a href="#_observation_state_existence_1_1_protocol_existence_0_1">13.3.3. OBSERVATION state existence = 1..1, protocol existence = 0..1</a></li>
-<li><a href="#_observation_state_existence_1_1_protocol_existence_1_1">13.3.4. OBSERVATION state existence = 1..1, protocol existence = 1..1</a></li>
+<li><a href="#_tc_cont_obs_state_ex_opt_protocol_ex_opt">13.3.1. TC CONT-OBS-state_ex_opt-protocol_ex_opt</a></li>
+<li><a href="#_tc_cont_obs_state_ex_opt_protocol_ex_mand">13.3.2. TC CONT-OBS-state_ex_opt-protocol_ex_mand</a></li>
+<li><a href="#_tc_cont_obs_state_ex_mand_protocol_ex_opt">13.3.3. TC CONT-OBS-state_ex_mand-protocol_ex_opt</a></li>
+<li><a href="#_tc_cont_obs_state_ex_mand_protocol_ex_mand">13.3.4. TC CONT-OBS-state_ex_mand-protocol_ex_mand</a></li>
 </ul>
 </li>
 <li><a href="#_internal_locatable_class_history">13.4. Internal LOCATABLE class: HISTORY</a>
 <ul class="sectlevel3">
-<li><a href="#_reference_uml_for_history_and_item_structure_latest_rm">13.4.1. Reference UML for HISTORY and ITEM_STRUCTURE (latest RM)</a></li>
-<li><a href="#_history_events_cardinality_0_summary_existence_0_1">13.4.2. HISTORY events cardinality 0..*, summary existence 0..1</a></li>
-<li><a href="#_history_events_cardinality_1_summary_existence_0_1">13.4.3. HISTORY events cardinality 1..*, summary existence 0..1</a></li>
-<li><a href="#_history_events_cardinality_3_summary_existence_0_1">13.4.4. HISTORY events cardinality 3..*, summary existence 0..1</a></li>
-<li><a href="#_history_events_cardinality_0_1_summary_existence_0_1">13.4.5. HISTORY events cardinality 0..1, summary existence 0..1</a></li>
-<li><a href="#_history_events_cardinality_1_1_summary_existence_0_1">13.4.6. HISTORY events cardinality 1..1, summary existence 0..1</a></li>
-<li><a href="#_history_events_cardinality_3_5_summary_existence_0_1">13.4.7. HISTORY events cardinality 3..5, summary existence 0..1</a></li>
-<li><a href="#_history_events_cardinality_0_summary_existence_1_1">13.4.8. HISTORY events cardinality 0..*, summary existence 1..1</a></li>
-<li><a href="#_history_events_cardinality_1_summary_existence_1_1">13.4.9. HISTORY events cardinality 1..*, summary existence 1..1</a></li>
-<li><a href="#_history_events_cardinality_3_summary_existence_1_1">13.4.10. HISTORY events cardinality 3..*, summary existence 1..1</a></li>
-<li><a href="#_history_events_cardinality_0_1_summary_existence_1_1">13.4.11. HISTORY events cardinality 0..1, summary existence 1..1</a></li>
-<li><a href="#_history_events_cardinality_1_1_summary_existence_1_1">13.4.12. HISTORY events cardinality 1..1, summary existence 1..1</a></li>
-<li><a href="#_history_events_cardinality_3_5_summary_existence_1_1">13.4.13. HISTORY events cardinality 3..5, summary existence 1..1</a></li>
+<li><a href="#_tc_cont_hist_events_card_any_summary_ex_opt">13.4.1. TC CONT-HIST-events_card_any-summary_ex_opt</a></li>
+<li><a href="#_tc_cont_hist_events_card_1plus_summary_ex_opt">13.4.2. TC CONT-HIST-events_card_1plus-summary_ex_opt</a></li>
+<li><a href="#_tc_cont_hist_events_card_3plus_summary_ex_opt">13.4.3. TC CONT-HIST-events_card_3plus-summary_ex_opt</a></li>
+<li><a href="#_tc_cont_hist_events_card_opt_summary_ex_opt">13.4.4. TC CONT-HIST-events_card_opt-summary_ex_opt</a></li>
+<li><a href="#_tc_cont_hist_events_card_mand_summary_ex_opt">13.4.5. TC CONT-HIST-events_card_mand-summary_ex_opt</a></li>
+<li><a href="#_tc_cont_hist_events_card_3to5_summary_ex_opt">13.4.6. TC CONT-HIST-events_card_3to5-summary_ex_opt</a></li>
+<li><a href="#_tc_cont_hist_events_card_any_summary_ex_mand">13.4.7. TC CONT-HIST-events_card_any-summary_ex_mand</a></li>
+<li><a href="#_tc_cont_hist_events_card_1plus_summary_ex_mand">13.4.8. TC CONT-HIST-events_card_1plus-summary_ex_mand</a></li>
+<li><a href="#_tc_cont_hist_events_card_3plus_summary_ex_mand">13.4.9. TC CONT-HIST-events_card_3plus-summary_ex_mand</a></li>
+<li><a href="#_tc_cont_hist_events_card_opt_summary_ex_mand">13.4.10. TC CONT-HIST-events_card_opt-summary_ex_mand</a></li>
+<li><a href="#_tc_cont_hist_events_card_mand_summary_ex_mand">13.4.11. TC CONT-HIST-events_card_mand-summary_ex_mand</a></li>
+<li><a href="#_tc_cont_hist_events_card_3to5_summary_ex_mand">13.4.12. TC CONT-HIST-events_card_3to5-summary_ex_mand</a></li>
 </ul>
 </li>
 <li><a href="#_event_data_sets_and_test_cases">13.5. EVENT data sets and test cases</a>
 <ul class="sectlevel3">
-<li><a href="#_event_state_existence_0_1">13.5.1. EVENT state existence 0..1</a></li>
-<li><a href="#_event_state_existence_1_1">13.5.2. EVENT state existence 1..1</a></li>
-<li><a href="#_event_is_any_event_subtype">13.5.3. EVENT is (any) EVENT subtype</a></li>
-<li><a href="#_event_is_point_event">13.5.4. EVENT is POINT_EVENT</a></li>
-<li><a href="#_event_is_interval_event">13.5.5. EVENT is INTERVAL_EVENT</a></li>
+<li><a href="#_tc_cont_event_state_ex_opt">13.5.1. TC CONT-EVENT-state_ex_opt</a></li>
+<li><a href="#_tc_cont_event_state_ex_mand">13.5.2. TC CONT-EVENT-state_ex_mand</a></li>
+<li><a href="#_tc_cont_event_type_any">13.5.3. TC CONT-EVENT-type_any</a></li>
+<li><a href="#_tc_cont_event_type_point_event">13.5.4. TC CONT-EVENT-type_point_event</a></li>
+<li><a href="#_tc_cont_event_type_interval_event">13.5.5. TC CONT-EVENT-type_interval_event</a></li>
 </ul>
 </li>
 <li><a href="#_item_structure_data_sets_and_test_cases">13.6. ITEM_STRUCTURE data sets and test cases</a>
 <ul class="sectlevel3">
-<li><a href="#_item_structure_is_item_structure">13.6.1. ITEM_STRUCTURE is ITEM_STRUCTURE</a></li>
-<li><a href="#_item_structure_is_item_tree">13.6.2. ITEM_STRUCTURE is ITEM_TREE</a></li>
-<li><a href="#_item_structure_is_item_list">13.6.3. ITEM_STRUCTURE is ITEM_LIST</a></li>
-<li><a href="#_item_structure_is_item_table">13.6.4. ITEM_STRUCTURE is ITEM_TABLE</a></li>
-<li><a href="#_item_structure_is_item_single">13.6.5. ITEM_STRUCTURE is ITEM_SINGLE</a></li>
+<li><a href="#_tc_cont_item_str_type_any">13.6.1. TC CONT-ITEM_STR-type_any</a></li>
+<li><a href="#_tc_cont_item_str_type_item_tree">13.6.2. TC CONT-ITEM_STR-type_item_tree</a></li>
+<li><a href="#_tc_cont_item_str_type_item_list">13.6.3. TC CONT-ITEM_STR-type_item_list</a></li>
+<li><a href="#_tc_cont_item_str_type_item_table">13.6.4. TC CONT-ITEM_STR-type_item_table</a></li>
+<li><a href="#_tc_cont_item_str_type_item_single">13.6.5. TC CONT-ITEM_STR-type_item_single</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_non_functional_conformance_security_and_privacy">14. Non-Functional Conformance - Security and Privacy</a>
+<li><a href="#_non_functional_conformance_privacy">14. Non-Functional Conformance - Privacy</a>
 <ul class="sectlevel2">
 <li><a href="#_normative_reference_10">14.1. Normative Reference</a></li>
 <li><a href="#_dependencies_8">14.2. Dependencies</a></li>
@@ -736,11 +734,6 @@
 </li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#_application_programmer_interfaces_apis">15. Application Programmer Interfaces (APIs)</a>
-<ul class="sectlevel2">
-<li><a href="#_rest_api_component">15.1. REST API Component</a></li>
 </ul>
 </li>
 </ul>
@@ -840,12 +833,18 @@
 <th class="tableblock halign-center valign-top" colspan="4"><p class="tableblock"><strong>CNF Release 1.0.?</strong></p></th>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.8.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.8.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Improve identifiers, structure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>08 Jan 2022</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.8.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Rewrite main schedule based on EhrBase (Github commit <a href="https://github.com/ehrbase/ehrbase/commit/674e8b2506a77bf1adc365eb73e718e2126f2c8e" target="_blank" rel="noopener">674e8b2</a>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P Pazos;<br>
  W Wagner;<br>
  T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>23 Nov 2021</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">23 Nov 2021</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.7.1</p></td>
@@ -1061,7 +1060,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Regression of test client running API call-in test cases against reference results</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Semantic conformance</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Content conformance</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conformance of platform&#8217;s <em>content validation</em> of data against semantic models (archetypes etc)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Regression of test client committing variable data sets against reference validity</p></td>
 </tr>
@@ -1145,7 +1144,7 @@ The supported RM version(s) by the server under test should be stated beforehand
 </div>
 </div>
 <div class="sect2">
-<h3 id="_semantic_conformance"><a class="anchor" href="#_semantic_conformance"></a>3.3. Semantic conformance</h3>
+<h3 id="_content_conformance"><a class="anchor" href="#_content_conformance"></a>3.3. Content conformance</h3>
 <div class="paragraph">
 <p>TBD</p>
 </div>
@@ -11568,15 +11567,15 @@ depending on the implementation, a valid result could also be returning an empty
 </div>
 </div>
 <div class="sect1">
-<h2 id="_content_test_cases"><a class="anchor" href="#_content_test_cases"></a>13. Content Test Cases</h2>
+<h2 id="_content_conformance_2"><a class="anchor" href="#_content_conformance_2"></a>13. Content Conformance</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_overview_2"><a class="anchor" href="#_overview_2"></a>13.1. Overview</h3>
 <div class="paragraph">
-<p>The test cases defined here are for creating archetypes expressing specific constraints over the openEHR RM. Then different data instances should be generated in order to test the constraints. It’s recommended to have at least one success case, one failure case and all border cases covered. That is, for each archetype constraint specified, at least three data instances should be created.</p>
+<p>The test cases defined here are for creating archetypes expressing specific constraints over data defined by the <a href="https://specifications.openehr.org/releases/RM/latest/index" target="_blank" rel="noopener">openEHR RM</a>. Different data instances should be generated in order to test the constraints. It’s recommended to have at least one success case, one failure case and all border cases covered. That is, for each archetype constraint specified, at least three data instances should be created.</p>
 </div>
 <div class="paragraph">
-<p>Since there are many combinations of constraints possible in the AOM/TOM, we will try to separate them into different classes and focus on each constraint set class independently from the other sets. The sets are defined by:</p>
+<p>Since there are many combinations of constraints possible in archetypes and templates, we separate them into different classes and focus on each constraint set class independently from the other sets. The sets are defined by:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -11595,7 +11594,20 @@ depending on the implementation, a valid result could also be returning an empty
 </ol>
 </div>
 <div class="paragraph">
-<p>When checking a &#8220;multiple attribute&#8221; cardinality, this is a good set of combinations to test it:</p>
+<p>In this section, the following terms are used:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Archetypable class: any class that extends LOCATABLE.</p>
+</li>
+<li>
+<p>Archetypable field: generic fields on archetypable classes that can be constrained in archetypes.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For testing a 'multiple attribute' cardinality, we use this set of cardinality intervals:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -11619,26 +11631,13 @@ depending on the implementation, a valid result could also be returning an empty
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>In this section, the following terms are used:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Archetypable class: any class that extends LOCATABLE.</p>
-</li>
-<li>
-<p>Archetypable field: generic fields on archetypable classes that can be constrained in archetypes.</p>
-</li>
-</ul>
-</div>
 <div class="sect3">
 <h4 id="_implementation_notes"><a class="anchor" href="#_implementation_notes"></a>13.1.1. Implementation notes</h4>
 <div class="paragraph">
 <p>The constraint combinations described in the cases below could be implemented in different archetypes, or in a generic archetype then defining the specific constraints at the template level. Which option to use might depend on the modeling tools used to create archetypes and templates.</p>
 </div>
 <div class="paragraph">
-<p>We would suggest to automate the archetype/template test cases generation instead of creating each constraint combination manualy.</p>
+<p>We suggest to automate the archetype/template test cases generation instead of creating each constraint combination manualy.</p>
 </div>
 <div class="paragraph">
 <p>When there is no constraint defined for an attribute, it means anything is allowed on that attribute. It is recommended to include data not defined by the archetype, but valid in the RM, when generating the data instances.</p>
@@ -11648,7 +11647,7 @@ depending on the implementation, a valid result could also be returning an empty
 <div class="sect2">
 <h3 id="_top_level_locatable_class_composition"><a class="anchor" href="#_top_level_locatable_class_composition"></a>13.2. Top-level LOCATABLE class: COMPOSITION</h3>
 <div class="paragraph">
-<p>These cases are defined to verify the constraints defined over archetypable attributes of the top-level class COMPOSITION.</p>
+<p>These cases are defined to verify the constraints defined over archetypable attributes of the top-level class COMPOSITION specified in the <a href="https://specifications.openehr.org/releases/RM/latest/ehr.html#_composition_package" target="_blank" rel="noopener">openEHR RM, COMPOSITION package</a>.</p>
 </div>
 <div class="paragraph">
 <p>The constraints combinations described below could be tested in two ways:</p>
@@ -11656,7 +11655,7 @@ depending on the implementation, a valid result could also be returning an empty
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Isolation: by not constraining the COMPOSITION.content at all, or adding an open/&#8216;any allowed&#8217; constraint \{*} at the COMPOSITION.content in the archetype/template. This mean anything, even nothing, is accepted at the COMPOSITION.content at runtime.</p>
+<p>Isolation: by not constraining the COMPOSITION.content at all, or adding an open/&#8216;any allowed&#8217; constraint \{*} at the COMPOSITION.content in the archetype/template. This means anything, even nothing, is accepted at the COMPOSITION.content at runtime.</p>
 </li>
 <li>
 <p>Combination: with constraints set for COMPOSITION.content, for any CONTENT_ITEM (SECTION or ENTRY). Below there is a specification of the constraint combinations for each class accepted at COMPOSITION.content</p>
@@ -11676,13 +11675,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_reference_uml_for_composition_latest_rm"><a class="anchor" href="#_reference_uml_for_composition_latest_rm"></a>13.2.1. Reference UML for COMPOSITION (latest RM)</h4>
+<h4 id="_tc_cont_comp_content_card_any_context_any"><a class="anchor" href="#_tc_cont_comp_content_card_any_context_any"></a>13.2.1. TC CONT-COMP-content_card_any-context_any</h4>
 <div class="paragraph">
-<p><span class="image"><img src="20554934204941f2a11b55aed7998ec9/8eef3587ba6165567c0ee12e4d64f5c724c4faa9.svg" alt="image"></span></p>
+<p>Description: COMPOSITION content cardinality 0..*, no constraint over context</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_composition_content_cardinality_0_no_constraint_over_context"><a class="anchor" href="#_composition_content_cardinality_0_no_constraint_over_context"></a>13.2.2. COMPOSITION content cardinality 0..*, no constraint over context</h4>
 <div class="paragraph">
 <p>COMPOSITION data sets:</p>
 </div>
@@ -11792,7 +11788,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_composition_content_cardinality_1_no_constraint_over_context"><a class="anchor" href="#_composition_content_cardinality_1_no_constraint_over_context"></a>13.2.3. COMPOSITION content cardinality 1..*, no constraint over context</h4>
+<h4 id="_tc_cont_comp_content_card_1plus_context_any"><a class="anchor" href="#_tc_cont_comp_content_card_1plus_context_any"></a>13.2.2. TC CONT-COMP-content_card_1plus-context_any</h4>
+<div class="paragraph">
+<p>Description: COMPOSITION content cardinality 1..*, no constraint over context</p>
+</div>
 <div class="paragraph">
 <p>COMPOSITION data sets:</p>
 </div>
@@ -11902,7 +11901,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_composition_content_cardinality_3_no_constraint_over_context"><a class="anchor" href="#_composition_content_cardinality_3_no_constraint_over_context"></a>13.2.4. COMPOSITION content cardinality 3..*, no constraint over context</h4>
+<h4 id="_tc_cont_comp_content_card_3plus_context_any"><a class="anchor" href="#_tc_cont_comp_content_card_3plus_context_any"></a>13.2.3. TC CONT-COMP-content_card_3plus-context_any</h4>
+<div class="paragraph">
+<p>Description: COMPOSITION content cardinality 3..*, no constraint over context</p>
+</div>
 <div class="paragraph">
 <p>COMPOSITION data sets:</p>
 </div>
@@ -12012,7 +12014,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_composition_content_cardinality_0_1_no_constraint_over_context"><a class="anchor" href="#_composition_content_cardinality_0_1_no_constraint_over_context"></a>13.2.5. COMPOSITION content cardinality 0..1, no constraint over context</h4>
+<h4 id="_tc_cont_comp_content_card_opt_context_any"><a class="anchor" href="#_tc_cont_comp_content_card_opt_context_any"></a>13.2.4. TC CONT-COMP-content_card_opt-context_any</h4>
+<div class="paragraph">
+<p>Description: COMPOSITION content cardinality 0..1, no constraint over context</p>
+</div>
 <div class="paragraph">
 <p>COMPOSITION data sets:</p>
 </div>
@@ -12123,7 +12128,10 @@ cardinality.upper</p></td>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_composition_content_cardinality_1_1_no_constraint_over_context"><a class="anchor" href="#_composition_content_cardinality_1_1_no_constraint_over_context"></a>13.2.6. COMPOSITION content cardinality 1..1, no constraint over context</h4>
+<h4 id="_tc_cont_comp_content_card_mand_context_any"><a class="anchor" href="#_tc_cont_comp_content_card_mand_context_any"></a>13.2.5. TC CONT-COMP-content_card_mand-context_any</h4>
+<div class="paragraph">
+<p>Description: COMPOSITION content cardinality 1..1, no constraint over context</p>
+</div>
 <div class="paragraph">
 <p>COMPOSITION data sets:</p>
 </div>
@@ -12233,7 +12241,10 @@ cardinality.upper</p></td>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_composition_content_cardinality_3_5_no_constraint_over_context"><a class="anchor" href="#_composition_content_cardinality_3_5_no_constraint_over_context"></a>13.2.7. COMPOSITION content cardinality 3..5, no constraint over context</h4>
+<h4 id="_tc_cont_comp_content_card_3to5_context_any"><a class="anchor" href="#_tc_cont_comp_content_card_3to5_context_any"></a>13.2.6. TC CONT-COMP-content_card_3to5-context_any</h4>
+<div class="paragraph">
+<p>Description: COMPOSITION content cardinality 3..5, no constraint over context</p>
+</div>
 <div class="paragraph">
 <p>COMPOSITION data sets:</p>
 </div>
@@ -12343,7 +12354,10 @@ cardinality.upper</p></td>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_composition_content_cardinality_0_context_occurrences_1_1"><a class="anchor" href="#_composition_content_cardinality_0_context_occurrences_1_1"></a>13.2.8. COMPOSITION content cardinality 0..*, context occurrences 1..1</h4>
+<h4 id="_tc_cont_comp_content_card_any_context_mand"><a class="anchor" href="#_tc_cont_comp_content_card_any_context_mand"></a>13.2.7. TC CONT-COMP-content_card_any-context_mand</h4>
+<div class="paragraph">
+<p>Description: COMPOSITION content cardinality 0..*, context occurrences 1..1</p>
+</div>
 <div class="paragraph">
 <p>COMPOSITION data sets:</p>
 </div>
@@ -12453,7 +12467,10 @@ cardinality.upper</p></td>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_composition_content_cardinality_1_context_occurrences_1_1"><a class="anchor" href="#_composition_content_cardinality_1_context_occurrences_1_1"></a>13.2.9. COMPOSITION content cardinality 1..*, context occurrences 1..1</h4>
+<h4 id="_tc_cont_comp_content_card_1plus_context_mand"><a class="anchor" href="#_tc_cont_comp_content_card_1plus_context_mand"></a>13.2.8. TC CONT-COMP-content_card_1plus-context_mand</h4>
+<div class="paragraph">
+<p>Description: COMPOSITION content cardinality 1..*, context occurrences 1..1</p>
+</div>
 <div class="paragraph">
 <p>COMPOSITION data sets:</p>
 </div>
@@ -12563,7 +12580,10 @@ cardinality.upper</p></td>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_2_9_composition_content_cardinality_3_context_occurrences_1_1"><a class="anchor" href="#_2_9_composition_content_cardinality_3_context_occurrences_1_1"></a>13.2.10. 2.9. COMPOSITION content cardinality 3..*, context occurrences 1..1</h4>
+<h4 id="_tc_cont_comp_content_card_3plus_context_mand"><a class="anchor" href="#_tc_cont_comp_content_card_3plus_context_mand"></a>13.2.9. TC CONT-COMP-content_card_3plus-context_mand</h4>
+<div class="paragraph">
+<p>Description: COMPOSITION content cardinality 3..*, context occurrences 1..1</p>
+</div>
 <div class="paragraph">
 <p>COMPOSITION data sets:</p>
 </div>
@@ -12673,7 +12693,10 @@ cardinality.upper</p></td>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_composition_content_cardinality_0_1_context_occurrences_1_1"><a class="anchor" href="#_composition_content_cardinality_0_1_context_occurrences_1_1"></a>13.2.11. COMPOSITION content cardinality 0..1, context occurrences 1..1</h4>
+<h4 id="_tc_cont_comp_content_card_opt_context_mand"><a class="anchor" href="#_tc_cont_comp_content_card_opt_context_mand"></a>13.2.10. TC CONT-COMP-content_card_opt-context_mand</h4>
+<div class="paragraph">
+<p>Description: COMPOSITION content cardinality 0..1, context occurrences 1..1</p>
+</div>
 <div class="paragraph">
 <p>COMPOSITION data sets:</p>
 </div>
@@ -12783,7 +12806,10 @@ cardinality.upper</p></td>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_composition_content_cardinality_1_1_context_occurrences_1_1"><a class="anchor" href="#_composition_content_cardinality_1_1_context_occurrences_1_1"></a>13.2.12. COMPOSITION content cardinality 1..1, context occurrences 1..1</h4>
+<h4 id="_tc_cont_comp_content_card_mand_context_mand"><a class="anchor" href="#_tc_cont_comp_content_card_mand_context_mand"></a>13.2.11. TC CONT-COMP-content_card_mand-context_mand</h4>
+<div class="paragraph">
+<p>Description: COMPOSITION content cardinality 1..1, context occurrences 1..1</p>
+</div>
 <div class="paragraph">
 <p>COMPOSITION data sets:</p>
 </div>
@@ -12893,7 +12919,10 @@ cardinality.upper</p></td>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_composition_content_cardinality_3_5_context_occurrences_1_1"><a class="anchor" href="#_composition_content_cardinality_3_5_context_occurrences_1_1"></a>13.2.13. COMPOSITION content cardinality 3..5, context occurrences 1..1</h4>
+<h4 id="_tc_cont_comp_content_card_3to5_context_mand"><a class="anchor" href="#_tc_cont_comp_content_card_3to5_context_mand"></a>13.2.12. TC CONT-COMP-content_card_3to5-context_mand</h4>
+<div class="paragraph">
+<p>Description: COMPOSITION content cardinality 3..5, context occurrences 1..1</p>
+</div>
 <div class="paragraph">
 <p>COMPOSITION data sets:</p>
 </div>
@@ -13037,7 +13066,7 @@ cardinality.upper</p></td>
 <div class="title">Note</div>
 </td>
 <td class="content">
-since data is mandatory by the RM we can’t have a case for an AOM constraint with &#8220;no OBSERVATION.data&#8221;. Though any OBSERVATION committed to the SUT without data will return a validation error comming from the RM/Schema, and this should be tested.
+since data is mandatory by the RM we can’t have a case for an AOM constraint with no OBSERVATION data. Though any OBSERVATION committed to the SUT without data will return a validation error comming from the RM/Schema, and this should be tested.
 </td>
 </tr>
 </table>
@@ -13048,7 +13077,7 @@ since data is mandatory by the RM we can’t have a case for an AOM constraint w
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Isolation: by not constraining OBSERVATION.data, OBSERVATION.state and OBSERVATION.protocol, or using the open/&#8216;any allowed&#8217; constraint \{*} for those attributes.</p>
+<p>Isolation: by not constraining OBSERVATION.data, OBSERVATION.state and OBSERVATION.protocol, or using the open/'any allowed' constraint \{*} for those attributes.</p>
 </li>
 <li>
 <p>Combination: with constraints defined at the HISTORY level (for data and state) and ITEM_STRUCTURE (for protocol).</p>
@@ -13068,7 +13097,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_observation_state_existence_0_1_protocol_existence_0_1"><a class="anchor" href="#_observation_state_existence_0_1_protocol_existence_0_1"></a>13.3.1. OBSERVATION state existence = 0..1, protocol existence = 0..1</h4>
+<h4 id="_tc_cont_obs_state_ex_opt_protocol_ex_opt"><a class="anchor" href="#_tc_cont_obs_state_ex_opt_protocol_ex_opt"></a>13.3.1. TC CONT-OBS-state_ex_opt-protocol_ex_opt</h4>
+<div class="paragraph">
+<p>Description: OBSERVATION state existence = 0..1, protocol existence = 0..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 12.5%;">
@@ -13147,7 +13179,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_observation_state_existence_0_1_protocol_existence_1_1"><a class="anchor" href="#_observation_state_existence_0_1_protocol_existence_1_1"></a>13.3.2. OBSERVATION state existence = 0..1, protocol existence = 1..1</h4>
+<h4 id="_tc_cont_obs_state_ex_opt_protocol_ex_mand"><a class="anchor" href="#_tc_cont_obs_state_ex_opt_protocol_ex_mand"></a>13.3.2. TC CONT-OBS-state_ex_opt-protocol_ex_mand</h4>
+<div class="paragraph">
+<p>Description: OBSERVATION state existence = 0..1, protocol existence = 1..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 12.5%;">
@@ -13226,7 +13261,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_observation_state_existence_1_1_protocol_existence_0_1"><a class="anchor" href="#_observation_state_existence_1_1_protocol_existence_0_1"></a>13.3.3. OBSERVATION state existence = 1..1, protocol existence = 0..1</h4>
+<h4 id="_tc_cont_obs_state_ex_mand_protocol_ex_opt"><a class="anchor" href="#_tc_cont_obs_state_ex_mand_protocol_ex_opt"></a>13.3.3. TC CONT-OBS-state_ex_mand-protocol_ex_opt</h4>
+<div class="paragraph">
+<p>Description: OBSERVATION state existence = 1..1, protocol existence = 0..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 12.5%;">
@@ -13305,7 +13343,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_observation_state_existence_1_1_protocol_existence_1_1"><a class="anchor" href="#_observation_state_existence_1_1_protocol_existence_1_1"></a>13.3.4. OBSERVATION state existence = 1..1, protocol existence = 1..1</h4>
+<h4 id="_tc_cont_obs_state_ex_mand_protocol_ex_mand"><a class="anchor" href="#_tc_cont_obs_state_ex_mand_protocol_ex_mand"></a>13.3.4. TC CONT-OBS-state_ex_mand-protocol_ex_mand</h4>
+<div class="paragraph">
+<p>Description: OBSERVATION state existence = 1..1, protocol existence = 1..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 12.5%;">
@@ -13387,7 +13428,7 @@ we suggest to test with both strategies.
 <div class="sect2">
 <h3 id="_internal_locatable_class_history"><a class="anchor" href="#_internal_locatable_class_history"></a>13.4. Internal LOCATABLE class: HISTORY</h3>
 <div class="paragraph">
-<p>In this section there are specifications of constraint combinations for HISTORY.</p>
+<p>In this section there are specifications of constraint combinations for HISTORY, specified in the <a href="https://specifications.openehr.org/releases/RM/latest/data_structures.html#_overview" target="_blank" rel="noopener">openEHR Data Structures IM</a>.</p>
 </div>
 <div class="paragraph">
 <p>Each data set in this section could be combined with the test data sets for HISTORY defined in section 3.</p>
@@ -13437,13 +13478,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_reference_uml_for_history_and_item_structure_latest_rm"><a class="anchor" href="#_reference_uml_for_history_and_item_structure_latest_rm"></a>13.4.1. Reference UML for HISTORY and ITEM_STRUCTURE (latest RM)</h4>
+<h4 id="_tc_cont_hist_events_card_any_summary_ex_opt"><a class="anchor" href="#_tc_cont_hist_events_card_any_summary_ex_opt"></a>13.4.1. TC CONT-HIST-events_card_any-summary_ex_opt</h4>
 <div class="paragraph">
-<p><span class="image"><img src="20554934204941f2a11b55aed7998ec9/eb8b8aa1a98c77526b0fc2ea53e23f12fb39bfad.svg" alt="image"></span></p>
+<p>Description: HISTORY events cardinality 0..*, summary existence 0..1</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_history_events_cardinality_0_summary_existence_0_1"><a class="anchor" href="#_history_events_cardinality_0_summary_existence_0_1"></a>13.4.2. HISTORY events cardinality 0..*, summary existence 0..1</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -13500,7 +13538,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_history_events_cardinality_1_summary_existence_0_1"><a class="anchor" href="#_history_events_cardinality_1_summary_existence_0_1"></a>13.4.3. HISTORY events cardinality 1..*, summary existence 0..1</h4>
+<h4 id="_tc_cont_hist_events_card_1plus_summary_ex_opt"><a class="anchor" href="#_tc_cont_hist_events_card_1plus_summary_ex_opt"></a>13.4.2. TC CONT-HIST-events_card_1plus-summary_ex_opt</h4>
+<div class="paragraph">
+<p>Description: HISTORY events cardinality 1..*, summary existence 0..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -13557,7 +13598,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_history_events_cardinality_3_summary_existence_0_1"><a class="anchor" href="#_history_events_cardinality_3_summary_existence_0_1"></a>13.4.4. HISTORY events cardinality 3..*, summary existence 0..1</h4>
+<h4 id="_tc_cont_hist_events_card_3plus_summary_ex_opt"><a class="anchor" href="#_tc_cont_hist_events_card_3plus_summary_ex_opt"></a>13.4.3. TC CONT-HIST-events_card_3plus-summary_ex_opt</h4>
+<div class="paragraph">
+<p>Description: HISTORY events cardinality 3..*, summary existence 0..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -13614,7 +13658,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_history_events_cardinality_0_1_summary_existence_0_1"><a class="anchor" href="#_history_events_cardinality_0_1_summary_existence_0_1"></a>13.4.5. HISTORY events cardinality 0..1, summary existence 0..1</h4>
+<h4 id="_tc_cont_hist_events_card_opt_summary_ex_opt"><a class="anchor" href="#_tc_cont_hist_events_card_opt_summary_ex_opt"></a>13.4.4. TC CONT-HIST-events_card_opt-summary_ex_opt</h4>
+<div class="paragraph">
+<p>Description: HISTORY events cardinality 0..1, summary existence 0..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -13671,7 +13718,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_history_events_cardinality_1_1_summary_existence_0_1"><a class="anchor" href="#_history_events_cardinality_1_1_summary_existence_0_1"></a>13.4.6. HISTORY events cardinality 1..1, summary existence 0..1</h4>
+<h4 id="_tc_cont_hist_events_card_mand_summary_ex_opt"><a class="anchor" href="#_tc_cont_hist_events_card_mand_summary_ex_opt"></a>13.4.5. TC CONT-HIST-events_card_mand-summary_ex_opt</h4>
+<div class="paragraph">
+<p>Description: HISTORY events cardinality 1..1, summary existence 0..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -13728,7 +13778,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_history_events_cardinality_3_5_summary_existence_0_1"><a class="anchor" href="#_history_events_cardinality_3_5_summary_existence_0_1"></a>13.4.7. HISTORY events cardinality 3..5, summary existence 0..1</h4>
+<h4 id="_tc_cont_hist_events_card_3to5_summary_ex_opt"><a class="anchor" href="#_tc_cont_hist_events_card_3to5_summary_ex_opt"></a>13.4.6. TC CONT-HIST-events_card_3to5-summary_ex_opt</h4>
+<div class="paragraph">
+<p>Description: HISTORY events cardinality 3..5, summary existence 0..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -13785,7 +13838,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_history_events_cardinality_0_summary_existence_1_1"><a class="anchor" href="#_history_events_cardinality_0_summary_existence_1_1"></a>13.4.8. HISTORY events cardinality 0..*, summary existence 1..1</h4>
+<h4 id="_tc_cont_hist_events_card_any_summary_ex_mand"><a class="anchor" href="#_tc_cont_hist_events_card_any_summary_ex_mand"></a>13.4.7. TC CONT-HIST-events_card_any-summary_ex_mand</h4>
+<div class="paragraph">
+<p>Description: HISTORY events cardinality 0..*, summary existence 1..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -13842,7 +13898,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_history_events_cardinality_1_summary_existence_1_1"><a class="anchor" href="#_history_events_cardinality_1_summary_existence_1_1"></a>13.4.9. HISTORY events cardinality 1..*, summary existence 1..1</h4>
+<h4 id="_tc_cont_hist_events_card_1plus_summary_ex_mand"><a class="anchor" href="#_tc_cont_hist_events_card_1plus_summary_ex_mand"></a>13.4.8. TC CONT-HIST-events_card_1plus-summary_ex_mand</h4>
+<div class="paragraph">
+<p>Description: HISTORY events cardinality 1..*, summary existence 1..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -13899,7 +13958,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_history_events_cardinality_3_summary_existence_1_1"><a class="anchor" href="#_history_events_cardinality_3_summary_existence_1_1"></a>13.4.10. HISTORY events cardinality 3..*, summary existence 1..1</h4>
+<h4 id="_tc_cont_hist_events_card_3plus_summary_ex_mand"><a class="anchor" href="#_tc_cont_hist_events_card_3plus_summary_ex_mand"></a>13.4.9. TC CONT-HIST-events_card_3plus-summary_ex_mand</h4>
+<div class="paragraph">
+<p>Description: HISTORY events cardinality 3..*, summary existence 1..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -13956,7 +14018,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_history_events_cardinality_0_1_summary_existence_1_1"><a class="anchor" href="#_history_events_cardinality_0_1_summary_existence_1_1"></a>13.4.11. HISTORY events cardinality 0..1, summary existence 1..1</h4>
+<h4 id="_tc_cont_hist_events_card_opt_summary_ex_mand"><a class="anchor" href="#_tc_cont_hist_events_card_opt_summary_ex_mand"></a>13.4.10. TC CONT-HIST-events_card_opt-summary_ex_mand</h4>
+<div class="paragraph">
+<p>Description: HISTORY events cardinality 0..1, summary existence 1..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -14013,7 +14078,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_history_events_cardinality_1_1_summary_existence_1_1"><a class="anchor" href="#_history_events_cardinality_1_1_summary_existence_1_1"></a>13.4.12. HISTORY events cardinality 1..1, summary existence 1..1</h4>
+<h4 id="_tc_cont_hist_events_card_mand_summary_ex_mand"><a class="anchor" href="#_tc_cont_hist_events_card_mand_summary_ex_mand"></a>13.4.11. TC CONT-HIST-events_card_mand-summary_ex_mand</h4>
+<div class="paragraph">
+<p>Description: HISTORY events cardinality 1..1, summary existence 1..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -14070,7 +14138,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_history_events_cardinality_3_5_summary_existence_1_1"><a class="anchor" href="#_history_events_cardinality_3_5_summary_existence_1_1"></a>13.4.13. HISTORY events cardinality 3..5, summary existence 1..1</h4>
+<h4 id="_tc_cont_hist_events_card_3to5_summary_ex_mand"><a class="anchor" href="#_tc_cont_hist_events_card_3to5_summary_ex_mand"></a>13.4.12. TC CONT-HIST-events_card_3to5-summary_ex_mand</h4>
+<div class="paragraph">
+<p>Description: HISTORY events cardinality 3..5, summary existence 1..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -14205,7 +14276,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_event_state_existence_0_1"><a class="anchor" href="#_event_state_existence_0_1"></a>13.5.1. EVENT state existence 0..1</h4>
+<h4 id="_tc_cont_event_state_ex_opt"><a class="anchor" href="#_tc_cont_event_state_ex_opt"></a>13.5.1. TC CONT-EVENT-state_ex_opt</h4>
+<div class="paragraph">
+<p>Description: EVENT state existence 0..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -14250,7 +14324,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_event_state_existence_1_1"><a class="anchor" href="#_event_state_existence_1_1"></a>13.5.2. EVENT state existence 1..1</h4>
+<h4 id="_tc_cont_event_state_ex_mand"><a class="anchor" href="#_tc_cont_event_state_ex_mand"></a>13.5.2. TC CONT-EVENT-state_ex_mand</h4>
+<div class="paragraph">
+<p>Description: EVENT state existence 1..1</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -14295,9 +14372,12 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_event_is_any_event_subtype"><a class="anchor" href="#_event_is_any_event_subtype"></a>13.5.3. EVENT is (any) EVENT subtype</h4>
+<h4 id="_tc_cont_event_type_any"><a class="anchor" href="#_tc_cont_event_type_any"></a>13.5.3. TC CONT-EVENT-type_any</h4>
 <div class="paragraph">
-<p>The title of this case is correct, it means, in the AOM/TOM the constraint for the EVENT type is using the abstract class EVENT, so it allows any EVENT subclass at this position at runtime.</p>
+<p>Description: EVENT is any EVENT subtype</p>
+</div>
+<div class="paragraph">
+<p>In the AOM/TOM the constraint for the EVENT type is using the abstract class EVENT, so it allows any EVENT subclass at this position at runtime.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -14327,7 +14407,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_event_is_point_event"><a class="anchor" href="#_event_is_point_event"></a>13.5.4. EVENT is POINT_EVENT</h4>
+<h4 id="_tc_cont_event_type_point_event"><a class="anchor" href="#_tc_cont_event_type_point_event"></a>13.5.4. TC CONT-EVENT-type_point_event</h4>
+<div class="paragraph">
+<p>Description: EVENT is POINT_EVENT</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14356,7 +14439,10 @@ we suggest to test with both strategies.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_event_is_interval_event"><a class="anchor" href="#_event_is_interval_event"></a>13.5.5. EVENT is INTERVAL_EVENT</h4>
+<h4 id="_tc_cont_event_type_interval_event"><a class="anchor" href="#_tc_cont_event_type_interval_event"></a>13.5.5. TC CONT-EVENT-type_interval_event</h4>
+<div class="paragraph">
+<p>Description: EVENT is INTERVAL_EVENT</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14419,9 +14505,12 @@ testing with any of the ITEM_STRUCTURE subclasses shouldn’t affect the result 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_item_structure_is_item_structure"><a class="anchor" href="#_item_structure_is_item_structure"></a>13.6.1. ITEM_STRUCTURE is ITEM_STRUCTURE</h4>
+<h4 id="_tc_cont_item_str_type_any"><a class="anchor" href="#_tc_cont_item_str_type_any"></a>13.6.1. TC CONT-ITEM_STR-type_any</h4>
 <div class="paragraph">
-<p>The title of this case is correct, it means, in the AOM/TOM the constraint for the ITEM_STRUCTURE type is using the abstract class ITEM_STRUCTURE, so it allows any ITEM_STRUCTURE subclass at this position at runtime.</p>
+<p>Description: ITEM_STRUCTURE is any ITEM_STRUCTURE subtype</p>
+</div>
+<div class="paragraph">
+<p>In the AOM/TOM the constraint for the ITEM_STRUCTURE type is using the abstract class ITEM_STRUCTURE, so it allows any ITEM_STRUCTURE subclass at this position at runtime.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -14461,7 +14550,10 @@ testing with any of the ITEM_STRUCTURE subclasses shouldn’t affect the result 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_item_structure_is_item_tree"><a class="anchor" href="#_item_structure_is_item_tree"></a>13.6.2. ITEM_STRUCTURE is ITEM_TREE</h4>
+<h4 id="_tc_cont_item_str_type_item_tree"><a class="anchor" href="#_tc_cont_item_str_type_item_tree"></a>13.6.2. TC CONT-ITEM_STR-type_item_tree</h4>
+<div class="paragraph">
+<p>Description: ITEM_STRUCTURE is ITEM_TREE</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14500,7 +14592,10 @@ testing with any of the ITEM_STRUCTURE subclasses shouldn’t affect the result 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_item_structure_is_item_list"><a class="anchor" href="#_item_structure_is_item_list"></a>13.6.3. ITEM_STRUCTURE is ITEM_LIST</h4>
+<h4 id="_tc_cont_item_str_type_item_list"><a class="anchor" href="#_tc_cont_item_str_type_item_list"></a>13.6.3. TC CONT-ITEM_STR-type_item_list</h4>
+<div class="paragraph">
+<p>Description: ITEM_STRUCTURE is ITEM_LIST</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14539,7 +14634,10 @@ testing with any of the ITEM_STRUCTURE subclasses shouldn’t affect the result 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_item_structure_is_item_table"><a class="anchor" href="#_item_structure_is_item_table"></a>13.6.4. ITEM_STRUCTURE is ITEM_TABLE</h4>
+<h4 id="_tc_cont_item_str_type_item_table"><a class="anchor" href="#_tc_cont_item_str_type_item_table"></a>13.6.4. TC CONT-ITEM_STR-type_item_table</h4>
+<div class="paragraph">
+<p>Description: ITEM_STRUCTURE is ITEM_TABLE</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14578,7 +14676,10 @@ testing with any of the ITEM_STRUCTURE subclasses shouldn’t affect the result 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_item_structure_is_item_single"><a class="anchor" href="#_item_structure_is_item_single"></a>13.6.5. ITEM_STRUCTURE is ITEM_SINGLE</h4>
+<h4 id="_tc_cont_item_str_type_item_single"><a class="anchor" href="#_tc_cont_item_str_type_item_single"></a>13.6.5. TC CONT-ITEM_STR-type_item_single</h4>
+<div class="paragraph">
+<p>Description: ITEM_STRUCTURE is ITEM_SINGLE</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14620,7 +14721,7 @@ testing with any of the ITEM_STRUCTURE subclasses shouldn’t affect the result 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_non_functional_conformance_security_and_privacy"><a class="anchor" href="#_non_functional_conformance_security_and_privacy"></a>14. Non-Functional Conformance - Security and Privacy</h2>
+<h2 id="_non_functional_conformance_privacy"><a class="anchor" href="#_non_functional_conformance_privacy"></a>14. Non-Functional Conformance - Privacy</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_normative_reference_10"><a class="anchor" href="#_normative_reference_10"></a>14.1. Normative Reference</h3>
@@ -14716,106 +14817,10 @@ testing with any of the ITEM_STRUCTURE subclasses shouldn’t affect the result 
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_application_programmer_interfaces_apis"><a class="anchor" href="#_application_programmer_interfaces_apis"></a>15. Application Programmer Interfaces (APIs)</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_rest_api_component"><a class="anchor" href="#_rest_api_component"></a>15.1. REST API Component</h3>
-<div class="paragraph">
-<p>Specifications:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Service Interfaces:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html" target="_blank" rel="noopener">Abstract Service Model</a></p>
-</li>
-<li>
-<p><a href="https://github.com/openEHR/specifications-ITS-REST" target="_blank" rel="noopener">REST APIs</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 22.2222%;">
-<col style="width: 33.3333%;">
-<col style="width: 22.2222%;">
-<col style="width: 11.1112%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Product<br>
- Component</th>
-<th class="tableblock halign-left valign-top">Capability</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Test case Script</th>
-<th class="tableblock halign-left valign-top">REST Script</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DEFINITION API</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_definition_adl14_interface" target="_blank" rel="noopener"><code>I_DEFINITION_ADL14</code></a><br>
- <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_definition_adl2_interface" target="_blank" rel="noopener"><code>I_DEFINITION_ADL2</code></a><br>
- <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_definition_query_interface" target="_blank" rel="noopener"><code>I_DEFINITION_QUERY</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="{openehr_cnf_scripts_dir}/tc_api-rest_def.txt" target="_blank" rel="noopener">tc_api-rest_def</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="{openehr_cnf_scripts_dir}/REST/postman/tc_api-rest_def.json" target="_blank" rel="noopener">postman</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>EHR API</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_ehr_service_interface" target="_blank" rel="noopener"><code>I_EHR_SERVICE</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="{openehr_cnf_scripts_dir}/tc_api-rest_ehr.txt" target="_blank" rel="noopener">tc_api-rest_ehr</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="{openehr_cnf_scripts_dir}/REST/postman/tc_api-rest_ehr.json" target="_blank" rel="noopener">postman</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DEMOGRAPHIC API</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_demographic_service_interface" target="_blank" rel="noopener"><code>I_DEMOGRAPHIC_SERVICE</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="{openehr_cnf_scripts_dir}/tc_api-rest_dem.txt" target="_blank" rel="noopener">tc_api-rest_dem</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="{openehr_cnf_scripts_dir}/REST/postman/tc_api-rest_dem.json" target="_blank" rel="noopener">postman</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>QUERY API</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_query_service_interface" target="_blank" rel="noopener"><code>I_QUERY_SERVICE</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="{openehr_cnf_scripts_dir}/tc_api-rest_qry.txt" target="_blank" rel="noopener">tc_api-rest_qry</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="{openehr_cnf_scripts_dir}/REST/postman/tc_api-rest_qry.json" target="_blank" rel="noopener">postman</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ADMIN API</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_admin_service_interface" target="_blank" rel="noopener"><code>I_ADMIN_SERVICE</code></a><br>
- <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_admin_dump_load_interface" target="_blank" rel="noopener"><code>I_ADMIN_DUMP_LOAD</code></a><br>
- <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_admin_archive_interface" target="_blank" rel="noopener"><code>I_ADMIN_ARCHIVE</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="{openehr_cnf_scripts_dir}/tc_api-rest_adm.txt" target="_blank" rel="noopener">tc_api-rest_adm</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="{openehr_cnf_scripts_dir}/REST/postman/tc_api-rest_adm.json" target="_blank" rel="noopener">postman</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MESSAGE API</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_ehr_extract_interface" target="_blank" rel="noopener"><code>I_EHR_EXTRACT</code></a><br>
- <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html#_i_tdd_interface" target="_blank" rel="noopener"><code>I_TDD</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exercise all functions &amp; arguments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="{openehr_cnf_scripts_dir}/tc_api-rest_msg.txt" target="_blank" rel="noopener">tc_api-rest_msg</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="{openehr_cnf_scripts_dir}/REST/postman/tc_api-rest_msg.json" target="_blank" rel="noopener">postman</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-07 19:09:51 UTC
+Last updated 2022-01-08 14:46:38 UTC
 </div>
 </div>
 </body>

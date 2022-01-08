@@ -6,13 +6,17 @@
 
 4+^h|*CNF Release 1.0.?*
 
+|[[latest_issue]]0.8.5
+|Improve identifiers, structure
+|T Beale
+|[[latest_issue_date]]08 Jan 2022
  
-|[[latest_issue]]0.8.0
+|0.8.0
 |Rewrite main schedule based on EhrBase (Github commit https://github.com/ehrbase/ehrbase/commit/674e8b2506a77bf1adc365eb73e718e2126f2c8e[674e8b2^])
 |P Pazos; +
  W Wagner; +
  T Beale
-|[[latest_issue_date]]23 Nov 2021
+|23 Nov 2021
 
 |0.7.1
 |Updates and new diagrams for SUT section; Adjust some test sets.

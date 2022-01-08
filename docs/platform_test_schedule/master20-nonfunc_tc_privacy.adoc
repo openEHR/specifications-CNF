@@ -1,4 +1,4 @@
-= Non-Functional Conformance - Security and Privacy
+= Non-Functional Conformance - Privacy
 
 == Normative Reference
 

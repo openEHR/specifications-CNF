@@ -15,7 +15,7 @@ As described in the {openehr_cnf_guide}#_product_scope[openEHR Conformance Guide
 |Conformance of the _implemented APIs_ to the published APIs, in a concrete API technology
 |Regression of test client running API call-in test cases against reference results
 
-|*Semantic conformance*
+|*Content conformance*
 |Conformance of platform's _content validation_ of data against semantic models (archetypes etc)
 |Regression of test client committing variable data sets against reference validity
 
@@ -53,7 +53,7 @@ In most automated test frameworks, pre-conditions, setup, actions, post-conditio
 
 NOTE: The supported RM version(s) by the server under test should be stated beforehand, because this will determine some variations on the data sets used for testing. The minimum required version is 1.0.2.
 
-== Semantic conformance
+== Content conformance
 
 TBD
 
