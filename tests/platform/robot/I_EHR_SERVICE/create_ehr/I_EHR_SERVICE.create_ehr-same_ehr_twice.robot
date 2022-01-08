@@ -21,7 +21,7 @@ Metadata    Version    0.1.0
 Metadata    Authors    *Wladislaw Wagner*, *Pablo Pazos*
 Metadata    Created    2019.03.03
 
-Documentation   B.1.b) Alternative flow 1: Create same EHR twice
+Documentation   I_EHR_SERVICE.create_ehr-same_ehr_twice: Create same EHR twice
 ...
 ...             Flow:
 ...

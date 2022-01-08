@@ -19,9 +19,9 @@
 *** Settings ***
 Metadata    Version    0.1.0
 Metadata    Authors    *Wladislaw Wagner*, *Pablo Pazos*
-Metadata    Created    2020.01.30
+Metadata    Created    2019.03.03
 
-Documentation   B.1.c) Alternative flow 2: Create two EHRs for the same patient
+Documentation   I_EHR_SERVICE.has_ehr-non_existing_subject_id: Check has EHR with non existing EHR by subject_id
 Metadata        TOP_TEST_SUITE    EHR_SERVICE
 
 Resource        ../../_resources/keywords/ehr_keywords.robot
@@ -29,26 +29,10 @@ Resource        ../../_resources/keywords/ehr_keywords.robot
 # Suite Setup  startup SUT
 # Suite Teardown  shutdown SUT
 
-Force Tags    refactor
+Force Tags    TODO
 
 
 
 *** Test Cases ***
-Create Same EHR Twice For The Same Patient (JSON)
-
-    prepare new request session    JSON
-
-    generate random subject_id
-    create new EHR for subject_id (JSON)    ${subject_id}
-
-    create new EHR for subject_id (JSON)    ${subject_id}
-
-    verify response
-
-
-
-*** Keywords ***
-verify response
-    Integer    response status    409
-
-    # TODO: response should indicate a conflict with an already existing EHR with the same subject id, namespace pair.
+Check has EHR with non-existing EHR by subject_id
+    THIS IS JUST A PLACEHOLDER!

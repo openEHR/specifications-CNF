@@ -21,7 +21,7 @@ Metadata    Version    0.1.0
 Metadata    Authors    *Wladislaw Wagner*, *Pablo Pazos*
 Metadata    Created    2019.03.03
 
-Documentation   B.2.d) Alternative flow 3: Check has EHR with non existing EHR by subject_id
+Documentation   I_EHR_SERVICE.has_ehr-non_existing_ehr_id: Check has EHR with non existing EHR by ehr_id
 Metadata        TOP_TEST_SUITE    EHR_SERVICE
 
 Resource        ../../_resources/keywords/ehr_keywords.robot
@@ -34,5 +34,5 @@ Force Tags    TODO
 
 
 *** Test Cases ***
-Check has EHR with non-existing EHR by subject_id
+Check has EHR with non existing EHR by ehr_id
     THIS IS JUST A PLACEHOLDER!

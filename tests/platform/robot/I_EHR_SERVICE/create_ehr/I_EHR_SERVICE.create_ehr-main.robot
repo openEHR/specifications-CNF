@@ -21,7 +21,7 @@ Metadata    Version    0.1.0
 Metadata    Authors    *Wladislaw Wagner*, *Pablo Pazos*
 Metadata    Created    2019.03.10
 
-Documentation   B.1.a) Main flow: Create new EHR
+Documentation   I_EHR_SERVICE.create_ehr-main: Create new EHR
 Metadata        TOP_TEST_SUITE    EHR_SERVICE
 
 Resource        ../../_resources/keywords/ehr_keywords.robot

@@ -89,7 +89,7 @@ Notes:
 
 Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._has_ehr()_`^]
 
-==== TC EHR.has_ehr-existing_ehr_id
+==== TC I_EHR_SERVICE.has_ehr-existing_ehr_id
 
 // EhrBase ref: EHR/B.2.a.
 
@@ -100,9 +100,10 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._has_ehr()_`^]
 |Post-conditions| None
 |Flow           | . Invoke has EHR service with the known `ehr_id`
                   . The result should be positive, e.g. `"the EHR with <ehr_id> exists"`
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/has_ehr/I_EHR_SERVICE.has_ehr-existing_ehr_id.robot[REST API / Robot^]
 |===
 
-==== TC EHR.has_ehr-existing_subject_id
+==== TC I_EHR_SERVICE.has_ehr-existing_subject_id
 
 // EhrBase ref: EHR/B.2.b.
 
@@ -113,11 +114,12 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._has_ehr()_`^]
 |Post-conditions| None
 |Flow           | . Invoke has EHR service with the known `subject_id`
                   . The result should be positive, e.g. `"the EHR with <subject_id> exists"`
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/has_ehr/I_EHR_SERVICE.has_ehr-existing_subject_id.robot[REST API / Robot^]
 |===
 
 NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the identifier of a patient represented by `PARTY_SELF` in the openEHR Reference Model.
 
-==== TC EHR.has_ehr-non_existing_ehr_id
+==== TC I_EHR_SERVICE.has_ehr-non_existing_ehr_id
 
 // EhrBase ref: EHR/B.2.c.
 
@@ -128,9 +130,10 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 |Post-conditions| None
 |Flow           | . Invoke has EHR service with a random `ehr_id`.
                   . The result should be negative, e.g. `"the EHR with <ehr_id> does not exist"`
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/has_ehr/I_EHR_SERVICE.has_ehr-non_existing_ehr_id.robot[REST API / Robot^]
 |===
 
-==== TC EHR.has_ehr-non_existing_subject_id
+==== TC I_EHR_SERVICE.has_ehr-non_existing_subject_id
 
 // EhrBase ref: EHR/B.2.d.
 
@@ -141,13 +144,14 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 |Post-conditions| None
 |Flow           | . Invoke has EHR service with a random `subject_id`
                   . The result should be negative, e.g. `"the EHR for <subject_id> does not exist"`
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/has_ehr/I_EHR_SERVICE.has_ehr-non_existing_subject_id.robot[REST API / Robot^]
 |===
 
 === Conformance point: I_EHR_SERVICE.create_ehr()
 
 Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr()_`^]
 
-==== TC EHR.create_ehr-main
+==== TC I_EHR_SERVICE.create_ehr-main
 
 // EhrBase ref: EHR/ B.1.a.
 
@@ -160,9 +164,10 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr()_`^]
                     .. for each item in the VALID data set classes
                     .. when the `ehr_id` is provided, should be unique for each invocation of the service
                     . The server should answer with a positive response associated to the successful EHR creation
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/create_ehr/I_EHR_SERVICE.create_ehr-main.robot[REST API / Robot^]
 |===
 
-==== TC EHR.create_ehr-same_ehr_twice
+==== TC I_EHR_SERVICE.create_ehr-same_ehr_twice
 
 // EhrBase ref: EHR/ B.1.b.
 
@@ -179,9 +184,10 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr()_`^]
                     .. with the same `ehr_id` of the EHR created in 1.1. (should be read from the response)
                     .. with the same `ehr_id` of the EHR created in 1.2. (should be read from the test data sets)
                     . The server should answer with a negative response, related to the existence of an EHR with the provided `ehr_id`, because `ehr_id` values should be unique
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/create_ehr/I_EHR_SERVICE.create_ehr-same_ehr_twice.robot[REST API / Robot^]
 |===
 
-==== TC EHR.create_ehr-two_ehrs_same_patient
+==== TC I_EHR_SERVICE.create_ehr-two_ehrs_same_patient
 
 // EhrBase ref: EHR/ B.1.c.
 
@@ -196,13 +202,14 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr()_`^]
                     . Invoke the create EHR service
                     .. with the same data set used in 1.1
                     . The server should answer with a negative response, related with the EHR already existing for the provided subject
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/create_ehr/I_EHR_SERVICE.create_ehr-two_ehrs_same_patient.robot[REST API / Robot^]
 |===
 
 === Conformance point: I_EHR_SERVICE.get_ehr()
 
 Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehr()_`^]
 
-==== TC EHR.get_ehr-existing_ehr_by_ehr_id
+==== TC I_EHR_SERVICE.get_ehr-existing_ehr_by_ehr_id
 
 // EhrBase ref: EHR/B.3.a.
 
@@ -215,7 +222,7 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehr()_`^]
                     . The result should be positive and retrieve the EHR
 |===
 
-==== TC EHR.get_ehr-existing_ehr_by_subject_id
+==== TC I_EHR_SERVICE.get_ehr-existing_ehr_by_subject_id
 
 // EhrBase ref: EHR/B.3.b.
 
@@ -228,7 +235,7 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehr()_`^]
                     . The result should be positive and retrieve the EHR
 |===
 
-==== TC EHR.get_ehr-get_ehr_by_invalid_ehr_id
+==== TC I_EHR_SERVICE.get_ehr-get_ehr_by_invalid_ehr_id
 
 // EhrBase ref: EHR/B.3.c.
 
@@ -241,7 +248,7 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehr()_`^]
                     . The result should be negative, e.g. `"EHR with <ehr_id> does not exist"`
 |===
 
-==== TC EHR.get_ehr-get_ehr_by_invalid_subject_id
+==== TC I_EHR_SERVICE.get_ehr-get_ehr_by_invalid_subject_id
 
 // EhrBase ref: EHR/B.3.d.
 
@@ -260,7 +267,7 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehr()_`^]
 
 Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._get_ehr_status()_`^]
 
-==== TC EHR_STATUS.get_ehr_status-get_by_ehr_id
+==== TC I_EHR_STATUS.get_ehr_status-get_by_ehr_id
 
 // EhrBase ref: EHR/C.1.a.
 
@@ -275,7 +282,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._get_ehr_status()_`^]
                     .. Those rules should be verified: a. has or not a `subject_id`, b. has correct value for `is_modifiable`, c. has correct value for `is_queryable`.
 |===
 
-==== TC EHR_STATUS.get_ehr_status-get_by_invalid_ehr_id
+==== TC I_EHR_STATUS.get_ehr_status-get_by_invalid_ehr_id
 
 // EhrBase ref: EHR/C.1.b.
 
@@ -292,7 +299,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._get_ehr_status()_`^]
 
 Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_queryable()_`^]
 
-==== TC EHR_STATUS.set_ehr_queryable-existing_ehr
+==== TC I_EHR_STATUS.set_ehr_queryable-existing_ehr
 
 // EhrBase ref: EHR/C.2.a.
 
@@ -305,7 +312,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_queryable()_`^]
                     . The result should be positive and the corresponding `EHR_STATUS.is_queryable` should be `true`
 |===
 
-==== TC EHR_STATUS.set_ehr_queryable-non_existing_ehr
+==== TC I_EHR_STATUS.set_ehr_queryable-non_existing_ehr
 
 // EhrBase ref: EHR/C.2.b.
 
@@ -323,7 +330,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_queryable()_`^]
 
 Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_modifiable()_`^]
 
-==== TC EHR_STATUS.set_ehr_modifiable-existing_ehr
+==== TC I_EHR_STATUS.set_ehr_modifiable-existing_ehr
 
 // EhrBase ref: EHR/C.3.a.
 
@@ -336,7 +343,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_modifiable()_`^
                     . The result should be positive and the corresponding `EHR_STATUS.is_modifiable` should be `true`
 |===
 
-==== TC EHR_STATUS.set_ehr_modifiable-non_existing_ehr
+==== TC I_EHR_STATUS.set_ehr_modifiable-non_existing_ehr
 
 // EhrBase ref: EHR/C.3.b.
 
@@ -353,7 +360,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_modifiable()_`^
 
 Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_queryable()_`^]
 
-==== TC EHR_STATUS.clear_ehr_queryable-existing_ehr
+==== TC I_EHR_STATUS.clear_ehr_queryable-existing_ehr
 
 // EhrBase ref: EHR/C.4.a.
 
@@ -366,7 +373,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_queryable()_`
                     . The result should be positive and the corresponding `EHR_STATUS.is_queryable` should be `false`
 |===
 
-==== TC EHR_STATUS.clear_ehr_queryable-non_existing_ehr
+==== TC I_EHR_STATUS.clear_ehr_queryable-non_existing_ehr
 
 // EhrBase ref: EHR/C.4.b.
 
@@ -383,7 +390,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_queryable()_`
 
 Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_modifiable()_`^]
 
-==== TC EHR_STATUS.clear_ehr_modifiable-existing_ehr
+==== TC I_EHR_STATUS.clear_ehr_modifiable-existing_ehr
 
 // EhrBase ref: EHR/C.5.a.
 
@@ -396,7 +403,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_modifiable()_
                     . The result should be positive and the corresponding `EHR_STATUS.is_modifiable` should be `false`
 |===
 
-==== TC EHR_STATUS.clear_ehr_modifiable-non_existing_ehr
+==== TC I_EHR_STATUS.clear_ehr_modifiable-non_existing_ehr
 
 // EhrBase ref: EHR/C.5.b.
 
