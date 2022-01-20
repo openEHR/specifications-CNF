@@ -284,7 +284,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._get_ehr_status()_`^]
                     . The result should be positive and retrieve a correspondent `EHR_STATUS`.
                     .. The `EHR_STATUS` internal information should match the rules in which the EHR was created (see test flow Create EHR)
                     .. Those rules should be verified: a. has or not a `subject_id`, b. has correct value for `is_modifiable`, c. has correct value for `is_queryable`.
-|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/get_ehr_status/I_EHR_SERVICE.get_ehr_status-get_by_ehr_id.robot[REST API / Robot^]
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/get_ehr_status/I_EHR_STATUS.get_ehr_status-get_by_ehr_id.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_STATUS.get_ehr_status-bad_ehr
@@ -298,7 +298,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._get_ehr_status()_`^]
 |Post-conditions  | None.
 |Flow             | . Invoke the get `EHR_STATUS` service by a random `ehr_id`
                     . The result should be negative and the result should include an error e.g. `"EHR with <ehr_id> doesn’t exist"`.
-|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/get_ehr_status/I_EHR_SERVICE.get_ehr_status-bad_ehr.robot[REST API / Robot^]
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/get_ehr_status/I_EHR_STATUS.get_ehr_status-bad_ehr.robot[REST API / Robot^]
 |===
 
 === Conformance Point: I_EHR_STATUS.set_ehr_queryable()
@@ -316,7 +316,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_queryable()_`^]
 |Post-conditions  | `EHR_STATUS.is_queryable`, for the EHR with known `ehr_id`, should be `true`.
 |Flow             | . For the existing EHR, invoke the set EHR queryable service
                     . The result should be positive and the corresponding `EHR_STATUS.is_queryable` should be `true`
-|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/set_ehr_queryable/I_EHR_SERVICE.set_ehr_queryable-existing_ehr.robot[REST API / Robot^]
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/set_ehr_queryable/I_EHR_STATUS.set_ehr_queryable-existing_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_STATUS.set_ehr_queryable-bad_ehr
@@ -330,7 +330,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_queryable()_`^]
 |Post-conditions  | None
 |Flow             | . Invoke the set EHR queryable service by a random `ehr_id`
                     . The result should be negative and the result should include an error e.g. `"EHR with <ehr_id> doesn’t exist"`.
-|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/set_ehr_queryable/I_EHR_SERVICE.set_ehr_queryable-bad_ehr.robot[REST API / Robot^]
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/set_ehr_queryable/I_EHR_STATUS.set_ehr_queryable-bad_ehr.robot[REST API / Robot^]
 |===
 
 
@@ -349,7 +349,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_modifiable()_`^
 |Post-conditions  | `EHR_STATUS.is_modifiable`, for the EHR with known `ehr_id`, should be `true`.
 |Flow             | . For the existing EHR, invoke the set EHR modifiable service
                     . The result should be positive and the corresponding `EHR_STATUS.is_modifiable` should be `true`
-|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/set_ehr_modifiable/I_EHR_SERVICE.set_ehr_modifiable-existing_ehr.robot[REST API / Robot^]
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/set_ehr_modifiable/I_EHR_STATUS.set_ehr_modifiable-existing_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_STATUS.set_ehr_modifiable-bad_ehr
@@ -363,7 +363,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_modifiable()_`^
 |Post-conditions  | None
 |Flow             | . Invoke the set EHR modifiable service by a random `ehr_id`
                     . The result should be negative and the result should include an error e.g. `"EHR with <ehr_id> doesn’t exist"`.
-|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/set_ehr_modifiable/I_EHR_SERVICE.set_ehr_modifiable-bad_ehr.robot[REST API / Robot^]
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/set_ehr_modifiable/I_EHR_STATUS.set_ehr_modifiable-bad_ehr.robot[REST API / Robot^]
 |===
 
 === Conformance Point: I_EHR_STATUS.clear_ehr_queryable()
@@ -381,7 +381,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_queryable()_`
 |Post-conditions  | `EHR_STATUS.is_queryable`, for the EHR with known `ehr_id`, should be `false`.
 |Flow             | . For the existing EHR, invoke the clear EHR queryable service
                     . The result should be positive and the corresponding `EHR_STATUS.is_queryable` should be `false`
-|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/clear_ehr_queryable/I_EHR_SERVICE.clear_ehr_queryable-existing_ehr.robot[REST API / Robot^]
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/clear_ehr_queryable/I_EHR_STATUS.clear_ehr_queryable-existing_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_STATUS.clear_ehr_queryable-bad_ehr
@@ -395,7 +395,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_queryable()_`
 |Post-conditions  | None
 |Flow             | . Invoke the clear EHR queryable service by a random `ehr_id`
                     . The result should be negative and the result should include an error e.g. `"EHR with <ehr_id> doesn’t exist"`.
-|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/clear_ehr_queryable/I_EHR_SERVICE.clear_ehr_queryable-bad_ehr.robot[REST API / Robot^]
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/clear_ehr_queryable/I_EHR_STATUS.clear_ehr_queryable-bad_ehr.robot[REST API / Robot^]
 |===
 
 === Conformance Point: I_EHR_STATUS.clear_ehr_modifiable()
@@ -413,7 +413,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_modifiable()_
 |Post-conditions  | `EHR_STATUS.is_modifiable`, for the EHR with known `ehr_id`, should be `false`
 |Flow             | . For the existing EHR, invoke the clear EHR modifiable service
                     . The result should be positive and the corresponding `EHR_STATUS.is_modifiable` should be `false`
-|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/clear_ehr_modifiable/I_EHR_SERVICE.clear_ehr_modifiable-existing_ehr.robot[REST API / Robot^]
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/clear_ehr_modifiable/I_EHR_STATUS.clear_ehr_modifiable-existing_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_STATUS.clear_ehr_modifiable-bad_ehr
@@ -427,6 +427,6 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_modifiable()_
 |Post-conditions  | None
 |Flow             | . Invoke the clear EHR modifiable service by a random `ehr_id`
                     . The result should be negative and the result should include an error e.g. `"EHR with <ehr_id> doesn’t exist"`.
-|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/clear_ehr_modifiable/I_EHR_SERVICE.clear_ehr_modifiable-bad_ehr.robot[REST API / Robot^]
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/clear_ehr_modifiable/I_EHR_STATUS.clear_ehr_modifiable-bad_ehr.robot[REST API / Robot^]
 |===
 
