@@ -308,7 +308,7 @@ NOTE: in a REST API implementation, the result could be an error status instead 
                     . The service should return the full structure of the EHR directory
 |===
 
-==== TC I_EHR_DIRECTORY.get_directory-directory_with_structure
+==== TC I_EHR_DIRECTORY.get_directory-bad_ehr
 
 // EhrBase ref: EHR/DIRECTORY/F.4.
 
@@ -424,11 +424,25 @@ NOTE: considering a REST API implementation, the result could be an error status
 
 [cols="1h,4a"]
 |===
-|Description      | Test get_directory_at_time on EHR with directory containing multiple versions with empty time
+|Description      | Test get_directory_at_time on non-existent EHR
 |Pre-conditions   | . The server is empty
 |Post-conditions  | None
 |Flow             | . Invoke the get directory at time service for a random `ehr_id` and current time
                     . The service should return an error indicating non-existent EHR
+|===
+
+
+==== TC I_EHR_DIRECTORY.get_directory_at_time-multiple_versions_first
+
+// EhrBase ref: EHR/DIRECTORY/G.8.
+
+[cols="1h,4a"]
+|===
+|Description      | Test get_directory_at_time on EHR with directory with multiple versions first version
+|Pre-conditions   | . An EHR with ehr_id and has directory with two versions
+|Post-conditions  | None
+|Flow             | . Invoke the get directory at time service for the ehr_id and a time AFTER the first version of the directory was created, but BEFORE the second version was created (update)
+                    . The service should return the first version of the directory
 |===
 
 === Conformance point: I_EHR_DIRECTORY.update_directory()

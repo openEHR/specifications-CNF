@@ -35,7 +35,7 @@ This test suite depends on other test suites:
 
 Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._has_composition()_`^]
     
-==== TC EHR_COMPOSITION.has_composition
+==== TC I_EHR_COMPOSITION.has_composition
 
 // EhrBase ref: COMPOSITION/B.1.a.
 
@@ -50,7 +50,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._has_compositi
                   . The result must be TRUE
 |===
 
-==== TC EHR_COMPOSITION.has_composition_bad_composition
+==== TC I_EHR_COMPOSITION.has_composition-bad_composition
 
 // EhrBase ref: COMPOSITION/B.1.b.
 
@@ -64,7 +64,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._has_compositi
                   . The result must be FALSE
 |===
 
-==== TC EHR_COMPOSITION.has_composition_bad_ehr
+==== TC I_EHR_COMPOSITION.has_composition-bad_ehr
 
 // EhrBase ref: COMPOSITION/B.1.c.
 
@@ -85,7 +85,7 @@ When a `COMPOSITION` is retrieved from a service, it will comply with a specific
 
 Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_composition_latest()_`^]
 
-==== TC EHR_COMPOSITION.get_composition_latest
+==== TC I_EHR_COMPOSITION.get_composition_latest
 
 // EhrBase ref: COMPOSITION/B.2.a.
 
@@ -101,7 +101,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_compositi
                   . The retrieved format should contain all the exact same data as the format used when committing the `COMPOSITION` (content check)
 |===
 
-==== TC EHR_COMPOSITION.get_composition_latest_bad_composition
+==== TC I_EHR_COMPOSITION.get_composition_latest-bad_composition
 
 // EhrBase ref: COMPOSITION/B.2.b.
 
@@ -114,7 +114,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_compositi
                   . The result must be empty, with an error "`the COMPOSITION uid doesn’t exist in the EHR ehr_uid`"
 |===
 
-==== TC EHR_COMPOSITION.get_composition_latest_bad_ehr
+==== TC I_EHR_COMPOSITION.get_composition_latest-bad_ehr
 
 // EhrBase ref: COMPOSITION/B.2.c.
 
@@ -131,7 +131,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_compositi
 
 Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_composition_at_time()_`^]
 
-====  TC EHR_COMPOSITION.get_composition_at_time
+====  TC I_EHR_COMPOSITION.get_composition_at_time
 
 // EhrBase ref: COMPOSITION/B.3.a.
 
@@ -149,7 +149,7 @@ NOTE: When requesting a `COMPOSITION` at time using the current time, the last v
                   
 |===
 
-==== TC EHR_COMPOSITION.get_composition_at_time_no_time_arg
+==== TC I_EHR_COMPOSITION.get_composition_at_time-no_time_arg
 
 // EhrBase ref: COMPOSITION/B.3.b.
 
@@ -167,7 +167,7 @@ NOTE: Test this using `COMPOSITIONs` with one version and multiple versions, to 
       The previous tests for "`get COMPOSITION latest`" could be used to compare results.          
 |===
 
-==== TC EHR_COMPOSITION.get_composition_at_time_bad_composition
+==== TC I_EHR_COMPOSITION.get_composition_at_time-bad_composition
 
 // EhrBase ref: COMPOSITION/B.3.c.
 
@@ -180,7 +180,7 @@ NOTE: Test this using `COMPOSITIONs` with one version and multiple versions, to 
                   . The result must be empty, with an error related to "`the COMPOSITION uid doesn’t exist in the EHR ehr_uid`"
 |===
 
-==== TC EHR_COMPOSITION.get_composition_at_time_bad_ehr
+==== TC I_EHR_COMPOSITION.get_composition_at_time-bad_ehr
 
 // EhrBase ref: COMPOSITION/B.3.d.
 
@@ -193,7 +193,7 @@ NOTE: Test this using `COMPOSITIONs` with one version and multiple versions, to 
                   . The service should return an error indicating non-existence of the EHR
 |===
 
-==== TC EHR_COMPOSITION.get_composition_at_times
+==== TC I_EHR_COMPOSITION.get_composition_at_times
 
 // EhrBase ref: COMPOSITION/B.3.e.
 
@@ -219,7 +219,7 @@ NOTE: Test this using `COMPOSITIONs` with one version and multiple versions, to 
 
 Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_composition_version()_`^]
 
-==== TC EHR_COMPOSITION.get_composition_version
+==== TC I_EHR_COMPOSITION.get_composition_version
 
 // EhrBase ref: COMPOSITION/B.4.a.
 
@@ -234,7 +234,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_compositi
                   . The retrieved format should contain all the exact same data as the format used when committing the `COMPOSITION` (content check)
 |===
 
-==== TC EHR_COMPOSITION.get_composition_version_bad_version
+==== TC I_EHR_COMPOSITION.get_composition_version-bad_version
 
 // EhrBase ref: COMPOSITION/B.4.b.
 
@@ -247,9 +247,9 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_compositi
                   . The result must be negative and return an error related to the non-existent `COMPOSITION` with the version id
 |===
 
-==== TC EHR_COMPOSITION.get_composition_version_bad_ehr
+==== TC I_EHR_COMPOSITION.get_composition_version-bad_ehr
 
-// EhrBase ref: COMPOSITION/B.4.b.
+// EhrBase ref: COMPOSITION/B.4.c.
 
 [cols="1h,4a"]
 |===
@@ -260,7 +260,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_compositi
                   . The result must be negative and return an error related to the non-existent EHR.
 |===
 
-==== TC EHR_COMPOSITION.get_composition_versions
+==== TC I_EHR_COMPOSITION.get_composition_versions
 
 // EhrBase ref: COMPOSITION/B.4.d.
 
@@ -282,7 +282,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_compositi
 
 Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._get_versioned_composition()_`^]
 
-==== TC EHR_COMPOSITION.get_versioned_composition
+==== TC I_EHR_COMPOSITION.get_versioned_composition
 
 // EhrBase ref: COMPOSITION/B.5.a.
 
@@ -301,7 +301,7 @@ Notes:
 . To consider different cases, try with `VERSIONED_COMPOSITION` that contain just one `VERSION` or many `VERSIONs`
 . For that, the valid test cases for Create `COMPOSITION` could be used to comply with the preconditions of this test flow
 
-==== TC EHR_COMPOSITION.get_non_existent_versioned_composition
+==== TC I_EHR_COMPOSITION.get_versioned_composition-non_existent
 
 // EhrBase ref: COMPOSITION/B.5.b.
 
@@ -315,7 +315,7 @@ Notes:
                   . The result must be negative and return an error related to the non-existence of the `VERSIONED_COMPOSITION`
 |===
 
-==== TC EHR_COMPOSITION.get_versioned_composition_bad_ehr
+==== TC I_EHR_COMPOSITION.get_versioned_composition-bad_ehr
 
 // EhrBase ref: COMPOSITION/B.5.c.
 
@@ -332,7 +332,7 @@ Notes:
 
 Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._create_composition()_`^]
 
-==== TC EHR_COMPOSITION.create_event_composition
+==== TC I_EHR_COMPOSITION.create_composition-event
 
 // EhrBase ref: COMPOSITION/B.6.a.
 
@@ -347,7 +347,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._create_compos
                   . The result should be positive, return information about the new `COMPOSITION` added to the EHR, and the version number should be 1
 |===
 
-==== TC EHR_COMPOSITION.create_persistent_composition
+==== TC I_EHR_COMPOSITION.create_composition-persistent
 
 // EhrBase ref: COMPOSITION/B.6.b.
 
@@ -362,7 +362,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._create_compos
                   . The result should be positive, and return information about the new `COMPOSITION` added to the EHR, and the version number should be 1
 |===
 
-==== TC EHR_COMPOSITION.create_persistent_composition_same_opt_twice
+==== TC I_EHR_COMPOSITION.create_composition-same_opt_twice
 
 // EhrBase ref: COMPOSITION/B.6.c.
 
@@ -386,7 +386,7 @@ Notes:
 
 Ref:  https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51/3
 
-==== TC EHR_COMPOSITION.create_invalid_event_composition
+==== TC I_EHR_COMPOSITION.create_composition-invalid_event
 
 // EhrBase ref: COMPOSITION/B.6.d.
 
@@ -401,7 +401,7 @@ Ref:  https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51
                   . The result should be negative, and return information about the errors in the provided `COMPOSITION`
 |===
 
-==== TC EHR_COMPOSITION.create_invalid_persistent_composition
+==== TC I_EHR_COMPOSITION.create_composition-invalid_persistent
 
 // EhrBase ref: COMPOSITION/B.6.e.
 
@@ -416,7 +416,7 @@ Ref:  https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51
                   . The result should be negative, and return information about the errors in the provided `COMPOSITION`
 |===
 
-==== TC EHR_COMPOSITION.create_event_composition_bad_opt
+==== TC I_EHR_COMPOSITION.create_composition-event_bad_opt
 
 // EhrBase ref: COMPOSITION/B.6.f.
 
@@ -432,7 +432,7 @@ Ref:  https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51
                   . The result should be negative, and return information about the non-existent OPT
 |===
 
-==== TC EHR_COMPOSITION.create_event_composition_bad_ehr
+==== TC I_EHR_COMPOSITION.create_composition-event_bad_ehr
 
 // EhrBase ref: COMPOSITION/B.6.g.
 
@@ -452,7 +452,7 @@ The update `COMPOSITION` service needs the `VERSION.preceding_version_uid` attri
 
 Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._update_composition()_`^]
 
-==== TC EHR_COMPOSITION.update_event_composition
+==== TC I_EHR_COMPOSITION.update_composition-event
 
 // EhrBase ref: COMPOSITION/B.7.a.
 
@@ -473,7 +473,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._update_compos
                   . The result should be positive and a new version of the existing `COMPOSITION` should exist in the EHR
 |===
 
-==== TC EHR_COMPOSITION.update_persistent_composition
+==== TC I_EHR_COMPOSITION.update_composition-persistent
 
 // EhrBase ref: COMPOSITION/B.7.b.
 
@@ -495,7 +495,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._update_compos
                   . The result should be positive and a new version of the existing `COMPOSITION` should exist in the EHR
 |===
 
-==== TC EHR_COMPOSITION.update_non_existent_composition
+==== TC I_EHR_COMPOSITION.update_composition-non_existent
 
 // EhrBase ref: COMPOSITION/B.7.c.
 
@@ -511,7 +511,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._update_compos
                   . The result should be negative and return an error related to the non-existence of the `preceding_version_id`
 |===
 
-==== TC EHR_COMPOSITION.update_composition_wrong_template
+==== TC I_EHR_COMPOSITION.update_composition-wrong_template
 
 // EhrBase ref: COMPOSITION/B.7.d.
 
@@ -536,7 +536,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._update_compos
 
 Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._delete_composition()_`^]
 
-==== TC EHR_COMPOSITION.delete_event_composition
+==== TC I_EHR_COMPOSITION.delete_composition-event
 
 // EhrBase ref: COMPOSITION/B.8.a.
 
@@ -558,7 +558,7 @@ Platform service ref: {i_ehr_composition_link}[`I_EHR_COMPOSITION._delete_compos
 
 NOTE: The common implementation of the `+delete+` operation is two create a new `VERSION` of the `COMPOSITION` that has `VERSION.commit_audit.change_type = openehr::523|deleted|`, and `VERSION.lifecycle_state = openehr::523|deleted|`. So the `+delete+` operation is not a physical delete but a logical delete. Some implementations might add the option of a physical deleted. This test case considers the `+postcondition+` to be a logical delete, which behaves like an `+update+` operation in which a new `VERSION` of an existing `COMPOSITION` is created.
 
-==== TC EHR_COMPOSITION.delete_persistent_composition
+==== TC I_EHR_COMPOSITION.delete_composition-persistent
 
 // EhrBase ref: COMPOSITION/B.8.b.
 
@@ -578,7 +578,7 @@ NOTE: The common implementation of the `+delete+` operation is two create a new 
                   . The result should be positive, and the `COMPOSITION` should be deleted
 |===
 
-==== TC EHR_COMPOSITION.delete_non_existent_composition
+==== TC I_EHR_COMPOSITION.delete_composition-non_existent
 
 // EhrBase ref: COMPOSITION/B.8.c.
 

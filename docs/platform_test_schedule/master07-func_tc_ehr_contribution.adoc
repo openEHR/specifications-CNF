@@ -597,13 +597,13 @@ NOTE: `CONTRIBUTIONs` can contain `COMPOSITION`, `EHR_STATUS` or `FOLDER`, or an
                     . The `CONTRIBUTION` should contain a `VERSION<COMPOSITION>`
 |===
 
-==== TC I_EHR_CONTRIBUTION.list_contributions-post_commit
+==== TC I_EHR_CONTRIBUTION.list_contributions-empty
 
 // EhrBase ref: EHR/CONTRIBUTION/F.2.
 
 [cols="1h,4a"]
 |===
-|Description      | List `CONTRIBUTIONs` following successful commit 
+|Description      | List `CONTRIBUTIONs` of existing EHR with no CONTRIBUTIONS 
 |Pre-conditions   | . An EHR with known `ehr_id` should exist
                     . The EHR has no `CONTRIBUTIONs`
 |Post-conditions  | None
@@ -688,7 +688,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._has_contrib
                     . The result should be `false`
 |===
 
-==== TC I_EHR_CONTRIBUTION.has_contribution-non_existing_ehr
+==== TC I_EHR_CONTRIBUTION.has_contribution-bad_ehr
 
 // EhrBase ref: EHR/CONTRIBUTION/G.3.
 
@@ -701,7 +701,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._has_contrib
                     . The result should be negative, and retrieve an error indicating `"the EHR with ehr_id doesn’t exist"`
 |===
 
-==== TC I_EHR_CONTRIBUTION.has_contribution-non_existing_contribution
+==== TC I_EHR_CONTRIBUTION.has_contribution-bad_contribution
 
 // EhrBase ref: EHR/CONTRIBUTION/G.4.
 
@@ -719,7 +719,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._has_contrib
 
 Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._get_contribution()_`^]
 
-==== TC I_EHR_CONTRIBUTION.get_contribution-existing_contribution
+==== TC I_EHR_CONTRIBUTION.get_contribution-existing
 
 // EhrBase ref: EHR/CONTRIBUTION/H.1.
 
@@ -747,7 +747,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._get_contrib
                     . The result should be negative and retrieve an error indicating the non-existing `CONTRIBUTION`
 |===
 
-==== TC I_EHR_CONTRIBUTION.get_contribution-non_existing_ehr
+==== TC I_EHR_CONTRIBUTION.get_contribution-bad_ehr
 
 // EhrBase ref: EHR/CONTRIBUTION/H.3.
 
@@ -760,7 +760,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._get_contrib
                     . The result should be negative, and retrieve an error indicating `"the EHR with ehd_id doesn’t exist"`
 |===
 
-==== TC I_EHR_CONTRIBUTION.get_contribution-non_existing_contribution
+==== TC I_EHR_CONTRIBUTION.get_contribution-bad_contribution
 
 // EhrBase ref: EHR/CONTRIBUTION/H.4.
 
