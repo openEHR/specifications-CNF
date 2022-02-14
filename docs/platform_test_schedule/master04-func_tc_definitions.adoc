@@ -136,6 +136,7 @@ Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._upload_opt(
 
 |Flow           | . For each valid OPT in the data set, invoke the OPT upload service
                   . The result should be positive, the server accepted the OPT and it is stored as it was uploaded
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/upload_opt/I_DEFINITION_ADL14.upload_opt-valid_opt.robot[REST API / Robot^]
 |===
 
 ==== TC I_DEFINITION_ADL14.upload_opt-invalid_opt
@@ -149,6 +150,7 @@ Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._upload_opt(
 |Post-conditions| No OPTs should be loaded on the system.
 |Flow           | . For each invalid OPT in the data set, invoke the OPT upload service
                   . The result should be negative, the server rejected the OPT because it was invalid, and would be useful if the result contains where the errors are in the uploaded OPT.
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/upload_opt/I_DEFINITION_ADL14.upload_opt-invalid_opt.robot[REST API / Robot^]
 |===
 
 ==== TC I_DEFINITION_ADL14.upload_opt-valid_opt_twice_conflict
@@ -174,6 +176,7 @@ NOTE: the server should be able to retrieve the template by `template_id`, or re
                   . Invoke the upload service with the same OPT as in 1.
                   . The result should be negative (the server rejected the OPT)
 
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/upload_opt/I_DEFINITION_ADL14.upload_opt-valid_opt_twice_conflict.robot[REST API / Robot^]
 |===
 
 ==== TC I_DEFINITION_ADL14.upload_opt-valid_opt_twice_no_conflict
@@ -195,6 +198,7 @@ NOTE: the server should be able to retrieve the templates by `template_id` and v
                   . Invoke the upload service with the same OPT as in 1., including the version parameter = 2
                   . The result should be positive (the server accepted the OPT)
 
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/upload_opt/I_DEFINITION_ADL14.upload_opt-valid_opt_twice_no_conflict.robot[REST API / Robot^]
 |===
 
 === Conformance Point: I_DEFINITION_ADL14.get_opt()
@@ -221,7 +225,8 @@ NOTE: the flows of this test case will include flows from the Upload OPT test ca
 |Flow           | . Invoke the retrieve OPT service with existing `template_ids`
                   . For each `template_id`, the correct OPT will be returned
 
-NOTE: to check point 2, the retrieved OPT should be exactly the same as the uploaded one.
+                NOTE: to check point 2, the retrieved OPT should be exactly the same as the uploaded one.
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/get_opt/I_DEFINITION_ADL14.get_opt-get_single.robot[REST API / Robot^]
 |===
 
 ==== TC I_DEFINITION_ADL14.get_opt-retrieve_fail
@@ -235,6 +240,7 @@ NOTE: to check point 2, the retrieved OPT should be exactly the same as the uplo
 |Post-conditions| None
 |Flow           | . Invoke the retrieve OPT service with a random `template_id`
                   . The service should return an error related to the non existence of the requested OPT
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/get_opt/I_DEFINITION_ADL14.get_opt-retrieve_fail.robot[REST API / Robot^]
 |===
 
 ==== TC I_DEFINITION_ADL14.get_opt-retrieve_latest_version
@@ -249,7 +255,8 @@ NOTE: to check point 2, the retrieved OPT should be exactly the same as the uplo
 |Flow           | . Invoke the retrieve OPT service with existing `template_ids`
                   . For each `template_id`, the correct OPT will be returned, and will be the last version
 
-NOTE: to be sure the last version was returned, a small modification to the OPT could be done.
+                NOTE: to be sure the last version was returned, a small modification to the OPT could be done.
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/get_opt/I_DEFINITION_ADL14.get_opt-retrieve_latest_version.robot[REST API / Robot^]
 |===
 
 ==== TC I_DEFINITION_ADL14.get_opt-retrieve_specific_version
@@ -264,7 +271,8 @@ NOTE: to be sure the last version was returned, a small modification to the OPT 
 |Flow           | . Invoke the retrieve OPT service with existing `template_ids` and a version parameter value that is not the last
                   . For each `template_id`, the correct OPT will be returned, and will be the requested version
 
-NOTE: to be sure the last version was returned, a small modification to the OPT could be done.
+                NOTE: to be sure the last version was returned, a small modification to the OPT could be done.
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/get_opt/I_DEFINITION_ADL14.get_opt-retrieve_specific_version.robot[REST API / Robot^]
 |===
 
 === Conformance Point: I_DEFINITION_ADL14.get_opts()
@@ -288,6 +296,7 @@ Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._get_opts()_
 |Post-conditions| None
 |Flow           | . Invoke the retrieve OPTs service
                   . All the loaded OPTs should be returned, if there are versions of any OPTs, only the last version is retrieved
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/get_opts/I_DEFINITION_ADL14.get_opts-retrieve_all.robot[REST API / Robot^]
 |===
 
 ==== TC I_DEFINITION_ADL14.get_opts-retrieve_all_no_opts
@@ -301,6 +310,7 @@ Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._get_opts()_
 |Post-conditions| None
 |Flow           | . Invoke the retrieve OPTs service
                   . The service should return an empty set and should not fail.
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/get_opts/I_DEFINITION_ADL14.get_opts-retrieve_all_no_opts.robot[REST API / Robot^]
 |===
 
 === Conformance Point: I_DEFINITION_ADL14.delete_opt()
@@ -329,7 +339,8 @@ Implementation recommendations: the delete could be logical, so the OPT exists i
 |Flow           | . For each existing `template_id`, invoke the delete OPT service
                   . Verify the OPT is not longer available via the retrieve OPTs service
 
-NOTE: for step 1, exclude versioned OPT, the result should be the same: the OPT is not available.
+                NOTE: for step 1, exclude versioned OPT, the result should be the same: the OPT is not available.
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/delete_opt/I_DEFINITION_ADL14.delete_opt-delete_existing.robot[REST API / Robot^]
 |===
 
 
@@ -346,9 +357,11 @@ NOTE: for step 1, exclude versioned OPT, the result should be the same: the OPT 
                   . Invoke the delete OPT service for all existing `template_ids`
                   . Include flow: retrieve all loaded OPTs when none is loaded
 
-NOTE: 
-* for step 1, include only versioned OPT. 
-* for versioned OPTs, when no version parameter is present when invoking the delete OPT service, all the versions of the OPT will be deleted.
+                NOTE: for step 1, include only versioned OPT.
+
+                NOTE: for versioned OPTs, when no version parameter is present when invoking the delete OPT service, all the versions of the OPT will be deleted.
+
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/delete_opt/I_DEFINITION_ADL14.delete_opt-delete_latest_version.robot[REST API / Robot^]
 |===
 
 ==== TC I_DEFINITION_ADL14.delete_opt-delete_specific_version
@@ -366,7 +379,8 @@ NOTE:
                   . The OPT set retrieved on step 3 should contain the deleted OPT, since the latest version was not deleted
                   . Include flow: delete existing OPTs
 
-NOTE: for step 1, include only versioned OPT.
+                NOTE: for step 1, include only versioned OPT.
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/delete_opt/I_DEFINITION_ADL14.delete_opt-delete_specific_version.robot[REST API / Robot^]
 |===
 
 ==== TC I_DEFINITION_ADL14.delete_opt-delete_non_existing
@@ -382,5 +396,6 @@ NOTE: for step 1, include only versioned OPT.
                   . Invoke the delete OPT service with a non existing `template_id`
                   . The server will return an error related to the OPT not existing in the server
                   . Include flow: delete existing OPTs
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/delete_opt/I_DEFINITION_ADL14.delete_opt-delete_non_existing.robot[REST API / Robot^]
 |===
 

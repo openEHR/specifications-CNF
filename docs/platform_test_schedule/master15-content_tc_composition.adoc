@@ -1,5 +1,9 @@
 = Content Conformance
 
+//
+// taken from doc/conformance_testing/COMPOSITION_VALIDATION_STRUCTURE.md
+//
+
 == Overview
 
 The test cases defined here are for creating archetypes expressing specific constraints over data defined by the {openehr_rm}[openEHR RM^]. Different data instances should be generated in order to test the constraints. It’s recommended to have at least one success case, one failure case and all border cases covered. That is, for each archetype constraint specified, at least three data instances should be created.
@@ -33,7 +37,7 @@ We suggest to automate the archetype/template test cases generation instead of c
 
 When there is no constraint defined for an attribute, it means anything is allowed on that attribute. It is recommended to include data not defined by the archetype, but valid in the RM, when generating the data instances.
 
-== Top-level LOCATABLE class: COMPOSITION
+== COMPOSITION Test Cases
 
 These cases are defined to verify the constraints defined over archetypable attributes of the top-level class COMPOSITION specified in the {openehr_rm_ehr}#_composition_package[openEHR RM, COMPOSITION package^].
 

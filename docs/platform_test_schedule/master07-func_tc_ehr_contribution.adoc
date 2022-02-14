@@ -282,6 +282,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._commit_cont
 |Flow             | . Invoke commit `CONTRIBUTION` service with the existing `ehr_id` and valid data sets
                     .. The `COMPOSITIONs` reference existing OPTs on the server
                     . The result should be positive and retrieve the id of the `CONTRIBUTION` just created
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-valid_composition.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.commit_contribution-invalid_composition
@@ -297,6 +298,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._commit_cont
 |Flow             | . Invoke commit `CONTRIBUTION` service with an existing `ehr_id` and the invalid `VERSION<COMPOSITION>`
                     .. The `COMPOSITIONs` reference existing OPTs on the server
                     . The result should be negative and provide info about the errors with the data committed
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-invalid_composition.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.commit_contribution-empty
@@ -310,6 +312,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._commit_cont
 |Post-conditions  | None
 |Flow             | . Invoke commit `CONTRIBUTION` service with an existing `ehr_id` and no data in the `CONTRIBUTION`
                     . The result should be negative and retrieve an error indicating the empty list of `VERSION<COMPOSITION>` in the `CONTRIBUTION`
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-empty.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.commit_contribution-valid_invalid_compositions
@@ -326,6 +329,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._commit_cont
                     .. Some `VERSIONs` are valid, some aree invalid
                     .. The `COMPOSITIONs` reference existing OPTs on the server
                     . The result should be negative and retrieve an error related invalid `VERSION<COMPOSITION>`
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-valid_invalid_compositions.robot[REST API / Robot^]
 |===
 
 NOTE: the whole commit should behave like a transaction and fail, no `CONTRIBUTIONs` or `VERSIONs` should be created on the server.
@@ -348,6 +352,7 @@ NOTE: the whole commit should behave like a transaction and fail, no `CONTRIBUTI
                     .. The `COMPOSITION` should have the same `template_id` as the one used in 1.
                     .. The `VERSION` change_type = modification and `preceding_version_uid` = version id returned in 2.
                     . The result should be positive and the returned version id should reflect it’s a new version of an existing `COMPOSITION` created in 1. (has the same `OBJECT_VERSION_ID` with version number = 2)
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-event_composition.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.commit_contribution-persistent_composition
@@ -368,10 +373,11 @@ NOTE: the whole commit should behave like a transaction and fail, no `CONTRIBUTI
                     .. The `COMPOSITION` should have the same `template_id` as the one used in 1.
                     .. The `VERSION.change_type` = modification
                     .. The `VERSION.preceding_version_uid` = version id returned in 2.,
-                    . The result should be positive and the returned version id should reflect it is a new version of an existing     `COMPOSITION` created in 1. (has the same `OBJECT_VERSION_ID` with version number = 2)
+                    . The result should be positive and the returned version id should reflect it is a new version of an existing `COMPOSITION` created in 1. (has the same `OBJECT_VERSION_ID` with version number = 2)
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-persistent_composition.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-delete_composition
+==== TC I_EHR_CONTRIBUTION.commit_contribution-delete
 
 // EhrBase ref: EHR/CONTRIBUTION/C.7.
 
@@ -391,6 +397,7 @@ NOTE: the effect of a `VERSIONED_OBJECT` being deleted might vary in different i
                     .. The `VERSION.change_type = deleted`
                     .. The `VERSION.preceding_version_uid` = version id returned in 2.
                     . The result should be positive and the returned version id should reflect it is a new version of an existing `COMPOSITION` created in 1. (has the same `OBJECT_VERSION_ID` with version number = 2, which should be deleted)
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-delete.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.commit_contribution-two_commits_second_invalid
@@ -412,6 +419,7 @@ NOTE: the effect of a `VERSIONED_OBJECT` being deleted might vary in different i
                     .. The `VERSION` has preceding_version_uid = version id returned in 2.
                     .. The `COMPOSITION` is one of the invalid data sets
                     . The result should be negative, and retrieve some info about the errors found on the data committed
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-two_commits_second_invalid.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.commit_contribution-two_commits_second_creation
@@ -432,6 +440,7 @@ NOTE: the effect of a `VERSIONED_OBJECT` being deleted might vary in different i
                     .. The `VERSION.change_type` = creation
                     .. The `VERSION.preceding_version_uid` = version id returned in 2.
                     . The result should be negative, and retrieve some info about the wrong change type (see notes)
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-two_commits_second_creation.robot[REST API / Robot^]
 |===
 
 NOTE: Validity criterion: only one 'create' operation is allowed for persistent `COMPOSITIONs`, the next operations over an existing persistent `COMPOSITION` should be modification.
@@ -449,6 +458,7 @@ NOTE: Validity criterion: only one 'create' operation is allowed for persistent 
 |Flow             | . Invoke commit `CONTRIBUTION` service with an existing `ehr_id` and a valid `VERSION<COMPOSITION>`
                     .. The `COMPOSITION` references a random OPT `template_id`
                     . The result should be negative and retrieve an error indicating the missing OPT
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-non_exiting_opt.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.commit_contribution-minimal_ehr_status
@@ -466,6 +476,7 @@ NOTE: Validity criterion: only one 'create' operation is allowed for persistent 
                     .. For `EHR_STATUS` `CONTRIBUTIONs`, the `change_type` is always `modification` or `amendment`
                     . The result should be positive and retrieve the id of the `CONTRIBUTION` just created
                     . Verify expected `CONTRIBUTION` uids and `CONTRIBUTION` count for the EHR with `ehr_id`
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-minimal_ehr_status.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.commit_contribution-full_ehr_status
@@ -485,6 +496,7 @@ NOTE: this case is the same as previous but the precondition 2. is different.
                     .. Use `change_type` = `modification` or `amendment`
                     . The result should be positive and retrieve the id of the `CONTRIBUTION` just created
                     . Verify expected `CONTRIBUTION` uids and `CONTRIBUTION` count for the EHR with `ehr_id`
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-full_ehr_status.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.commit_contribution-ehr_status_invalid_change_type
@@ -500,6 +512,7 @@ NOTE: this case is the same as previous but the precondition 2. is different.
 |Flow             | . Invoke commit `CONTRIBUTION` service with an existing `ehr_id` and the valid data sets (see above)
                     .. Use `change_type = create` and `delete`
                     . The result should be negative and retrieve an error indicating the `EHR_STATUS` already existing for the EHR
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-ehr_status_invalid_change_type.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.commit_contribution-invalid_ehr_status
@@ -527,8 +540,9 @@ NOTE: this case is the same as previous but the precondition 2. is different.
 |Pre-conditions   | . An EHR with known `ehr_id` exists
                     . The EHR doesn’t have a `directory` (root `FOLDER`)
 |Post-conditions  | . The EHR with `ehr_id` should have a new `CONTRIBUTION` and a `directory`
-|Flow             | . Invoke commit `CONTRIBUTION` service with an existing `ehr_id` and the valid data sets (see above) and `change_type` =                       `creation`
+|Flow             | . Invoke commit `CONTRIBUTION` service with an existing `ehr_id` and the valid data sets (see above) and `change_type` = `creation`
                     . The result should be positive and retrieve the id of the `CONTRIBUTION` just created
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-valid_directory.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.commit_contribution-fail_create_existing_directory
@@ -541,8 +555,9 @@ NOTE: this case is the same as previous but the precondition 2. is different.
 |Pre-conditions   | . An EHR with known `ehr_id` exists
                     . The EHR has a `directory` (root `FOLDER`)
 |Post-conditions  | None
-|Flow             | . Invoke commit `CONTRIBUTION` service with an existing `ehr_id` and the valid data sets (see above) and change_type =                       `creation`
+|Flow             | . Invoke commit `CONTRIBUTION` service with an existing `ehr_id` and the valid data sets (see above) and change_type = `creation`
                     . The result should be negative, and retrieve an error indicating the wrong `change_type` because the root `FOLDER` already exists
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-fail_create_existing_directory.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.commit_contribution-fail_modify_non_existing_directory
@@ -559,6 +574,7 @@ NOTE: this case is the same as previous but the precondition 2. is different.
                     .. Use change_type = `modification`
                     .. Use a random `preceding_version_uid`
                     . The result should be negative since, and retrieve an error indicating the wrong `change_type`, because it’s trying to modify something that doesn’t exist
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-fail_modify_non_existing_directory.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.commit_contribution-update_existing_directory
@@ -571,8 +587,9 @@ NOTE: this case is the same as previous but the precondition 2. is different.
 |Pre-conditions   | . An EHR with known `ehr_id` exists
                     . The EHR has a `directory` (root `FOLDER`)
 |Post-conditions  | . The EHR should have a new `CONTRIBUTION` and a new `VERSION` for the root `FOLDER`
-|Flow             | . Invoke commit `CONTRIBUTION` service with an existing `ehr_id` and the valid data sets with `change_type` =                                   `modification` or `amendment`
+|Flow             | . Invoke commit `CONTRIBUTION` service with an existing `ehr_id` and the valid data sets with `change_type` = `modification` or `amendment`
                     . The result should be positive and retrieve the id of the `CONTRIBUTION` just created
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-update_existing_directory.robot[REST API / Robot^]
 |===
 
 === Conformance point: I_EHR_CONTRIBUTION.list_contributions()
@@ -595,6 +612,7 @@ NOTE: `CONTRIBUTIONs` can contain `COMPOSITION`, `EHR_STATUS` or `FOLDER`, or an
 |Flow             | . Invoke list `CONTRIBUTIONs` service with the existing `ehr_id`
                     . The result should be positive and retrieve a list of `CONTRIBUTIONs` with one item
                     . The `CONTRIBUTION` should contain a `VERSION<COMPOSITION>`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/list_contributions/I_EHR_CONTRIBUTION.list_contributions-post_commit.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.list_contributions-empty
@@ -609,6 +627,7 @@ NOTE: `CONTRIBUTIONs` can contain `COMPOSITION`, `EHR_STATUS` or `FOLDER`, or an
 |Post-conditions  | None
 |Flow             | . Invoke get `CONTRIBUTIONs` service by the existing `ehr_id`
                     . The result should be positive and retrieve an empty list
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/list_contributions/I_EHR_CONTRIBUTION.list_contributions-empty.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.list_contributions-non_existing_ehr
@@ -622,6 +641,7 @@ NOTE: `CONTRIBUTIONs` can contain `COMPOSITION`, `EHR_STATUS` or `FOLDER`, or an
 |Post-conditions  | None
 |Flow             | . Invoke list `CONTRIBUTIONs` service with a random `ehr_id`
                     . The result should be negative and retrieve an error indicating `"EHR with `ehr_id` doesn’t exist"`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/list_contributions/I_EHR_CONTRIBUTION.list_contributions-non_existing_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.list_contributions-ehr_containing_ehr_status
@@ -638,6 +658,7 @@ NOTE: `CONTRIBUTIONs` can contain `COMPOSITION`, `EHR_STATUS` or `FOLDER`, or an
 |Flow             | . Invoke list `CONTRIBUTIONs` service by the existing `ehr_id`
                     . The result should be positive and retrieve a list of `CONTRIBUTIONs` with one item
                     . The `CONTRIBUTION` should contain an `EHR_STATUS`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/list_contributions/I_EHR_CONTRIBUTION.list_contributions-ehr_containing_ehr_status.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.list_contributions-ehr_containing_directory
@@ -654,6 +675,7 @@ NOTE: `CONTRIBUTIONs` can contain `COMPOSITION`, `EHR_STATUS` or `FOLDER`, or an
 |Flow             | . Invoke get `CONTRIBUTIONs` service by the existing `ehr_id`
                     . The result should be positive and retrieve a list of `CONTRIBUTIONs` with one item
                     . The `CONTRIBUTION` should contain a `FOLDER`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/list_contributions/I_EHR_CONTRIBUTION.list_contributions-ehr_containing_directory.robot[REST API / Robot^]
 |===
 
 === Conformance point: I_EHR_CONTRIBUTION.has_contribution()
@@ -672,6 +694,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._has_contrib
 |Post-conditions  | None
 |Flow             | . Invoke has `CONTRIBUTION` service with the known `ehr_id` and `CONTRIBUTION` uid
                     . The result should be `true`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/has_contribution/I_EHR_CONTRIBUTION.has_contribution-existing.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.has_contribution-empty_ehr
@@ -686,6 +709,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._has_contrib
 |Post-conditions  | None
 |Flow             | . Invoke has `CONTRIBUTION` service with the known `ehr_id` and a random `CONTRIBUTION` uid
                     . The result should be `false`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/has_contribution/I_EHR_CONTRIBUTION.has_contribution-empty_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.has_contribution-bad_ehr
@@ -699,6 +723,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._has_contrib
 |Post-conditions  | None
 |Flow             | . Invoke has `CONTRIBUTION` service with a random `ehr_id` and a random `CONTRIBUTION` uid
                     . The result should be negative, and retrieve an error indicating `"the EHR with ehr_id doesn’t exist"`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/has_contribution/I_EHR_CONTRIBUTION.has_contribution-bad_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.has_contribution-bad_contribution
@@ -713,6 +738,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._has_contrib
 |Post-conditions  | None
 |Flow             | . Invoke has `CONTRIBUTION` service with the known `ehr_id` and a random, not existing `CONTRIBUTION` uid
                     . The result should be `false`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/has_contribution/I_EHR_CONTRIBUTION.has_contribution-bad_contribution.robot[REST API / Robot^]
 |===
 
 === Conformance point: I_EHR_CONTRIBUTION.get_contribution()
@@ -731,6 +757,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._get_contrib
 |Post-conditions  | None
 |Flow             | . Invoke has `CONTRIBUTION` service with the known `ehr_id` and `CONTRIBUTION` uid
                     . The result should be the existing `CONTRIBUTION`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/get_contribution/I_EHR_CONTRIBUTION.get_contribution-existing.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.get_contribution-empty_ehr
@@ -745,6 +772,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._get_contrib
 |Post-conditions  | None
 |Flow             | . Invoke has `CONTRIBUTION` service with the known `ehr_id` and a random `CONTRIBUTION` uid
                     . The result should be negative and retrieve an error indicating the non-existing `CONTRIBUTION`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/get_contribution/I_EHR_CONTRIBUTION.get_contribution-empty_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.get_contribution-bad_ehr
@@ -758,6 +786,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._get_contrib
 |Post-conditions  | None
 |Flow             | . Invoke has `CONTRIBUTION` service with a random `ehr_id` and a random `CONTRIBUTION` uid
                     . The result should be negative, and retrieve an error indicating `"the EHR with ehd_id doesn’t exist"`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/get_contribution/I_EHR_CONTRIBUTION.get_contribution-bad_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_CONTRIBUTION.get_contribution-bad_contribution
@@ -771,7 +800,8 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._get_contrib
                     . The EHR has `CONTRIBUTIONs`
 |Post-conditions  | None
 |Flow             | . Invoke has `CONTRIBUTION` service with the known `ehr_id` and a random, non-existing `CONTRIBUTION` uid
-. The result should be negative and retrieve an error indicating the non-existing `CONTRIBUTION`
+                    . The result should be negative and retrieve an error indicating the non-existing `CONTRIBUTION`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/get_contribution/I_EHR_CONTRIBUTION.get_contribution-bad_contribution.robot[REST API / Robot^]
 |===
 
 

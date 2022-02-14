@@ -1,4 +1,8 @@
-== Internal LOCATABLE class: OBSERVATION
+//
+// taken from doc/conformance_testing/COMPOSITION_VALIDATION_STRUCTURE.md
+//
+
+== OBSERVATION Test Cases
 
 In this section there are specifications of constraint combinations for OBSERVATION.
 
@@ -92,7 +96,7 @@ Description: OBSERVATION state existence = 1..1, protocol existence = 1..1
 |present |present |present |accepted |
 |===
 
-== Internal LOCATABLE class: HISTORY
+== HISTORY Test Cases
 
 In this section there are specifications of constraint combinations for HISTORY, specified in the {openehr_rm_data_structures}#_overview[openEHR Data Structures IM^].
 
@@ -304,7 +308,7 @@ Description: HISTORY events cardinality 3..5, summary existence 1..1
 |three events   |present    |accepted |
 |===
 
-== EVENT data sets and test cases
+== EVENT Test Cases
 
 EVENT data sets:
 
@@ -393,7 +397,7 @@ Description: EVENT is INTERVAL_EVENT
 |INTERVAL_EVENT |accepted |
 |===
 
-== ITEM_STRUCTURE data sets and test cases
+== ITEM_STRUCTURE Test Cases
 
 ITEM_STRUCTURE type combinations:
 

@@ -70,6 +70,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory()_`
 |Post-conditions  | None
 |Flow             | . Invoke the has_directory service for the `ehr_id`
                     . The result must be false
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_directory/I_EHR_DIRECTORY.has_directory-empty_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.has_directory-ehr_with_directory
@@ -84,6 +85,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory()_`
 |Post-conditions  | None
 |Flow             | . Invoke the has_directory service for the `ehr_id`
                     . The result must be true
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_directory/I_EHR_DIRECTORY.has_directory-ehr_with_directory.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.has_directory-bad_ehr
@@ -97,6 +99,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory()_`
 |Post-conditions  | None
 |Flow             | . Invoke the has_directory service for a random non-existent `ehr_id`
                     . An error should be returned, indicating that the EHR that doesn’t exist
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_directory/I_EHR_DIRECTORY.has_directory-bad_ehr.robot[REST API / Robot^]
 |===
 
 === Conformance point: I_EHR_DIRECTORY.has_path()
@@ -115,6 +118,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_path()_`^]
 |Post-conditions  | None
 |Flow             | . Invoke the has path service for the `ehr_id` with a random `FOLDER` path
                     . The result must be false
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_path/I_EHR_DIRECTORY.has_path-empty_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.has_path-ehr_root_directory
@@ -140,6 +144,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_path()_`^]
 
 NOTE: `'/'` represents the string slash, which is the default name for the root `FOLDER` at `EHR.directory`, `random()` represents any randomly generated path that doesn’t exist.
 
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_path/I_EHR_DIRECTORY.has_path-ehr_root_directory.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.has_path-folder_structure
@@ -198,6 +203,7 @@ NOTE: these are the names of the `FOLDERs` and `COMPOSITIONs` in `EHR.directory.
 
 NOTE: the table mixes cases that exist with cases of paths which part exists and parts doesn’t exist. The final one is a random path.
 
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_path/I_EHR_DIRECTORY.has_path-folder_structure.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.has_path-bad_ehr
@@ -211,6 +217,7 @@ NOTE: the table mixes cases that exist with cases of paths which part exists and
 |Post-conditions  | None
 |Flow             | . Invoke the has path service for a random `ehr_id` and path
                     . The service should return an error, indicating that the EHR doesn’t exist
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_path/I_EHR_DIRECTORY.has_path-bad_ehr.robot[REST API / Robot^]
 |===
 
 === Conformance point: I_EHR_DIRECTORY.create_directory()
@@ -230,6 +237,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._create_directory(
 |Flow             | . Invoke the create directory service with the existing `ehr_id` and a valid `FOLDER` structure
                     .. Use any of the data sets described on the previous tests and the reference directory structure
                     . The service should return a positive result indicating the directory created for the EHR
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/create_directory/I_EHR_DIRECTORY.create_directory-empty_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.create_directory-ehr_with_directory
@@ -245,6 +253,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._create_directory(
 |Flow             | . Invoke the create directory service with the existing `ehr_id` and a valid `FOLDER` structure
                     .. Use any of the data sets described on the previous tests and the reference directory structure
                     . The service should return an error, indicating that the EHR directory already exists
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/create_directory/I_EHR_DIRECTORY.create_directory-ehr_with_directory.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.create_directory-bad_ehr
@@ -258,6 +267,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._create_directory(
 |Post-conditions  | None
 |Flow             | . Invoke the create directory service for a random `ehr_id`
                     . The service should return an error, indicating that the EHR that doesn’t exist
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/create_directory/I_EHR_DIRECTORY.create_directory-bad_ehr.robot[REST API / Robot^]
 |===
 
 === Conformance point: I_EHR_DIRECTORY.get_directory()
@@ -277,7 +287,8 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory()_`
 |Flow             | . Invoke the get directory service for the `ehr_id`
                     . The service should return an empty structure
 
-NOTE: in a REST API implementation, the result could be an error status instead of an empty structure.
+                    NOTE: in a REST API implementation, the result could be an error status instead of an empty structure.
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory/I_EHR_DIRECTORY.get_directory-empty_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.get_directory-ehr_root_directory
@@ -292,6 +303,7 @@ NOTE: in a REST API implementation, the result could be an error status instead 
 |Post-conditions  | None
 |Flow             | . Invoke the get directory service for the `ehr_id`
                     . The service should return the structure of the `EHR.directory`: an empty `FOLDER`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory/I_EHR_DIRECTORY.get_directory-ehr_root_directory.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.get_directory-directory_with_structure
@@ -306,6 +318,7 @@ NOTE: in a REST API implementation, the result could be an error status instead 
 |Post-conditions  | None
 |Flow             | . Invoke the get directory service for the `ehr_id`
                     . The service should return the full structure of the EHR directory
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory/I_EHR_DIRECTORY.get_directory-directory_with_structure.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.get_directory-bad_ehr
@@ -319,6 +332,7 @@ NOTE: in a REST API implementation, the result could be an error status instead 
 |Post-conditions  | None
 |Flow             | . Invoke the get directory service for a random `ehr_id`
                     . The service should return an error related with the non-existent EHR
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory/I_EHR_DIRECTORY.get_directory-bad_ehr.robot[REST API / Robot^]
 |===
 
 
@@ -339,7 +353,8 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
 |Flow             | . Invoke the get directory at time service for the `ehr_id` and current time
                     . The service should return an empty structure
                     
-NOTE: considering a REST API implementation, the result could be an error status instead of an empty structure.
+                    NOTE: considering a REST API implementation, the result could be an error status instead of an empty structure.
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory/I_EHR_DIRECTORY.get_directory-empty_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.get_directory_at_time-empty_ehr_empty_time
@@ -355,7 +370,8 @@ NOTE: considering a REST API implementation, the result could be an error status
 |Flow             | . Invoke the get directory at time service for the `ehr_id` and empty time
                     . The service should return an empty structure
                     
-NOTE: considering a REST API implementation, the result could be an error status instead of an empty structure.
+                    NOTE: considering a REST API implementation, the result could be an error status instead of an empty structure.
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_time/I_EHR_DIRECTORY.get_directory_at_time-empty_ehr_empty_time.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory
@@ -370,6 +386,7 @@ NOTE: considering a REST API implementation, the result could be an error status
 |Post-conditions  | None
 |Flow             | . Invoke the get directory at time service for the `ehr_id` and current time
                     . The service should return the current directory
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_time/I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_empty_time
@@ -384,6 +401,7 @@ NOTE: considering a REST API implementation, the result could be an error status
 |Post-conditions  | None
 |Flow             | . Invoke the get directory at time service for the `ehr_id` and empty time
                     . The service should return the current directory
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_time/I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_empty_time.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_versions
@@ -402,6 +420,7 @@ NOTE: considering a REST API implementation, the result could be an error status
                     . The service should return the first version of `EHR.drectory`
                     . Invoke the get directory at time service for the `ehr_id` and current time
                     . The service should return the second version of `EHR.directory`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_time/I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_versions.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_versions_empty_time
@@ -416,6 +435,7 @@ NOTE: considering a REST API implementation, the result could be an error status
 |Post-conditions  | None
 |Flow             | . Invoke the get directory at time service for the `ehr_id` and empty time
                     . The service should return the current latest directory
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_time/I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_versions_empty_time.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.get_directory_at_time-bad_ehr
@@ -429,6 +449,7 @@ NOTE: considering a REST API implementation, the result could be an error status
 |Post-conditions  | None
 |Flow             | . Invoke the get directory at time service for a random `ehr_id` and current time
                     . The service should return an error indicating non-existent EHR
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_time/I_EHR_DIRECTORY.get_directory_at_time-bad_ehr.robot[REST API / Robot^]
 |===
 
 
@@ -443,6 +464,7 @@ NOTE: considering a REST API implementation, the result could be an error status
 |Post-conditions  | None
 |Flow             | . Invoke the get directory at time service for the ehr_id and a time AFTER the first version of the directory was created, but BEFORE the second version was created (update)
                     . The service should return the first version of the directory
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_time/I_EHR_DIRECTORY.get_directory_at_time-multiple_versions_first.robot[REST API / Robot^]
 |===
 
 === Conformance point: I_EHR_DIRECTORY.update_directory()
@@ -462,6 +484,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._update_directory(
 |Flow             | . Invoke the update directory service for the `ehr_id`
                     .. Use any of the valid paylaods described on the previous tests
                     . The service should return a positive result related with the updated directory
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/update_directory/I_EHR_DIRECTORY.update_directory-ehr_with_directory.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.update_directory-empty_ehr
@@ -477,6 +500,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._update_directory(
 |Flow             | . Invoke the update directory service for the `ehr_id`
                     .. Use any of the valid paylaods described on the previous tests
                     . The service should return an error indicating that the non existent directory to update
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/update_directory/I_EHR_DIRECTORY.update_directory-empty_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.update_directory-bad_ehr
@@ -491,6 +515,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._update_directory(
 |Flow             | . Invoke the update directory service for random `ehr_id`
                     .. Any valid payload will suffice
                     . The service should return an error indicating that the non existent `ehr_id`
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/update_directory/I_EHR_DIRECTORY.update_directory-bad_ehr.robot[REST API / Robot^]
 |===
 
 === Conformance point: I_EHR_DIRECTORY.delete_directory()
@@ -509,6 +534,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._delete_directory(
 |Post-conditions  | None
 |Flow             | . Invoke the delete directory service for the `ehr_id`
                     . The service should return an error indicating the non existent directory
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/delete_directory/I_EHR_DIRECTORY.delete_directory-empty_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.delete_directory-ehr_with_directory
@@ -525,6 +551,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._delete_directory(
 NOTE: the directory exists as a new deleted version (that is `VERSION.lifecycle_state=deleted`).
 |Flow             | . Invoke the delete directory service for the `ehr_id`
                     . The service should return a positive result related with the deleted directory
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/delete_directory/I_EHR_DIRECTORY.delete_directory-ehr_with_directory.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.delete_directory-bad_ehr
@@ -538,6 +565,7 @@ NOTE: the directory exists as a new deleted version (that is `VERSION.lifecycle_
 |Post-conditions  | None
 |Flow             | . Invoke the get directory service for a random `ehr_id`
                     . The service should return an error indicating that the non existent EHR
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/delete_directory/I_EHR_DIRECTORY.delete_directory-bad_ehr.robot[REST API / Robot^]
 |===
 
 === Conformance point: I_EHR_DIRECTORY.has_directory_version()
@@ -556,6 +584,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory_ver
 |Post-conditions  | None
 |Flow             | . Invoke the has directory service for the `ehr_id` and a random version uid
                     . The service should return false
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_directory_version/I_EHR_DIRECTORY.has_directory_version-empty_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.has_directory_version-directory_with_two_versions
@@ -572,6 +601,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory_ver
                     . The service should return true
                     . Invoke the has directory service for the `ehr_id` and the `version_uid` of the second version of directory
                     . The service should return true
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_directory_version/I_EHR_DIRECTORY.has_directory_version-directory_with_two_versions.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.has_directory_version-bad_ehr
@@ -585,6 +615,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory_ver
 |Post-conditions  | None
 |Flow             | . Invoke the has directory service for a random `ehr_id` and version uid
                     . The service should return an error related with the non-existence of the EHR
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_directory_version/I_EHR_DIRECTORY.has_directory_version-bad_ehr.robot[REST API / Robot^]
 |===
 
 === Conformance point: I_EHR_DIRECTORY.get_directory_at_version()
@@ -603,6 +634,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
 |Post-conditions  | None
 |Flow             | . Invoke the get directory at version service for the `ehr_id` and a random version uid
                     . The service should return an error indicating that the non-existence of the EHR directory version
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_version/I_EHR_DIRECTORY.get_directory_at_version-empty_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.get_directory_at_version-directory_with_two_versions
@@ -619,6 +651,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
                     . The service should return the first version of the directory
                     . Invoke the get directory at version service for the `ehr_id` and the `version_uid` of the second version of directory
                     . The service should return the second version of the directory
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_version/I_EHR_DIRECTORY.get_directory_at_version-directory_with_two_versions.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.get_directory_at_version-bad_ehr
@@ -632,6 +665,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
 |Post-conditions  | None
 |Flow             | . Invoke the get directory at version service for a random `ehr_id` and version uid
                     . The service should return an error related with the non existence of the EHR
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_version/I_EHR_DIRECTORY.get_directory_at_version-bad_ehr.robot[REST API / Robot^]
 |===
 
 === Conformance point: I_EHR_DIRECTORY.get_versioned_directory()
@@ -650,7 +684,8 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_versioned_dir
 |Flow             | . Invoke the get versioned directory service for the `ehr_id`
                     . The service should return an error because the versioned directory doesn’t exist
 
-NOTE: depending on the implementation, a valid result could also be returning an empty result instead of an error.
+                    NOTE: depending on the implementation, a valid result could also be returning an empty result instead of an error.
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_versioned_directory/I_EHR_DIRECTORY.get_versioned_directory-empty_ehr.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.get_versioned_directory-directory_with_two_versions
@@ -665,6 +700,7 @@ NOTE: depending on the implementation, a valid result could also be returning an
 |Post-conditions  | None
 |Flow             | . Invoke the get versioned directory service for the `ehr_id`
                     . The service should return the versioned folder and should reference the two exsinting versions
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_versioned_directory/I_EHR_DIRECTORY.get_versioned_directory-directory_with_two_versions.robot[REST API / Robot^]
 |===
 
 ==== TC I_EHR_DIRECTORY.get_versioned_directory-bad_ehr
@@ -678,5 +714,6 @@ NOTE: depending on the implementation, a valid result could also be returning an
 |Post-conditions  | None
 |Flow             | . Invoke the get directory service for a random `ehr_id`
                     . The service should return an error related with the non existence of the EHR
+|Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_versioned_directory/I_EHR_DIRECTORY.get_versioned_directory-bad_ehr.robot[REST API / Robot^]
 |===
 
