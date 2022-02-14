@@ -6,7 +6,7 @@
 
 Internally DV_BOOLEAN is constrained by C_BOOLEAN.
 
-==== Test case anything allowed
+==== TC CONT-DV_BOOLEAN-anything_allowed
 
 [options="header"]
 |===
@@ -17,7 +17,7 @@ Internally DV_BOOLEAN is constrained by C_BOOLEAN.
 |===
 
 
-==== Test case only true allowed
+==== TC CONT-DV_BOOLEAN-only_true_allowed
 
 [options="header"]
 |===
@@ -28,7 +28,7 @@ Internally DV_BOOLEAN is constrained by C_BOOLEAN.
 |===
 
 
-==== Test case only false allowed
+==== TC CONT-DV_BOOLEAN-only_false_allowed
 
 [options="header"]
 |===
@@ -45,7 +45,7 @@ Internally DV_IDENTIFIER attributes are constrainted by C_STRING.
 
 Note the constraints for each attribute are all checked, so the errors are accumulated. If one validation fails for one attribute, the validation for the whole type fails.
 
-==== Test case validating all attributes using the pattern constraint
+==== TC CONT-DV_IDENTIFIER-validate_all_pattern
 
 [options="header"]
 |===
@@ -85,7 +85,7 @@ Note the constraints for each attribute are all checked, so the errors are accum
 |===
 
 
-==== Test case validating all attributes using the list constraint
+==== TC CONT-DV_IDENTIFIER-validate_all_list
 
 [options="header"]
 |===

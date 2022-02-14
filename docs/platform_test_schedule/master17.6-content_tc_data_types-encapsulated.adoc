@@ -4,7 +4,7 @@
 
 {openehr_rm_data_types}#_encapsulated_package[Specification / UML reference^].
 
-==== Test case DV_PARSABLE open constraint
+==== TC CONT-DV_PARSABLE-validate_open
 
 [options="header"]
 |===
@@ -16,7 +16,7 @@
 | xxx       | abc         | accepted |  
 |===
 
-==== Test case DV_PARSABLE value and formalism constrained
+==== TC CONT-DV_PARSABLE-validate_value_formalism
 
 Each field of the DV_PARSABLE could be constrained by a C_STRING.
 
@@ -36,7 +36,7 @@ Each field of the DV_PARSABLE could be constrained by a C_STRING.
 
 === DV_MULTIMEDIA
 
-==== Test ccase DV_MULTIMEDIA open constraint
+==== TC CONT-DV_MULTIMEDIA-validate_open
 
 [options="header"]
 |===
@@ -49,7 +49,7 @@ Each field of the DV_PARSABLE could be constrained by a C_STRING.
 |===
 
 
-==== Test case DV_MULTIMEDIA media type constraint
+==== TC CONT-DV_MULTIMEDIA-validate_media_type
 
 NOTE: media_type could be constrained by a C_CODE_PHRASE and size could be constrained by C_INTEGER. A NULL C_CODE_PHRASE for the media_type means any code is allowed from the {openehr_terminology_xml}#L399[openEHR media type codeset^].
 

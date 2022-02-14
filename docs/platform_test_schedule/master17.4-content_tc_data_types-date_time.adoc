@@ -8,7 +8,7 @@ NOTE: All test data sets for date/time/datetime expressions are represented in t
 
 NOTE: different duration implementations might affect the DV_DURATION related test cases. For instance, some implementations might not support `days` in the same duration expression that contains `months`, since there is no exact correspondence between the number of `days` and `months` (months could have 28, 29, 30 or 31 days). Then other implementations might simplify the `month` measurement to be 30 days. This also happens with some implementations that consider a `day` is exactly `24 hours` as a simplification. So in case the SUT has an implementation decision to be considered, the developers should mention it in the Conformance Statement Document.
 
-==== Test case DV_DURATION open constraint
+==== TC CONT-DV_DURATION-validate_open
 
 [options="header"]
 |===
@@ -26,7 +26,7 @@ NOTE: different duration implementations might affect the DV_DURATION related te
 |===
 
 
-==== Test case DV_DURATION fields allowed constraint
+==== TC CONT-DV_DURATION-validate_fields
 
 The `allowed` fields are defined in the `C_DURATION` class, which allows to constraint the DV_DURATION.value attribute.
 
@@ -53,7 +53,7 @@ The `allowed` fields are defined in the `C_DURATION` class, which allows to cons
 NOTE: the `fractional_seconds_allowed` field is not so clear since the ISO8601 would allow fractions on the lowest order component, which means if the duration lowest component is `minutes` then it's valid to have `5.23M`. Also consider in programming languages like Java, a duration string with fractions on other fields than seconds can't be parsed (for instance using https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-[Java CHarSequence^]).
 
 
-==== Test case DV_DURATION range constraint
+==== TC CONT-DV_DURATION-validate_range
 
 [options="header"]
 |===
@@ -80,7 +80,7 @@ NOTE: the `fractional_seconds_allowed` field is not so clear since the ISO8601 w
 |===
 
 
-==== Test case DV_DURATION fields allowed and range constraints combined
+==== TC CONT-DV_DURATION-validate_fields_range
 
 In the AOM specification it is allowed to combine allowed and range: "Both range and the constraint pattern can be set at the same time, corresponding to the ADL constraint PWD/|P0W..P50W|. ({openehr_am_aom14}#_c_duration_class[C_DURATION class^])".
 
@@ -109,7 +109,7 @@ NOTE: the Time class mentioned in the AOM specification is actually the {openehr
 
 Note that time expressions in openEHR are considered an absolute point in time from the start of the current day, that is `T10` represents `10:00:00.000` AM in the local timezone.
 
-==== Test case DV_TIME open constraint
+==== TC CONT-DV_TIME-validate_open
 
 This case is when DV_TIME matches {*}.
 
@@ -152,7 +152,7 @@ NOTE: one clarification about the seconds fraction in ISO8601 is that is not exa
 |===
 
 
-==== Test case DV_TIME validity kind constraint
+==== TC CONT-DV_TIME-validate_constraint
 
 NOTE: the C_TIME has invariants that define if a higher precision component is optional or prohibited, lower precision components should be optional or prohibited. In other words, if `hour` is optional or prohibited, `minute`, `second` and `millisecond` should be optional or prohibited. These invariants should be checked in an archetype editor and template editor, we consider the following tests to follow those rules without checking them, since that is related to archetype/template validation, not with data validation.
 
@@ -262,7 +262,7 @@ NOTE: the C_TIME has invariants that define if a higher precision component is o
 |===
 
 
-==== Test case DV_TIME range constraint
+==== TC CONT-DV_TIME-validate_range
 
 The C_TIME.range constraint is an Interval<Time>, which are both {openehr_foundation_types}[Foundation Types^].
 
@@ -524,7 +524,7 @@ NOTE 1: the basic and extended formats are allowed at in-memory and storage repr
 
 NOTE 2: by the ISO8601 standard, only years >1582 are valid, since that was the year in which the Gregorian Calendar was put in place. For representing other years, there should be a mutual agreement between information interchange partners.
 
-==== Test case DV_DATE open constraint
+==== TC CONT-DV_DATE-validate_open
 
 [options="header"]
 |===
@@ -545,7 +545,7 @@ NOTE 2: by the ISO8601 standard, only years >1582 are valid, since that was the 
 NOTE: this is the author's interpretation of a minimal valid date in the context of openEHR noting the description of {openehr_am_aom14}[C_DATE^]: "There is no validity flag for ‘year’, since it must always be by definition mandatory in order to have a sensible date at all.". Though the ISO standard seems to allow partial year expressions.
 
 
-==== Test Case DV_DATE validity kind constraint
+==== TC CONT-DV_DATE-validate_constraint
 
 NOTE: the C_DATE has invariants that define if a higher precision component is optional or prohibited, lower precision components should be optional or prohibited. In other words, if `month` is optional, `day` should be optional or prohibited. These invariants should be checked in an archetype editor and template editor, we consider the following tests to follow those rules without checking them, since that is related to archetype/template validation, not with data validation.
 
@@ -571,7 +571,7 @@ NOTE: the C_DATE has invariants that define if a higher precision component is o
 |===
 
 
-==== Test Case DV_DATE validity range constraint
+==== TC CONT-DV_DATE-validate_range
 
 The C_DATE.range constraint is an Interval<Date>, which are both {openehr_foundation_types}[Foundation Types^].
 
@@ -611,7 +611,7 @@ NOTE: the DV_DATE value and the C_DATE.range limits should be comparable, that m
 
 DV_DATE_TIME constraints are defined by C_DATE_TIME, which specifies two types of constraints: validity kind and range. The validity kind constraints are expressed in terms of mandatory/optional/prohibited flags for each part of the date expression: hour, minute, second, millisecond, timezone, day and month. The range constraint is an Interval<DateTime>.
 
-==== Test case DV_DATE_TIME open constraint
+==== TC CONT-DV_DATE_TIME-validate_open
 
 [options="header"]
 |===
@@ -650,7 +650,7 @@ DV_DATE_TIME constraints are defined by C_DATE_TIME, which specifies two types o
 NOTE: to verify the date time expression used this https://regex101.com/r/pYQJaW/1[regex^], note that the rejected values don't match the regex.
 
 
-==== Test Case DV_DATE_TIME validity kind constraint
+==== TC CONT-DV_DATE_TIME-validate_constraint
 
 [options="header"]
 |===
@@ -884,7 +884,7 @@ NOTE: to verify the date time expression used this https://regex101.com/r/pYQJaW
 |===
 
 
-==== Test Case DV_DATE_TIME validity range
+==== TC CONT-DV_DATE_TIME-validate_range
 
 The C_DATE_TIME.range constraint is an Interval<Date_time>, which are both {openehr_foundation_types}[Foundation Types^].
 
