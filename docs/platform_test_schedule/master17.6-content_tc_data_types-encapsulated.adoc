@@ -51,7 +51,7 @@ Each field of the DV_PARSABLE could be constrained by a C_STRING.
 
 ==== Test case DV_MULTIMEDIA media type constraint
 
-NOTE: media_type could be constrained by a C_CODE_PHRASE and size could be constrained by C_INTEGER. A NULL C_CODE_PHRASE for the media_type means any code is allowed from the openEHR media type codeset https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L399
+NOTE: media_type could be constrained by a C_CODE_PHRASE and size could be constrained by C_INTEGER. A NULL C_CODE_PHRASE for the media_type means any code is allowed from the {openehr_terminology_xml}#L399[openEHR media type codeset^].
 
 [options="header"]
 |===

@@ -45,8 +45,7 @@ For the creation and modification of the `EHR.directory` structure it is importa
 
 === Tests of Reference FOLDER structure
 
-NOTE: the following image is provided for reference. The items in the `FOLDER` are references to `VERSIONED_OBJECTs` that may contain `COMPOSITION`, `EHR_STATUS` and `FOLDER`. This documentation focuses on testing `COMPOSITION` as content in the `FOLDERs`. Related discussion:
-https://discourse.openehr.org/t/whats-allowed-in-folder-items/1539[here^].
+NOTE: the following image is provided for reference. The items in the `FOLDER` are references to `VERSIONED_OBJECTs` that may contain `COMPOSITION`, `EHR_STATUS` and `FOLDER`. This documentation focuses on testing `COMPOSITION` as content in the `FOLDERs`. https://discourse.openehr.org/t/whats-allowed-in-folder-items/1539[Discourse discussion^].
 
 [.text-center]
 .Folder structures in the EHR

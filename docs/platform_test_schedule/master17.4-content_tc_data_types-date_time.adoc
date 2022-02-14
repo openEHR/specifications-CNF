@@ -50,7 +50,7 @@ The `allowed` fields are defined in the `C_DURATION` class, which allows to cons
 | P1Y3M15DT23H35M22S | true          | true           | true          | true         | true          | true            | false           | ???                        | rejected | C_DURATION.seconds_allowed 
 |===
 
-NOTE: the `fractional_seconds_allowed` field is not so clear since the ISO8601 would allow fractions on the lowest order component, which means if the duration lowest component is `minutes` then it's valid to have `5.23M`. Also consider in programming languages like Java, a duration string with fractions on other fields than seconds can't be parsed (for instance using https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-)
+NOTE: the `fractional_seconds_allowed` field is not so clear since the ISO8601 would allow fractions on the lowest order component, which means if the duration lowest component is `minutes` then it's valid to have `5.23M`. Also consider in programming languages like Java, a duration string with fractions on other fields than seconds can't be parsed (for instance using https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-[Java CHarSequence^]).
 
 
 ==== Test case DV_DURATION range constraint
@@ -82,7 +82,7 @@ NOTE: the `fractional_seconds_allowed` field is not so clear since the ISO8601 w
 
 ==== Test case DV_DURATION fields allowed and range constraints combined
 
-In the AOM specification it is allowed to combine allowed and range: "Both range and the constraint pattern can be set at the same time, corresponding to the ADL constraint PWD/|P0W..P50W|. (https://specifications.openehr.org/releases/AM/Release-2.2.0/AOM1.4.html#_c_duration_class)"
+In the AOM specification it is allowed to combine allowed and range: "Both range and the constraint pattern can be set at the same time, corresponding to the ADL constraint PWD/|P0W..P50W|. ({openehr_am_aom14}#_c_duration_class[C_DURATION class^])".
 
 [options="header"]
 |===
@@ -98,14 +98,14 @@ In the AOM specification it is allowed to combine allowed and range: "Both range
 | P1Y3M              | true          | false          | true          | true         | true          | true            | true            | ???                        | P3Y         | P50Y        | rejected | C_DURATION.months_allowed. C_DURATION.lower      
 |===
 
-NOTE: the `fractional_seconds_allowed` field is not so clear since the ISO8601 would allow fractions on the lowest order component, which means if the duration lowest component is `minutes` then it's valid to have `5.23M`. Also consider in programming languages like Java, a duration string with fractions on other fields than seconds can't be parsed (for instance using https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-)
+NOTE: the `fractional_seconds_allowed` field is not so clear since the ISO8601 would allow fractions on the lowest order component, which means if the duration lowest component is `minutes` then it's valid to have `5.23M`. Also consider in programming languages like Java, a duration string with fractions on other fields than seconds can't be parsed (for instance using https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-[Java CHarSequence^])
 
 
 === DV_TIME
 
-DV_TIME constraints are defined by C_TIME, which specifies two types of constraints: validity kind and range. The validity kind constraints are expressed in terms of mandatory/optional/prohibited flags for each part of the time expression: minute, second, millisecond and timezone. The range constraint is an Interval<Time>, which are both [Foundation Types](https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html).
+DV_TIME constraints are defined by C_TIME, which specifies two types of constraints: validity kind and range. The validity kind constraints are expressed in terms of mandatory/optional/prohibited flags for each part of the time expression: minute, second, millisecond and timezone. The range constraint is an Interval<Time>, which are both {openehr_foundation_types}[openEHR Foundation Types^].
 
-NOTE: the Time class mentioned in the AOM specification is actually the [Iso8601_date_time](https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html#_iso8601_date_time_class) class. This is a known bug in the specs.
+NOTE: the Time class mentioned in the AOM specification is actually the {openehr_foundation_types}#_iso8601_date_time_class[Iso8601_date_time^] class. This is a known bug in the specs.
 
 Note that time expressions in openEHR are considered an absolute point in time from the start of the current day, that is `T10` represents `10:00:00.000` AM in the local timezone.
 
@@ -116,7 +116,7 @@ This case is when DV_TIME matches {*}.
 NOTE: the decimal mark for the seconds fraction could be `,` (comma) or `.` (period) at in-memory and storage representations of time expressions, but since in most popular exchange formats the `.` is preferred, and considering the implementation of these test cases will surelly use those exchange formats, we only specify test data sets which use the decimal mark `.`. Nevetheless, the `,` is totally valid at in-memory and storage levels.
 In the same line, basic and extended formats are allowed at in-memory and storage representations. Basic format being the time parts without any separators and the extended being the parts with separatos `:` (colon). The extended format is also preferred by the most common exchange fornats, so only test data sets using extended format will be specified.
 
-NOTE: "There is no limit on the number of decimal places for the decimal fraction. However, the number of decimal places needs to be agreed to by the communicating parties." [REF](https://en.wikipedia.org/wiki/ISO_8601#Times)
+NOTE: "There is no limit on the number of decimal places for the decimal fraction. However, the number of decimal places needs to be agreed to by the communicating parties." https://en.wikipedia.org/wiki/ISO_8601#Times[see ISO8601 Times^].
 
 NOTE: the time marker `T` can be ommitted for the extended format in ISO8601:2019, because there is no risk of ambiguity. Since this is nor mandatory, our test data sets all include the `T` time marker.
 
@@ -264,9 +264,9 @@ NOTE: the C_TIME has invariants that define if a higher precision component is o
 
 ==== Test case DV_TIME range constraint
 
-The C_TIME.range constraint is an Interval<Time>, which are both [Foundation Types](https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html).
+The C_TIME.range constraint is an Interval<Time>, which are both {openehr_foundation_types}[Foundation Types^].
 
-NOTE: the Time class mentioned in the AOM specification is actually the [Iso8601_time](https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html#_time_types) class. This is a [known bug](https://openehr.atlassian.net/browse/SPECPR-380) in the specs.
+NOTE: the Time class mentioned in the AOM specification is actually the {openehr_foundation_time_types}[Iso8601_time^] class. This is a {spec_tickets}/SPECPR-380[known bug^] in the specs.
 
 TBD: we need to clarify if T10 is referring to the whole 10th hour or to 10:00:00 omitting the rest of the time components, because it could be a similar case as we have with the date expressions: can only compare expressions that have exactly the same components.
 
@@ -542,7 +542,7 @@ NOTE 2: by the ISO8601 standard, only years >1582 are valid, since that was the 
 |===
 
 
-<b id="footnote1">1</b>: this is the author's interpretation of a minimal valid date in the context of openEHR noting the description of [C_DATE](https://specifications.openehr.org/releases/AM/Release-2.2.0/AOM1.4.html#_c_date_class): "There is no validity flag for ‘year’, since it must always be by definition mandatory in order to have a sensible date at all.". Though the ISO standard seems to allow partial year expressions. [↩](#empty_date)
+NOTE: this is the author's interpretation of a minimal valid date in the context of openEHR noting the description of {openehr_am_aom14}[C_DATE^]: "There is no validity flag for ‘year’, since it must always be by definition mandatory in order to have a sensible date at all.". Though the ISO standard seems to allow partial year expressions.
 
 
 ==== Test Case DV_DATE validity kind constraint
@@ -573,9 +573,9 @@ NOTE: the C_DATE has invariants that define if a higher precision component is o
 
 ==== Test Case DV_DATE validity range constraint
 
-The C_DATE.range constraint is an Interval<Date>, which are both [Foundation Types](https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html).
+The C_DATE.range constraint is an Interval<Date>, which are both {openehr_foundation_types}[Foundation Types^].
 
-NOTE: the Date class mentioned in the AOM specification is actually the [Iso8601_date](https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html#_time_types) class. This is a [known bug](https://openehr.atlassian.net/browse/SPECPR-380) in the specs.
+NOTE: the Date class mentioned in the AOM specification is actually the {openehr_foundation_time_types}[Iso8601_date^] class. This is a {spec_tickets}/SPECPR-380[known bug^] in the specs.
 
 [options="header"]
 |===
@@ -647,7 +647,7 @@ DV_DATE_TIME constraints are defined by C_DATE_TIME, which specifies two types o
 | 2021-10-24T10:30:47.333333-03:00 | accepted |                                    
 |===
 
-NOTE: to verify the date time expressiosn we used this [regex](https://regex101.com/r/pYQJaW/1), you will note the rejected values don't match the regex.
+NOTE: to verify the date time expression used this https://regex101.com/r/pYQJaW/1[regex^], note that the rejected values don't match the regex.
 
 
 ==== Test Case DV_DATE_TIME validity kind constraint
@@ -886,10 +886,9 @@ NOTE: to verify the date time expressiosn we used this [regex](https://regex101.
 
 ==== Test Case DV_DATE_TIME validity range
 
-The C_DATE_TIME.range constraint is an Interval<Date_time>, which are both [Foundation Types](https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html).
+The C_DATE_TIME.range constraint is an Interval<Date_time>, which are both {openehr_foundation_types}[Foundation Types^].
 
-NOTE: the Date_time class mentioned in the AOM specification is actually the [Iso8601_date_time](https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html#_time_types) class. This is a [known bug](https://openehr.atlassian.net/browse/SPECPR-380) in the specs.
-
+NOTE: the Date_time class mentioned in the AOM specification is actually the {openehr_foundation_time_types}[Iso8601_date_time^] class. This is a {spec_tickets}/SPECPR-380[known bug^] in the specs.
 
 [options="header"]
 |===

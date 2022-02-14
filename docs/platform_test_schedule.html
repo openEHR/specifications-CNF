@@ -5379,7 +5379,7 @@ For that, the valid test cases for Create <code>COMPOSITION</code> could be used
 </ol>
 </div>
 <div class="paragraph">
-<p>Ref:  <a href="https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51/3" class="bare">https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51/3</a></p>
+<p><a href="https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51/3" target="_blank" rel="noopener">Discourse discussion</a></p>
 </div>
 </div>
 <div class="sect4">
@@ -9289,8 +9289,7 @@ this case is the same as previous but the precondition 2. is different.
 <div class="title">Note</div>
 </td>
 <td class="content">
-the following image is provided for reference. The items in the <code>FOLDER</code> are references to <code>VERSIONED_OBJECTs</code> that may contain <code>COMPOSITION</code>, <code>EHR_STATUS</code> and <code>FOLDER</code>. This documentation focuses on testing <code>COMPOSITION</code> as content in the <code>FOLDERs</code>. Related discussion:
-<a href="https://discourse.openehr.org/t/whats-allowed-in-folder-items/1539" target="_blank" rel="noopener">here</a>.
+the following image is provided for reference. The items in the <code>FOLDER</code> are references to <code>VERSIONED_OBJECTs</code> that may contain <code>COMPOSITION</code>, <code>EHR_STATUS</code> and <code>FOLDER</code>. This documentation focuses on testing <code>COMPOSITION</code> as content in the <code>FOLDERs</code>. <a href="https://discourse.openehr.org/t/whats-allowed-in-folder-items/1539" target="_blank" rel="noopener">Discourse discussion</a>.
 </td>
 </tr>
 </table>
@@ -16637,7 +16636,7 @@ this DB is not used or supported by modeling tools, see <a href="https://discour
 <p><a href="https://specifications.openehr.org/releases/RM/latest/data_types.html#_quantity_package" target="_blank" rel="noopener">Specification / UML reference</a>.</p>
 </div>
 <div class="paragraph">
-<p>DV_ORDINAL is constrained by C_DV_ORDINAL from AP (<a href="https://specifications.openehr.org/releases/1.0.2/architecture/am/openehr_archetype_profile.pdf" class="bare">https://specifications.openehr.org/releases/1.0.2/architecture/am/openehr_archetype_profile.pdf</a>), which contains a list of DV_ORDINAL that could be empty.</p>
+<p>DV_ORDINAL is constrained by C_DV_ORDINAL from the <a href="https://specifications.openehr.org/releases/1.0.2/architecture/am/openehr_archetype_profile.pdf" target="_blank" rel="noopener">openEHR AM 1.4 Archetype Profile</a>, which contains a list of DV_ORDINAL that could be empty.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -16753,7 +16752,7 @@ in ADL it is possible to have a C_DV_ORDINAL constraint with an empty list const
 <div class="sect3">
 <h4 id="_dv_scale"><a class="anchor" href="#_dv_scale"></a>13.9.2. DV_SCALE</h4>
 <div class="paragraph">
-<p>DV_SCALE was introduced to the RM 1.1.0 (<a href="https://openehr.atlassian.net/browse/SPECRM-19" class="bare">https://openehr.atlassian.net/browse/SPECRM-19</a>), it is analogous to DV_ORDINAL with a Real value. So test cases for DV_SCALE and DV_ORDINAL are similar.</p>
+<p>DV_SCALE was introduced to the RM 1.1.0 (<a href="https://openehr.atlassian.net/browse/SPECRM-19" target="_blank" rel="noopener">Discourse discussion</a>), it is analogous to DV_ORDINAL with a Real value. So test cases for DV_SCALE and DV_ORDINAL are similar.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -23409,7 +23408,7 @@ some modeling tools don&#8217;t support representing DV_INTERVAL&lt;DV_ORDINAL&g
 <div class="sect3">
 <h4 id="_dv_intervaldv_scale"><a class="anchor" href="#_dv_intervaldv_scale"></a>13.9.13. DV_INTERVAL&lt;DV_SCALE&gt;</h4>
 <div class="paragraph">
-<p>DV_SCALE was introduced to the RM 1.1.0 (<a href="https://openehr.atlassian.net/browse/SPECRM-19" class="bare">https://openehr.atlassian.net/browse/SPECRM-19</a>), it is analogous to DV_ORDINAL with a Real value. So test cases for DV_SCALE and DV_ORDINAL are similar.</p>
+<p>DV_SCALE was introduced to the RM 1.1.0 (<a href="https://openehr.atlassian.net/browse/SPECRM-19" target="_blank" rel="noopener">Discourse discussion</a>), it is analogous to DV_ORDINAL with a Real value. So test cases for DV_SCALE and DV_ORDINAL are similar.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -25348,7 +25347,7 @@ different duration implementations might affect the DV_DURATION related test cas
 <div class="title">Note</div>
 </td>
 <td class="content">
-the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8601 would allow fractions on the lowest order component, which means if the duration lowest component is <code>minutes</code> then it&#8217;s valid to have <code>5.23M</code>. Also consider in programming languages like Java, a duration string with fractions on other fields than seconds can&#8217;t be parsed (for instance using <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-" class="bare">https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-</a>)
+the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8601 would allow fractions on the lowest order component, which means if the duration lowest component is <code>minutes</code> then it&#8217;s valid to have <code>5.23M</code>. Also consider in programming languages like Java, a duration string with fractions on other fields than seconds can&#8217;t be parsed (for instance using <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-" target="_blank" rel="noopener">Java CHarSequence</a>).
 </td>
 </tr>
 </table>
@@ -25506,7 +25505,7 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <div class="sect4">
 <h5 id="_test_case_dv_duration_fields_allowed_and_range_constraints_combined"><a class="anchor" href="#_test_case_dv_duration_fields_allowed_and_range_constraints_combined"></a>13.10.1.4. Test case DV_DURATION fields allowed and range constraints combined</h5>
 <div class="paragraph">
-<p>In the AOM specification it is allowed to combine allowed and range: "Both range and the constraint pattern can be set at the same time, corresponding to the ADL constraint PWD/|P0W..P50W|. (<a href="https://specifications.openehr.org/releases/AM/Release-2.2.0/AOM1.4.html#_c_duration_class)"" class="bare">https://specifications.openehr.org/releases/AM/Release-2.2.0/AOM1.4.html#_c_duration_class)"</a></p>
+<p>In the AOM specification it is allowed to combine allowed and range: "Both range and the constraint pattern can be set at the same time, corresponding to the ADL constraint PWD/|P0W..P50W|. (<a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_duration_class" target="_blank" rel="noopener">C_DURATION class</a>)".</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -25671,7 +25670,7 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <div class="title">Note</div>
 </td>
 <td class="content">
-the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8601 would allow fractions on the lowest order component, which means if the duration lowest component is <code>minutes</code> then it&#8217;s valid to have <code>5.23M</code>. Also consider in programming languages like Java, a duration string with fractions on other fields than seconds can&#8217;t be parsed (for instance using <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-" class="bare">https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-</a>)
+the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8601 would allow fractions on the lowest order component, which means if the duration lowest component is <code>minutes</code> then it&#8217;s valid to have <code>5.23M</code>. Also consider in programming languages like Java, a duration string with fractions on other fields than seconds can&#8217;t be parsed (for instance using <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-" target="_blank" rel="noopener">Java CHarSequence</a>)
 </td>
 </tr>
 </table>
@@ -25681,7 +25680,7 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <div class="sect3">
 <h4 id="_dv_time"><a class="anchor" href="#_dv_time"></a>13.10.2. DV_TIME</h4>
 <div class="paragraph">
-<p>DV_TIME constraints are defined by C_TIME, which specifies two types of constraints: validity kind and range. The validity kind constraints are expressed in terms of mandatory/optional/prohibited flags for each part of the time expression: minute, second, millisecond and timezone. The range constraint is an Interval&lt;Time&gt;, which are both [Foundation Types](<a href="https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html" class="bare">https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html</a>).</p>
+<p>DV_TIME constraints are defined by C_TIME, which specifies two types of constraints: validity kind and range. The validity kind constraints are expressed in terms of mandatory/optional/prohibited flags for each part of the time expression: minute, second, millisecond and timezone. The range constraint is an Interval&lt;Time&gt;, which are both <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html" target="_blank" rel="noopener">openEHR Foundation Types</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -25690,7 +25689,7 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <div class="title">Note</div>
 </td>
 <td class="content">
-the Time class mentioned in the AOM specification is actually the [Iso8601_date_time](<a href="https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html#_iso8601_date_time_class" class="bare">https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html#_iso8601_date_time_class</a>) class. This is a known bug in the specs.
+the Time class mentioned in the AOM specification is actually the <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_iso8601_date_time_class" target="_blank" rel="noopener">Iso8601_date_time</a> class. This is a known bug in the specs.
 </td>
 </tr>
 </table>
@@ -25723,7 +25722,7 @@ In the same line, basic and extended formats are allowed at in-memory and storag
 <div class="title">Note</div>
 </td>
 <td class="content">
-"There is no limit on the number of decimal places for the decimal fraction. However, the number of decimal places needs to be agreed to by the communicating parties." [REF](<a href="https://en.wikipedia.org/wiki/ISO_8601#Times" class="bare">https://en.wikipedia.org/wiki/ISO_8601#Times</a>)
+"There is no limit on the number of decimal places for the decimal fraction. However, the number of decimal places needs to be agreed to by the communicating parties." <a href="https://en.wikipedia.org/wiki/ISO_8601#Times" target="_blank" rel="noopener">see ISO8601 Times</a>.
 </td>
 </tr>
 </table>
@@ -26639,7 +26638,7 @@ the C_TIME has invariants that define if a higher precision component is optiona
 <div class="sect4">
 <h5 id="_test_case_dv_time_range_constraint"><a class="anchor" href="#_test_case_dv_time_range_constraint"></a>13.10.2.3. Test case DV_TIME range constraint</h5>
 <div class="paragraph">
-<p>The C_TIME.range constraint is an Interval&lt;Time&gt;, which are both [Foundation Types](<a href="https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html" class="bare">https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html</a>).</p>
+<p>The C_TIME.range constraint is an Interval&lt;Time&gt;, which are both <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html" target="_blank" rel="noopener">Foundation Types</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -26648,7 +26647,7 @@ the C_TIME has invariants that define if a higher precision component is optiona
 <div class="title">Note</div>
 </td>
 <td class="content">
-the Time class mentioned in the AOM specification is actually the [Iso8601_time](<a href="https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html#_time_types" class="bare">https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html#_time_types</a>) class. This is a [known bug](<a href="https://openehr.atlassian.net/browse/SPECPR-380" class="bare">https://openehr.atlassian.net/browse/SPECPR-380</a>) in the specs.
+the Time class mentioned in the AOM specification is actually the <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_time_types" target="_blank" rel="noopener">Iso8601_time</a> class. This is a <a href="https://specifications.openehr.org/tickets/SPECPR-380" target="_blank" rel="noopener">known bug</a> in the specs.
 </td>
 </tr>
 </table>
@@ -28043,8 +28042,17 @@ the range with the timezone included doesn&#8217;t make sense when the time valu
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>&lt;b id="footnote1"&gt;1&lt;/b&gt;: this is the author&#8217;s interpretation of a minimal valid date in the context of openEHR noting the description of [C_DATE](<a href="https://specifications.openehr.org/releases/AM/Release-2.2.0/AOM1.4.html#_c_date_class" class="bare">https://specifications.openehr.org/releases/AM/Release-2.2.0/AOM1.4.html#_c_date_class</a>): "There is no validity flag for ‘year’, since it must always be by definition mandatory in order to have a sensible date at all.". Though the ISO standard seems to allow partial year expressions. [↩](#empty_date)</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+this is the author&#8217;s interpretation of a minimal valid date in the context of openEHR noting the description of <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html" target="_blank" rel="noopener">C_DATE</a>: "There is no validity flag for ‘year’, since it must always be by definition mandatory in order to have a sensible date at all.". Though the ISO standard seems to allow partial year expressions.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect4">
@@ -28190,7 +28198,7 @@ the C_DATE has invariants that define if a higher precision component is optiona
 <div class="sect4">
 <h5 id="_test_case_dv_date_validity_range_constraint"><a class="anchor" href="#_test_case_dv_date_validity_range_constraint"></a>13.10.3.3. Test Case DV_DATE validity range constraint</h5>
 <div class="paragraph">
-<p>The C_DATE.range constraint is an Interval&lt;Date&gt;, which are both [Foundation Types](<a href="https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html" class="bare">https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html</a>).</p>
+<p>The C_DATE.range constraint is an Interval&lt;Date&gt;, which are both <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html" target="_blank" rel="noopener">Foundation Types</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -28199,7 +28207,7 @@ the C_DATE has invariants that define if a higher precision component is optiona
 <div class="title">Note</div>
 </td>
 <td class="content">
-the Date class mentioned in the AOM specification is actually the [Iso8601_date](<a href="https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html#_time_types" class="bare">https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html#_time_types</a>) class. This is a [known bug](<a href="https://openehr.atlassian.net/browse/SPECPR-380" class="bare">https://openehr.atlassian.net/browse/SPECPR-380</a>) in the specs.
+the Date class mentioned in the AOM specification is actually the <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_time_types" target="_blank" rel="noopener">Iso8601_date</a> class. This is a <a href="https://specifications.openehr.org/tickets/SPECPR-380" target="_blank" rel="noopener">known bug</a> in the specs.
 </td>
 </tr>
 </table>
@@ -28496,7 +28504,7 @@ the DV_DATE value and the C_DATE.range limits should be comparable, that means t
 <div class="title">Note</div>
 </td>
 <td class="content">
-to verify the date time expressiosn we used this [regex](<a href="https://regex101.com/r/pYQJaW/1" class="bare">https://regex101.com/r/pYQJaW/1</a>), you will note the rejected values don&#8217;t match the regex.
+to verify the date time expression used this <a href="https://regex101.com/r/pYQJaW/1" target="_blank" rel="noopener">regex</a>, note that the rejected values don&#8217;t match the regex.
 </td>
 </tr>
 </table>
@@ -30818,7 +30826,7 @@ to verify the date time expressiosn we used this [regex](<a href="https://regex1
 <div class="sect4">
 <h5 id="_test_case_dv_date_time_validity_range"><a class="anchor" href="#_test_case_dv_date_time_validity_range"></a>13.10.4.3. Test Case DV_DATE_TIME validity range</h5>
 <div class="paragraph">
-<p>The C_DATE_TIME.range constraint is an Interval&lt;Date_time&gt;, which are both [Foundation Types](<a href="https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html" class="bare">https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html</a>).</p>
+<p>The C_DATE_TIME.range constraint is an Interval&lt;Date_time&gt;, which are both <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html" target="_blank" rel="noopener">Foundation Types</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -30827,7 +30835,7 @@ to verify the date time expressiosn we used this [regex](<a href="https://regex1
 <div class="title">Note</div>
 </td>
 <td class="content">
-the Date_time class mentioned in the AOM specification is actually the [Iso8601_date_time](<a href="https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html#_time_types" class="bare">https://specifications.openehr.org/releases/BASE/Release-1.2.0/foundation_types.html#_time_types</a>) class. This is a [known bug](<a href="https://openehr.atlassian.net/browse/SPECPR-380" class="bare">https://openehr.atlassian.net/browse/SPECPR-380</a>) in the specs.
+the Date_time class mentioned in the AOM specification is actually the <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_time_types" target="_blank" rel="noopener">Iso8601_date_time</a> class. This is a <a href="https://specifications.openehr.org/tickets/SPECPR-380" target="_blank" rel="noopener">known bug</a> in the specs.
 </td>
 </tr>
 </table>
@@ -31337,7 +31345,7 @@ the Date_time class mentioned in the AOM specification is actually the [Iso8601_
 <div class="title">Note</div>
 </td>
 <td class="content">
-media_type could be constrained by a C_CODE_PHRASE and size could be constrained by C_INTEGER. A NULL C_CODE_PHRASE for the media_type means any code is allowed from the openEHR media type codeset <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L399" class="bare">https://github.com/openEHR/terminology/blob/master/openEHR_RM/openehr_external_terminologies.xml#L399</a>
+media_type could be constrained by a C_CODE_PHRASE and size could be constrained by C_INTEGER. A NULL C_CODE_PHRASE for the media_type means any code is allowed from the <a href="https://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml#L399" target="_blank" rel="noopener">openEHR media type codeset</a>.
 </td>
 </tr>
 </table>

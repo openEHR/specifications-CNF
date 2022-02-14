@@ -404,7 +404,7 @@ Notes:
 . Current criteria is: only one '`create`' operation is allowed for persistent `COMPOSITIONs`, the next operations over an existing persistent `COMPOSITION` should be '`modifications`'.
 . This is under debate in the openEHR SEC since some implementations permit 'persistent' `COMPOSIITONS` to have more than one instance in the same EHR and some others not. This is due to the lack of information in the openEHR specifications. There is also a discussion to define other types of categories for `COMPOSITIONs` to allow different behaviors. 
 
-Ref:  https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51/3
+https://discourse.openehr.org/t/specrm-89-support-for-episodic-category/51/3[Discourse discussion^]
 
 ==== TC I_EHR_COMPOSITION.create_composition-invalid_event
 

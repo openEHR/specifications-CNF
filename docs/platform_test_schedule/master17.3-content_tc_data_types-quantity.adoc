@@ -4,7 +4,7 @@
 
 {openehr_rm_data_types}#_quantity_package[Specification / UML reference^].
 
-DV_ORDINAL is constrained by C_DV_ORDINAL from AP (https://specifications.openehr.org/releases/1.0.2/architecture/am/openehr_archetype_profile.pdf), which contains a list of DV_ORDINAL that could be empty.
+DV_ORDINAL is constrained by C_DV_ORDINAL from the {openehr_am_oap}[openEHR AM 1.4 Archetype Profile^], which contains a list of DV_ORDINAL that could be empty.
 
 NOTE: in ADL it is possible to have a C_DV_ORDINAL constraint with an empty list constraint. At the OPT level this case should be invalid, since is like defining a constraint for a DV_CODED_TEXT with terminology_id `local` but no given codes, since all codes in a C_DV_ORDINAL have terminology_id `local`, at least one code in the list is required at the OPT level. This constraint is valid at the archetypel evel. See commend on 2.3.2.
 
@@ -40,7 +40,7 @@ This case is when the ADL has `DV_ORDINAL matches {*}`
 
 === DV_SCALE
 
-DV_SCALE was introduced to the RM 1.1.0 (https://openehr.atlassian.net/browse/SPECRM-19), it is analogous to DV_ORDINAL with a Real value. So test cases for DV_SCALE and DV_ORDINAL are similar.
+DV_SCALE was introduced to the RM 1.1.0 (https://openehr.atlassian.net/browse/SPECRM-19[Discourse discussion^]), it is analogous to DV_ORDINAL with a Real value. So test cases for DV_SCALE and DV_ORDINAL are similar.
 
 NOTE: if this specification is implemented on a system that supports a RM < 1.1.0, then these tests shouldn't run against the system.
 
@@ -874,7 +874,7 @@ This case is when the ADL has `DV_ORDINAL matches {*}`
 
 ===  DV_INTERVAL<DV_SCALE>
 
-DV_SCALE was introduced to the RM 1.1.0 (https://openehr.atlassian.net/browse/SPECRM-19), it is analogous to DV_ORDINAL with a Real value. So test cases for DV_SCALE and DV_ORDINAL are similar.
+DV_SCALE was introduced to the RM 1.1.0 (https://openehr.atlassian.net/browse/SPECRM-19[Discourse discussion^]), it is analogous to DV_ORDINAL with a Real value. So test cases for DV_SCALE and DV_ORDINAL are similar.
 
 NOTE: if this specification is implemented on a system that supports a RM < 1.1.0, then these tests shouldn't run against the system.
 
