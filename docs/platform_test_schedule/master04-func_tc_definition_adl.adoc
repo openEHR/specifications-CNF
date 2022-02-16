@@ -1,10 +1,9 @@
-[[_func_conf_def_component]]
-= Functional Conformance: Definitions Component
+[[_func_conf_def_adl_component]]
+= Functional Conformance: DEFINITION / ADL2 and ADL14 Components
 
 // some useful variables
 :i_definition_adl14_link: {openehr_sm_openehr_platform}#_i_definition_adl14_interface
 :i_definition_adl2_link: {openehr_sm_openehr_platform}#_i_definition_adl2_interface
-:i_definition_query_link: {openehr_sm_openehr_platform}#_i_definition_query_interface
 
 == Normative Reference
     
