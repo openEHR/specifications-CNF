@@ -45,9 +45,31 @@ This test suite depends on other test suites:
 
 Platform service ref: {i_demographic_service_link}[`I_QUERY_SERVICE._execute_stored_query()_`^]
 
-==== TC aaaa
+=== TC I_QUERY_SERVICE.smoke_test
 
-TBD
+// EhrBase ref: 
+
+[cols="1h,4a"]
+|===
+|Description    | xx
+|Pre-conditions | xx
+|Post-conditions| xx
+|Flow           | xx
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_QUERY_SERVICE/smoke_test/I_QUERY_SERVICE.smoke_test.robot[REST API / Robot^]
+|===
+
+==== TC I_QUERY_SERVICE.execute_stored_query-empty_db
+
+// EhrBase ref: 
+
+[cols="1h,4a"]
+|===
+|Description    | xx
+|Pre-conditions | xx
+|Post-conditions| xx
+|Flow           | xx
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_QUERY_SERVICE/execute_stored_query/I_QUERY_SERVICE.execute_stored_query-empty_db.robot[REST API / Robot^]
+|===
 
 ==== TC bbbb
 
@@ -58,35 +80,29 @@ TBD
 
 Platform service ref: {i_demographic_service_link}[`I_QUERY_SERVICE._execute_ad_hoc_query()_`^]
 
-==== TC aaaa
+==== TC I_QUERY_SERVICE.execute_ad_hoc_query-empty_db
 
-TBD
+// EhrBase ref: A.1.z
 
-==== TC bbbb
+[cols="1h,4a"]
+|===
+|Description    | xx
+|Pre-conditions | xx
+|Post-conditions| xx
+|Flow           | xx
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_QUERY_SERVICE/execute_ad_hoc_query/I_QUERY_SERVICE.execute_ad_hoc_query-empty_db.robot[REST API / Robot^]
+|===
 
-TBD
+==== TC I_QUERY_SERVICE.execute_ad_hoc_query-loaded_db
 
-=== Conformance point: I_QUERY_SERVICE.execute_stored_query()
+// EhrBase ref: A.1.a
 
-Platform service ref: {i_demographic_service_link}[`I_QUERY_SERVICE._execute_stored_query()_`^]
-
-==== TC aaaa
-
-TBD
-
-==== TC bbbb
-
-TBD
-
-=== Conformance point: I_QUERY_SERVICE.execute_stored_query()
-
-Platform service ref: {i_demographic_service_link}[`I_QUERY_SERVICE._execute_stored_query()_`^]
-
-==== TC aaaa
-
-TBD
-
-==== TC bbbb
-
-TBD
+[cols="1h,4a"]
+|===
+|Description    | xx
+|Pre-conditions | xx
+|Post-conditions| xx
+|Flow           | xx
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_QUERY_SERVICE/execute_ad_hoc_query/I_QUERY_SERVICE.execute_ad_hoc_query-loaded_db.robot[REST API / Robot^]
+|===
 
