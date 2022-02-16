@@ -1,4 +1,4 @@
-= Content Conformance
+= Data Validation Conformance
 
 //
 // taken from doc/conformance_testing/COMPOSITION_VALIDATION_STRUCTURE.md

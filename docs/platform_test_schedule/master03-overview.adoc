@@ -15,12 +15,12 @@ As described in the {openehr_cnf_guide}#_product_scope[openEHR Conformance Guide
 |Conformance of the _implemented APIs_ to the published APIs, in a concrete API technology
 |Regression of test client running API call-in test cases against reference results
 
-|*Content conformance*
-|Conformance of platform's _content validation_ of data against semantic models (archetypes etc)
+|*Data Validation conformance*
+|Conformance of platform's _validation of data against semantic models_ (archetypes etc)
 |Regression of test client committing variable data sets against reference validity
 
-|*Critical attributes*
-|Conformance of specific platform _non-functional_ properties to specification
+|*Non-functional*
+|Conformance of specific platform _non-functional_ properties such as privacy, maintainability etc to specification
 |Various
 
 |===
