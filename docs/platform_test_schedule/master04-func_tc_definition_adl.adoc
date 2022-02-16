@@ -63,6 +63,7 @@ Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._validate_op
 |Post-conditions| None (validation should not change the state of the system).
 |Flow           | . For each valid OPT in the data set, invoke the OPT validation service
                   . The result should be positive and the server should return should be related to "`OPT is valid`".
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/validate_opt/I_DEFINITION_ADL14.validate_opt-valid_opt.robot[REST API / Robot^]
 |===
 
 NOTE: some servers might not have a way to just validate the OPT, and validation might be part of the OPT upload functionality. In that case, the validation should upload and validate the OPT, and in the cases of valid OPTs, the OPT should be deleted afterwards, so the system state doesn’t change. For invalid OPTs, the upload should fail.
@@ -78,6 +79,7 @@ NOTE: some servers might not have a way to just validate the OPT, and validation
 |Post-conditions| None (validation should not change the state of the system).
 |Flow           | . For each invalid OPT in the data set, invoke the OPT validation service
                   . The result should be negative related to the "`OPT is invalid`", would be useful if the server also returns where the problems are in the OPT
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/validate_opt/I_DEFINITION_ADL14.validate_opt-invalid_opt.robot[REST API / Robot^]
 |===
 
 *Implementation note:* when a step says "`for each X, invoke service Y`", means that the test should run completely for each X, that is, the pre-conditions and post-conditions apply to the run for X. So if we have:
