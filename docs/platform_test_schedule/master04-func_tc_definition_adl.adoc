@@ -1,4 +1,3 @@
-[[_func_conf_def_adl_component]]
 = Functional Conformance: DEFINITION / ADL2 and ADL14 Components
 
 // some useful variables
@@ -9,18 +8,20 @@
     
 Items under this validation suite conceptually use these abstract interfaces defined in the {openehr_sm_openehr_platform}#_definition_package[Abstract Definition Service Model^]:
 
-* I_DEFINITION_ADL14
-* I_DEFINITION_ADL2
+* {openehr_sm_openehr_platform#_i_definition_adl2_interface}[I_DEFINITION_ADL2^];
+* {openehr_sm_openehr_platform#_i_definition_adl14_interface}[I_DEFINITION_ADL14^].
 
 These are concretely realised in implementation technology specfic APIs, such as the {openehr_definitions_rest_api}[Definitions REST API^].
 
-The artefacts that flow through these interfaces are defined by the following specifications:
+The artefacts that flow in serialised form through these interfaces are defined by the following specifications:
 
 * {openehr_am_adl14}[ADL 1.4^]
 * {openehr_am_aom14}[AOM 1.4^]
 * {openehr_am_adl2}[ADL 2^]
 * {openehr_am_aom2}[AOM 2^]
 * {openehr_am_id}[Archetype Identification^]
+
+TODO: add ref to dependency diagram in SM/Platform service model.
 
 == Test Environment
 
@@ -37,6 +38,7 @@ data, can the OPT be deleted physically? Logical delete might work as the deacti
 . The test cases are the same for OPT 1.4/2, but tests should be written separately and different datasets should be created for 1.4 and 2.
 . Different implementations might use specific formats for the template IDs, when testing each server, the template IDs should be adapted to prevent failures for wrong format on the template ID. This is due to openEHR not yet defining a format for the template IDs in the specifications.
 
+[[_func_conf_def_adl_component]]
 == OPT 1.4/2 Test cases
 
 === Conformance Point: I_DEFINITION_ADL14.validate_opt()

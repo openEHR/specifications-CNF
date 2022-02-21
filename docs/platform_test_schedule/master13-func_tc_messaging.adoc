@@ -1,3 +1,4 @@
+[[_func_conf_def_msg_component]]
 = Functional Conformance: Messaging Component
 
 // Some useful links: 

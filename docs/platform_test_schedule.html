@@ -36,20 +36,20 @@
 <li><a href="#_overview">3. Overview</a>
 <ul class="sectlevel2">
 <li><a href="#_scope">3.1. Scope</a></li>
-<li><a href="#_functional_conformance">3.2. Functional conformance</a>
+<li><a href="#_functional_conformance_test_design">3.2. Functional Conformance Test Design</a>
 <ul class="sectlevel3">
 <li><a href="#_tc_identifier_e_g_tc_ehr_composition_has_composition_bad_composition">3.2.1. TC &lt;Identifier, e.g. TC EHR_COMPOSITION.has_composition_bad_composition&gt;</a></li>
 </ul>
 </li>
-<li><a href="#_content_conformance">3.3. Content conformance</a></li>
-<li><a href="#_critical_attributes">3.4. Critical attributes</a></li>
+<li><a href="#_data_validation_conformance_test_design">3.3. Data Validation Conformance Test Design</a></li>
+<li><a href="#_non_functional_conformance_test_design">3.4. Non-functional Conformance Test Design</a></li>
 </ul>
 </li>
-<li><a href="#_func_conf_def_adl_component">4. Functional Conformance: DEFINITION / ADL2 and ADL14 Components</a>
+<li><a href="#_functional_conformance_definition_adl2_and_adl14_components">4. Functional Conformance: DEFINITION / ADL2 and ADL14 Components</a>
 <ul class="sectlevel2">
 <li><a href="#_normative_reference">4.1. Normative Reference</a></li>
 <li><a href="#_test_environment">4.2. Test Environment</a></li>
-<li><a href="#_opt_1_42_test_cases">4.3. OPT 1.4/2 Test cases</a>
+<li><a href="#_func_conf_def_adl_component">4.3. OPT 1.4/2 Test cases</a>
 <ul class="sectlevel3">
 <li><a href="#_conformance_point_i_definition_adl14_validate_opt">4.3.1. Conformance Point: I_DEFINITION_ADL14.validate_opt()</a>
 <ul class="sectlevel4">
@@ -619,7 +619,7 @@
 </li>
 </ul>
 </li>
-<li><a href="#_functional_conformance_messaging_component">13. Functional Conformance: Messaging Component</a>
+<li><a href="#_func_conf_def_msg_component">13. Functional Conformance: Messaging Component</a>
 <ul class="sectlevel2">
 <li><a href="#_normative_reference_10">13.1. Normative Reference</a></li>
 <li><a href="#_dependencies_7">13.2. Dependencies</a></li>
@@ -957,7 +957,7 @@
 </li>
 </ul>
 </li>
-<li><a href="#_non_functional_conformance_privacy">15. Non-Functional Conformance - Privacy</a>
+<li><a href="#_non_functional_conformance">15. Non-Functional Conformance - Privacy</a>
 <ul class="sectlevel2">
 <li><a href="#_normative_reference_11">15.1. Normative Reference</a></li>
 <li><a href="#_dependencies_8">15.2. Dependencies</a></li>
@@ -1075,8 +1075,9 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue"></a>0.8.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Improve identifiers, structure;<br>
  add content tests from EhrBase</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>14 Feb 2022</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T Beale,<br>
+ P Pazos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="latest_issue_date"></a>21 Feb 2022</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.8.0</p></td>
@@ -1325,12 +1326,15 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_functional_conformance"><a class="anchor" href="#_functional_conformance"></a>3.2. Functional conformance</h3>
+<h3 id="_functional_conformance_test_design"><a class="anchor" href="#_functional_conformance_test_design"></a>3.2. Functional Conformance Test Design</h3>
 <div class="paragraph">
-<p>Functional conformance is assessed by running tests on the SUT API, and determining deviations from known reference responses. As described in  <a href="https://specifications.openehr.org/releases/CNF/latest/guide.html#_from_specifications_to_runnable_tests" target="_blank" rel="noopener">Section 4.2 of the openEHR Conformance Guide</a>, the test cases defined here are based on the <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html" target="_blank" rel="noopener">openEHR Platform Abstract Service Model</a> API calls, which are termed 'conformance points'. A conformance point is understood as a <em>testable capability of a system that relates to a business function</em>. For example, conformance points for an EHR service include <code>create_EHR</code>, <code>update_EHR</code>, and so on. For any given conformance point, there may be multiple tests, each of which is individually identified.</p>
+<p>Functional conformance is assessed by running tests on the SUT API, and determining deviations from known reference responses. As described in  <a href="https://specifications.openehr.org/releases/CNF/latest/guide.html#_from_specifications_to_runnable_tests" target="_blank" rel="noopener">Section 4.2 of the openEHR Conformance Guide</a>, the test cases defined here are based on the <a href="https://specifications.openehr.org/releases/SM/latest/openehr_platform.html" target="_blank" rel="noopener">openEHR Platform Abstract Service Model</a> API calls, which are termed 'conformance points'. A conformance point is understood as a <em>testable capability of a system that relates to a business function</em>. For example, conformance points for an EHR service include <code>create_EHR</code>, <code>update_EHR</code>, and so on. For any given conformance point, there may be multiple test cases, each of which is individually identified. For each test case, there may be multiple data sets. A 'test' is therefore the execution of a particular test case with a particular data set.</p>
 </div>
 <div class="paragraph">
-<p>Each test case is documented in the following form.</p>
+<p>Each test case is documented in the form shown in the following sub-section.</p>
+</div>
+<div class="paragraph">
+<p>Functional conformance test cases are described in <a href="#_functional_conformance">[_functional_conformance]</a>.</p>
 </div>
 <div class="sect3">
 <h4 id="_tc_identifier_e_g_tc_ehr_composition_has_composition_bad_composition"><a class="anchor" href="#_tc_identifier_e_g_tc_ehr_composition_has_composition_bad_composition"></a>3.2.1. TC &lt;Identifier, e.g. TC EHR_COMPOSITION.has_composition_bad_composition&gt;</h4>
@@ -1384,21 +1388,21 @@ The supported RM version(s) by the server under test should be stated beforehand
 </div>
 </div>
 <div class="sect2">
-<h3 id="_content_conformance"><a class="anchor" href="#_content_conformance"></a>3.3. Content conformance</h3>
+<h3 id="_data_validation_conformance_test_design"><a class="anchor" href="#_data_validation_conformance_test_design"></a>3.3. Data Validation Conformance Test Design</h3>
 <div class="paragraph">
-<p>TBD</p>
+<p>Data validation conformance is defined in terms of test cases with multiple data sets. These test cases are documented in the same basic way as described above, along with multiple data sets, typically shown in tabulated form. They are described in <a href="#_data_validation_conformance">Section 14</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_critical_attributes"><a class="anchor" href="#_critical_attributes"></a>3.4. Critical attributes</h3>
+<h3 id="_non_functional_conformance_test_design"><a class="anchor" href="#_non_functional_conformance_test_design"></a>3.4. Non-functional Conformance Test Design</h3>
 <div class="paragraph">
-<p>TBD</p>
+<p>Non-functional conformance test cases again follow the basic plan of tests cases of the previous categories, but with an orientation to measurable or observable results. They are documented in <a href="#_non_functional_conformance">Section 15</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_func_conf_def_adl_component"><a class="anchor" href="#_func_conf_def_adl_component"></a>4. Functional Conformance: DEFINITION / ADL2 and ADL14 Components</h2>
+<h2 id="_functional_conformance_definition_adl2_and_adl14_components"><a class="anchor" href="#_functional_conformance_definition_adl2_and_adl14_components"></a>4. Functional Conformance: DEFINITION / ADL2 and ADL14 Components</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_normative_reference"><a class="anchor" href="#_normative_reference"></a>4.1. Normative Reference</h3>
@@ -1408,10 +1412,10 @@ The supported RM version(s) by the server under test should be stated beforehand
 <div class="ulist">
 <ul>
 <li>
-<p>I_DEFINITION_ADL14</p>
+<p>{openehr_sm_openehr_platform#_i_definition_adl2_interface}[I_DEFINITION_ADL2^];</p>
 </li>
 <li>
-<p>I_DEFINITION_ADL2</p>
+<p>{openehr_sm_openehr_platform#_i_definition_adl14_interface}[I_DEFINITION_ADL14^].</p>
 </li>
 </ul>
 </div>
@@ -1419,7 +1423,7 @@ The supported RM version(s) by the server under test should be stated beforehand
 <p>These are concretely realised in implementation technology specfic APIs, such as the <a href="https://specifications.openehr.org/releases/ITS-REST/latest/definitions.html" target="_blank" rel="noopener">Definitions REST API</a>.</p>
 </div>
 <div class="paragraph">
-<p>The artefacts that flow through these interfaces are defined by the following specifications:</p>
+<p>The artefacts that flow in serialised form through these interfaces are defined by the following specifications:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1439,6 +1443,9 @@ The supported RM version(s) by the server under test should be stated beforehand
 <p><a href="https://specifications.openehr.org/releases/AM/latest/Identification.html" target="_blank" rel="noopener">Archetype Identification</a></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>TODO: add ref to dependency diagram in SM/Platform service model.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1478,7 +1485,7 @@ data, can the OPT be deleted physically? Logical delete might work as the deacti
 </div>
 </div>
 <div class="sect2">
-<h3 id="_opt_1_42_test_cases"><a class="anchor" href="#_opt_1_42_test_cases"></a>4.3. OPT 1.4/2 Test cases</h3>
+<h3 id="_func_conf_def_adl_component"><a class="anchor" href="#_func_conf_def_adl_component"></a>4.3. OPT 1.4/2 Test cases</h3>
 <div class="sect3">
 <h4 id="_conformance_point_i_definition_adl14_validate_opt"><a class="anchor" href="#_conformance_point_i_definition_adl14_validate_opt"></a>4.3.1. Conformance Point: I_DEFINITION_ADL14.validate_opt()</h4>
 <div class="paragraph">
@@ -12853,7 +12860,7 @@ the directory exists as a new deleted version (that is <code>VERSION.lifecycle_s
 </div>
 </div>
 <div class="sect1">
-<h2 id="_functional_conformance_messaging_component"><a class="anchor" href="#_functional_conformance_messaging_component"></a>13. Functional Conformance: Messaging Component</h2>
+<h2 id="_func_conf_def_msg_component"><a class="anchor" href="#_func_conf_def_msg_component"></a>13. Functional Conformance: Messaging Component</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_normative_reference_10"><a class="anchor" href="#_normative_reference_10"></a>13.1. Normative Reference</h3>
@@ -14630,7 +14637,7 @@ we suggest to test with both strategies.
 <th class="tableblock halign-left valign-top">data</th>
 <th class="tableblock halign-left valign-top">state</th>
 <th class="tableblock halign-left valign-top">protocol</th>
-<th class="tableblock halign-center valign-top">expected</th>
+<th class="tableblock halign-left valign-top">expected</th>
 <th class="tableblock halign-left valign-top">constraints violated</th>
 </tr>
 </thead>
@@ -14639,56 +14646,56 @@ we suggest to test with both strategies.
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OBSERVATION.data existence.lower (RM/schema constraint)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OBSERVATION.data existence.lower (RM/schema constraint)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OBSERVATION.data existence.lower (RM/schema constraint)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OBSERVATION.data existence.lower (RM/schema constraint)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -14712,7 +14719,7 @@ we suggest to test with both strategies.
 <th class="tableblock halign-left valign-top">data</th>
 <th class="tableblock halign-left valign-top">state</th>
 <th class="tableblock halign-left valign-top">protocol</th>
-<th class="tableblock halign-center valign-top">expected</th>
+<th class="tableblock halign-left valign-top">expected</th>
 <th class="tableblock halign-left valign-top">constraints violated</th>
 </tr>
 </thead>
@@ -14721,56 +14728,56 @@ we suggest to test with both strategies.
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OBSERVATION.data existence.lower (RM/schema constraint), OBSERVATION.protocol existence.lower</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OBSERVATION.data existence.lower (RM/schema constraint)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OBSERVATION.data existence.lower (RM/schema constraint), OBSERVATION.protocol existence.lower</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OBSERVATION.data existence.lower (RM/schema constraint)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OBSERVATION.protocol existence.lower</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">absent</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OBSERVATION.protocol existence.lower</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">present</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -32408,7 +32415,7 @@ the values in the C_STRING.list should be valid URIs compliant with RFC3986. If 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_non_functional_conformance_privacy"><a class="anchor" href="#_non_functional_conformance_privacy"></a>15. Non-Functional Conformance - Privacy</h2>
+<h2 id="_non_functional_conformance"><a class="anchor" href="#_non_functional_conformance"></a>15. Non-Functional Conformance - Privacy</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_normative_reference_11"><a class="anchor" href="#_normative_reference_11"></a>15.1. Normative Reference</h3>

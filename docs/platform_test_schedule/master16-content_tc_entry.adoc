@@ -28,7 +28,7 @@ NOTE: we suggest to test with both strategies.
 
 Description: OBSERVATION state existence = 0..1, protocol existence = 0..1
 
-[cols="1,1,1,^1,4",options="header",]
+[cols="1,1,1,1,4",options="header",]
 |===
 |data       |state      |protocol   |expected |constraints violated
 
@@ -46,18 +46,18 @@ Description: OBSERVATION state existence = 0..1, protocol existence = 0..1
 
 Description: OBSERVATION state existence = 0..1, protocol existence = 1..1
 
-[cols="1,1,1,^1,4",options="header",]
+[cols="1,1,1,1,4",options="header",]
 |===
-|data |state |protocol |expected |constraints violated
+|data       |state      |protocol   |expected |constraints violated
 
-|absent |absent |absent |rejected |OBSERVATION.data existence.lower (RM/schema constraint), OBSERVATION.protocol existence.lower
-|absent |absent |present |rejected |OBSERVATION.data existence.lower (RM/schema constraint)
-|absent |present |absent |rejected |OBSERVATION.data existence.lower (RM/schema constraint), OBSERVATION.protocol existence.lower
-|absent |present |present |rejected |OBSERVATION.data existence.lower (RM/schema constraint)
-|present |absent |absent |rejected |OBSERVATION.protocol existence.lower
-|present |absent |present |accepted |
-|present |present |absent |rejected |OBSERVATION.protocol existence.lower
-|present |present |present |accepted |
+|absent     |absent     |absent     |rejected |OBSERVATION.data existence.lower (RM/schema constraint), OBSERVATION.protocol existence.lower
+|absent     |absent     |present    |rejected |OBSERVATION.data existence.lower (RM/schema constraint)
+|absent     |present    |absent     |rejected |OBSERVATION.data existence.lower (RM/schema constraint), OBSERVATION.protocol existence.lower
+|absent     |present    |present    |rejected |OBSERVATION.data existence.lower (RM/schema constraint)
+|present    |absent     |absent     |rejected |OBSERVATION.protocol existence.lower
+|present    |absent     |present    |accepted |
+|present    |present    |absent     |rejected |OBSERVATION.protocol existence.lower
+|present    |present    |present    |accepted |
 |===
 
 === TC CONT-OBS-state_ex_mand-protocol_ex_opt
