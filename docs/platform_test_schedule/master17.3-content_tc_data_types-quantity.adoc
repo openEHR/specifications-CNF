@@ -9,7 +9,7 @@ DV_ORDINAL is constrained by C_DV_ORDINAL from the {openehr_am_oap}[openEHR AM 1
 NOTE: in ADL it is possible to have a C_DV_ORDINAL constraint with an empty list constraint. At the OPT level this case should be invalid, since is like defining a constraint for a DV_CODED_TEXT with terminology_id `local` but no given codes, since all codes in a C_DV_ORDINAL have terminology_id `local`, at least one code in the list is required at the OPT level. This constraint is valid at the archetypel evel. See commend on 2.3.2.
 
 
-==== TC CONT-DV_ORDINAL-validate_open
+==== Test Case CONT-DV_ORDINAL-validate_open
 
 This case is when the ADL has `DV_ORDINAL matches {*}`
 
@@ -25,7 +25,7 @@ This case is when the ADL has `DV_ORDINAL matches {*}`
 |===
 
 
-==== TC CONT-DV_ORDINAL-validate_constraint
+==== Test Case CONT-DV_ORDINAL-validate_constraint
 
 [options="header"]
 |===
@@ -44,7 +44,7 @@ DV_SCALE was introduced to the RM 1.1.0 (https://openehr.atlassian.net/browse/SP
 
 NOTE: if this specification is implemented on a system that supports a RM < 1.1.0, then these tests shouldn't run against the system.
 
-==== TC CONT-DV_SCALE-validate_open
+==== Test Case CONT-DV_SCALE-validate_open
 
 This case is when the ADL has `DV_SCALE matches {*}`
 
@@ -59,7 +59,7 @@ This case is when the ADL has `DV_SCALE matches {*}`
 | local::at0005  | 666   | accepted |                                          
 |===
 
-==== TC CONT-DV_SCALE-validate_constraint
+==== Test Case CONT-DV_SCALE-validate_constraint
 
 NOTE: there is no current C_DV_SCALE constraint in the Archetype Profile, so modeling tools are not yet supporting constraints for this type. This is a [known issue](https://openehr.atlassian.net/browse/SPECPR-381). Though we can assume the constraint type will be analogous to the C_DV_ORDINAL.
 
@@ -77,7 +77,7 @@ NOTE: there is no current C_DV_SCALE constraint in the Archetype Profile, so mod
 
 Internally this type is constrained by a C_INTEGER which could contain a range or a list of values.
 
-==== TC CONT-DV_COUNT-validate_open
+==== Test Case CONT-DV_COUNT-validate_open
 
 This case represents the DV_COUNT matching {*}, in this case the C_INTEGER is not present in the OPT.
 
@@ -92,7 +92,7 @@ This case represents the DV_COUNT matching {*}, in this case the C_INTEGER is no
 | 30             | accepted |                      
 |===
 
-==== TC CONT-DV_COUNT-validate_range
+==== Test Case CONT-DV_COUNT-validate_range
 
 [options="header"]
 |===
@@ -105,7 +105,7 @@ This case represents the DV_COUNT matching {*}, in this case the C_INTEGER is no
 | 30             | 10..20          | NULL              | rejected | C_INTEGER.range 
 |===
 
-==== TC CONT-DV_COUNT-validate_list
+==== Test Case CONT-DV_COUNT-validate_list
 
 NOTE: some modeling tools might not support the list constraint.
 
@@ -125,7 +125,7 @@ NOTE: some modeling tools might not support the list constraint.
 
 Internally DV_QUANTITY is constrained by a C_DV_QUANTITY, which allows to specify an optional physical property and a list of C_QUANTITY_ITEM, which can contain a mandatory units and optional interval constraints for magnitude and precision.
 
-==== TC CONT-DV_QUANTITY-validate_open
+==== Test Case CONT-DV_QUANTITY-validate_open
 
 This case represents the DV_QUANTITY matching {*}, in this case the C_DV_QUANTITY is not present in the OPT.
 
@@ -143,7 +143,7 @@ This case represents the DV_QUANTITY matching {*}, in this case the C_DV_QUANTIT
 |===
 
 
-==== TC CONT-DV_QUANTITY-validate_property
+==== Test Case CONT-DV_QUANTITY-validate_property
 
 The C_DV_QUANTITY is present in the OPT and has a value for `property`, but doesn't have a list of C_QUANTITY_ITEM.
 
@@ -164,7 +164,7 @@ NOTE: in this case all units for the `property` are allowed, so the validation s
 |===
 
 
-==== TC CONT-DV_QUANTITY-validate_property_units
+==== Test Case CONT-DV_QUANTITY-validate_property_units
 
 [options="header"]
 |===
@@ -182,7 +182,7 @@ NOTE: in this case all units for the `property` are allowed, so the validation s
 |===
 
 
-==== TC CONT-DV_QUANTITY-validate_property_units_mag
+==== Test Case CONT-DV_QUANTITY-validate_property_units_mag
 
 [options="header"]
 |===
@@ -220,7 +220,7 @@ This type has intrinsic constraints that should be semantically consistent depen
 NOTE: the difference between fraction and integer fraction is the presentation, the data and constraints are the same.
 
 
-==== TC CONT-DV_PROPORTION-validate_open
+==== Test Case CONT-DV_PROPORTION-validate_open
 
 This test case is used to check the internal rules of the DV_PROPORTION are correctly implemented by the SUT.
 
@@ -250,7 +250,7 @@ This test case is used to check the internal rules of the DV_PROPORTION are corr
 |===
 
 
-==== TC CONT-DV_PROPORTION-validate_ratio
+==== Test Case CONT-DV_PROPORTION-validate_ratio
 
 The C_INTEGER constraint applies to the `type` attribute.
 
@@ -267,7 +267,7 @@ The C_INTEGER constraint applies to the `type` attribute.
 
 NOTE: all the fail cases related with invariants were already contemplated in 3.6.1.
 
-==== TC CONT-DV_PROPORTION-validate_unitary
+==== Test Case CONT-DV_PROPORTION-validate_unitary
 
 The C_INTEGER constraint applies to the `type` attribute.
 
@@ -282,7 +282,7 @@ The C_INTEGER constraint applies to the `type` attribute.
 | 4    | integer fraction | 10        | 500         | 0         | [1]            | rejected | C_INTEGER.list                   
 |===
 
-==== TC CONT-DV_PROPORTION-validate_percent
+==== Test Case CONT-DV_PROPORTION-validate_percent
 
 The C_INTEGER constraint applies to the `type` attribute.
 
@@ -297,7 +297,7 @@ The C_INTEGER constraint applies to the `type` attribute.
 | 4    | integer fraction | 10        | 500         | 0         | [2]            | rejected | C_INTEGER.list                   
 |===
 
-==== TC CONT-DV_PROPORTION-validate_fraction
+==== Test Case CONT-DV_PROPORTION-validate_fraction
 
 The C_INTEGER constraint applies to the `type` attribute.
 
@@ -312,7 +312,7 @@ The C_INTEGER constraint applies to the `type` attribute.
 | 4    | integer fraction | 10        | 500         | 0         | [3]            | rejected | C_INTEGER.list                   
 |===
 
-==== TC CONT-DV_PROPORTION-validate_integer_fraction
+==== Test Case CONT-DV_PROPORTION-validate_integer_fraction
 
 The C_INTEGER constraint applies to the `type` attribute.
 
@@ -327,7 +327,7 @@ The C_INTEGER constraint applies to the `type` attribute.
 | 4    | integer fraction | 10        | 500         | 0         | [4]            | accepted |                                  
 |===
 
-==== TC CONT-DV_PROPORTION-validate_any_fraction
+==== Test Case CONT-DV_PROPORTION-validate_any_fraction
 
 This case is similar to the previous one, it just tests a combination of possible types for the proportion.
 
@@ -342,7 +342,7 @@ This case is similar to the previous one, it just tests a combination of possibl
 | 4    | integer fraction | 10        | 500         | 0         | [3, 4]         | accepted |                                  
 |===
 
-==== TC CONT-DV_PROPORTION-validate_ratio_range
+==== Test Case CONT-DV_PROPORTION-validate_ratio_range
 
 The C_INTEGER constraint applies to the `type` attribute. The C_REAL constraints apply to numerator and denominator respectively.
 
@@ -358,7 +358,7 @@ The C_INTEGER constraint applies to the `type` attribute. The C_REAL constraints
 
 === DV_INTERVAL<DV_COUNT>
 
-==== TC CONT-DV_INTERVAL_DV_COUNT-validate_open
+==== Test Case CONT-DV_INTERVAL_DV_COUNT-validate_open
 
 The DV_INTERVAL<DV_COUNT> constraint is {*}.
 
@@ -382,7 +382,7 @@ NOTE: the failure instance for this test case are related with violated interval
 | 200   | 100   | false           | false           | true           | true           | rejected | limits_consistent (invariant) 
 |===
 
-==== TC CONT-DV_INTERVAL_DV_COUNT-validate_lower_upper
+==== Test Case CONT-DV_INTERVAL_DV_COUNT-validate_lower_upper
 
 Lower and upper are DV_COUNT, which are constrainted internally by C_INTEGER. C_INTEGER has range and list constraints.
 
@@ -402,7 +402,7 @@ NOTE: the lower and upper limits are not constrained in terms of existence or oc
 |===
 
 
-==== TC CONT-DV_INTERVAL_DV_COUNT-validate_lower_upper_list
+==== Test Case CONT-DV_INTERVAL_DV_COUNT-validate_lower_upper_list
 
 Lower and upper are DV_COUNT, which are constrainted internally by C_INTEGER. C_INTEGER has range and list constraints.
 
@@ -424,7 +424,7 @@ NOTE: not all modeling tools allow a list constraint for the lower and upper att
 
 === DV_INTERVAL<DV_QUANTITY>
 
-==== TC CONT-DV_INTERVAL_DV_QUANTITY-validate_open
+==== Test Case CONT-DV_INTERVAL_DV_QUANTITY-validate_open
 
 The DV_INTERVAL<DV_QUANTITY> constraint is {*}.
 
@@ -447,7 +447,7 @@ NOTE: the failure instance for this test case are related with violated interval
 |===
 
 
-==== TC CONT-DV_INTERVAL_DV_QUANTITY-validate_upper_lower
+==== Test Case CONT-DV_INTERVAL_DV_QUANTITY-validate_upper_lower
 
 The lower and upper constraints are C_DV_QUANTITY.
 
@@ -469,7 +469,7 @@ NOTE: in all cases the C_DV_QUANTITY.property referes to `temperature` to keep t
 
 === DV_INTERVAL<DV_DATE_TIME>
 
-==== TC CONT-DV_INTERVAL_DV_DATE_TIME-validate_open
+==== Test Case CONT-DV_INTERVAL_DV_DATE_TIME-validate_open
 
 The DV_INTERVAL<DV_DATE_TIME> constraint is {*}.
 
@@ -507,7 +507,7 @@ The DV_INTERVAL<DV_DATE_TIME> constraint is {*}.
 |===
 
 
-==== TC CONT-DV_INTERVAL_DV_DATE_TIME-validate_lower_upper_constraint
+==== Test Case CONT-DV_INTERVAL_DV_DATE_TIME-validate_lower_upper_constraint
 
 NOTE: the C_DATE_TIME has invariants that define if a higher precision component is optional or prohibited, lower precision components should be optional or prohibited. In other words, if `month` is optional, `day`, `hours`, `minutes`, etc. are optional or prohibited. These invariants should be checked in an archetype editor and template editor, we consider the following tests to follow those rules without checking them, since that is related to archetype/template validation, not with data validation.
 
@@ -605,7 +605,7 @@ NOTE: if different components of each lower/upper date time expression fail the 
 |===
 
 
-==== TC CONT-DV_INTERVAL_DV_DATE_TIME-validate_lower_upper_range
+==== Test Case CONT-DV_INTERVAL_DV_DATE_TIME-validate_lower_upper_range
 
 [options="header"]
 |===
@@ -640,7 +640,7 @@ NOTE: if different components of each lower/upper date time expression fail the 
 
 ===  DV_INTERVAL<DV_DATE>
 
-==== TC CONT-DV_INTERVAL_DV_DATE-validate_open
+==== Test Case CONT-DV_INTERVAL_DV_DATE-validate_open
 
 On this case, the own rules/invariants of the DV_INTERVAL apply to the validation.
 
@@ -659,7 +659,7 @@ On this case, the own rules/invariants of the DV_INTERVAL apply to the validatio
 |===
 
 
-==== TC CONT-DV_INTERVAL_DV_DATE-validate_lower_upper_constraint
+==== Test Case CONT-DV_INTERVAL_DV_DATE-validate_lower_upper_constraint
 
 NOTE: this test case doesn't include all the possible combinations of lower/upper data and constraints for the internal since there could be tens of possible combinations. It would be in the scope of a revision to add more combinations of an exhaustive test case.
 
@@ -702,7 +702,7 @@ NOTE: the C_DATE has invariants that define if a higher precision component is o
 |===
 
 
-==== TC CONT-DV_INTERVAL_DV_DATE-validate_lower_upper_range
+==== Test Case CONT-DV_INTERVAL_DV_DATE-validate_lower_upper_range
 
 [options="header"]
 |===
@@ -719,7 +719,7 @@ NOTE: the C_DATE has invariants that define if a higher precision component is o
 
 ===  DV_INTERVAL<DV_TIME>
 
-==== TC CONT-DV_INTERVAL_DV_TIME-validate_open
+==== Test Case CONT-DV_INTERVAL_DV_TIME-validate_open
 
 [options="header"]
 |===
@@ -736,7 +736,7 @@ NOTE: the C_DATE has invariants that define if a higher precision component is o
 |===
 
 
-==== TC CONT-DV_INTERVAL_DV_TIME-validate_lower_upper_constraint
+==== Test Case CONT-DV_INTERVAL_DV_TIME-validate_lower_upper_constraint
 
 [options="header"]
 |===
@@ -752,7 +752,7 @@ NOTE: the C_DATE has invariants that define if a higher precision component is o
 TBD: combinations of other values for validity.
 
 
-==== TC CONT-DV_INTERVAL_DV_TIME-validate_lower_upper_range
+==== Test Case CONT-DV_INTERVAL_DV_TIME-validate_lower_upper_range
 
 [cols="2,2,2,2,2,2,3,3,2,4", options="header"]
 |===
@@ -772,7 +772,7 @@ TBD: more fail cases
 
 ===  DV_INTERVAL<DV_DURATION>
 
-==== TC CONT-DV_INTERVAL_DV_DURATION-validate_open
+==== Test Case CONT-DV_INTERVAL_DV_DURATION-validate_open
 
 NOTE: this considers the `lower` value of the interval should have all it's components lower or equals to the corresponding component in the `upper` value. This is to avoid normalization problems. For instance we could have an interval `P1Y6M..P2Y` which is semantically correct. But if we have values outside the normal boundaries of each component, like `P1Y37M..P2Y` there is a need of normalization to know if `P1Y37M` is really lower or equals to `P2Y`, which is the check ofr a valid internal. In some cases this normalization is doable, but in other cases it is not. For instance, some implementations might not know how many days in a month are, since months have a variable number of days. In the previous case, we know each year has 12 months so `P1Y37M` can actually be normalized to `P4Y1M`, but `P61D` can't be strictly compared with, let's say, `P3M`, since months could have 28, 29, 30 or 31 days, so without other information `P61D` could be lower or greater than `P3M`. To simplify this, some implementations might consider the measure of a `month`, in a duration expression, to be exactly 30 days. These considerations should be stated in the SUT Conformance Statement Document. To simplify writing the test cases for any implementation, we consider if `lower` is `P1Y37M`, the valid `upper` values have Y >= 1 and M >= 37, so `P2Y` wouldn't be valid in this context, but `P1Y37M..P1Y38M` or `P1Y37M..P2Y37M` would be valid intervals for the test cases. One extra simplification would be to consider values are inside their normal boundaries (hours < 24, days < 31, etc.) but this won't be encouraged but these test cases. If each component is inside it's constrainsts it is possible to compare expressions that differ in the components like `P1D3H` and `P10D`, since comparison doesn't require normalization and both values form a semantically valid interval.
 
@@ -795,7 +795,7 @@ Notes:
 
 . this case has different components in the lower and upper values, this is possible because the values don't exceed their normal boundaries, e.g. `days` 31. Without this condition a normalization of the values would be needed, and in some cases the normalization is not possible without some extra constraints, for instance considering `P1M` is equivalent to `P30D`. 
 
-==== TC CONT-DV_INTERVAL_DV_DURATION-validate_constraint
+==== Test Case CONT-DV_INTERVAL_DV_DURATION-validate_constraint
 
 NOTE: in the openEHR specifications only the seconds can have a fraction, but in the ISO8601 standard, the component at the lowest precision can have a fraction, for instance `P0.5Y` is a valid ISO 8601 duration.
 
@@ -881,7 +881,7 @@ NOTE: in the openEHR specifications only the seconds can have a fraction, but in
 |===
 
 
-==== TC CONT-DV_INTERVAL_DV_DURATION-validate_range
+==== Test Case CONT-DV_INTERVAL_DV_DURATION-validate_range
 
 [options="header"]
 |===
@@ -904,7 +904,7 @@ NOTE: in the openEHR specifications only the seconds can have a fraction, but in
 
 NOTE: some modeling tools don't support representing DV_INTERVAL<DV_ORDINAL>.
 
-==== TC CONT-DV_INTERVAL_DV_ORDINAL-validate_open
+==== Test Case CONT-DV_INTERVAL_DV_ORDINAL-validate_open
 
 This case is when the ADL has `DV_ORDINAL matches {*}`
 
@@ -921,7 +921,7 @@ This case is when the ADL has `DV_ORDINAL matches {*}`
 |===
 
 
-==== TC CONT-DV_INTERVAL_DV_ORDINAL-validate_constraint
+==== Test Case CONT-DV_INTERVAL_DV_ORDINAL-validate_constraint
 
 [options="header"]
 |===
@@ -946,7 +946,7 @@ NOTE: if this specification is implemented on a system that supports a RM < 1.1.
 
 NOTE: some modeling tools don't support representing DV_INTERVAL<DV_SCALE>
 
-==== TC CONT-DV_INTERVAL_DV_SCALE-validate_open
+==== Test Case CONT-DV_INTERVAL_DV_SCALE-validate_open
 
 This case is when the ADL has `DV_ORDINAL matches {*}`
 
@@ -963,7 +963,7 @@ This case is when the ADL has `DV_ORDINAL matches {*}`
 |===
 
 
-==== TC CONT-DV_INTERVAL_DV_SCALE-validate_constraint
+==== Test Case CONT-DV_INTERVAL_DV_SCALE-validate_constraint
 
 [options="header"]
 |===
@@ -985,7 +985,7 @@ This case is when the ADL has `DV_ORDINAL matches {*}`
 
 NOTE: some modeling tools don't support representing DV_INTERVAL<DV_PROPORTION>.
 
-==== TC CONT-DV_INTERVAL_DV_PROPORTION-validate_open
+==== Test Case CONT-DV_INTERVAL_DV_PROPORTION-validate_open
 
 The test data sets for lower and upper are divided into multiple tables because there are many attributes in the DV_PROPORTION.
 
@@ -1067,7 +1067,7 @@ DV_INTERVAL.upper
 
 
 
-==== TC CONT-DV_INTERVAL_DV_PROPORTION-validate_ratio
+==== Test Case CONT-DV_INTERVAL_DV_PROPORTION-validate_ratio
 
 The constraint is on the `type` of each limit of the interval as a C_INTEGER.list = [0], constraining the type as a ratio.
 
@@ -1120,7 +1120,7 @@ DV_INTERVAL.upper
 |===
 
 
-==== TC CONT-DV_INTERVAL_DV_PROPORTION-validate_unitary
+==== Test Case CONT-DV_INTERVAL_DV_PROPORTION-validate_unitary
 
 The constraint is on the `type` of each limit of the interval as a C_INTEGER.list = [1], constraining the type as unitary.
 
@@ -1177,7 +1177,7 @@ DV_INTERVAL.upper
 |===
 
 
-==== TC CONT-DV_INTERVAL_DV_PROPORTION-validate_percentage
+==== Test Case CONT-DV_INTERVAL_DV_PROPORTION-validate_percentage
 
 The constraint is on the `type` of each limit of the interval as a C_INTEGER.list = [2], constraining the type as percentage.
 
@@ -1231,7 +1231,7 @@ DV_INTERVAL.upper
 
 
 
-==== TC CONT-DV_INTERVAL_DV_PROPORTION-validate_fraction
+==== Test Case CONT-DV_INTERVAL_DV_PROPORTION-validate_fraction
 
 The constraint is on the `type` of each limit of the interval as a C_INTEGER.list = [3], constraining the type as fraction.
 
@@ -1285,7 +1285,7 @@ DV_INTERVAL.upper
 
 
 
-==== TC CONT-DV_INTERVAL_DV_PROPORTION-validate_integer_fraction
+==== Test Case CONT-DV_INTERVAL_DV_PROPORTION-validate_integer_fraction
 
 The constraint is on the `type` of each limit of the interval as a C_INTEGER.list = [3], constraining the type as fraction.
 
@@ -1339,7 +1339,7 @@ DV_INTERVAL.upper
 
 
 
-==== TC CONT-DV_INTERVAL_DV_PROPORTION-validate_ratio_range
+==== Test Case CONT-DV_INTERVAL_DV_PROPORTION-validate_ratio_range
 
 The constraint is on the `type` of each limit of the interval as a C_INTEGER.list = [0], constraining the type as a ratio. For the limits, the constraints are C_REAL using the range attribute.
 

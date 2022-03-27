@@ -11,7 +11,7 @@ As described in the {openehr_cnf_guide}#_product_scope[openEHR Conformance Guide
 |How assessed
 |Methodology
 
-|*Functional conformance*
+|*API conformance*
 |Conformance of the _implemented APIs_ to the published APIs, in a concrete API technology
 |Regression of test client running API call-in test cases against reference results
 
@@ -19,29 +19,19 @@ As described in the {openehr_cnf_guide}#_product_scope[openEHR Conformance Guide
 |Conformance of platform's _validation of data against semantic models_ (archetypes etc)
 |Regression of test client committing variable data sets against reference validity
 
-|*Non-functional*
-|Conformance of specific platform _non-functional_ properties such as privacy, maintainability etc to specification
-|Various
-
 |===
 
 The main part of this specification is divided into sections according to the three test aspects shown above. Specific methods related to each aspect are described in the sub-sections below.
 
-This specification does not cover claims to non-functional characteristics such as capacity, performance, availability, or consistency of systems. It is however recommended that supply agreements for operational solutions include criteria for these factors, as relevant to the situation. 
-
-It may be possible to develop a band-based rating sytem for capacity. Performance, availability, consistency and related characteristics may be assessed using a framework that takes account of the CAP and / or PACELC theorems.
-
 Specific applications are also outside the scope of this specification, however, it is assumed that in order for solutions to be testable, a minimal generic viewing tool is provided to enable viewing of data and other testable events.
 
-== Functional Conformance Test Design
+== API Conformance Test Design
 
-Functional conformance is assessed by running tests on the SUT API, and determining deviations from known reference responses. As described in  link:{openehr_cnf_guide}#_from_specifications_to_runnable_tests[Section 4.2 of the openEHR Conformance Guide^], the test cases defined here are based on the {openehr_sm_openehr_platform}[openEHR Platform Abstract Service Model^] API calls, which are termed 'conformance points'. A conformance point is understood as a __testable capability of a system that relates to a business function__. For example, conformance points for an EHR service include `create_EHR`, `update_EHR`, and so on. For any given conformance point, there may be multiple test cases, each of which is individually identified. For each test case, there may be multiple data sets. A 'test' is therefore the execution of a particular test case with a particular data set.
+API conformance is assessed by running tests on the SUT API, and determining deviations from expected results. As described in link:{openehr_cnf_guide}#_from_specifications_to_runnable_tests[Section 4.2 of the openEHR Conformance Guide^], the test cases defined here are based on the {openehr_sm_openehr_platform}[openEHR Platform Abstract Service Model^] API operations. Each such operation is a __testable capability of a system that relates to a business function__. For example, SM operations for an EHR service include `create_EHR`, `update_EHR`, and so on. For any such operation, there may be multiple test cases, each of which is individually identified. For each test case, there may be multiple data sets. A 'test' is therefore the execution of a particular test case with a particular data set.
 
 Each test case is documented in the form shown in the following sub-section.
 
-Functional conformance test cases are described in <<_functional_conformance>>.
-
-=== TC <Identifier, e.g. TC EHR_COMPOSITION.has_composition_bad_composition>
+=== Test Case <SERVICE_COMPONENT>.<operation>-<test-specific id>
 
 [cols="1h,4a"]
 |===
@@ -53,13 +43,9 @@ Functional conformance test cases are described in <<_functional_conformance>>.
 
 In most automated test frameworks, pre-conditions, setup, actions, post-conditions, and cleanup steps can be directly implemented.
 
-NOTE: The supported RM version(s) by the server under test should be stated beforehand, because this will determine some variations on the data sets used for testing. The minimum required version is 1.0.2.
+NOTE: The supported RM version(s) by the SUT should be stated in the Conformance Statement, because this will determine some variations on the data sets used for testing. The minimum required version is RM 1.0.2.
 
 == Data Validation Conformance Test Design
 
 Data validation conformance is defined in terms of test cases with multiple data sets. These test cases are documented in the same basic way as described above, along with multiple data sets, typically shown in tabulated form. They are described in <<_data_validation_conformance>>.
-
-== Non-functional Conformance Test Design
-
-Non-functional conformance test cases again follow the basic plan of tests cases of the previous categories, but with an orientation to measurable or observable results. They are documented in <<_non_functional_conformance>>.
 

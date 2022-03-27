@@ -1,4 +1,4 @@
-= Functional Conformance: Querying Component
+= Test Suite: QUERY_SERVICE
 
 // Some useful links: 
 :i_query_service_link: {openehr_sm_openehr_platform}#_i_query_service_interface
@@ -11,7 +11,7 @@ Items in this validation suite conceptually use the following abstract interface
 
 These are concretely realised in implementation technology specfic APIs, such as the {openehr_query_rest_api}[QUERY REST API^].
 
-The data that flow through these interfaces are defined by the following information model specifications:
+This test suite uses artefacts defined by the following information model specifications:
 
 * Service Interfaces:
 ** {openehr_sm_openehr_platform}#_query_package[Abstract Query Service Model^]
@@ -23,7 +23,7 @@ The data that flow through these interfaces are defined by the following informa
 
 This test suite depends on other test suites:
 
-* <<_func_conf_def_component, Functional Conformance: Definitions Component>>, providing OPTs.
+* <<_func_conf_def_adl_component, Functional Conformance: Definitions Component>>, providing OPTs.
 
 == Test Environment
 
@@ -41,11 +41,11 @@ This test suite depends on other test suites:
 
 == Test Cases
 
-=== Conformance point: I_QUERY_SERVICE.execute_stored_query()
+=== Service Model operation: I_QUERY_SERVICE.execute_stored_query()
 
-Platform service ref: {i_demographic_service_link}[`I_QUERY_SERVICE._execute_stored_query()_`^]
+Service Model reference: {i_demographic_service_link}[`I_QUERY_SERVICE._execute_stored_query()_`^]
 
-=== TC I_QUERY_SERVICE.smoke_test
+==== Test Case I_QUERY_SERVICE.smoke_test
 
 // EhrBase ref: 
 
@@ -58,7 +58,7 @@ Platform service ref: {i_demographic_service_link}[`I_QUERY_SERVICE._execute_sto
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_QUERY_SERVICE/smoke_test/I_QUERY_SERVICE.smoke_test.robot[REST API / Robot^]
 |===
 
-==== TC I_QUERY_SERVICE.execute_stored_query-empty_db
+==== Test Case I_QUERY_SERVICE.execute_stored_query-empty_db
 
 // EhrBase ref: 
 
@@ -71,16 +71,16 @@ Platform service ref: {i_demographic_service_link}[`I_QUERY_SERVICE._execute_sto
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_QUERY_SERVICE/execute_stored_query/I_QUERY_SERVICE.execute_stored_query-empty_db.robot[REST API / Robot^]
 |===
 
-==== TC bbbb
+==== Test Case bbbb
 
 TBD
 
 
-=== Conformance point: I_QUERY_SERVICE.execute_ad_hoc_query()
+=== Service Model operation: I_QUERY_SERVICE.execute_ad_hoc_query()
 
-Platform service ref: {i_demographic_service_link}[`I_QUERY_SERVICE._execute_ad_hoc_query()_`^]
+Service Model reference: {i_demographic_service_link}[`I_QUERY_SERVICE._execute_ad_hoc_query()_`^]
 
-==== TC I_QUERY_SERVICE.execute_ad_hoc_query-empty_db
+==== Test Case I_QUERY_SERVICE.execute_ad_hoc_query-empty_db
 
 // EhrBase ref: A.1.z
 
@@ -93,7 +93,7 @@ Platform service ref: {i_demographic_service_link}[`I_QUERY_SERVICE._execute_ad_
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_QUERY_SERVICE/execute_ad_hoc_query/I_QUERY_SERVICE.execute_ad_hoc_query-empty_db.robot[REST API / Robot^]
 |===
 
-==== TC I_QUERY_SERVICE.execute_ad_hoc_query-loaded_db
+==== Test Case I_QUERY_SERVICE.execute_ad_hoc_query-loaded_db
 
 // EhrBase ref: A.1.a
 

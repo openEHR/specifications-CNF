@@ -1,4 +1,4 @@
-= Functional Conformance: DEFINITION / ADL2 and ADL14 Components
+= Test Suite: DEFINITION Service / I_DEFINITION_ADL2 and I_DEFINITION_ADL14 Interfaces
 
 // some useful variables
 :i_definition_adl14_link: {openehr_sm_openehr_platform}#_i_definition_adl14_interface
@@ -6,14 +6,14 @@
 
 == Normative Reference
     
-Items under this validation suite conceptually use these abstract interfaces defined in the {openehr_sm_openehr_platform}#_definition_package[Abstract Definition Service Model^]:
+Items under this validation suite conceptually use these abstract interfaces defined in the {openehr_sm_openehr_platform}#_definition_package[openEHR Platform Service Model^]:
 
-* {openehr_sm_openehr_platform#_i_definition_adl2_interface}[I_DEFINITION_ADL2^];
-* {openehr_sm_openehr_platform#_i_definition_adl14_interface}[I_DEFINITION_ADL14^].
+* {openehr_sm_openehr_platform}#_i_definition_adl2_interface[I_DEFINITION_ADL2^];
+* {openehr_sm_openehr_platform}#_i_definition_adl14_interface[I_DEFINITION_ADL14^].
 
 These are concretely realised in implementation technology specfic APIs, such as the {openehr_definitions_rest_api}[Definitions REST API^].
 
-The artefacts that flow in serialised form through these interfaces are defined by the following specifications:
+This test suite uses artefacts defined by the following specifications:
 
 * {openehr_am_adl14}[ADL 1.4^]
 * {openehr_am_aom14}[AOM 1.4^]
@@ -41,9 +41,9 @@ data, can the OPT be deleted physically? Logical delete might work as the deacti
 [[_func_conf_def_adl_component]]
 == OPT 1.4/2 Test cases
 
-=== Conformance Point: I_DEFINITION_ADL14.validate_opt()
+=== Service Model operation: I_DEFINITION_ADL14.validate_opt()
 
-Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._validate_opt()_`^]
+Service Model reference: {i_definition_adl14_link}[`I_DEFINITION_ADL14._validate_opt()_`^]
 
 ==== Test Data Sets
 
@@ -54,7 +54,7 @@ Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._validate_op
 * invalid OPT (removed mandatory elements);
 * invalid OPT (added multiple elements that had an upper bound of 1)
 
-==== TC I_DEFINITION_ADL14.validate_opt-valid_opt
+==== Test Case I_DEFINITION_ADL14.validate_opt-valid_opt
 
 // EhrBase ref: C.1.a.
 
@@ -70,7 +70,7 @@ Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._validate_op
 
 NOTE: some servers might not have a way to just validate the OPT, and validation might be part of the OPT upload functionality. In that case, the validation should upload and validate the OPT, and in the cases of valid OPTs, the OPT should be deleted afterwards, so the system state doesn’t change. For invalid OPTs, the upload should fail.
 
-==== TC I_DEFINITION_ADL14.validate_opt-invalid_opt
+==== Test Case I_DEFINITION_ADL14.validate_opt-invalid_opt
 
 // EhrBase ref: C.1.b.
 
@@ -111,9 +111,9 @@ The run should be:
 * verify result
 * verify post-conditions
 
-=== Conformance Point: I_DEFINITION_ADL14.upload_opt()
+=== Service Model operation: I_DEFINITION_ADL14.upload_opt()
 
-Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._upload_opt()_`^]
+Service Model reference: {i_definition_adl14_link}[`I_DEFINITION_ADL14._upload_opt()_`^]
 
 ==== Data set
 
@@ -125,7 +125,7 @@ Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._upload_opt(
 * invalid OPT (removed mandatory elements)
 * invalid OPT (added multiple elements that had an upper bound of 1)
 
-==== TC I_DEFINITION_ADL14.upload_opt-valid_opt
+==== Test Case I_DEFINITION_ADL14.upload_opt-valid_opt
 
 // EhrBase ref: C.2.a.
 
@@ -142,7 +142,7 @@ Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._upload_opt(
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/upload_opt/I_DEFINITION_ADL14.upload_opt-valid_opt.robot[REST API / Robot^]
 |===
 
-==== TC I_DEFINITION_ADL14.upload_opt-invalid_opt
+==== Test Case I_DEFINITION_ADL14.upload_opt-invalid_opt
 
 // EhrBase ref: C.2.b.
 
@@ -156,7 +156,7 @@ Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._upload_opt(
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/upload_opt/I_DEFINITION_ADL14.upload_opt-invalid_opt.robot[REST API / Robot^]
 |===
 
-==== TC I_DEFINITION_ADL14.upload_opt-valid_opt_twice_conflict
+==== Test Case I_DEFINITION_ADL14.upload_opt-valid_opt_twice_conflict
 
 NOTE: since there is no formal versioning mechanism for templates 1.4 (OPT 2 might use the archetype id format for the template id that also includes a version number, but this is not widely used), the OPT upload service needs to handle a version parameter, for instance this is the solution on the {openehr_definitions_rest_api}#definitions-adl-1.4-template[openEHR REST API^]. If the version information is not available when uploading OPTs, then uploading an OPT with the same `template_id` twice will make the second upload fail (conflict).
 
@@ -182,7 +182,7 @@ NOTE: the server should be able to retrieve the template by `template_id`, or re
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/upload_opt/I_DEFINITION_ADL14.upload_opt-valid_opt_twice_conflict.robot[REST API / Robot^]
 |===
 
-==== TC I_DEFINITION_ADL14.upload_opt-valid_opt_twice_no_conflict
+==== Test Case I_DEFINITION_ADL14.upload_opt-valid_opt_twice_no_conflict
 
 NOTE: considering the note on the previous flow, for this flow the version parameter is provided, and both service invocations contain a different version value.
 
@@ -204,9 +204,9 @@ NOTE: the server should be able to retrieve the templates by `template_id` and v
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/upload_opt/I_DEFINITION_ADL14.upload_opt-valid_opt_twice_no_conflict.robot[REST API / Robot^]
 |===
 
-=== Conformance Point: I_DEFINITION_ADL14.get_opt()
+=== Service Model operation: I_DEFINITION_ADL14.get_opt()
 
-Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._get_opt()_`^]
+Service Model reference: {i_definition_adl14_link}[`I_DEFINITION_ADL14._get_opt()_`^]
 
 NOTE: the flows of this test case will include flows from the Upload OPT test case, in order to have something to retrieve.
 
@@ -216,7 +216,7 @@ NOTE: the flows of this test case will include flows from the Upload OPT test ca
 * minimal valid OPT, two versions 
 * maximal valid OPT (all types in the RM)
 
-==== TC I_DEFINITION_ADL14.get_opt-get_single
+==== Test Case I_DEFINITION_ADL14.get_opt-get_single
 
 // EhrBase ref: C.3.a.
 
@@ -232,7 +232,7 @@ NOTE: the flows of this test case will include flows from the Upload OPT test ca
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/get_opt/I_DEFINITION_ADL14.get_opt-get_single.robot[REST API / Robot^]
 |===
 
-==== TC I_DEFINITION_ADL14.get_opt-retrieve_fail
+==== Test Case I_DEFINITION_ADL14.get_opt-retrieve_fail
 
 // EhrBase ref: C.3.b.
 
@@ -246,7 +246,7 @@ NOTE: the flows of this test case will include flows from the Upload OPT test ca
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/get_opt/I_DEFINITION_ADL14.get_opt-retrieve_fail.robot[REST API / Robot^]
 |===
 
-==== TC I_DEFINITION_ADL14.get_opt-retrieve_latest_version
+==== Test Case I_DEFINITION_ADL14.get_opt-retrieve_latest_version
 
 // EhrBase ref: C.3.c.
 
@@ -262,7 +262,7 @@ NOTE: the flows of this test case will include flows from the Upload OPT test ca
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/get_opt/I_DEFINITION_ADL14.get_opt-retrieve_latest_version.robot[REST API / Robot^]
 |===
 
-==== TC I_DEFINITION_ADL14.get_opt-retrieve_specific_version
+==== Test Case I_DEFINITION_ADL14.get_opt-retrieve_specific_version
 
 // EhrBase ref: C.3.d.
 
@@ -278,9 +278,9 @@ NOTE: the flows of this test case will include flows from the Upload OPT test ca
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/get_opt/I_DEFINITION_ADL14.get_opt-retrieve_specific_version.robot[REST API / Robot^]
 |===
 
-=== Conformance Point: I_DEFINITION_ADL14.get_opts()
+=== Service Model operation: I_DEFINITION_ADL14.get_opts()
 
-Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._get_opts()_`^]
+Service Model reference: {i_definition_adl14_link}[`I_DEFINITION_ADL14._get_opts()_`^]
 
 ==== Data sets
 
@@ -288,7 +288,7 @@ Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._get_opts()_
 * minimal valid OPT, two versions;
 * maximal valid OPT (all types in the RM).
 
-====  TC I_DEFINITION_ADL14.get_opts-retrieve_all
+====  Test Case I_DEFINITION_ADL14.get_opts-retrieve_all
 
 // EhrBase ref: C.4.a.
 
@@ -302,7 +302,7 @@ Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._get_opts()_
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/get_opts/I_DEFINITION_ADL14.get_opts-retrieve_all.robot[REST API / Robot^]
 |===
 
-==== TC I_DEFINITION_ADL14.get_opts-retrieve_all_no_opts
+==== Test Case I_DEFINITION_ADL14.get_opts-retrieve_all_no_opts
 
 // EhrBase ref: C.4.b.
 
@@ -316,9 +316,9 @@ Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._get_opts()_
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/get_opts/I_DEFINITION_ADL14.get_opts-retrieve_all_no_opts.robot[REST API / Robot^]
 |===
 
-=== Conformance Point: I_DEFINITION_ADL14.delete_opt()
+=== Service Model operation: I_DEFINITION_ADL14.delete_opt()
 
-Platform service ref: {i_definition_adl14_link}[`I_DEFINITION_ADL14._delete_opt()_`^]
+Service Model reference: {i_definition_adl14_link}[`I_DEFINITION_ADL14._delete_opt()_`^]
 
 NOTE: the OPT delete can only happen if there is no associated data with the OPT, or if there exists a newer revision (minor version of the same OPT) in the server under test. For all these tests, there is not data committed to the server, so the delete can happen.
 
@@ -330,7 +330,7 @@ Implementation recommendations: the delete could be logical, so the OPT exists i
 * minimal valid OPT, two versions 
 * maximal valid OPT (all types in the RM)
 
-==== TC I_DEFINITION_ADL14.delete_opt-delete_existing
+==== Test Case I_DEFINITION_ADL14.delete_opt-delete_existing
 
 // EhrBase ref: C.5.a.
 
@@ -347,7 +347,7 @@ Implementation recommendations: the delete could be logical, so the OPT exists i
 |===
 
 
-==== TC I_DEFINITION_ADL14.delete_opt-delete_latest_version
+==== Test Case I_DEFINITION_ADL14.delete_opt-delete_latest_version
 
 // EhrBase ref: C.5.b.
 
@@ -367,7 +367,7 @@ Implementation recommendations: the delete could be logical, so the OPT exists i
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/delete_opt/I_DEFINITION_ADL14.delete_opt-delete_latest_version.robot[REST API / Robot^]
 |===
 
-==== TC I_DEFINITION_ADL14.delete_opt-delete_specific_version
+==== Test Case I_DEFINITION_ADL14.delete_opt-delete_specific_version
 
 // EhrBase ref: C.5.c.
 
@@ -386,7 +386,7 @@ Implementation recommendations: the delete could be logical, so the OPT exists i
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/delete_opt/I_DEFINITION_ADL14.delete_opt-delete_specific_version.robot[REST API / Robot^]
 |===
 
-==== TC I_DEFINITION_ADL14.delete_opt-delete_non_existing
+==== Test Case I_DEFINITION_ADL14.delete_opt-delete_non_existing
 
 // EhrBase ref: C.5.d.
 

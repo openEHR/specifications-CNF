@@ -4,7 +4,7 @@
 
 {openehr_rm_data_types}#_uri_package[Specification / UML reference^].
 
-==== TC CONT-DV_URI-validate_open
+==== Test Case CONT-DV_URI-validate_open
 
 On this test case, only invalid URIs should be rejected. Any RFC3986-compliant URI should be accepted.
 
@@ -26,7 +26,7 @@ On this test case, only invalid URIs should be rejected. Any RFC3986-compliant U
 |===
 
 
-==== TC CONT-DV_URI-validate_pattern
+==== Test Case CONT-DV_URI-validate_pattern
 
 NOTE: to use the pattern constraint, the pattern should comply with the URI format from RFC3986, so the pattern defines a subset of valid URIs. If the pattern doesn't comply with the URI format, modeling tools should be responsible to notify the modeler and shouldn't allow to export archetypes or templates in that case. Testing this is not part of the data validation compliance scope, because it is validation of AOM objects not RM.
 
@@ -39,7 +39,7 @@ NOTE: to use the pattern constraint, the pattern should comply with the URI form
 |===
 
 
-==== TC CONT-DV_URI-validate_list
+==== Test Case CONT-DV_URI-validate_list
 
 NOTE: the values in the C_STRING.list should be valid URIs compliant with RFC3986. If this doesn't happen, the archetype/template is invalid. Testing this case is not in the scope of the data validation.
 
@@ -54,7 +54,7 @@ NOTE: the values in the C_STRING.list should be valid URIs compliant with RFC398
 
 === DV_EHR_URI
 
-==== TC CONT-DV_EHR_URI-validate_open
+==== Test Case CONT-DV_EHR_URI-validate_open
 
 [options="header"]
 |===
@@ -80,7 +80,7 @@ NOTE: the values in the C_STRING.list should be valid URIs compliant with RFC398
 |===
 
 
-==== TC CONT-DV_EHR_URI-validate_pattern
+==== Test Case CONT-DV_EHR_URI-validate_pattern
 
 NOTE: to use the pattern constraint, the pattern should comply with the URI format from RFC3986, so the pattern defines a subset of valid URIs. If the pattern doesn't comply with the URI format, modeling tools should be responsible to notify the modeler and shouldn't allow to export archetypes or templates in that case. Testing this is not part of the data validation compliance scope, because it is validation of AOM objects not RM.
 
@@ -94,7 +94,7 @@ NOTE: to use the pattern constraint, the pattern should comply with the URI form
 |===
 
 
-==== TC CONT-DV_EHR_URI-validate_list
+==== Test Case CONT-DV_EHR_URI-validate_list
 
 NOTE: the values in the C_STRING.list should be valid URIs compliant with RFC3986. If this doesn't happen, the archetype/template is invalid. Testing this case is not in the scope of the data validation.
 

@@ -24,7 +24,7 @@ The constraints combinations described below could be tested in two ways:
 
 NOTE: we suggest to test with both strategies.
 
-=== TC CONT-OBS-state_ex_opt-protocol_ex_opt
+=== Test Case CONT-OBS-state_ex_opt-protocol_ex_opt
 
 Description: OBSERVATION state existence = 0..1, protocol existence = 0..1
 
@@ -42,7 +42,7 @@ Description: OBSERVATION state existence = 0..1, protocol existence = 0..1
 |present    |present    |present    |accepted |
 |===
 
-=== TC CONT-OBS-state_ex_opt-protocol_ex_mand
+=== Test Case CONT-OBS-state_ex_opt-protocol_ex_mand
 
 Description: OBSERVATION state existence = 0..1, protocol existence = 1..1
 
@@ -60,7 +60,7 @@ Description: OBSERVATION state existence = 0..1, protocol existence = 1..1
 |present    |present    |present    |accepted |
 |===
 
-=== TC CONT-OBS-state_ex_mand-protocol_ex_opt
+=== Test Case CONT-OBS-state_ex_mand-protocol_ex_opt
 
 Description: OBSERVATION state existence = 1..1, protocol existence = 0..1
 
@@ -78,7 +78,7 @@ Description: OBSERVATION state existence = 1..1, protocol existence = 0..1
 |present |present |present |accepted |
 |===
 
-=== TC CONT-OBS-state_ex_mand-protocol_ex_mand
+=== Test Case CONT-OBS-state_ex_mand-protocol_ex_mand
 
 Description: OBSERVATION state existence = 1..1, protocol existence = 1..1
 
@@ -116,7 +116,7 @@ The constraints combinations described below could be tested in two ways:
 
 NOTE: we suggest to test with both strategies.
 
-=== TC CONT-HIST-events_card_any-summary_ex_opt
+=== Test Case CONT-HIST-events_card_any-summary_ex_opt
 
 Description: HISTORY events cardinality 0..*, summary existence 0..1
 
@@ -132,7 +132,7 @@ Description: HISTORY events cardinality 0..*, summary existence 0..1
 |three events |present |accepted |
 |===
 
-=== TC CONT-HIST-events_card_1plus-summary_ex_opt
+=== Test Case CONT-HIST-events_card_1plus-summary_ex_opt
 
 Description: HISTORY events cardinality 1..*, summary existence 0..1
 
@@ -148,7 +148,7 @@ Description: HISTORY events cardinality 1..*, summary existence 0..1
 |three events |present |accepted |
 |===
 
-=== TC CONT-HIST-events_card_3plus-summary_ex_opt
+=== Test Case CONT-HIST-events_card_3plus-summary_ex_opt
 
 Description: HISTORY events cardinality 3..*, summary existence 0..1
 
@@ -164,7 +164,7 @@ Description: HISTORY events cardinality 3..*, summary existence 0..1
 |three events |present |accepted |
 |===
 
-=== TC CONT-HIST-events_card_opt-summary_ex_opt
+=== Test Case CONT-HIST-events_card_opt-summary_ex_opt
 
 Description: HISTORY events cardinality 0..1, summary existence 0..1
 
@@ -180,7 +180,7 @@ Description: HISTORY events cardinality 0..1, summary existence 0..1
 |three events |present |rejected |HISTORY.events cardinality.upper
 |===
 
-=== TC CONT-HIST-events_card_mand-summary_ex_opt
+=== Test Case CONT-HIST-events_card_mand-summary_ex_opt
 
 Description: HISTORY events cardinality 1..1, summary existence 0..1
 
@@ -196,7 +196,7 @@ Description: HISTORY events cardinality 1..1, summary existence 0..1
 |three events |present |rejected |HISTORY.events cardinality.upper
 |===
 
-=== TC CONT-HIST-events_card_3to5-summary_ex_opt
+=== Test Case CONT-HIST-events_card_3to5-summary_ex_opt
 
 Description: HISTORY events cardinality 3..5, summary existence 0..1
 
@@ -212,7 +212,7 @@ Description: HISTORY events cardinality 3..5, summary existence 0..1
 |three events   |present    |accepted |
 |===
 
-=== TC CONT-HIST-events_card_any-summary_ex_mand
+=== Test Case CONT-HIST-events_card_any-summary_ex_mand
 
 Description: HISTORY events cardinality 0..*, summary existence 1..1
 
@@ -228,7 +228,7 @@ Description: HISTORY events cardinality 0..*, summary existence 1..1
 |three events   |present    |accepted |
 |===
 
-=== TC CONT-HIST-events_card_1plus-summary_ex_mand
+=== Test Case CONT-HIST-events_card_1plus-summary_ex_mand
 
 Description: HISTORY events cardinality 1..*, summary existence 1..1
 
@@ -244,7 +244,7 @@ Description: HISTORY events cardinality 1..*, summary existence 1..1
 |three events   |present    |accepted |
 |===
 
-=== TC CONT-HIST-events_card_3plus-summary_ex_mand
+=== Test Case CONT-HIST-events_card_3plus-summary_ex_mand
 
 Description: HISTORY events cardinality 3..*, summary existence 1..1
 
@@ -260,7 +260,7 @@ Description: HISTORY events cardinality 3..*, summary existence 1..1
 |three events   |present    |accepted |
 |===
 
-=== TC CONT-HIST-events_card_opt-summary_ex_mand
+=== Test Case CONT-HIST-events_card_opt-summary_ex_mand
 
 Description: HISTORY events cardinality 0..1, summary existence 1..1
 
@@ -276,7 +276,7 @@ Description: HISTORY events cardinality 0..1, summary existence 1..1
 |three events   |present    |rejected |HISTORY.events cardinality.upper
 |===
 
-=== TC CONT-HIST-events_card_mand-summary_ex_mand
+=== Test Case CONT-HIST-events_card_mand-summary_ex_mand
 
 Description: HISTORY events cardinality 1..1, summary existence 1..1
 
@@ -292,7 +292,7 @@ Description: HISTORY events cardinality 1..1, summary existence 1..1
 |three events   |present    |rejected |HISTORY.events cardinality.upper
 |===
 
-=== TC CONT-HIST-events_card_3to5-summary_ex_mand
+=== Test Case CONT-HIST-events_card_3to5-summary_ex_mand
 
 Description: HISTORY events cardinality 3..5, summary existence 1..1
 
@@ -331,7 +331,7 @@ The constraints combinations described below could be tested in two ways:
 
 NOTE: we suggest to test with both strategies.
 
-=== TC CONT-EVENT-state_ex_opt
+=== Test Case CONT-EVENT-state_ex_opt
 
 Description: EVENT state existence 0..1
 
@@ -345,7 +345,7 @@ Description: EVENT state existence 0..1
 |present    |present    |accepted |
 |===
 
-=== TC CONT-EVENT-state_ex_mand
+=== Test Case CONT-EVENT-state_ex_mand
 
 Description: EVENT state existence 1..1
 
@@ -359,7 +359,7 @@ Description: EVENT state existence 1..1
 |present    |present    |accepted |
 |===
 
-=== TC CONT-EVENT-type_any
+=== Test Case CONT-EVENT-type_any
 
 Description: EVENT is any EVENT subtype
 
@@ -373,7 +373,7 @@ In the AOM/TOM the constraint for the EVENT type is using the abstract class EVE
 |INTERVAL_EVENT |accepted |
 |===
 
-=== TC CONT-EVENT-type_point_event
+=== Test Case CONT-EVENT-type_point_event
 
 Description: EVENT is POINT_EVENT
 
@@ -385,7 +385,7 @@ Description: EVENT is POINT_EVENT
 |INTERVAL_EVENT |rejected |Class not allowed
 |===
 
-=== TC CONT-EVENT-type_interval_event
+=== Test Case CONT-EVENT-type_interval_event
 
 Description: EVENT is INTERVAL_EVENT
 
@@ -408,7 +408,7 @@ ITEM_STRUCTURE type combinations:
 
 NOTE: testing with any of the ITEM_STRUCTURE subclasses shouldn’t affect the result of testing combinations with the rest of the constraints defined on container classes. It will affect only the type checking test if the wrong type of ITEM_STRUCTURE is provided. So instead of combining the expected results with the rest of the constraints, we will define separate test cases.
 
-=== TC CONT-ITEM_STR-type_any
+=== Test Case CONT-ITEM_STR-type_any
 
 Description: ITEM_STRUCTURE is any ITEM_STRUCTURE subtype
 
@@ -424,7 +424,7 @@ In the AOM/TOM the constraint for the ITEM_STRUCTURE type is using the abstract 
 |ITEM_SINGLE    |accepted |
 |===
 
-=== TC CONT-ITEM_STR-type_item_tree
+=== Test Case CONT-ITEM_STR-type_item_tree
 
 Description: ITEM_STRUCTURE is ITEM_TREE
 
@@ -438,7 +438,7 @@ Description: ITEM_STRUCTURE is ITEM_TREE
 |ITEM_SINGLE    |rejected |Class not allowed
 |===
 
-=== TC CONT-ITEM_STR-type_item_list
+=== Test Case CONT-ITEM_STR-type_item_list
 
 Description: ITEM_STRUCTURE is ITEM_LIST
 
@@ -452,7 +452,7 @@ Description: ITEM_STRUCTURE is ITEM_LIST
 |ITEM_SINGLE    |rejected |Class not allowed
 |===
 
-=== TC CONT-ITEM_STR-type_item_table
+=== Test Case CONT-ITEM_STR-type_item_table
 
 Description: ITEM_STRUCTURE is ITEM_TABLE
 
@@ -466,7 +466,7 @@ Description: ITEM_STRUCTURE is ITEM_TABLE
 |ITEM_SINGLE    |rejected |Class not allowed
 |===
 
-=== TC CONT-ITEM_STR-type_item_single
+=== Test Case CONT-ITEM_STR-type_item_single
 
 Description: ITEM_STRUCTURE is ITEM_SINGLE
 

@@ -75,8 +75,6 @@ include::master17.5-content_tc_data_types-time_specification.adoc[leveloffset=+1
 include::master17.6-content_tc_data_types-encapsulated.adoc[leveloffset=+1]
 include::master17.7-content_tc_data_types-uri.adoc[leveloffset=+1]
 
-include::master20-nonfunc_tc_privacy.adoc[leveloffset=+1]
-
 //
 // --------------------------------------------- REFERENCES -----------------------------------------------
 //

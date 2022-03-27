@@ -1,4 +1,4 @@
-= Functional Conformance: EHR / DIRECTORY Component
+= Test Suite: EHR_SERVICE / I_DIRECTORY Interface
 
 == Normative Reference
 
@@ -8,7 +8,7 @@ Items in this validation suite conceptually use the following abstract interface
 
 These are concretely realised in implementation technology specfic APIs, such as the {openehr_ehr_rest_api}[EHR REST API^].
 
-The data that flow through these interfaces are defined by the following information model specifications:
+This test suite uses artefacts defined by the following information model specifications:
 
 * {openehr_rm_ehr}[EHR IM^]
 * {openehr_rm_common}[Common IM^]
@@ -21,7 +21,7 @@ The data that flow through these interfaces are defined by the following informa
 
 This test suite depends on other test suites:
 
-* <<_func_conf_def_component, Functional Conformance: Definitions Component>>, providing OPTs;
+* <<_func_conf_def_adl_component, Functional Conformance: Definitions Component>>, providing OPTs;
 * <<_func_conf_ehr_component, Functional Conformance: EHR Component>>, providing EHRs.
 
 == Test Environment
@@ -53,11 +53,11 @@ image::{openehr_rm_ehr_diagrams}/high_level_ehr_structure.svg[id=high_level_ehr_
 
 == Test Cases
 
-=== Conformance point: I_EHR_DIRECTORY.has_directory()
+=== Service Model operation: I_EHR_DIRECTORY.has_directory()
 
-Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory()_`^]
+Service Model reference: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory()_`^]
 
-==== TC I_EHR_DIRECTORY.has_directory-empty_ehr
+==== Test Case I_EHR_DIRECTORY.has_directory-empty_ehr
 
 // EhrBase ref: EHR/DIRECTORY/C.1.
 
@@ -72,7 +72,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory()_`
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_directory/I_EHR_DIRECTORY.has_directory-empty_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.has_directory-ehr_with_directory
+==== Test Case I_EHR_DIRECTORY.has_directory-ehr_with_directory
 
 // EhrBase ref: EHR/DIRECTORY/C.2.
 
@@ -87,7 +87,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory()_`
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_directory/I_EHR_DIRECTORY.has_directory-ehr_with_directory.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.has_directory-bad_ehr
+==== Test Case I_EHR_DIRECTORY.has_directory-bad_ehr
 
 // EhrBase ref: EHR/DIRECTORY/C.3.
 
@@ -101,11 +101,11 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory()_`
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_directory/I_EHR_DIRECTORY.has_directory-bad_ehr.robot[REST API / Robot^]
 |===
 
-=== Conformance point: I_EHR_DIRECTORY.has_path()
+=== Service Model operation: I_EHR_DIRECTORY.has_path()
 
-Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_path()_`^]
+Service Model reference: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_path()_`^]
 
-==== TC I_EHR_DIRECTORY.has_path-empty_ehr
+==== Test Case I_EHR_DIRECTORY.has_path-empty_ehr
 
 // EhrBase ref: EHR/DIRECTORY/D.1.
 
@@ -120,7 +120,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_path()_`^]
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_path/I_EHR_DIRECTORY.has_path-empty_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.has_path-ehr_root_directory
+==== Test Case I_EHR_DIRECTORY.has_path-ehr_root_directory
 
 // EhrBase ref: EHR/DIRECTORY/D.2.
 
@@ -146,7 +146,7 @@ NOTE: `'/'` represents the string slash, which is the default name for the root 
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_path/I_EHR_DIRECTORY.has_path-ehr_root_directory.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.has_path-folder_structure
+==== Test Case I_EHR_DIRECTORY.has_path-folder_structure
 
 // EhrBase ref: EHR/DIRECTORY/D.3.
 
@@ -205,7 +205,7 @@ NOTE: the table mixes cases that exist with cases of paths which part exists and
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_path/I_EHR_DIRECTORY.has_path-folder_structure.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.has_path-bad_ehr
+==== Test Case I_EHR_DIRECTORY.has_path-bad_ehr
 
 // EhrBase ref: EHR/DIRECTORY/D.4.
 
@@ -219,11 +219,11 @@ NOTE: the table mixes cases that exist with cases of paths which part exists and
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_path/I_EHR_DIRECTORY.has_path-bad_ehr.robot[REST API / Robot^]
 |===
 
-=== Conformance point: I_EHR_DIRECTORY.create_directory()
+=== Service Model operation: I_EHR_DIRECTORY.create_directory()
 
-Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._create_directory()_`^]
+Service Model reference: {i_ehr_directory_link}[`I_EHR_DIRECTORY._create_directory()_`^]
 
-==== TC I_EHR_DIRECTORY.create_directory-empty_ehr
+==== Test Case I_EHR_DIRECTORY.create_directory-empty_ehr
 
 // EhrBase ref: EHR/DIRECTORY/E.1.
 
@@ -239,7 +239,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._create_directory(
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/create_directory/I_EHR_DIRECTORY.create_directory-empty_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.create_directory-ehr_with_directory
+==== Test Case I_EHR_DIRECTORY.create_directory-ehr_with_directory
 
 // EhrBase ref: EHR/DIRECTORY/E.2.
 
@@ -255,7 +255,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._create_directory(
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/create_directory/I_EHR_DIRECTORY.create_directory-ehr_with_directory.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.create_directory-bad_ehr
+==== Test Case I_EHR_DIRECTORY.create_directory-bad_ehr
 
 // EhrBase ref: EHR/DIRECTORY/E.3.
 
@@ -269,11 +269,11 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._create_directory(
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/create_directory/I_EHR_DIRECTORY.create_directory-bad_ehr.robot[REST API / Robot^]
 |===
 
-=== Conformance point: I_EHR_DIRECTORY.get_directory()
+=== Service Model operation: I_EHR_DIRECTORY.get_directory()
 
-Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory()_`^]
+Service Model reference: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory()_`^]
 
-==== TC I_EHR_DIRECTORY.get_directory-empty_ehr
+==== Test Case I_EHR_DIRECTORY.get_directory-empty_ehr
 
 // EhrBase ref: EHR/DIRECTORY/F.1.
 
@@ -290,7 +290,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory()_`
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory/I_EHR_DIRECTORY.get_directory-empty_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.get_directory-ehr_root_directory
+==== Test Case I_EHR_DIRECTORY.get_directory-ehr_root_directory
 
 // EhrBase ref: EHR/DIRECTORY/F.2.
 
@@ -305,7 +305,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory()_`
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory/I_EHR_DIRECTORY.get_directory-ehr_root_directory.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.get_directory-directory_with_structure
+==== Test Case I_EHR_DIRECTORY.get_directory-directory_with_structure
 
 // EhrBase ref: EHR/DIRECTORY/F.3.
 
@@ -320,7 +320,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory()_`
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory/I_EHR_DIRECTORY.get_directory-directory_with_structure.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.get_directory-bad_ehr
+==== Test Case I_EHR_DIRECTORY.get_directory-bad_ehr
 
 // EhrBase ref: EHR/DIRECTORY/F.4.
 
@@ -335,11 +335,11 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory()_`
 |===
 
 
-=== Conformance point: I_EHR_DIRECTORY.get_directory_at_time()
+=== Service Model operation: I_EHR_DIRECTORY.get_directory_at_time()
 
-Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_time()_`^]
+Service Model reference: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_time()_`^]
 
-==== TC I_EHR_DIRECTORY.get_directory_at_time-empty_ehr
+==== Test Case I_EHR_DIRECTORY.get_directory_at_time-empty_ehr
 
 // EhrBase ref: EHR/DIRECTORY/G.1.
 
@@ -356,7 +356,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory/I_EHR_DIRECTORY.get_directory-empty_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.get_directory_at_time-empty_ehr_empty_time
+==== Test Case I_EHR_DIRECTORY.get_directory_at_time-empty_ehr_empty_time
 
 // EhrBase ref: EHR/DIRECTORY/G.2.
 
@@ -373,7 +373,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_time/I_EHR_DIRECTORY.get_directory_at_time-empty_ehr_empty_time.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory
+==== Test Case I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory
 
 // EhrBase ref: EHR/DIRECTORY/G.3.
 
@@ -388,7 +388,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_time/I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_empty_time
+==== Test Case I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_empty_time
 
 // EhrBase ref: EHR/DIRECTORY/G.4.
 
@@ -403,7 +403,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_time/I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_empty_time.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_versions
+==== Test Case I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_versions
 
 // EhrBase ref: EHR/DIRECTORY/G.5.
 
@@ -422,7 +422,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_time/I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_versions.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_versions_empty_time
+==== Test Case I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_versions_empty_time
 
 // EhrBase ref: EHR/DIRECTORY/G.6.
 
@@ -437,7 +437,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_time/I_EHR_DIRECTORY.get_directory_at_time-ehr_with_directory_versions_empty_time.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.get_directory_at_time-bad_ehr
+==== Test Case I_EHR_DIRECTORY.get_directory_at_time-bad_ehr
 
 // EhrBase ref: EHR/DIRECTORY/G.7.
 
@@ -452,7 +452,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
 |===
 
 
-==== TC I_EHR_DIRECTORY.get_directory_at_time-multiple_versions_first
+==== Test Case I_EHR_DIRECTORY.get_directory_at_time-multiple_versions_first
 
 // EhrBase ref: EHR/DIRECTORY/G.8.
 
@@ -466,11 +466,11 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_time/I_EHR_DIRECTORY.get_directory_at_time-multiple_versions_first.robot[REST API / Robot^]
 |===
 
-=== Conformance point: I_EHR_DIRECTORY.update_directory()
+=== Service Model operation: I_EHR_DIRECTORY.update_directory()
 
-Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._update_directory()_`^]
+Service Model reference: {i_ehr_directory_link}[`I_EHR_DIRECTORY._update_directory()_`^]
 
-==== TC I_EHR_DIRECTORY.update_directory-ehr_with_directory
+==== Test Case I_EHR_DIRECTORY.update_directory-ehr_with_directory
 
 // EhrBase ref: EHR/DIRECTORY/H.1.
 
@@ -486,7 +486,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._update_directory(
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/update_directory/I_EHR_DIRECTORY.update_directory-ehr_with_directory.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.update_directory-empty_ehr
+==== Test Case I_EHR_DIRECTORY.update_directory-empty_ehr
 
 // EhrBase ref: EHR/DIRECTORY/H.2.
 
@@ -502,7 +502,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._update_directory(
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/update_directory/I_EHR_DIRECTORY.update_directory-empty_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.update_directory-bad_ehr
+==== Test Case I_EHR_DIRECTORY.update_directory-bad_ehr
 
 // EhrBase ref: EHR/DIRECTORY/H.3.
 
@@ -517,11 +517,11 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._update_directory(
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/update_directory/I_EHR_DIRECTORY.update_directory-bad_ehr.robot[REST API / Robot^]
 |===
 
-=== Conformance point: I_EHR_DIRECTORY.delete_directory()
+=== Service Model operation: I_EHR_DIRECTORY.delete_directory()
 
-Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._delete_directory()_`^]
+Service Model reference: {i_ehr_directory_link}[`I_EHR_DIRECTORY._delete_directory()_`^]
 
-==== TC I_EHR_DIRECTORY.delete_directory-empty_ehr
+==== Test Case I_EHR_DIRECTORY.delete_directory-empty_ehr
 
 // EhrBase ref: EHR/DIRECTORY/I.1.
 
@@ -536,7 +536,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._delete_directory(
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/delete_directory/I_EHR_DIRECTORY.delete_directory-empty_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.delete_directory-ehr_with_directory
+==== Test Case I_EHR_DIRECTORY.delete_directory-ehr_with_directory
 
 // EhrBase ref: EHR/DIRECTORY/I.2.
 
@@ -553,7 +553,7 @@ NOTE: the directory exists as a new deleted version (that is `VERSION.lifecycle_
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/delete_directory/I_EHR_DIRECTORY.delete_directory-ehr_with_directory.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.delete_directory-bad_ehr
+==== Test Case I_EHR_DIRECTORY.delete_directory-bad_ehr
 
 // EhrBase ref: EHR/DIRECTORY/I.3.
 
@@ -567,11 +567,11 @@ NOTE: the directory exists as a new deleted version (that is `VERSION.lifecycle_
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/delete_directory/I_EHR_DIRECTORY.delete_directory-bad_ehr.robot[REST API / Robot^]
 |===
 
-=== Conformance point: I_EHR_DIRECTORY.has_directory_version()
+=== Service Model operation: I_EHR_DIRECTORY.has_directory_version()
 
-Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory_version()_`^]
+Service Model reference: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory_version()_`^]
 
-==== TC I_EHR_DIRECTORY.has_directory_version-empty_ehr
+==== Test Case I_EHR_DIRECTORY.has_directory_version-empty_ehr
 
 // EhrBase ref: EHR/DIRECTORY/J.1.
 
@@ -586,7 +586,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory_ver
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_directory_version/I_EHR_DIRECTORY.has_directory_version-empty_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.has_directory_version-directory_with_two_versions
+==== Test Case I_EHR_DIRECTORY.has_directory_version-directory_with_two_versions
 
 // EhrBase ref: EHR/DIRECTORY/J.2.
 
@@ -603,7 +603,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory_ver
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_directory_version/I_EHR_DIRECTORY.has_directory_version-directory_with_two_versions.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.has_directory_version-bad_ehr
+==== Test Case I_EHR_DIRECTORY.has_directory_version-bad_ehr
 
 // EhrBase ref: EHR/DIRECTORY/J.3.
 
@@ -617,11 +617,11 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._has_directory_ver
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/has_directory_version/I_EHR_DIRECTORY.has_directory_version-bad_ehr.robot[REST API / Robot^]
 |===
 
-=== Conformance point: I_EHR_DIRECTORY.get_directory_at_version()
+=== Service Model operation: I_EHR_DIRECTORY.get_directory_at_version()
 
-Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_version()_`^]
+Service Model reference: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_version()_`^]
 
-==== TC I_EHR_DIRECTORY.get_directory_at_version-empty_ehr
+==== Test Case I_EHR_DIRECTORY.get_directory_at_version-empty_ehr
 
 // EhrBase ref: EHR/DIRECTORY/K.1.
 
@@ -636,7 +636,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_version/I_EHR_DIRECTORY.get_directory_at_version-empty_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.get_directory_at_version-directory_with_two_versions
+==== Test Case I_EHR_DIRECTORY.get_directory_at_version-directory_with_two_versions
 
 // EhrBase ref: EHR/DIRECTORY/K.2.
 
@@ -653,7 +653,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_version/I_EHR_DIRECTORY.get_directory_at_version-directory_with_two_versions.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.get_directory_at_version-bad_ehr
+==== Test Case I_EHR_DIRECTORY.get_directory_at_version-bad_ehr
 
 // EhrBase ref: EHR/DIRECTORY/K.3.
 
@@ -667,11 +667,11 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_directory_at_
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_directory_at_version/I_EHR_DIRECTORY.get_directory_at_version-bad_ehr.robot[REST API / Robot^]
 |===
 
-=== Conformance point: I_EHR_DIRECTORY.get_versioned_directory()
+=== Service Model operation: I_EHR_DIRECTORY.get_versioned_directory()
 
-Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_versioned_directory()_`^]
+Service Model reference: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_versioned_directory()_`^]
 
-==== TC I_EHR_DIRECTORY.get_versioned_directory-empty_ehr
+==== Test Case I_EHR_DIRECTORY.get_versioned_directory-empty_ehr
 
 // EhrBase ref: EHR/DIRECTORY/L.1.
 
@@ -687,7 +687,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_versioned_dir
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_versioned_directory/I_EHR_DIRECTORY.get_versioned_directory-empty_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.get_versioned_directory-directory_with_two_versions
+==== Test Case I_EHR_DIRECTORY.get_versioned_directory-directory_with_two_versions
 
 // EhrBase ref: EHR/DIRECTORY/L.2.
 
@@ -702,7 +702,7 @@ Platform service ref: {i_ehr_directory_link}[`I_EHR_DIRECTORY._get_versioned_dir
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_DIRECTORY/get_versioned_directory/I_EHR_DIRECTORY.get_versioned_directory-directory_with_two_versions.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_DIRECTORY.get_versioned_directory-bad_ehr
+==== Test Case I_EHR_DIRECTORY.get_versioned_directory-bad_ehr
 
 // EhrBase ref: EHR/DIRECTORY/L.3.
 

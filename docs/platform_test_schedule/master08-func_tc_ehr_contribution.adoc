@@ -1,4 +1,4 @@
-= Functional Conformance: EHR / CONTRIBUTION Component
+= Test Suite: EHR_SERVICE / I_CONTRIBUTION Interface
 
 == Normative Reference
 
@@ -8,7 +8,7 @@ Items under this validation suite conceptually use these abstract interfaces fro
 
 This test suite depends on other test suites:
 
-* <<_func_conf_def_component, Functional Conformance: Definitions Component>>, providing OPTs;
+* <<_func_conf_def_adl_component, Functional Conformance: Definitions Component>>, providing OPTs;
 * <<_func_conf_ehr_component, Functional Conformance: EHR Component>>, providing EHRs.
 
 == Test Environment
@@ -262,11 +262,11 @@ Any `invalid` payload should be rejected.
 
 == Test Cases
 
-=== Conformance point: I_EHR_CONTRIBUTION.commit_contribution()
+=== Service Model operation: I_EHR_CONTRIBUTION.commit_contribution()
 
-Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._commit_contribution()_`^]
+Service Model reference: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._commit_contribution()_`^]
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-valid_composition
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-valid_composition
 
 // EhrBase ref: EHR/CONTRIBUTION/C.1.
 
@@ -285,7 +285,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._commit_cont
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-valid_composition.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-invalid_composition
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-invalid_composition
 
 // EhrBase ref: EHR/CONTRIBUTION/C.2.
 
@@ -301,7 +301,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._commit_cont
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-invalid_composition.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-empty
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-empty
 
 // EhrBase ref: EHR/CONTRIBUTION/C.3.
 
@@ -315,7 +315,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._commit_cont
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-empty.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-valid_invalid_compositions
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-valid_invalid_compositions
 
 // EhrBase ref: EHR/CONTRIBUTION/C.4.
 
@@ -334,7 +334,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._commit_cont
 
 NOTE: the whole commit should behave like a transaction and fail, no `CONTRIBUTIONs` or `VERSIONs` should be created on the server.
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-event_composition
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-event_composition
 
 // EhrBase ref: EHR/CONTRIBUTION/C.5.
 
@@ -355,7 +355,7 @@ NOTE: the whole commit should behave like a transaction and fail, no `CONTRIBUTI
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-event_composition.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-persistent_composition
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-persistent_composition
 
 // EhrBase ref: EHR/CONTRIBUTION/C.6.
 
@@ -377,7 +377,7 @@ NOTE: the whole commit should behave like a transaction and fail, no `CONTRIBUTI
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-persistent_composition.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-delete
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-delete
 
 // EhrBase ref: EHR/CONTRIBUTION/C.7.
 
@@ -400,7 +400,7 @@ NOTE: the effect of a `VERSIONED_OBJECT` being deleted might vary in different i
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-delete.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-two_commits_second_invalid
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-two_commits_second_invalid
 
 // EhrBase ref: EHR/CONTRIBUTION/C.8.
 
@@ -422,7 +422,7 @@ NOTE: the effect of a `VERSIONED_OBJECT` being deleted might vary in different i
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-two_commits_second_invalid.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-two_commits_second_creation
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-two_commits_second_creation
 
 // EhrBase ref: EHR/CONTRIBUTION/C.9.
 
@@ -445,7 +445,7 @@ NOTE: the effect of a `VERSIONED_OBJECT` being deleted might vary in different i
 
 NOTE: Validity criterion: only one 'create' operation is allowed for persistent `COMPOSITIONs`, the next operations over an existing persistent `COMPOSITION` should be modification.
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-non_exiting_opt
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-non_exiting_opt
 
 // EhrBase ref: EHR/CONTRIBUTION/C.10.
 
@@ -461,7 +461,7 @@ NOTE: Validity criterion: only one 'create' operation is allowed for persistent 
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-non_exiting_opt.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-minimal_ehr_status
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-minimal_ehr_status
 
 // EhrBase ref: EHR/CONTRIBUTION/D.1.
 
@@ -479,7 +479,7 @@ NOTE: Validity criterion: only one 'create' operation is allowed for persistent 
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-minimal_ehr_status.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-full_ehr_status
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-full_ehr_status
 
 NOTE: this case is the same as previous but the precondition 2. is different.
 
@@ -499,7 +499,7 @@ NOTE: this case is the same as previous but the precondition 2. is different.
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-full_ehr_status.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-ehr_status_invalid_change_type
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-ehr_status_invalid_change_type
 
 // EhrBase ref: EHR/CONTRIBUTION/D.3.
 
@@ -515,7 +515,7 @@ NOTE: this case is the same as previous but the precondition 2. is different.
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-ehr_status_invalid_change_type.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-invalid_ehr_status
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-invalid_ehr_status
 
 // EhrBase ref: EHR/CONTRIBUTION/D.4.
 
@@ -530,7 +530,7 @@ NOTE: this case is the same as previous but the precondition 2. is different.
                     . The result should be negative and retrieve an error indicating the invalid `EHR_STATUS`
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-valid_directory
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-valid_directory
 
 // EhrBase ref: EHR/CONTRIBUTION/E.1.
 
@@ -545,7 +545,7 @@ NOTE: this case is the same as previous but the precondition 2. is different.
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-valid_directory.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-fail_create_existing_directory
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-fail_create_existing_directory
 
 // EhrBase ref: EHR/CONTRIBUTION/E.2.
 
@@ -560,7 +560,7 @@ NOTE: this case is the same as previous but the precondition 2. is different.
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-fail_create_existing_directory.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-fail_modify_non_existing_directory
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-fail_modify_non_existing_directory
 
 // EhrBase ref: EHR/CONTRIBUTION/E.3.
 
@@ -577,7 +577,7 @@ NOTE: this case is the same as previous but the precondition 2. is different.
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-fail_modify_non_existing_directory.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.commit_contribution-update_existing_directory
+==== Test Case I_EHR_CONTRIBUTION.commit_contribution-update_existing_directory
 
 // EhrBase ref: EHR/CONTRIBUTION/E.4.
 
@@ -592,13 +592,13 @@ NOTE: this case is the same as previous but the precondition 2. is different.
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/commit_contribution/I_EHR_CONTRIBUTION.commit_contribution-update_existing_directory.robot[REST API / Robot^]
 |===
 
-=== Conformance point: I_EHR_CONTRIBUTION.list_contributions()
+=== Service Model operation: I_EHR_CONTRIBUTION.list_contributions()
 
-Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._list_contributions()_`^]
+Service Model reference: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._list_contributions()_`^]
 
 NOTE: `CONTRIBUTIONs` can contain `COMPOSITION`, `EHR_STATUS` or `FOLDER`, or any mix of those. Each flow below applies to a specific type, except when 'ANY' is mentioned, in which case the flow applies to any of those three types.
 
-==== TC I_EHR_CONTRIBUTION.list_contributions-post_commit
+==== Test Case I_EHR_CONTRIBUTION.list_contributions-post_commit
 
 // EhrBase ref: EHR/CONTRIBUTION/F.1.
 
@@ -615,7 +615,7 @@ NOTE: `CONTRIBUTIONs` can contain `COMPOSITION`, `EHR_STATUS` or `FOLDER`, or an
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/list_contributions/I_EHR_CONTRIBUTION.list_contributions-post_commit.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.list_contributions-empty
+==== Test Case I_EHR_CONTRIBUTION.list_contributions-empty
 
 // EhrBase ref: EHR/CONTRIBUTION/F.2.
 
@@ -630,7 +630,7 @@ NOTE: `CONTRIBUTIONs` can contain `COMPOSITION`, `EHR_STATUS` or `FOLDER`, or an
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/list_contributions/I_EHR_CONTRIBUTION.list_contributions-empty.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.list_contributions-non_existing_ehr
+==== Test Case I_EHR_CONTRIBUTION.list_contributions-non_existing_ehr
 
 // EhrBase ref: EHR/CONTRIBUTION/F.3.
 
@@ -644,7 +644,7 @@ NOTE: `CONTRIBUTIONs` can contain `COMPOSITION`, `EHR_STATUS` or `FOLDER`, or an
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/list_contributions/I_EHR_CONTRIBUTION.list_contributions-non_existing_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.list_contributions-ehr_containing_ehr_status
+==== Test Case I_EHR_CONTRIBUTION.list_contributions-ehr_containing_ehr_status
 
 // EhrBase ref: EHR/CONTRIBUTION/F.4.
 
@@ -661,7 +661,7 @@ NOTE: `CONTRIBUTIONs` can contain `COMPOSITION`, `EHR_STATUS` or `FOLDER`, or an
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/list_contributions/I_EHR_CONTRIBUTION.list_contributions-ehr_containing_ehr_status.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.list_contributions-ehr_containing_directory
+==== Test Case I_EHR_CONTRIBUTION.list_contributions-ehr_containing_directory
 
 // EhrBase ref: EHR/CONTRIBUTION/F.5.
 
@@ -678,11 +678,11 @@ NOTE: `CONTRIBUTIONs` can contain `COMPOSITION`, `EHR_STATUS` or `FOLDER`, or an
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/list_contributions/I_EHR_CONTRIBUTION.list_contributions-ehr_containing_directory.robot[REST API / Robot^]
 |===
 
-=== Conformance point: I_EHR_CONTRIBUTION.has_contribution()
+=== Service Model operation: I_EHR_CONTRIBUTION.has_contribution()
 
-Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._has_contribution()_`^]
+Service Model reference: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._has_contribution()_`^]
 
-==== TC I_EHR_CONTRIBUTION.has_contribution-existing
+==== Test Case I_EHR_CONTRIBUTION.has_contribution-existing
 
 // EhrBase ref: EHR/CONTRIBUTION/G.1.
 
@@ -697,7 +697,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._has_contrib
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/has_contribution/I_EHR_CONTRIBUTION.has_contribution-existing.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.has_contribution-empty_ehr
+==== Test Case I_EHR_CONTRIBUTION.has_contribution-empty_ehr
 
 // EhrBase ref: EHR/CONTRIBUTION/G.2.
 
@@ -712,7 +712,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._has_contrib
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/has_contribution/I_EHR_CONTRIBUTION.has_contribution-empty_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.has_contribution-bad_ehr
+==== Test Case I_EHR_CONTRIBUTION.has_contribution-bad_ehr
 
 // EhrBase ref: EHR/CONTRIBUTION/G.3.
 
@@ -726,7 +726,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._has_contrib
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/has_contribution/I_EHR_CONTRIBUTION.has_contribution-bad_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.has_contribution-bad_contribution
+==== Test Case I_EHR_CONTRIBUTION.has_contribution-bad_contribution
 
 // EhrBase ref: EHR/CONTRIBUTION/G.4.
 
@@ -741,11 +741,11 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._has_contrib
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/has_contribution/I_EHR_CONTRIBUTION.has_contribution-bad_contribution.robot[REST API / Robot^]
 |===
 
-=== Conformance point: I_EHR_CONTRIBUTION.get_contribution()
+=== Service Model operation: I_EHR_CONTRIBUTION.get_contribution()
 
-Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._get_contribution()_`^]
+Service Model reference: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._get_contribution()_`^]
 
-==== TC I_EHR_CONTRIBUTION.get_contribution-existing
+==== Test Case I_EHR_CONTRIBUTION.get_contribution-existing
 
 // EhrBase ref: EHR/CONTRIBUTION/H.1.
 
@@ -760,7 +760,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._get_contrib
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/get_contribution/I_EHR_CONTRIBUTION.get_contribution-existing.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.get_contribution-empty_ehr
+==== Test Case I_EHR_CONTRIBUTION.get_contribution-empty_ehr
 
 // EhrBase ref: EHR/CONTRIBUTION/H.2.
 
@@ -775,7 +775,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._get_contrib
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/get_contribution/I_EHR_CONTRIBUTION.get_contribution-empty_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.get_contribution-bad_ehr
+==== Test Case I_EHR_CONTRIBUTION.get_contribution-bad_ehr
 
 // EhrBase ref: EHR/CONTRIBUTION/H.3.
 
@@ -789,7 +789,7 @@ Platform service ref: {i_ehr_contribution_link}[`I_EHR_CONTRIBUTION._get_contrib
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_CONTRIBUTION/get_contribution/I_EHR_CONTRIBUTION.get_contribution-bad_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_CONTRIBUTION.get_contribution-bad_contribution
+==== Test Case I_EHR_CONTRIBUTION.get_contribution-bad_contribution
 
 // EhrBase ref: EHR/CONTRIBUTION/H.4.
 

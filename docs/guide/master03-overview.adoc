@@ -45,17 +45,13 @@ Conformance for these categories is assessed as follows.
 |Methodology
 
 .3+|*Platform Component*
-|Functional conformance
+|API conformance
 |Conformance of the _implemented APIs_ to the published APIs, in a concrete API technology
 |Regression of test client running API call-in test cases against reference results
 
 |Data Validation conformance
 |Conformance of platform's _validation of data against semantic models_ (archetypes etc)
 |Regression of test client committing variable data sets against reference validity
-
-|Non-functional conformance
-|Conformance of specific platform _non-functional_ properties to specification
-|Various
 
 |*Platform client*
 |API compatibility
@@ -69,7 +65,9 @@ Conformance for these categories is assessed as follows.
 
 |===
 
-This guide primarily addresses the first category (platform implementations), but can be adapted to conformance assessment of platform clients (i.e. applications). The third category is not currently addressed by this guide.
+This guide primarily addresses the first category (platform implementations), but can be adapted to conformance assessment of platform clients (i.e. applications). 
+
+Non-functional conformance (performance, etc) is not addressed by this guide.
 
 === What can be Concretely Tested?
 

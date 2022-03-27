@@ -48,7 +48,7 @@ The constraints combinations described below could be tested in two ways:
 
 NOTE: we suggest to test with both strategies.
 
-=== TC CONT-COMP-content_card_any-context_any
+=== Test Case CONT-COMP-content_card_any-context_any
 
 Description: COMPOSITION content cardinality 0..*, no constraint over context
 
@@ -81,7 +81,7 @@ All the context structures should be valid.
 |three entries 	|context with other_context 	|accepted |
 |===
 
-=== TC CONT-COMP-content_card_1plus-context_any
+=== Test Case CONT-COMP-content_card_1plus-context_any
 
 Description: COMPOSITION content cardinality 1..*, no constraint over context
 
@@ -114,7 +114,7 @@ All the context structures should be valid.
 |three entries |context with other_context |accepted |
 |===
 
-=== TC CONT-COMP-content_card_3plus-context_any
+=== Test Case CONT-COMP-content_card_3plus-context_any
 
 Description: COMPOSITION content cardinality 3..*, no constraint over context
 
@@ -147,7 +147,7 @@ All the context structures should be valid.
 |three entries 	|context with other_context 	|accepted |
 |===
 
-=== TC CONT-COMP-content_card_opt-context_any
+=== Test Case CONT-COMP-content_card_opt-context_any
 
 Description: COMPOSITION content cardinality 0..1, no constraint over context
 
@@ -190,7 +190,7 @@ cardinality.upper
 |COMPOSITION.content: cardinality.upper
 |===
 
-=== TC CONT-COMP-content_card_mand-context_any
+=== Test Case CONT-COMP-content_card_mand-context_any
 
 Description: COMPOSITION content cardinality 1..1, no constraint over context
 
@@ -223,7 +223,7 @@ All the context structures should be valid.
 |three entries |context with other_context |rejected |COMPOSITION.content: cardinality.upper
 |===
 
-=== TC CONT-COMP-content_card_3to5-context_any
+=== Test Case CONT-COMP-content_card_3to5-context_any
 
 Description: COMPOSITION content cardinality 3..5, no constraint over context
 
@@ -256,7 +256,7 @@ All the context structures should be valid.
 |three entries |context with other_context |accepted |
 |===
 
-=== TC CONT-COMP-content_card_any-context_mand
+=== Test Case CONT-COMP-content_card_any-context_mand
 
 Description: COMPOSITION content cardinality 0..*, context occurrences 1..1
 
@@ -288,7 +288,7 @@ All the context structures should be valid.
 |three entries |context with other_context |accepted |
 |===
 
-=== TC CONT-COMP-content_card_1plus-context_mand
+=== Test Case CONT-COMP-content_card_1plus-context_mand
 
 Description: COMPOSITION content cardinality 1..*, context occurrences 1..1
 
@@ -321,7 +321,7 @@ All the context structures should be valid.
 |three entries |context with other_context |accepted |
 |===
 
-=== TC CONT-COMP-content_card_3plus-context_mand
+=== Test Case CONT-COMP-content_card_3plus-context_mand
 
 Description: COMPOSITION content cardinality 3..*, context occurrences 1..1
 
@@ -355,7 +355,7 @@ All the context structures should be valid.
 |three entries |context with other_context |accepted |
 |===
 
-=== TC CONT-COMP-content_card_opt-context_mand
+=== Test Case CONT-COMP-content_card_opt-context_mand
 
 Description: COMPOSITION content cardinality 0..1, context occurrences 1..1
 
@@ -388,7 +388,7 @@ All the context structures should be valid.
 |three entries  |context with other_context     |rejected |COMPOSITION.content: cardinality.upper
 |===
 
-=== TC CONT-COMP-content_card_mand-context_mand
+=== Test Case CONT-COMP-content_card_mand-context_mand
 
 Description: COMPOSITION content cardinality 1..1, context occurrences 1..1
 
@@ -421,7 +421,7 @@ All the context structures should be valid.
 |three entries  |context with other_context     |rejected |COMPOSITION.content: cardinality.upper
 |===
 
-=== TC CONT-COMP-content_card_3to5-context_mand
+=== Test Case CONT-COMP-content_card_3to5-context_mand
 
 Description: COMPOSITION content cardinality 3..5, context occurrences 1..1
 

@@ -1,5 +1,5 @@
 [[_func_conf_ehr_component]]
-= Functional Conformance: EHR Component
+= Test Suite: EHR_SERVICE
 
 // some useful variables
 :i_ehr_service_link: {openehr_sm_openehr_platform}#_i_ehr_service_interface
@@ -19,7 +19,7 @@ Items in this validation suite conceptually use the following abstract interface
 
 These are concretely realised in implementation technology specfic APIs, such as the {openehr_ehr_rest_api}[EHR REST API^].
 
-The data that flow through these interfaces are defined by the following information model specifications:
+This test suite uses artefacts defined by the following information model specifications:
 
 * {openehr_rm_ehr}[EHR IM^]
 * {openehr_rm_common}[Common IM^]
@@ -85,11 +85,11 @@ Notes:
 
 == Test Cases
 
-=== Conformance point: I_EHR_SERVICE.has_ehr()
+=== Service Model operation: I_EHR_SERVICE.has_ehr()
 
-Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._has_ehr()_`^]
+Service Model reference: {i_ehr_service_link}[`I_EHR_SERVICE._has_ehr()_`^]
 
-==== TC I_EHR_SERVICE.has_ehr-existing_ehr_id
+==== Test Case I_EHR_SERVICE.has_ehr-existing_ehr_id
 
 // EhrBase ref: EHR/B.2.a.
 
@@ -103,7 +103,7 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._has_ehr()_`^]
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/has_ehr/I_EHR_SERVICE.has_ehr-existing_ehr_id.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_SERVICE.has_ehr-existing_subject_id
+==== Test Case I_EHR_SERVICE.has_ehr-existing_subject_id
 
 // EhrBase ref: EHR/B.2.b.
 
@@ -119,7 +119,7 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._has_ehr()_`^]
 
 NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the identifier of a patient represented by `PARTY_SELF` in the openEHR Reference Model.
 
-==== TC I_EHR_SERVICE.has_ehr-non_existing_ehr_id
+==== Test Case I_EHR_SERVICE.has_ehr-non_existing_ehr_id
 
 // EhrBase ref: EHR/B.2.c.
 
@@ -133,7 +133,7 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/has_ehr/I_EHR_SERVICE.has_ehr-non_existing_ehr_id.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_SERVICE.has_ehr-non_existing_subject_id
+==== Test Case I_EHR_SERVICE.has_ehr-non_existing_subject_id
 
 // EhrBase ref: EHR/B.2.d.
 
@@ -147,11 +147,11 @@ NOTE: `subject_id` refers to the `PARTY_REF` class instance containing the ident
 |Test runners   |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/has_ehr/I_EHR_SERVICE.has_ehr-non_existing_subject_id.robot[REST API / Robot^]
 |===
 
-=== Conformance point: I_EHR_SERVICE.create_ehr()
+=== Service Model operation: I_EHR_SERVICE.create_ehr()
 
-Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr()_`^]
+Service Model reference: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr()_`^]
 
-==== TC I_EHR_SERVICE.create_ehr-main
+==== Test Case I_EHR_SERVICE.create_ehr-main
 
 // EhrBase ref: EHR/ B.1.a.
 
@@ -167,7 +167,7 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr()_`^]
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/create_ehr/I_EHR_SERVICE.create_ehr-main.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_SERVICE.create_ehr-same_ehr_twice
+==== Test Case I_EHR_SERVICE.create_ehr-same_ehr_twice
 
 // EhrBase ref: EHR/ B.1.b.
 
@@ -187,7 +187,7 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr()_`^]
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/create_ehr/I_EHR_SERVICE.create_ehr-same_ehr_twice.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_SERVICE.create_ehr-two_ehrs_same_patient
+==== Test Case I_EHR_SERVICE.create_ehr-two_ehrs_same_patient
 
 // EhrBase ref: EHR/ B.1.c.
 
@@ -205,11 +205,11 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._create_ehr()_`^]
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/create_ehr/I_EHR_SERVICE.create_ehr-two_ehrs_same_patient.robot[REST API / Robot^]
 |===
 
-=== Conformance point: I_EHR_SERVICE.get_ehr()
+=== Service Model operation: I_EHR_SERVICE.get_ehr()
 
-Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehr()_`^]
+Service Model reference: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehr()_`^]
 
-==== TC I_EHR_SERVICE.get_ehr-existing_ehr_by_ehr_id
+==== Test Case I_EHR_SERVICE.get_ehr-existing_ehr_by_ehr_id
 
 // EhrBase ref: EHR/B.3.a.
 
@@ -223,7 +223,7 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehr()_`^]
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/get_ehr/I_EHR_SERVICE.get_ehr-existing_ehr_by_ehr_id.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_SERVICE.get_ehr-existing_ehr_by_subject_id
+==== Test Case I_EHR_SERVICE.get_ehr-existing_ehr_by_subject_id
 
 // EhrBase ref: EHR/B.3.b.
 
@@ -237,7 +237,7 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehr()_`^]
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/get_ehr/I_EHR_SERVICE.get_ehr-existing_ehr_by_subject_id.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_SERVICE.get_ehr-get_ehr_by_invalid_ehr_id
+==== Test Case I_EHR_SERVICE.get_ehr-get_ehr_by_invalid_ehr_id
 
 // EhrBase ref: EHR/B.3.c.
 
@@ -251,7 +251,7 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehr()_`^]
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_SERVICE/get_ehr/I_EHR_SERVICE.get_ehr-get_ehr_by_invalid_ehr_id.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_SERVICE.get_ehr-get_ehr_by_invalid_subject_id
+==== Test Case I_EHR_SERVICE.get_ehr-get_ehr_by_invalid_subject_id
 
 // EhrBase ref: EHR/B.3.d.
 
@@ -267,11 +267,11 @@ Platform service ref: {i_ehr_service_link}[`I_EHR_SERVICE._get_ehr()_`^]
 
 == EHR_STATUS Test Cases
 
-=== Conformance Point: I_EHR_STATUS.get_ehr_status()
+=== Service Model operation: I_EHR_STATUS.get_ehr_status()
 
-Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._get_ehr_status()_`^]
+Service Model reference: {i_ehr_status_link}[`I_EHR_STATUS._get_ehr_status()_`^]
 
-==== TC I_EHR_STATUS.get_ehr_status-get_by_ehr_id
+==== Test Case I_EHR_STATUS.get_ehr_status-get_by_ehr_id
 
 // EhrBase ref: EHR/C.1.a.
 
@@ -287,7 +287,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._get_ehr_status()_`^]
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/get_ehr_status/I_EHR_STATUS.get_ehr_status-get_by_ehr_id.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_STATUS.get_ehr_status-bad_ehr
+==== Test Case I_EHR_STATUS.get_ehr_status-bad_ehr
 
 // EhrBase ref: EHR/C.1.b.
 
@@ -301,11 +301,11 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._get_ehr_status()_`^]
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/get_ehr_status/I_EHR_STATUS.get_ehr_status-bad_ehr.robot[REST API / Robot^]
 |===
 
-=== Conformance Point: I_EHR_STATUS.set_ehr_queryable()
+=== Service Model operation: I_EHR_STATUS.set_ehr_queryable()
 
-Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_queryable()_`^]
+Service Model reference: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_queryable()_`^]
 
-==== TC I_EHR_STATUS.set_ehr_queryable-existing_ehr
+==== Test Case I_EHR_STATUS.set_ehr_queryable-existing_ehr
 
 // EhrBase ref: EHR/C.2.a.
 
@@ -319,7 +319,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_queryable()_`^]
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/set_ehr_queryable/I_EHR_STATUS.set_ehr_queryable-existing_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_STATUS.set_ehr_queryable-bad_ehr
+==== Test Case I_EHR_STATUS.set_ehr_queryable-bad_ehr
 
 // EhrBase ref: EHR/C.2.b.
 
@@ -334,11 +334,11 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_queryable()_`^]
 |===
 
 
-=== Conformance Point: I_EHR_STATUS.set_ehr_modifiable()
+=== Service Model operation: I_EHR_STATUS.set_ehr_modifiable()
 
-Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_modifiable()_`^]
+Service Model reference: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_modifiable()_`^]
 
-==== TC I_EHR_STATUS.set_ehr_modifiable-existing_ehr
+==== Test Case I_EHR_STATUS.set_ehr_modifiable-existing_ehr
 
 // EhrBase ref: EHR/C.3.a.
 
@@ -352,7 +352,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_modifiable()_`^
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/set_ehr_modifiable/I_EHR_STATUS.set_ehr_modifiable-existing_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_STATUS.set_ehr_modifiable-bad_ehr
+==== Test Case I_EHR_STATUS.set_ehr_modifiable-bad_ehr
 
 // EhrBase ref: EHR/C.3.b.
 
@@ -366,11 +366,11 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._set_ehr_modifiable()_`^
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/set_ehr_modifiable/I_EHR_STATUS.set_ehr_modifiable-bad_ehr.robot[REST API / Robot^]
 |===
 
-=== Conformance Point: I_EHR_STATUS.clear_ehr_queryable()
+=== Service Model operation: I_EHR_STATUS.clear_ehr_queryable()
 
-Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_queryable()_`^]
+Service Model reference: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_queryable()_`^]
 
-==== TC I_EHR_STATUS.clear_ehr_queryable-existing_ehr
+==== Test Case I_EHR_STATUS.clear_ehr_queryable-existing_ehr
 
 // EhrBase ref: EHR/C.4.a.
 
@@ -384,7 +384,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_queryable()_`
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/clear_ehr_queryable/I_EHR_STATUS.clear_ehr_queryable-existing_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_STATUS.clear_ehr_queryable-bad_ehr
+==== Test Case I_EHR_STATUS.clear_ehr_queryable-bad_ehr
 
 // EhrBase ref: EHR/C.4.b.
 
@@ -398,11 +398,11 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_queryable()_`
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/clear_ehr_queryable/I_EHR_STATUS.clear_ehr_queryable-bad_ehr.robot[REST API / Robot^]
 |===
 
-=== Conformance Point: I_EHR_STATUS.clear_ehr_modifiable()
+=== Service Model operation: I_EHR_STATUS.clear_ehr_modifiable()
 
-Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_modifiable()_`^]
+Service Model reference: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_modifiable()_`^]
 
-==== TC I_EHR_STATUS.clear_ehr_modifiable-existing_ehr
+==== Test Case I_EHR_STATUS.clear_ehr_modifiable-existing_ehr
 
 // EhrBase ref: EHR/C.5.a.
 
@@ -416,7 +416,7 @@ Platform service ref: {i_ehr_status_link}[`I_EHR_STATUS._clear_ehr_modifiable()_
 |Test runners     |{openehr_cnf_platform_tests_robot}/I_EHR_STATUS/clear_ehr_modifiable/I_EHR_STATUS.clear_ehr_modifiable-existing_ehr.robot[REST API / Robot^]
 |===
 
-==== TC I_EHR_STATUS.clear_ehr_modifiable-bad_ehr
+==== Test Case I_EHR_STATUS.clear_ehr_modifiable-bad_ehr
 
 // EhrBase ref: EHR/C.5.b.
 

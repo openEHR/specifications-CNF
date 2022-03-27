@@ -1,4 +1,4 @@
-= Functional Conformance: Admin Component
+= Test Suite: ADMIN_SERVICE
 
 // Some useful links: 
 :i_admin_service_link: {openehr_sm_openehr_platform}#_i_admin_service_interface
@@ -15,7 +15,7 @@ Items in this validation suite conceptually use the following abstract interface
 
 These are concretely realised in implementation technology specfic APIs, such as the {openehr_admin_rest_api}[ADMIN REST API^].
 
-The data that flow through these interfaces are defined by the following information model specifications:
+This test suite uses artefacts defined by the following information model specifications:
 
 * Service Interfaces:
 ** {openehr_sm_openehr_platform}#_admin_package[Abstract Admin Service Model^]
@@ -40,120 +40,120 @@ TBD
 
 == Test Cases
 
-=== Conformance point: I_ADMIN_SERVICE.list_contributions()
+=== Service Model operation: I_ADMIN_SERVICE.list_contributions()
 
-Platform service ref: {i_admin_service_link}[`I_ADMIN_SERVICE._list_contributions()_`^]
+Service Model reference: {i_admin_service_link}[`I_ADMIN_SERVICE._list_contributions()_`^]
 
-==== TC aaaa
-
-TBD
-
-==== TC bbbb
+==== Test Case aaaa
 
 TBD
 
-
-
-=== Conformance point: I_ADMIN_SERVICE.contribution_count()
-
-Platform service ref: {i_admin_service_link}[`I_ADMIN_SERVICE._contribution_count()_`^]
-
-==== TC aaaa
-
-TBD
-
-==== TC bbbb
+==== Test Case bbbb
 
 TBD
 
 
-=== Conformance point: I_ADMIN_SERVICE.versioned_composition_count()
 
-Platform service ref: {i_admin_service_link}[`I_ADMIN_SERVICE._versioned_composition_count()_`^]
+=== Service Model operation: I_ADMIN_SERVICE.contribution_count()
 
-==== TC aaaa
+Service Model reference: {i_admin_service_link}[`I_ADMIN_SERVICE._contribution_count()_`^]
 
-TBD
-
-==== TC bbbb
+==== Test Case aaaa
 
 TBD
 
-
-=== Conformance point: I_ADMIN_SERVICE.composition_version_count()
-
-Platform service ref: {i_admin_service_link}[`I_ADMIN_SERVICE._composition_version_count()_`^]
-
-==== TC aaaa
-
-TBD
-
-==== TC bbbb
+==== Test Case bbbb
 
 TBD
 
 
-=== Conformance point: I_ADMIN_SERVICE.physical_ehr_delete()
+=== Service Model operation: I_ADMIN_SERVICE.versioned_composition_count()
 
-Platform service ref: {i_admin_service_link}[`I_ADMIN_SERVICE._physical_ehr_delete()_`^]
+Service Model reference: {i_admin_service_link}[`I_ADMIN_SERVICE._versioned_composition_count()_`^]
 
-==== TC aaaa
-
-TBD
-
-==== TC bbbb
+==== Test Case aaaa
 
 TBD
 
-
-=== Conformance point: I_ADMIN_SERVICE.physical_party_delete()
-
-Platform service ref: {i_admin_service_link}[`I_ADMIN_SERVICE._physical_party_delete()_`^]
-
-==== TC aaaa
-
-TBD
-
-==== TC bbbb
+==== Test Case bbbb
 
 TBD
 
 
-=== Conformance point: I_ADMIN_DUMP_LOAD.export_ehrs()
+=== Service Model operation: I_ADMIN_SERVICE.composition_version_count()
 
-Platform service ref: {i_admin_dump_load_link}[`I_ADMIN_DUMP_LOAD._export_ehrs()_`^]
+Service Model reference: {i_admin_service_link}[`I_ADMIN_SERVICE._composition_version_count()_`^]
 
-==== TC aaaa
-
-TBD
-
-==== TC bbbb
+==== Test Case aaaa
 
 TBD
 
-
-=== Conformance point: I_ADMIN_ARCHIVE.archive_ehrs()
-
-Platform service ref: {i_admin_archive_link}[`I_ADMIN_ARCHIVE._archive_ehrs()_`^]
-
-==== TC aaaa
-
-TBD
-
-==== TC bbbb
+==== Test Case bbbb
 
 TBD
 
 
-=== Conformance point: I_ADMIN_ARCHIVE.archive_parties()
+=== Service Model operation: I_ADMIN_SERVICE.physical_ehr_delete()
 
-Platform service ref: {i_admin_archive_link}[`I_ADMIN_ARCHIVE._archive_parties()_`^]
+Service Model reference: {i_admin_service_link}[`I_ADMIN_SERVICE._physical_ehr_delete()_`^]
 
-==== TC aaaa
+==== Test Case aaaa
 
 TBD
 
-==== TC bbbb
+==== Test Case bbbb
+
+TBD
+
+
+=== Service Model operation: I_ADMIN_SERVICE.physical_party_delete()
+
+Service Model reference: {i_admin_service_link}[`I_ADMIN_SERVICE._physical_party_delete()_`^]
+
+==== Test Case aaaa
+
+TBD
+
+==== Test Case bbbb
+
+TBD
+
+
+=== Service Model operation: I_ADMIN_DUMP_LOAD.export_ehrs()
+
+Service Model reference: {i_admin_dump_load_link}[`I_ADMIN_DUMP_LOAD._export_ehrs()_`^]
+
+==== Test Case aaaa
+
+TBD
+
+==== Test Case bbbb
+
+TBD
+
+
+=== Service Model operation: I_ADMIN_ARCHIVE.archive_ehrs()
+
+Service Model reference: {i_admin_archive_link}[`I_ADMIN_ARCHIVE._archive_ehrs()_`^]
+
+==== Test Case aaaa
+
+TBD
+
+==== Test Case bbbb
+
+TBD
+
+
+=== Service Model operation: I_ADMIN_ARCHIVE.archive_parties()
+
+Service Model reference: {i_admin_archive_link}[`I_ADMIN_ARCHIVE._archive_parties()_`^]
+
+==== Test Case aaaa
+
+TBD
+
+==== Test Case bbbb
 
 TBD
 
