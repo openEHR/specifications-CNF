@@ -758,16 +758,16 @@ TBD: combinations of other values for validity.
 |===
 | lower         | upper         | lower_unbounded | upper_unbounded | lower_included | upper_included | C_TIME.range (lower)      | C_TIME.range (upper)       | expected | constraints violated      
 
-| T10           | T11           | false           | false           | true           | true           | T09..T11                  | T10..T12                   | accepted |    
-| T10:00        | T11:00        | false           | false           | true           | true           | T09:00..T11:00            | T10:00..T12:00             | accepted |    
-| T10:00:00     | T11:00:00     | false           | false           | true           | true           | T09:00:00..T11:00:00      | T10:00:00..T12:00:00       | accepted |    
-| T10:00:00.5   | T11:00:00.5   | false           | false           | true           | true           | T09:00:00.0..T11:00:00.0  | T10:00:00.0..T12:00:00.0   | accepted |    
-| T10:00:00.5Z  | T11:00:00.5Z  | false           | false           | true           | true           | T09:00:00.0..T11:00:00.0Z | T10:00:00.0Z..T12:00:00.0Z | accepted |    
-| T10           | T11           | false           | false           | true           | true           | T11..T12                  | T11..T12                   | rejected | C_TIME.range (lower) 
-| T10           | T12           | false           | false           | true           | true           | T10..T11                  | T10..T11                   | rejected | C_TIME.range (upper) 
+| T10           | T11           | false           | false           | true           | true           | T09..T11                  | T10..T12                   | accepted |                           
+| T10:00        | T11:00        | false           | false           | true           | true           | T09:00..T11:00            | T10:00..T12:00             | accepted |                           
+| T10:00:00     | T11:00:00     | false           | false           | true           | true           | T09:00:00..T11:00:00      | T10:00:00..T12:00:00       | accepted |                           
+| T10:00:00.5   | T11:00:00.5   | false           | false           | true           | true           | T09:00:00.0..T11:00:00.0  | T10:00:00.0..T12:00:00.0   | accepted |                           
+| T10:00:00.5Z  | T11:00:00.5Z  | false           | false           | true           | true           | T09:00:00.0..T11:00:00.0Z | T10:00:00.0Z..T12:00:00.0Z | accepted |                           
+| T10           | T11           | false           | false           | true           | true           | T11..T12                  | T11..T12                   | rejected | C_TIME.range (lower)      
+| T10           | T12           | false           | false           | true           | true           | T10..T11                  | T10..T11                   | rejected | C_TIME.range (upper)      
+| null          | T11           | true            | false           | false          | true           | T09..T11                  | T10..T12                   | rejected | C_TIME.range (lower)      
+| T10           | null          | false           | true            | true           | false          | T09..T11                  | T10..T12                   | accepted | C_TIME.range (upper)      
 |===
-
-TBD: more fail cases
 
 
 ===  DV_INTERVAL<DV_DURATION>

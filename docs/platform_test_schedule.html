@@ -69,7 +69,7 @@
 <li><a href="#_service_model_operation_i_definition_adl14_get_opt">4.3.3. Service Model operation: I_DEFINITION_ADL14.get_opt()</a>
 <ul class="sectlevel4">
 <li><a href="#_data_sets">4.3.3.1. Data sets</a></li>
-<li><a href="#_test_case_i_definition_adl14_get_opt_get_single">4.3.3.2. Test Case I_DEFINITION_ADL14.get_opt-get_single</a></li>
+<li><a href="#_test_case_i_definition_adl14_get_opt_retrieve_single">4.3.3.2. Test Case I_DEFINITION_ADL14.get_opt-retrieve_single</a></li>
 <li><a href="#_test_case_i_definition_adl14_get_opt_retrieve_fail">4.3.3.3. Test Case I_DEFINITION_ADL14.get_opt-retrieve_fail</a></li>
 <li><a href="#_test_case_i_definition_adl14_get_opt_retrieve_latest_version">4.3.3.4. Test Case I_DEFINITION_ADL14.get_opt-retrieve_latest_version</a></li>
 <li><a href="#_test_case_i_definition_adl14_get_opt_retrieve_specific_version">4.3.3.5. Test Case I_DEFINITION_ADL14.get_opt-retrieve_specific_version</a></li>
@@ -1492,7 +1492,7 @@ data, can the OPT be deleted physically? Logical delete might work as the deacti
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>validate valid OPTs</p>
+<p>Validate valid OPTs</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1552,7 +1552,7 @@ some servers might not have a way to just validate the OPT, and validation might
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>validate valid OPTs</p>
+<p>Validate invalid OPTs</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1996,7 +1996,7 @@ the flows of this test case will include flows from the Upload OPT test case, in
 </div>
 </div>
 <div class="sect4">
-<h5 id="_test_case_i_definition_adl14_get_opt_get_single"><a class="anchor" href="#_test_case_i_definition_adl14_get_opt_get_single"></a>4.3.3.2. Test Case I_DEFINITION_ADL14.get_opt-get_single</h5>
+<h5 id="_test_case_i_definition_adl14_get_opt_retrieve_single"><a class="anchor" href="#_test_case_i_definition_adl14_get_opt_retrieve_single"></a>4.3.3.2. Test Case I_DEFINITION_ADL14.get_opt-retrieve_single</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2006,7 +2006,7 @@ the flows of this test case will include flows from the Upload OPT test case, in
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>retrieve a single OPT</p>
+<p>Retrieve a single OPT</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2042,7 +2042,7 @@ the flows of this test case will include flows from the Upload OPT test case, in
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Test runners</p></th>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://specifications.openehr.org/releases/CNF/latest/tests/platform/robot/I_DEFINITION_ADL14/get_opt/I_DEFINITION_ADL14.get_opt-get_single.robot" target="_blank" rel="noopener">REST API / Robot</a></p>
+<p><a href="https://specifications.openehr.org/releases/CNF/latest/tests/platform/robot/I_DEFINITION_ADL14/get_opt/I_DEFINITION_ADL14.get_opt-retrieve_single.robot" target="_blank" rel="noopener">REST API / Robot</a></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2059,7 +2059,7 @@ the flows of this test case will include flows from the Upload OPT test case, in
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>empty server OPT retrieve fail test</p>
+<p>Empty server OPT retrieve fail test</p>
 </div></div></td>
 </tr>
 <tr>
@@ -22903,11 +22903,32 @@ the C_DATE has invariants that define if a higher precision component is optiona
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C_TIME.range (upper)</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">null</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T09..T11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T10..T12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C_TIME.range (lower)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">null</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T09..T11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T10..T12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C_TIME.range (upper)</p></td>
+</tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>TBD: more fail cases</p>
-</div>
 </div>
 </div>
 <div class="sect3">
@@ -25570,10 +25591,37 @@ All test data sets for date/time/datetime expressions are represented in the ISO
 <div class="title">Note</div>
 </td>
 <td class="content">
-different duration implementations might affect the DV_DURATION related test cases. For instance, some implementations might not support <code>days</code> in the same duration expression that contains <code>months</code>, since there is no exact correspondence between the number of <code>days</code> and <code>months</code> (months could have 28, 29, 30 or 31 days). Then other implementations might simplify the <code>month</code> measurement to be 30 days. This also happens with some implementations that consider a <code>day</code> is exactly <code>24 hours</code> as a simplification. So in case the SUT has an implementation decision to be considered, the developers should mention it in the Conformance Statement Document.
+different duration implementations might affect the DV_DURATION related test cases. For instance, some implementations might not support <code>days</code> in the same duration expression that contains <code>months</code>, since there is no exact correspondence between the number of <code>days</code> and <code>months</code> (months could have 28, 29, 30 or 31 days). Then other implementations might simplify the <code>month</code> measurement to be 30 days. This also happens with some implementations that consider a <code>day</code> is exactly <code>24 hours</code> as a simplification.&gt; It is worth mentioning that openEHR provides means for calculating this based on averages, in DV_DURATION.magnitude(), which is implemented in terms of Iso8601_duration.to_seconds(), it uses <code>Time_Definitions.Average_days_in_year</code> as an approximation to the numbers of days in a year, and <code>Time_Definitions.Average_days_in_month</code> as an approximation to the numbers of days in a month. So to normalize an expression that is P1Y3M5D to <code>days</code> we would have <code>1 * Average_days_in_year + 3 * Average_days_in_month + 5</code>. In case the SUT has an implementation decision to be considered, the developers should mention it in the Conformance Statement Document.
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>The openEHR specifications have two exceptions to the ISO 8601-1 rules:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>a negative sign may be used before a Duration expression, for example <code>-P10D</code>, meaning '10 days before [origin]', where the 'origin' is a timepoint understood as the origin for the duration;</p>
+</li>
+<li>
+<p>the <code>W</code> designator may be mixed with other designators in the duration expression.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Note those exceptions are invalid in terms of ISO 8601-1_2019, but, those are valid in terms for ISO 8601-2_2019, which defines some extensions to the ISO 8601-1 standard. From ISO 8601-2:</p>
+</div>
+<div class="paragraph">
+<p>Expressions in the following four examples below are not valid in ISO 8601-1, but are valid as specified in this clause.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>EXAMPLE 3 'P3W2D', duration of three weeks and two days, which is 23 days (equivalent to the expression 'P23D'). In ISO 8601-1, ["W"] is not permitted to occur along with any other component.
+EXAMPLE 4 'P5Y10W', duration of five years and ten weeks.
+...
+EXAMPLE 7 '-P2M1D' is equivalent to 'P-2M-1D'.</pre>
+</div>
 </div>
 <div class="sect4">
 <h5 id="_test_case_cont_dv_duration_validate_open"><a class="anchor" href="#_test_case_cont_dv_duration_validate_open"></a>14.10.1.1. Test Case CONT-DV_DURATION-validate_open</h5>
@@ -25599,42 +25647,67 @@ different duration implementations might affect the DV_DURATION related test cas
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">wrong ISO 8601 duration: missing duration desingator 'P'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">invalid ISO 8601-1 duration: missing duration desingator 'P'</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P1Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P1Y3M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P1W</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P1Y3M4D</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P1Y3M4DT2H</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P1Y3M4DT2H14M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P1Y3M4DT2H14M5S</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P1Y3M4DT2H14M15.5S</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P1Y3M4DT2H14.5M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">openEHR: fractions for minutes are not allowed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P1Y3M4DT2.5H</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">openEHR: fractions for hours are not allowed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P3M1W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-P2M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -25683,7 +25756,7 @@ different duration implementations might affect the DV_DURATION related test cas
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -25696,7 +25769,7 @@ different duration implementations might affect the DV_DURATION related test cas
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C_DURATION.years_allowed</p></td>
 </tr>
@@ -25709,7 +25782,7 @@ different duration implementations might affect the DV_DURATION related test cas
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -25722,7 +25795,7 @@ different duration implementations might affect the DV_DURATION related test cas
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C_DURATION.months_allowed</p></td>
 </tr>
@@ -25735,7 +25808,7 @@ different duration implementations might affect the DV_DURATION related test cas
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -25748,7 +25821,7 @@ different duration implementations might affect the DV_DURATION related test cas
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C_DURATION.days_allowed</p></td>
 </tr>
@@ -25761,7 +25834,7 @@ different duration implementations might affect the DV_DURATION related test cas
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -25774,7 +25847,7 @@ different duration implementations might affect the DV_DURATION related test cas
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C_DURATION.weeks_allowed</p></td>
 </tr>
@@ -25787,7 +25860,7 @@ different duration implementations might affect the DV_DURATION related test cas
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -25800,7 +25873,7 @@ different duration implementations might affect the DV_DURATION related test cas
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C_DURATION.hours_allowed</p></td>
 </tr>
@@ -25813,7 +25886,7 @@ different duration implementations might affect the DV_DURATION related test cas
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -25826,7 +25899,7 @@ different duration implementations might affect the DV_DURATION related test cas
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C_DURATION.minutes_allowed</p></td>
 </tr>
@@ -25839,7 +25912,7 @@ different duration implementations might affect the DV_DURATION related test cas
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -25852,9 +25925,61 @@ different duration implementations might affect the DV_DURATION related test cas
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C_DURATION.seconds_allowed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P1Y3M15DT23H35M22.5S</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P1Y3M15DT23H35M22.5S</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C_DURATION.fractional_seconds_allowed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P1W3D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P1W3D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C_DURATION.weeks_allowed</p></td>
 </tr>
 </tbody>
 </table>
@@ -25873,6 +25998,9 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 </div>
 <div class="sect4">
 <h5 id="_test_case_cont_dv_duration_validate_range"><a class="anchor" href="#_test_case_cont_dv_duration_validate_range"></a>14.10.1.3. Test Case CONT-DV_DURATION-validate_range</h5>
+<div class="paragraph">
+<p>In order to compare durations, the DV_DURATION.magnitude() should be used, which will calculate the seconds in the duration based on the avg. days in year and days in month. If the SUT does calculate the <code>magnitude()</code> in a different way, it should be stated in the Conformance Statement Document.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -25993,8 +26121,8 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <td class="tableblock halign-left valign-top"><p class="tableblock">P1Y20M</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P2Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P50Y</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TBD: it is not clear if the 20M are transformed to years to be compared with the range limits that only have years or if years in the value are compared with years in the range limits and if there are no limits for months in the range limits then the months in the value are not constrainted.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P2W</p></td>
@@ -26017,13 +26145,34 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C_DURATION.range.lower</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P2W3D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P3W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P4W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C_DURATION.range.lower</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P2W8D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P3W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P4W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P2W15D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P3W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P4W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C_DURATION.range.upper</p></td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="sect4">
 <h5 id="_test_case_cont_dv_duration_validate_fields_range"><a class="anchor" href="#_test_case_cont_dv_duration_validate_fields_range"></a>14.10.1.4. Test Case CONT-DV_DURATION-validate_fields_range</h5>
 <div class="paragraph">
-<p>In the AOM specification it is allowed to combine allowed and range: "Both range and the constraint pattern can be set at the same time, corresponding to the ADL constraint PWD/|P0W..P50W|. (<a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_duration_class" target="_blank" rel="noopener">C_DURATION class</a>)".</p>
+<p>In the AOM specification it is allowed to combine allowed and range: "Both range and the constraint pattern can be set at the same time, corresponding to the ADL constraint <code>PWD/|P0W..P50W|</code>. See <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_duration_class" target="_blank" rel="noopener">C_DURATION class</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -26068,7 +26217,7 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P0Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P50Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
@@ -26083,7 +26232,7 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P2Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P50Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
@@ -26098,7 +26247,7 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P0Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P50Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
@@ -26113,7 +26262,7 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P2Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P50Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
@@ -26127,8 +26276,8 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ftrue</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P1Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P50Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
@@ -26143,7 +26292,7 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P1Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P50Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
@@ -26158,7 +26307,7 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P3Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P50Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
@@ -26173,32 +26322,35 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">???</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P3Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P50Y</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C_DURATION.months_allowed. C_DURATION.lower</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PT2M43.5S</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PT1M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PT60M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C_DURATION.fractional_seconds_allowed</p></td>
+</tr>
 </tbody>
 </table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8601 would allow fractions on the lowest order component, which means if the duration lowest component is <code>minutes</code> then it&#8217;s valid to have <code>5.23M</code>. Also consider in programming languages like Java, a duration string with fractions on other fields than seconds can&#8217;t be parsed (for instance using <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-" target="_blank" rel="noopener">Java CHarSequence</a>)
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_dv_time"><a class="anchor" href="#_dv_time"></a>14.10.2. DV_TIME</h4>
 <div class="paragraph">
-<p>DV_TIME constraints are defined by C_TIME, which specifies two types of constraints: validity kind and range. The validity kind constraints are expressed in terms of mandatory/optional/prohibited flags for each part of the time expression: minute, second, millisecond and timezone. The range constraint is an Interval&lt;Time&gt;, which are both <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html" target="_blank" rel="noopener">openEHR Foundation Types</a>.</p>
+<p><code>DV_TIME</code> constraints are defined by <code>C_TIME</code>, which specifies two types of constraints: validity kind and range. The validity kind constraints are expressed in terms of mandatory/optional/prohibited flags for each part of the time expression: minute, second, millisecond and timezone. The range constraint is an <code>Interval&lt;Time&gt;</code>, which are both <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html" target="_blank" rel="noopener">openEHR Foundation Types</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -26207,13 +26359,13 @@ the <code>fractional_seconds_allowed</code> field is not so clear since the ISO8
 <div class="title">Note</div>
 </td>
 <td class="content">
-the Time class mentioned in the AOM specification is actually the <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_iso8601_date_time_class" target="_blank" rel="noopener">Iso8601_date_time</a> class. This is a known bug in the specs.
+the Time class mentioned in the AOM 1.4 specification is actually the <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_iso8601_time_class" target="_blank" rel="noopener">Iso8601_time</a> class. This is a <a href="https://specifications.openehr.org/tickets/SPECPR-380" target="_blank" rel="noopener">known bug</a> in the specs. So in <code>C_TIME</code>, range being an <code>Interval&lt;Time&gt;</code> should be an <code>Interval&lt;Iso8601_time&gt;</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Note that time expressions in openEHR are considered an absolute point in time from the start of the current day, that is <code>T10</code> represents <code>10:00:00.000</code> AM in the local timezone.</p>
+<p>Time expressions in openEHR are considered an absolute point in time from the start of the current day, that is <code>T10</code> represents <code>10:00:00.000</code> AM in the local timezone.</p>
 </div>
 <div class="sect4">
 <h5 id="_test_case_cont_dv_time_validate_open"><a class="anchor" href="#_test_case_cont_dv_time_validate_open"></a>14.10.2.1. Test Case CONT-DV_TIME-validate_open</h5>
@@ -26227,8 +26379,7 @@ the Time class mentioned in the AOM specification is actually the <a href="https
 <div class="title">Note</div>
 </td>
 <td class="content">
-the decimal mark for the seconds fraction could be <code>,</code> (comma) or <code>.</code> (period) at in-memory and storage representations of time expressions, but since in most popular exchange formats the <code>.</code> is preferred, and considering the implementation of these test cases will surelly use those exchange formats, we only specify test data sets which use the decimal mark <code>.</code>. Nevetheless, the <code>,</code> is totally valid at in-memory and storage levels.
-In the same line, basic and extended formats are allowed at in-memory and storage representations. Basic format being the time parts without any separators and the extended being the parts with separatos <code>:</code> (colon). The extended format is also preferred by the most common exchange fornats, so only test data sets using extended format will be specified.
+the decimal mark for the seconds fraction could be <code>,</code> (comma) or <code>.</code> (period) at in-memory and storage representations of time expressions, but since in most popular exchange formats the <code>.</code> is preferred, and considering the implementation of these test cases will surelly use those exchange formats, we only specify test data sets which use the decimal mark <code>.</code>. Nevetheless, the <code>,</code> is totally valid at in-memory and storage levels. In the same line, basic and extended formats are allowed at in-memory and storage representations. Basic format being the time parts without any separators and the extended being the parts with separators <code>:</code> (colon). The extended format is also preferred by the most common exchange fornats, so only test data sets using extended format will be specified.
 </td>
 </tr>
 </table>
@@ -26276,7 +26427,7 @@ if no timezone information is included, the time expression is considered <code>
 <div class="title">Note</div>
 </td>
 <td class="content">
-one clarification about the seconds fraction in ISO8601 is that is not exactly an expression of milliseconds as the AOM specification implies considering the <code>millisecond_validity</code> fields. For instance <code>.5</code> represents half a second, which is indeed 500 milliseconds but <code>.5</code> is not syntactically <code>500 ms</code>, or <code>.333333</code> represents one third of a second, and syntactilclly <code>333333</code> goes beyond the precision of milliseconds which is just 3 digits long. Consider <code>.33333</code> is totally valid in ISO8601 for the seconds fraction (see NOTE 2).
+one clarification about the seconds fraction in ISO8601 is that is not exactly an expression of milliseconds as the AOM specification implies considering the <code>millisecond_validity</code> field. For instance <code>.5</code> represents half a second, which is indeed 500 milliseconds but <code>.5</code> is not syntactically <code>500 ms</code>, or <code>.333333</code> represents one third of a second, and syntactically <code>333333</code> goes beyond the precision of milliseconds which is just 3 digits long. Consider <code>.33333</code> is totally valid in ISO8601 for the seconds fraction (see NOTE 2).
 </td>
 </tr>
 </table>
@@ -26303,7 +26454,7 @@ one clarification about the seconds fraction in ISO8601 is that is not exactly a
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">''</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ISO8601: at least minutes are required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO8601: at least hours are required</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">T10</p></td>
@@ -26400,6 +26551,16 @@ one clarification about the seconds fraction in ISO8601 is that is not exactly a
 <td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T10.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_primitive_time_types" target="_blank" rel="noopener">openEHR doesn&#8217;t allow fractional hours in partial time expressions</a>, an openEHR exception over the ISO 8601 spec</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T10:05.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_primitive_time_types" target="_blank" rel="noopener">openEHR doesn&#8217;t allow fractional minutes in partial time expressions</a>, an openEHR exception over the ISO 8601 spec</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -26412,7 +26573,7 @@ one clarification about the seconds fraction in ISO8601 is that is not exactly a
 <div class="title">Note</div>
 </td>
 <td class="content">
-the C_TIME has invariants that define if a higher precision component is optional or prohibited, lower precision components should be optional or prohibited. In other words, if <code>hour</code> is optional or prohibited, <code>minute</code>, <code>second</code> and <code>millisecond</code> should be optional or prohibited. These invariants should be checked in an archetype editor and template editor, we consider the following tests to follow those rules without checking them, since that is related to archetype/template validation, not with data validation.
+the C_TIME has invariants that define if a lower precision component is optional or prohibited (e.g. minutes) then the higher precision components (e.g. seconds) should be optional or prohibited. In other words, if <code>minutes</code> is optional then <code>seconds</code> should be optional or prohibited. These invariants should be checked in an archetype/template editor, since that is part of archetype/template validation. Here we consider the archetypes and templates used are valid.
 </td>
 </tr>
 </table>
@@ -27165,16 +27326,46 @@ the C_TIME has invariants that define if a higher precision component is optiona
 <div class="title">Note</div>
 </td>
 <td class="content">
-the Time class mentioned in the AOM specification is actually the <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_time_types" target="_blank" rel="noopener">Iso8601_time</a> class. This is a <a href="https://specifications.openehr.org/tickets/SPECPR-380" target="_blank" rel="noopener">known bug</a> in the specs.
+the Time class mentioned in the AOM 1.4 specification is actually the <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_time_types" target="_blank" rel="noopener">Iso8601_time</a> class. This is a <a href="https://specifications.openehr.org/tickets/SPECPR-380" target="_blank" rel="noopener">known bug</a> in the specs. So in <code>C_TIME</code>, range being an <code>Interval&lt;Time&gt;</code> should be an <code>Interval&lt;Iso8601_time&gt;</code>.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>TBD: we need to clarify if T10 is referring to the whole 10th hour or to 10:00:00 omitting the rest of the time components, because it could be a similar case as we have with the date expressions: can only compare expressions that have exactly the same components.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+there is an open issue in the comparability of two date/time/datetime expressions with different precisions but shared values for the components they contain. For instance, in ISO 8601-1_2019, the expression <code>T23:20</code> is referring to a specific hour and minute, and <code>T23</code> is referring to a specific hour. Then, numerically, it&#8217;s not possible to say if <code>T23 &lt; T23:20</code> or if <code>T23 &gt; T23:20</code>. That is because the expressions represent different time components, which are really intervals of time, and one interval contains the oher (the 23rd hour of the day contains the minute 23:30). Though when the precisions are not the same but there are no shared components, then the expressions are comparable, for instance we can say <code>T22 &lt; T2320</code>, because all the minutes and seconds in the 22nd hour of the day come before the minute 23:20. Similarly we can say <code>T22:45 &lt; T23</code>, since the whole minute 22:45 comes before all minutes and seconds in the 23rd hour of the day. This issue is currently being discussed in the openEHR SEC because it changes the definition of the method is_strictly_comparable_to() for DV_DATE, DV_TIME and DV_DATE_TIME. This is commented here because this test case needs to compare time expressions to be able to check the range constraint.
+</td>
+</tr>
+</table>
 </div>
-<div class="paragraph">
-<p>TBD: there is an open question about strictly comparability between time expressions with different components. Is "T10" comparable to "T00:00"?</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Besides noting that reduced precision time expressions represent an interval or range when those reduced precision time expressions are used as limits for an openEHR Interval, then it seems reasonable to interpret the whole range as the interval defined by the beginning of the lower limit and the end of the upper limit. For instance <code>T11</code> represents the whole 11th hour of the day, from start to end, and <code>T23</code> represents the whole 23rd hour of the day from start to end, then <code>T11..T23</code> represents all hours, minutes and seconds from the start of hour 11 to the end of hour 23 (yes the end not the start!). So something that might be counterintuitive by using this interpretation is: in this notation is <code>T23:30</code> would be contained in the <code>T11..T23</code> interval, though it is not strictly comparable to <code>T23</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+More about these considerations in the <a href="https://discourse.openehr.org/t/conformance-data-validation-question-counterintuitive-c-time-range-constraints/2637" target="_blank" rel="noopener">openEHR discourse</a>.
+</td>
+</tr>
+</table>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -28497,6 +28688,31 @@ the range with the timezone included doesn&#8217;t make sense when the time valu
 <div class="paragraph">
 <p>NOTE 2: by the ISO8601 standard, only years &gt;1582 are valid, since that was the year in which the Gregorian Calendar was put in place. For representing other years, there should be a mutual agreement between information interchange partners.</p>
 </div>
+<div class="paragraph">
+<p>Some exceptions to ISO 8601 specs is that in openEHR date/time/duration types, which dates back to RM 1.0.2 (and maybe before that):</p>
+</div>
+<div class="paragraph">
+<p>ISO 8601 semantics not used in openEHR include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>“expanded” dates, which have year numbers of greater than 4 digits, and may be negative; in openEHR, only 4-digit year numbers are assumed;</p>
+</li>
+<li>
+<p>the YYYY-WW-DD method of expressing dates (since this is imprecise and difficult to compute with due to variable week starting dates, and not required in health);</p>
+</li>
+<li>
+<p>partial date/times with fractional minutes or hours, e.g. hh,hhh or mm,mm; in openEHR, only fractional seconds are supported;</p>
+</li>
+<li>
+<p>the interval syntax. Intervals of date/times are supported in openEHR, but their syntax form is defined by ADL, and is standardised across all comparable types, not just dates and times.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Following those rules, will include test data sets that break the openEHR rules, even if those are ISO 8601 valid, the SUT should mark them as invalid.</p>
+</div>
 <div class="sect4">
 <h5 id="_test_case_cont_dv_date_validate_open"><a class="anchor" href="#_test_case_cont_dv_date_validate_open"></a>14.10.3.1. Test Case CONT-DV_DATE-validate_open</h5>
 <table class="tableblock frame-all grid-all stretch">
@@ -28521,7 +28737,12 @@ the range with the timezone included doesn&#8217;t make sense when the time valu
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">''</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ISO8601: at least year is required &lt;sup id="empty_date"&gt;[1](#footnote1)&lt;/sup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO8601: at least year is required (see note below)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">''</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">openEHR RM/AOM: at least year is required (see note below)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2021</p></td>
@@ -28567,7 +28788,7 @@ the range with the timezone included doesn&#8217;t make sense when the time valu
 <div class="title">Note</div>
 </td>
 <td class="content">
-this is the author&#8217;s interpretation of a minimal valid date in the context of openEHR noting the description of <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html" target="_blank" rel="noopener">C_DATE</a>: "There is no validity flag for ‘year’, since it must always be by definition mandatory in order to have a sensible date at all.". Though the ISO standard seems to allow partial year expressions.
+this is the author&#8217;s interpretation of a minimal valid date in the context of openEHR noting the description of <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html" target="_blank" rel="noopener">C_DATE</a>: "There is no validity flag for ‘year’, since it must always be by definition mandatory in order to have a sensible date at all.". Though the ISO 8601 standard allows partial year expressions like <code>198</code> to denoted the <code>80&#8217;s</code> and <code>19</code> to denote de <code>1900&#8217;s</code>.
 </td>
 </tr>
 </table>
@@ -28716,7 +28937,7 @@ the C_DATE has invariants that define if a higher precision component is optiona
 <div class="sect4">
 <h5 id="_test_case_cont_dv_date_validate_range"><a class="anchor" href="#_test_case_cont_dv_date_validate_range"></a>14.10.3.3. Test Case CONT-DV_DATE-validate_range</h5>
 <div class="paragraph">
-<p>The C_DATE.range constraint is an Interval&lt;Date&gt;, which are both <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html" target="_blank" rel="noopener">Foundation Types</a>.</p>
+<p>The <code>C_DATE.range</code> constraint is an <code>Interval&lt;Date&gt;</code>, which are both <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html" target="_blank" rel="noopener">Foundation Types</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -28725,7 +28946,7 @@ the C_DATE has invariants that define if a higher precision component is optiona
 <div class="title">Note</div>
 </td>
 <td class="content">
-the Date class mentioned in the AOM specification is actually the <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_time_types" target="_blank" rel="noopener">Iso8601_date</a> class. This is a <a href="https://specifications.openehr.org/tickets/SPECPR-380" target="_blank" rel="noopener">known bug</a> in the specs.
+the <code>Date</code> class mentioned in the AOM 1.4 specification is actually the <a href="https://specifications.openehr.org/releases/BASE/latest/foundation_types.html#_time_types" target="_blank" rel="noopener">Iso8601_date</a> class. This is a <a href="https://specifications.openehr.org/tickets/SPECPR-380" target="_blank" rel="noopener">known bug</a> in the specs.
 </td>
 </tr>
 </table>
@@ -28881,7 +29102,7 @@ the DV_DATE value and the C_DATE.range limits should be comparable, that means t
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">''</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ISO8601: at least year is required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">openEHR RM/AOM: at least year is required</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2021</p></td>
@@ -31463,6 +31684,54 @@ the Date_time class mentioned in the AOM specification is actually the <a href="
 <td class="tableblock halign-left valign-top"><p class="tableblock">1900-03-13..2020-07-09</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C_DATE_TIME.range</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">value</th>
+<th class="tableblock halign-left valign-top">C_DATE_TIME.range</th>
+<th class="tableblock halign-left valign-top">expected</th>
+<th class="tableblock halign-left valign-top">violated constraints</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021-05</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1900..2030</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021-05</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022..2030</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rejected</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C_DATE_TIME.range</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021-05</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1900..2021</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1900..2021 is interpreted as 1900-01-01..2021-12-31, so 2021-05 is contained in that range</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2020-07..2022-03</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accepted</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2020-07..2022-03 is interpreted as 2020-07-01..2022-03-31, and 2021 is 2021-01-01..2021-12-31, which is fully contained in the range constraint</p></td>
 </tr>
 </tbody>
 </table>

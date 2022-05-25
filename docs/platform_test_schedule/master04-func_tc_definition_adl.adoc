@@ -60,7 +60,7 @@ Service Model reference: {i_definition_adl14_link}[`I_DEFINITION_ADL14._validate
 
 [cols="1h,4a"]
 |===
-|Description    | validate valid OPTs
+|Description    | Validate valid OPTs
 |Pre-conditions | The server should be empty (no EHRs, no commits, no OPTs).
 |Post-conditions| None (validation should not change the state of the system).
 |Flow           | . For each valid OPT in the data set, invoke the OPT validation service
@@ -76,7 +76,7 @@ NOTE: some servers might not have a way to just validate the OPT, and validation
 
 [cols="1h,4a"]
 |===
-|Description    | validate valid OPTs
+|Description    | Validate invalid OPTs
 |Pre-conditions | The server should be empty (no EHRs, no commits, no OPTs).
 |Post-conditions| None (validation should not change the state of the system).
 |Flow           | . For each invalid OPT in the data set, invoke the OPT validation service
@@ -216,20 +216,20 @@ NOTE: the flows of this test case will include flows from the Upload OPT test ca
 * minimal valid OPT, two versions 
 * maximal valid OPT (all types in the RM)
 
-==== Test Case I_DEFINITION_ADL14.get_opt-get_single
+==== Test Case I_DEFINITION_ADL14.get_opt-retrieve_single
 
 // EhrBase ref: C.3.a.
 
 [cols="1h,4a"]
 |===
-|Description    | retrieve a single OPT
+|Description    | Retrieve a single OPT
 |Pre-conditions | All valid OPTs should be loaded into the system, only the single versioned ones.
 |Post-conditions| None (retrieve should not change the state of the system).
 |Flow           | . Invoke the retrieve OPT service with existing `template_ids`
                   . For each `template_id`, the correct OPT will be returned
 
                 NOTE: to check point 2, the retrieved OPT should be exactly the same as the uploaded one.
-|Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/get_opt/I_DEFINITION_ADL14.get_opt-get_single.robot[REST API / Robot^]
+|Test runners   |{openehr_cnf_platform_tests_robot}/I_DEFINITION_ADL14/get_opt/I_DEFINITION_ADL14.get_opt-retrieve_single.robot[REST API / Robot^]
 |===
 
 ==== Test Case I_DEFINITION_ADL14.get_opt-retrieve_fail
@@ -238,7 +238,7 @@ NOTE: the flows of this test case will include flows from the Upload OPT test ca
 
 [cols="1h,4a"]
 |===
-|Description    | empty server OPT retrieve fail test
+|Description    | Empty server OPT retrieve fail test
 |Pre-conditions | No OPTs should be loaded on the system.
 |Post-conditions| None
 |Flow           | . Invoke the retrieve OPT service with a random `template_id`
