@@ -32,8 +32,8 @@ Force Tags    AQL_smoke_loaded_db    AQL_temp
 
 
 *** Variables ***
-${ehr data sets}    ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/query/data_load/ehrs/
-${compo data sets}    ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/query/data_load/compositions/
+${ehr data sets}    ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/query/data_load/ehrs/
+${compo data sets}    ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/query/data_load/compositions/
 
 
 

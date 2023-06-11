@@ -25,8 +25,8 @@ Resource         ../suite_settings.robot
 
 
 *** Variables ***
-${VALID DATA SETS}     ${PROJECT_ROOT}${/}tests${/}robot${/}_resources${/}test_data_sets${/}valid_templates
-${INVALID DATA SETS}   ${PROJECT_ROOT}${/}tests${/}robot${/}_resources${/}test_data_sets${/}invalid_templates
+${VALID DATA SETS}     ${PROJECT_ROOT}${/}tests${/}platform${/}robot${/}_resources${/}test_data_sets${/}valid_templates
+${INVALID DATA SETS}   ${PROJECT_ROOT}${/}tests${/}platform${/}robot${/}_resources${/}test_data_sets${/}invalid_templates
 
 
 

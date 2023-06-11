@@ -30,10 +30,10 @@ Resource    composition_keywords.robot
 
 
 *** Variables ***
-${VALID QUERY DATA SETS}     ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/query/aql_queries_valid
-${INVALID QUERY DATA SETS}   ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/query/aql_queries_invalid
-${QUERY RESULTS LOADED DB}   ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/query/expected_results/loaded_db
-${QUERY RESULTS EMPTY DB}    ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/query/expected_results/empty_db
+${VALID QUERY DATA SETS}     ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/query/aql_queries_valid
+${INVALID QUERY DATA SETS}   ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/query/aql_queries_invalid
+${QUERY RESULTS LOADED DB}   ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/query/expected_results/loaded_db
+${QUERY RESULTS EMPTY DB}    ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/query/expected_results/empty_db
 
 ${aql_queries}    ${VALID QUERY DATA SETS}
 ${TIME QUERY DATA SET}     get_time_from_ehr.json

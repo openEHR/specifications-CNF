@@ -25,9 +25,9 @@ Resource    ehr_keywords.robot
 
 
 *** Variables ***
-${VALID CONTRI DATA SETS}     ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/contributions/valid
-${INVALID CONTRI DATA SETS}   ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/contributions/invalid
-${VALID COMPO DATA SETS}     ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/compositions/valid
+${VALID CONTRI DATA SETS}     ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/contributions/valid
+${INVALID CONTRI DATA SETS}   ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/contributions/invalid
+${VALID COMPO DATA SETS}     ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/compositions/valid
 
 
 *** Comments ***

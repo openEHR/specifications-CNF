@@ -10,8 +10,8 @@ Resource    contribution_keywords.robot
 
 
 *** Variables ***
-${VALID DIR DATA SETS}     ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/directory
-${INVALID DIR DATA SETS}   ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/directory
+${VALID DIR DATA SETS}     ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/directory
+${INVALID DIR DATA SETS}   ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/directory
 
 
 

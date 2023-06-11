@@ -142,9 +142,9 @@ restart SUT
 
 
 get application version
-    ${root}=  Parse Xml    ${POM_FILE}
-    ${version}=  Get Element Text   ${root}  version
-    Set Global Variable    ${VERSION}    ${version}
+    # ${root}=  Parse Xml    ${POM_FILE}
+    # ${version}=  Get Element Text   ${root}  version
+    Set Global Variable    ${VERSION}    0.28.0-SNAPSHOT
 
 
 Output Debug Info To Console
@@ -531,8 +531,8 @@ startup SUT
 
     # comment: test environment controlled by Robot (CONTROL_MODE=Docker)
     # get application version
-    start ehrdb
-    start openehr server
+    # start ehrdb
+    # start openehr server
 
 
 shutdown SUT
@@ -546,8 +546,8 @@ shutdown SUT
     Run Keyword And Return If   ("${CONTROL_MODE}" in ["NONE", "API"])
                           ...    Log    REMOTE SUT WAS USED - NO SHUTDOWN REQUIRED!
 
-    stop openehr server
-    stop and remove ehrdb
+    # stop openehr server
+    # stop and remove ehrdb
     empty operational_templates folder
 
 
@@ -666,42 +666,3 @@ TRACE GITHUB ISSUE
                     Set Tags    not-ready    ${type}    ${GITHUB_ISSUE}
                     # Skip if    '${not-ready}'=='not-ready'    Skipped because test or feature not ready
                     # Run Keyword If    '${type}'=='not-ready'    Set Tags    not-ready
-
-
-
-
-
-
-
-# oooooooooo.        .o.         .oooooo.   oooo    oooo ooooo     ooo ooooooooo.
-# `888'   `Y8b      .888.       d8P'  `Y8b  `888   .8P'  `888'     `8' `888   `Y88.
-#  888     888     .8"888.     888           888  d8'     888       8   888   .d88'
-#  888oooo888'    .8' `888.    888           88888[       888       8   888ooo88P'
-#  888    `88b   .88ooo8888.   888           888`88b.     888       8   888
-#  888    .88P  .8'     `888.  `88b    ooo   888  `88b.   `88.    .8'   888
-# o888bood8P'  o88o     o8888o  `Y8bood8P'  o888o  o888o    `YbodP'    o888o
-#
-# [ BACKUP ]
-
-# start openehr server
-#     ${result}=  Start Process  java  -jar  ${PROJECT_ROOT}${/}application/target/application-${VERSION}.jar
-#     ...                              alias=ehrserver  cwd=${PROJECT_ROOT}  stdout=stdout.txt
-#     Wait For Process  ehrserver  timeout=10  on_timeout=continue
-#     Is Process Running  ehrserver
-#     Process Should Be Running  ehrserver
-#     wait until openehr server is ready
-#     openehr server is online
-
-# reset ehrdb
-#     Log  DEPRECATION WARNING - @WLAD replace/update this keyword!
-#     ...  level=WARN
-#     stop ehrdb
-#     remove ehrdb container
-#     start ehrdb
-
-# start docker container
-#     [Arguments]   ${container_name}  ${expose_port}  ${image}
-#     [Documentation]  expose_port format: -p 27017:27017
-#     ...
-#     ${RC}=  Run And Return Rc  docker run --name ${container_name} ${expose_port} -d ${image}
-#     Should Be Equal As Integers  ${RC}  0
