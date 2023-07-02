@@ -23,8 +23,8 @@ Resource        ../suite_settings.robot
 
 
 *** Variables ***
-${VALID EHR DATA SETS}       ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/ehr/valid
-${INVALID EHR DATA SETS}     ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/ehr/invalid
+${VALID EHR DATA SETS}       ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/ehr/valid
+${INVALID EHR DATA SETS}     ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/ehr/invalid
 
 
 *** Keywords ***

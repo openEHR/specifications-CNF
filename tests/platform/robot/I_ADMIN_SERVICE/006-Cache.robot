@@ -66,7 +66,7 @@ ${SUT}                         ADMIN-TEST
 ${CACHE-ENABLED}               ${TRUE}
 ${ALLOW-TEMPLATE-OVERWRITE}    ${FALSE}
 
-${VALID DATA SETS}     ${PROJECT_ROOT}${/}tests${/}robot${/}_resources${/}test_data_sets${/}valid_templates
+${VALID DATA SETS}     ${PROJECT_ROOT}${/}tests${/}platform${/}robot${/}_resources${/}test_data_sets${/}valid_templates
 
 
 

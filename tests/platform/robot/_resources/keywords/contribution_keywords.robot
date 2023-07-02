@@ -25,9 +25,9 @@ Resource    ehr_keywords.robot
 
 
 *** Variables ***
-${VALID CONTRI DATA SETS}     ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/contributions/valid
-${INVALID CONTRI DATA SETS}   ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/contributions/invalid
-${VALID COMPO DATA SETS}     ${PROJECT_ROOT}/tests/robot/_resources/test_data_sets/compositions/valid
+${VALID CONTRI DATA SETS}     ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/contributions/valid
+${INVALID CONTRI DATA SETS}   ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/contributions/invalid
+${VALID COMPO DATA SETS}     ${PROJECT_ROOT}/tests/platform/robot/_resources/test_data_sets/compositions/valid
 
 
 *** Comments ***
@@ -205,20 +205,6 @@ retrieve CONTRIBUTION by fake ehr_id & contri_uid (JSON)
                         generate random ehr_id
                         generate random contribution_uid
                         GET /ehr/ehr_id/contribution/contribution_uid    JSON
-
-
-retrieve CONTRIBUTION(S) by ehr_id (JSON)
-                        Set Test Variable  ${KEYWORD NAME}  GET CONTRI(S) BY EHR_ID
-                        GET /ehr/ehr_id/contributions    JSON
-                        # NOTE: no such endpoint (anymore)???
-
-
-retrieve CONTRIBUTION(S) by fake ehr_id (JSON)
-                        Set Test Variable  ${KEYWORD NAME}  GET CONTRI(S) BY EHR_ID
-
-                        generate random ehr_id
-                        GET /ehr/ehr_id/contributions    JSON
-
 
 check response: is negative indicating non-existent ehr_id
                         Should Be Equal As Strings    ${response.status_code}    404

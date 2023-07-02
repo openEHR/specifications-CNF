@@ -26,9 +26,9 @@ Resource    template_opt1.4_keywords.robot
 
 
 *** Variables ***
-${VALID DATA SETS}     ${PROJECT_ROOT}${/}tests${/}robot${/}_resources${/}test_data_sets${/}valid_templates
-${INVALID DATA SETS}   ${PROJECT_ROOT}${/}tests${/}robot${/}_resources${/}test_data_sets${/}invalid_templates
-${COMPO DATA SETS}     ${PROJECT_ROOT}${/}tests${/}robot${/}_resources${/}test_data_sets${/}compositions
+${VALID DATA SETS}     ${PROJECT_ROOT}${/}tests${/}platform${/}robot${/}_resources${/}test_data_sets${/}valid_templates
+${INVALID DATA SETS}   ${PROJECT_ROOT}${/}tests${/}platform${/}robot${/}_resources${/}test_data_sets${/}invalid_templates
+${COMPO DATA SETS}     ${PROJECT_ROOT}${/}tests${/}platform${/}robot${/}_resources${/}test_data_sets${/}compositions
 
 
 
@@ -919,7 +919,11 @@ upload OPT
 
                         get valid OPT file    ${opt_file}
                         upload OPT file
-                        server accepted OPT
+                        IF  '${response.status_code}' != '409'
+                            server accepted OPT
+                        ELSE
+                            server rejected OPT with status code 409
+                        END
 
 
 create EHR

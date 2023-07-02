@@ -50,8 +50,7 @@ Variables   variables/sut_config.py
 # ${invalid_ehr_id}    123
 ${BASE_URL}              http://localhost:8080/ehrbase/rest/openehr/v1
 # ${ADMIN_BASE_URL}        http://localhost:8080/ehrbase/rest/admin
-${PROJECT_ROOT}          ${EXECDIR}${/}..
-${POM_FILE}              ${PROJECT_ROOT}${/}pom.xml
+${PROJECT_ROOT}          ${EXECDIR}${/}..${/}..
 ${CREATING_SYSTEM_ID}    ${NODENAME}
 ${SMOKE_TEST_PASSED}     ${TRUE}
 
