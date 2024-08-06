@@ -20,8 +20,6 @@ include::{ref_dir}/docs/references/reference_definitions.adoc[]
 // ============================================= Asciidoc BODY ===============================================
 //
 
-include::master00-amendment_record.adoc[leveloffset=+1]
-
 //
 // --------------------------------------------- Preface -----------------------------------------------
 //
@@ -79,6 +77,7 @@ include::master17.7-content_tc_data_types-uri.adoc[leveloffset=+1]
 // --------------------------------------------- REFERENCES -----------------------------------------------
 //
 
+include::master00-amendment_record.adoc[leveloffset=+1]
 
 // :sectnums!:
 // == References
