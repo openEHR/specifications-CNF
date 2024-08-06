@@ -76,7 +76,7 @@ NOTE: the values in the C_STRING.list should be valid URIs compliant with RFC398
 | ehr:/89c0752e-0815-47d7-8b3c-b3aaea2cea7a/031f2513-b9ef-47b2-bbef-8db24ae68c2f::EHRSERVER::1/context/other_context[at0001]/items[archetype_id=openEHR-EHR-CLUSTER.sample_symptom.v1]/items[at0034]/items[at0021]/value | accepted | | This should be a valid reference to a DATA_VALUE node in a COMPOSITION from an EHR 
 | ehr://CLOUD_EHRSERVER/89c0752e-0815-47d7-8b3c-b3aaea2cea7a           | accepted | | Similar to the examples above, with given system_id as the URI `authority` 
 | ehr://CLOUD_EHRSERVER/89c0752e-0815-47d7-8b3c-b3aaea2cea7a/031f2513-b9ef-47b2-bbef-8db24ae68c2f::EHRSERVER::1 | accepted | | Similar to the examples above, with given system_id as the URI `authority` 
-| ehr://CLOUD_EHRSERVER/89c0752e-0815-47d7-8b3c-b3aaea2cea7a/031f2513-b9ef-47b2-bbef-8db24ae68c2f::EHRSERVER::1/context/other_context[at0001]/items[archetype_id=openEHR-EHR-CLUSTER.sample_symptom.v1]/items[at0034]/items[at0021]/value | accepted | | Similar to the examples above, with given system_id as the URI `authority` 
+| ehr://CLOUD_EHRSERVER/89c0752e-0815-47d7-8b3c-b3aaea2cea7a/031f2513-b9ef-47b2-bbef-8db24ae68c2f::EHRSERVER::1/context/other_context[at0001]/items[archetype_id=openEHR-EHR-CLUSTER.sample_symptom.v1]/items[at0034]/items[at0021]/value | accepted | | Similar to the examples above, with given system_id as the URI `authority`  |
 |===
 
 

@@ -44,7 +44,7 @@ Conformance for these categories is assessed as follows.
 |How assessed
 |Methodology
 
-.3+|*Platform Component*
+.2+|*Platform Component*
 |API conformance
 |Conformance of the _implemented APIs_ to the published APIs, in a concrete API technology
 |Regression of test client running API call-in test cases against reference results

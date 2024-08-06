@@ -117,70 +117,70 @@ valid.
 NOTE: the tables below represent one `VERSION` in the committed `CONTRIBUTION`.
 
 A. Creating two valid, complete event `COMPOSITIONs` in one commit should be accepted.
-
++
 [cols="^,^,^,^",options="header",]
 |===
 |change_type+   |lifecycle_state++  |composition category   |composition validity
 |creation       |complete           |event                  |valid
 |creation       |complete           |event                  |valid
 |===
-
++
 This `CONTRIBUTION` should be accepted.
 
 B. Creating two valid, complete persistent `COMPOSITIONs` in one commit should be accepted.
-
++
 NOTE: depending on the server implementation, some servers might not accept the second `COMPOSITION` if both `COMPOSITIONs` reference the same persistent OPT. So this test case considers both `COMPOSITIONs` reference different persistent OPTs.
-
++
 [cols="^,^,^,^",options="header",]
 |===
 |change_type+   |lifecycle_state++      |composition category   |composition validity
 |creation       |complete               |persistent             |valid
 |creation       |complete               |persistent             |valid
 |===
-
++
 This `CONTRIBUTION` should be accepted.
 
 C. Creating two valid, complete and mixed category `COMPOSITIONs` in one commit should be accepted.
-
++
 [cols="^,^,^,^",options="header",]
 |===
 |change_type+   |lifecycle_state++  |composition category   |composition validity
 |creation       |complete           |event                  |valid
 |creation       |complete           |persistent             |valid
 |===
-
++
 This `CONTRIBUTION` should be accepted.
 
 D. If any `COMPOSITION` is invalid in a `CONTRIBUTION`, the whole commit should fail. It doesn’t matter if it is complete or incomplete, event or persistent (just showing some of the combinations below).
-
++
 [cols="^,^,^,^",options="header",]
 |===
 |change_type+   |lifecycle_state++  |composition category   |composition validity
 |creation       |complete           |event                  |valid
 |creation       |complete           |event                  |invalid
 |===
-
++
 [cols="^,^,^,^",options="header",]
 |===
 |change_type+   |lifecycle_state++  |composition category   |composition validity
 |creation       |complete           |persistent             |valid
 |creation       |complete           |persistent             |invalid
 |===
-
++
 [cols="^,^,^,^",options="header",]
 |===
 |change_type+   |lifecycle_state++  |composition category   |composition validity
 |creation       |complete           |event                  |valid
 |creation       |complete           |persistent             |invalid
 |===
-
++
 [cols="^,^,^,^",options="header",]
 |===
 |change_type+   |lifecycle_state++  |composition category   |composition validity
 |creation       |complete           |event                  |invalid
 |creation       |complete           |persistent             |valid
 |===
-
++
 These `CONTRIBUTIONs` should be #REJECTED#.
 
 NOTE: (+) for other change types than creation, the first commit will be rejected, so not included in the table those cases but should be tested.

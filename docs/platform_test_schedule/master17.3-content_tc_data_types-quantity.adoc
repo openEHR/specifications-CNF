@@ -1350,7 +1350,7 @@ DV_INTERVAL.lower
 [options="header"]
 |===
 | type | meaning (kind)   | numerator | denominator | precision | C_REAL.range (num) | C_REAL.range (den) | 
-| 0    | ratio            | 10        | 500         | 0         | 0..15              | 100..1000          
+| 0    | ratio            | 10        | 500         | 0         | 0..15              | 100..1000          |
 |===
 
 DV_INTERVAL.upper
@@ -1358,7 +1358,7 @@ DV_INTERVAL.upper
 [options="header"]
 |===
 | type | meaning (kind)   | numerator | denominator | precision | C_REAL.range (num) | C_REAL.range (den) | 
-| 0    | ratio            | 20        | 500         | 0         | 0..50              | 100..1000          
+| 0    | ratio            | 20        | 500         | 0         | 0..50              | 100..1000          |
 |===
 
 [options="header"]
@@ -1376,7 +1376,7 @@ DV_INTERVAL.lower
 |===
 | type | meaning (kind)   | numerator | denominator | precision | C_REAL.range (num) | C_REAL.range (den) | 
 
-| 0    | ratio            | 10        | 500         | 0         | 0..5               | 100..1000          
+| 0    | ratio            | 10        | 500         | 0         | 0..5               | 100..1000          |
 |===
 
 DV_INTERVAL.upper
@@ -1384,7 +1384,7 @@ DV_INTERVAL.upper
 [options="header"]
 |===
 | type | meaning (kind)   | numerator | denominator | precision | C_REAL.range (num) | C_REAL.range (den) | 
-| 0    | ratio            | 20        | 500         | 0         | 0..50              | 100..1000          
+| 0    | ratio            | 20        | 500         | 0         | 0..50              | 100..1000          |
 |===
 
 [options="header"]
@@ -1401,7 +1401,7 @@ DV_INTERVAL.lower
 [options="header"]
 |===
 | type | meaning (kind)   | numerator | denominator | precision | C_REAL.range (num) | C_REAL.range (den) | 
-| 0    | ratio            | 10        | 500         | 0         | 0..15              | 100..1000          
+| 0    | ratio            | 10        | 500         | 0         | 0..15              | 100..1000          |
 |===
 
 DV_INTERVAL.upper
@@ -1409,7 +1409,7 @@ DV_INTERVAL.upper
 [options="header"]
 |===
 | type | meaning (kind)   | numerator | denominator | precision | C_REAL.range (num) | C_REAL.range (den) | 
-| 0    | ratio            | 20        | 500         | 0         | 0..10              | 100..1000          
+| 0    | ratio            | 20        | 500         | 0         | 0..10              | 100..1000          |
 |===
 
 [options="header"]
