@@ -80,8 +80,8 @@ Notes:
 . When the `_ehr_id_` is not present, it is expected that it is assigned by the server.
 . The server should set the `EHR._system_id_` value to a known value (defined by the server's configuration).
 . The default values that should be assigned by the server for is_modifiable and is_queryable are 'true', and for the subject it defaults to an instance of `PARTY_SELF`.
-. There are no cases to check if the provided `ehr_id`is valid, since in the {openehr_sm_openehr_platform}[openEHR Platform Service Model^] the parameters are typed to `UUID`, any other format will be an invalid call.
-. The validity of an `EHR_STATUS` can be checked in its JSON form by validating against the {openehr_its_json}/latest/components/RM[JSON schemas^].
+. There are no cases to check if the provided `ehr_id` is valid, since in the {openehr_sm_openehr_platform}[openEHR Platform Service Model^] the parameters are typed to `UUID`, any other format will be an invalid call.
+. The validity of an `EHR_STATUS` can be checked in its JSON form by validating against the {openehr_its_json_releases}/components/RM[JSON schemas^].
 
 == Test Cases
 

@@ -1,4 +1,5 @@
 = specifications-CNF - openEHR Conformance specifications
 
-This repository contains the document and model sources (Asciidoctor and MagicDraw) for the openEHR Conformance specifications. The published form may be accessed from the openEHR website http://www.openehr.org/releases/CNF/latest/openehr_platform_conformance.html[CNF specifications index page].
+This repository contains the document and model sources (Asciidoctor and MagicDraw) for the openEHR Conformance specifications.
+The published form may be accessed from the openEHR website http://www.openehr.org/releases/CNF[CNF specifications index page].
 
