@@ -3,6 +3,7 @@
     "title": "Conformance Specifications",
     "description": "openEHR Conformance Specifications",
     "keywords": "conformance",
+    "status": "DEVELOPMENT",
     "specifications": [
         {
             "id": "guide",
