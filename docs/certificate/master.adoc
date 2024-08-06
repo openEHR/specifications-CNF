@@ -31,7 +31,7 @@ This specification was developed and is maintained by the {openehr_sec}[openEHR 
 === Principal Authors
 
 * Thomas Beale, Ars Semantica, UK; openEHR International Board
-* Pablo Pazos Gutierrez <pablo.pazos@cabolabs.com>
+* Pablo Pazos Gutierrez, CaboLabs, Uruguay
 
 === Trademarks
 
