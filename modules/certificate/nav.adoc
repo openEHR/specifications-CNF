@@ -1,0 +1,5 @@
+* xref:index.adoc[openEHR Conformance Certificate]
+** xref:overview.adoc[Overview]
+** xref:certificate.adoc[Conformance Certificate]
+** xref:appendix.adoc[Appendix]
+

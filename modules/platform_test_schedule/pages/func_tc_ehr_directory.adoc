@@ -1,3 +1,5 @@
+include::partial$module_vars.adoc[]
+
 = Test Suite: EHR_SERVICE / I_DIRECTORY Interface
 
 == Normative Reference

@@ -1,3 +1,5 @@
+include::partial$module_vars.adoc[]
+
 = Overview
 
 An openEHR Conformance Certificate consists of a rating in the Functional and Content dimensions, and a detailed report. The ratings are as follows:

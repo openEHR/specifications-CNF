@@ -1,5 +1,10 @@
+include::ROOT:partial$component_vars.adoc[]
+
 :spec_title: openEHR Platform Profiles
 :copyright_year: 2022
 :spec_status: DEVELOPMENT
 :keywords: conformance, profile, product
 :description: openEHR Platform Profiles
+
+:latest_issue: 0.5.0
+:latest_issue_date: 07 Jan 2022

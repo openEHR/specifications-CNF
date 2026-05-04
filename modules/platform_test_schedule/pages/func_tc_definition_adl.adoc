@@ -1,3 +1,5 @@
+include::partial$module_vars.adoc[]
+
 = Test Suite: DEFINITION Service / I_DEFINITION_ADL2 and I_DEFINITION_ADL14 Interfaces
 
 // some useful variables

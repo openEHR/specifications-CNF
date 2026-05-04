@@ -1,3 +1,5 @@
+include::partial$module_vars.adoc[]
+
 == Data Types - Basic Package
 
 {openehr_rm_data_types}#_basic_package[Specification / UML reference^].

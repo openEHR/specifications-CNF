@@ -1,0 +1,22 @@
+include::partial$module_vars.adoc[]
+
+= Appendix
+
+
+== Acknowledgements
+
+This specification was developed and is maintained by the {openehr_sec}[openEHR Specifications Editorial Committee (SEC)^].
+
+=== Principal Authors
+
+* Thomas Beale, Ars Semantica, UK; openEHR International Board
+* Pablo Pazos Gutierrez, CaboLabs, Uruguay
+* Wladislaw Wagner, vitagroup AG, Germany
+
+=== Trademarks
+
+* 'openEHR' is a trademark of the openEHR Foundation
+
+:sectnums!:
+
+include::partial$amendment_record.adoc[]

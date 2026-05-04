@@ -1,3 +1,5 @@
+include::partial$module_vars.adoc[]
+
 [[_func_conf_ehr_component]]
 = Test Suite: EHR_SERVICE
 
