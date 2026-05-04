@@ -1,8 +1,8 @@
-= Preface
+== Preface
 
 == Purpose
 
-This document defines a template for openEHR Conformance Certificate, a document that is generated as the result of executing a conformance test schedule against a running system or application. This may be a product, or a particular system, e.g. the specific environment of a healthcare provider. The audience of this document includes:
+This document specifies the openEHR Platform Conformance test schedule, which may be used to determine the conformance of openEHR platform products to openEHR plaform-related specifications. The audience of this document includes:
 
 * Software development organisations developing healthcare information systems;
 * Customer (i.e. procuring) organisations.
@@ -11,11 +11,12 @@ This document defines a template for openEHR Conformance Certificate, a document
 
 Useful references for reading this document include:
 
+* The {openehr_overview}[openEHR Architecture Overview^];
 * The {openehr_cnf_guide}[openEHR Conformance Guide^]
 
 == Status
 
-This specification is in the {spec_status} state. The development version of this document can be found at {openehr_cnf_development_certificate}[{openehr_cnf_development_certificate}^].
+This specification is in the {spec_status} state. The development version of this document can be found at {openehr_cnf_development_platform_test_schedule}[{openehr_cnf_development_platform_test_schedule}^].
 
 Known omissions or questions are indicated in the text with a 'to be determined' paragraph, as follows:
 [.tbd]

@@ -19,7 +19,7 @@ These needs imply four kinds of stakeholder and associated interests:
 
 [.text-center]
 .Stakeholders and Use Cases
-image::{diagrams_uri}/conformance_framework-use_cases.svg[id=conformance_framework-use_cases, align="center"]
+image::diagrams/conformance_framework-use_cases.svg[id=conformance_framework-use_cases, align="center"]
 
 The confidence of procuring organisations in the overall platform solutions market relies on the availablility of formal conformance criteria, as well as guides and materials for concretely performing conformance assessment. Assessment may be performed in-house on both procurement and vendor side, but in a more mature market will also be performed independently by dedicated assessment organisation(s).
 
@@ -90,7 +90,7 @@ The transactional semantics remain the same regardless of API protocol, while th
 
 [.text-center]
 .Component Model
-image::{diagrams_uri}/sut_model.svg[id=sut_model, align="center"]
+image::diagrams/sut_model.svg[id=sut_model, align="center"]
 
 To establish a common basis for naming and describing semantics of the openEHR Platform, the {openehr_sm_openehr_platform}[openEHR Platform Abstract Service Model^] is used. This defines a standard set of openEHR component names along with definitions of the transactional semantics of each component, i.e. the 'semantic' test target referred to above. (A product's own component names need not correspond to the openEHR component names of course, but for the purpose of testing the logical mapping of the two should be provided by a developer.)
 
@@ -100,7 +100,7 @@ The following figure illustrates a notional openEHR platform product, consisting
 
 [.text-center]
 .Platform implementation with multiple API protocols
-image::{diagrams_uri}/conformance_sut.svg[id=conformance_sut, align="center"]
+image::diagrams/conformance_sut.svg[id=conformance_sut, align="center"]
 
 === Platform Clients
 
