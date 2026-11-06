@@ -12,7 +12,7 @@ The following diagram illustrates the openEHR Conformance Specifications.
 
 [.text-center]
 .Conformance-related specifications
-image::{diagrams_uri}/conformance_framework-artefacts.svg[id=conformance_framework-artefacts, align="center"]
+image::diagrams/conformance_framework-artefacts.svg[id=conformance_framework-artefacts, align="center"]
 
 The Conformance specifications are shown in the top box, and consist of the following:
 
@@ -38,7 +38,7 @@ In the diagram above, the blue arrows indicate derivation from more general arte
 
 [.text-center]
 .Test items
-image::{diagrams_uri}/conformance_framework-chain.svg[id=conformance_framework-chain, align="center"]
+image::diagrams/conformance_framework-chain.svg[id=conformance_framework-chain, align="center"]
 
 The numeric order indicates the following logical progression:
 

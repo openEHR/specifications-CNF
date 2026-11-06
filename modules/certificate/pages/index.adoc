@@ -1,0 +1,51 @@
+//
+// ============================================ Asciidoc HEADER =============================================
+//
+
+//
+// ============================================ Asciidoc PREAMBLE =============================================
+//
+
+
+= {spec_title}
+
+
+//
+// ============================================= Asciidoc BODY ===============================================
+//
+
+//
+// --------------------------------------------- Preface -----------------------------------------------
+//
+
+== Acknowledgements
+
+This specification was developed and is maintained by the {openehr_sec}[openEHR Specifications Editorial Committee (SEC)^].
+
+=== Principal Authors
+
+* Thomas Beale, Ars Semantica, UK; openEHR International Board
+* Pablo Pazos Gutierrez, CaboLabs, Uruguay
+
+=== Trademarks
+
+* 'openEHR' is a trademark of the openEHR Foundation
+
+
+//
+// --------------------------------------------- TOC -----------------------------------------------
+//
+//toc::[left]
+
+//
+// --------------------------------------------- CHAPTERS -----------------------------------------------
+//
+
+//
+// --------------------------------------------- REFERENCES -----------------------------------------------
+//
+
+
+// :sectnums!:
+// == References
+

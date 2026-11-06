@@ -6,7 +6,7 @@ An operational test environment requires at a minimum a _test application_ with 
 
 [.text-center]
 .System Under Test - REST
-image::{diagrams_uri}/conformance_sut_rest.svg[id=conformance_sut_rest, align="center"]
+image::diagrams/conformance_sut_rest.svg[id=conformance_sut_rest, align="center"]
 
 == Tooling
 

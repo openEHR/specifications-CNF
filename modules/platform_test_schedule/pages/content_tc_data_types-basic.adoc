@@ -131,3 +131,15 @@ Note the constraints for each attribute are all checked, so the errors are accum
 
 NOTE: this datatype is not used and not supported by modeling tools ({openehr_forums_site}/t/is-dv-state-and-its-profile-constraint-c-dv-state-used-anywhere-in-the-specs/2026[Discourse discussion^]).
 
+
+include::partial$content_tc_data_types-text.adoc[leveloffset=+1]
+
+include::partial$content_tc_data_types-quantity.adoc[leveloffset=+1]
+
+include::partial$content_tc_data_types-date_time.adoc[leveloffset=+1]
+
+include::partial$content_tc_data_types-time_specification.adoc[leveloffset=+1]
+
+include::partial$content_tc_data_types-encapsulated.adoc[leveloffset=+1]
+
+include::partial$content_tc_data_types-uri.adoc[leveloffset=+1]
