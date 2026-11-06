@@ -23,8 +23,8 @@ This test suite uses artefacts defined by the following information model specif
 
 This test suite depends on other test suites:
 
-* <<_func_conf_def_adl_component, Functional Conformance: Definitions Component>>, providing OPTs;
-* <<_func_conf_ehr_component, Functional Conformance: EHR Component>>, providing EHRs.
+* <<func_tc_definition_adl.adoc#{underscore}func_conf_def_adl_component,Functional Conformance: Definitions Component>>, providing OPTs;
+* xref:func_tc_ehr.adoc[Functional Conformance: EHR Component], providing EHRs.
 
 == Test Environment
 

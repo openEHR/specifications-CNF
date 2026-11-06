@@ -49,5 +49,5 @@ NOTE: The supported RM version(s) by the SUT should be stated in the Conformance
 
 == Data Validation Conformance Test Design
 
-Data validation conformance is defined in terms of test cases with multiple data sets. These test cases are documented in the same basic way as described above, along with multiple data sets, typically shown in tabulated form. They are described in <<_data_validation_conformance>>.
+Data validation conformance is defined in terms of test cases with multiple data sets. These test cases are documented in the same basic way as described above, along with multiple data sets, typically shown in tabulated form. They are described in xref:content_tc_composition.adoc[Data Validation Conformance].
 
