@@ -1,3 +1,5 @@
+include::partial$module_vars.adoc[]
+
 = Test Suite: QUERY_SERVICE
 
 // Some useful links: 
@@ -23,7 +25,7 @@ This test suite uses artefacts defined by the following information model specif
 
 This test suite depends on other test suites:
 
-* <<_func_conf_def_adl_component, Functional Conformance: Definitions Component>>, providing OPTs.
+* <<func_tc_definition_adl.adoc#{underscore}func_conf_def_adl_component,Functional Conformance: Definitions Component>>, providing OPTs.
 
 == Test Environment
 

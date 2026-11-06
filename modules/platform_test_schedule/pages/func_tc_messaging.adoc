@@ -1,3 +1,5 @@
+include::partial$module_vars.adoc[]
+
 [[_func_conf_def_msg_component]]
 = Test Suite: MESSAGE_SERVICE
 

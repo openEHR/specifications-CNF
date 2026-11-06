@@ -1,3 +1,5 @@
+include::partial$module_vars.adoc[]
+
 = Conformance Framework
 
 The purpose of the openEHR Conformance Specifications is to provide a framework and methodology for performing conformance testing of openEHR-based systems and products to the intended specifications. The approach described here is not openEHR-specific, and may be applied to other components deployed as part of an overall platform solution.

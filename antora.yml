@@ -1,0 +1,9 @@
+name: CNF
+title: Conformance Specifications
+start_page: ROOT:index.adoc
+nav:
+  - modules/ROOT/nav.adoc
+  - modules/guide/nav.adoc
+  - modules/platform_test_schedule/nav.adoc
+  - modules/profiles/nav.adoc
+  - modules/certificate/nav.adoc

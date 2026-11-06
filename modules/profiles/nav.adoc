@@ -1,0 +1,5 @@
+* xref:index.adoc[openEHR Platform Profiles]
+** xref:overview.adoc[Overview]
+** xref:profiles.adoc[Default Profiles]
+** xref:appendix.adoc[Appendix]
+

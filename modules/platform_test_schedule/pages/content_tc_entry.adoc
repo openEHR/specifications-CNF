@@ -1,3 +1,5 @@
+include::partial$module_vars.adoc[]
+
 //
 // taken from doc/conformance_testing/COMPOSITION_VALIDATION_STRUCTURE.md
 //

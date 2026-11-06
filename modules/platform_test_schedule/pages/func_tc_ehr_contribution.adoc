@@ -1,3 +1,5 @@
+include::partial$module_vars.adoc[]
+
 = Test Suite: EHR_SERVICE / I_CONTRIBUTION Interface
 
 == Normative Reference
@@ -8,8 +10,8 @@ Items under this validation suite conceptually use these abstract interfaces fro
 
 This test suite depends on other test suites:
 
-* <<_func_conf_def_adl_component, Functional Conformance: Definitions Component>>, providing OPTs;
-* <<_func_conf_ehr_component, Functional Conformance: EHR Component>>, providing EHRs.
+* <<func_tc_definition_adl.adoc#{underscore}func_conf_def_adl_component,Functional Conformance: Definitions Component>>, providing OPTs;
+* xref:func_tc_ehr.adoc[Functional Conformance: EHR Component], providing EHRs.
 
 == Test Environment
 

@@ -1,3 +1,5 @@
+include::partial$module_vars.adoc[]
+
 [[_func_conf_def_query_component]]
 = Test Suite: DEFINITION Service / I_DEFINITION_QUERY Interface
 

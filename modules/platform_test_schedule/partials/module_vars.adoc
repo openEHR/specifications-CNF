@@ -1,5 +1,10 @@
+include::ROOT:partial$component_vars.adoc[]
+
 :spec_title: openEHR Platform Conformance Test Schedule
 :copyright_year: 2017
 :spec_status: DEVELOPMENT
 :keywords: conformance, test
 :description: openEHR Platform Conformance Test Schedule
+
+:latest_issue: 0.8.6
+:latest_issue_date: 24 Mar 2022

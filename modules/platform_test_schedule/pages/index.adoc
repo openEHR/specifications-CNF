@@ -1,3 +1,5 @@
+include::partial$module_vars.adoc[]
+
 //
 // ============================================ Asciidoc HEADER =============================================
 //
@@ -7,7 +9,26 @@
 //
 
 
-= {spec_title}
+= {spec_title} [.spec-status.spec-status-development]#{spec_status}#
+
+Detailed test schedule specifying test cases for each openEHR REST API endpoint and service interface, used to verify and document platform implementation conformance. Tests are organised by API resource and operation, with explicit pre-conditions, request specifications, expected response codes, and response body assertions. The test schedule is the normative basis for automated conformance testing suites used by the openEHR community.
+
+== Purpose
+
+This document specifies the openEHR Platform Conformance test schedule, which may be used to determine the conformance of openEHR platform products to openEHR plaform-related specifications. The audience of this document includes:
+
+* Software development organisations developing healthcare information systems;
+* Customer (i.e. procuring) organisations.
+
+== Related Documents
+
+Useful references for reading this document include:
+
+* The {openehr_overview}[openEHR Architecture Overview^];
+* The {openehr_cnf_guide}[openEHR Conformance Guide^]
+
+
+
 
 
 //
@@ -18,37 +39,12 @@
 // --------------------------------------------- Preface -----------------------------------------------
 //
 
-== Acknowledgements
+== Feedback
 
-This specification was developed and is maintained by the {openehr_sec}[openEHR Specifications Editorial Committee (SEC)^].
+Feedback may be provided on the {openehr_cnf_forum}[openEHR Conformance forum^].
 
-=== Principal Authors
+Issues may be raised on the {component_prs}[specifications Problem Report tracker^].
 
-* Thomas Beale, Ars Semantica, UK; openEHR International Board
-* Pablo Pazos Gutierrez, CaboLabs, Uruguay
-* Wladislaw Wagner, vitagroup AG, Germany
+To see changes made due to previously reported issues, see the {component_history}[{component} component Change Request tracker^].
 
-=== Trademarks
-
-* 'openEHR' is a trademark of the openEHR Foundation
-
-
-//
-// --------------------------------------------- TOC -----------------------------------------------
-//
-//toc::[left]
-
-//
-// --------------------------------------------- CHAPTERS -----------------------------------------------
-//
-
-
-
-//
-// --------------------------------------------- REFERENCES -----------------------------------------------
-//
-
-
-// :sectnums!:
-// == References
 

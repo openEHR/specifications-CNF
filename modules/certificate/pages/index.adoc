@@ -1,3 +1,5 @@
+include::partial$module_vars.adoc[]
+
 //
 // ============================================ Asciidoc HEADER =============================================
 //
@@ -7,7 +9,25 @@
 //
 
 
-= {spec_title}
+= {spec_title} [.spec-status.spec-status-development]#{spec_status}#
+
+Specification of the openEHR conformance certificate scheme. Defines how conformance assessment results are documented, structured, and published for certified platform implementations. Certificates reference the specific profile, test schedule version, and evidence set used in the assessment, providing a reproducible record of the conformance claim. Certified implementations are listed in the openEHR conformance register, giving procurers a verifiable basis for vendor selection.
+
+== Purpose
+
+This document defines a template for openEHR Conformance Certificate, a document that is generated as the result of executing a conformance test schedule against a running system or application. This may be a product, or a particular system, e.g. the specific environment of a healthcare provider. The audience of this document includes:
+
+* Software development organisations developing healthcare information systems;
+* Customer (i.e. procuring) organisations.
+
+== Related Documents
+
+Useful references for reading this document include:
+
+* The {openehr_cnf_guide}[openEHR Conformance Guide^]
+
+
+
 
 
 //
@@ -18,34 +38,12 @@
 // --------------------------------------------- Preface -----------------------------------------------
 //
 
-== Acknowledgements
+== Feedback
 
-This specification was developed and is maintained by the {openehr_sec}[openEHR Specifications Editorial Committee (SEC)^].
+Feedback may be provided on the {openehr_cnf_forum}[openEHR Conformance forum^].
 
-=== Principal Authors
+Issues may be raised on the {component_prs}[specifications Problem Report tracker^].
 
-* Thomas Beale, Ars Semantica, UK; openEHR International Board
-* Pablo Pazos Gutierrez, CaboLabs, Uruguay
+To see changes made due to previously reported issues, see the {component_history}[{component} component Change Request tracker^].
 
-=== Trademarks
-
-* 'openEHR' is a trademark of the openEHR Foundation
-
-
-//
-// --------------------------------------------- TOC -----------------------------------------------
-//
-//toc::[left]
-
-//
-// --------------------------------------------- CHAPTERS -----------------------------------------------
-//
-
-//
-// --------------------------------------------- REFERENCES -----------------------------------------------
-//
-
-
-// :sectnums!:
-// == References
 

@@ -1,0 +1,17 @@
+= Conformance Specifications
+
+[.spec-meta-line]
+Status: [.spec-status.spec-status-development]#DEVELOPMENT#  Release: [.release-tag]#{page-component-version}#
+
+
+Framework for certifying openEHR platform implementations. Defines conformance profiles, test cases per REST API endpoint, and a certificate scheme for verifying vendor compliance against the openEHR specifications.
+
+.Specification Component Overview
+image::openehr_block_diagram.svg[openEHR Conformance Specifications block diagram,role=block-diagram]
+
+== Specifications
+
+* xref:guide:index.adoc[openEHR Conformance Guide] [.spec-status.spec-status-development]#DEVELOPMENT# — Guide to conformance testing in openEHR. -- Introduction to the openEHR conformance testing approach and certification process
+* xref:platform_test_schedule:index.adoc[openEHR Platform Conformance Test Schedule] [.spec-status.spec-status-development]#DEVELOPMENT# — System Under Test (SUT), Test, Conformance Schedule, Profiles, Certification -- Test cases per REST API endpoint for verifying platform implementation compliance
+* xref:profiles:index.adoc[openEHR Platform Profiles] [.spec-status.spec-status-development]#DEVELOPMENT# — Platform component profiles. -- Conformance profiles grouping capabilities into tiers for partial compliance claims
+* xref:certificate:index.adoc[openEHR Conformance Certificate] [.spec-status.spec-status-development]#DEVELOPMENT# — openEHR Conformance Certificate. -- Certificate scheme for documenting and publishing verified platform conformance

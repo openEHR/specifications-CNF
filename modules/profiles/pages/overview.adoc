@@ -1,3 +1,5 @@
+include::partial$module_vars.adoc[]
+
 = Overview
 
 The {openehr_cnf_platform_test_schedule}[Platform X Conformance Test Schedule^] describes capabilities of openEHR platform products that can be tested against the published specifiations. These capabilities are grouped into _profiles_ to provide a guide to what constitutes the required functionality for particular category of solution.
